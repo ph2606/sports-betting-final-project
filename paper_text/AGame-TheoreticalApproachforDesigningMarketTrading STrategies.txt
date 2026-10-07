@@ -1,0 +1,367 @@
+[PAGE 1]
+  A Game-Theoretical Approach for Designing Market Trading
+                              Strategies
+
+                               Garrison W. Greenwood and Richard Tymerski
+
+
+  Abstract— Investors are always looking for good stock market     Computational intelligence (CI) offers a variety of useful
+trading strategies to maximize their proﬁt. Under the technical   techniques for constructing trading rules via technical ap-
+school of thought trading rules are developed by studying   proaches. For example, Allen and Karjalainen [2] created
+historical market data to ﬁnd trends that investors can exploit.                                                                trading rules using genetic programming. The goal was toThese market trends tend to appear when certain features
+(narrow  range, DOJI,  etc.) appear  in  the  historical  data.   develop a function that returns either a ’buy’ or ’sell’ signal.
+Unfortunately, these features often appear only in partial form,   (Decisions to ’hold’ a stock were not implemented.) The
+which makes trend analysis challenging.                         difference between an excess return1 and a simple buy-and-
+  In the paper we co-evolve fuzzy trading rules from market   hold strategy2 over a ﬁnite training period measures the
+trend  features. We show how fuzzy membership functions                                                             ﬁtness of a rule. The authors claim their evolved rules hadnaturally handle partial form features in historical data. The co-
+evolutionary process is formulated as a zero-sum, competitive   reduced trading volatility, but their rules do not lead to higher
+game to match how trading strategies are evaluated by broker-   absolute returns than a buy-and-hold strategy. Not to be
+age ﬁrms. Our experimental results indicate the co-evolutionary    deterred, the authors claim some investors may still ﬁnd their
+process creates trading rule-bases that produce positive returns    rule-base worthwhile.
+when evaluated using actual stock market data.                                                              Potvin et. al [3] also tried genetic programming to evolve
+                                                            investment  rules. Their method was computationally ex-                           I. INTRODUCTION
+                                                             pensive and tended to converge prematurely (no reported
+  The recent emergence of online trading has made the                                                       improvements after 50 generations). They too showed poorer
+stock market accessible to small investors. Brokerage ﬁrms                                                         performance than a buy-and-hold approach, especially in a
+work on behalf of investors to purchase quantities of a                                                                     rising market. The authors claim their trading rules were
+single stock. (Investors pay a small fee for every transaction.)                                                               “generally beneﬁcial”, but only when the market is stable
+Some discount brokerage ﬁrms provide little or no investment                                                               or falling.
+advice, which means it is up to the small investor to come                                                         Dourra and Siy [4] used fuzzy logic to create a trading
+up with their own investment strategies. Other brokerage                                                                      strategy. The system inputs were momentum indicators, such
+ﬁrms do advise investors when to buy or sell stock, but                                                               as the rate of change of stock prices over a deﬁned period.
+the underlying strategy is proprietary and for that reason is                                                         Gaussian membership functions and a fuzzy rule-base, hand-
+not disclosed to outsiders. Strategies are continually reﬁned                                                                  crafted from expert’s knowledge completed the system. A
+because markets can be volatile and good strategies that pro-                                                Mamdani fuzzy implication method output a single value
+duce high returns tend to attract more investment dollars—                                                       between 0 (strong sell) and 100 (strong buy). Their fuzzy
+and higher commissions for the brokers!                                                        system was evaluated on 3 years  of stock  prices from
+  There are two schools of thought on developing investment                                                                 several different companies. The investment returns, based
+strategies.  In  the fundamental approach  decisions about                                                    on buy or  sell recommendations from the fuzzy system,
+buying, selling or holding a company’s stock arise from a                                                      were exceptionally high—some yielding over 250% returns!
+careful analysis of the the company’s books. On the other                                                       However, those returns should come as no real surprise since
+hand, in the technical approach studying a company’s past                                                                the membership functions were deterministically adjusted to
+trading activity can help predict future stock prices. In this                                                              ﬁt the training data. Consequently, the membership functions
+paper we focus on the technical approach.                                                         used for the Intel Corporation stock were different from
+  For decades people have proposed various technical trad-                                                              those used for the General Motors stock. Moreover, the rule
+ing rules but the majority of this literature has found that, for                                                             antecedents were very sophisticated—some involved both
+the most part, the investment rules just don’t work. Indeed,                                                             conjunctions and disjunctions of fuzzy variables—but the
+one researcher [1] even went so far as to dismiss technical                                                              authors did not say how those rules were derived.
+investment rule methods entirely! But the advent of more                                            Lam [5] also constructed a fuzzy trading rule-base, but
+powerful and inexpensive computers has promoted new and                                                                the rule-base was evolved with a genetic algorithm  that
+powerful data mining methods that can search high frequency                                                                 selected a subset of rules from a set of 36 pre-deﬁned fuzzy
+market data for trading activity patterns. The reported demise
+of the technical school of thought was clearly premature.       1A risk-free return is the return of an asset, such as T-bills, with no
+                                                                                       risk whatsoever. An excess return is the return received over and above a
+  G. Greenwood and R. Tymerski are both with the Electrical & Computer     risk-free return.
+Engineering Department at Portland State University, Portland, OR 97207–       2In this strategy the investor buys a stock and then holds it for a long
+0751 USA (email: greenwood,tymerski@ece.pdx.edu)              time period, hoping to outlast any market ﬂuctuations.
+
+     978-1-4244-2974-5/08/$25.00 ©2008 IEEE                 316
+
+[PAGE 2]
+rules. The antecedent of each rule was a conjunction of   even give a false picture of how good a strategy actually is.
+several moving average trends such as daily moving average,  An example will help illustrate the problem.
+weighted moving average and exponential moving average.     Suppose two brokerage ﬁrms independently evolve a set
+Other fuzzy rules had antecedents with momentum terms   of investment strategies. Assume the best performing strategy
+such as relative strength index, rate-of-change and fast and   from the ﬁrst brokerage ﬁrm consistently yields a 4% return
+slow stochastic. The output (consequent) of each rule was   over a 90-day trading period. If ﬁtness is proportional to
+a buy, sell or hold order using the Sugeno method of fuzzy    returns, then  this  strategy, by deﬁnition, has the highest
+inference. The system outperformed a buy-and-hold strategy,    ﬁtness. But does a 4% return really qualify as high ﬁtness?
+but it is not clear how the system is trained. The author claims   The only way to know for certain is to compare that 4%
+the system was trained for m days and then applied to trade    return against what the other brokerage ﬁrm can offer. If the
+for n more days before re-training(?) It was never stated how    best strategy from the second ﬁrm only has a 1.5% return,
+the ﬁtness for the m training days relates to the ﬁtness for the   then 4% is pretty good and should signify high ﬁtness. On the
+n trading days. The paper is useful only from the standpoint    other hand if the second ﬁrm can offer a 7% return strategy,
+it shows the potential of evolving fuzzy trading rule-bases.    then a 4% return does not qualify as high ﬁtness.
+  In this paper we describe some preliminary work using a        It is important to differentiate between the relative ﬁtness
+coevolutionary algorithm to evolve a family of fuzzy trading   and the true ﬁtness of an investment strategy. Relative ﬁtness
+rule-bases, each of which serves as a unique trading strategy.   compares returns from strategies within a single brokerage
+Researchers in the past have evolved just a single popu-   ﬁrm whereas true ﬁtness contrasts returns from strategies
+lation of strategies. What differentiates our work from all   between independent ﬁrms. Investors compare the returns
+previous evolved rule-base work is we coevolve independent   achieved by various brokerage ﬁrms before deciding where to
+populations of strategies under a game-theoretical environ-    invest their money. Hence, true ﬁtness measures the ability to
+ment. This approach seems quite natural because of the    attract investor dollars. Survival, therefore, should depend on
+close relationship between competitive coevolution and game    true ﬁtness rather than relative ﬁtness. The point here is there
+theory. Indeed, evolutionary game theory can help explain the    is no way to say whether or not a given return constitutes
+underlying dynamics of coevolutionary algorithms [6]. From   high ﬁtness unless  it is compared against the returns from
+a practical standpoint coevolution makes perfect sense since   competing brokerage ﬁrms. Consequently, strategies should
+it closely matches how investment ﬁrms develop their own    arise from competitive coevolution [7].
+internal strategies. This aspect is discussed further in the next     Stock market investment is naturally expressed as a game.
+section. Experimental results are included to demonstrate our   The players are brokerage ﬁrms, which independently de-
+proposed method.                                           velop investment strategies. Strategies compete against each
+                                                               other in the marketplace and receive payoffs in the form
+                                                               of greater or fewer investor dollars depending on how well
+   II. WHY USE GAME THEORY TO DEVELOP TRADING      they perform. (Poor strategies lose investments as investors
+                  STRATEGIES?                         switch to better performing strategies.) Hence, stock market
+                                                            investment is essentially a zero-sum game with the strategies
+  Investment counselors, working for brokerage ﬁrms, de-                                                      formed through competitive coevolution.
+velop trading strategies for stock market investments. Good
+trading strategies attract more investor dollars while poor      NOTE: In some games players make decisions
+strategies discourage further investments. Each ﬁrm inter-        based on historical data, which is common knowl-
+nally develops not just one, but a set of investment strategies        edge. One of the best examples  is the widely
+to deal with market volatility. For example, the ﬁrm will need        studied minority game [8]. The stock market game
+one strategy to deal with investments in a bull market, where        formulated here belongs to this same family of
+stock prices generally  rise, and another strategy for bear       games.
+markets, where stock prices generally fall. Investment coun-
+selors adapt their individual trading strategies based on how                                                                                           III. PROBLEM FORMULATIONwell those strategies perform. The collective strategies from
+all of the investment counselors comprises the investment     The objective is to design a strategy for trading shares of a
+services a brokerage ﬁrm offers to a potential investor. This    single stock. Stock price data, recorded over a large number
+process can be envisioned as an evolving set of strategies   of consecutive trading days, is available to help develop the
+where ﬁtness is measured by the returns derived by using    strategy. The strategies are based on ﬁnding conditions in
+the strategy to make investment decisions.                   market historical data that predicts subsequent up-trend days3
+                                                           Appropriate investments (or positions) are taken only on the  But how does a brokerage ﬁrm know if an evolved set of
+                                                      open of a predicted trend day and are exited at its close.strategies is any good? That question illustrates the problem
+                                                          Four data items were recorded each day: the open sharewith evolving a single population of trading rules. Intuitively
+                                                                 price (O), the high (H) and low (L) for the day and thestrategies  that provide the  greatest  returns are the most
+appealing and would be assigned high ﬁtness. But deﬁning       3In this work we did not attempt to ﬁnd down-trend days, which would
+ﬁtness proportional to returns is overly simplistic and may    require a different set of strategies.
+
+                           2008 IEEE Symposium on Computational Intelligence and Games (CIG'08)                    317
+
+[PAGE 3]
+closing share price (C). Two types of trading days are of       O[−1] > H[0] + δ. In both cases 0 ≤δ ≤10 is user
+interest:                                                                 selectable.
+
+Deﬁnition: (up-trend day)                                                                            IV. FUZZY SYSTEM DESIGN
+          O ≤L + 0.1(H −L)                  (1)     Given stock market historical data,  it is always possible
+           C ≥H −0.2(H −L)                        to (deterministically) analyze it and mark where any of the
+                                                                  features described in the previous section are present. But a
+Deﬁnition: (down-trend day)                            more subtle and challenging problem must be dealt with. The
+                                                                rule-base contains a set of fuzzy rules that predict whether
+          O ≥H −0.1(H −L)                 (2)   the next trading day is likely to be a trend day. Investment
+           C ≤L + 0.2(H −L)                       decisions—i.e., whether to buy, sell or hold—are made based
+   Qualitatively, this simply means for an up day the opening   on these predictions. Fuzzy rules are used because crisp rules
+price is close to the day’s low and the closing price is close to    are too restrictive. An example will help ﬁx ideas.
+the day’s high. Similarly, for a down-trend day the opening     The crisp rule “if NR7 then  . . .” is true if and only if
+is at or near the high and the close is near or at the low for    the range during the current day R[0] is less than the range
+the day. An interesting property of trend days—which keen   during any of the previous six days R[1], R[2] . . . R[6]. The
+investors can exploit—is the high-low differential tends to    rule won’t be true if even one of the previous ranges is less
+be relatively large.                                           than R[0]. But suppose the inequality is satisﬁed for say ﬁve
+  Studies have identiﬁed several trading data features that   out of the six days, which makes the antecedent almost true?
+often proceed up or down-trend days. These features, de-   As another example, Nison [9] asked
+scribed below, are deﬁned in terms of O, C, H and L. Today                                              “How do you decide whether a near-DOJI day
+is indexed with i = 0 and previous days are indexed i = 1, 2,                                                                          (that is, where the open and close are very close,
+and so on. O(−1) denotes the next trading day opening price.                                                                   but not exact) should be considered a DOJI? This
+                                                                                    is subjective and there are no rigid rules. . ..”  • NRk
+                                                       Fuzzy reasoning can effectively deal with such uncertain-
+    With H[i] and L[i] denoting the high and low for the                                                                               ties. Crisp rules, which must give either a ’yes’ or a ’no’
+      i-th day, the range is deﬁned as R[i] = H[i] −L[i].                                                            answer, cannot handle these situations but fuzzy rules can
+   NRk exists if today’s range is less than the ranges for                                                          because they can also provide fuzzy answers somewhere in
+     the previous k −1 days. That is,                                                       between a ’yes’ or ’no’.
+                                                                 In our approach stock market data is analyzed to determine               R[0] < min(R[1], . . . , R[k −1])         (3)                                              how closely it matches the formal deﬁnitions of the features
+   NRk days represent volatility contraction, which often-   described  in the previous  section. Membership functions
+     times leads to volatility expansion in the form of wide    return a value between 0 and 1 indicating to what degree
+     range days. The greater the number of narrow range    features are present. The resultant fuzzy variables are then
+     days, the greater the counter reaction in wide ranging    collected into fuzzy if-then rules, which constitutes the trad-
+     days.                                                    ing rulebase. The outputs of active rules—i.e., rules whose
+                                                             antecedent are satisﬁed—are combined into a fuzzy output  • DOJI                                                                    variable. This variable is defuzziﬁed to produce a crisp value
+    DOJI indicates that the open and close for the trading   on the unit interval, which the desirability of buying stock
+    day are within some small percentage (x) of each other.   on the next trading day.
+   A DOJI means the market reﬂects temporary price
+     indecision and often signals a major reversal in the   A. Membership Functions
+     market. DOJI is a predicate function—i.e., it returns 1
+                                                              Fuzziﬁcation  is the process  that maps days (D) onto    (TRUE) or 0 (FALSE). It is deﬁned as
+                                                                the unit interval via a membership function µ(D). More
+                                                                     precisely, D represents the number of previous days that
+                     1  |O −C| ≤x · (H −L)     DOJI (x) =                                      (4)   a particular feature is satisﬁed. For instance, for the NR7
+                     0  otherwise                         feature D ∈{0, 1, . . . , 6}. Then µ(0) = 0 means the NR7
+                                                             deﬁnition was not satisﬁed during any of the six previous  • Hook day
+                                                               days, µ(6) = 1 means the deﬁnition was satisﬁed during
+   A hook day occurs when the price opens outside the                                                                              all six previous days  (i.e., NR7 is deﬁnitely present) and
+     previous day’s range and then proceeds to reverse di-                                                    0 < µ(D) < 1 means NR7 was satisﬁed for some D < 6
+     rection, generally indicating a reaction to temporarily                                                               days. Trapezoidal membership functions are most appropriate
+    overbought or oversold market conditions.                                                                   for the most of the features (see Figure 1).
+    There are two versions of a hook day. For the up hook
+    day O[−1] < L[0] −δ and for the down hook day      • NRk
+
+    318                    2008 IEEE Symposium on Computational Intelligence and Games (CIG'08)
+
+[PAGE 4]
+  For this feature the equation is slightly different for each
+  value of k. Let µk(x) denote the membership function
+   for NRk. Then
+
+       
+             0         x < υmin
+    µk(x) =     c (x −υmin)  υmin ≤x < υmax    (5)
+       
+                    1         x ≥υmax
+  with parameter values as shown in Table I.
+
+                k    c    υmin   υmax
+                 4    1/2     2      4
+                 6    1/3     3      6
+                 7    1/3     4      7
+                    TABLE I
+     PARAMETER VALUES FOR NARROW RANGE FEATURES
+                                                                                            Fig. 2.  DOJI membership function with ρ = 0.1.
+  In the above equation x = D + η where D ≤k  is
+  the number of days where (3) holds and, with ˜R =                                                       where x = L[0] −δ −O[−1] for an up hook day and  max1≤j≤k R[j],                                               x = O[−1] −δ −H[0] for a down hook day.
+                               ˜R −R[0]
+                  η =
+                                   ˜R
+  Notice  that η  increases  the membership  value  for
+  smaller previous day ranges.
+
+
+
+
+
+                                                                                                 Fig. 3.  Hook day membership function
+
+
+           Fig. 1.  Membership functions for the features.              B. The Fuzzy Rule-Base
+                                                               Unfortunately, just detecting the presence or absence of
+• DOJI                                                 a single feature is not a very good trend day predictor. The
+                                                     problem is to ﬁnd combinations of features that make a good
+  For this feature the membership function equation is                                                             trend day predictor4.
+                                                                              If there are N total features, then there are N total rules                     1 −x/ρ  0 ≤x ≤ρ           µ(x) =                                    (6)    in the rule-base5. Consider the rule                       0     otherwise
+  where  typically ρ ∈[0.05, 0.30). x  represents  the                  if x is NR4 then output is up-trend day
+  percent difference between O and C and ρ represents     The semantics of this rule  is as follows. The term “x
+  the threshold percentage.                                         is NR4” means ranges for the current and the previous
+                                                               three days are computed. x represents how many of those• Hook Day                                                       days meet the NR4 deﬁnition. This crisp data value is the
+  The formula for this membership function is            argument for the NR4 membership functions which returns
+                                                              4Certain real parameter values must also be chosen. For example, the             0          x < −12                                                                        percentage threshold input value is needed for the DOJI feature.
+      µ(x) =    2(x + 0.5)    −12 ≤x < 0      (7)      5There would be 2N total rules if both up-trend and down-trend days are        
+                    1          x ≥0                    predicted.
+
+                         2008 IEEE Symposium on Computational Intelligence and Games (CIG'08)                    319
+
+[PAGE 5]
+a number between 0 and 1 to give the degree of membership    for this threshold. If the output value is greater than 0.8,
+for NR4. The output value is the degree of membership for   then a ‘buy’ signal is generated and how high above 0.8
+an up-trend day.                                            determines the number of shares to buy. Speciﬁcally, the
+ A singleton fuzziﬁer is used for the inputs. The set of   amount of stock purchased increased linearly the higher the
+possible outputs is                                           output was above 0.8, subject to sufﬁcient funds in the bank
+                                                              account, up to a maximum of 20 shares. Stock was bought at
+        Λ =   0.25  0.5  0.75  1.0                    the opening price and sold at the closing price. All proceeds
+                                                      were deposited into the bank account at the end of eachThese output values represent the likelihood an investor                                                                trading day.would buy stock because a given fuzzy rule had ﬁred.
+  The fuzzy rule-base is encoded as a matrix M with one   C. The Coevolutionary Algorithm
+column for every λi ∈Λ and one row for every fuzzy     The fuzzy  rule-base was evolved using a (40 + 40)
+rule [10]. Each rule is of the form “if x is feature then y    evolution  strategy. Both recombination and mutation are
+is an up-trend day”. In this work we investigated 5 features   used as variation operators. Each offspring are created by
+so M has 5 rows corresponding to, from top to bottom, the   randomly choosing two parents. After appending together the
+features NR4, NR6, NR7, DOJI, and Up Hook Day (with   columns of the M matrix in each parent to form a real vector,
+δ = 0.5). There are four columns, one for each value in Λ.   standard 1-point crossover, followed by mutation, creates
+A typical matrix might look like                               the offspring. Mutation added a gaussian distributed random
+                                     variable with zero mean and standard deviation σ = 0.2 to
+                  0   0.6    0.5    0                   each term in the M matrix. The mutation was redone if the          0  0.33  0.33  0.33                                   component value was less than 0.1 or more than 1.0. For the
+     M =  0   0.1    1.0    0.9                defuzziﬁed output any value below 0.5 was automatically set
+          0  0.44   0.5    0.1                                                                    to 0 because a desirability of buying stock with a value that
+                  0   0.1    0.2    0.7                 low makes no sense. The evolutionary algorithm was run for
+where each mij ∈M is a weight. The ﬁrst row in the above   750 generations.
+matrix is thus interpreted as the investor saying If the current     Both the α and the ω rule-bases—corresponding to the α
+day is the feature NR4, then I think the likelihood of an up-   and the ω brokerage ﬁrms—evolve independently. Fitness of
+trend day tomorrow is 0.5 or 0.75 (out of 1) with strengths   a rule-base is determined by tournaments with the competitor
+0.6 and 0.5, respectively. Notice the strengths do not have    rule-bases. Speciﬁcally, each individual in the α population
+to sum to 1.0.                                       was provided with $400 and then used its rule-base as an
+  Rule processing  is straightforward. Given the rule-base   investment strategy over 150 consecutive trading days with
+matrix M, the vector of fuzzy numbers                      a  start date chosen randomly from the ﬁrst 850 trading
+                                                         days in the training market database. The ω population did
+    A = (µNR4 , µNR6 , µNR7 , µDOJI , µhook)           the same over the same 150 trading days. Afterwards each
+                                                                 individual in both populations has an ending bank account
+is created by running the training data through the individual                                                            balance after selling all shares purchased during the trading
+membership functions. A new A vector is created for each                                                                 period. The bank account balance of each individual in the
+trading day. For example, on the 50th  training day the                                         α (ω) population was compared against 10 randomly chosen
+ranges R(47), R(48) and R(49) are computed and µ4(x) is                                                                 individuals from the ω (α) population. The individual with
+computed using (5). Similarly the other membership function                                                                the largest bank account records a win.
+values are determined using (6) and (7). Then A ◦M = B                                                       Winning in this game has a positive payoff while losing
+where                                                           has a negative payoff. Every time an individual wins against
+                                                       an individual in its tournament set, the winner gets 2% of
+                 bj =                max min {ai , mij}                   the loser’s bank account balance. Conversely, if the individual                     1≤i≤5
+                                                                 loses against a member of its tournament set, he has to payThe fuzzy output vector B is then defuzziﬁed to get a crisp                                       2% of his bank account balance to winner. Hence, individualsoutput value indicating the desirability of buying shares of                                                                get paid or have to pay every time they participate in astock. A center of average defuzziﬁcation was used. That is,                                                            tournament. (Accounts were not actually credited or debited
+             PN                                    until after all tournaments were ﬁnished.)                            i=1 bi · λi            U =  PN                         (8)     This payoff approach to conducting tournaments emulates
+                              i=1 λi                          real-world trading. Brokerage ﬁrms compete for investor
+where λi is the i-th singleton from Λ and N is the number    dollars. The bank account associated with each individual
+of active rules.                                           can be thought of as money given to a brokerage ﬁrm by
+  The crisp output U ∈[0, 1] indicates the likelihood of an    investors. Each ﬁrm starts out with the same amount and
+up-trend day or, equivalently, the desirability of purchasing    trades according to the strategy deﬁned by its fuzzy rule-
+more stock shares. However, stock is only purchased if the    base. Firms with lower bank accounts at the end of the
+desirability exceeds a user-selected threshold. We chose 0.8    trading period have poorer  strategies and poor  strategies
+
+    320                    2008 IEEE Symposium on Computational Intelligence and Games (CIG'08)
+
+[PAGE 6]
+cause investors  to move  their money elsewhere—i.e.,  to    real world choose brokerage ﬁrms: ﬁrms with good strate-
+better performing ﬁrms.                                        gies attract more investor’s dollars while ﬁrms with poorer
+                                                                     strategies drive away investor’s dollars.
+              V. EXPERIMENTAL RESULTS
+ A database of 1600 trading days were available for training                   Account Balances from   Account Balances from                                                                              Top 5 Strategies ($)      Bottom 5 Strategies ($)
+and testing. The ﬁrst 1000 days are reserved for training       α Firm    548.4, 498.2, 489.6,         336.1, 335.4, 332.2,
+whereas the 600 remaining days are used for validation                      487.8, 479.6                    331.1, 326.2
+testing. Each training epoch consists of 150 consecutive       ω Firm    548.9, 548.7, 548.3,         322.2, 321.2, 319.0,
+trading days, with a random starting date and partitioned into                      547.6, 547.0                    304.5, 300.1
+three overlapping 90 day segments. The second segment used                        TABLE II
+the last 60 days from the ﬁrst segment plus 30 new days; the      BANK ACCOUNT BALANCES FROM TOP AND BOTTOM TRADING
+third segment used the last 30 days of the ﬁrst segment plus     STRATEGIES FROM TWO BROKERAGE FIRMS. RESULTS ARE OBTAINED
+60 new days. The overlaps help mitigate market volatility.     OVER A 150 TRADING PERIOD WITH AN INITIAL $400 BANK BALANCE.
+  Each training epoch started with a $400 bank account.
+The bank balance at the end of the ﬁrst 90 day training
+segment was the beginning bank balance of the second 90     The best α ﬁrm fuzzy rule-base strategy was then com-
+day segment. Similarly the third segment beginning balance   pared  against a simple investment  strategy over 90-day
+was the same as the second segment ending balance. (Bank    trading periods using the  test market data—i.e., the  last
+account balances are adjusted as explained in the previous   600 days in the market database, which were not used for
+section.) Testing was conducted in the same way, except the    training. In the simple investment strategy ﬁfty shares of
+150-day window was chosen from the latter 600 days in the   stock are purchased at the beginning of the trading day and
+database.                                                    then sold at the closing price at the end of the trading day.
+  Figure 4 shows the results from a typical run on a 90-  Two trading periods were chosen. The ﬁrst trading period
+day trading session from the testing portion of the database.   begins on day 1200 while the second trading period begins
+Notice the desirability exceeded the 0.8 threshold on only a   on day 1400. Figures 5 and 6 compares the simple and fuzzy
+few days.                                                       trading strategies for the ﬁrst and second trading periods,
+                                                                    respectively.
+
+
+
+
+
+Fig. 4.  Typical trading behavior for the best fuzzy trading rule sets over a
+90 trading period. Shares were bought whenever the desirability exceeded     Fig. 5.  Bank account balances for the top α ﬁrm strategy and the simple
+0.8.                                                                        investment strategy over a 90 day period of test market data starting at the
+                                                                      1200th trading day. Both accounts started with a $400 balance.
+  Table II shows the bank account balances for the top ﬁve
+and bottom ﬁve trading strategies after completing the 150    Some interesting observations emerge from a close exam-
+days of trading using the training database. Notice for both    ination of Figures 5 and 6. The returns from buying and
+ﬁrms the top ﬁve strategies had positive returns whereas    selling stock every day indicates how the market is doing.
+the bottom ﬁve strategies had negative returns. The positive   The market data shows high volatility. Notice the market is
+returns are considerably higher than the  starting balance    generally up for several weeks after the 1200th trading day
+of $400. Remember the ending bank account balances are   but reverses dramatically after the 1400th trading day. More
+not due solely to buying stock at a reasonable price. Good    to the point, the simple investment strategy had a +15.7%
+performing strategies have a higher payoff by taking money    return in the ﬁrst trading period but a -8.2% return during the
+out of the bank accounts of poorer performing strategies.   second trading period. Clearly buying stock every day is not
+This zero-sum game format matches how investors in the   a good investment strategy. Conversely, the fuzzy rule-base
+
+                           2008 IEEE Symposium on Computational Intelligence and Games (CIG'08)                    321
+
+[PAGE 7]
+Fig. 6.  Bank account balances for the top α ﬁrm strategy and the simple               Fig. 7.  Stock prices over a single trading day period.
+investment strategy over a 90 day period of test market data starting at the
+1400th trading day. Both accounts started with a $400 balance.
+                                                           Notice that buying the stock at the beginning of the trading
+                                                               session and selling the stock after 4 hours would produce ahad a modest +2.5% return during the ﬁrst trading period                                                             higher proﬁt than selling or holding based on the openingbut no loss during the second trading period. Although the                                                      and closing prices alone, which is what our fuzzy rule basedreturns were not as great when the market was up,  it did                                                               decisions on. This suggests fuzzy rules for intra-day tradingprotect capital when the market was down.                                                    would produce even higher proﬁts. We will investigate this
+                 VI. FUTURE WORK                        issue as well.
+   If the two brokerage ﬁrms only used their best trading                    REFERENCES
+strategy, in principle one ﬁrm could do some reverse engi-                                                                                     [1] E. Fama. Efﬁcient capital markets: a review of theory and empirical
+neering and ultimately deduce the other ﬁrms trading strategy         work. Journal of Finance, 25:383–417, 1970.
+(i.e., the fuzzy rules). Notice in Table  II that the returns      [2]  F. Allen and R. Karjalainen. Using genetic algorithms to ﬁnd technical
+between any of the top two strategies are not signiﬁcantly          trading rules. Journal of Financial Economics, 51(2):245–271, 1999.                                                                                     [3]  J. Potvin, P. Soriano, and M. Vallee. Generating trading rules on the
+different. Hence, a mixed  strategy  will provide  security          stock markets with genetic programming. Computers & Operations
+without sacriﬁcing much of the return.                                  Research, 31:1033–1047, 2004.
+  Both brokerage ﬁrms used the same membership func-      [4] H. Dourra and P. Siy. Investment using technical analysis and fuzzy                                                                                             logic. Fuzzy Sets & Systems, 127:221–240, 2002.
+tions. In practice each brokerage ﬁrm would use  its own      [5]  S. Lam. A genetic fuzzy expert system for stock market timing. In
+internally developed membership functions. In this work the         Proceedings of the 2001 IEEE Congress on Evolutionary Computation,
+membership functions were ﬁxed but in our future experi-         pages 410–417, 2001.                                                                                     [6]  S. Ficici and J. Pollack. A game-theoretic approach to the simple
+ments we will evolve the membership functions as well.              coevolutionary algorithm.  In Proceedings of the Sixth International
+  Our evolved trading rule-base only bought stock when the         Conference on Parallel Problem Solving from Nature, pages 467–476,
+market data suggested a pending up-trend day. We need to         2000.                                                                                     [7] C. Rosin and R. Belew. New methods for competitive coevolution.
+also evolve a set of down-trend day trading rules. The up-         Evolutionary Computation, 5(1):1–29, 1997.
+trend day rules would indicate buying opportunities while      [8]  T. Lo, P. Hui, and N. Johnson. Theory of the evolutionary minority
+the down-trend days would indicate selling short to help         game. Physical Review E, 62(3):4393–4396, 2000.                                                                                     [9]  S. Nison. Japanese Candlestick Charting Techniques: A Contemporary
+minimize losses.                                                      Guide to the Ancient Investment Techniques of the Far East, page 150.
+   Finally, our trading strategy relies only on opening and       New York Institute of Finance, 1991.
+closing  stock  prices. Day  traders make  multiple  trades    [10]  J. West and B. Linster. The evolution of fuzzy rules as strategies in                                                                                 two-player games. Southern Economic Journal, 69(3):705–717, 2003.throughout the day to maximize returns. Figure 7 shows the
+price variation during a 6-hour trading period.
+
+
+
+
+
+    322                    2008 IEEE Symposium on Computational Intelligence and Games (CIG'08)

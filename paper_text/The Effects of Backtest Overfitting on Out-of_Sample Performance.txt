@@ -1,0 +1,979 @@
+[PAGE 1]
+Pseudo-Mathematics and Financial
+Charlatanism: The Eﬀects of
+Backtest Overﬁtting on
+Out-of-Sample Performance
+
+David H. Bailey, Jonathan M. Borwein,
+Marcos López de Prado, and Qiji Jim Zhu
+
+
+
+                  Another thing I must point out is that you cannot       “training set” in the machine-learning literature).
+                   prove a vague theory wrong. […] Also, if the process      The OOS performance is simulated over a sample
+                     of computing the consequences is indeﬁnite, then       not used in the design of the strategy (a.k.a. “testing
+                   with a little skill any experimental result can be
+                                                                                   set”). A backtest is realistic when the IS performance
+                made to look like the expected consequences.
+                                                                                  is consistent with the OOS performance.
+                                    —Richard Feynman [1964]
+                                                    When an investor receives a promising backtest
+                                                      from a researcher or portfolio manager, one of
+             Introduction                                                             her key problems is to assess how realistic that
+         A backtest is a historical simulation of an algo-                                                                simulation is. This is because, given any ﬁnancial
+              rithmic investment strategy. Among other things,                                                                             series, it is relatively simple to overﬁt an investment
+                    it computes the series of proﬁts and losses that                                                                    strategy so that it performs well IS.
+            such strategy would have generated had that al-                                                                 Overﬁtting is a concept borrowed from ma-
+             gorithm been run over that time period. Popular                                                              chine learning and denotes the situation when a
+            performance statistics, such as the Sharpe ratio
+                                                       model targets particular observations rather than
+              or the Information ratio, are used to quantify the
+                                                            a general structure. For example, a researcher
+             backtested strategy’s return on risk. Investors
+                                                            could design a trading system based on some
+                typically study those backtest statistics and then
+                                                           parameters that target the removal of speciﬁc
+               allocate capital to the best performing scheme.
+                                                        recommendations that she knows led to losses
+               Regarding the measured performance of a
+                                                                           IS (a practice known as “data snooping”). After a
+              backtested strategy, we have to distinguish between
+                                                         few iterations, the researcher will come up with
+            two very diﬀerent readings: in-sample (IS) and out-
+                                                              “optimal parameters”, which proﬁt from features
+              of-sample (OOS). The IS performance is the one
+                                                                     that are present in that particular sample but may
+             simulated over the sample used in the design of
+                                                                    well be rare in the population.
+              the strategy (also known as “learning period” or
+                                                              Recent computational advances allow invest-
+               David H. Bailey is retired from Lawrence Berkeley National   ment managers to methodically search through
+                 Laboratory. He is a Research Fellow at the University of Cal-   thousands or even millions of potential options for
+                   ifornia, Davis, Department of Computer Science. His email    a proﬁtable investment strategy. In many instances,
+                address is david@davidhbailey.com.                    that search involves a pseudo-mathematical ar-
+               Jonathan M. Borwein is Laureate Professor of Mathematics   gument which is spuriously validated through a
+                  at the University of Newcastle, Australia, and a Fellow of the    backtest. For example, consider a time series of
+                Royal Society of Canada, the Australian Academy of Science,
+                                                                     daily prices for a stock X. For every day in the
+             and the AAAS. His email address is jonathan.borwein@
+              newcastle.edu.au.                                sample, we can compute one average price of
+                                                                  that stock using the previous m observations ¯xm              Marcos López de Prado is Senior Managing Director at
+              Guggenheim Partners, New York, and Research Aﬃliate at   and another average price using the previous n
+               Lawrence Berkeley National Laboratory. His email address    observations ¯xn, where m < n. A popular invest-
+                       is lopezdeprado@lbl.gov.                       ment strategy called “crossing moving averages”
+                   Qiji Jim Zhu is Professor of Mathematics at Western Michi-    consists of owning X whenever ¯xm > ¯xn. Indeed,
+              gan University. His email address is zhu@wmich.edu.         since the sample size determines a limited number
+                DOI: http://dx.doi.org/10.1090/noti1105                  of parameter combinations that m and n can adopt,
+
+
+458                                   Notices of the AMS                Volume 61, Number 5
+
+                         ElectronicElectronic copycopy availableavailable at:at: http://ssrn.com/abstract=2308659http://ssrn.com/abstract=2308659
+
+[PAGE 2]
+it is relatively easy to determine the pair (m, n)    that passes the AIC criterion. The researcher will
+that maximizes the backtest’s performance. There    quickly be able to present a speciﬁcation that not
+are hundreds of such popular strategies, marketed    only (falsely) passes the AIC test but also gives an
+to unsuspecting lay investors as mathematically   SR above 2.0. The problem is, AIC’s assessment did
+sound and empirically tested.                      not take into account the hundreds of other trials
+   In the context of econometric models several    that the researcher neglected to mention. For these
+procedures have been proposed to determine    reasons, commonly used regression overﬁtting
+overﬁt in White [27], Romano et  al. [23], and   methods are poorly equipped to deal with backtest
+Harvey et al. [9]. These methods propose to adjust    overﬁtting.
+the p-values of estimated regression coeﬃcients      Although there are many academic studies that
+to account for the multiplicity of trials. These    claim to have identiﬁed proﬁtable investment
+approaches are valuable for dealing with trading     strategies, their reported results are almost always
+rules based on an econometric speciﬁcation.        based on IS statistics. Only exceptionally do we
+  The machine-learning literature has devoted   ﬁnd an academic study that applies the “hold-out”
+signiﬁcant eﬀort to studying the problem of                                          method or some other procedure to evaluate per-
+overﬁtting. The proposed methods typically are                                              formance OOS. Harvey, Liu, and Zhu [10] argue that
+not applicable to investment problems for multiple                                                    there are hundreds of papers supposedly identify-
+reasons. First, these methods often require explicit                                                   ing hundreds of factors with explanatory power
+point forecasts and conﬁdence bands over a                                                over future stock returns. They echo Ioannidis
+deﬁned event horizon in order to evaluate the                                                        [13] in concluding that “most claimed research
+explanatory power or quality of the prediction                                             ﬁndings are likely false.” Factor models are only
+(e.g., “E-mini S&P500 is forecasted to be around                                                 the tip of the iceberg.1 The reader is probably
+1,600 with a one-standard deviation of 5 index
+                                                       familiar with many publications solely discussing
+points at Friday’s close”). Very few investment
+                                                            IS performance.
+strategies yield such explicit forecasts; instead,
+                                                   This situation  is, quite frankly, depressing,
+they provide qualitative recommendations (e.g.,
+                                                       particularly because academic researchers are
+“buy” or “strong buy”) over an undeﬁned period
+                                                 expected to recognize the dangers and practice of
+until another such forecast is generated, with
+                                                     overﬁtting. One common criticism, of course, is
+random frequency. For instance, trading systems,
+                                                   the credibility problem of “holding-out” when the
+like the crossing of moving averages explained
+                                                  researcher had access to the full sample anyway.
+earlier, generate buy and sell recommendations
+                                               Leinweber and Sisk [15] present a meritorious
+with little or no indication as to forecasted values,
+                                                    exception. They proposed an investment strategyconﬁdence in a particular recommendation, or
+                                                       in a conference and announced that six monthsexpected holding period.
+                                                          later they would publish the results with the   Second, even if a particular investment strat-
+                                              pure (yet to be observed) OOS data. They calledegy relies on such a forecasting equation, other
+                                                         this approach “model sequestration”, which is ancomponents of the investment strategy may have
+                                               extreme variation of “hold-out”.been overﬁtted, including entry thresholds, risk
+sizing, proﬁt taking, stop-loss, cost of capital, and
+                                         Our Intentionsso on. In other words, there are many ways to
+overﬁt an investment strategy other than simply    In this paper we shall show that it takes a relatively
+tuning the forecasting equation. Third, regression    small number of trials to identify an investment
+overﬁtting methods are parametric and involve a    strategy with a spuriously high backtested perfor-
+number of assumptions regarding the underlying   mance. We also compute the minimum backtest
+data which may not be easily ascertainable. Fourth,    length (MinBTL) that an investor should require
+some methods do not control for the number of    given the number of trials attempted. Although in
+trials attempted.                                our examples we always choose the Sharpe ratio
+  To illustrate this point, suppose that a researcher    to evaluate performance, our methodology can be
+is given a ﬁnite sample and told that she needs to    applied to any other performance measure.
+come up with a strategy with an SR (Sharpe Ratio,    We believe our framework to be helpful to
+a popular measure of performance in the presence    the academic and investment communities by
+of risk) above 2.0, based on a forecasting equation    providing a benchmark methodology to assess the
+for which the AIC statistic (Akaike Information     reliability of a backtested performance. We would
+Criterion, a standard of the regularization method)
+rejects the null hypothesis of overﬁtting with a    1We invite the reader to read speciﬁc instances of pseudo-
+95 percent conﬁdence level (i.e., a false positive    mathematical ﬁnancial advice at this website: http://www.
+rate of 5 percent). After only twenty trials, the    m-a-f-f-i-a.org/. Also, Edesses (2007) provides numer-
+researcher is expected to ﬁnd one speciﬁcation    ous examples.
+
+
+May 2014                             Notices of the AMS                                  459
+
+                        ElectronicElectronic copycopy availableavailable at:at: http://ssrn.com/abstract=2308659http://ssrn.com/abstract=2308659
+
+[PAGE 3]
+                                                                           Historically, scientists have led the way in ex-
+                                                             posing those who utilize pseudoscience to extract
+                                                            a commercial beneﬁt. As early as the eighteenth
+                                                                  century, physicists exposed the nonsense of as-
+                                                                      trologers. Yet mathematicians in the twenty-ﬁrst
+                                                                century have remained disappointingly silent with
+                                                                regard to those in the investment community who,
+                                                             knowingly or not, misuse mathematical techniques
+                                                          such as probability theory, statistics, and stochas-
+                                                                                tic calculus. Our silence is consent, making us
+                                                             accomplices in these abuses.
+                                                       The rest of our study is organized as follows:
+                                                      The section “Backtest Overﬁtting” introduces the
+                                                        problem in a more formal way. The section
+                                                   “Minimum Backtest Length (MinBTL)” deﬁnes the
+                                                           concept of Minimum Backtest Length (MinBTL).
+                                                       The section “Model Complexity” argues how model
+               Figure 1. Overﬁtting a backtest’s results as the
+                                                               complexity leads to backtest overﬁtting. The section
+                               number of trials grows.
+                                                              “Overﬁtting in Absence of Compensation Eﬀects”
+                                                                analyzes overﬁtting in the absence of compensation
+                                                                 eﬀects. The section “Overﬁtting in Presence of
+             Figure 1 provides a graphical representation of
+                                                       Compensation Eﬀects” studies overﬁtting in the
+               Proposition 1. The blue (dotted) line shows the max-
+                                                            presence of compensation eﬀects. The section
+          imum of a particular set of N independent random
+                                                                           “Is Backtest Overﬁtting a Fraud?” exposes how
+             numbers, each following a Standard Normal distri-
+                                                                backtest overﬁtting can be used to commit fraud.
+               bution. The black (continuous) line is the expected
+                                                     The section “A Practical Application” presents
+             value of the maximum of that set of N random
+                                                            a typical example of backtest overﬁtting. The
+            numbers. The red (dashed) line is an upper bound
+                                                                 section “Conclusions” lists our conclusions. The
+              estimate of that maximum. The implication is that it
+                                                           mathematical appendices supply proofs of the
+                    is relatively easy to wrongly select a strategy on the
+                                                                propositions presented throughout the paper.
+               basis of a maximum Sharpe ratio when displayed
+                  IS.
+                                                          Backtest Overﬁtting
+                                                     The design of an investment strategy usually
+                feel suﬃciently rewarded in our eﬀorts if at least
+                                                                begins with a prior or belief that a certain pattern
+               this paper succeeded in drawing the attention
+                                                may help forecast the future value of a ﬁnancial
+              of the mathematical community regarding the
+                                                                         variable. For example, if a researcher recognizes a
+            widespread proliferation of journal publications,
+                                                                     lead-lag eﬀect between various tenor bonds in a
+          many of them claiming proﬁtable investment
+                                                                        yield curve, she could design a strategy that bets on
+               strategies on the sole basis of IS performance. This
+                                                              a reversion towards equilibrium values. This model
+                  is perhaps understandable in business circles, but
+                                                         might take the form of a cointegration equation,
+             a higher standard is and should be expected from
+                                                            a vector-error correction model, or a system of
+            an academic forum.
+                                                                  stochastic diﬀerential equations, just to name a
+           We would also like to raise the question of
+                                                                    few. The number of possible model conﬁgurations
+            whether mathematical scientists should continue
+                                                                          (or trials) is enormous, and naturally the researcher
+              to tolerate the proliferation of investment products
+                                                      would like to select the one that maximizes the
+              that are misleadingly marketed as mathematically
+                                                            performance of the strategy. Practitioners often rely
+             sound. In the recent words of Sir Andrew Wiles,
+                                                     on historical simulations (also called backtests) to
+              One has to be aware now that mathematics       discover the optimal speciﬁcation of an investment
+                can be misused and that we have to protect        strategy. The researcher will evaluate, among
+                      its good name. [29]                              other variables, what are the optimal sample sizes,
+          We encourage the reader to search the Internet for    signal update frequency, entry and proﬁt-taking
+            terms such as “stochastic oscillators”, “Fibonacci    thresholds, risk sizing, stop losses, maximum
+                ratios”, “cycles”, “Elliot wave”, “Golden ratio”,    holding periods, etc.
+              “parabolic SAR”, “pivot point”, “momentum”, and      The Sharpe ratio is a statistic that evaluates an
+             others in the context of ﬁnance. Although such    investment manager’s or strategy’s performance on
+             terms clearly evoke precise mathematical concepts,    the basis of a sample of past returns. It is deﬁned as
+               in fact in almost all cases their usage is scientiﬁcally    the ratio between average excess returns (in excess
+            unsound.                                            of the rate of return paid by a risk-free asset, such as
+
+
+460                                   Notices of the AMS                Volume 61, Number 5
+
+                        ElectronicElectronic copycopy availableavailable at:at: http://ssrn.com/abstract=2308659http://ssrn.com/abstract=2308659
+
+[PAGE 4]
+a government note) and the standard deviation of
+the same returns. Intuitively, this can be interpreted
+as a “return on risk” (or as William Sharpe put it,
+“return on variability”). But the standard deviation
+of excess returns may be a misleading measure
+of variability when returns follow asymmetric or
+fat-tailed distributions or when returns are not
+independent or identically distributed. Suppose
+that a strategy’s excess returns (or risk premiums),
+rt, are independent and identically distributed (IID)
+following a Normal law:
+
+(1)                 rt ∼N (µ, σ 2),
+
+where N represents a Normal distribution with
+mean µ and variance σ 2. The annualized Sharpe
+ratio (SR) can be computed as
+                 µ                            Figure 2. Minimum Backtest Length needed to(2)          SR =  √q,
+               σ                           avoid overﬁtting, as a function of the number of
+                                                                  trials.where q is the number of returns per year (see Lo
+[17] for a detailed derivation of this expression).
+Sharpe ratios are typically expressed in annual                                                  Figure 2 shows the tradeoﬀbetween the number
+terms in order to allow for the comparison of                                                       of trials (N) and the minimum backtest length
+strategies that trade with diﬀerent frequency. The                                                  (MinBTL) needed to prevent skill-less strategies to be
+great majority of ﬁnancial models are built upon the                                                 generated with a Sharpe ratio IS of 1. For instance,
+IID Normal assumption, which may explain why the                                                                                if only ﬁve years of data are available, no more than
+Sharpe ratio has become the most popular statistic    forty-ﬁve independent model conﬁgurations should
+for evaluating an investment’s performance.        be tried. For that number of trials, the expected
+   Since µ, σ are usually unknown, the true value   maximum SR IS is 1, whereas the expected SR OOS
+SR cannot be known for certain. Instead, we can     is 0. After trying only seven independent strategy
+                                                                      ˆµ
+                    =estimate the Sharpe ratio as SR                                √q, where ˆµ    conﬁgurations, the expected maximum SR IS is 1 for                                                                  ˆσ          d
+and ˆσ are the sample mean and sample standard   a two-year long backtest, while the expected SR OOS
+deviation. The inevitable consequence  is that     is 0. The implication is that a backtest which does
+SR calculations are likely to be the subject of    not report the number of trials N used to identify
+substantial estimation errors (see Bailey and López    the selected conﬁguration makes it impossible to
+de Prado [2] for a conﬁdence band and an extension    assess the risk of overﬁtting.
+of the concept of Sharpe Ratio beyond the IID
+Normal assumption).                              suﬃciently large y, (3) provides an approximation
+  From Lo [17] we know that the distribution of the    of the distribution of SR.
+                          d
+estimated annualized Sharpe ratio SR converges      Even for a small number N of  trials,  it is
+             d
+asymptotically (as y →∞) to                            relatively easy to ﬁnd a strategy with a high Sharpe
+                                                          ratio                                                                   IS                                                       but                                                        which                                                                        also                                                                               delivers                                                                             a null Sharpe                                                                                                          ratio
+                 1 + SR22q                                              OOS.                                              To                                                                       illustrate                                                                             this                                                                                point,                                                                              consider                                                      N strategies(3)     SR a-→N   d      SR,   y   ,                with T = yq returns distributed according to a
+                                           Normal law with mean excess returns µ and with
+where y is the number of years used to estimate                                                 standard deviation σ. Suppose that we would like
+SR.2 As y increases without bound, the proba-d                                                 to select the strategy with optimal SR IS, based                               dbility distribution of SR                       approaches a                                  Normal   on one year of observations. A risk we face is        d                                                       SR2
+                                     1+ 2q          choosing a strategy with a high Sharpe ratio IS but
+distribution with mean SR and variance   y    . For a                                               zero Sharpe ratio OOS. So we ask the question,
+                                        how high is the expected maximum Sharpe ratio IS
+2Most performance statistics assume IID Normal returns   among a set of strategy conﬁgurations where the
+and so are normally distributed. In the case of the Sharpe    true Sharpe ratio is zero?
+ratio, several authors have proved that its asymptotic dis-
+                                                         Bailey and López de Prado  [2] derived an
+tribution follows a Normal law even when the returns are
+                                                  estimate of the Minimum Track Record Lengthnot IID Normal. The same result applies to the Information
+Ratio. The only requirement is that the returns be ergodic.   (MinTRL) needed to reject the hypothesis that an
+We refer the interested reader to Bailey and López de Prado    estimated Sharpe ratio is below a certain threshold
+[2].
+
+
+May 2014                             Notices of the AMS                                  461
+
+[PAGE 5]
+                                                         where γ ≈0.5772156649 . . . is the Euler-Mascheroni
+                                                                 constant and N ≫1.
+                                                 An upper bound to (4) is p2 ln[N].3 Figure 1
+                                                                          plots, for various values of N (x-axis), the expected
+                                                             Sharpe ratio of the optimal strategy IS. For example,
+                                                                                           if the researcher tries only N = 10 alternative
+                                                            conﬁgurations of an investment strategy, she is
+                                                            expected to ﬁnd a strategy with a Sharpe ratio
+                                                                           IS of 1.57 despite the fact that all strategies are
+                                                            expected to deliver a Sharpe ratio of zero OOS
+                                                                    (including the “optimal” one selected IS).
+                                                                  Proposition 1 has important implications. As
+                                                                the researcher tries a growing number of strategy
+                                                                conﬁgurations, there will be a nonnull probability
+                                                                of selecting  IS a strategy with null expected
+                                                         performance OOS. Because the hold-out method                      Figure 3. Performance IS vs. OOS before
+                                                         does not take into account the number of trials                               introducing strategy selection.
+                                                          attempted before selecting a model,  it cannot
+                                                                assess the representativeness of a backtest.
+
+             Figure 3 shows the relation between SR IS (x-
+                                              Minimum Backtest Length (MinBTL)                axis) and SR OOS (y-axis) for µ = 0, σ = 1, N =
+                                                                   Let us consider now the case that µ = 0 but y ≠1.             1000, T = 1000. Because the process follows a
+                                                             Then, we can still apply Proposition 1 by rescaling           random walk, the scatter plot has a circular shape
+                                                                the expected maximum by the standard deviation              centered at the point (0, 0). This illustrates the fact
+                                                                of the annualized Sharpe ratio, y−1/2. Thus, the                that, in absence of compensation eﬀects, overﬁtting
+                                                                  researcher is expected to ﬁnd an “optimal” strategy
+              the IS performance (x-axis) has no bearing on the
+                                                              with an IS annualized Sharpe ratio of
+          OOS performance (y-axis), which remains around
+                                                                                (5)
+               zero.                                                    E[max ]
+                                                           N
+                  (let’s say zero). MinTRL was developed to evaluate    ≈y−1/2 (1 −γ)Z−1 1 −1 +γZ−1 1 −1 e−1     .
+             a strategy’s track record (a single realized path,                 N        N
+         N = 1). The question we are asking now is diﬀerent,   Equation (5) says that the more independent the
+            because we are interested in the backtest length    conﬁgurations a researcher tries (N), the more
+            needed to avoid selecting a skill-less strategy     likely she is to overﬁt, and therefore the higher the
+           among N alternative speciﬁcations. In other words,    acceptance threshold should be for the backtested
+               in this article we are concerned with overﬁtting    result to be trusted. This situation can be partially
+             prevention when comparing multiple strategies,    mitigated by increasing the sample size (y). By
+             not in evaluating the statistical signiﬁcance of    solving (5) for y, we obtain the following statement.
+             a single Sharpe ratio estimate. Next, we  will                                                   Theorem  2.  The Minimum  Backtest  Length
+              derive the analogue to MinTRL in the context of                                                              (MinBTL, in years) needed to avoid selecting a
+              overﬁtting, which we will call Minimum Backtest
+                                                                  strategy with an IS Sharpe ratio of E[maxN]
+             Length (MinBTL), since it speciﬁcally addresses the                                                 among N independent strategies with an expected
+            problem of backtest overﬁtting.                                               OOS Sharpe ratio of zero is
+             From (3), if µ = 0 and y = 1, then SR                                        a-→N (0, 1).    (6)                 d
+            Note that because SR = 0, increasing q does not
+             reduce the variance of the distribution. The proof    MinBTL
+              of the following proposition is left for the appendix.
+                                                             1 −1N i +γZ−1h1 −1N e−1i 2    2 ln[N]
+                                                 ≈                                                                            <                                                                                                                                         2 .                                                             (1−γ)Z−1h             Proposition 1. Given a sample of IID random vari-                                                                           E[maxN]                                                                                                          E[maxN]
+               ables, xn ∼Z, n = 1, . . . , N, where Z is the CDF
+                                                               Equation (6) tells us that MinBTL must grow               of the Standard Normal distribution, the expected
+                                                              as the researcher tries more independent model          maximum of that sample, E[maxN] = E[max{xn}],
+                                                            conﬁgurations (N) in order to keep constant the            can be approximated for a large N as
+                                                            expected maximum Sharpe ratio at a given level
+                  E[max ] ≈(1 −γ)Z−1 1 −1
+                       N             N                3See Example 3.5.4 of Embrechts et al. [5] for a detailed
+                 (4)
+                                                                       treatment of the derivation of upper bounds on the maxi-
+                    + γZ−1 1 −1 e−1            mum of a Normal distribution.                           N
+
+
+462                                   Notices of the AMS                Volume 61, Number 5
+
+[PAGE 6]
+E[maxN]. Figure 2 shows how many years of back-
+test length (MinBTL) are needed so that E[maxN]
+is ﬁxed at 1. For instance, if only ﬁve years of data
+are available, no more than forty-ﬁve independent
+model conﬁgurations should be tried or we are
+almost guaranteed to produce strategies with an
+annualized Sharpe ratio IS of 1 but an expected
+Sharpe ratio OOS of zero. Note that Proposition 1
+assumed the N trials to be independent, which
+leads to a quite conservative estimate. If the trials
+performed were not independent, the number of
+independent trials N involved could be derived
+using a dimension-reduction procedure, such as
+Principal Component Analysis.
+  We will examine this tradeoﬀbetween N and
+T in greater depth later in the paper without
+requiring such a strong assumption, but MinBTL    Figure 4. Performance IS vs. performance OOS
+                                                      for one path after introducing strategy selection.gives us a ﬁrst glance at how easy it is to overﬁt by
+merely trying alternative model conﬁgurations. As
+an approximation, the reader may ﬁnd it helpful    Figure 4 provides a graphical representation of
+to remember the upper bound to the minimum   what happens when we select the random walk
+backtest length (in years), MinBTL <  2 ln[N] 2 .       with highest SR IS. The performance of the ﬁrst
+                                        E[maxN]
+  Of course, a backtest may be overﬁt even if it is    half was optimized IS, and the performance of the
+computed on a sample greater than MinBTL. From    second half is what the investor receives OOS. The
+that perspective, MinBTL should be considered   good news is, in the absence of memory, there is
+a necessary, nonsuﬃcient condition to avoid   no reason to expect overﬁtting to induce negative
+overﬁtting. We leave to Bailey et al. [1] the derivation    performance.
+of a more precise measure of backtest overﬁtting.
+                                     maximum Sharpe ratio above 2.6 (see Figure 1).
+Model Complexity                         We suspect, however, that backtested strategies
+How does the previous result relate to model    that signiﬁcantly beat the market typically rely
+complexity? Consider a one-parameter model that   on some combination of valid insight, boosted
+may adopt two possible values (like a switch   by some degree of overﬁtting. Since believing in
+that generates a random sequence of trades) on   such an artiﬁcially enhanced high-performance
+a sample of T observations. Overﬁtting will be    strategy will often also lead to over leveraging,
+diﬃcult, because N = 2. Let’s say that we make   such overﬁtting  is  still very damaging. Most
+the model more complex by adding four more    Technical Analysis strategies rely on ﬁlters, which
+parameters so that the total number of parameters    are sets of conditions that trigger trading actions,
+becomes 5, i.e., N = 25 = 32. Having thirty-two    like the random switches exempliﬁed  earlier.
+independent sequences of random trades greatly    Accordingly, extra caution is warranted to guard
+increases the possibility of overﬁtting.               against overﬁtting in using Technical Analysis
+  While a greater N makes overﬁtting easier,    strategies, as well as in complex nonparametric
+it makes perfectly ﬁtting harder. Modern super-   modeling tools, such as Neural Networks and
+computers can only perform around 250 raw    Kernel Estimators.
+computations per second, or less than 258 raw      Here is a key concept that investors generally
+computations per year. Even if a trial could be                                                    miss:
+reduced to a raw computation, searching N = 2100
+                                     A researcher that does not report the num-
+will take us 242 supercomputer-years of compu-
+                                                    ber of trials N used to identify the selected
+tation (assuming a 1 Pﬂop/s system, capable of
+                                                        backtest conﬁguration makes it impossible1015 ﬂoating-point operations per second). Hence,
+                                                             to assess the risk of overﬁtting.a skill-less brute force search is certainly impos-
+sible. While it is hard to perfectly ﬁt a complex      Because N  is almost never  reported,  the
+skill-less strategy, Proposition 1 shows that there   magnitude of overﬁtting in published backtests is
+is no need for that. Without perfectly ﬁtting a   unknown. It is not hard to overﬁt a backtest (indeed,
+strategy or making it overcomplex, a researcher    the previous theorem shows that it is hard not to), so
+can achieve high Sharpe ratios. A relatively simple   we suspect that a large proportion of backtests pub-
+strategy with just seven binomial independent para-    lished in academic journals may be misleading. The
+meters oﬀers N = 27 = 128 trials, with an expected
+
+
+May 2014                             Notices of the AMS                                  463
+
+[PAGE 7]
+                                                        Overﬁtting in Absence of Compensation
+                                                       Eﬀects
+                                                              Regardless of how realistic the prior being tested
+                                                                                          is, there is always a combination of parameters
+                                                                     that is optimal. In fact, even if the prior is false, the
+                                                                  researcher is very likely to identify a combination of
+                                                             parameters that happens to deliver an outstanding
+                                                            performance IS. But because the prior is false, OOS
+                                                         performance will almost certainly underperform
+                                                              the backtest’s results. As we have described,
+                                                                       this phenomenon, by which IS results tend to
+                                                          outperform the OOS results, is called overﬁtting.
+                                                                                          It occurs because a suﬃciently large number of
+                                                             parameters are able to target speciﬁc data points—
+                                                             say by chance buying just before a rally and
+                                                               shorting a position just before a sell-oﬀ—rather
+                      Figure 5. Performance degradation after
+                                                            than triggering trades according to the prior.
+                  introducing strategy selection in absence of
+                                                     To illustrate this point, suppose we generate
+                                   compensation eﬀects.
+                                        N Gaussian random walks by drawing from a
+                                                            Standard Normal distribution, each walk having a
+                                                                      size T. Each performance path mτ can be obtained
+             Figure 5 illustrates what happens once we add a
+                                                               as a cumulative sum of Gaussian draws
+            “model selection” procedure. Now the SR IS ranges
+            from 1.2 to 2.6, and it is centered around 1.7. Al-     (7)        ∆mτ = µ + σετ,
+             though the backtest for the selected model generates   where the random shocks ετ are IID distributed
+              the expectation of a 1.7 SR, the expected SR OOS    ετ ∼Z, τ = 1, . . . , T. Suppose that each path has
+                   is unchanged and lies around 0.                  been generated by a particular combination of
+                                                              parameters, backtested by a researcher. Without
+              situation is not likely to be better among practi-    loss of generality, assume that µ = 0, σ = 1, and
+               tioners.                                   T = 1000, covering a period of one year (with about
+                 In our experience, overﬁtting is pathological    four observations per trading day). We divide these
+             within the ﬁnancial industry, where proprietary    paths into two disjoint samples of equal size, 500,
+            and commercial software is developed to estimate   and call the ﬁrst one IS and the second one OOS.
+             the combination of parameters that best ﬁts (or,      At the moment of choosing a particular pa-
+           more precisely, overﬁts) the data. These tools allow    rameter combination as optimal, the researcher
+              the user to add ﬁlters without ever reporting how   had access to the IS series, not the OOS. For each
+             such additions increase the probability of backtest   model conﬁguration, we may compute the Sharpe
+              overﬁtting. Institutional players are not immune    ratio of the series IS and compare it with the
+              to this pitfall. Large mutual fund groups typically    Sharpe ratio of the series OOS. Figure 3 shows the
+              discontinue and replace poorly performing funds,    resulting scatter plot. The p-values associated with
+              introducing survivorship and selection bias. While    the intercept and the IS performance (SR a priori)
+             the motivation of this practice may be entirely    are respectively 0.6261 and 0.7469.
+              innocent, the eﬀect is the same as that of hiding     The problem of overﬁtting arises when the
+             experiments and inﬂating expectations.             researcher uses the IS performance (backtest) to
+           We are not implying that those technical ana-   choose a particular model conﬁguration, with the
+                lysts, quantitative researchers, or fund managers    expectation that conﬁgurations that performed
+              are “snake oil salesmen”. Most likely they most    well in the past will continue to do so in the
+             genuinely believe that the backtested results are    future. This would be a correct assumption if the
+              legitimate or that adjusted fund oﬀerings bet-   parameter conﬁgurations were associated with a
+               ter represent future performance. Hedge fund    truthful prior, but this is clearly not the case of the
+            managers are often unaware that most backtests    simulation above, which is the result of Gaussian
+             presented to them by researchers and analysts may   random walks without trend (µ = 0).
+             be useless, and so they unknowingly package faulty       Figure 4 shows what happens when we select the
+             investment propositions into products. One goal   model conﬁguration associated with the random
+              of this paper is to make investors, practitioners,   walk with highest Sharpe ratio IS. The performance
+            and academics aware of the futility of considering    of the ﬁrst half was optimized IS, and the per-
+              backtest without controlling for the probability of   formance of the second half is what the investor
+              overﬁtting.                                          receives OOS. The good news is that under these
+
+
+464                                   Notices of the AMS                Volume 61, Number 5
+
+[PAGE 8]
+conditions, there is no reason to expect overﬁtting
+to induce negative performance. This is illustrated
+in Figure 5, which shows how the optimization
+causes the expected performance IS to range be-
+tween 1.2 and 2.6, while the OOS performance will
+range between -1.5 and 1.5 (i.e., around µ, which
+in this case is zero). The p-values associated with
+the intercept and the IS performance (SR a priori)
+are respectively 0.2146 and 0.2131. Selecting an
+optimal model IS had no bearing on the perfor-
+mance OOS, which simply equals the zero mean of
+the process. A positive mean (µ > 0) would lead
+to positive expected performance OOS, but such
+performance would nevertheless be inferior to the
+one observed IS.
+
+                                                  Figure 6. Performance degradation as a result ofOverﬁtting in Presence of Compensation
+                                                   strategy selection under compensation eﬀects
+Eﬀects
+                                                      (global constraint).
+Multiple  causes  create compensation  eﬀects
+in  practice, such as overcrowded investment
+opportunities, major corrections, economic cycles,
+                                                  Figure 6 shows that adding a single global con-
+reversal of ﬁnancial ﬂows, structural breaks,
+                                                           straint causes the OOS performance to be negative
+bubble bursts, etc. Optimizing a strategy’s param-
+                                               even though the underlying process was trendless.
+eters (i.e., choosing the model conﬁguration that
+                                                        Also, a strongly negative linear relation between
+maximizes the strategy’s performance IS) does
+                                               performance IS and OOS arises, indicating that the
+not necessarily lead to improved performance
+                                         more we optimize IS, the worse the OOS perfor-
+(compared to not optimizing) OOS, yet again
+                                         mance of the strategy.
+leading to overﬁtting.
+   In some instances, when the strategy’s perfor-
+                                   We may rerun the same Monte Carlo experiment
+mance series lacks memory, overﬁtting leads to no
+                                                 as before, this time on the recentered variables
+improvement in performance OOS. However, the
+                                              Somewhat scarily, adding this single globalpresence of memory in a strategy’s performance   ∆mτ.
+                                                    constraint causes the OOS performance to be
+series induces a compensation eﬀect, which in-
+                                                   negative even though the underlying process was
+creases the chances for that strategy to be selected
+                                                      trendless. Moreover, a strongly negative linear
+IS, only to underperform the rest OOS. Under those
+                                                      relation between performance IS and OOS arises,
+circumstances, IS backtest optimization is in fact
+                                                     indicating that the more we optimize  IS, the
+detrimental to OOS performance.4
+                                              worse the OOS performance. Figure 6 displays this
+                                                   disturbing pattern. The p-values associated with
+Global Constraint
+                                                  the intercept and the IS performance (SR a priori)
+Unfortunately, overﬁtting rarely has the neutral    are respectively 0.5005 and 0, indicating that the
+implications discussed in the previous section. Our    negative linear relation between IS and OOS Sharpe
+previous example was purposely chosen to exhibit    ratios is statistically signiﬁcant.
+a globally unconditional behavior. As a result, the     The following proposition is proven in the
+OOS data had no memory of what occurred IS.   appendix.
+Centering each path to match a mean µ removes
+                                                 Proposition 3. Given two alternative conﬁgura-one degree of freedom:
+                                                        tions (A and B) of the same model, where σ ISA =
+                                    σ OOSA  = σISB = σ OOSB   imposing a global constraint(8)        =    + µ −1 TX      ∆mτ  ∆mτ     T   ∆mτ.
+                              τ=1               µA = µB, implies that
+                                                               (9)     SRAIS > SRBIS a SRAOOS < SRBOOS.
+
+
+
+
+4Bailey et al. [1] propose a method to determine the degree
+to which a particular backtest may have been compromised
+by the risk of overﬁtting.
+
+
+May 2014                             Notices of the AMS                                  465
+
+[PAGE 9]
+                                                               Proposition 4. The half-life period of a ﬁrst-order
+                                                                 autoregressive process with autoregressive coeﬃ-
+                                                                        cient ϕ ∈(0, 1) occurs at
+                                                                        (12)         τ = −ln[2]                                                                                 ln[ϕ].
+
+                                                                For example, if ϕ = 0.995, it takes about 138
+                                                                observations to retrace half of the deviation from
+                                                               the equilibrium. This introduces another form of
+                                                          compensation eﬀect, just as we saw in the case of
+                                                              a global constraint. If we rerun the previous Monte
+                                                                Carlo experiment, this time for the autoregressive
+                                                             process with µ = 0, σ = 1, ϕ = 0.995, and plot
+                                                              the pairs of performance IS vs. OOS, we obtain
+                                                                 Figure 7.
+                                                        The p-values associated with the intercept and
+              Figure 7. Performance degradation as a result of    the IS performance (SR a priori) are respectively
+                strategy selection under compensation eﬀects    0.4513 and 0, conﬁrming that the negative linear
+                                  (ﬁrst-order serial correlation).    relation between IS and OOS Sharpe ratios is again
+                                                                            statistically signiﬁcant. Such serial correlation
+                                                                                is a well-known statistical feature, present in
+              Figure 7 illustrates that a serially correlated perfor-    the performance of most hedge fund strategies.
+           mance introduces another form of compensation    Proposition 5 is proved in the appendix.
+               eﬀects, just as we saw in the case of a global con-                                                               Proposition 5. Given two alternative conﬁgura-
+                straint. For example, if ϕ = 0.995, it takes about                                                                       tions (A and B) of the same model, where σ ISA =
+           138 observations to recover half of the deviation     A       B     B
+                                             σ OOS = σ IS = σ OOS and the performance series fol-
+            from the equilibrium. We have rerun the previous                                                                lows the same ﬁrst-order autoregressive stationary
+            Monte Carlo experiment, this time on an autore-                                                                      process,
+               gressive process with µ = 0, σ = 1, ϕ = 0.995, and
+                                                                        (13)    SRAIS > SRBIS a SRAOOS < SRBOOS.            have plotted the pairs of performance IS vs. OOS.
+             Recentering a series  is one way to introduce      Proposition 5 reaches the same conclusion as
+           memory into a process, because some data points    Proposition 3 (a compensation eﬀect) without
+                will now compensate for the extreme outcomes    requiring a global constraint.
+            from other data points. By optimizing a backtest,
+             the researcher selects a model conﬁguration that    Is Backtest Overﬁtting a Fraud?
+              spuriously works well IS and consequently is likely    Consider an investment manager who emails his
+              to generate losses OOS.                            stock market forecast for the next month to 2nx
+                                                                prospective investors, where x and n are positive
+               Serial Dependence                                     integers. To half of them he predicts that markets
+                                                                            will go up, and to the other half that markets will            Imposing a global constraint  is not the only
+                                                       go down. After the month passes, he drops from               situation in which overﬁtting actually is detrimental.
+                                                                   his list the names to which he sent the incorrect           To cite another (less restrictive) example, the same
+                                                                        forecast, and sends a new forecast to the remaining             eﬀect happens if the performance series is serially
+                                                            2n−1x names. He repeats the same procedure n              conditioned, such as a ﬁrst-order autoregressive
+                                                                  times, after which only x names remain. These x              process,
+                                                                  investors have witnessed n consecutive infallible
+               (10)  ∆mτ = (1 −ϕ)µ + (ϕ −1)ϕmτ−1 + σετ       forecasts and may be extremely tempted to give this
+                or, analogously,                                   investment manager all of their savings. Of course,
+                                                                       this is a fraudulent scheme based on random
+               (11)   mτ = (1 −ϕ)µ + ϕmτ−1 + σετ,                                                                  screening: The investment manager is hiding the
+            where the random shocks are again IID distributed    fact that for every one of the x successful witnesses,
+             as ετ ∼Z. The following proposition is proven in    he has tried 2n unsuccessful ones (see Harris [8, p.
+             the appendix. The number of observations that    473] for a similar example).
+                    it takes for a process to reduce its divergence     To avoid falling for this psychologically com-
+            from the long-run equilibrium by half is known as    pelling fraud, a potential investor needs to consider
+             the half-life period, or simply half-life (a familiar    the economic cost associated with manufacturing
+              physical concept introduced by Ernest Rutherford    the successful experiments, and require the invest-
+               in 1907).                                  ment manager to produce a number n for which
+
+
+466                                   Notices of the AMS                Volume 61, Number 5
+
+[PAGE 10]
+the scheme is uneconomic. One caveat is, even if n
+is too large for a skill-less investment manager, it
+may be too low for a mediocre investment manager
+who uses this scheme to inﬂate his skills.
+   Not reporting the number of trials (N) involved
+in identifying a successful backtest is a similar kind
+of fraud. The investment manager only publicizes
+the model that works but says nothing about all the
+failed attempts, which as we have seen can greatly
+increase the probability of backtest overﬁtting.
+  An analogous situation occurs in medical re-
+search, where drugs are tested by treating hundreds
+or thousands of patients; however, only the best
+outcomes are publicized. The reality is that the
+selected outcomes may have healed in spite of
+(rather than thanks to) the treatment or due to    Figure 8. Backtested performance of a seasonal
+a placebo eﬀect (recall Proposition 1). Such be-    strategy (Example 6).
+havior is unscientiﬁc—not to mention dangerous
+and expensive—and has led to the launch of the
+alltrials.net project, which demands that all results   We have generated a time series of 1000 daily prices
+(positive and negative) for every experiment are    (about four years) following a random walk. The
+made publicly available. A step forward in this    PSR-Stat of the optimal model conﬁguration is 2.83,
+direction is the recent announcement by Johnson &    which implies a less-than 1 percent probability that
+Johnson that it plans to open all of its clinical test    the true Sharpe ratio is below 0. Consequently, we
+results to the public [14]. For a related discussion    have been able to identify a plausible seasonal strat-
+of reproducibility in the context of mathematical    egy with an SR of 1.27 despite the fact that no true
+computing, see Stodden et al. [25].                  seasonal eﬀect exists.
+   Hiding trials appears to be standard procedure                                                 investment strategy among hedge funds is to proﬁt
+in ﬁnancial research and ﬁnancial journals. As                                            from such seasonal eﬀects.
+an aggravating factor, we know from the section                                                   For example, a type of question often asked
+“Overﬁtting in Presence of Compensation Eﬀects”                                            by hedge fund managers follows the form: “Is
+that backtest overﬁtting typically has a detrimental                                                   there a time interval every  [  ] when  I would
+eﬀect on future performance due to the compensa-                                              have made money on a regular basis?” You
+tion eﬀects present in ﬁnancial series. Indeed, the                                      may replace the blank space with a word like
+customary disclaimer “past performance is not an    day, week, month, quarter, auction, nonfarm
+indicator of future results” is too optimistic in the                                                       payroll (NFP) release, European Central Bank (ECB)
+context for backtest overﬁtting. When investment    announcement, presidential election year, . . . . The
+advisers do not control for backtest overﬁtting,    variations are as abundant as they are inventive.
+good backtest performance is an indicator of    Doyle and Chen [4] study the “weekday eﬀect” and
+negative future results.                           conclude that it appears to “wander”.
+                                            The problem with this line of questioning
+A Practical Application                                 is that there is always a time interval that is
+Institutional asset managers follow certain in-    arbitrarily “optimal” regardless of the cause. The
+vestment procedures on a regular basis, such as   answer to one such question is the title of a very
+rebalancing the duration of a ﬁxed income port-   popular investment classic, Do Not Sell Stocks on
+folio (PIMCO); rolling holdings on commodities   Monday, by Hirsch [12]. The same author wrote an
+(Goldman Sachs, AIG, JP Morgan, Morgan Stanley);   almanac for stock traders that reached its forty-ﬁfth
+investing or divesting as new funds ﬂow at the end    edition in 2012 and he is also a proponent of the
+of the month (Fidelity, BlackRock); participating in    “Santa Claus Rally”, the quadrennial political/stock
+the regular U.S. Treasury Auctions (all major invest-   market cycle, and investing during the “Best
+ment banks); delevering in anticipation of payroll,    Six Consecutive Months” of the year, November
+FOMC or GDP releases; tax-driven eﬀects around    through April. While these ﬁndings may indeed
+the end of the year and mid-April; positioning for   be caused by some underlying seasonal eﬀect,
+electoral cycles, etc. There are a large number of      it is easy to demonstrate that any random data
+instances where asset managers will engage in    contains similar patterns. The discovery of a
+somewhat predictable actions on a regular basis.    pattern IS typically has no bearing OOS, yet again is
+It should come as no surprise that a very popular    a result of overﬁtting. Running such experiments
+
+
+May 2014                             Notices of the AMS                                  467
+
+[PAGE 11]
+             without controlling for the probability of backtest    Results in Example 6” for the implementation of
+              overﬁtting will lead the researcher to spurious    this experiment in the Python language. Similar
+               claims. OOS performance will disappoint, and the    experiments can be designed to demonstrate
+             reason will not be that “the market has found    overﬁtting in the context of other eﬀects, such
+             out the seasonal eﬀect and arbitraged away the    as trend following, momentum, mean-reversion,
+               strategy’s proﬁts.” Rather, the eﬀect was never    event-driven eﬀects, etc. Given the facility with
+               there; instead, it was just a random pattern that   which elevated Sharpe ratios can be manufactured
+             gave rise to an overﬁtted trading rule. We will     IS, the reader would be well advised to remain
+                illustrate this point with an example.                highly suspicious of backtests and of researchers
+                                                 who fail to report the number of trials attempted.
+           Example 6. Suppose that we would like to iden-
+                 tify the optimal monthly trading rule given four
+                                                       Conclusions
+            customary parameters: Entry day, Holding period,
+                                                            While the literature on regression overﬁtting is             Stop loss, and Side. Side deﬁnes whether we will
+                                                                    extensive, we believe that this is the ﬁrst study             hold long or short positions on a monthly basis.
+                                                                 to discuss the issue of overﬁtting on the subject             Entry day determines the business day of the
+                                                                of investment simulations (backtests) and  its           month when we enter a position. Holding period
+                                                                negative eﬀect on OOS performance. On the              gives the number of days that the position is held.
+                                                                 subject of regression overﬁtting, the great Enrico              Stop loss determines the size of the loss (as a mul-
+                                                            Fermi once remarked (Mayer et al. [20]):                tiple of the series’ volatility) that triggers an exit
+              for that month’s position. For example, we could            I remember my friend Johnny von Neumann
+              explore all nodes that span the set {1, . . . , 22} for      used to say, with four parameters I can ﬁt
+             Entry day, the set {1, . . . , 20} for Holding period,      an elephant, and with ﬁve I can make him
+             the set {0, . . . , 10} for Stop loss, and {−1, 1} for       wiggle his trunk.
+               Side. The parameter combinations involved form      The same principle applies to backtesting, with
+             a four-dimensional mesh of 8,800 elements. The   some interesting peculiarities. We have shown that
+             optimal parameter combination can be discovered    backtest overﬁtting is diﬃcult indeed to avoid. Any
+            by computing the performance derived by each    perseverant researcher will always be able to ﬁnd a
+             node.                                              backtest with a desired Sharpe ratio regardless of
+                    First, we generated a time series of 1,000 daily    the sample length requested. Model complexity is
+               prices (about four years), following a random walk.    only one way that backtest overﬁtting is facilitated.
+              Figure 8 plots the random series, as well as the    Given that most published backtests do not report
+            performance associated with the optimal param-   the number of trials attempted, many of them
+               eter combination: Entry day = 11, Holding period   may be overﬁtted. In that case,  if an investor
+           = 4, Stop loss = −1 and Side = 1. The annualized    allocates capital to them, performance will vary: It
+             Sharpe ratio is 1.27.                                       will be around zero if the process has no memory,
+               Given the elevated Sharpe ratio, we could con-   but it may be signiﬁcantly negative if the process
+             clude that this strategy’s performance is signiﬁ-   has memory. The standard warning that “past
+              cantly greater than zero for any conﬁdence level.   performance is not an indicator of future results”
+             Indeed, the PSR-Stat is 2.83, which implies a less    understates the risks associated with investing
+            than 1 percent probability that the true Sharpe   on overﬁt backtests. When ﬁnancial advisors do
+               ratio is below 0.5 Several studies in the practition-   not control for overﬁtting, positive backtested
+              ers and academic literature report similar results,   performance will often be followed by negative
+            which are conveniently justiﬁed with some ex-post    investment results.
+             explanation (“the posterior gives rise to a prior”).    We have derived the expected maximum Sharpe
+           What this analysis misses is an evaluation of the    ratio as a function of the number of trials (N) and
+              probability that this backtest has been overﬁt to   sample length. This has allowed us to determine
+              the data, which is the subject of Bailey et al. [1].      the Minimum Backtest Length (MinBTL) needed to
+                                                             avoid selecting a strategy with a given IS Sharpe
+                 In this practical application we have illustrated                                                                          ratio among N trials with an expected OOS Sharpe
+           how simple it is to produce overﬁt backtests when                                                                          ratio of zero. Our conclusion is that the more trials
+            answering common investment questions, such                                                            a ﬁnancial analyst executes, the greater should
+             as the presence of seasonal eﬀects. We refer the                                                         be the IS Sharpe ratio demanded by the potential
+             reader to the appendix section “Reproducing the                                                                      investor.
+                                              We strongly suspect that such backtest over-              5The Probabilistic Sharpe Ratio (or PSR) is an extension to
+                                                                  ﬁtting is a large part of the reason why so many                the SR. Nonnormality increases the error of the variance
+                 estimator, and PSR takes that into consideration when de-    algorithmic or systematic hedge funds do not live
+                termining whether an SR estimate is statistically signiﬁcant.   up to the elevated expectations generated by their
+               See Bailey and López de Prado [2] for details.              managers.
+
+
+468                                   Notices of the AMS                Volume 61, Number 5
+
+[PAGE 12]
+  We would feel suﬃciently rewarded in our eﬀorts       master of the mint, and a certiﬁably rational
+if this paper succeeds in drawing the attention of      man, fared less well. He sold his £7,000 of
+the mathematical community to the widespread       stock in April for a proﬁt of 100 percent.
+proliferation of journal publications, many of       But something induced him to reenter the
+them claiming proﬁtable investment strategies on      market at the top, and he lost £20,000. “I
+the sole basis of in-sample performance. This is      can calculate the motions of the heavenly
+understandable in business circles, but a higher       bodies,” he said, “but not the madness of
+standard is and should be expected from an       people.”
+academic forum.
+  A depressing parallel can be drawn between   Appendices
+today’s ﬁnancial academic research and the situa-   Proof of Proposition 1
+tion denounced by economist and Nobel Laureate
+                                             Embrechts et al. [5, pp. 138–147] show that the
+Wassily Leontief writing in Science (see Leontief
+                                      maximum value (or last order statistic) in a sample
+[16]):
+                                                   of independent random variables following an
+  A dismal performance                           exponential distribution converges asymptotically
+           . . . “What economists revealed most       to a Gumbel distribution. As a particular case, the
+    clearly was the extent  to which  their      Gumbel distribution covers the Maximum Domain
+   profession lags intellectually.” This edi-                                                   of Attraction of the Gaussian distribution, and
+    torial comment by the leading economic                                                    therefore it can be used to estimate the expected
+   weekly (on the 1981 annual proceedings of                                                  value of the maximum of several independent
+   the American Economic Association) says,                                         random Gaussian variables.
+    essentially, that the “king is naked.” But no                                          To see how, suppose there is a sample of IID
+   one taking part in the elaborate and solemn                                          random variables, zn ∼Z, n = 1, . . . , N, where Z is
+   procession of contemporary U.S. academic                                                 the CDF of the Standard Normal distribution. To
+   economics seems to know it, and those who                                                     derive an approximation for the sample maximum,
+   do don’t dare speak up.                                         maxn = max{zn}, we apply the Fisher-Tippett-
+        [. . .]                                          Gnedenko theorem to the Gaussian distribution
+      [E]conometricians ﬁt algebraic functions                                           and obtain that
+   of all possible shapes to essentially the
+                                                   " maxN −α   #   same          sets              of                data                     without                             being                                     able to        (14)    N→∞Problim         β   ≤x = G[x],   advance,             in             any                   perceptible                            way,                                 a system-
+    atic understanding of the structure and the      where
+   operations of a real economic system.                                                   • G[x] = e−e−x is the CDF for the Standard
+        [. . .]                                               Gumbel distribution.
+     That state is likely to be maintained as                                                   • α = Z−1 h 1 −1N i, β = Z−1 h 1 −1N e−1i −α,   long as tenured members of leading eco-
+                                                  and Z−1 corresponds to the inverse of the
+   nomics departments continue to exercise
+                                                      Standard Normal’s CDF.
+    tight control over the training, promotion,
+   and research activities of their younger        The normalizing constants (α, β) are derived in
+    faculty members and, by means of peer       Resnick [22] and Embrechts et al. [5]. The limit of
+    review, of the senior members as well.           the expectation of the normalized maxima from a
+                                                     distribution in the Gumbel Maximum Domain of  We hope that our distinguished colleagues will
+                                                     Attraction (see Proposition 2.1(iii) in Resnick [22])follow this humble attempt with ever-deeper and
+                                                                ismore convincing analysis. We did not write this
+paper to settle a discussion. On the contrary, our                " maxN −α #
+                                                        (15)         lim          = γ,wish is to ignite a dialogue among mathematicians            N→∞E    β
+and a reﬂection among investors and regulators.
+                                            where γ is the Euler-Mascheroni constant, γ ≈
+We should do well also to heed Newton’s comment
+                                            0.5772156649 . . .. Hence, for N suﬃciently large,
+after he lost heavily in the South Seas bubble; see
+                                                 the mean of the sample maximum of standard
+[21]:
+                                               normally distributed random variables can be
+   For those who had realized big losses or                                              approximated by
+    gains, the mania redistributed wealth. The                                                        (16)
+    largest honest fortune was made by Thomas      E[max ]
+   Guy, a stationer turned philanthropist, who          N
+   owned £54,000 of South Sea stock in April     ≈α+γβ = (1 −γ)Z−1 1 −1 +γZ−1 1 −1 e−1
+   1720 and sold it over the following six weeks                     N        N
+    for £234,000. Sir Isaac Newton, scientist,      where N > 1.
+
+
+May 2014                             Notices of the AMS                                  469
+
+[PAGE 13]
+             Proof of Proposition 3                         which implies the additional constraint that ϕ ∈
+            Suppose there are two random samples (A and    (0, 1).
+              B) of the same process {∆mτ}, where A and B    Proof of Proposition 5              are of equal size and have means and standard
+              deviations µA, µB, σ A, σ B. A fraction δ of each   Suppose that we draw two samples (A and B) of
+            sample is called IS, and the remainder is called    a ﬁrst-order autoregressive process and generate
+            OOS, where for simplicity we have assumed that   two subsamples of each. The ﬁrst subsample is
+          σ ISA = σ OOSA  = σ ISB = σ OOS.B   We would like to    called IS and is comprised of τ = 1, . . . , δT, and the
+             understand the implications of a global constraint    second subsample is called OOS and is comprised
+           µA = µB.                                           of τ = δT + 1, . . . , T, with δ ∈(0, 1) and T an
+                    First, we note that µA = δµAIS + (1 −δ)µAOOS    integer multiple of δ. For simplicity, let us assume
+
+                                                                                               IS                                                               A = σ OOSA  = σ ISB = σ OOS.B   From Proposition 4,            and µB = δµBIS + (1 −δ)µBOOS. Then, µAIS > µAOOS a    that σ
+                                                                              (18), we obtain
+           µAIS > µA a µAOOS < µA. Likewise, µBIS > µBOOS a
+                                                                        (22)    EδT [mT ] −mδT = (1 −ϕT )(µ −mδT ).
+           > µB a                                 µB.            µBIS                      µBOOS <
+                                                           Because 1 −ϕT > 0, σ ISA = σ IS,B  SRAIS > SRBIS a                Second,                      because                                 of                                  the global constraint µA = µB,
+                       (1−δ)                (1−δ)                mAδT > mBδT . This means that the OOS of A
+           µAIS +  δ  µAOOS = µBIS +  δ  µBOOS and µAIS −µBIS =    begins with a seed that is greater than the seed
+                 (1−δ)
+                 δ  (µBOOS −µAOOS). Then, µAIS > µBIS a µAOOS <    that initializes the OOS of B. Therefore, mAδT >
+                                                 A      mBδT a EδT [mAT ]−mAδT < EδT [mBT ]−mBδT . Because            µBOOS. We can divide this expression by σ IS > 0,
+             with the implication that                   σ ISB = σ OOS,B   we conclude that
+               (17)    SRAIS > SRBIS a SRAOOS < SRBOOS              (23)    SRAIS > SRBIS a SRAOOS < SRBOOS
+                                                 µAIS
+                                                      A , etc. Note that   Reproducing the Results in Example 6            where we have denoted SRAIS = σIS
+           we did not have to assume that ∆mτ is IID, thanks   Python code implementing the experiment de-
+              to our assumption of equal standard deviations.                                                                scribed in “A Practical Application” can be found
+           The same conclusion can be reached without                                                       athttp://www.quantresearch.info/Software.
+            assuming equality of standard deviations; however,                                                       htm and at http://www.financial-math.org/
+             the proof would be longer but no more revealing                                                          software/.
+               (the point of this proposition is the implication of
+              global constraints).                                                     Acknowledgments
+
+                                              We are indebted to the editor and two anonymous             Proof of Proposition 4
+                                                                  referees who peer-reviewed this article for the
+             This proposition computes the half-life of a ﬁrst-                                                                    Notices of the American Mathematical Society. We
+             order autoregressive process. Suppose there is a                                                                are also grateful to Tony Anagnostakis (Moore
+           random variable mτ that takes values of a sequence                                                                            Capital), Marco Avellaneda (Courant Institute, NYU),
+              of observations τ ∈{1, . . . , ∞}, where
+                                                                   Peter Carr (Morgan Stanley, NYU), Paul Embrechts
+               (18)    mτ = (1 −ϕ)µ + ϕmτ−1 + σετ           (ETH Zürich), Matthew D. Foreman (University
+                                                                of California, Irvine), Jeﬀrey Lange (Guggenheim            such that the random shocks are IID distributed
+                                                                         Partners), Attilio Meucci (KKR, NYU), Natalia Nolde             as ετ ∼N(0, 1). Then
+                                                                       (University of British Columbia ad ETH Zürich), and
+                        τ→∞E0[mτ]lim     = µ                   Riccardo Rebonato (PIMCO, University of Oxford).
+                    if and only if ϕ ∈(−1, 1). In particular, from Bailey   The opinions expressed in this article are the
+            and López de Prado [3] we know that the expected    authors’ and they do not necessarily reﬂect the
+              value of this process at a particular observation τ    views of the Lawrence Berkeley National Laboratory,
+                 is                                         Guggenheim Partners, or any other organization.
+                                                No particular investment or course of action is
+               (19)     E0[mτ] = µ(1 −ϕτ) + ϕτm0.                                                       recommended.
+            Suppose that the process is initialized or reset
+               at some value m0 ≠µ. We ask the question, how   References
+          many observations must pass before                        [1] D.  Bailey,   J.  Borwein,  M.  López de Prado
+                              µ + m0                       and  J. Zhu, The  probability  of  backtest  over-
+               (20)         E0[mτ] =        ?                             ﬁtting,   2013,  working   paper,   available   at                                  2
+                                                                     http://ssrn.com/abstract=2326253.
+               Inserting (20) into (19) and solving for τ, we obtain                                                                                              [2] D. Bailey and M. López de Prado, The Sharpe ratio
+                                                                        eﬃcient frontier, Journal of Risk 15(2) (2012), 3–44.               (21)           τ = −ln[2]                                   ln[ϕ],                              Available at http://ssrn.com/abstract=1821643.
+
+
+470                                   Notices of the AMS                Volume 61, Number 5
+
+[PAGE 14]
+ [3]              , Drawdown-based stop-outs and the triple         experimental mathematics, February 2013. Available
+    penance rule, 2013, working paper. Available at          at   http://www.davidhbailey.com/dhbpapers/
+    http://ssrn.com/abstract=2201302.                  icerm-report.pdf.
+ [4] J. Doyle and C. Chen, The wandering weekday ef-     [26] G. Van Belle and K. Kerr, Design and Analysis of
+     fect in major stock markets, Journal of Banking and         Experiments in the Health Sciences, John Wiley & Sons.
+    Finance 33 (2009), 1388–1399.                            [27] H. White, A  reality check  for  data  snooping,
+ [5] P. Embrechts, C. Klueppelberg and T. Mikosch,        Econometrica 68(5), 1097–1126.
+     Modelling Extremal Events, Springer-Verlag, New York,     [28] S. Weiss and C. Kulikowski, Computer Systems That
+    2003.                                                     Learn: Classiﬁcation and Prediction Methods from
+ [6] R. Feynman, The Character of Physical Law, The MIT           Statistics, Neural Nets, Machine Learning and Expert
+     Press, 1964.                                                Systems, 1st edition, Morgan Kaufman,1990.
+ [7] J. Hadar and W. Russell, Rules for ordering uncertain     [29] A. Wiles, Financial greed threatens the good name
+     prospects, American Economic Review 59 (1969), 25–         of maths, The Times (04 Oct 2013). Available online
+     34.                                                            at http://www.thetimes.co.uk/tto/education/
+ [8] L. Harris, Trading and Exchanges: Market  Mi-        article3886043.ece.
+     crostructure for Practitioners, Oxford University Press,
+    2003.
+ [9] C. Harvey and Y. Liu, Backtesting, working paper,
+    SSRN, 2013, http://ssrn.com/abstract=2345489.
+[10] C. Harvey, Y. Liu, and H. Zhu,  . . . and the cross-
+     section of expected returns, working paper, SSRN,
+    2013, http://ssrn.com/abstract=2249314.
+[11] D. Hawkins, The problem of overﬁtting, Journal of
+    Chemical Information and Computer Science 44 (2004),
+    1–12.
+[12] Y. Hirsch, Don’t Sell Stocks on Monday, Penguin Books,
+     1st edition, 1987.
+[13] J. Ioannidis, Why most published research ﬁndings
+     are false, PLoS Medicine 2(8), August 2005.
+[14] H. Krumholz Give the data to the people, New
+    York  Times,  February  2,  2014.  Available  at
+    http://www.nytimes.com/2014/02/03/opinion/
+    give-the-data-to-the-people.html.
+[15] D. Leinweber and K. Sisk, Event driven trading and
+     the “new news”, Journal of Portfolio Management 38(1)
+     (2011), 110–124.
+[16] W. Leontief, Academic economics, Science Magazine
+     (July 9, 1982), 104–107.
+[17] A. Lo, The statistics of Sharpe ratios, Financial An-
+     alysts Journal 58 4 (Jul/Aug, 2002). Available at
+    http://ssrn.com/abstract=377260.
+[18] M. López de Prado and A. Peijan, Measuring the
+     loss potential of hedge fund strategies, Journal of
+     Alternative Investments 7(1), (2004), 7–31. Available
+     at http://ssrn.com/abstract=641702.
+[19] M. López de Prado and M. Foreman, A mixture
+     of Gaussians approach  to mathematical  portfo-
+      lio oversight: The EF3M algorithm, working paper,
+   RCC  at Harvard  University,  2012.  Available  at
+    http://ssrn.com/abstract=1931734.
+[20] J. Mayer, K. Khairy, and J. Howard, Drawing an
+    elephant with four complex parameters, American
+     Journal of Physics 78(6) (2010).
+[21] C. Reed, The damn’d South Sea, Harvard Magazine
+    (May–June 1999).
+[22] S. Resnick, Extreme Values, Regular Variation and
+     Point Processes, Springer, 1987.
+[23] J. Romano and M. Wolf, Stepwise multiple testing as
+    formalized data snooping, Econometrica 73(4) (2005),
+    1273–1282.
+[24] F. Schorfheide and K. Wolpin, On the use of hold-
+    out samples for model selection, American Economic
+    Review 102(3) (2012), 477–481.
+[25] V. Stodden, D. Bailey,  J. Borwein, R. LeVeque,
+    W. Rider, and W. Stein, Setting the default to
+     reproducible: Reproducibility in computational and
+
+
+May 2014                             Notices of the AMS                                  471

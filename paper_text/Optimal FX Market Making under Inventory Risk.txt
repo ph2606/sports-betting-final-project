@@ -1,0 +1,710 @@
+[PAGE 1]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+
+
+ Optimal FX Market Making under Inventory Risk and
+           Adverse Selection Constraints
+
+                              Sid Ghoshal
+                                    University of Oxford
+                              siddartha.ghoshal@eng.ox.ac.uk
+
+                         Stephen Roberts
+                                    University of Oxford
+                                     sjrob@robots.ox.ac.uk
+
+
+
+
+                                         Abstract
+
+
+         Market makers are faced with the complex optimisation problem of maximising their proﬁt while
+      minimising their inventory risk. This dual mandate exerts inherently opposing forces: the simplest way to
+      avoid inventory is to maintain wide bid-offer spreads, yet doing so will prevent deal ﬂow and therefore
+      neuter proﬁtability. Conversely, showing competitive two-way prices will ensure heavier volumes on
+      both sides of the order book and therefore lock-in gains from clients crossing the bid-offer spread, but
+      opens the hazard of building up sizeable inventory risk if trade ﬂow is temporally asymmetric. A further
+      concern for dealers is the threat of adverse selection by market professionals exploiting an information
+      advantage. Existing work in ﬁnance and stochastic control provides a robust framework for dynamically
+      balancing inventory, but does little to address adverse selection in over-the-counter markets where prices
+      can be individually tuned for each counterparty. In this paper, we consider a data-driven adjustment to
+       the state-of-the-art model based on the entropy of a high-dimensional, probabilistic representation of each
+       connection’s behaviour. Bayesian community detection techniques are applied to an adjacency matrix of
+       broker distributions, to reduce dimensionality and guarantee the scalability of our approach. Our entropy
+       metrics provide a basis for measuring adverse selection and feed directly into the Hamilton-Jacobi-Bellman
+      framework for deriving inventory-optimal bid and offer prices.
+
+               I.  Introduction                  refers to instances where knowledgeable coun-
+                                                      terparties take advantage of information asym-
+Market makers are tasked with providing liq-   metry to build an (eventually) lucrative po-
+uidity by quoting two prices, their bid and     sition, to the detriment of the market maker.
+offer, reﬂecting where they are willing to buy     Stochastic control models pioneered by Ho and
+and sell a ﬁxed quantity of an asset. The gap     Stoll [1] and further developed by Avellaneda
+between these prices, locked in as proﬁt for    and Stoikov [2] provide a robust framework for
+every contemporaneous buy and sell order of    dynamically adjusting bid and offer prices to
+identical size, exists to compensate dealers for   manage asset-speciﬁc inventory risk. Adverse
+their two main sources of risk: inventory risk     selection, however, is a client-speciﬁc risk that
+and adverse selection risk.                      does not readily ﬁt with the Hamilton-Jacobi-
+   Inventory risk stems from variations in the    Bellman approach.
+value of the asset held, and adverse selection       Over-the-counter (OTC) FX markets differ
+
+
+                                                                                     1
+
+[PAGE 2]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+
+materially from the on-exchange equity mar-   where  s  is an exogeneously-deﬁned mid-
+kets studied in the stochastic control litera-   market price, and pb and pa are the market
+ture. Liquidity providers in an OTC setting can    maker’s bid and ask prices. We follow Avel-
+show different quotes to each connection, rely-    laneda and Stoikov in the assumption that
+ing on their knowledge of the counterparty’s    a market maker’s buy and sell limit orders
+price elasticity to optimise bid and offer levels.    are ﬁlled at a Poisson rate λb(δb) and λa(δa),
+This paper explores Bayesian representations    decreasing functions of their respective argu-
+of client behaviour, in an effort to quantify ad-    ments.
+verse selection and thereby adjust bid and of-      Using the utility framework of Ho and Stoll,
+fer prices punitively for counterparties whose   we parametrise the following value function
+trades are deemed opportunistic.                  for the market maker:
+  We produce multivariate Automatic Rele-
+vance Determination (ARD) Gaussian Process
+                                                       v(x, s, q, t) = Et[−exp(−γ(x + qST))]    (3)representations of each connection, pairing
+trade activity with market data metrics such as
+time of day, volatility, short-term returns and    where x is the market maker’s wealth, s is the
+bid-offer spread. We show evidence of pre-   mid price, q is the current inventory (which
+dictability in client responses to market condi-    can be negative, when shorting), γ is a dis-
+tions, and construct a matrix of Bhattacharyya    count factor and t is time. We can then deﬁne
+distances to measure the similarity of connec-    the market maker’s reservation or indifference
+tions to each other.  In the interest of scala-    bid and ask prices rb and ra using the relations
+bility, we reduce the problem’s dimensional-
+ity by clustering counterparties with a com-                                                v(x −rb(s, q, t), s, q + 1, t) = v(x, s, q, t)   (4)
+munity detection technique built on Bayesian
+non-Negative Matrix Factorisation. Finally, we
+demonstrate how the notion of counterparty      v(x + ra(s, q, t), s, q −1, t) = v(x, s, q, t)   (5)
+entropy can be integrated into an augmented
+Hamilton-Jacobi-Bellman (HJB) framework to
+                                          The average of rb and ra in Equations (4)
+control for both inventory risk and adverse
+                                       and (5) provides the market maker’s indiffer-
+selection risk simultaneously.
+                                             ence price, and constitutes a divergence from
+                                                  the fair mid that decreases monotonically with
+II.  Stochastic Control Modelling    inventory level.
+
+We begin with a summary of the state-of-the-
+art model for managing inventory risk, deﬁn-     II.  The    Hamilton-Jacobi-Bellman
+ing the value function of the market maker   Equation
+before drawing on results in control theory lit-
+erature to solve for utility maximisation.        The dealer’s objective is given by the value
+                                                   function:
+
+I.  The Market Maker Value Function
+                                                    u(x, s, q, t) = max Et[−exp(−γ(x + qST))]
+                                                                                                δb,δa
+We deﬁne the market maker’s bid-mid and                                                                                                            (6)
+mid-offer price gaps as
+                                         where δb and δa can be thought of as feedback
+                                                       controls. A key ﬁnding in the works of Ho and
+                   δb = s −pb                 (1)     Stoll was the application of the dynamic pro-
+                                        gramming principle to show that the function u
+                   δa = pa −s                 (2)    solves the following Hamilton-Jacobi-Bellman
+
+
+2
+
+[PAGE 3]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+
+equation:                                 and
+
+
+    +                               x −s +         + max                                 u(s,     ut                       λb(δb)                                                  δb,          2σ2uss1
+                            δb                                                                      ra(s,                                                                                q, t) −s                                                         δaHJB =
+     q +          1,             t) −u(s,                       x,                           q,                            t) + max                                            u(s,                                λa(δa)                                                        1                                                                            λa(δa)                                 +                                          δa                                                              log                                                                                                   (11)                                                              1 −γ
+                                              γ           (∂λa/∂δ)(δa)
+  u(s,x + sx,+q,δa,T)q=−1,−exp(−γ(xt) −u(s, x,+q, qs))t) = 0          The HJB solution to inventory risk manage-
+                                                  (7)    ment can be viewed as a two-step process: ﬁrst
+                                                 solve for rb(s, q, t) and ra(s, q, t) in the PDE
+   Avellaneda and Stoikov’s choice of an ex-    given by Equation (9), then solve Equations
+ponential utility allows a simpliﬁcation of the     (10) and (11) to obtain the optimal distance
+problem. They postulate that there exists a     δbHJB(s, q, t) and δaHJB(s, q, t) between the mid
+function θ such that                               price and the optimal bid and ask quotes.
+
+
+  u(x, s, q, t) = −exp(−γx) exp(−γθ(s, q, t))                                                                               III.  Data
+                                                  (8)
+
+                                                In this section we describe both the market   Direct substitution of Equation (8) into
+                                       maker dataset provided by BNP Paribas, andEquation (7) yields the following system for
+                                                 the market metrics derived from EURUSD tick
+θ:
+                                               data for the same time period.
+
+        1                              λb(δb)    +                                     s + max          2σ2θss −1                2σ2γθ2                                   γ                                                                I.  The                                 BNP                                                     Paribas                                              FX                                                               Dataset                                         δb
+
+                                                  λa(δa)                                        The                                   BNP                                                         Paribas                                                                  dataset                                                                        includes                                                                           a large set                   −rb))     1                 + max      −exp(γ(s             −δb                                        γ   θt                                                 δa                                                   of FX trades executed by their market makers
+                                                   in                                                    2013.                                              The                                                       complete                                                                       dataset                                                                         counts                                                                                    916,683
+     1 −exp(−γ(s           + δa −ra))  = 0
+                                                  trades                                                                   split                                                              across                                                              12 currencies,                                                                          with                                                          EURUSD
+                                         by                                                         far                                                      the                                                 most                                                                    actively                                                                   traded                                                                                            pair.                                                                             For                                                                                each
+           q, T) = qs   θ(s,
+                                                    trade, the raw dataset provides a timestamp,
+                                                  (9)
+                                                the currency pair, deal size, whether it was a
+   Furthermore, applying Equation (8) to the
+                                        buy or a sell, as well as both client ID and bro-
+reservation bid and ask prices given by Equa-
+                                              ker ID numbers. In the analysis that follows,
+tions (4) and (5) yields the relations
+                                   we restrict our attention to EURUSD trades
+                                               taking place in January 2013 - this dataset’s
+   δbHJB = s −rb(s, q, t)                          dealcount is 35,001, large enough to remain
+                                                   representative. Figure 1 overleaf provides the
+                      !           1              λb(δb)                   full currency breakdown for the January 2013     +   log  1 −γ                   (10)
+         γ           (∂λb/∂δ)(δb)             subset.
+
+
+
+
+
+                                                                                     3
+
+[PAGE 4]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+
+
+
+
+Figure 1: Histogram of tradecount by currency in the BNP Paribas dataset for January 2013, N=74958. Note that 46.7% of
+                                            trade orders are in EURUSD.
+
+
+II. EURUSD Tick Data                       at various timescales. A systematic positive
+                                                    bias in an individual connection’s trade returns
+The EURUSD tick dataset provided by Pepper-
+                                       would provide strong evidence of adverse se-
+stone Group provides high-frequency bid and
+                                                        lection.
+offer prices for 2013. The tick data for January
+2013 alone contains 10,133,449 entries and al-
+lows us to produce 7 market-derived features
+                                               1-minute Return(t) =
+to better understand client sensitivity.
+                                          EURUSD(mid)t+1m −EURUSD(mid)t
+                                                                                                   (14)
+   • The time of day feature returns the deci-              EURUSD(mid)t
+mal part of each timestamp, to track intraday
+seasonality effects.
+   • Two volatility metrics were constructed      1-hour Return(t) =
+to account for tradeﬂow reacting to volatility      EURUSD(mid)t+1h −EURUSD(mid)t
+                                                                                                   (15)(’lagging volatility’) and tradeﬂow anticipating                                                  EURUSD(mid)t
+volatility (’leading volatility’). In particular, a
+signiﬁcant bias in the latter may indicate an
+information advantage as the client’s activity
+                                                1-day Return(t) =
+foreshadows rapid change in market condi-
+tions.                                       EURUSD(mid)t+1d −EURUSD(mid)t                                                                                                   (16)
+                                                  EURUSD(mid)t
+  1-minute Lagging Volatility(t) =
+                                              • Finally, we include bid-offer spreads as a
+vu 1                                               2    proxy for market-wide volumes.
+u            EURUSD(mid)t −µt∈[t,t+1m]t  ∑  Nt t∈[t,t+1m]
+                                                   Bid-Offer Spread(t) =
+  1-minute Leading Volatility(t) =           (12)
+                                                  EURUSD(offer)t −EURUSD(bid)t   (17)
+vu 1                                               2
+u            EURUSD(mid)t −µt∈[t−1m,t]t  ∑  Nt t∈[t−1m,t]                                      IV. ARD Gaussian Processes
+
+                                               (13)
+                                 We brieﬂy recall the fundamentals of Gaussian
+   • Three return metrics were devised to    Process modelling before describing ARD ker-
+search for systematic bias in a client’s returns    nels and the associated relevance metrics. For
+
+
+4
+
+[PAGE 5]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+
+a comprehensive treatment of Gaussian Pro-    adapt to any given dataset: inputs with large
+cesses, please refer to [4].                        length scales cause only marginal variations in
+  A Gaussian Process is a collection of ran-    the covariance function, whereas inputs with
+dom variables, any ﬁnite subset of which has a    small length scales effectively magnify those
+joint Gaussian distribution. Gaussian Processes     variations. We can therefore deﬁne the rele-
+are fully parametrised by a mean function and    vance score of each feature to be the reciprocal
+covariance function, or kernel. Given a real     of its input length scale, and rank the salience
+process f(x), we write the Gaussian Process as:    of inputs by descending relevance.
+
+                f (x) ∼GP(m(x), k(x, x′))       (18)
+                                                        Relevance Scorei = l−1i          (22)
+where functions m(x) and k(x,x’) are respec-
+tively the mean and covariance functions:
+                              A limitation of the methodology is that
+                                                the relevance scores only provide a relative
+             m(x) = E[ f (x)]            (19)                                              ranking between the features of a model. Two
+                                                 equally meaningless inputs will have relevance
+   k(x, x′) = E[( f (x) −m(x))                     scores of similar magnitude, as would two
+            × ( f (x′) −m(x′))]  (20)    equally meaningful features. On their own,
+                                                these scores provide little basis for perform-
+                                              ing dimensionality reduction.  To overcome   Inputs are commonly centred during pre-
+                                                           this, we include in each regression a baselineprocessing, meaning the GP  is fully speci-
+                                                  feature composed of standard Gaussian noise.ﬁed by the form of its kernel. A common
+                                    Any meaningful input should have a relevancechoice in ﬁnance is the Matérn 3/2 kernel, a
+                                                score that is at least two orders of magnitudeonce-differentiable function exhibiting the low
+                                                  greater than noise, so by computing the Rele-smoothness typical of return series.
+                                            vance Ratio we can determine which features
+                                                 are objectively informative.          √
+                      3|x −x′|
+   k(x, x′) = σ2f  1 +                                        l              √
+                              3|x −x′|                                Relevance Scorei
+          × exp −                (21)      Relevance Ratioi =                         (23)
+                                                     l                                   Relevance Scorenoise
+
+
+   The covariance function above employs an
+isotropic Manhattan norm as the similarity               V.  Application
+measure between two vectors in input space.
+This assumes that a single, global character-    In this section, we detail the results of our
+istic length scale l can appropriately evaluate     analysis. After preliminary client data explo-
+proximity in all input dimensions. Even with     ration using kernel density estimators (KDEs),
+all inputs normalised to the same scale during   we determine signiﬁcant correlations within
+pre-processing, it is likely that they will con-    the dataset and evaluate the ARD framework’s
+tain varying levels of information on the output     ability to identify salience. With Gaussian Pro-
+variable, motivating the use of input-speciﬁc    cesses constructed for each connection, we de-
+characteristic length scales.                  ﬁne the Bhattacharyya distance between GPs
+   In ARD kernels, the scalar input length    and derive a similarity matrix on which to ap-
+scale l of Equation (21) is replaced with a vector    ply community detection techniques. Finally,
+input length scale with a different li for each   we measure the entropy of each counterparty’s
+input dimension i, allowing for different dis-   dynamics and relate our ﬁndings to the HJB
+tance measures. These hyperparameters will    solution of Avellaneda and Stoikov.
+
+
+                                                                                     5
+
+[PAGE 6]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+I.  Kernel Density Estimation
+
+
+
+Univariate KDEs offer a ﬁrst glimpse into ag-
+gregate client behaviour, by viewing tradeﬂow
+as a point process and assigning a Gaussian
+density to each datum. The resulting distri-
+bution provides a probabilistic interpretation
+of client activity, and yields intuitive ﬁndings
+concerning intraday seasonality and short-term
+return bias.
+
+   • Aggregate client activity peaks twice in
+the day, at 10:00 GMT and 15:00 GMT, reﬂect-     Figure 3: Kernel density estimator of January 2013 trades
+                                                                 in EURUSD as a function of 1-minute returns, with scatter
+ing high points in tradeﬂow for London and
+                                                                              of individual trades, n=35001.
+New York respectively. These spikes appear in
+Figure 2.
+
+                                                             II.  Correlation Analysis
+
+                            A signiﬁcant drawback of using kernel den-
+                                                       sity estimation lies in its application of equal
+                                             Gaussian densities for each trade, regardless of
+                                                         size. In reality, meaningful learning of client
+                                            behaviour would require forecasting the cir-
+                                           cumstances in which their largest orders are
+                                                 placed. We conduct two separate correlation
+                                                  analyses, to account for the fact that certain
+                                                  features are sensitive to the polarity of traded
+                                          volumes (that is, whether the order is a buy or
+                                             a sell).
+
+                                              • Correlation between each market return
+                                               metric and signed deal size. The results are
+Figure 2: Kernel density estimator of January 2013 trades    provided in Table 1.
+ in EURUSD as a function of time of day, with scatter of
+individual trades, n=35001. The x-axis follows Greenwich       • Correlation between volatility, time of day,
+  Mean Time. For graphical clarity, each datapoint was      bid-offer spread and absolute deal size. The
+           jittered vertically with Gaussian noise.             results are provided in Table 2.
+
+
+                                  We brieﬂy outline a methodology for de-
+                                             termining whether an observed sample corre-
+                                                    lation is signiﬁcant. Given two independent
+   • Client 1-min returns tend to be slightly   random variables xi and y of length N with
+                                          sample correlation r, the statisticnegative, reﬂecting that price takers must pay
+half the spread to transact. Their trades exe-              √
+                                                                                r × N −2
+cute at a small disadvantage to mid-market,                          t = √                     (24)
+                                                                  1 −r2and are therefore biased to remain that way in
+the very short term (Figure 3).                         is t-distributed with N-2 degrees of freedom.
+
+
+6
+
+[PAGE 7]
+Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                     September 2015 • S. Ghoshal, S. Roberts
+
+
+
+
+            Table 1: Correlation between Return Metrics and Signed Deal Size, N=35001.
+
+
+                                  Correlation              p-value
+
+            Feature        Pearson  Spearman  Pearson   Spearman
+
+           1-min Return   −0.0379  −0.0405  < 0.0001  < 0.0001
+            1-hour Return  −0.0061   −0.0178     0.2516         0.0009
+            1-day Return   +0.0032   −0.0024     0.5494         0.6589
+
+
+
+
+
+ Table 2: Correlation between Time of Day, Volatility, Bid-Offer Spread and Absolute Deal Size, N=35001.
+
+
+                                       Correlation              p-value
+
+       Feature                  Pearson  Spearman  Pearson   Spearman
+
+      Time of Day             +0.0366  +0.0134  < 0.0001  < 0.0001
+      1-min Lagging Volatility  +0.0345  +0.0801  < 0.0001  < 0.0001
+      1-min Leading Volatility  +0.0478  +0.0570  < 0.0001  < 0.0001
+       Bid-Offer Spread          −0.0047   +0.0247     0.3835    < 0.0001
+
+
+
+
+
+ Table 3: Relevance across all polarity-sensitive features measured on the January 2013 dataset, N=35001.
+
+
+                       Mean Relevance       Spearman
+
+              Feature         Score   Ratio     Correlation    p-value
+
+             1-min Return    0.2      4.1       −0.0405   < 0.0001
+              1-hour Return   0.2      6.4       −0.0178        0.0009
+              1-day Return    0.2      4.5       −0.0024        0.6589
+
+
+
+
+
+Table 4: Relevance across all polarity-insensitive features measured on the January 2013 dataset, N=35001.
+
+
+                           Mean Relevance         Spearman
+
+       Feature                   Score      Ratio      Correlation    p-value
+
+      Time of Day                 5.8        11        +0.0134   < 0.0001
+      1-min Lagging Volatility   1.2 × 106   2.3 × 106  +0.0801   < 0.0001
+      1-min Leading Volatility   7.4 × 106   1.3 × 107  +0.0570   < 0.0001
+       Bid-Offer Spread           0.56        1.0        +0.0247   < 0.0001
+
+
+
+
+
+                                                                                  7
+
+[PAGE 8]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+
+Values for the (r,N) pair that land outside the
+95% conﬁdence interval of the t-distribution
+violate the null hypothesis of independence,
+providing a methodology known as Student’s
+t-testing for identifying signiﬁcant correlations
+in a dataset.  P-values are derived from  t-
+distribution tables and measure the probability
+that an uncorrelated data sample will yield a
+t-statistic as or more extreme than the value
+of t obtained from Equation (24). Common
+signiﬁcance thresholds are p-values of 0.05 or
+0.01.
+
+
+                                                           Figure 4: Signed Deal Volume for broker connection #1 as
+   Applying t-tests to our dataset, it quickly
+                                                          a function of 1-minute Returns (x-axis, in basis points)
+emerges that client activity is hugely sensitive     and 1-hour Returns (y-axis, in basis points), for connection
+to market movements, signalled by numerous      #1. Large buy orders correlate with negative 1-min returns
+p-values under 0.01 by several orders of mag-       (peak red area corresponding to -0.09% return on the
+                                                                    x-axis) and large sell orders correlate with positive 1-min
+nitude in Tables 1 and 2.                                                              returns (peak blue area corresponding to +0.05% on the
+                                                                           x-axis). This matches the earlier ﬁnding of a strong
+                                                                negative correlation between signed deal size and
+                                                                          1-minute returns.
+
+
+
+
+
+III.  ARD-GP Representation of Coun-
+terparty Behaviour
+
+
+
+
+The discovery of multiple signiﬁcant correla-
+tions in our dataset motivates the search for a
+robust, multivariate probabilistic technique for
+modelling each connection’s dynamics. ARD
+Gaussian Processes learn the respective rele-
+vances of each feature, and should therefore
+rank highest those features whose correlation     Figure 5: Absolute Deal Volume for broker connection #1
+                                                                as a function of Time of Day (x-axis, in hours) and
+is most signiﬁcant.                                                        1-minute Leading Volatility (y-axis, in percentage points).
+                                                                   In the case of this connection, time of day was
+  We produce an ARD Gaussian Process for        insigniﬁcant (correlation of +0.0128 with a p-value of
+                                                                     0.4137), with leading volatility dominating the forecast
+each individual connection, and provide in Ta-                                                                   distribution (correlation of +0.0435 with a p-value of
+bles 3 and 4 the mean Relevance Score and             0.0054, below the signiﬁcance level of 0.01).
+Relevance Ratio for each feature, alongside its
+Spearman correlation and p-value. Separate
+tables were necessary to reﬂect that certain      The ARD ranking tallies broadly with the
+features were regressed on, and correlate with,    results from the earlier correlation analysis on
+signed deal size whereas others were measured    absolute deal sizes, but diverges materially
+against absolute deal size.                    from our expectations for the 1-min, 1-hour
+
+
+8
+
+[PAGE 9]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+
+          Table 5: Bayesian NMF clustering on the January 2013 dataset across 25 broker connections.
+
+
+        Bayesian NMF Cluster                               Nodes Assigned
+
+        Cluster 1 with membership score > 0.8                    2, 3, 6, 7, 8, 15, 17, 19, 24
+        Cluster 2 with membership score > 0.8   1, 9, 10, 13, 14, 16, 18, 20, 21, 22, 23, 25
+        Overlap between Clusters                                                   4, 5, 11, 12
+
+
+
+and 1-day feature set. It nevertheless allows us       In our case,  f and g are GPs deﬁned by
+to produce meaningful bivariate visualisations     their mean and covariance functions. Detrend-
+of client sensitivity to its dominant features.    ing during data preprocessing ensures that the
+As an example of the framework’s ability to     distributions have zero mean, µ f = µg = 0.
+represent behaviour, we provide heatmaps of    This simpliﬁes the distance calculation to
+broker connection #1’s response to its most
+salient features in Figures 4 and 5.
+                                             
+                                                               1          |Σ|
+                                        DB( f (x), g(x)) =   log                   (27)
+IV.  Community Detection                                  2   q |Σ f ||Σg| 
+
+Having constructed Gaussian Processes for
+                                         whereeach connection, we wish to measure the sim-
+ilarity between behaviours in order to cluster
+                                                Σ f + Σg
+counterparties and apply different adjustments              Σ =                       (28)
+                                                                   2
+to the HJB bid-offer price based on the clus-
+ter’s entropy. In light of the extreme relevance      The Bhattacharyya distance for GPs is there-
+scores found in the GPs regressing absolute    fore only dependent on the choice of kernel
+volumes on time of day, volatility and bid-offer   and optimised hyperparameters. Estimation
+spread, we have adopted those features as our    of each connection’s GP hyperparameters is
+basis for community detection.                  achieved by maximising the marginal likeli-
+                                        hood of the data, and allows us to compute co-
+                                                 variance matrices for each connection on a com-IV.1  Bhattacharyya Distance
+                                  mon input scale. Formation of a Bhattacharyya
+Detection of clusters requires the creation of a     similarity structure follows straightforwardly
+matrix of distances that capture the pairwise    from Equation (27), calculating the inverse dis-
+overlap between any two connections [5]. GPs    tance between each GP pair.
+by deﬁnition have a probabilistic interpretation,
+as a draw from a probability distribution over
+                                                  IV.2  Bayesian Non Negative Matrix Factori-
+functions. Amidst the wide range of available
+                                                       sation
+symmetric distance measures, we choose the
+Bhattacharyya distance as our measure of simi-    Inverse Bhattacharyya distances between GPs
+larity between two probability distributions f    allows us to map the client dataset to a rela-
+and g, deﬁned as                                   tional space, where every pair i, j of connec-
+                                                    tions is given a similarity value sij. The result-
+                                                ing similarity matrix S is input as an adjacency
+ DB( f (x), g(x)) = −log(BC( f (x), g(x))) (25)                                                    structure to a Bayesian non-negative matrix fac-
+where BC( f (x),g(x)) is the Bhattacharyya Co-    torisation (NMF) scheme [6], a method with a
+efﬁcient given by                                 history of successful application to a diverse
+                                                      set of community detection challenges rang-
+                                                ing from social network structure in ecological
+                Z q
+   BC( f (x), g(x)) =         f (x)g(x)dx     (26)    systems to maritime anomaly detection [7].
+
+
+                                                                                     9
+
+[PAGE 10]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+
+            Table 6: 2-medoids clustering on the January 2013 dataset across 25 broker connections.
+
+
+           2-medoids Cluster Centroid                     Nodes Assigned
+
+            Centroid 3                                2, 3, 4, 5, 6, 7, 11, 12, 15, 17, 19, 24
+            Centroid 9                        1, 8, 9, 10, 13, 14, 16, 18, 20, 21, 22, 23, 25
+
+
+
+   In Bayesian NMF, communities are viewed
+as explanatory latent variables for the observed
+link weights in the adjacency structure. The
+latent clustering is produced by a factorisation
+S ≃WH, S ∈RN×N, W ∈RN×K, H ∈RK×N.
+The inner rank K and factor elements wik, hkj
+are derived by Maximum a Posteriori infer-
+ence, and provide a soft, probabilistic member-
+ship score for clients to each community. The
+framework is therefore capable of recognising
+communities that overlap.
+
+  We apply Bayesian NMF to the January         Figure 6: Dendrogram of the broker connections.
+2013 EURUSD dataset comprised of 25 bro-     Connections 14, 13, 10, 9, 16, 18, 20, 21, 1, 23, 25, 22, 4, 5,
+ker connections, and provide the resulting clas-     11 and 12 present a very small distance from one another,
+                                                              identiﬁed by the low (<0.05) height at which the tree
+siﬁcation in Table 5.  Bayesian NMF ﬁnds 2      unites them. These brokers correspond exactly to Cluster
+main classes, with 4 nodes whose membership       2 from Bayesian NMF, with the addition of the nodes
+scores suggest overlap between the 2 commu-    found in the overlap. The remaining nodes can be thought
+nities.                                                           of as a single other cluster, matching Cluster 1 from
+                                                                              Bayesian NMF.
+
+
+
+IV.3  Comparison to Benchmark Classiﬁers
+
+
+For completeness, we compare the results to a
+hierarchical clustering dendrogram approach
+and k-medoids, with k set equal to the number
+                                                   In line with Bayesian NMF’s discovery ofof communities found by Bayesian NMF.
+                                            2 communities, we test our matrix of Bhat-
+  We deﬁne brieﬂy the method of construc-
+                                               tacharyya distances on a 2-medoids clustering
+tion for dendrograms:
+                                                 algorithm, and report its results in Table 6.
+   • The initial partition P0 assigns each node
+to its own class.
+                                                   In both cases, Bayesian NMF ﬁnds almost
+   • The ﬁnal partition Pn−1 (the conjoint par-
+                                                    identical classes (node 8 is the sole exception)
+tition) is one all-inclusive node class.
+                                           with two additional beneﬁts.  Firstly,  it de-
+   • Pk+1 is deﬁned from Pk by uniting a sin-    termines the appropriate number of classes
+gle pair of subsets in Pk. Union is pursued on      k, obviating the need to hand-tune. Secondly,
+the basis of closeness, where we minimise the                                                                its soft partitioning allows the identiﬁcation
+maximum distance between any pair within                                                  of nodes at the intersection of the classes. A
+the joined subsets (we minimise the subset ’di-                                                  graphical representation of the network’s topol-
+ameter’).                                        ogy is provided in Figure 7, summarising the
+   The resulting tree is provided in Figure 6.      results of community detection.
+
+
+10
+
+[PAGE 11]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+
+                                                   of entropy, yielding broker-speciﬁc solutions
+
+                                                                    δb(i) = δbHJB + f (H(i))        (30)
+
+                                        and
+
+                                                                    δa(i) = δaHJB + f (H(i))        (31)
+
+
+                                          where the functional form of f is an open ques-
+  Figure 7: Colour-coded visualisation of the adjacency       tion, warranting further research.
+   structure constructed from Bhattarcharya distances          In the event of an extremely large number
+   between each pair of broker connections. Note that       of counterparties in the dataset, dimensional-
+Bayesian NMF placed nodes 4, 5, 11 and 12 in the overlap
+                                                         ity can be ﬁrst reduced by the community de-between the two clusters, and that the 2-medoid approach
+ assigned nodes 3 and 9 as centroids for their respective      tection methods outlined earlier, and entropy
+                            clusters.                     adjustments calculated on representative cen-
+                                                    troids for each cluster.
+
+V.  Integration to the Hamilton-Jacobi-             VI.  Conclusions
+Bellman Framework
+                                          Adverse selection poses a client-speciﬁc risk
+Adverse selection represents opportunistic ar-    hitherto insufﬁciently addressed by the liter-
+bitrage of information asymmetry. We assume    ature on optimal market making. Our work
+that such information advantages do not occur    provides a scalable basis for representing client
+with any regularity in our polarity-insensitive    behaviour and quantifying adverse selection
+GP regressions, and that adverse selection will    via entropy.  Designed to ﬁt within the dif-
+therefore manifest as a highly entropic proba-    ferential equations governing dynamic inven-
+bility distribution over our feature space. For    tory risk management, our result bridges the
+each connection i modelled as an ARD GP with     state-of-the-art in stochastic control with novel
+covariance matrix Ki ∈RD×D, we compute its    techniques from the machine learning commu-
+differential entropy as                                  nity. Far from being distinct research domains,
+                                                  the feedback mechanisms of control theory are
+                1                            a recurrent theme of reinforcement learning,
+         H(i) =   log (2πe)D|Ki|        (29)                2                         where further work may provide an elegant
+                                                 synthesis to the market making challenges of
+                                               inventory risk and adverse selection.
+  Low entropy counterparties exhibit pre-
+dictable trading activity, which eases the mar-
+ket maker’s task of managing inventory risk.              References
+Conversely,  highly entropic counterparties
+complicate the market maker’s task and may,      [1] Ho, T. and Stoll, H. (1981). Optimal dealer
+in our assumption, indicate an adverse selec-         pricing under transactions and return un-
+tor. We therefore rank our list of counterparties          certainty.  Journal of Financial Economics,
+by ascending entropy, and postulate that the         1981.
+inventory-optimal bid-mid and mid-offer solu-
+tions δbHJB and δaHJB from Equations (10) and      [2] Avellaneda, M. and Stoikov,  S. (2008).
+(11) should be adjusted on a per-connection        High-frequency trading in a limit order
+basis as a monotonically increasing function  f         book. Quantitative Finance, 2008.
+
+
+                                                                                    11
+
+[PAGE 12]
+   Optimal FX Market Making under Inventory Risk and Adverse Selection Constraints
+                        September 2015 • S. Ghoshal, S. Roberts
+
+
+ [3] Guéant, O., Lehalle, C. and Fernandez-          cesses. Knowledge and Information Systems,
+     Tapia, J. (2013). Dealing with the inven-       March 2014, Volume 38.
+     tory risk: a solution to the market making
+                                                           [6] Psorakis, I., Roberts, S., Ebden, M. et al.    problem. Mathematics and Financial Eco-
+                                                            (2011). Overlapping community detection     nomics, 2013.
+                                                 using Bayesian non-negative matrix fac-
+ [4] Rasmussen, C. and Williams, C. (2006).          torisation. Physical Review 83, 2011.
+    Gaussian Processes for Machine Learning.
+                                                           [7] Psorakis,  I., Rezek,  I., Roberts, S. et al.    MIT Press.
+                                                          (2012).  Inferring social network struc-
+ [5] Smith, M., Reece, S., Roberts, S., Psorakis,         ture in ecological systems from spatio-
+       I. and Rezek,  I. (2014).  Maritime Ab-        temporal data streams. Journal of the Royal
+    normality Detection using Gaussian Pro-          Society Interface 9, 2012.
+
+
+
+
+
+12

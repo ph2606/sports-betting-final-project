@@ -1,0 +1,936 @@
+[PAGE 1]
+SIAM J. FINANCIAL MATH.                                           c⃝2012 Society for Industrial and Applied Mathematics
+Vol. 3, pp. 163–181
+
+
+           Optimal Trading with Stochastic Liquidity and Volatility∗
+
+                                    Robert Almgren†
+
+
+
+Abstract. We consider the problem of mean-variance optimal agency execution strategies, when the market li-
+           quidity and volatility vary randomly in time. Under speciﬁc assumptions for the stochastic processes
+           satisﬁed by these parameters, we construct a Hamilton–Jacobi–Bellman equation for the optimal
+           cost and strategy. We solve this equation numerically and illustrate optimal strategies for varying
+            risk aversion. These strategies adapt optimally to the instantaneous variations of market quality.
+
+Key words. optimal trading, dynamic programming, mean-variance optimization
+
+AMS subject classiﬁcations. 49L20, 35Q93
+
+DOI. 10.1137/090763470
+
+
+  A fundamental part of agency algorithmic trading in equities and other asset classes is
+trade scheduling. Given a trade target, that is, a number of shares that must be bought or
+sold before a ﬁxed time horizon, trade scheduling means planning how many shares will be
+bought or sold by each time instant between the beginning of trading and the horizon. This
+is done so as to optimize some measure of execution quality, usually measured as the ﬁnal
+average execution price relative to some benchmark price.
+   One of the most popular benchmarks is the “arrival price,” that is, the price prevailing
+in the market at the time the order was received into the trading system. The diﬀerence
+between the execution price and this pretrade price is the “implementation shortfall” [12] or
+“slippage.” For example, if we are buying, then if the price drops in the course of execution,
+the trade cost will be negative; if the price rises, whether because of the impact of this trade
+or random market ﬂuctuation, then the trade cost will be positive. The realized execution
+cost is thus inevitably a random variable whose properties are to be tailored.
+   Grinold and Kahn [8] and Almgren and Chriss [1] suggested that the optimal trajectory
+could be determined by balancing market impact cost, which leads toward slow trading so
+as to reduce the expected value of execution cost, against market volatility which pushes
+toward rapid completion of the order so as to reduce the variance of the execution cost.
+Optimal trade schedules are typically “front-loaded”: They execute as much as possible early
+in the program to reduce risk relative to the benchmark price. The degree of front-loading
+depends on a risk-aversion parameter that must be speciﬁed by the trading client. The exact
+shape of the schedule depends on the form of the assumed market impact model. Despite its
+approximations, this “arrival price” framework has proven remarkably robust and useful in
+designing practical trading systems.
+   The largest alternative category of benchmarks is composed of some form of average
+
+   ∗Received by the editors June 30, 2009; accepted for publication (in revised form) October 26, 2011; published
+electronically January 31, 2012.
+    http://www.siam.org/journals/siﬁn/3/76347.html
+   †Courant Institute, New York University, New York, NY 10012, and Quantitative Brokers LLC, New York, NY
+10036 (almgren@cims.nyu.edu).
+
+                                           163
+
+[PAGE 2]
+164                                                     ROBERT ALMGREN
+
+
+market price during the trading interval: usually either time-weighted average price (TWAP)
+or volume-weighted average price (VWAP). For those benchmarks, optimal strategy follows
+the benchmark proﬁle closely, since deviation from that proﬁle generally increases both risk
+relative to the benchmark and impact costs.  Determining optimal response to short-term
+price signals is an interesting topic for optimization, but it is not the subject of this paper.
+  A fundamental assumption of most of this work has been that the market parameters,
+such as liquidity and volatility, are constant or at least have known predictable proﬁles. This
+assumption is reasonably accurate for large-cap US stocks.  Under that assumption, and
+assuming that mean and variance are reevaluated as execution proceeds (see [11, 14]), optimal
+strategies are static; that is, the trade schedule can be determined before trading starts and is
+not modiﬁed by the new information revealed by price moves during trading. (Almgren and
+Chriss [1] did consider a model in which the market parameters updated at a single time to
+one of a known set of possible new values.)
+   The genesis of this work was a problem posed to the author when he worked at a major
+investment bank several years ago: ﬁgure out how to extend eﬀective algorithmic trade exe-
+cution from large capitalization stocks down to smaller cap stocks that are widely recognized
+as being more “diﬃcult” to trade. A distinguishing feature of less liquid assets is that their
+liquidity and volatility vary randomly in time. That is, there will be times during the trading
+day when trading is very expensive and times when trading is cheap; similarly there will be
+times when delaying trading introduces large amounts of volatility risk and other times when
+delay is relatively costless. The modeling challenge is to determine optimal strategies that
+adapt to the instantaneous market state, while retaining the mean-variance tradeoﬀinherent
+in the arrival price framework. Walia [15] solved this problem in a discrete-time discrete-state
+model. This paper provides a systematic mathematical solution to this problem in continuous
+time and continuous state.
+    In section 1 we present the basic price and impact models that we use, and we present
+the optimal trading problem. We present the special case of “coordinated variation” in which
+liquidity and volatility vary together, which is very realistic and which greatly simpliﬁes
+the mathematical problem. We also present the small-impact approximation in which risk is
+simply accumulated via volatility; this approximation is necessary for a dynamic programming
+solution. In section 2 we use dynamic programming to construct a Hamilton–Jacobi–Bellman
+(HJB) partial diﬀerential equation (PDE) describing the optimal cost function and trade
+rate. In section 3 we describe some aspects of the numerical solution of this PDE and present
+example solutions.
+    1. The liquidation problem. The trader begins at time t = 0 with a purchase target
+of X shares, which must be completed by time t = T. The number of shares remaining to
+purchase at time t is the trajectory x(t), with x(0) = X and x(T) = 0. The rate of buying
+is v(t) = −dx/dt. Thus for a buy program, X > 0, and we expect x(t) ≥0 decreasing and
+v(t) ≥0 (a sell program may be modeled similarly). In general, the trajectory x(t) may be
+determined depending on price motions and on market conditions that are discovered during
+trading, so it is a random variable.
+   The price S(t) follows arithmetic Brownian motion
+
+                          dS(t) = σ(t) dB(t),    S(0) = S0,
+
+[PAGE 3]
+OPTIMAL TRADING                                                                     165
+
+where B(t) is a standard Brownian process, and the instantaneous volatility σ(t) depends on
+time either deterministically or randomly. It is possible to include permanent market impact
+in the price equation, but it is not central to our problem. The total time T  is usually one
+day or less, so the diﬀerence between arithmetic and geometric Brownian motion is negligible.
+But note that σ is an absolute volatility rather than fractional, and hence contains an implicit
+factor of some reference price S0.
+   The price actually received on each trade is
+                                         ˜S(t) = S(t) + η(t) v(t),
+where η(t) is the coeﬃcient of temporary market impact, also time-varying. Again, η is an
+absolute coeﬃcient rather than fractional. Much richer market impact models have been
+considered in the literature [5], but this simple one is adequate to highlight the response to
+stochastic liquidity, which is our main goal.
+  We assume that both σ(t) and η(t) are observable in real time with some reasonable degree
+of conﬁdence. There is a variety of available techniques for doing this estimation:
+     • For volatility σ(t), there is an extensive literature on estimation using high-frequency
+      market data (for example, [6]). The primary focus of this work is to ﬁnd an eﬀective
+      means to ﬁlter out noise associated with market details such as bid and oﬀer prices, so
+       as to obtain reliable estimates on time intervals that are as short as possible. Thus, for
+       example, one could estimate σ(t) by using market data from the preceding 5 minutes,
+       which typically would contain hundreds of trades and potentially thousands of quote
+       updates.
+     • Instantaneous liquidity, the inverse of η(t), is more diﬃcult to estimate, since it is the
+       estimation of what would happen if one were to submit trades to the market rather
+       than a quantity observable in itself. One proxy for instantaneous liquidity would be the
+        realized trade volume over the last few minutes: if more people are trading actively in
+       the market, then we will be able to move a given number of shares with lower slippage.
+    A reﬁned version of this would be to measure trade volume occurring at or near the
+       bid price if we are a buyer (at the ask price if we are a seller): large volume there
+       might indicate the presence of a motivated seller and a good opportunity for us to go
+        in as a buyer with low impact. Although these measures are not quantitatively very
+        precise, they are often adequate to distinguish “good” market conditions from “bad.”
+Both of these estimators rely on the persistence of market properties (volatility and liquid-
+ity), so that information about the past provides reasonable forecasts for the future. Such
+persistence, at least across short horizons, is well documented (see [3] for a recent review).
+  We may address two broad classes of problems:
+     1. First is the case in which σ(t) and η(t) are known nonrandom functions of time.
+       This would accommodate the well-known intraday proﬁles of liquidity and volatility:
+        generally markets are more active in the morning and near the close than in the middle
+        of the day. This case is not our primary focus.
+     2. The second case is when volatility and liquidity vary randomly through the day, so
+       that σ(t) and η(t) follow some stochastic processes. This eﬀect is very important in
+       algorithmic trading of small- and medium-capitalization stocks and other assets that
+       are less heavily traded than large-cap US stocks.
+
+[PAGE 4]
+166                                                     ROBERT ALMGREN
+
+
+    1.1. Cost of trading. The cost of trading, relative to the arrival price benchmark, is the
+diﬀerence between the total dollars paid to purchase X shares and the initial market value:
+
+                                T
+                    C =       ˜S(t) v(t) dt −X S0
+                                    0
+                                T                    T
+               =     σ(t) x(t) dB(t) +     η(t) v(t)2 dt
+                                    0                        0
+
+                                           T
+after integrating by parts and using x(t) =   t  v(s) ds. The cost C is a random variable, both
+because of the price uncertainty B(t) in the ﬁrst term and because of the liquidity uncertainty.
+We determine the strategy x(t) to tailor the properties of this random variable to meet some
+optimality criterion.
+   More generally, starting at time t ≥0 with x(t) shares remaining to purchase, the cost of
+a strategy x(s) on t ≤s ≤T is
+
+
+                               T                     T
+(1.1)                C =     σ(s) x(s) dB(s) +     η(s) v(s)2 ds.
+                                                t                                   t
+
+We determine the optimal trajectory by the mean-variance criterion
+
+                            min   E(C) + λ Var(C),
+                                     x(s):t≤s≤T
+
+where λ ≥0 is a risk-aversion coeﬃcient, and expectation E and variance Var are taken at time
+t, assuming that the history from time 0 to t is no longer random. This is the appropriate
+point of view for a trader who wants to optimize the mean and variance of the remaining
+trade proﬁle; it is not necessarily the appropriate point of view for a trade desk that wants
+to optimize sample mean and variance across a collection of trades (see Note at the end of
+section 1.2 below).
+   Note that
+                                            T
+                            E(C) = E    η(s) v(s)2 ds,
+                                                                      t
+
+since the ﬁrst term is an Itˆo integral, and
+
+                         T
+(1.2)      Var(C) = E    σ(s)2 x(s)2 ds
+                                       t
+            +  terms arising from uncertainty in η(s), σ(s), and v(s)  .
+
+The ﬁrst term in (1.2) contains the largest source of uncertainty, which is price changes during
+execution. The other terms arise from uncertainty in the market impact η(s) that will be paid
+on a transaction in the future, in the volatility σ(s) that will be experienced at a later time, and
+in the trade strategy v(s) itself if it is determined in response to uncertain market conditions.
+We shall argue below that the ﬁrst term in (1.2) dominates the other terms.
+   The risk-aversion coeﬃcient λ is rarely determined in terms of fundamental investment
+preferences (but see [4]).  Rather, it is used as a parameter to adjust the trajectories to a
+
+[PAGE 5]
+OPTIMAL TRADING                                                                     167
+
+
+form that seems reasonable by other criteria such as representing a desired fraction of market
+volume.
+    It is not entirely obvious that variance is the best measure of risk, nor that risk is the
+primary driver for accelerating trading and incurring the resulting higher impact costs. Other
+motivations for rapid trading might be a short-term price signal (“alpha”) which is expected
+to dissipate rapidly. Such signals can be included as a drift term in the stochastic diﬀerential
+equation (SDE), but that is not our focus here. One might also interpret risk as exposure to
+events (Greek default, say); each minute that passes before the trade is completed incurs such
+risk, with an exposure level perhaps proportional to the open position x(s) or its square. One
+might also measure risk in terms of Value-at-Risk (VaR), semivariance, or other risk measures.
+Despite all these possibilities, the simple mean-variance tradeoﬀexpressed above is commonly
+used to capture the essential features of trade execution.
+
+    1.2. Constant coeﬃcients. The “classic” problem [1] takes σ and η to be constant. Then
+for a strategy x(t) that is ﬁxed in advance and does not adapt to price motions,
+
+
+                                           T
+(1.3)              E(C) + λ Var(C) =      η v(s)2 + λσ2x(s)2  ds.
+                                                                   t
+
+No expectation appears on the right-hand side because the trajectory x(t) is assumed ﬁxed,
+the market parameters are constant, and the variance of price motion has been incorporated
+into σ2. Again, the mean and variance are assumed to be reevaluated at each time t for the
+remaining part of the trajectory to T.
+   Using the calculus of variations to minimize this over trajectories x(s) gives the second-
+order ordinary diﬀerential equation (ODE)
+
+                        d2x                         λσ2
+                  = κ2 x(s),    with  κ2 =        .                          ds2                           η
+
+The solution is a combination of exponentials exp(±κs)
+
+                           sinh κ(T −s)                    cosh κ(T −s)
+              x(s) = x(t)                         ,     v(s) = κ x(t)                         .
+                           sinh κ(T −t)                     sinh κ(T −t)
+
+Thus 1/κ is the characteristic time scale of liquidation. With linear impact (see [2] for the
+nonlinear case), this time scale does not depend on portfolio size.
+   This strategy may also be expressed as the rule for v(t)
+
+(1.4)                            v(t) = κ x(t) coth κ(T −t)  .
+
+The cost function is
+
+(1.5)                 C(x, t, η, σ) = η κ x2 coth κ(T −t) = η v(t) x.
+
+The total cost is equal to the impact cost component (neglecting the volatility term) incurred
+by trading x shares at a price concession given by the instantaneous velocity v. The actual
+
+[PAGE 6]
+168                                                     ROBERT ALMGREN
+
+
+trajectory slows down as the position size decreases, thus reducing market impact costs, but
+the total cost includes volatility risk as well as impact cost, giving the above value.
+   The shape of the solution is governed by the nondimensional quantity κ(T −t), the ratio
+of time remaining to the intrinsic time scale determined by the market parameters and the
+trader’s risk aversion.
+    In the inﬁnite-horizon limit κ(T −t) ≫1, the strategy has the limit x(s) = x(t) exp −κ(s−
+t)  independently of T, with v(t) = κx(t) and execution cost C →ηκx2. That is, when the
+horizon T  is much longer than the intrinsic execution time 1/κ, the value of T has almost
+no eﬀect on the trade trajectory.  This is also the solution that would be obtained  if the
+problem truly had an inﬁnite horizon, that is, no time limit on execution. Note that we have
+not included discounting, so the only motivation for rapid execution is risk aversion. In the
+limit of complete risk neutrality (λ →0), minimization of market impact costs would lead
+the trader to use all available time, and no inﬁnite-horizon limit would exist; since κ →0 we
+would never achieve the regime κT ≫1.
+    In the short-horizon limit κ(T −t) ≪1, the optimal strategy has the linear form v(s) =
+x(t)/(T −t) and the cost function has local behavior
+
+                   ηx2    λσ2x2
+(1.6)        C ∼     +       (T −t) + O (T −t)3  ,    κ(T −t) →0,
+               T −t      3
+
+where ∼denotes asymptotic equivalence, that is, equal up to terms that are asymptotically
+smaller than the displayed expressions in the given limit. The ﬁrst term in this expression is
+the transaction costs associated with selling x shares at a price concession of ηv = ηx/(T −t).
+The second term is the risk penalty for holding an average of x2/3 shares across time T −t.
+    Note. Whether adaptive strategies are better than ﬁxed ones is a subtle question. Almgren
+and Chriss [1] showed that if the strategy is reevaluated at an intermediate time, using mean
+and variance measured at that time, then the optimal strategy is the remaining part of the
+initial strategy, and hence the optimal strategy is ﬁxed. That is the context in which we work
+here, since it is appropriate for execution of a single transaction.  In contrast, Lorenz and
+Almgren [11] showed that adaptive strategies are optimal if mean and variance are measured
+at the initial time, for portfolios that are large enough so that their impact is a substantial
+fraction of volatility, and Tse et al. [14] have given a fuller discussion of optimal solutions
+in that framework.  Measuring mean and variance at the initial time is appropriate for a
+trading desk that wants to optimize the reported ex post measured sample mean and variance
+across a large collection of similar trades. Schied, Sch¨oneborn, and Tehranchi [13] showed that
+improvement from adaptivity depends on the risk-aversion proﬁle; for example, it vanishes for
+a utility function with constant absolute risk aversion (CARA).
+    1.3. Coordinated variation. Suppose σ(t) and η(t) vary perfectly inversely, so that
+
+                                σ(t)2 η(t) = constant =  ¯σ2 ¯η,
+
+where ¯σ and ¯η are constant reference values. For example, this relationship would be a natural
+consequence of a “trading time” model [7, 9] in which the single source of uncertainty is the
+arrival rate of trade events.  If each trade event brings both a ﬁxed amount of price variance
+and the opportunity to trade a ﬁxed number of shares for a particular cost, then we obtain the
+
+[PAGE 7]
+OPTIMAL TRADING                                                                     169
+
+
+above relation. This assumption is reasonable for markets during “normal” periods, though
+it can be severely violated during exceptional events when volatility sharply increases but
+liquidity is also withdrawn. Since the largest fraction of algorithmic execution occurs during
+normal periods, we are reasonably comfortable with this approximation.
+  We may then change time to an artiﬁcial variable ˆt(t) deﬁned by
+
+                                                  dˆt = σ(t)2 dt.
+
+In this time frame, we have a modiﬁed Brownian motion ˆB(ˆt) with
+
+                              dˆB(ˆt) = σ(t) dB(t).
+
+The share holdings are the same trajectory at diﬀerent times, so ˆx(ˆt) = x(t). The trade rate
+is modiﬁed to
+                                                        v(t)                                                      ˆv(ˆt) = −dˆx =           .
+                                                          dˆt     σ(t)2
+
+In terms of these new variables, the trading cost is
+
+                                                        ˆT                                 ˆT
+                      C =        ˆx(ˆt) dˆB(ˆt) + ¯σ2¯η      ˆv(ˆt)2 dˆt,
+                                      0                        0
+
+where ˆT = ˆt(T) is the time horizon in the changed variable. This is easy to solve in two cases:
+     1.  If the time-varying liquidity and volatility have known nonrandom proﬁles, then we can
+      compute the upper bound ˆT explicitly. The problem reduces exactly to the constant-
+       coeﬃcient problem (1.3), and the solution is the exponential functions computed there.
+      The rule (1.4) becomes
+
+                                                      κ(t)   T
+                              v(t) = κ(t) x(t) coth           σ(s)2 ds   ,
+                                                     σ(t)2   t
+
+      where κ(t) =   λσ(t)2/η(t) is the time scale formed with the instantaneous values
+        of the parameters.  This change to “volume time” is the ﬁrst and easiest way to
+      accommodate intraday seasonality.
+     2.  If the coeﬃcients vary randomly, then the problem is not the same as the constant-
+       coeﬃcient problem, because of the uncertainty in the end time. But in the inﬁnite-
+       horizon limit T →∞, we also have ˆT →∞(under very mild assumptions on σ(t),
+      and also assuming nonzero risk aversion). The trade rate is v(t) = κ(t)x(t) and the
+        cost is C = η(t)κ(t)x2 = x2   λ¯σ2¯η. We thus use the static solution formula, though
+       the actual rate of execution at time t is not ﬁxed until we observe σ(t) and η(t) and
+       hence determine κ(t).
+Somewhat surprisingly, the optimal cost in the coordinated-variation random-market inﬁnite-
+horizon case does not depend on the instantaneous market state η(t) and σ(t), though the
+instantaneous rate of trading certainly does depend on the market state.  In eﬀect, since
+volatility is low whenever impact is high, the strategy is always able to wait for favorable
+market conditions without incurring very much risk from the delay.
+   Thus the interesting problems come from two sources:
+
+[PAGE 8]
+170                                                     ROBERT ALMGREN
+
+     • With nonrandom coeﬃcients, the variation of the proﬁles of σ(t) and η(t) away from
+       the “base case” σ(t)2η(t) = constant. For example, even within the “trading time”
+       framework, intraday proﬁles may vary away from σ2η = constant because diﬀerent
+      market participants are active at diﬀerent times of the day. This leads to problems in
+     ODEs that are not the focus of this paper.
+     • With random coeﬃcients, the proper handling of uncertainty as the end time is ap-
+       proached, even in the coordinated variation case.  For example,  if liquidity is tem-
+        porarily low, is it worthwhile to wait for a better opportunity, or is there a large risk
+       that this opportunity will not come before expiration? Addressing this tradeoﬀis the
+      major subject of this paper.
+
+    1.4. Rolling horizon approximate strategy. One way to determine a plausible strategy is
+to use the formula (1.4) to compute v(t), using the instantaneous values of η(t) and σ(t) and
+hence κ(t). That is, we assume that the values observed at each instant will remain constant
+through the end of the liquidation period, and we determine the statically optimal strategy
+using those values. When the values change, we recompute a stationary solution. This strategy
+is strictly optimal only in the inﬁnite-horizon case, and only when the market parameters co-
+vary in the appropriate way. In general it is not optimal but provides a reasonable solution
+that is easy to implement. Walia [15] carefully compared the rolling horizon strategy with the
+true optimal strategy in a discrete framework.
+    1.5. Small-impact approximation. To do dynamic programming when η(t) and σ(t) vary
+randomly, from now on we approximate the variance by keeping only the ﬁrst term in (1.2).
+We call this the “small-impact approximation”: When market impact is small in absolute
+terms, it is nonetheless signiﬁcant because it is always positive, but the uncertainty in market
+impact is negligible compared to price volatility. This is equivalent to the “small-portfolio”
+approximation used in [11] to neglect uncertainty in impact cost when the portfolio is small
+enough. That approximation relies on small values of the “market power” parameter μ =      √
+(ηX/T)/(σ  T), the amount by which our trading moves the market compared to its intrinsic
+motion due to volatility, across time T.
+   Then we take as the value function
+
+                                           T
+(1.7)             c(t, x, η, σ) =   min  E      λσ(s)2x(s)2 + η(s) v(s)2  ds
+                                   v(s),t≤s≤T      t
+
+to which dynamic programming can easily be applied.
+
+    2. Dynamic programming. It is simplest to derive the PDE for the coordinated variation
+case directly, since that is the only one we attempt to solve numerically. After this derivation,
+we brieﬂy indicate the extensions that are necessary to handle the general case.
+    Since η(t) and σ(t) are positive, it is convenient to write
+                     η(t) =  ¯η exp ξ(t)    and     σ(t) =  ¯σ exp −ξ(t)    ,
+                                                           2
+
+where ¯η and  ¯σ are typical values of σ and η, and ξ(t) is a single nondimensional variable
+indicating the “market state”: When ξ(t) is large positive, the market is nonvolatile and
+
+[PAGE 9]
+OPTIMAL TRADING                                                                     171
+
+illiquid and we should trade slowly; when ξ(t) is large negative, the market is volatile and
+liquid and we should trade fast. We write ¯κ =    λ¯σ2/¯η for the intrinsic time scale in the
+mean market state and κ =  λσ2/η = ¯κe−ξ for the instantaneous value. The value function
+c(t, x, ξ) then depends on only three variables.
+  We assume that ξ(t) solves an SDE of the form
+
+                             dξ = a(ξ) dt + b(ξ) dBL(t),
+
+where BL(t) is a Brownian motion independent of that driving the price motion. Then by
+standard dynamic programming applied to (1.7) with the instantaneous trade rate v = −dx/dt
+as the control parameter, we write
+
+                c(t, x, ξ) = min  λσ2x2dt + ηv2dt + Ec t + dt, x + dx, ξ + dξ     ,
+                              v
+
+giving the HJB PDE
+
+                                                           1
+                0 =  ct + λσ2x2 + min ηv2 −vcx + acξ +                                               v                          2b2cξξ.
+
+The minimum is clearly
+                                                cx(2.1)                                  v =       ,
+                                          2η
+
+and then the PDE for c is
+
+                                                     2          1                                               x(2.2)                    −ct = λσ2x2 −c + acξ +                                        4η           2b2cξξ.
+
+   The initial data for the PDE (2.2) is in fact a local asymptotic condition and must be
+treated with some care. Near expiration, we must liquidate on a linear trajectory v = x/(T −t).
+As with constant coeﬃcients (1.6), the cost comes primarily from market impact. To accu-
+rately approximate the cost, we must account for expected changes in the impact coeﬃcient
+during the time t ≤s ≤T. A simple application of Itˆo’s lemma shows that
+
+                                       1
+               Eη(s) ∼η(t)  1 +  a + 2b2  (s −t)    ,     s −t →0,
+
+and hence the average value of η(s) for s between t and T is
+
+                               1      1
+                η ∼η(t)  1 +    a +      (T −t)    ,    T −t →0.                               2      2b2
+
+Using this value in (1.6), with η(t) = ¯ηeξ, we have the cost expansion
+
+                              1      1(2.3)        c(t, x, ξ) ∼¯ηeξx2 +    a +       ¯ηeξx2 + O(T −t),    T −t →0.                  T −t    2      2b2
+
+In the O(T −t) terms there would appear both the risk contribution and a further expansion
+of the impact cost.
+
+[PAGE 10]
+172                                                     ROBERT ALMGREN
+
+    2.1. Lognormal model and nondimensionalization. We now assume that ξ(t) evolves
+according to an Ornstein–Uhlenbeck mean-reverting process of mean zero. Thus we set
+
+                                               β                             a(ξ) = −ξ    and     b(ξ) = √  .
+                                      δ                      δ
+
+Here δ is a market relaxation time, and β is a nondimensional “burstiness” parameter describ-
+ing the dispersion of liquidity and volatility around their average levels. In steady state, ξ(t)
+is normal, with unconditional moments
+
+                                                    1
+                   E ξ(t) = 0,    Var ξ(t) = 2β2.
+
+  We also observe that the value function c(t, x, ξ) is strictly proportional to x2, the square
+of the number of shares remaining to execute.  This is a consequence of our linear market
+impact model, since both variance and expected cost are quadratic in quantity.
+  We may now nondimensionalize using δ as the time scale and incorporating the factor
+x2. We deﬁne τ = (T −t)/δ, the time remaining to expiration as a multiple of the market
+relaxation time, and set
+                                                                 ¯η x2   T −t
+                                    c(t, x, ξ) =     u            , ξ    ,                                            δ        δ
+
+where u(τ, ξ) is a nondimensional function of nondimensional variables. Then (2.2) becomes
+
+                                                   1
+(2.4)                     uτ + ξ uξ = e−ξ K2 −u2 +   β2uξξ,
+                                                   2
+
+in which the nondimensional risk-aversion parameter is
+
+                                    market relaxation time
+          K =  ¯κ δ =                                 trade time scale in mean market state.
+
+From (2.1), the dimensional trade velocity is
+
+                                 x
+(2.5)                             v =   e−ξ u τ, ξ  .                                          δ
+
+    Substituting the above expressions into (2.3), we determine the initial condition
+
+
+                                            2  eξ + O(τ)    as τ →0 for each ﬁxed ξ.(2.6)      u(τ, ξ) ∼eξ −1  ξ −1                      τ    2     2β
+
+For ξ < 0 when trading is fast, the region of approximate validity of this expression is limited
+by the rate of trading itself, and this expression should be replaced by (2.7) for τ > O(e−ξ).
+For ξ > 0 when trading is slow, the region of validity is τ ≪O(1), since the market state
+itself changes on times of scale O(1). Figure 1 summarizes the various asymptotic behaviors
+of solutions to (2.4).
+
+[PAGE 11]
+OPTIMAL TRADING                                                                     173
+
+
+                                                                                                    ξ
+                                      “Slow” market: η large (illiquid), σ small (nonvolatile)
+                                                Optimal trade rate κ small
+
+
+
+
+               Long-time asymptotics
+                    u →K
+                                                                               Terminal asymptotics
+                                                                        u ∼e-ξ / τ
+
+
+                                             1/K
+
+                        τ
+
+
+                                                      Market cycle time
+                                                                             τ ∼1
+
+
+
+
+
+                                           “Fast” market: η small (liquid), σ large (volatile)
+                                               Optimal trade rate κ large
+
+
+
+    Figure 1. Asymptotic regions for solutions to PDE (2.4). Example trade trajectories are illustrated for
+ξ > 0, for ξ < 0, and for ξ = 0. The risk parameter K is the time scale of the optimal trajectory in the “base
+state” ξ = 0 as a fraction of the market cycle time δ.
+
+    Constant market. The steady-state market takes β = 0. Along the line ξ = 0, the PDE
+(2.4) reduces to the ODE
+
+                                                                     τ →0,                uτ = K2 −u2,    with    u(τ) ∼1 + O(τ)  as                                                       τ
+
+whose solution is
+                                 u(τ) = K coth Kτ.
+
+On undoing the changes of variables, this reduces exactly to (1.5).
+   To generalize the above solution, we consider the limit ξ →−∞. That is, market impact
+is temporarily very small, and volatility is very large: the optimal strategy is to trade very
+quickly. Since the market relaxation time scales are ﬁxed, fast trading means that the program
+is completed before the market parameters have time to change. Thus the cost is the static
+cost (1.5) using the instantaneous market parameters, which in the transformed functions
+becomes
+(2.7)                    u(τ, ξ) ∼K coth K e−ξτ    ,     ξ →−∞.
+
+The corresponding trade rate is the “rolling horizon” strategy of section 1.4, which is always an
+admissible though suboptimal strategy. The expression (2.7) accurately describes the optimal
+cost only in the indicated limit when indeed the market coeﬃcients do not change substantially
+before trading is completed.
+
+[PAGE 12]
+174                                                     ROBERT ALMGREN
+
+
+   Long time. As noted in section 1.3, with coordinated variation when time is far from
+expiration, the value function is C = x2   λ¯σ2¯η, or u(ξ, τ) →K as τ →∞in nondimensional
+terms. Certainly u = K is a steady-state solution of the PDE. And since the value function
+must be decreasing in τ, we know that u(τ, ξ) ≥K for all τ > 0. As a consequence, we know
+that the initial expansion (2.6) can be valid only when eξ/τ ≥K or τ ≤O(eξ), a very thin
+region when ξ is negative.
+   Provided that a unique solution u(τ, ξ) to (2.4) exists, a standard veriﬁcation argument
+tells us that this function indeed gives us the optimal control to the original control problem.
+
+    2.2. Initial behavior of PDE. First, note that (2.4) is a nondegenerate diﬀusion equation
+with lower-order terms and thus certainly has smooth unique solutions locally in time if the
+solution at some positive time satisﬁes u(τ, ξ) < C exp(aξ2).
+   To understand the singular behavior near the initial time, we write
+
+                                              eξ
+                                u(τ, ξ) =     1 + w(τ, ξ)   ,                                           τ
+
+where w(τ, ξ) for τ > 0 satisﬁes the PDE
+
+             w
+            wτ +    1 + w = K2 τ e−2ξ −  ξ −1                      τ                        2β2
+                                                             1                   −  ξ −1   w −  ξ −β2  wξ +                                   2β2                    2 β2 wξξ
+and has limτ→0 w(τ, ξ) = 0 for each ξ.  It is in this sense that u(τ, ξ) satisﬁes its PDE (2.4)
+and singular boundary condition. We are not in a position to formally prove existence and
+uniqueness of the function w(τ, ξ) and hence of u(τ, ξ), but there appear to be no obstacles.
+  We look for a regular perturbation expansion of the form
+
+                    w(τ, ξ) ∼τ w1(ξ) + τ 2 w2(ξ) +  · · · ,     τ →0,
+
+and readily determine
+
+                                 ξ −1       ,                w1(ξ) = −1                          2     2β2
+                        1          1                  1
+                w2(ξ) = 3K2e−2ξ + 12  ξ2 + 2 −β2 ξ + 4β4 −2β2   .
+
+The construction of this asymptotic behavior is strong evidence that the solution exists and
+has the associated local behavior. Thus, a description of the local behavior of u(τ, ξ) slightly
+fuller than (2.6) is
+
+  u(τ, ξ) ∼eξ −1  ξ −1     eξ              τ    2     2β2
+                   1         1                   1
+        + τ  3K2e−ξ + 12eξ  ξ2 + 2 −β2 ξ + 4β4 −2β2  + O(τ 2),     τ →0.
+
+The volatility and risk aversion K appear only at the third order in τ.
+
+[PAGE 13]
+OPTIMAL TRADING                                                                     175
+
+
+    2.3. Two-variable model. We brieﬂy indicate the extensions that would be necessary to
+handle the case of noncoordinated variation. We let ξ(t) and ζ(t) be two separate stochastic
+processes, deﬁning the instantaneous market state by
+
+                        η(t) =  ¯η exp ξ(t)    and     σ(t) =  ¯σ exp ζ(t)
+
+so that κ(t) = ¯κ exp ζ −12ξ  . We take ξ(t) and ζ(t) to evolve according to SDEs of the forms
+
+(2.8)              dξ = aξ dt + bξ dBL    and    dζ = aζ dt + bζ dBV,
+
+where aξ, bξ, aζ, and bζ are coeﬃcients whose values may depend on ξ and ζ.  BL(t) and
+BV(t) are Brownian motions, independent from the process B(t) driving the price process but
+possibly correlated with each other, with E dBL dBV = ρ dt. The same procedure as above
+gives the PDE for c(t, x, ξ, ζ)
+
+                                     2                                              1                                                               1                                x            −ct = λσ2x2 −c                    + aξcξ + aζcζ +                                                              2 cξξ + ρbξbζcξζ +                                                                                     2 cζζ.                                                                      ξ                                                                                                ζ                            4η                2b               2b
+
+The initial condition is still (2.3), since the volatility dynamics do not enter.
+  We take speciﬁc functional forms
+
+                                                       βL                       aξ(ξ) = −ξ                                                        ,                          bξ =        ,                               δL                      √δL
+                                                  βV                      aζ(ζ) = −ζ                                                         ,                          bζ =         .                            δV                     √δV
+Here δL and δV are potentially diﬀerent relaxation times for liquidity and volatility, and βL
+and βV are independent burstiness parameters.
+  We again nondimensionalize using δ = δL as the time scale, and we have an additional
+nondimensional parameter μ = δL/δV. Then the PDE for u(τ, ξ, ζ) is
+
+                                           1                                                                    1                                        ρ√μ(2.9)     uτ + ξuξ + μζuζ = K2e2ζ −e−ξu2 +                                                        βLβVuξζ +                                                Luξξ2  +                                     2β                    2μ2βLuζζ.2
+
+The coordinated variation case is recovered by assuming the following:
+     • The time scales of liquidity and volatility are equal: δL = δV = δ, so μ = 1.
+     • The Brownian motions BL, BV have perfect positive correlation ρ = 1.
+     • The ﬂuctuation magnitudes βL = β and βV satisfy βL + 2βV = 0.
+     • At some point in the past, ξ(t) and ζ(t) have satisﬁed ξ + 2ζ = 0. With the assumed
+       conditions on δL,V, βL,V, and ρ, this relation is maintained for all t.
+Then in the plane ξ + 2ζ = 0, the PDE (2.9) reduces to (2.4).
+
+    3. Numerical solution. Since we are unable to give explicit analytic solutions, we resort
+to numerical calculations to give solutions of the PDE (2.4) for a range of relevant parameters:
+     • The burstiness parameter β is stock-speciﬁc. A large-cap stock will have β near zero,
+        for a near-uniform proﬁle. A small-cap stock will have β = 1 or larger.  For our
+      example calculations, we will ﬁx β = 1, a moderate value that would be appropriate
+        for a medium-sized stock.
+
+[PAGE 14]
+176                                                     ROBERT ALMGREN
+
+     • The risk-aversion parameter K must range across all nonnegative values, since the
+       actual choice of trajectory will be determined by the trader’s risk preference. Values
+        of K smaller than unity are the most realistic, so that the algorithm has time to adapt
+       to at least one market reversion time.
+We brieﬂy discuss a few technical issues with time and space discretization and then present
+example solutions.
+
+    3.1. Time discretization. The ﬁrst obstacle is that the initial data is given as singular
+behavior. A simple modiﬁcation to the forward Euler scheme handles this problem. Although
+this method seems quite straightforward, we are not aware of a reference in the existing
+literature. We illustrate it using an ODE for a function u(t), with singular initial condition
+u(t) ∼c/t as t →0.
+  We apply a forward Euler scheme to w(t) = tu(t), which is regular near u = 0. With
+w′(t) = tu′(t) + u(t) and denoting un ≈u(tn), this gives
+                                                tn
+(3.1)                     un+1 = un +       tn+1 −tn  u′n.                                           tn+1
+
+Thus we apply a correction to the Euler update formula, which becomes small as we move
+away from the initial singular time and tn/tn+1 →1.
+   To test this scheme, we consider the example
+
+                   du
+(3.2)            = −(u −a)(u −b),     u(t) ∼1  as t →0,                       dt                                       t
+
+whose exact solution is
+                                           ae−bt −be−at
+(3.3)                               u(t) =                        .
+                                               e−bt −e−at
+
+Either by expanding this solution or directly from the ODE, we determine the local expansion
+                            1               t         2(3.4)              u(t) ∼1 +   a + b +    a −b  +  · · · ,      t →0.
+                                 t    2          12
+We test on a regular grid with tn = n Δt, starting at n = k ≥1. We choose k to satisfy
+the stability condition for the forward Euler scheme.  For an ODE ut = f(u), we require
+Δt < 1/|f ′(u)|. In this case, f ′(u) ∼2u ∼2/t, so we need Δt < t/2 or t > 2 Δt. We thus
+expect the scheme should be stable for k ≥2.
+  We explore four cases, given by all combinations of two parameters:
+     1. Discretization scheme:
+        (a) forward Euler applied directly to u (dashed lines “u” in Figure 2), or
+        (b) forward Euler applied to tu as above (solid lines “t u”).
+     2. Data at the ﬁrst time step:
+        (a) uk = (1/tk) using the given initial condition (“Order 0”), or
+        (b) uk = (1/tk) + 12(a + b) using the local expansion (3.4) (“Order 1”).
+Figure 2 shows example solutions. The combination of improved initial data, with a time
+discretization that takes account of the initial singularity, yields far more accurate results
+than naive discretization.
+
+[PAGE 15]
+ OPTIMAL TRADING                                                                     177
+
+     8
+
+
+     7                                                                                        t u
+            Order 1  qq                               u
+     6
+
+u   5      Order 0  qq      q
+
+
+                                      q
+     4                            q      q                                      q                                             q
+                                                    q                                             q                                             q      q                                                            q
+                                                                   q                                                                   q                                                                           q     3                                           qq      qqq                                                                           q                                                                   qq                                                                                  qq                                                                           qq                                                                                         qq                                                                                  qq                                                                                         qq
+                       k = 2
+     2
+
+           0.0        0.2        0.4        0.6        0.8        1.0
+
+     Figure 2. Numerical solution of the ODE (3.2) with a = 2 and b = 1, discretized with Δt = 0.1 beginning
+ at the second step k = 2. The light curve is the exact solution (3.3). “Order 0” initial data uses only the given
+ initial condition u(t) ∼1/t; “Order 1” initial data adds the ﬁrst correction term from (3.4). The dashed curves
+ (“ u”) apply a forward Euler scheme directly to u(t); the solid curves (“ t u”) apply a forward Euler scheme to
+ tu(t) as in (3.1).
+
+
+     3.2. Space discretization. We use the standard 3-point discretization for the diﬀusion
+ term and upwind diﬀerencing for the convection term (see, for example, [10]). We use forward
+ Euler time discretization with the correction above; thus we use a small time step for stability.
+ For initial data we use the asymptotic expression (2.6) at an initial time t = k Δt.
+     It is more convenient to discretize ˜v(τ, ξ) = e−ξu(τ, ξ) rather than u directly; by (2.5), ˜v
+ is the instantaneous trade rate v except for a constant dimensional factor. The PDE for ˜v is
+ easily derived from (2.4).
+   We use a ﬁnite spatial domain −Ξ ≤ξ ≤Ξ. At the left boundary ξ = −Ξ, we use the
+ far-ﬁeld solution (2.7). At the right boundary ξ = Ξ, we use “natural” boundary conditions
+ vξξ = 0. Since the convective term is ﬂowing outwards, the eﬀect of the boundary conditions
+ is conﬁned to a narrow boundary layer.
+
+     3.3. Example solutions. Figure 3 shows the computed solution of the PDE for β = 1 and
+K = 0.1 (the computational grid is much ﬁner than what is plotted). As noted above, the
+ quantity that is computed and plotted is not the value function u, but e−ξu, the dimensionless
+ trade rate as a fraction of the shares remaining (we plot its natural log). As expected, when
+ τ is small, the trade rate becomes large like 1/τ. When ξ is large positive, market impact is
+ high and volatility is low, so the optimal strategy trades very slowly except near expiration.
+
+[PAGE 16]
+ 178                                                     ROBERT ALMGREN
+
+
+
+
+
+ 0
+
+log −2
+v
+
+                                         −4   −4
+
+                                       −2
+
+      0                                      0
+           2                         xi
+               4
+                                    2
+               tau 6
+                         8
+                                 4
+
+     Figure 3. Solution of the PDE for β = 1 and K = 0.1. The horizontal axes are the nondimensional time
+ remaining to expiration τ and the market state ξ; the quantity plotted is the natural log of the instantaneous
+ trade rate as a fraction of shares remaining. The thick line is the long-time asymptotic solution. When the
+ market is liquid and volatile (ξ large negative), trading is fast; when the market is illiquid and nonvolatile (ξ
+ large positive), trading is slow. As expiration approaches (τ →0), trading is forced to be fast.
+
+
+When ξ is large negative, market impact is low and volatility is high, so the optimal strategy
+ trades rapidly. As τ →∞the solution approaches the steady state log(e−ξu) = log K −ξ.
+    Figure 4 shows a realization of the market state process ξ(t) used for the trajectory
+
+[PAGE 17]
+OPTIMAL TRADING                                                                     179
+
+2.5         illiquid, nonvolatile                                  Market state η
+
+2.0
+
+1.5
+
+1.0
+
+0.5
+
+0.0        liquid, volatile
+
+      0          2          4          6          8         10
+
+    Figure 4.  Realization of the market state trajectory used for the example numerical simulations, with
+β = 1. The horizontal axis is time measured in units of the mean-reversion time. The value plotted is the
+market impact coeﬃcient η(t), so large values mean an illiquid market. In our simpliﬁed “coordinated variation”
+market assumption, the volatility σ(t) varies inversely with η(t): the market is either liquid and volatile, or
+illiquid and nonvolatile.
+
+
+
+
+simulations. With the “coordinated variation” approximation the market moves back and
+forth between a high-activity regime with low impact and high volatility (small ξ) and a low-
+activity regime with high impact and low volatility (large ξ). We have taken β = 1 so that
+the root-mean square ﬂuctuation of ξ(t) is 12. The mean-reversion time δ = 1, so that with a
+time T = 10 we experience several market cycles.
+    Figure 5 shows optimal trading trajectories for risk-aversion parameters K = 0.1, 0.3,
+and 1, compared to the nonadaptive trajectories computed in the mean market state. The
+dynamic response is very clear. For example, around t = 1 the market state is poor, so all
+the trajectories trade slowly and fall behind the static curves. Around t = 1.5 there is a brief
+burst of liquidity, and all the strategies accelerate in response. The trajectories with lower
+urgency (higher on the plots) have more shares remaining to trade, so they are able to react
+more than the high-urgency trajectory (lower on the plots) which has completed a substantial
+fraction of its goal by that time. The lowest-urgency strategy continues to adapt and is able
+to beneﬁt from the large and prolonged liquidity burst around t = 7.
+   The dotted lines in Figure 5 show the “rolling horizon” strategy of section 1.4. For large
+risk aversion (fast trading), this approximate strategy is almost identical to the optimum.
+For smaller risk aversion (slow trading), the rolling horizon strategy almost rigidly follows
+a straight-line trajectory, while the true optimum is able to adapt to varying market state
+even when its proﬁle is nearly linear. In general, the rolling horizon strategy seems to be an
+adequate approximation when risk aversion is relatively high.
+
+[PAGE 18]
+180                                                     ROBERT ALMGREN
+
+1.0                                                     Shares x(t)
+
+0.8
+
+0.6
+
+0.4
+
+0.2
+
+0.0
+
+      0          2          4          6          8         10
+2.0                                                      Trade rate v(t)
+
+1.5
+
+1.0
+
+0.5
+
+0.0
+
+      0          2          4          6          8         10
+
+    Figure 5. Optimal trajectories for λ = 0.1 (highest curves), 0.3, and 1 (lowest curves). The horizontal axis
+is time t forward from the initial time, measured in units of the market mean-reversion time: the program must
+be completed by t = T = 10. The upper panel is shares remaining; the lower panel is the trade rate. Light lines
+are the nonadaptive solution in the mean market state; dotted lines are the “rolling horizon” approximation. In
+the lower panel, the trade rate is normalized so that each nonadaptive solution has the same initial trade rate.
+
+
+
+
+   Acknowledgments. We thank participants in the 2009 “Liquidity:  Modelling, Recent
+Crises and Challenges” conference hosted by the Oxford-Man Institute of Quantitative Fi-
+nance, and especially Mark Davis, for helpful comments. We also thank participants in the
+2011 JOIM Conference and especially Mark Mueller.
+
+[PAGE 19]
+OPTIMAL TRADING                                                                     181
+
+
+                                REFERENCES
+
+  [1] R. Almgren and N. Chriss, Optimal execution of portfolio transactions, J. Risk, 3 (2000), pp. 5–39.
+  [2] R. F. Almgren, Optimal execution with nonlinear impact functions and trading-enhanced risk, Appl.
+        Math. Finance, 10 (2003), pp. 1–18.
+  [3] J.-P. Bouchaud, J. D. Farmer, and F. Lillo, How markets slowly digest changes in supply and
+        demand, in Handbook of Financial Markets: Dynamics and Evolution, North–Holland, San Diego,
+       CA, 2009, pp. 57–160.
+  [4] R. Engle and R. Ferstenberg, Execution risk: It’s the same as investment risk, J. Portfolio Manage-
+        ment, 33 (2007), pp. 34–44.
+  [5] J. Gatheral, No-dynamic-arbitrage and market impact, Quant. Finance, 10 (2010), pp. 749–759.
+  [6] J. Gatheral and R. C. A. Oomen, Zero-intelligence realized variance estimation, Finance Stoch., 14
+          (2010), pp. 249–283.
+  [7] H. Geman, D. B. Madan, and M. Yor, Time changes for L´evy processes, Math. Finance, 11 (2001),
+         pp. 79–96.
+  [8] R. C. Grinold and R. N. Kahn, Active Portfolio Management, Probus, Chicago, IL, 1995.
+  [9] C. M. Jones, G. Kaul, and M. L. Lipson, Transactions, volume, and volatility, Rev. Financ. Stud., 7
+          (1994), pp. 631–651.
+ [10] R. J. LeVeque, Numerical Methods for Conservation Laws, 2nd ed., Birkh¨auser, Basel, 1992.
+ [11] J. Lorenz and R. Almgren, Mean-variance optimal adaptive execution, Appl. Math. Finance, 18 (2011),
+         pp. 395–422.
+ [12] A. F. Perold, The implementation shortfall: Paper versus reality, J. Portfolio Management, 14 (1988),
+         pp. 4–9.
+ [13] A. Schied, T. Sch¨oneborn, and M. Tehranchi, Optimal basket liquidation for CARA investors is
+          deterministic, Appl. Math. Finance, 17 (2010), pp. 471–489.
+ [14] S. T. Tse, P. A. Forsyth, J. S. Kennedy, and H. Windcliff, Comparison between the Mean Variance
+        Optimal and the Mean Quadratic Variation Optimal Trading Strategies, preprint, 2011.
+ [15] N. Walia, Optimal Trading: Dynamic Stock Liquidation Strategies, Senior thesis, Princeton University,
+         Princeton, NJ, 2006.

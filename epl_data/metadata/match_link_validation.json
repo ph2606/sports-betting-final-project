@@ -1,0 +1,974 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-10-07T03:28:50.305432+00:00",
+  "requested_as_of_date": "2026-10-06",
+  "output_rows": 11240,
+  "output_columns": 85,
+  "join_method": "Exact season + normalized home team + normalized away team + printed source calendar date; full outer union",
+  "key_uniqueness": "All source IDs unique and all complete per-source exact keys unique; outer merges validated one-to-one",
+  "missing_key_policy": "Incomplete keys are source-specific unmatched records; null dates never join",
+  "time_policy": "Provider native times retained separately. Understat and StatsBomb native clocks are not assigned an inferred timezone. Football-Data UTC uses the collector's documented Europe/London assumption.",
+  "opponent_aliases": {
+    "Birmingham City": [
+      "Birmingham",
+      "Birmingham City"
+    ],
+    "Blackburn Rovers": [
+      "Blackburn",
+      "Blackburn Rovers"
+    ],
+    "Bolton Wanderers": [
+      "Bolton",
+      "Bolton Wanderers"
+    ],
+    "Bradford City": [
+      "Bradford",
+      "Bradford City"
+    ],
+    "Cardiff City": [
+      "Cardiff",
+      "Cardiff City"
+    ],
+    "Charlton Athletic": [
+      "Charlton",
+      "Charlton Athletic"
+    ],
+    "Derby County": [
+      "Derby",
+      "Derby County"
+    ],
+    "Huddersfield Town": [
+      "Huddersfield",
+      "Huddersfield Town"
+    ],
+    "Leicester City": [
+      "Leicester",
+      "Leicester City"
+    ],
+    "Luton Town": [
+      "Luton",
+      "Luton Town"
+    ],
+    "Norwich City": [
+      "Norwich",
+      "Norwich City"
+    ],
+    "Oldham Athletic": [
+      "Oldham",
+      "Oldham Athletic"
+    ],
+    "Queens Park Rangers": [
+      "QPR",
+      "Queens Park Rangers"
+    ],
+    "Sheffield United": [
+      "Sheffield United",
+      "Sheffield Utd"
+    ],
+    "Sheffield Wednesday": [
+      "Sheffield Weds",
+      "Sheffield Wednesday"
+    ],
+    "Stoke City": [
+      "Stoke",
+      "Stoke City"
+    ],
+    "Swansea City": [
+      "Swansea",
+      "Swansea City"
+    ],
+    "Swindon Town": [
+      "Swindon",
+      "Swindon Town"
+    ],
+    "West Bromwich Albion": [
+      "West Brom",
+      "West Bromwich Albion",
+      "West Bromwich"
+    ],
+    "West Ham United": [
+      "West Ham",
+      "West Ham United"
+    ],
+    "Wigan Athletic": [
+      "Wigan",
+      "Wigan Athletic"
+    ],
+    "Wolverhampton Wanderers": [
+      "Wolves",
+      "Wolverhampton Wanderers",
+      "Wolverhampton"
+    ]
+  },
+  "source_coverage": {
+    "football_data": {
+      "input_rows": 10860,
+      "retained_rows": 10860,
+      "rows_with_other_source": 4138,
+      "source_only_rows": 6722,
+      "unmatchable_keys": 0,
+      "linked_to_football_data": 10860
+    },
+    "understat": {
+      "input_rows": 4438,
+      "retained_rows": 4438,
+      "rows_with_other_source": 4388,
+      "source_only_rows": 50,
+      "unmatchable_keys": 0,
+      "linked_to_football_data": 4089
+    },
+    "espn": {
+      "input_rows": 424,
+      "retained_rows": 424,
+      "rows_with_other_source": 424,
+      "source_only_rows": 0,
+      "unmatchable_keys": 0,
+      "linked_to_football_data": 424
+    },
+    "fpl": {
+      "input_rows": 380,
+      "retained_rows": 380,
+      "rows_with_other_source": 349,
+      "source_only_rows": 31,
+      "unmatchable_keys": 0,
+      "linked_to_football_data": 50
+    },
+    "statsbomb": {
+      "input_rows": 362,
+      "retained_rows": 362,
+      "rows_with_other_source": 362,
+      "source_only_rows": 0,
+      "unmatchable_keys": 0,
+      "linked_to_football_data": 362
+    }
+  },
+  "coverage_by_season": [
+    {
+      "season": "1993-94",
+      "link_rows": 372,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 372,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "1994-95",
+      "link_rows": 406,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 406,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "1995-96",
+      "link_rows": 324,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 324,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "1996-97",
+      "link_rows": 324,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 324,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "1997-98",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "1998-99",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "1999-00",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2000-01",
+      "link_rows": 338,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 338,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2001-02",
+      "link_rows": 324,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 324,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2002-03",
+      "link_rows": 324,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 324,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2003-04",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 38
+    },
+    {
+      "season": "2004-05",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2005-06",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2006-07",
+      "link_rows": 290,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 290,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2007-08",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2008-09",
+      "link_rows": 324,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 324,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2009-10",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2010-11",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2011-12",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2012-13",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2013-14",
+      "link_rows": 338,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 338,
+      "understat_rows": 0,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2014-15",
+      "link_rows": 324,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 324,
+      "understat_rows": 324,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2015-16",
+      "link_rows": 335,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 22,
+      "football_data_rows": 324,
+      "understat_rows": 324,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 324
+    },
+    {
+      "season": "2016-17",
+      "link_rows": 316,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 16,
+      "football_data_rows": 308,
+      "understat_rows": 308,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2017-18",
+      "link_rows": 308,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 308,
+      "understat_rows": 308,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2018-19",
+      "link_rows": 324,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 324,
+      "understat_rows": 324,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2019-20",
+      "link_rows": 324,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 324,
+      "understat_rows": 324,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2020-21",
+      "link_rows": 338,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 338,
+      "understat_rows": 338,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2021-22",
+      "link_rows": 338,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 338,
+      "understat_rows": 338,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2022-23",
+      "link_rows": 368,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 368,
+      "understat_rows": 368,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2023-24",
+      "link_rows": 360,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 360,
+      "understat_rows": 360,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2024-25",
+      "link_rows": 368,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 368,
+      "understat_rows": 368,
+      "espn_rows": 0,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2025-26",
+      "link_rows": 374,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 0,
+      "football_data_rows": 374,
+      "understat_rows": 374,
+      "espn_rows": 374,
+      "fpl_rows": 0,
+      "statsbomb_rows": 0
+    },
+    {
+      "season": "2026-27",
+      "link_rows": 411,
+      "score_mismatch_rows": 0,
+      "date_conflict_rows": 62,
+      "football_data_rows": 50,
+      "understat_rows": 380,
+      "espn_rows": 50,
+      "fpl_rows": 380,
+      "statsbomb_rows": 0
+    }
+  ],
+  "pairwise_score_validation": {
+    "football_data__understat": {
+      "exact_linked_rows": 4089,
+      "completed_score_comparisons": 4089,
+      "score_mismatches": 0,
+      "conflict_examples": []
+    },
+    "football_data__espn": {
+      "exact_linked_rows": 424,
+      "completed_score_comparisons": 424,
+      "score_mismatches": 0,
+      "conflict_examples": []
+    },
+    "football_data__fpl": {
+      "exact_linked_rows": 50,
+      "completed_score_comparisons": 50,
+      "score_mismatches": 0,
+      "conflict_examples": []
+    },
+    "football_data__statsbomb": {
+      "exact_linked_rows": 362,
+      "completed_score_comparisons": 362,
+      "score_mismatches": 0,
+      "conflict_examples": []
+    },
+    "understat__espn": {
+      "exact_linked_rows": 424,
+      "completed_score_comparisons": 424,
+      "score_mismatches": 0,
+      "conflict_examples": []
+    },
+    "understat__fpl": {
+      "exact_linked_rows": 349,
+      "completed_score_comparisons": 50,
+      "score_mismatches": 0,
+      "conflict_examples": []
+    },
+    "understat__statsbomb": {
+      "exact_linked_rows": 313,
+      "completed_score_comparisons": 313,
+      "score_mismatches": 0,
+      "conflict_examples": []
+    },
+    "espn__fpl": {
+      "exact_linked_rows": 50,
+      "completed_score_comparisons": 50,
+      "score_mismatches": 0,
+      "conflict_examples": []
+    },
+    "espn__statsbomb": {
+      "exact_linked_rows": 0,
+      "completed_score_comparisons": 0,
+      "score_mismatches": 0,
+      "conflict_examples": []
+    },
+    "fpl__statsbomb": {
+      "exact_linked_rows": 0,
+      "completed_score_comparisons": 0,
+      "score_mismatches": 0,
+      "conflict_examples": []
+    }
+  },
+  "pairwise_kickoff_validation": {
+    "football_data__espn": {
+      "compared_rows": 424,
+      "mismatches": 2,
+      "examples": [
+        {
+          "season": "2025-26",
+          "match_date": "2026-02-11",
+          "home_team": "Crystal Palace",
+          "away_team": "Burnley",
+          "football_data_kickoff_utc": "2026-02-11T19:30:00Z",
+          "espn_kickoff_utc": "2026-02-11T19:40Z"
+        },
+        {
+          "season": "2025-26",
+          "match_date": "2026-03-21",
+          "home_team": "Brighton & Hove Albion",
+          "away_team": "Liverpool",
+          "football_data_kickoff_utc": "2026-03-21T12:30:00Z",
+          "espn_kickoff_utc": "2026-03-21T12:45Z"
+        }
+      ]
+    },
+    "football_data__fpl": {
+      "compared_rows": 50,
+      "mismatches": 0,
+      "examples": []
+    },
+    "espn__fpl": {
+      "compared_rows": 50,
+      "mismatches": 0,
+      "examples": []
+    }
+  },
+  "rows_with_any_score_mismatch": 0,
+  "rows_with_date_conflicts": 100,
+  "date_conflict_examples": [
+    {
+      "season": "2015-16",
+      "match_date": "2015-11-02",
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Aston Villa",
+      "source_match_key": "fd_231016447fbf615a15453ce6",
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": 3754029
+    },
+    {
+      "season": "2015-16",
+      "match_date": "2015-11-03",
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Aston Villa",
+      "source_match_key": null,
+      "understat_id": "190",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2015-16",
+      "match_date": "2015-11-23",
+      "home_team": "Crystal Palace",
+      "away_team": "Sunderland",
+      "source_match_key": "fd_f7e433a12df596661219fdbe",
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": 3753979
+    },
+    {
+      "season": "2015-16",
+      "match_date": "2015-11-24",
+      "home_team": "Crystal Palace",
+      "away_team": "Sunderland",
+      "source_match_key": null,
+      "understat_id": "210",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2015-16",
+      "match_date": "2015-12-07",
+      "home_team": "Everton",
+      "away_team": "Crystal Palace",
+      "source_match_key": "fd_da54c0b85abea58d5958a013",
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": 3754046
+    },
+    {
+      "season": "2015-16",
+      "match_date": "2015-12-08",
+      "home_team": "Everton",
+      "away_team": "Crystal Palace",
+      "source_match_key": null,
+      "understat_id": "230",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2015-16",
+      "match_date": "2015-12-14",
+      "home_team": "Leicester City",
+      "away_team": "Chelsea",
+      "source_match_key": "fd_5190ce835b6694a78dbda6a9",
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": 3754013
+    },
+    {
+      "season": "2015-16",
+      "match_date": "2015-12-15",
+      "home_team": "Leicester City",
+      "away_team": "Chelsea",
+      "source_match_key": null,
+      "understat_id": "240",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2015-16",
+      "match_date": "2015-12-21",
+      "home_team": "Arsenal",
+      "away_team": "Manchester City",
+      "source_match_key": "fd_54657b4f216451e6fa2de3dc",
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": 3754296
+    },
+    {
+      "season": "2015-16",
+      "match_date": "2015-12-22",
+      "home_team": "Arsenal",
+      "away_team": "Manchester City",
+      "source_match_key": null,
+      "understat_id": "250",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2016-17",
+      "match_date": "2016-12-05",
+      "home_team": "Middlesbrough",
+      "away_team": "Hull City",
+      "source_match_key": "fd_93c9b5fceb45c56bc04f54a7",
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2016-17",
+      "match_date": "2016-12-06",
+      "home_team": "Middlesbrough",
+      "away_team": "Hull City",
+      "source_match_key": null,
+      "understat_id": "3114",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2016-17",
+      "match_date": "2016-12-14",
+      "home_team": "Crystal Palace",
+      "away_team": "Manchester United",
+      "source_match_key": "fd_d944e4de2f5bb28127a4a93b",
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2016-17",
+      "match_date": "2016-12-14",
+      "home_team": "Manchester City",
+      "away_team": "Watford",
+      "source_match_key": "fd_950180ddb2e0f7ffdfd43a5d",
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2016-17",
+      "match_date": "2016-12-14",
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Hull City",
+      "source_match_key": "fd_1565316815cfbaafabd5bbfd",
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2016-17",
+      "match_date": "2016-12-15",
+      "home_team": "Crystal Palace",
+      "away_team": "Manchester United",
+      "source_match_key": null,
+      "understat_id": "3130",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2016-17",
+      "match_date": "2016-12-15",
+      "home_team": "Manchester City",
+      "away_team": "Watford",
+      "source_match_key": null,
+      "understat_id": "3132",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2016-17",
+      "match_date": "2016-12-15",
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Hull City",
+      "source_match_key": null,
+      "understat_id": "3134",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2016-17",
+      "match_date": "2016-12-19",
+      "home_team": "Everton",
+      "away_team": "Liverpool",
+      "source_match_key": "fd_9ed56f386b11aec396bea443",
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2016-17",
+      "match_date": "2016-12-20",
+      "home_team": "Everton",
+      "away_team": "Liverpool",
+      "source_match_key": null,
+      "understat_id": "3144",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2026-27",
+      "match_date": "2026-11-06",
+      "home_team": "Everton",
+      "away_team": "Coventry City",
+      "source_match_key": null,
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": 94,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2026-27",
+      "match_date": "2026-11-07",
+      "home_team": "Brighton & Hove Albion",
+      "away_team": "Brentford",
+      "source_match_key": null,
+      "understat_id": "31271",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2026-27",
+      "match_date": "2026-11-07",
+      "home_team": "Crystal Palace",
+      "away_team": "Liverpool",
+      "source_match_key": null,
+      "understat_id": "31272",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2026-27",
+      "match_date": "2026-11-07",
+      "home_team": "Everton",
+      "away_team": "Coventry City",
+      "source_match_key": null,
+      "understat_id": "31273",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2026-27",
+      "match_date": "2026-11-07",
+      "home_team": "Ipswich Town",
+      "away_team": "Bournemouth",
+      "source_match_key": null,
+      "understat_id": "31275",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2026-27",
+      "match_date": "2026-11-07",
+      "home_team": "Manchester United",
+      "away_team": "Aston Villa",
+      "source_match_key": null,
+      "understat_id": "31277",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2026-27",
+      "match_date": "2026-11-07",
+      "home_team": "Sunderland",
+      "away_team": "Chelsea",
+      "source_match_key": null,
+      "understat_id": "31279",
+      "espn_match_id": null,
+      "fpl_fixture_id": null,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2026-27",
+      "match_date": "2026-11-08",
+      "home_team": "Brighton & Hove Albion",
+      "away_team": "Brentford",
+      "source_match_key": null,
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": 92,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2026-27",
+      "match_date": "2026-11-08",
+      "home_team": "Crystal Palace",
+      "away_team": "Liverpool",
+      "source_match_key": null,
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": 93,
+      "statsbomb_match_id": null
+    },
+    {
+      "season": "2026-27",
+      "match_date": "2026-11-08",
+      "home_team": "Ipswich Town",
+      "away_team": "Bournemouth",
+      "source_match_key": null,
+      "understat_id": null,
+      "espn_match_id": null,
+      "fpl_fixture_id": 96,
+      "statsbomb_match_id": null
+    }
+  ],
+  "future_schedule_rows": 361,
+  "notes": [
+    "No score differences are silently overwritten; all native home/away scores remain separate.",
+    "A false score_mismatch_any with zero score_comparison_pairs means no score comparison was possible.",
+    "Football-Data sources cover E0 only in this link table; lower-tier histories remain in their original tables.",
+    "Current-club scope is unchanged; former clubs appear only as historical opponents.",
+    "Quotes are not time-aligned or executable solely because fixture IDs are linked."
+  ],
+  "independent_statsbomb_export_validation": {
+    "status": "passed",
+    "native_match_ids_retained": 362,
+    "linked_to_football_data": 362,
+    "linked_to_understat": 313,
+    "native_dates_scores_kickoffs_preserved": true,
+    "season_counts": {
+      "2003-04": 38,
+      "2015-16": 324
+    },
+    "score_mismatches": 0,
+    "previous_source_counts_unchanged": true,
+    "union_rows_unchanged": 11240,
+    "date_conflict_rows_unchanged": 100
+  }
+}

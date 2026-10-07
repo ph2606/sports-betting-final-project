@@ -1,0 +1,214 @@
+[
+  {
+    "file": "A profit model for spread trading _energy futures_.pdf",
+    "pages": 31,
+    "characters": 70588,
+    "sparse_pages": []
+  },
+  {
+    "file": "A_Century_of_Evidence_on_Trend-Following_Investing.pdf",
+    "pages": 12,
+    "characters": 52266,
+    "sparse_pages": [
+      2
+    ]
+  },
+  {
+    "file": "AGame-TheoreticalApproachforDesigningMarketTrading STrategies.pdf",
+    "pages": 7,
+    "characters": 42674,
+    "sparse_pages": []
+  },
+  {
+    "file": "Alternative_Risk_Premia.pdf",
+    "pages": 123,
+    "characters": 285245,
+    "sparse_pages": []
+  },
+  {
+    "file": "An R Package for Hidden Markov Models.pdf",
+    "pages": 21,
+    "characters": 51317,
+    "sparse_pages": []
+  },
+  {
+    "file": "Application of Support Vector Machine on Algorithmic Trading.pdf",
+    "pages": 7,
+    "characters": 42502,
+    "sparse_pages": []
+  },
+  {
+    "file": "Arbitrage under Power mean reversion.pdf",
+    "pages": 15,
+    "characters": 34428,
+    "sparse_pages": []
+  },
+  {
+    "file": "Arbitrage-Free Parametric Volatility Surface and real time fitting.pdf",
+    "pages": 63,
+    "characters": 51967,
+    "sparse_pages": []
+  },
+  {
+    "file": "Dealing with the Inventory Risk Market Making.pdf",
+    "pages": 36,
+    "characters": 97088,
+    "sparse_pages": []
+  },
+  {
+    "file": "Deep neural networks gradient-boosted trees random forests.pdf",
+    "pages": 33,
+    "characters": 93526,
+    "sparse_pages": []
+  },
+  {
+    "file": "Deep Reinforcement Learning Pairs Trading.pdf",
+    "pages": 14,
+    "characters": 15817,
+    "sparse_pages": [
+      13
+    ]
+  },
+  {
+    "file": "Frequency Arbitrage.pdf",
+    "pages": 1,
+    "characters": 955,
+    "sparse_pages": []
+  },
+  {
+    "file": "Hidden Markov Model for Stock Selection.pdf",
+    "pages": 19,
+    "characters": 101771,
+    "sparse_pages": []
+  },
+  {
+    "file": "Identifying Small Mean Reverting Portfolios.pdf",
+    "pages": 24,
+    "characters": 62529,
+    "sparse_pages": []
+  },
+  {
+    "file": "Kalman filter.pdf",
+    "pages": 8,
+    "characters": 20975,
+    "sparse_pages": []
+  },
+  {
+    "file": "Mixed_Copula_Pairs_Trading_on_the_S_P_500.pdf",
+    "pages": 32,
+    "characters": 123578,
+    "sparse_pages": []
+  },
+  {
+    "file": "MorrisonPike77.pdf",
+    "pages": 7,
+    "characters": 0,
+    "sparse_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "file": "Optimal FX Market Making under Inventory Risk.pdf",
+    "pages": 12,
+    "characters": 45617,
+    "sparse_pages": []
+  },
+  {
+    "file": "Optimal Mean Reversion Trading with Transaction cost and stop loss exit.pdf",
+    "pages": 26,
+    "characters": 84982,
+    "sparse_pages": []
+  },
+  {
+    "file": "Optimal multifactor trading under proportional transaction cost.pdf",
+    "pages": 30,
+    "characters": 67047,
+    "sparse_pages": []
+  },
+  {
+    "file": "Optimal Trading With Stochastic Volatility and Liquidity.pdf",
+    "pages": 19,
+    "characters": 54960,
+    "sparse_pages": []
+  },
+  {
+    "file": "particle-filter - Copy.pdf",
+    "pages": 66,
+    "characters": 203643,
+    "sparse_pages": []
+  },
+  {
+    "file": "Practical Deep Reinforcement Learning Approach for Stock Trading.pdf",
+    "pages": 7,
+    "characters": 22837,
+    "sparse_pages": []
+  },
+  {
+    "file": "Predicting the Direction of Stock Market Price Using Random Forest.pdf",
+    "pages": 20,
+    "characters": 71318,
+    "sparse_pages": []
+  },
+  {
+    "file": "Realized Volatility.pdf",
+    "pages": 29,
+    "characters": 76708,
+    "sparse_pages": []
+  },
+  {
+    "file": "Spread trading strategies in the crude oil futures market.pdf",
+    "pages": 35,
+    "characters": 90668,
+    "sparse_pages": []
+  },
+  {
+    "file": "Statistical arbitrage in the US treasury futures markets.pdf",
+    "pages": 38,
+    "characters": 79148,
+    "sparse_pages": []
+  },
+  {
+    "file": "The Effects of Backtest Overfitting on Out-of_Sample Performance.pdf",
+    "pages": 14,
+    "characters": 90069,
+    "sparse_pages": []
+  },
+  {
+    "file": "The probability of Backtest Overfitting.pdf",
+    "pages": 42,
+    "characters": 71632,
+    "sparse_pages": [
+      29
+    ]
+  },
+  {
+    "file": "TimeSeriesPredictionbyKalmanSmoother.pdf",
+    "pages": 5,
+    "characters": 23768,
+    "sparse_pages": []
+  },
+  {
+    "file": "Trading-L1-Filtering.pdf",
+    "pages": 22,
+    "characters": 53593,
+    "sparse_pages": []
+  },
+  {
+    "file": "Trend Detection and Data Mining  via Wavelet and Hilbert-Huang Transforms.pdf",
+    "pages": 7,
+    "characters": 47532,
+    "sparse_pages": []
+  },
+  {
+    "file": "Trend Filtering Methods for Momentum Trading.pdf",
+    "pages": 49,
+    "characters": 113685,
+    "sparse_pages": []
+  }
+]

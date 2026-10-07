@@ -1,0 +1,249 @@
+column,kind,description,dtype,non_null_rows,total_rows
+Div,native_provider,League Division,object,21782,21782
+Date,native_provider,Match Date (dd/mm/yy),object,21782,21782
+HomeTeam,native_provider,Home Team,object,21782,21782
+AwayTeam,native_provider,Away Team,object,21782,21782
+FTHG,native_provider,Full Time Home Team Goals,int64,21782,21782
+FTAG,native_provider,Full Time Away Team Goals,int64,21782,21782
+FTR,native_provider,"Full Time Result (H=Home Win, D=Draw, A=Away Win)",object,21782,21782
+source_row,derived_metadata,See archived provider notes or collector source for this field.,int64,21782,21782
+season,derived_metadata,See archived provider notes or collector source for this field.,object,21782,21782
+season_start_year,derived_metadata,See archived provider notes or collector source for this field.,int64,21782,21782
+competition,derived_metadata,See archived provider notes or collector source for this field.,object,21782,21782
+division,derived_metadata,See archived provider notes or collector source for this field.,object,21782,21782
+source_url,derived_metadata,See archived provider notes or collector source for this field.,object,21782,21782
+source_file,derived_metadata,See archived provider notes or collector source for this field.,object,21782,21782
+home_team_current,derived_metadata,See archived provider notes or collector source for this field.,object,13652,21782
+away_team_current,derived_metadata,See archived provider notes or collector source for this field.,object,13652,21782
+home_is_current_cohort,derived_metadata,See archived provider notes or collector source for this field.,bool,21782,21782
+away_is_current_cohort,derived_metadata,See archived provider notes or collector source for this field.,bool,21782,21782
+match_date,derived_metadata,See archived provider notes or collector source for this field.,object,21782,21782
+source_match_key,derived_metadata,See archived provider notes or collector source for this field.,object,21782,21782
+kickoff_utc,derived_metadata,See archived provider notes or collector source for this field.,object,4126,21782
+kickoff_timezone_assumption,derived_metadata,See archived provider notes or collector source for this field.,object,4126,21782
+completed,derived_metadata,See archived provider notes or collector source for this field.,bool,21782,21782
+future_relative_to_asof,derived_metadata,See archived provider notes or collector source for this field.,bool,21782,21782
+completed_asof,derived_metadata,See archived provider notes or collector source for this field.,bool,21782,21782
+pinnacle_stale_warning,derived_metadata,See archived provider notes or collector source for this field.,bool,21782,21782
+HTHG,native_provider,Half Time Home Team Goals,float64,19031,21782
+HTAG,native_provider,Half Time Away Team Goals,float64,19031,21782
+HTR,native_provider,"Half Time Result (H=Home Win, D=Draw, A=Away Win)",object,19031,21782
+Attendance,native_provider,Crowd Attendance,float64,1323,21782
+Referee,native_provider,Match Referee,object,16567,21782
+HS,native_provider,Home Team Shots,float64,16945,21782
+AS,native_provider,Away Team Shots,float64,16945,21782
+HST,native_provider,Home Team Shots on Target,float64,16945,21782
+AST,native_provider,Away Team Shots on Target,float64,16945,21782
+HHW,native_provider,Home Team Hit Woodwork,float64,1324,21782
+AHW,native_provider,Away Team Hit Woodwork,float64,1324,21782
+HC,native_provider,Home Team Corners,float64,16945,21782
+AC,native_provider,Away Team Corners,float64,16945,21782
+HF,native_provider,Home Team Fouls Committed,float64,16945,21782
+AF,native_provider,Away Team Fouls Committed,float64,16945,21782
+HO,native_provider,Home Team Offsides,float64,1324,21782
+AO,native_provider,Away Team Offsides,float64,1324,21782
+HY,native_provider,Home Team Yellow Cards,float64,16945,21782
+AY,native_provider,Away Team Yellow Cards,float64,16945,21782
+HR,native_provider,Home Team Red Cards,float64,16945,21782
+AR,native_provider,Away Team Red Cards,float64,16945,21782
+HBP,native_provider,"Home Team Bookings Points (10 = yellow, 25 = red)",float64,1324,21782
+ABP,native_provider,"Away Team Bookings Points (10 = yellow, 25 = red)",float64,1324,21782
+GBH,native_provider,Gamebookers home win odds,float64,8662,21782
+GBD,native_provider,Gamebookers draw odds,float64,8662,21782
+GBA,native_provider,Gamebookers away win odds,float64,8662,21782
+IWH,native_provider,Interwetten home win odds,float64,15510,21782
+IWD,native_provider,Interwetten draw odds,float64,15510,21782
+IWA,native_provider,Interwetten away win odds,float64,15510,21782
+LBH,native_provider,Ladbrokes home win odds,float64,12420,21782
+LBD,native_provider,Ladbrokes draw odds,float64,12420,21782
+LBA,native_provider,Ladbrokes away win odds,float64,12420,21782
+SBH,native_provider,Sportingbet home win odds,float64,8105,21782
+SBD,native_provider,Sportingbet draw odds,float64,8105,21782
+SBA,native_provider,Sportingbet away win odds,float64,8105,21782
+WHH,native_provider,William Hill home win odds,float64,16054,21782
+WHD,native_provider,William Hill draw odds,float64,16054,21782
+WHA,native_provider,William Hill away win odds,float64,16054,21782
+SYH,native_provider,Stanleybet home win odds,float64,665,21782
+SYD,native_provider,Stanleybet draw odds,float64,665,21782
+SYA,native_provider,Stanleybet away win odds,float64,665,21782
+B365H,native_provider,Bet365 home win odds,float64,15619,21782
+B365D,native_provider,Bet365 draw odds,float64,15619,21782
+B365A,native_provider,Bet365 away win odds,float64,15619,21782
+SOH,native_provider,Sporting Odds home win odds,float64,1354,21782
+SOD,native_provider,Sporting Odds draw odds,float64,1354,21782
+SOA,native_provider,Sporting Odds away win odds,float64,1354,21782
+GB>2.5,native_provider,Gamebookers over 2.5 goals,float64,1861,21782
+GB<2.5,native_provider,Gamebookers under 2.5 goals,float64,1861,21782
+B365>2.5,native_provider,Bet365 over 2.5 goals,float64,5492,21782
+B365<2.5,native_provider,Bet365 under 2.5 goals,float64,5492,21782
+GBAHH,native_provider,Gamebookers Asian handicap home team odds,float64,1251,21782
+GBAHA,native_provider,Gamebookers Asian handicap away team odds,float64,1240,21782
+GBAH,native_provider,Gamebookers size of handicap (home team),float64,1240,21782
+LBAHH,native_provider,Ladbrokes Asian handicap home team odds,float64,1119,21782
+LBAHA,native_provider,Ladbrokes Asian handicap away team odds,float64,1119,21782
+LBAH,native_provider,Ladbrokes size of handicap (home team),float64,1118,21782
+B365AHH,native_provider,Bet365 Asian handicap home team odds,float64,5344,21782
+B365AHA,native_provider,Bet365 Asian handicap away team odds,float64,5344,21782
+B365AH,native_provider,Bet365 size of handicap (home team),float64,1224,21782
+BWH,native_provider,Bet&Win home win odds,float64,14052,21782
+BWD,native_provider,Bet&Win draw odds,float64,14052,21782
+BWA,native_provider,Bet&Win away win odds,float64,14052,21782
+SJH,native_provider,Stan James home win odds,float64,6234,21782
+SJD,native_provider,Stan James draw odds,float64,6234,21782
+SJA,native_provider,Stan James away win odds,float64,6234,21782
+VCH,native_provider,"VC Bet home win odds (now BetVictor, see above)",float64,12472,21782
+VCD,native_provider,"VC Bet draw odds (now BetVictor, see above)",float64,12472,21782
+VCA,native_provider,"VC Bet away win odds (now BetVictor, see above)",float64,12472,21782
+Bb1X2,native_provider,Number of BetBrain bookmakers used to calculate match odds averages and maximums,float64,9443,21782
+BbMxH,native_provider,Betbrain maximum home win odds,float64,9443,21782
+BbAvH,native_provider,Betbrain average home win odds,float64,9443,21782
+BbMxD,native_provider,Betbrain maximum draw odds,float64,9443,21782
+BbAvD,native_provider,Betbrain average draw win odds,float64,9443,21782
+BbMxA,native_provider,Betbrain maximum away win odds,float64,9443,21782
+BbAvA,native_provider,Betbrain average away win odds,float64,9443,21782
+BbOU,native_provider,Number of BetBrain bookmakers used to calculate over/under 2.5 goals (total goals) averages and maximums,float64,9443,21782
+BbMx>2.5,native_provider,Betbrain maximum over 2.5 goals,float64,9443,21782
+BbAv>2.5,native_provider,Betbrain average over 2.5 goals,float64,9443,21782
+BbMx<2.5,native_provider,Betbrain maximum under 2.5 goals,float64,9443,21782
+BbAv<2.5,native_provider,Betbrain average under 2.5 goals,float64,9443,21782
+BbAH,native_provider,Number of BetBrain bookmakers used to Asian handicap averages and maximums,float64,9428,21782
+BbAHh,native_provider,Betbrain size of handicap (home team),float64,9428,21782
+BbMxAHH,native_provider,Betbrain maximum Asian handicap home team odds,float64,9428,21782
+BbAvAHH,native_provider,Betbrain average Asian handicap home team odds,float64,9428,21782
+BbMxAHA,native_provider,Betbrain maximum Asian handicap away team odds,float64,9428,21782
+BbAvAHA,native_provider,Betbrain average Asian handicap away team odds,float64,9428,21782
+BSH,native_provider,Blue Square home win odds,float64,4120,21782
+BSD,native_provider,Blue Square draw odds,float64,4120,21782
+BSA,native_provider,Blue Square away win odds,float64,4120,21782
+PSH,native_provider,Pinnacle home win odds,float64,8442,21782
+PSD,native_provider,Pinnacle draw odds,float64,8442,21782
+PSA,native_provider,Pinnacle away win odds,float64,8442,21782
+PSCH,native_provider,Closing snapshot: Pinnacle home win odds,float64,8454,21782
+PSCD,native_provider,Closing snapshot: Pinnacle draw odds,float64,8454,21782
+PSCA,native_provider,Closing snapshot: Pinnacle away win odds,float64,8454,21782
+Time,native_provider,Time of match kick off,object,4126,21782
+MaxH,native_provider,Market maximum home win odds,float64,4126,21782
+MaxD,native_provider,Market maximum draw win odds,float64,4126,21782
+MaxA,native_provider,Market maximum away win odds,float64,4126,21782
+AvgH,native_provider,Market average home win odds,float64,4126,21782
+AvgD,native_provider,Market average draw win odds,float64,4126,21782
+AvgA,native_provider,Market average away win odds,float64,4126,21782
+P>2.5,native_provider,Pinnacle over 2.5 goals,float64,3820,21782
+P<2.5,native_provider,Pinnacle under 2.5 goals,float64,3820,21782
+Max>2.5,native_provider,Market maximum over 2.5 goals,float64,4126,21782
+Max<2.5,native_provider,Market maximum under 2.5 goals,float64,4126,21782
+Avg>2.5,native_provider,Market average over 2.5 goals,float64,4126,21782
+Avg<2.5,native_provider,Market average under 2.5 goals,float64,4126,21782
+AHh,native_provider,Market size of handicap (home team) (since 2019/2020),float64,4125,21782
+PAHH,native_provider,Pinnacle Asian handicap home team odds,float64,3832,21782
+PAHA,native_provider,Pinnacle Asian handicap away team odds,float64,3832,21782
+MaxAHH,native_provider,Market maximum Asian handicap home team odds,float64,4126,21782
+MaxAHA,native_provider,Market maximum Asian handicap away team odds,float64,4126,21782
+AvgAHH,native_provider,Market average Asian handicap home team odds,float64,4126,21782
+AvgAHA,native_provider,Market average Asian handicap away team odds,float64,4126,21782
+B365CH,native_provider,Closing snapshot: Bet365 home win odds,float64,4126,21782
+B365CD,native_provider,Closing snapshot: Bet365 draw odds,float64,4126,21782
+B365CA,native_provider,Closing snapshot: Bet365 away win odds,float64,4126,21782
+BWCH,native_provider,Closing snapshot: Bet&Win home win odds,float64,3913,21782
+BWCD,native_provider,Closing snapshot: Bet&Win draw odds,float64,3913,21782
+BWCA,native_provider,Closing snapshot: Bet&Win away win odds,float64,3913,21782
+IWCH,native_provider,Closing snapshot: Interwetten home win odds,float64,2763,21782
+IWCD,native_provider,Closing snapshot: Interwetten draw odds,float64,2763,21782
+IWCA,native_provider,Closing snapshot: Interwetten away win odds,float64,2763,21782
+WHCH,native_provider,Closing snapshot: William Hill home win odds,float64,3452,21782
+WHCD,native_provider,Closing snapshot: William Hill draw odds,float64,3452,21782
+WHCA,native_provider,Closing snapshot: William Hill away win odds,float64,3452,21782
+VCCH,native_provider,"Closing snapshot: VC Bet home win odds (now BetVictor, see above)",float64,3030,21782
+VCCD,native_provider,"Closing snapshot: VC Bet draw odds (now BetVictor, see above)",float64,3030,21782
+VCCA,native_provider,"Closing snapshot: VC Bet away win odds (now BetVictor, see above)",float64,3030,21782
+MaxCH,native_provider,Closing snapshot: Market maximum home win odds,float64,4126,21782
+MaxCD,native_provider,Closing snapshot: Market maximum draw win odds,float64,4126,21782
+MaxCA,native_provider,Closing snapshot: Market maximum away win odds,float64,4126,21782
+AvgCH,native_provider,Closing snapshot: Market average home win odds,float64,4126,21782
+AvgCD,native_provider,Closing snapshot: Market average draw win odds,float64,4126,21782
+AvgCA,native_provider,Closing snapshot: Market average away win odds,float64,4126,21782
+B365C>2.5,native_provider,Closing snapshot: Bet365 over 2.5 goals,float64,4126,21782
+B365C<2.5,native_provider,Closing snapshot: Bet365 under 2.5 goals,float64,4126,21782
+PC>2.5,native_provider,Closing snapshot: Pinnacle over 2.5 goals,float64,3827,21782
+PC<2.5,native_provider,Closing snapshot: Pinnacle under 2.5 goals,float64,3827,21782
+MaxC>2.5,native_provider,Closing snapshot: Market maximum over 2.5 goals,float64,4126,21782
+MaxC<2.5,native_provider,Closing snapshot: Market maximum under 2.5 goals,float64,4126,21782
+AvgC>2.5,native_provider,Closing snapshot: Market average over 2.5 goals,float64,4126,21782
+AvgC<2.5,native_provider,Closing snapshot: Market average under 2.5 goals,float64,4126,21782
+AHCh,native_provider,See archived provider notes or collector source for this field.,float64,4126,21782
+B365CAHH,native_provider,Closing snapshot: Bet365 Asian handicap home team odds,float64,4125,21782
+B365CAHA,native_provider,Closing snapshot: Bet365 Asian handicap away team odds,float64,4125,21782
+PCAHH,native_provider,Closing snapshot: Pinnacle Asian handicap home team odds,float64,3838,21782
+PCAHA,native_provider,Closing snapshot: Pinnacle Asian handicap away team odds,float64,3838,21782
+MaxCAHH,native_provider,Closing snapshot: Market maximum Asian handicap home team odds,float64,4125,21782
+MaxCAHA,native_provider,Closing snapshot: Market maximum Asian handicap away team odds,float64,4125,21782
+AvgCAHH,native_provider,Closing snapshot: Market average Asian handicap home team odds,float64,4126,21782
+AvgCAHA,native_provider,Closing snapshot: Market average Asian handicap away team odds,float64,4126,21782
+BFH,native_provider,Betfair home win odds,float64,539,21782
+BFD,native_provider,Betfair draw odds,float64,539,21782
+BFA,native_provider,Betfair away win odds,float64,539,21782
+1XBH,native_provider,1XBet home win odds,float64,528,21782
+1XBD,native_provider,1XBet draw odds,float64,528,21782
+1XBA,native_provider,1XBet away win odds,float64,528,21782
+BFEH,native_provider,Betfair Exchange home win odds,float64,1066,21782
+BFED,native_provider,Betfair Exchange draw odds,float64,1066,21782
+BFEA,native_provider,Betfair Exchange away win odds,float64,1066,21782
+BFE>2.5,native_provider,See archived provider notes or collector source for this field.,float64,1059,21782
+BFE<2.5,native_provider,See archived provider notes or collector source for this field.,float64,1059,21782
+BFEAHH,native_provider,See archived provider notes or collector source for this field.,float64,1051,21782
+BFEAHA,native_provider,See archived provider notes or collector source for this field.,float64,1051,21782
+BFCH,native_provider,Closing snapshot: Betfair home win odds,float64,540,21782
+BFCD,native_provider,Closing snapshot: Betfair draw odds,float64,540,21782
+BFCA,native_provider,Closing snapshot: Betfair away win odds,float64,540,21782
+1XBCH,native_provider,Closing snapshot: 1XBet home win odds,float64,540,21782
+1XBCD,native_provider,Closing snapshot: 1XBet draw odds,float64,540,21782
+1XBCA,native_provider,Closing snapshot: 1XBet away win odds,float64,540,21782
+BFECH,native_provider,Closing snapshot: Betfair Exchange home win odds,float64,1064,21782
+BFECD,native_provider,Closing snapshot: Betfair Exchange draw odds,float64,1064,21782
+BFECA,native_provider,Closing snapshot: Betfair Exchange away win odds,float64,1064,21782
+BFEC>2.5,native_provider,See archived provider notes or collector source for this field.,float64,1064,21782
+BFEC<2.5,native_provider,See archived provider notes or collector source for this field.,float64,1064,21782
+BFECAHH,native_provider,See archived provider notes or collector source for this field.,float64,1064,21782
+BFECAHA,native_provider,See archived provider notes or collector source for this field.,float64,1064,21782
+BFDH,native_provider,Betfred home win odds,float64,555,21782
+BFDD,native_provider,Betfred draw odds,float64,555,21782
+BFDA,native_provider,Betfred away win odds,float64,555,21782
+BMGMH,native_provider,BetMGM home win odds,float64,504,21782
+BMGMD,native_provider,BetMGM draw odds,float64,504,21782
+BMGMA,native_provider,BetMGM away win odds,float64,504,21782
+BVH,native_provider,Betvictor home win odds,float64,554,21782
+BVD,native_provider,Betvictor draw odds,float64,554,21782
+BVA,native_provider,Betvictor away win odds,float64,554,21782
+CLH,native_provider,Coral home win odds,float64,378,21782
+CLD,native_provider,Coral draw odds,float64,378,21782
+CLA,native_provider,Coral away win odds,float64,378,21782
+BFDCH,native_provider,Closing snapshot: Betfred home win odds,float64,545,21782
+BFDCD,native_provider,Closing snapshot: Betfred draw odds,float64,545,21782
+BFDCA,native_provider,Closing snapshot: Betfred away win odds,float64,545,21782
+BMGMCH,native_provider,Closing snapshot: BetMGM home win odds,float64,506,21782
+BMGMCD,native_provider,Closing snapshot: BetMGM draw odds,float64,506,21782
+BMGMCA,native_provider,Closing snapshot: BetMGM away win odds,float64,506,21782
+BVCH,native_provider,Closing snapshot: Betvictor home win odds,float64,545,21782
+BVCD,native_provider,Closing snapshot: Betvictor draw odds,float64,545,21782
+BVCA,native_provider,Closing snapshot: Betvictor away win odds,float64,545,21782
+CLCH,native_provider,Closing snapshot: Coral home win odds,float64,347,21782
+CLCD,native_provider,Closing snapshot: Coral draw odds,float64,347,21782
+CLCA,native_provider,Closing snapshot: Coral away win odds,float64,347,21782
+LBCH,native_provider,Closing snapshot: Ladbrokes home win odds,float64,374,21782
+LBCD,native_provider,Closing snapshot: Ladbrokes draw odds,float64,374,21782
+LBCA,native_provider,Closing snapshot: Ladbrokes away win odds,float64,374,21782
+HxG,native_provider,Home expected goals (newer source field; xG methodology not specified in archived notes),float64,50,21782
+AxG,native_provider,Away expected goals (newer source field; xG methodology not specified in archived notes),float64,50,21782
+PPH,native_provider,Paddy Power home win odds,float64,50,21782
+PPD,native_provider,Paddy Power draw odds,float64,50,21782
+PPA,native_provider,Paddy Power away win odds,float64,50,21782
+SKBH,native_provider,Skybet home win odds,float64,50,21782
+SKBD,native_provider,Skybet draw odds,float64,50,21782
+SKBA,native_provider,Skybet away win odds,float64,50,21782
+PPCH,native_provider,Closing snapshot: Paddy Power home win odds,float64,50,21782
+PPCD,native_provider,Closing snapshot: Paddy Power draw odds,float64,50,21782
+PPCA,native_provider,Closing snapshot: Paddy Power away win odds,float64,50,21782
+SKBCH,native_provider,Closing snapshot: Skybet home win odds,float64,50,21782
+SKBCD,native_provider,Closing snapshot: Skybet draw odds,float64,50,21782
+SKBCA,native_provider,Closing snapshot: Skybet away win odds,float64,50,21782
+source_extra_132,native_provider,See archived provider notes or collector source for this field.,float64,0,21782

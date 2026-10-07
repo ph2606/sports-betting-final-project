@@ -1,0 +1,668 @@
+[PAGE 1]
+A Century of Evidence on Trend-Following Investing
+
+
+
+
+
+Brian Hurst                                                                                                                                           Fall 2012
+Principal
+
+Yao Hua Ooi
+Principal
+
+Lasse H. Pedersen, Ph.D.*
+Principal
+
+
+
+
+     A Century of Evidence on
+        Trend-Following Investing
+
+                    Executive Summary
+
+
+                   We study the performance of trend-following investing across global markets since 1903, extending
+                             the existing evidence by more than 80 years. We find that trend-following has delivered strong
+                               positive returns and realized a low correlation to traditional asset classes each decade for more
+                           than a century. We analyze trend-following returns through various economic environments and
+                              highlight the diversification benefits the strategy has historically provided in equity bear markets.
+                                 Finally, we evaluate the recent environment for the strategy in the context of these long-term results.
+
+
+
+
+
+                                               * Brian Hurst and Yao Hua Ooi are at AQR Capital Management, and Lasse Heje Pedersen is at New York University, Copenhagen
+                                    Business School, and AQR Capital Management. We are grateful to Cliff Asness and John Liew for helpful comments, and to Ari Levine,
+                                      Haitao Fu, and Vineet Patil for excellent research assistance.
+
+
+                          Please read important disclosures at the end of this paper.
+
+
+
+     AQR Capital Management, LLC   I Two Greenwich Plaza, Third Floor   I  Greenwich, CT 06830   I T : 203.742.3600   I F : 203.742.3100   I  www.aqr.com
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                       1
+                                      FOR INVESTMENT PROFESSIONAL USE ONLY
+
+[PAGE 2]
+
+
+[PAGE 3]
+A Century of Evidence on Trend-Following Investing
+
+
+Section 1: Introduction                                      strategy that is simple, without many of the often arbitrary choices
+                                                                        of more complex models. Specifically, we construct an equal-
+As an investment style, trend-following has existed for a very long
+                                                             weighted combination of 1-month, 3-month, and 12-month time
+time. Some 200 years ago, the classical economist David Ricardo’s
+                                                                            series momentum strategies for 59 markets across 4 major asset
+imperative to “cut short your losses” and “let your profits run on”
+                                                                          classes – 24 commodities, 11 equity indices, 15 bond markets,
+suggests an attention to trends. A century later, the legendary
+                                                        and 9 currency pairs – from January 1903 to June 2012. Since
+trader Jesse Livermore stated explicitly that the “big money was
+                                                               not all markets have return data going back to 1903, we construct
+not in the individual fluctuations but in… sizing up the entire
+                                                                  the strategies using the largest number of assets for which return
+market and its trend.”1
+                                                                  data exist at each point in time. We use futures returns when they
+                                                                      are available. Prior to the availability of futures data, we rely on
+The most basic trend-following strategy is time series momentum
+                                                               cash index returns financed at local short rates for each country.
+– going long markets with recent positive returns and shorting
+                                                         Appendix A lists the markets that we consider and the source and
+those with recent negative returns. Time series momentum has
+                                                                  length of historical return data used.
+been profitable on average since 1985 for nearly all equity index
+futures, fixed income futures, commodity futures, and currency
+                                                            For each of the three time  series momentum  strategies, the
+forwards.2 The  strategy  explains  the  strong performance  of
+                                                                     position taken in each market is determined by assessing the
+Managed Futures funds from the late 1980s, when fund returns
+                                                                     past return in that market over the relevant look-back horizon.
+and index data first becomes available.3
+                                              A positive past return is considered an “up trend” and leads to
+                                                                 a long position; a negative past return is considered a “down
+This paper seeks to establish whether the strong performance
+                                                                   trend” and leads to a short position. Therefore, each strategy
+of trend-following is a statistical fluke of the last few decades
+                                                               always holds either a long or short position in every market. Each
+or a more robust phenomenon that exists over a wide range of
+                                                                     position is sized to target the same amount of volatility, both to
+economic conditions. Using historical data from a number of
+                                                                provide diversification and to limit the portfolio risk from any one
+sources, we construct a time series momentum strategy all the
+                                                                market. The positions across the three strategies are aggregated
+way back to 1903 and find that the strategy has been consistently
+                                                             each month, and scaled such that the combined portfolio has an
+profitable throughout the past 110  years.4 We examine the
+                                                                annualized ex-ante volatility target of 10%.5 The volatility scaling
+strategy’s decade-by-decade performance, its correlation to major
+                                                              procedure ensures that the combined strategy targets a consistent
+asset classes, and its performance in historical equity bull and bear
+                                                      amount of risk over time, regardless of the number of markets that
+markets. The wealth of data also provides context for evaluating
+                                                                      are traded at each point in time.
+the recent environment for the strategy. We consider the effect of
+increased assets in the strategy as well as the increased correlations
+                                                                              Finally, we subtract transaction costs and fees. Our transaction cost
+across markets since the credit crisis. We also review a number of
+                                                                     estimates are based on current estimates of average transaction
+developments that are potentially favorable for the strategy going
+                                                                       costs in each of the four asset classes, as well as an estimate of
+forward, such as lower trading costs, lower fees, and an increased
+                                                how much higher transaction costs were historically compared to
+number of tradable markets.
+                                                                  the present, based on Jones (2002). To simulate fees, we apply a
+                                          2% management fee and a 20% performance fee subject to a high-
+Section 2: Constructing the Time Series              water-mark, as is typical for Managed Futures managers.6 Details
+Momentum Strategy                                on transaction costs and fee simulations are given in Appendix B.
+                                                   Our methodology follows that of Moskowitz, Ooi, and Pedersen
+Trend-following investing involves going long markets that have
+                                                             (2012) and Hurst, Ooi, and Pedersen (2012). These authors find
+been rising and going short markets that have been falling, betting
+                                                                        that time series momentum captures well the performance of the
+that those trends continue. We create a time series momentum
+                                                      Managed Futures indices and manager returns, including the
+                                                                            largest funds, over the past few decades when data on such funds
+1 Ricardo's trading rules are discussed by Grant (1838) and the quote attributed to
+Livermore is from Lefèvre (1923).                                                  exists.
+2 Moskowitz, Ooi, and Pedersen (2012).
+3 Hurst, Ooi, and Pedersen (2012).
+4 Our century of evidence for time series momentum complements the evidence     5 A simple covariance matrix estimated using rolling 3-year equally weighted monthly
+that cross-sectional momentum (a closely related strategy based on a security’s      returns is used in the portfolio volatility scaling process.
+performance relative to its peers) has delivered positive returns in individual equities     6 While a 2/20 fee structure has been commonplace in the industry, some managers
+back to 1866 (Chabot, Ghysels, and Jagannathan, 2009) and has worked across     charged higher management and performance fees in earlier time periods. On the
+asset classes (Asness, Moskowitz, and Pedersen, 2012).                                other hand, there are also managers that charge lower fees for the strategy today.
+
+
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                       2
+
+[PAGE 4]
+A Century of Evidence on Trend-Following Investing
+
+
+
+                         Exhibit 1: Hypothetical Performance of Time Series Momentum
+
+
+
+                  Strategy performance after simulated transaction costs both gross and net of hypothetical 2-and-20 fees.
+
+
+                        Gross of Fee     Net of 2/20       Realized                                         Correlation to US
+                            Returns     Fee Returns        Volatility     Sharpe Ratio,  Correlation to S&P    10-year Bond
+    Time Period            (Annualized)     (Annualized)     (Annualized)     Net of Fees      500 Returns        Returns
+      Full Sample:
+      Jan 1903 - June 2012      20.0%          14.3%          9.9%             1.00               -0.05                -0.05
+
+    By Decade:
+      Jan 1903 - Dec 1912      18.8%          13.4%          10.1%             0.84               -0.30                -0.59
+      Jan 1913 - Dec 1922      17.1%          11.9%          10.4%             0.70               -0.12                -0.11
+      Jan 1923 - Dec 1932      17.1%          11.9%          9.7%             0.92               -0.07               0.10
+      Jan 1933 - Dec 1942       9.7%           6.0%           9.2%             0.66              0.00                0.55
+      Jan 1943 - Dec 1952      19.4%          13.7%          11.7%             1.08              0.21                0.22
+      Jan 1953 - Dec 1962      24.8%          18.4%          10.0%             1.51              0.21                -0.18
+      Jan 1963 - Dec 1972      26.9%          19.6%          9.2%             1.42               -0.14                -0.35
+      Jan 1973 - Dec 1982      40.3%          30.3%          9.2%             1.89               -0.19                -0.40
+      Jan 1983 - Dec 1992      17.8%          12.5%          9.4%             0.53              0.15                0.13
+      Jan 1993 - Dec 2002      19.3%          13.6%          8.4%             1.04               -0.21               0.32
+      Jan 2003 - June 2012      11.4%          7.5%           9.7%             0.61               -0.22               0.20
+
+
+Source: AQR. Please read important disclosures at the end relating to hypothetical performance and risks.
+
+Section 3: Performance over a Century             more often than not. A large body of research7 has shown that
+                                                                      price trends exist in part due to long-standing behavioral biases
+Exhibit 1 shows the performance of the time series momentum
+                                                                   exhibited by investors, such as anchoring and herding, as well
+strategy over the full sample since 1903 as well as for each decade
+                                                                      as the trading activity of non-profit seeking participants, such
+over this time period. We report the results net of simulated
+                                                                      as central banks and corporate hedging programs. For instance,
+transaction costs, and consider returns both before and after fees.
+                                                   when central banks intervene to reduce currency and interest-
+                                                                          rate volatility, they slow down the rate at which information is
+The performance has been remarkably consistent over an extensive
+                                                                 incorporated into prices, thus creating trends. The fact that trend-
+time  horizon  that  includes  the  Great  Depression,  multiple
+                                                                   following strategies have performed well historically indicates that
+recessions and expansions, multiple wars, stagflation, the Global
+                                                                    these behavioral biases and non-profit seeking market participants
+Financial Crisis, and periods of rising and falling interest rates.
+                                                            have likely existed for a long time.
+Skeptics argue that managed futures has benefited mainly from
+the long secular decline in interest rates. While the strategy did
+                                                      The returns to the strategy have exhibited low correlations to
+perform well over the past 30 years, the best performing decade
+                                                                   stocks and bonds over the full time period, as well as in the
+for the strategy occurred during the 1973-1982 period, when US
+                                                                   majority of sub-periods, as shown in Exhibit 1. Even more
+10 year treasury yields rose from 6.4% to 10.4% with extreme
+                                                                       impressively, the strategy has performed best in large equity
+volatility in between.
+                                                                       bull and bear markets. Exhibit 2 shows the annual hypothetical
+                                                                    returns to the strategy, plotted against the returns to the S&P
+Our long-term out-of-sample evidence suggests that it is unlikely
+                                                      500 from 1903-2011. The “smile” shows that trend-following
+that such price trends are a product of statistical randomness
+                                                               has done particularly well in extreme up or down years for the
+or data mining. Indeed, the first eight decades of data is out-of-
+                                                                  stock market. This strong performance in bear markets over the
+sample evidence relative to the literature and the performance is
+                                                                century extends the evidence that has been documented since the
+strong in each of these decades. Trends appear to be a pervasive
+                                                              1980s, as exemplified most recently with the strong performance
+characteristic of speculative financial markets over the long term.
+                                                                        of trend-following during the Global Financial Crisis.
+Trend-following  strategies perform well only  if  prices trend
+
+
+                                                                        7 Barberis, Shleifer, and Vishny (1998), Daniel, Hirshleifer, Subrahmanyam (1998),
+                                                              De Long et al. (1990), Hong and Stein (1999) and Frazzini (2006) discuss a number
+                                                                                                of behavioral tendencies that lead to the existence of price trends.
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                       3
+
+[PAGE 5]
+A Century of Evidence on Trend-Following Investing
+
+
+                                                                         significant positive returns during a number of these events.
+       Exhibit 2: Time Series Momentum “Smile”         The valuable hedging benefits that trend-following  strategies
+                                                                    delivered during the Global Financial Crisis 2007-2009 do not
+     The annual net of fee returns of a time series momentum         look unusual when you consider how the strategy has behaved
+              strategy versus the S&P 500, 1903-2011.
+                                                                      in other deep equity bear markets. Why have trend-following
+      80%                                                                            strategies tended to do well in bear markets? The intuition is that
+                                                                   the majority of bear markets have historically occurred gradually
+                                                                over several months, rather than abruptly over a few days, which      60%
+                                                                   allows trend-followers an opportunity to position themselves
+                                                                    short after the initial market decline and profit from continued         Returns      40%                                                market declines. In fact, the average peak-to-trough drawdown
+                                                                   length of the ten largest 60/40 drawdowns between 1903 and
+                                                      2012 was approximately 18 months.
+      20%           Momentum                                                           Given  its  attractive  returns and  diversifying  characteristics,
+                                                                         allocating  to a time  series momentum  strategy would have      0%        Series                                                                   significantly improved a traditional portfolio’s performance over
+     Time  -20%                                                      theeffectpastof allocating110 years.20%Specifiof cally,the capitalExhibitfrom4 showsa 60/40theportfoliosimulatedto
+                                                                   the time series momentum strategy. We see that such an allocation
+                                                       would have helped reduce the maximum portfolio drawdown,
+      -40%
+                                                             lowered portfolio volatility, and increased portfolio returns.          -50%   -30%   -10%   10%   30%   50%
+
+                   S&P 500 Returns                             Exhibit 4: Diversifying 60/40 with an
+Source: AQR. Time Series performance is hypothetical as described above. Please read important             Allocation to Time Series Momentum
+disclosures at the end relating to hypothetical performance.
+                                                                          Performance characteristics of the 60/40 portfolio and a portfolio with 80%
+As another way to evaluate the diversifying properties of trend-           invested in the 60/40 portfolio and 20% invested in the time series
+                                                                    momentum strategy, from January 1903 to June 2012.
+following investment during extreme events, we consider the
+performance during peak-to-trough drawdowns for the typical                             Total Net of Fee   Realized    Sharpe
+60-40 portfolio.8 Exhibit 3 shows the performance of the time                            Returns        Volatility    Ratio, Net Maximum
+                                                                                                       (Annualized)   (Annualized)   of Fees  Drawdown
+series momentum strategy during the 10  largest drawdowns
+                                                                                  60/40 Portfolio           8.0%         11.1%        0.34      -62%
+experienced by the traditional 60-40 portfolio over the past 110
+                                                             80% 60/40 Portfolio,
+years. We see that the time series momentum strategy experienced     20% Time Series         9.5%         9.0%        0.57      -52%
+positive returns in 9 out of 10 of these stress periods and delivered      Momentum Strategy
+
+8 The 60/40 portfolio has 60% of the portfolio invested in the S&P 500 and 40% invested
+in US 10-year bonds. The portfolio is rebalanced to the 60/40 weights at the end of each      Source: AQR. Time Series performance is hypothetical as described above.
+month, and no fees or transaction costs are subtracted from the portfolio returns.
+
+                    Exhibit 3: Total Returns of U.S. 60/40 Portfolio and Time Series Momentum
+                            in the Ten Worst Drawdowns for 60/40 between 1903 and 2012
+
+  150%                                                                                                     Oil
+                                                                                                     Crisis
+  100%                                                                                          Stagflation                           Dot-com      Global            Panic of 1907               Post WWI
+                                     Recession     Great                                                         Bubble      Financial
+   50%                                                    Recession of                                            Bursting       Crisis                                                  Depression                        World War  I                           1937-1938
+    0%
+
+   -50%                                                                                        1987 Stock
+                                                                                                    Market Crash
+
+  -100%
+         Sep 1906 -  Nov 1916 -   Oct 1919 -  Aug 1929 -  Feb 1937 -  Nov 1968 -  Dec 1972 -  Aug 1987 -  Aug 2000 -   Oct 2007 -
+          Nov 1907   Dec 1917    Jun 1921   May 1932   Mar 1938    Jun 1970   Sep 1974   Nov 1987   Sep 2002   Feb 2009
+
+                                           60/40 Portfolio Returns      Time-Series Momentum Returns
+
+Source: AQR. Time Series performance is hypothetical as described above.
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                       4
+
+[PAGE 6]
+A Century of Evidence on Trend-Following Investing
+
+
+
+             Exhibit 5: The 10 Largest Drawdowns of Time Series Momentum between 1903 and 2012
+
+
+           The 10 largest peak-to-trough drawdowns of the time series momentum strategy, calculated using net of fee returns.
+
+                                                                                                 Trough-to-       Peak-to-
+                  Start of    Lowest Point of     End of      Size of Peak-  Peak-to-Trough    Recovery      Recovery
+            Drawdown    Drawdown    Drawdown      to-Trough       Length        Length        Length
+    Rank       (Peak)         (Trough)       (Recovery)    Drawdown       (Months)        (Months)        (Months)
+      1        Mar-1947       Dec-1948        Mar-1954         -26.3%           21             63             84
+      2       May-1939        Jun-1940         Jul-1941         -20.7%           13             13             26
+      3        Oct-1913        Mar-1914        Oct-1914         -15.2%           5              7             12
+      4        Feb-1937        Apr-1937        Dec-1937         -14.4%           2              8             10
+      5        Oct-1916        Apr-1917        Nov-1917         -13.8%           6              7             13
+      6        Feb-2009        Jun-2009         Jul-2011         -13.5%           4             25             29
+      7          Jul-1910       May-1911       Dec-1912         -11.3%           10             19             29
+      8        Nov-1956        Mar-1957         Jul-1957         -11.2%           4              4              8
+      9        Oct-2001        Apr-2002         Jul-2002         -10.8%           6              3              9
+      10       Dec-1907       May-1909         Jul-1910         -10.4%           17             14             31
+
+Source: AQR. Time Series performance is hypothetical as described above.
+
+Section 4: Strategy Outlook                              they invest in. It seems unlikely that their trading activity would
+                                                            have a material effect on the markets’ trend dynamics.
+While trend-following strategies have performed well over the
+past 110 years, recent drawdowns have led to some concerns
+                                                              Following very strong performance in 2008, trend-following
+about the current environment for the strategy. First, the assets
+                                                                            strategies have experienced a few drawdowns from 2009-2012.
+under management in these strategies have grown rapidly over the
+                                                        Does this recent performance imply that the environment today
+past two decades and competition could potentially lower future
+                                                                                         is meaningfully worse for trend-following investing? Exhibit 5
+returns. Second, over the past three years there has been a lack of
+                                                        shows the 10 largest historical drawdowns experienced by the
+clear trends – and even a number of sharp trend reversals – which
+                                                                        strategy since 1903, including the amount of time the strategy
+raises the question of whether the current economic environment
+                                                             took to realize and recover from each drawdown. We compute
+is simply worse for the strategy. We try to evaluate each of these
+                                                                  the drawdown as the percentage loss since the strategy reached
+issues in turn.
+                                                                                          its highest-ever cumulative return (its high-water mark). When
+                                                                  evaluated in this long-term context, the drawdowns experienced
+To evaluate the effect of increased assets in the strategy, consider
+                                                                 within the past 3 years do not look unusually large. While recent
+BarclayHedge’s estimate that the assets managed by systematic
+                                                                        strategy performance has been disappointing, we do not find any
+trend-followers has grown from $22B in 1999 to over $260B in
+                                                                evidence that the recent environment has been anomalously poor
+2012.9 While this growth is substantial, the size of the underlying
+                                                                          for the strategy relative to history.
+markets has also grown over the past decade. We estimate that
+the aggregate size of positions held by trend-followers remains
+                                                          While the performance of trend-following investing over the past
+a small fraction of the markets that they are invested in. If we
+                                                           few years does not appear to be outside the normal range, it is
+assume that all trend-following managers employ the identical                                                                        also useful to consider the potential effects the current economic
+simple strategy we described, the average positions held would                                                            environment may have on the strategy. Over the past few years, the
+amount to approximately 0.2% of the size of the underlying     “risk-on/risk-off” macroeconomic environment has led to higher
+equity markets, 3% of the underlying bond markets, 5% of the     correlations both within and across asset classes. Exhibit 6 plots
+underlying commodity markets, and 0.2% of the underlying    the average pairwise correlation across all the markets used in our
+currency markets. Appendix C provides details on the data used     strategy, showing how correlations have increased meaningfully
+to estimate the aggregate size of the different markets. Even    across markets since 2007, when the Global Financial Crisis
+with the significant growth in assets under management, trend-    began. As markets have become more correlated, the strategy has
+                                                        had fewer available independent trends to profit from, potentiallyfollowers appear to remain a modest fraction of the markets that
+                                                                lowering its risk-adjusted returns, as is true for many investment
+9 www.barclayhedge.com/research/indices/cta/mum/Systematic_Traders.html          strategies.
+
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                       5
+
+[PAGE 7]
+A Century of Evidence on Trend-Following Investing
+
+
+                                                         which they did return to more normal levels. Furthermore, even if
+    Exhibit 6: Average Pairwise Asset Correlations         the major markets remain more correlated than in the past, there
+                                                                      are also now considerably more markets to diversify amongst than
+           The average absolute pairwise correlation across the
+     59 markets traded in the time series momentum strategy, calculated        throughout most of history, which should benefit trend-following.
+                      using a rolling 3-year window.                     For example, trend-followers can now invest in emerging equity
+    0.6                                                       markets and emerging currency markets, which are much more
+                                                                       liquid than they were in the past. In addition, investors can now
+    0.5
+                                                                    access these strategies at lower fees than the 2 and 20 fee structure
+    0.4                                            we assumed in our strategy returns. Lastly, while the example
+                                                            above assumes that the 60/40 portfolio will perform as well as it    0.3
+                                                               has historically, given the current low real yield on bonds and the
+    0.2                                                              high valuation of stocks, there are strong reasons to believe that
+    0.1                                                           the 60/40 portfolio will not perform as well going forward, which
+                                                                      further makes the case for allocating a portion of one’s portfolio
+    0.0
+                                                                      to trend-following.
+
+                                               Section 5: Conclusion
+Source: AQR. Time Series performance is hypothetical as described above.
+                                                                 Trend-following investing has performed well consistently over
+                                                      more than a century, as far back as we can get reliable return
+However, even if the future Sharpe Ratio is expected to be lower                                                                  data for several markets. Our analysis provides significant out-of-
+than historically observed, the strategy’s attractive diversification                                                           sample evidence beyond the substantial evidence already in the
+characteristics continue to make it a potentially valuable addition                                                                             literature (Moskowitz, Ooi, and Pedersen, 2012). This consistent
+to a traditional portfolio. For instance, suppose we make a very                                                               long-term evidence indicates that trends are pervasive features of
+conservative assumption that the strategy will only realize a                                                                     global markets.
+Sharpe Ratio of 0.4 net of fees and transaction costs, meaning
+that trend-following returns are less than half of what we have                                                             Markets have tended to trend more often than not because of
+observed historically.10 Under this assumption, allocating 20%                                                                      investor behavioral biases, market frictions, hedging pressures,
+of a 60/40 portfolio to trend-following leaves portfolio returns                                                        and market interventions by central banks and governments.
+unchanged, lowers portfolio volatility from 11% to 9%, increases                                                        Such market  interventions and  hedging programs  are  still
+the overall portfolio’s Sharpe ratio from 0.34 to 0.44, and reduces                                                                      prevalent, and investors are likely to continue to suffer from the
+the maximum drawdown from 62% to 53%.11                                                       same behavioral biases that have influenced price behavior over
+                                                                  the past century, setting the stage for trend-following investing
+Moreover, there are a number of positive developments that                                                               going forward.
+could benefit the  strategy going forward. More competition
+among market makers in the equity markets has vastly reduced                                                                 Despite a century of very strong performance of trend-following
+transaction costs.12 Over the  last few years, there have been                                                                      investing and the continued presence of biases and interventions,
+changes in the currency and futures markets which have enabled                                                                  the strategy’s expected return going forward may nevertheless
+expanded competition for market making in those markets as well.                                                           be hurt by several factors: increased assets under management
+This should continue to help reduce trading costs going forward                                                                      in the strategy, high fees, and higher correlations across markets.
+for managers willing and able to invest in the proper trading                                                           However, the returns to investing in the strategy can be improved
+infrastructure. Second, while correlations have been high recently,                                                                                                        if asset managers offer lower fees, invest in trading infrastructure
+they are not inconsistent with several episodes in the past, after                                                        and strategy implementation that reduce transaction costs, and
+                                                                  obtain broader diversification by expanding the set of tradable
+10 While  it is difﬁ cult to gauge with certainty, we feel that a 0.4 Sharpe Ratio     futures and forward contracts. The diversification benefits of theassumption is likely overly pessimistic for the strategy going forward.  The main
+message here is that even with very conservative expectations for returns to the     strategy remain strong and we think offer a compelling case for a
+strategy,  investors’ portfolios can  still signiﬁ cantly beneﬁ t due  to the powerful
+diversiﬁ cation characteristics of the strategy.                             modest allocation in an investor’s portfolio.
+11 Here we assume that the return distribution of the 60-40 portfolio is as in the past
+century while time series momentum returns are lowered by a constant amount such
+that returns average half of what they actually delivered.
+12 Weston (2000), O’Hara and Ye (2009).
+
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                       6
+
+[PAGE 8]
+A Century of Evidence on Trend-Following Investing
+
+
+Appendix A: Markets and Data Sources
+
+We use historical returns data from the following 59 markets in order to construct the time series momentum strategy:
+
+Equity Indices
+
+The universe of equity index futures consists of the following 11 developed equity markets: SPI 200 (Australia), S&P/TSE 60 (Canada),
+CAC 40 (France), DAX (Germany), FTSE/MIB (Italy), TOPIX (Japan), AEX (Netherlands), IBEX 35 (Spain), FTSE 100 (U.K.), Russell
+2000 (U.S.) and S&P 500 (U.S). Futures returns are obtained from Datastream and Bloomberg. We use MSCI country level index returns
+and returns from Ibbotson and Global Financial Data (GFD) prior to the availability of futures returns.
+
+Bond Indices
+
+The universe of bond index futures consists of the following 15 developed bond markets: Australia 3-year Bond, Australia 10-year Bond,
+Euro Schatz (2yr), Euro Bobl (5yr), Euro Bund (10yr), Euro Buxl (30yr), Canada 10-year Bond, Japan 10 year Bond (TSE), Long Gilt,
+US 2-year Note, Italian 10-year Bond, French 10-year Bond, US 5-year Note, US 10-year Note and US Long Bond. Futures returns
+are obtained from Datastream. We use country level cash bond returns from Morgan Markets and Global Financial Data (GFD) prior to
+the availability of futures returns. We scale monthly returns from GFD to a constant duration of 4 years, assuming a duration of 2 years
+for 2 and 3-year bond futures, 4 years for 5-year bond futures, 7 years for 10-year bond futures and 20 years for 30-year bond futures.
+
+Currencies
+
+The universe of currency forwards covers the following 9 exchange rates:, Australia, Canada, Germany spliced with the Euro, Japan,
+New Zealand, Norway, Sweden, Switzerland, U.K., all versus the US dollar. We use spot and forward interest rates from Citigroup to
+calculate currency returns going back to 1989 for all the currencies except for CAD and NZD, which go back to 1992 and 1996. Prior to
+that, we use spot exchange rates from Datastream and IBOR short rates from Bloomberg to calculate returns.
+
+Commodities
+
+We cover 24 different commodity futures. Our data on Aluminum, Copper, Nickel, Zinc is from London Metal Exchange (LME), Brent
+Crude, Gas Oil, Cotton, Coffee, Cocoa, Sugar is from Intercontinental Exchange (ICE), Live Cattle, Lean Hogs is from Chicago Mercantile
+Exchange (CME), Corn, Soybeans, Soy Meal, Soy Oil, Wheat is from Chicago Board of Trade (CBOT), WTI Crude, RBOB Gasoline
+spliced with Unleaded Gasoline, Heating Oil, Natural Gas is from New York Mercantile Exchange (NYMEX), Gold, Silver is from New
+York Commodities Exchange (COMEX), and Platinum from Tokyo Commodity Exchange (TOCOM).
+
+
+
+
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                       7
+
+[PAGE 9]
+A Century of Evidence on Trend-Following Investing
+
+
+Appendix A: Markets and Data Sources
+
+The following chart shows the length and source of data for each individual market:
+
+
+
+
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                       8
+
+[PAGE 10]
+A Century of Evidence on Trend-Following Investing
+
+
+Appendix B: Simulation of Fees and Transaction Costs
+
+In order to calculate net-of-fee returns for the time series momentum strategy, we subtracted a 2% annual management fee and a 20%
+performance fee from the gross-of-fee returns to the strategy. The performance fee is calculated and accrued on a monthly basis, but is
+subject to an annual high-water mark. In other words, a performance fee is subtracted from the gross returns in a given year only if the
+returns in the fund are large enough that the fund’s NAV exceeds its high water mark from the previous year.
+
+The transactions costs used in the strategy are based on AQR’s current estimates of average transaction costs for each of the four asset
+classes, including market impact and commissions. The transaction costs are assumed to be twice as high from 1993 to 2002 and six
+times as high from 1903-1992, based on Jones (2002). The transaction costs used are as follows:
+
+
+                                                             One-Way Transaction Costs
+                          Asset Class              Time Period         (as a % of notional traded)
+
+                                                      1903-1992                 0.36%
+
+                             Equities                    1993--2002                0.12%
+
+                                                      2003-2012                 0.06%
+
+                                                      1903-1992                 0.06%
+
+                       Bonds                      1993--2002                0.02%
+
+                                                      2003-2012                 0.01%
+
+                                                      1903-1992                 0.60%
+
+                         Commodities                1993--2002                0.20%
+
+                                                      2003-2012                 0.10%
+
+                                                      1903-1992                 0.18%
+
+                           Currencies                  1993--2002                0.06%
+
+                                                      2003-2012                 0.03%
+
+
+
+Appendix C: Estimation of the Size of Managed Futures Positions Relative to Underlying Markets
+
+The current estimate of assets under management in the BarclayHedge Systematic Traders index is $260B. We then looked at the
+average monthly holdings in each asset class (calculated by summing up the absoluate values of holdings in each market within an
+asset class) for our time series momentum strategy, run at a NAV of $260B, and compared them to the size of the underlying cash or
+derivative markets. For equities, we use the total global equity market capitalization estimate from the World Federation of Exchanges
+(WFE) 2011 Market Highlights report. For bonds, we add up the total government debt outstanding for 18 of the most liquid government
+bond markets, using Datastream data. For currencies, we use the total notional outstanding amount of foreign exchange derivatives
+which are US dollar denominated in the ﬁ rst half of 2011 from the Bank for International Settlements (BIS) November 2011 report. For
+commodities, we use the total notional of outstanding commodities derivatives, excluding options, in the ﬁ rst half of 2011 from the BIS
+November 2011 report.
+
+                             Average Position Size in $260B Time
+                                     Series Momentum Portfolio           Total Market Size
+                                                   (bn)                             (bn)           Percentage of Total Market
+
+          Commodities                       114                           2,300                   5.0%
+
+            Equities                           93                          47,000                   0.2%
+
+          Bonds                           598                          23,000                   2.6%
+
+           Currencies                       107                          54,000                   0.2%
+
+
+
+
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                       9
+
+[PAGE 11]
+A Century of Evidence on Trend-Following Investing
+
+
+References
+
+Asness, C. (1994), “Variables that Explain Stock Returns,” Ph.D. Dissertation, University of Chicago.
+
+Asness, C., J. Liew, and R.L. Stevens (1997), “Parallels between the cross-sectional predictability of stock and country returns,” The
+    Journal of Portfolio Management 23, 79–87.
+
+Asness, C., T. Moskowitz, and L.H. Pedersen (2012), “Value and Momentum Everywhere,” The Journal of Finance, forthcoming.
+
+Chabot, B., E. Ghysels, and R. Jagannathan (2009), “Momentum Cycles and Limits to Arbitrage: Evidence from Victorian England and
+    Post-Depression US Stock Markets,” working paper, Yale University.
+
+Cutler, D.M., J.M. Poterba, and L.H. Summers (1991), “Speculative dynamics,” Review of Economic Studies 58, 529–546.
+
+Erb, C., Harvey, C. (2006), “The tactical and strategic value of commodity futures,” Financial Analysts Journal 62, 69–97.
+
+Fung, W., and D. Hsieh (2001), “The risk in hedge fund strategies: theory and evidence from trend followers,” Review of Financial
+    Studies 14, 313–341.
+
+Gorton, G.B., F. Hayashi and K.G. Rouwenhorst (2008), “The Fundamentals of Commodity Futures Returns,” Unpublished working
+    paper, Yale ICF.
+
+Grant, J. (1838), “The Great Metropolis, vol. II”, Philadelphia, E.L. Carey & A. Hart.
+
+Hurst, B., Y.H. Ooi, and L.H. Pedersen (2012), “Demystifying Managed Futures,” working paper, AQR Capital Management and New
+   York University.
+
+Jegadeesh, N. and S. Titman (1993), “Returns to buying winners and selling losers: implications for stock market efficiency,” Journal
+   of Finance 48, 65–91.
+
+Jones, C.M. (2002), “A Century of Stock Market Liquidity and Trading Costs,” working paper, Columbia Business School.
+
+Moskowitz, T., Y.H. Ooi, and L.H. Pedersen (2012), “Time Series Momentum,” Journal of Financial Economics, 104(2), 228-250.
+
+Rouwenhorst, K.G. (1998), “International momentum strategies,” The Journal of Finance 53, 267–284.
+
+Shleifer, A. and L.H. Summers (1990), “The noise trader approach to finance,” Journal of Economic Perspectives 4, 19–33.
+
+
+
+
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                      10
+
+[PAGE 12]
+A Century of Evidence on Trend-Following Investing
+
+
+Disclosures
+
+The information set forth herein has been obtained or derived from sources believed by the author and AQR Capital Management,
+LLC (“AQR”) to be reliable. However, the author and AQR do not make any representation or warranty, express or implied, as to the
+information’s accuracy or completeness, nor does AQR recommend that the attached information serve as the basis of any investment
+decision. This document has been provided to you for information purposes and does not constitute an offer or solicitation of an offer,
+or any advice or recommendation, to purchase any securities or other ﬁ nancial instruments, and may not be construed as such. This
+document is intended exclusively for the use of the person to whom it has been delivered by AQR and it is not to be reproduced or
+redistributed to any other person. AQR hereby disclaims any duty to provide any updates or changes to the analyses contained in this
+presentation.
+
+Hypothetical performance results (e.g., quantitative backtests) have many inherent limitations, some of which, but not all, are described
+herein. No representation is being made that any fund or account will or is likely to achieve proﬁ ts or losses similar to those shown herein.
+In fact, there are frequently sharp differences between hypothetical performance results and the actual results subsequently realized
+by any particular trading program. One of the limitations of hypothetical performance results is that they are generally prepared with the
+beneﬁ t of hindsight. In addition, hypothetical trading does not involve ﬁ nancial risk, and no hypothetical trading record can completely
+account for the impact of ﬁ nancial risk in actual trading. For example, the ability to withstand losses or adhere to a particular trading
+program in spite of trading losses are material points which can adversely affect actual trading results. The hypothetical performance
+results contained herein represent the application of the quantitative models as currently in effect on the date ﬁ rst written above and
+there can be no assurance that the models will remain the same in the future or that an application of the current models in the future will
+produce similar results because the relevant market and economic conditions that prevailed during the hypothetical performance period
+will not necessarily recur. There are numerous other factors related to the markets in general or to the implementation of any speciﬁ c
+trading program which cannot be fully accounted for in the preparation of hypothetical performance results, all of which can adversely
+affect actual trading results. Discounting factors may be applied to reduce suspected anomalies. This backtest’s return, for this period,
+may vary depending on the date it is run.
+
+Diversiﬁ cation does not eliminate the risk of experiencing investment losses.
+
+Pastperformanceisnotanindicationoffutureperformance.
+
+There is a risk of substantial loss associated with trading commodities, futures, options, derivatives and other ﬁ nancial instruments.
+Before trading, investors should carefully consider their ﬁ nancial position and risk tolerance to determine if the proposed trading style
+is appropriate. Investors should realize that when trading futures, commodities, options, derivatives and other ﬁ nancial instruments
+one could lose the full balance of their account. It is also possible to lose more than the initial deposit when trading derivatives or using
+leverage. All funds committed to such a trading strategy should be purely risk capital.
+
+
+
+
+
+AQR Capital Management, LLC                          FOR INVESTMENT PROFESSIONAL USE ONLY                                        11

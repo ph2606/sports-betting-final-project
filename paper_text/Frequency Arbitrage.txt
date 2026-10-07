@@ -1,0 +1,39 @@
+[PAGE 1]
+Frequency Arbitrage
+
+Frequencygram:
+
+Historical volatility tends to depend on the sampling frequency: SPX historical vols over last 5 (left) and 2
+(right) years, averaged over the starting dates.
+
+
+
+
+
+Can we take advantage of this pattern?
+
+If weekly historical vol < daily historical vol :
+
+      buy strip of T options, Δ-hedge daily
+       sell strip of T options, Δ-hedge weekly
+
+Adding up :
+
+      do not buy nor sell any option;
+       play intra-week mean reversion until T;
+
+ Final P&L : Net total position
+
+Daily Vol / weekly Vol Arbitrage:
+
+     -  On each leg: always keep $a invested in the index and update every Δt
+
+     -   Resulting spot strategy: follow each week a mean reverting strategy
+
+     -   Prove that we should keep each day the following exposure:
+         1    1
+  .(        )
+        S t i , j  S t i 1,
+where it , j is the j-th day of the i-th week
+
+     -    It amounts to follow an intra-week mean reversion strategy

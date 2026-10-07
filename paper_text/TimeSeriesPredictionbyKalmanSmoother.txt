@@ -1,0 +1,281 @@
+[PAGE 1]
+ Time Series Prediction by Kalman Smoother with
+           Cross-Validated Noise Density
+
+           Simo Särkkä                    Aki Vehtari                   Jouko Lampinen
+     Lab. of Computational Engineering     Lab. of Computational Engineering     Lab. of Computational Engineering
+     Helsinki University of Technology      Helsinki University of Technology      Helsinki University of Technology
+              Espoo, Finland                       Espoo, Finland                       Espoo, Finland
+         E-mail: simo.sarkka@hut.ﬁ             E-mail: aki.vehtari@hut.ﬁ            E-mail: jouko.lampinen@hut.ﬁ
+
+
+  Abstract— This article presents a classical type of solution to    As discussed in the book of West and Harrison  [4], in
+the time series prediction competition, the CATS benchmark,   the sixties, Kalman ﬁlter type recursive estimators were also
+which  is organized as a special session of the IJCNN 2004   used in Bayesian community and it is not clear if theory of
+conference. The solution is based on sequential application of                                                  Kalman ﬁltering or theory of dynamic linear models (DLM)the Kalman smoother, which  is a classical statistical tool for
+estimation and prediction of time series. The Kalman smoother  was the ﬁrst. Although these theories were originally derived
+belongs to the class of linear methods, because the underlying   from slightly different starting points, they are equivalent. This
+ﬁltering model  is  linear and  the  distributions are assumed   article approaches the Bayesian ﬁltering problem in Kalman
+Gaussian. Because the time series model of the Kalman smoother   ﬁltering point of view, because of its useful connection to the
+assumes that the densities of noise terms are known, these are                                                              theory and history of stochastic optimal control.determined by cross-validation.
+                           I. INTRODUCTION                      C. Kalman Filter
+A. Overview of the Approach                               The Kalman  ﬁlter  (see,  e.g.  [2],  [3]), which  originally
+                                                           appeared in [1], considers a discrete ﬁltering model, where  The purpose of this article is to present a solution to the                                                                 the dynamic and measurements models are linear GaussianCATS time series prediction competition, which is organized
+as a special session of the IJCNN 2004 conference. The ap-                 xk =      +                                                                 Ak−1xk−1  qk−1                (1)proach is selected to be a simple one, such that all the models                                                                  yk = Hkxk + rk,
+are linear Gaussian and methods are based on application of
+classical statistical linear ﬁltering theory.                    where                   and rk        Rk). If the prior                                                        qk−1 ∼N(0, Qk−1)     ∼N(0,  The proposed method uses linear models for long and short   distribution is Gaussian, x0          P0), then the optimal                                                       ∼N(m0,term behavior of the signal. The computation is based on the   ﬁltering equations can be evaluated in closed form and the
+Kalman smoother, where the noise densities are estimated   resulting distributions are Gaussian
+by  cross-validation. In time  series prediction the Kalman
+                                                                                                     k , P−k )smoother  is applied three times in different stages of the            p(xk  | y1:k−1) = N(xk  | m−
+method.                                                            p(xk  | y1:k) = N(xk  | mk, Pk)
+                                                                                                        k , Sk).B. Optimal Linear Filtering and Smoothing                                                                p(yk  | y1:k−1) = N(yk  | Hkm−
+                                                   The parameters of the distributions above can be calculated  The success of optimal linear ﬁltering  is mostly due to
+the journal paper of Kalman [1], which describes a recursive  by Kalman ﬁlter prediction and update steps:
+solution to the discrete  linear ﬁltering problem. Although        Prediction step is                                                                   •
+the original derivation of Kalman ﬁlter was based on least
+squares approach, the same equations can be derived from          m−k = Ak−1mk−1
+                                                        + Qk−1.pure probabilistic Bayesian analysis. The Bayesian analysis           P−k = Ak−1Pk−1ATk−1of Kalman ﬁltering  is well covered in the classic book of
+Jazwinski [2] and more recently in the book of Bar-Shalom et     • Update step is
+al. [3].
+                                                                                                    k  Kalman ﬁltering, mostly because of its least squares inter-                    vk = yk −Hkm−
+pretation, has been widely used in stochastic optimal control.                   Sk = HkP−k HTk + Rk
+A practical reason to this is that the inventor of Kalman ﬁlter,               Kk = P−k HTk S−1k
+Rudolph E. Kalman, has also made several contributions to the                                                   mk = m−k + Kkvktheory of linear quadratic Gaussian (LQG) regulators, which
+                                                                                                        k .are fundamental tools of stochastic optimal control.                       Pk = P−k −KkSkKT
+
+[PAGE 2]
+D. Kalman Smoother                                        −200
+  The Kalman smoother (see, e.g., [2], [3]) calculates recur-
+sively the state posterior distributions
+                                                           −250
+            p(xk  | y1:T ) = N(xk  | msk, Psk),
+for the linear ﬁltering model (1). The difference to the pos-
+terior distributions calculated by the Kalman ﬁlter is that the    −300
+smoothed distributions are conditioned to all the measurement
+data y1:T , while the ﬁltered distributions are conditional only
+to the measurements obtained before and at the time step k,    −350
+that is, to measurements y1:k.
+  The smoothed  distributions can be calculated from the
+Kalman ﬁlter results by recursions                            −400
+       P−k+1 = AkPkATk + Qk
+         Ck = PkATk [P−k+1]−1                          −450                                                               400       420       440       460       480       500
+        msk = mk + Ck[msk+1 −Akmk]
+                                              k ,                   Fig. 1.  Data 400–500 (black) and the result of prediction with the long term          Psk = Pk + Ck[Psk+1 −P−k+1]CT
+starting from last time step T, with msT = mT and PsT = PT .   model (gray).
+                II. DESCRIPTION OF THE MODEL
+                                                                          1.2
+A. Long Term Model
+  For long term prediction, a linear dynamic model is likely       1
+to be a good approximate model because  if we ignore the
+short term periodicity of the data, the data could be well      0.8
+generated by a locally linear Gaussian process with Gaussian                                                                          0.6
+measurement noise. The data seems to consist of lines with
+suddenly changing derivatives. Thus, it would be reasonable to      0.4
+model the derivative as Brownian noise process, which leads
+to white noise model for second derivative.                          0.2
+  There is no evidence of beneﬁt for using higher derivatives,
+because the curve consists of set of lines rather than set of       0
+parabolas or other higher order curves. The dynamic model is                                                                    −0.2
+formulated as a continuous time model, and then discretized
+to allow varying sampling rate, that is, the prediction over the    −0.4
+missing measurements.
+  The selected dynamic linear model for long term prediction        0        20        40        60        80       100
+is
+                                                                                        Fig. 2.  Autocorrelation in residual of long term prediction model.      xk
+       =                1  ∆t     xk−1  +   qx1,k−1     ,
+         ˙xk        0   1       ˙xk−1        qx2,k−1
+where the process noise, qxk = (qx                                                             B. Short Term Model                                     qx2,k−1)T , has zero                                   1,k−1mean and covariance
+                                                     The short term periodicity of the residual time series        :                    ∆t3/3  ∆t2/2                                                                      {ek
+          Qk−1 =   ∆t2/2   ∆t     qx,             k = 1, ..., N} can be modeled by a linear prediction or AR-                                                     model (see, e.g., [5]), where as an extension to typical models,
+where ∆t is the time period between samples and qx deﬁnes                                             we allow the weight to vary according to a Gaussian random
+the strength (spectral density) of the process noise. Suitable                                                       walk model
+measurement model is
+                                                      wk =    + vark             yk = xk + rxk,   rxk       σ2x).                              wk−1X                       ∼N(0,                                                                                     (2)                                                                            ek =       + rark  .A quick testing of the long term model produces a smooth                             wi,kek−i
+curve as shown in Fig. 1. It can be seen that the locally linear                                         i
+dynamic model may be a bit too simple, because there still  The process noise vark  has zero mean and covariance Q =
+seems to be noticeable periodicity in the residual signal. This   qarI. The weight vector wk  is to be estimated from the
+periodicity can be best seen from the residual autocorrelation  known part of residual time series. The measurement noise
+in Fig. 2.                                                   has Gaussian distribution rark ∼N(0, σ2ar).
+
+[PAGE 3]
+  After the AR-model has been estimated from the residual   badly over-ﬁtted estimation solution. By application of cross-
+time series data, the ﬁnal estimation solution is obtained from   validation we can maximize the predictive performance and
+      X                                      avoid over-ﬁtting.
+             dk =       + vpk                      wi,kdk−i                                i                                      (3)                               III. RESULTS
+              ek = dk + rpk,   rpk ∼N(0, σ2p),                 A. Selection of Measurement Noises
+where the process noise vpk has variance qp. The ﬁnal signal    Long term measurement noise strength can be approximated
+                                                     by looking at a short time period of the curve. If we assumeestimate is then given as  ˆyk =  ˆxk + ˆdk, where ˆxk  is the
+                                                                      that we would approximate  it by a dynamic linear model,estimate produced by applying Kalman smoother to the long
+                                             we can approximate the standard deviation of the model’sterm model, and ˆdk is produced by the short term model.
+                                                       measurement noise by looking at the strengths of residuals.  In practice, only the distributions of weight vectors wk
+                                                   The selected variance of noise was σ2x = 102, which quiteare known, not their actual values, and in order to use the
+                                                             well ﬁts to the observed residual as can be seen in the Fig. 1.model (3) we would have to integrate over these distribution
+                                                     The choice of measurement noises both in long term andon every step. In this article we have used a common approach,
+                                                                  short term models can be done,  for example, by  visualwhere this integration is approximated by using the most likely
+                                                                   inspection, because the exact choice of noise strength is notestimate of weights vectors and this value is regarded as being
+                                                                       crucial. In fact, the choice does not matter at all when theknown in advance. In classical statistical signal processing this
+                                                                  cost function of the CATS competition is considered, becauseestimate is calculated by linear least squares (see, e.g., [5]).
+                                                                    in this case the selection  is dependent on the selection ofBecause our weight vector is allowed to vary in time, the
+                                                              process noise strength in all the models. The process noisecorresponding estimate in this case is produced by applying
+                                                                  strength is selected based on cross-validation, which implicitlyKalman smoother to model (2).
+                                                                   corrects also the choice of measurement noise strength. By  In this article we chose to use a second order AR-model
+                                                                  visual inspection a suitable measurement noise for the AR-such that the weight vector was two dimensional,
+                                                               estimation model (2) was σ2ar = 12.
+                           w1,k                           Because we are only interested in the missing parts of data               wk =              .                     (4)                           w2,k                              in prediction with model (3), the best way to do this is to
+                                                             follow the measurements exactly whenever there are measure-
+C. The Prediction Method                                                       ments and use AR-model for prediction only when there are
+  The long term prediction is then done in two steps:        no measurements. This happens when the measurement noise
+  1) Run Kalman ﬁlter over the data sequence and store the   level is set to as low as possible and the process noise is set
+      estimated means and covariances. Predict the missing   to a moderate value. Our choice for noise level in model (3)
+     measurement such that the ﬁltering result contains esti-  was σ2p = 10−9.
+     mates also for the missing steps.                                                             B. Cross-Validation of Process Noises
+  2) Run Kalman smoother over the Kalman ﬁlter estimation
+                                                               Process noise parameters qx and qar were selected using       result, which results in smoothed (MAP) estimate of the
+                                                            a decision theoretic approach by minimizing the expected     time series including the missing parts.
+                                                                  cost where cost function  is the target error  criterion. Ex-The short term prediction consists of four steps:                                                             pected cost can easily be computed by cross-validation, which
+  1) Run Kalman ﬁlter over the residual sequence with model   approximates the formal Bayes procedure of computing the
+      (2) in order to produce the ﬁltering estimate of AR   expected costs (see, e.g., [6]). Based on cross-validation, the
+     weight vectors. Predict the weights over the missing   best process noises were
+       parts.
+  2) Run Kalman smoother over the Kalman ﬁlter estimation                        qx = 0.14                                                                                                                                  (5)
+       result above, which results in smoothed (MAP) estimate                         qar = 0.0005.
+      of the weight time series including the missing parts.                                                As discussed in the previous Section, the only requirement for
+  3) Run Kalman ﬁlter over the residual sequence with model                                                                   selection of process noise qp is that it should be high enough.
+      (3) in order to produce ﬁltering estimate of the short                                                        Because the measurement noise was selected to be very low,
+     term periodicity. The periodicity is also predicted over                                                            our choice was qp = 1.
+      the missing parts.
+  4) Run Kalman smoother over the Kalman ﬁlter estimation   C. Prediction Results
+       result above, which results in smoothed (MAP) estimate      Fig. 3 shows the estimated AR-coefﬁcients for each time
+      of the periodicity time series including the missing parts.   instance. It can be seen that the weights vary a bit over time,
+Due to Gaussian random walk model of weights the short   but the periodic short term process seems to be quite stationary.
+term model has potentially a large effective number of param-      Figs. 4, 5, 6, 7 and 8 show the results of predicting over the
+eters. Simple error minimization procedure with respect to to   missing intervals. It can be seen that on the missing intervals
+noise parameters (e.g., Maximum Likelihood) would lead to a   the short term model differs from long term model only near
+
+[PAGE 4]
+  1.5                                                        500
+                                                w1
+                                                w2
+    1                                                        450
+
+
+  0.5                                                        400
+
+
+    0                                                        350
+
+
+ −0.5                                                        300
+
+
+  −1                                                        250
+     0       1000      2000      3000      4000      5000       1950                    2000                    2050
+
+           Fig. 3.  Estimated ﬁlter coefﬁcients for the AR-model.               Fig. 5.   Prediction over missing data at 1981 – 2000. The gray line is the
+                                                                          long term prediction result and black line is the combined long and short term
+                                                                                 prediction result.
+the measurements and the combined estimate is closest to the
+long term prediction in the middle of prediction period. The
+result is intuitively sensible, because when going away from
+the measurement we have less information on the phase of    140
+local periodicity and it is best to just guess the mean given by    120
+the long term model.
+                                                            100
+ 160                                                         80
+
+                                                             60 140
+                                                             40
+ 120
+                                                             20
+ 100                                                              0
+  80                                                       −20
+
+                                                           −40  60
+                                                           −60
+  40                                                          2950                    3000                    3050
+
+  20                                                                                   Fig. 6.   Prediction over missing data at 2981 – 3000. The gray line is the
+                                                                          long term prediction result and black line is the combined long and short term
+   0                                                                            prediction result.
+   950                    1000                    1050
+
+Fig. 4.  Prediction over missing data at 981 – 1000. The gray line is the long
+term prediction result and black line is the combined long and short term
+prediction result.
+                                                           approximation of the signal and the short term prediction
+                                                               catches the local periodicity ignored by the long term model.
+                    IV. CONCLUSIONS
+                                                          Although all the used models were linear (and dynamic) in
+A. Summary of the Results                                     nature they seem to model well this non-linear time series. It
+  In this article we applied the classical Kalman smoother    is likely that by using non-linear state space models (ﬁltering
+method for estimating the long term and short term statistical   models) the prediction results would be better, but it is very
+models for the CATS benchmark time  series. The  results   hard to judge what kind of model  is really the best. This
+indicate that the long term prediction gives a very good overall   judgment naturally also depends on the criterion used.
+
+[PAGE 5]
+ 350                                                                               [5] M. H. Hayes, Statistical Digital Signal Processing and Modeling.  John
+                                                                         Wiley & Sons, Inc., 1996.
+                                                                                     [6]  J. M. Bernardo and A. F. M. Smith, Bayesian Theory.  John Wiley &
+ 300                                                                          Sons, 1994.
+
+
+ 250
+
+
+ 200
+
+
+ 150
+
+
+ 100
+
+
+  50
+   3950                    4000                    4050
+
+Fig. 7.   Prediction over missing data at 3981 – 4000. The gray line is the
+long term prediction result and black line is the combined long and short term
+prediction result.
+
+   60
+
+   40
+
+   20
+
+    0
+
+  −20
+
+  −40
+
+  −60
+
+  −80
+
+ −100
+
+ −120
+   4900      4920      4940      4960      4980      5000
+
+Fig. 8.   Prediction over missing data at 4981 – 5000. The gray line is the
+long term prediction result and black line is the combined long and short term
+prediction result.
+
+
+             ACKNOWLEDGMENT
+  The authors would like to thank Ilkka Kalliomäki for his
+help on proofreading the article.
+
+                 REFERENCES
+
+[1] R. E. Kalman, “A new approach to linear ﬁltering and prediction prob-
+    lems,” Transactions of the ASME, Journal of Basic Engineering, vol. 82,
+    pp. 34–45, March 1960.
+[2] A. H. Jazwinski, Stochastic Processes and Filtering Theory.  Academic
+     Press, 1970.
+[3] Y. Bar-Shalom, X.-R. Li, and T. Kirubarajan, Estimation with Applications
+     to Tracking and Navigation.  Wiley Interscience, 2001.
+[4] M. West and J. Harrison, Bayesian Forecasting and Dynamic Models.
+    Springer-Verlag, 1997.

@@ -1,0 +1,668 @@
+fpl_player_id,team,fpl_player_name,transfermarkt_player_id,transfermarkt_player_name,link_method
+1,Arsenal,David Raya Martín,262749.0,David Raya,unique_birthdate_shared_name_token_same_club
+2,Arsenal,Kepa Arrizabalaga Revuelta,192279.0,Kepa Arrizabalaga,unique_birthdate_shared_name_token_same_club
+3,Arsenal,Illan Meslier,542586.0,Illan Meslier,unique_exact_normalized_name_same_club
+4,Arsenal,Gabriel dos Santos Magalhães,435338.0,Gabriel,unique_birthdate_shared_name_token_same_club
+5,Arsenal,Jurriën Timber,420243.0,Jurriën Timber,unique_exact_normalized_name_same_club
+6,Arsenal,William Saliba,495666.0,William Saliba,unique_exact_normalized_name_same_club
+7,Arsenal,Myles Lewis-Skelly,890721.0,Myles Lewis-Skelly,unique_exact_normalized_name_same_club
+8,Arsenal,Riccardo Calafiori,502821.0,Riccardo Calafiori,unique_exact_normalized_name_same_club
+9,Arsenal,Piero Hincapié,659813.0,Piero Hincapié,unique_exact_normalized_name_same_club
+10,Arsenal,Benjamin White,335721.0,Ben White,unique_birthdate_shared_name_token_same_club
+11,Arsenal,Cristhian Mosquera,646750.0,Cristhian Mosquera,unique_exact_normalized_name_same_club
+12,Arsenal,Bukayo Saka,433177.0,Bukayo Saka,unique_exact_normalized_name_same_club
+13,Arsenal,Declan Rice,357662.0,Declan Rice,unique_exact_normalized_name_same_club
+14,Arsenal,Eberechi Eze,479999.0,Eberechi Eze,unique_exact_normalized_name_same_club
+15,Arsenal,Martin Ødegaard,316264.0,Martin Ødegaard,unique_exact_normalized_name_same_club
+16,Arsenal,Noni Madueke,503987.0,Noni Madueke,unique_exact_normalized_name_same_club
+17,Arsenal,Mikel Merino Zazón,338424.0,Mikel Merino,unique_birthdate_shared_name_token_same_club
+18,Arsenal,Gabriel Martinelli Silva,,,unmatched_or_ambiguous
+19,Arsenal,Martín Zubimendi Ibáñez,423440.0,Martín Zubimendi,unique_birthdate_shared_name_token_same_club
+20,Arsenal,Max Dowman,1187629.0,Max Dowman,unique_exact_normalized_name_same_club
+22,Arsenal,Ethan Nwaneri,,,unmatched_or_ambiguous
+23,Arsenal,Fábio Ferreira Vieira,,,unmatched_or_ambiguous
+24,Arsenal,Reiss Nelson,,,unmatched_or_ambiguous
+25,Arsenal,Viktor Gyökeres,325443.0,Viktor Gyökeres,unique_exact_normalized_name_same_club
+26,Arsenal,Kai Havertz,309400.0,Kai Havertz,unique_exact_normalized_name_same_club
+27,Arsenal,Gabriel Fernando de Jesus,,,unmatched_or_ambiguous
+31,Arsenal,Ezri Konsa Ngoyo,413403.0,Ezri Konsa,unique_birthdate_shared_name_token_same_club
+452,Arsenal,Bruno Guimarães Rodriguez Moura,520624.0,Bruno Guimarães,unique_birthdate_shared_name_token_same_club
+557,Arsenal,Christos Tzolis,451677.0,Christos Tzolis,unique_exact_normalized_name_same_club
+29,Aston Villa,Marco Bizot,124884.0,Marco Bizot,unique_exact_normalized_name_same_club
+30,Aston Villa,Lucas Digne,,,unmatched_or_ambiguous
+32,Aston Villa,Matty Cash,425334.0,Matty Cash,unique_exact_normalized_name_same_club
+33,Aston Villa,Tyrone Mings,253677.0,Tyrone Mings,unique_exact_normalized_name_same_club
+34,Aston Villa,Pau Torres,399776.0,Pau Torres,unique_exact_normalized_name_same_club
+35,Aston Villa,Lamare Bogarde,645686.0,Lamare Bogarde,unique_exact_normalized_name_same_club
+36,Aston Villa,Ian Maatsen,485585.0,Ian Maatsen,unique_exact_normalized_name_same_club
+37,Aston Villa,Victor Lindelöf,184573.0,Victor Lindelöf,unique_exact_normalized_name_same_club
+38,Aston Villa,Andrés García,,,unmatched_or_ambiguous
+39,Aston Villa,Kosta Nedeljkovic,,,unmatched_or_ambiguous
+41,Aston Villa,Emiliano Buendía Stati,321247.0,Emiliano Buendía,unique_birthdate_shared_name_token_same_club
+44,Aston Villa,Leon Bailey,,,unmatched_or_ambiguous
+45,Aston Villa,John McGinn,193116.0,John McGinn,unique_exact_normalized_name_same_club
+46,Aston Villa,Ross Barkley,131978.0,Ross Barkley,unique_exact_normalized_name_same_club
+47,Aston Villa,Boubacar Kamara,394327.0,Boubacar Kamara,unique_exact_normalized_name_same_club
+48,Aston Villa,Amadou Onana,485706.0,Amadou Onana,unique_exact_normalized_name_same_club
+49,Aston Villa,Samuel Iling-Junior,,,unmatched_or_ambiguous
+50,Aston Villa,Bradley Burrowes,,,unmatched_or_ambiguous
+51,Aston Villa,George Hemmings,1023191.0,George Hemmings,unique_exact_normalized_name_same_club
+52,Aston Villa,Alysson Edward Franco da Rocha dos Santos,1005583.0,Alysson,unique_birthdate_shared_name_token_same_club
+53,Aston Villa,Johan Manzambi,927353.0,Johan Manzambi,unique_exact_normalized_name_same_club
+54,Aston Villa,Joao Gomes,735570.0,João Gomes,unique_exact_normalized_name_same_club
+55,Aston Villa,Ollie Watkins,,,unmatched_or_ambiguous
+56,Aston Villa,Tammy Abraham,331726.0,Tammy Abraham,unique_exact_normalized_name_same_club
+160,Aston Villa,Alejandro Garnacho Ferreyra,811779.0,Alejandro Garnacho,unique_birthdate_shared_name_token_same_club
+166,Aston Villa,Nicolas Jackson,776890.0,Nicolas Jackson,unique_exact_normalized_name_same_club
+582,Aston Villa,Brian Madjo,1226357.0,Brian Madjo,unique_exact_normalized_name_same_club
+596,Aston Villa,Matteo Ruggeri,616631.0,Matteo Ruggeri,unique_exact_normalized_name_same_club
+597,Aston Villa,Zion Suzuki,432298.0,Zion Suzuki,unique_exact_normalized_name_same_club
+606,Aston Villa,Triston Rowe,,,unmatched_or_ambiguous
+607,Aston Villa,Luka Lynch,,,unmatched_or_ambiguous
+611,Aston Villa,Aaron Wan-Bissaka,477758.0,Aaron Wan-Bissaka,unique_exact_normalized_name_same_club
+618,Aston Villa,Leon Goretzka,153084.0,Leon Goretzka,unique_exact_normalized_name_same_club
+630,Aston Villa,Taylor Harwood-Bellis,503977.0,Taylor Harwood-Bellis,unique_exact_normalized_name_same_club
+631,Aston Villa,Ibrahim Mbaye,1185888.0,Ibrahim Mbaye,unique_exact_normalized_name_same_club
+667,Aston Villa,James Wright,712181.0,James Wright,unique_exact_normalized_name_same_club
+57,Bournemouth,Đorđe Petrović,465555.0,Djordje Petrović,unique_birthdate_shared_name_token_same_club
+58,Bournemouth,Fraser Forster,52570.0,Fraser Forster,unique_exact_normalized_name_same_club
+59,Bournemouth,Will Dennis,,,unmatched_or_ambiguous
+60,Bournemouth,James Hill,611793.0,James Hill,unique_exact_normalized_name_same_club
+61,Bournemouth,Adrien Truffert,654539.0,Adrien Truffert,unique_exact_normalized_name_same_club
+62,Bournemouth,Bafodé Diakité,463605.0,Bafodé Diakité,unique_exact_normalized_name_same_club
+63,Bournemouth,Veljko Milosavljevic,989112.0,Veljko Milosavljević,unique_exact_normalized_name_same_club
+64,Bournemouth,Adam Smith,61841.0,Adam Smith,unique_exact_normalized_name_same_club
+65,Bournemouth,Julián Araujo Zúñiga,513970.0,Julián Araujo,unique_birthdate_shared_name_token_same_club
+66,Bournemouth,Julio Soler Barreto,1009658.0,Julio Soler,unique_birthdate_shared_name_token_same_club
+67,Bournemouth,Rayan Vitor Simplício Rocha,1012564.0,Rayan,unique_birthdate_shared_name_token_same_club
+68,Bournemouth,Marcus Tavernier,399434.0,Marcus Tavernier,unique_exact_normalized_name_same_club
+69,Bournemouth,Alex Scott,855256.0,Alex Scott,unique_exact_normalized_name_same_club
+70,Bournemouth,Justin Kluivert,330659.0,Justin Kluivert,unique_exact_normalized_name_same_club
+71,Bournemouth,Lewis Cook,249089.0,Lewis Cook,unique_exact_normalized_name_same_club
+72,Bournemouth,Ben Gannon-Doak,719673.0,Ben Gannon-Doak,unique_exact_normalized_name_same_club
+73,Bournemouth,Tyler Adams,332705.0,Tyler Adams,unique_exact_normalized_name_same_club
+74,Bournemouth,David Brooks,277033.0,David Brooks,unique_exact_normalized_name_same_club
+75,Bournemouth,Ryan Christie,188077.0,Ryan Christie,unique_exact_normalized_name_same_club
+76,Bournemouth,Alex Tóth,998101.0,Alex Tóth,unique_exact_normalized_name_same_club
+77,Bournemouth,Amine Adli,532776.0,Amine Adli,unique_exact_normalized_name_same_club
+78,Bournemouth,Junior Kroupi,955357.0,Junior Kroupi,unique_exact_normalized_name_same_club
+79,Bournemouth,Francisco Evanilson de Lima Barbosa,711337.0,Evanilson,unique_birthdate_shared_name_token_same_club
+80,Bournemouth,Enes Ünal,,,unmatched_or_ambiguous
+81,Bournemouth,Álvaro Rodríguez,948275.0,Álvaro Rodríguez,unique_exact_normalized_name_same_club
+566,Bournemouth,António João Pereira de Albuquerque Tavares da Silva,650568.0,António Silva,unique_birthdate_shared_name_token_same_club
+573,Bournemouth,Juanlu Sánchez,676042.0,Juanlu Sánchez,unique_exact_normalized_name_same_club
+608,Bournemouth,Daniel Jebbison,746740.0,Daniel Jebbison,unique_exact_normalized_name_same_club
+615,Bournemouth,Michele Di Gregorio,301238.0,Michele Di Gregorio,unique_exact_normalized_name_same_club
+82,Brentford,Caoimhín Kelleher,340918.0,Caoimhín Kelleher,unique_exact_normalized_name_same_club
+83,Brentford,Hákon Rafn Valdimarsson,488935.0,Hákon Valdimarsson,unique_birthdate_shared_name_token_same_club
+84,Brentford,Nathan Collins,469050.0,Nathan Collins,unique_exact_normalized_name_same_club
+85,Brentford,Sepp van den Berg,541231.0,Sepp van den Berg,unique_exact_normalized_name_same_club
+86,Brentford,Keane Lewis-Potter,644401.0,Keane Lewis-Potter,unique_exact_normalized_name_same_club
+87,Brentford,Kristoffer Ajer,328658.0,Kristoffer Ajer,unique_exact_normalized_name_same_club
+88,Brentford,Michael Kayode,823486.0,Michael Kayode,unique_exact_normalized_name_same_club
+89,Brentford,Rico Henry,339556.0,Rico Henry,unique_exact_normalized_name_same_club
+90,Brentford,Aaron Hickey,591949.0,Aaron Hickey,unique_exact_normalized_name_same_club
+92,Brentford,Kim Ji-soo,709767.0,Ji-soo Kim,unique_birthdate_shared_name_token_same_club
+93,Brentford,Jannik Schuster,915418.0,Jannik Schuster,unique_exact_normalized_name_same_club
+94,Brentford,Kevin Schade,473050.0,Kevin Schade,unique_exact_normalized_name_same_club
+95,Brentford,Dango Ouattara,823231.0,Dango Ouattara,unique_exact_normalized_name_same_club
+96,Brentford,Mikkel Damsgaard,540941.0,Mikkel Damsgaard,unique_exact_normalized_name_same_club
+97,Brentford,Mathias Jensen,319859.0,Mathias Jensen,unique_exact_normalized_name_same_club
+98,Brentford,Vitaly Janelt,270171.0,Vitaly Janelt,unique_exact_normalized_name_same_club
+99,Brentford,Antoni Milambo,683620.0,Antoni Milambo,unique_exact_normalized_name_same_club
+100,Brentford,Fábio Freitas Gouveia Carvalho,559263.0,Fábio Carvalho,unique_birthdate_shared_name_token_same_club
+102,Brentford,Yehor Yarmoliuk,,,unmatched_or_ambiguous
+103,Brentford,Josh Dasilva,340321.0,Josh Dasilva,unique_exact_normalized_name_same_club
+105,Brentford,Jaidon Anthony,684210.0,Jaidon Anthony,unique_exact_normalized_name_same_club
+106,Brentford,Igor Thiago Nascimento Rodrigues,739443.0,Igor Thiago,unique_birthdate_shared_name_token_same_club
+107,Brentford,Kaye Furo,1011936.0,Kaye Furo,unique_exact_normalized_name_same_club
+108,Brentford,Callum Wilson,123682.0,Callum Wilson,unique_exact_normalized_name_same_club
+565,Brentford,Mamadou Sangaré,808348.0,Mamadou Sangaré,unique_exact_normalized_name_same_club
+620,Brentford,El Hadji Malick Diouf,1111589.0,El Hadji Malick Diouf,unique_exact_normalized_name_same_club
+657,Brentford,Gustavo Nunes Fernandes Gomes,1086375.0,Gustavo Nunes,unique_birthdate_shared_name_token_same_club
+660,Brentford,Benjamin Fredrick,1071138.0,Benjamin Fredrick,unique_exact_normalized_name_same_club
+661,Brentford,Ellery Balcombe,456292.0,Ellery Balcombe,unique_exact_normalized_name_same_club
+109,Brighton & Hove Albion,Bart Verbruggen,565093.0,Bart Verbruggen,unique_exact_normalized_name_same_club
+111,Brighton & Hove Albion,Jason Steele,73564.0,Jason Steele,unique_exact_normalized_name_same_club
+113,Brighton & Hove Albion,Ferdi Kadıoğlu,369316.0,Ferdi Kadıoğlu,unique_exact_normalized_name_same_club
+114,Brighton & Hove Albion,Olivier Boscagli,318508.0,Olivier Boscagli,unique_exact_normalized_name_same_club
+115,Brighton & Hove Albion,Maxim De Cuyper,429915.0,Maxim De Cuyper,unique_exact_normalized_name_same_club
+116,Brighton & Hove Albion,Lewis Dunk,148153.0,Lewis Dunk,unique_exact_normalized_name_same_club
+117,Brighton & Hove Albion,Diego Coppola,,,unmatched_or_ambiguous
+118,Brighton & Hove Albion,Igor Julio dos Santos de Paulo,,,unmatched_or_ambiguous
+119,Brighton & Hove Albion,João Pedro Loureiro da Costa,,,unmatched_or_ambiguous
+120,Brighton & Hove Albion,Michael Svoboda,438961.0,Michael Svoboda,unique_exact_normalized_name_same_club
+121,Brighton & Hove Albion,Mitoma Kaoru,504849.0,Kaoru Mitoma,unique_birthdate_shared_name_token_same_club
+122,Brighton & Hove Albion,Yankuba Minteh,1012534.0,Yankuba Minteh,unique_exact_normalized_name_same_club
+123,Brighton & Hove Albion,Jack Hinshelwood,867688.0,Jack Hinshelwood,unique_exact_normalized_name_same_club
+124,Brighton & Hove Albion,Pascal Groß,82873.0,Pascal Groß,unique_exact_normalized_name_same_club
+125,Brighton & Hove Albion,Georginio Rutter,538977.0,Georginio Rutter,unique_exact_normalized_name_same_club
+126,Brighton & Hove Albion,Matt O'Riley,406634.0,Matt O'Riley,unique_exact_normalized_name_same_club
+127,Brighton & Hove Albion,Diego Gómez Amarilla,996897.0,Diego Gómez,unique_birthdate_shared_name_token_same_club
+128,Brighton & Hove Albion,Facundo Buonanotte,,,unmatched_or_ambiguous
+129,Brighton & Hove Albion,Yasin Ayari,667287.0,Yasin Ayari,unique_exact_normalized_name_same_club
+130,Brighton & Hove Albion,Mats Wieffer,415381.0,Mats Wieffer,unique_exact_normalized_name_same_club
+132,Brighton & Hove Albion,Harry Howell,,,unmatched_or_ambiguous
+133,Brighton & Hove Albion,Tom Watson,,,unmatched_or_ambiguous
+134,Brighton & Hove Albion,Nehemiah Oriola,,,unmatched_or_ambiguous
+135,Brighton & Hove Albion,Zadok Yohanna,1421433.0,Zadok Yohanna,unique_exact_normalized_name_same_club
+137,Brighton & Hove Albion,Stefanos Tzimas,950091.0,Stefanos Tzimas,unique_exact_normalized_name_same_club
+138,Brighton & Hove Albion,Charalampos Kostoulas,1060087.0,Charalampos Kostoulas,unique_exact_normalized_name_same_club
+139,Brighton & Hove Albion,Evan Ferguson,648046.0,Evan Ferguson,unique_exact_normalized_name_same_club
+328,Brighton & Hove Albion,Pascal Struijk,410708.0,Pascal Struijk,unique_exact_normalized_name_same_club
+504,Brighton & Hove Albion,Luka Vušković,892160.0,Luka Vušković,unique_exact_normalized_name_same_club
+594,Brighton & Hove Albion,Promise David,888785.0,Promise David,unique_exact_normalized_name_same_club
+600,Brighton & Hove Albion,Ibrahim Osman,1110406.0,Ibrahim Osman,unique_exact_normalized_name_same_club
+605,Brighton & Hove Albion,Malick Yalcouyé,1178758.0,Malick Yalcouyé,unique_exact_normalized_name_same_club
+614,Brighton & Hove Albion,Jaouen Hadjam,750903.0,Jaouen Hadjam,unique_exact_normalized_name_same_club
+624,Brighton & Hove Albion,Amario Cozier-Duberry,,,unmatched_or_ambiguous
+639,Brighton & Hove Albion,José María Andrés Baixauli,948279.0,Chema Andrés,unique_birthdate_shared_name_token_same_club
+652,Brighton & Hove Albion,Femi Azeez,703408.0,Femi Azeez,unique_exact_normalized_name_same_club
+658,Brighton & Hove Albion,Younes Ibrahim,,,unmatched_or_ambiguous
+28,Chelsea,Emiliano Martínez Romero,111873.0,Emiliano Martínez,unique_birthdate_shared_name_token_same_club
+40,Chelsea,Morgan Rogers,503743.0,Morgan Rogers,unique_exact_normalized_name_same_club
+101,Chelsea,Jordan Henderson,61651.0,Jordan Henderson,unique_exact_normalized_name_same_club
+136,Chelsea,Danny Welbeck,67063.0,Danny Welbeck,unique_exact_normalized_name_same_club
+140,Chelsea,Robert Lynch Sánchez,,,unmatched_or_ambiguous
+141,Chelsea,Filip Jörgensen,,,unmatched_or_ambiguous
+142,Chelsea,Reece James,472423.0,Reece James,unique_exact_normalized_name_same_club
+143,Chelsea,Trevoh Chalobah,,,unmatched_or_ambiguous
+144,Chelsea,Malo Gusto,620322.0,Malo Gusto,unique_exact_normalized_name_same_club
+145,Chelsea,Wesley Fofana,475411.0,Wesley Fofana,unique_exact_normalized_name_same_club
+146,Chelsea,Benoît Badiashile Mukinayi,,,unmatched_or_ambiguous
+148,Chelsea,Jorrel Hato,904802.0,Jorrel Hato,unique_exact_normalized_name_same_club
+149,Chelsea,Levi Samuels Colwill,614258.0,Levi Colwill,unique_birthdate_shared_name_token_same_club
+150,Chelsea,Mamadou Sarr,,,unmatched_or_ambiguous
+151,Chelsea,Josh Acheampong,1004708.0,Josh Acheampong,unique_exact_normalized_name_same_club
+152,Chelsea,Marco Palestra,895937.0,Marco Palestra,unique_exact_normalized_name_same_club
+154,Chelsea,Cole Palmer,568177.0,Cole Palmer,unique_exact_normalized_name_same_club
+156,Chelsea,Pedro Lomba Neto,487465.0,Pedro Neto,unique_birthdate_shared_name_token_same_club
+157,Chelsea,Estêvão Almeida de Oliveira Gonçalves,1056993.0,Estêvão,unique_birthdate_shared_name_token_same_club
+158,Chelsea,Jamie Bynoe-Gittens,670882.0,Jamie Gittens,unique_birthdate_shared_name_token_same_club
+159,Chelsea,Moisés Caicedo Corozo,687626.0,Moisés Caicedo,unique_birthdate_shared_name_token_same_club
+161,Chelsea,Roméo Lavia,628451.0,Roméo Lavia,unique_exact_normalized_name_same_club
+163,Chelsea,Dário Luís Essugo,,,unmatched_or_ambiguous
+164,Chelsea,Geovany Quenda,1138758.0,Geovany Quenda,unique_exact_normalized_name_same_club
+165,Chelsea,João Pedro Junqueira de Jesus,626724.0,João Pedro,unique_birthdate_shared_name_token_same_club
+168,Chelsea,Marc Guiu Paz,,,unmatched_or_ambiguous
+169,Chelsea,Shumaira Mheuka,,,unmatched_or_ambiguous
+170,Chelsea,Emmanuel Emegha,559328.0,Emmanuel Emegha,unique_exact_normalized_name_same_club
+200,Chelsea,Maxence Lacroix,434224.0,Maxence Lacroix,unique_exact_normalized_name_same_club
+560,Chelsea,Mike Penders,834397.0,Mike Penders,unique_exact_normalized_name_same_club
+561,Chelsea,Aaron Anselmino,1145504.0,Aarón Anselmino,unique_exact_normalized_name_same_club
+568,Chelsea,Valentín Barco,849410.0,Valentín Barco,unique_exact_normalized_name_same_club
+583,Chelsea,Pep Chavarría,596122.0,Pep Chavarría,unique_exact_normalized_name_same_club
+662,Chelsea,Mahdi Nicoll-Jazuli,1353008.0,Mahdi Nicoll-Jazuli,unique_exact_normalized_name_same_club
+91,Coventry City,Ethan Pinnock,442248.0,Ethan Pinnock,unique_exact_normalized_name_same_club
+104,Coventry City,Frank Onyeka,421637.0,Frank Onyeka,unique_exact_normalized_name_same_club
+110,Coventry City,Carl Rushworth,646353.0,Carl Rushworth,unique_exact_normalized_name_same_club
+171,Coventry City,Oliver Dovin,,,unmatched_or_ambiguous
+172,Coventry City,Ben Wilson,121352.0,Ben Wilson,unique_exact_normalized_name_same_club
+173,Coventry City,Bobby Thomas,788283.0,Bobby Thomas,unique_exact_normalized_name_same_club
+174,Coventry City,Liam Kitching,,,unmatched_or_ambiguous
+175,Coventry City,Milan van Ewijk,587335.0,Milan van Ewijk,unique_exact_normalized_name_same_club
+176,Coventry City,Jay Dasilva,258915.0,Jay Dasilva,unique_exact_normalized_name_same_club
+177,Coventry City,Kaine Kesler-Hayden,626888.0,Kaine Kesler-Hayden,unique_exact_normalized_name_same_club
+178,Coventry City,Jake Bidwell,121250.0,Jake Bidwell,unique_exact_normalized_name_same_club
+179,Coventry City,Joel Latibeaudiere,412823.0,Joel Latibeaudiere,unique_exact_normalized_name_same_club
+180,Coventry City,Luke Woolfenden,527425.0,Luke Woolfenden,unique_exact_normalized_name_same_club
+181,Coventry City,Miguel Brau,,,unmatched_or_ambiguous
+182,Coventry City,Aurèle Amenda,635645.0,Aurèle Amenda,unique_exact_normalized_name_same_club
+183,Coventry City,Jack Rudoni,662476.0,Jack Rudoni,unique_exact_normalized_name_same_club
+184,Coventry City,Matt Grimes,265471.0,Matt Grimes,unique_exact_normalized_name_same_club
+185,Coventry City,Tatsuhiro Sakamoto,617408.0,Tatsuhiro Sakamoto,unique_exact_normalized_name_same_club
+186,Coventry City,Ephron Mason-Clark,466637.0,Ephron Mason-Clark,unique_exact_normalized_name_same_club
+187,Coventry City,Josh Eccles,618903.0,Josh Eccles,unique_exact_normalized_name_same_club
+188,Coventry City,Victor Torp,403692.0,Victor Torp,unique_exact_normalized_name_same_club
+189,Coventry City,George Shepherd,,,unmatched_or_ambiguous
+190,Coventry City,Loum Tchaouna,607226.0,Loum Tchaouna,unique_exact_normalized_name_same_club
+191,Coventry City,Raphael Borges Rodrigues,,,unmatched_or_ambiguous
+192,Coventry City,Kai Andrews,,,unmatched_or_ambiguous
+193,Coventry City,Haji Wright,315291.0,Haji Wright,unique_exact_normalized_name_same_club
+194,Coventry City,Brandon Thomas-Asante,451747.0,Brandon Thomas-Asante,unique_exact_normalized_name_same_club
+195,Coventry City,Ellis Simms,511550.0,Ellis Simms,unique_exact_normalized_name_same_club
+196,Coventry City,Jahnoah Markelo,,,unmatched_or_ambiguous
+197,Coventry City,Norman Bassette,,,unmatched_or_ambiguous
+492,Coventry City,Taiwo Awoniyi,295313.0,Taiwo Awoniyi,unique_exact_normalized_name_same_club
+575,Coventry City,Caleb Yirenkyi,1240763.0,Caleb Yirenkyi,unique_exact_normalized_name_same_club
+584,Coventry City,Gustavo Hamer,322985.0,Gustavo Hamer,unique_exact_normalized_name_same_club
+599,Coventry City,Sidiki Cherif,986288.0,Sidiki Chérif,unique_exact_normalized_name_same_club
+623,Coventry City,Dan Bentley,136401.0,Daniel Bentley,unique_birthdate_shared_name_token_same_club
+655,Coventry City,Yann Gboho,463613.0,Yann Gboho,unique_exact_normalized_name_same_club
+656,Coventry City,Stephen Mfuni,1049020.0,Stephen Mfuni,unique_exact_normalized_name_same_club
+42,Crystal Palace,Evann Guessand,500689.0,Evann Guessand,unique_exact_normalized_name_same_club
+153,Crystal Palace,Axel Disasi,386047.0,Axel Disasi,unique_exact_normalized_name_same_club
+198,Crystal Palace,Dean Henderson,258919.0,Dean Henderson,unique_exact_normalized_name_same_club
+199,Crystal Palace,Walter Benítez,296802.0,Walter Benítez,unique_exact_normalized_name_same_club
+202,Crystal Palace,Chris Richards,578539.0,Chris Richards,unique_exact_normalized_name_same_club
+203,Crystal Palace,Jaydee Canvot,1006411.0,Jaydee Canvot,unique_exact_normalized_name_same_club
+204,Crystal Palace,Tyrick Mitchell,730893.0,Tyrick Mitchell,unique_exact_normalized_name_same_club
+205,Crystal Palace,Borna Sosa,,,unmatched_or_ambiguous
+206,Crystal Palace,Chadi Riad Dnanou,689637.0,Chadi Riad,unique_birthdate_shared_name_token_same_club
+207,Crystal Palace,Oscar Mingueza,331505.0,Óscar Mingueza,unique_exact_normalized_name_same_club
+208,Crystal Palace,Ismaïla Sarr,410225.0,Ismaïla Sarr,unique_exact_normalized_name_same_club
+210,Crystal Palace,Adam Wharton,744149.0,Adam Wharton,unique_exact_normalized_name_same_club
+211,Crystal Palace,Yéremy Pino Santos,568157.0,Yéremy Pino,unique_birthdate_shared_name_token_same_club
+212,Crystal Palace,Will Hughes,207014.0,Will Hughes,unique_exact_normalized_name_same_club
+213,Crystal Palace,Jefferson Lerma Solís,262980.0,Jefferson Lerma,unique_birthdate_shared_name_token_same_club
+214,Crystal Palace,Daichi Kamada,356141.0,Daichi Kamada,unique_exact_normalized_name_same_club
+215,Crystal Palace,Justin Devenny,,,unmatched_or_ambiguous
+216,Crystal Palace,Romain Esse,,,unmatched_or_ambiguous
+217,Crystal Palace,Matheus França de Oliveira,,,unmatched_or_ambiguous
+218,Crystal Palace,Cheick Doucouré,543387.0,Cheick Doucouré,unique_exact_normalized_name_same_club
+219,Crystal Palace,Jesurun Rak-Sakyi,,,unmatched_or_ambiguous
+220,Crystal Palace,Rio Cardines,,,unmatched_or_ambiguous
+221,Crystal Palace,Joél Drakes-Thomas,,,unmatched_or_ambiguous
+222,Crystal Palace,Jørgen Strand Larsen,429983.0,Jørgen Strand Larsen,unique_exact_normalized_name_same_club
+223,Crystal Palace,Jean-Philippe Mateta,420002.0,Jean-Philippe Mateta,unique_exact_normalized_name_same_club
+224,Crystal Palace,Eddie Nketiah,340324.0,Eddie Nketiah,unique_exact_normalized_name_same_club
+225,Crystal Palace,Christantus Uche,,,unmatched_or_ambiguous
+241,Crystal Palace,Dwight McNeil,584769.0,Dwight McNeil,unique_exact_normalized_name_same_club
+555,Crystal Palace,Remi Matthews,196722.0,Remi Matthews,unique_exact_normalized_name_same_club
+577,Crystal Palace,Takehiro Tomiyasu,331560.0,Takehiro Tomiyasu,unique_exact_normalized_name_same_club
+588,Crystal Palace,Anan Khalaili,945021.0,Anan Khalaili,unique_exact_normalized_name_same_club
+595,Crystal Palace,Zavier Gozo,1007383.0,Zavier Gozo,unique_exact_normalized_name_same_club
+633,Crystal Palace,Honest Ahanor,1077175.0,Honest Ahanor,unique_exact_normalized_name_same_club
+643,Crystal Palace,Ben Chilwell,316125.0,Ben Chilwell,unique_exact_normalized_name_same_club
+644,Crystal Palace,Quinten Timber,420213.0,Quinten Timber,unique_exact_normalized_name_same_club
+647,Crystal Palace,Darío Osorio,881116.0,Darío Osorio,unique_exact_normalized_name_same_club
+21,Everton,Christian Nørgaard,148367.0,Christian Nørgaard,unique_exact_normalized_name_same_club
+209,Everton,Brennan Johnson,470607.0,Brennan Johnson,unique_exact_normalized_name_same_club
+226,Everton,Jordan Pickford,130164.0,Jordan Pickford,unique_exact_normalized_name_same_club
+227,Everton,Mark Travers,357658.0,Mark Travers,unique_exact_normalized_name_same_club
+228,Everton,Tom King,215810.0,Tom King,unique_exact_normalized_name_same_club
+229,Everton,James Tarkowski,173504.0,James Tarkowski,unique_exact_normalized_name_same_club
+230,Everton,Jarrad Branthwaite,661053.0,Jarrad Branthwaite,unique_exact_normalized_name_same_club
+231,Everton,Michael Keane,118534.0,Michael Keane,unique_exact_normalized_name_same_club
+232,Everton,Jake O'Brien,711544.0,Jake O'Brien,unique_exact_normalized_name_same_club
+233,Everton,Vitalii Mykolenko,404842.0,Vitaliy Mykolenko,unique_birthdate_shared_name_token_same_club
+234,Everton,Nathan Patterson,,,unmatched_or_ambiguous
+235,Everton,Adam Aznou,,,unmatched_or_ambiguous
+236,Everton,Kiernan Dewsbury-Hall,475188.0,Kiernan Dewsbury-Hall,unique_exact_normalized_name_same_club
+238,Everton,Jack Grealish,203460.0,Jack Grealish,unique_exact_normalized_name_same_club
+239,Everton,James Garner,505219.0,James Garner,unique_exact_normalized_name_same_club
+242,Everton,Tyrique George,936874.0,Tyrique George,unique_exact_normalized_name_same_club
+243,Everton,Carlos Alcaraz Durán,748319.0,Carlos Alcaraz,unique_birthdate_shared_name_token_same_club
+244,Everton,Harrison Armstrong,1107733.0,Harrison Armstrong,unique_exact_normalized_name_same_club
+245,Everton,Tyler Dibling,866655.0,Tyler Dibling,unique_exact_normalized_name_same_club
+246,Everton,Merlin Röhl,608832.0,Merlin Röhl,unique_exact_normalized_name_same_club
+247,Everton,Hayden Hackney,538216.0,Hayden Hackney,unique_exact_normalized_name_same_club
+248,Everton,Norberto Bercique Gomes Betuncal,,,unmatched_or_ambiguous
+249,Everton,Thierno Barry,937941.0,Thierno Barry,unique_exact_normalized_name_same_club
+649,Everton,Ainsley Maitland-Niles,285845.0,Ainsley Maitland-Niles,unique_exact_normalized_name_same_club
+654,Everton,Braiden Graham,,,unmatched_or_ambiguous
+250,Fulham,Bernd Leno,72476.0,Bernd Leno,unique_exact_normalized_name_same_club
+251,Fulham,Benjamin Lecomte,127181.0,Benjamin Lecomte,unique_exact_normalized_name_same_club
+252,Fulham,Alfie McNally,,,unmatched_or_ambiguous
+253,Fulham,Joachim Andersen,260827.0,Joachim Andersen,unique_exact_normalized_name_same_club
+254,Fulham,Antonee Robinson,349701.0,Antonee Robinson,unique_exact_normalized_name_same_club
+255,Fulham,Jorge Cuenca Barreno,494880.0,Jorge Cuenca,unique_birthdate_shared_name_token_same_club
+256,Fulham,Kenny Tete,206746.0,Kenny Tete,unique_exact_normalized_name_same_club
+257,Fulham,Calvin Bassey,461883.0,Calvin Bassey,unique_exact_normalized_name_same_club
+258,Fulham,Timothy Castagne,262226.0,Timothy Castagne,unique_exact_normalized_name_same_club
+261,Fulham,Alex Iwobi,242631.0,Alex Iwobi,unique_exact_normalized_name_same_club
+262,Fulham,Emile Smith Rowe,392765.0,Emile Smith Rowe,unique_exact_normalized_name_same_club
+263,Fulham,Kevin Santos Lopes de Macedo,900195.0,Kevin,unique_birthdate_shared_name_token_same_club
+264,Fulham,Oscar Bobb,661207.0,Oscar Bobb,unique_exact_normalized_name_same_club
+265,Fulham,Sander Berge,333014.0,Sander Berge,unique_exact_normalized_name_same_club
+266,Fulham,Tom Cairney,123275.0,Tom Cairney,unique_exact_normalized_name_same_club
+268,Fulham,Josh King,1011131.0,Josh King,unique_exact_normalized_name_same_club
+269,Fulham,Ryan Sessegnon,392775.0,Ryan Sessegnon,unique_exact_normalized_name_same_club
+270,Fulham,Harrison Reed,226973.0,Harrison Reed,unique_exact_normalized_name_same_club
+271,Fulham,Rodrigo Muniz Carvalho,735571.0,Rodrigo Muniz,unique_birthdate_shared_name_token_same_club
+272,Fulham,Jonah Kusi-Asare,1069512.0,Jonah Kusi-Asare,unique_exact_normalized_name_same_club
+569,Fulham,Gonzalo García,935230.0,Gonzalo García,unique_exact_normalized_name_same_club
+570,Fulham,César Palacios,948272.0,César Palacios,unique_exact_normalized_name_same_club
+580,Fulham,Shea Charles,747951.0,Shea Charles,unique_exact_normalized_name_same_club
+610,Fulham,Luc De Fougerolles,,,unmatched_or_ambiguous
+626,Fulham,Macaulay Zepa,,,unmatched_or_ambiguous
+635,Fulham,Hugo Larsson,931838.0,Hugo Larsson,unique_exact_normalized_name_same_club
+636,Fulham,Manuel Ángel Morán Ibáñez,646824.0,Manuel Ángel,unique_birthdate_shared_name_token_same_club
+650,Fulham,David Affengruber,452483.0,David Affengruber,unique_exact_normalized_name_same_club
+240,Hull City,Tim Iroegbunam,696589.0,Tim Iroegbunam,unique_exact_normalized_name_same_club
+273,Hull City,Dillon Phillips,308431.0,Dillon Phillips,unique_exact_normalized_name_same_club
+274,Hull City,Jack Butland,128899.0,Jack Butland,unique_exact_normalized_name_same_club
+275,Hull City,Harvey Cartwright,,,unmatched_or_ambiguous
+276,Hull City,Thimothée Lo-Tutala,,,unmatched_or_ambiguous
+277,Hull City,John Egan,121324.0,John Egan,unique_exact_normalized_name_same_club
+278,Hull City,Charlie Hughes,746357.0,Charlie Hughes,unique_exact_normalized_name_same_club
+279,Hull City,Semi Ajayi,251912.0,Semi Ajayi,unique_exact_normalized_name_same_club
+280,Hull City,Lewie Coyle,413402.0,Lewie Coyle,unique_exact_normalized_name_same_club
+281,Hull City,Cody Drameh,,,unmatched_or_ambiguous
+282,Hull City,Ryan Giles,504581.0,Ryan Giles,unique_exact_normalized_name_same_club
+283,Hull City,Matty Jacob,,,unmatched_or_ambiguous
+284,Hull City,Cathal McCarthy,,,unmatched_or_ambiguous
+285,Hull City,Paddy McNair,167268.0,Paddy McNair,unique_exact_normalized_name_same_club
+286,Hull City,Mohamed Belloumi,857079.0,Mohamed Belloumi,unique_exact_normalized_name_same_club
+287,Hull City,Liam Millar,,,unmatched_or_ambiguous
+288,Hull City,Kieran Dowell,258916.0,Kieran Dowell,unique_exact_normalized_name_same_club
+289,Hull City,Matt Crooks,169416.0,Matt Crooks,unique_exact_normalized_name_same_club
+290,Hull City,Regan Slater,473080.0,Regan Slater,unique_exact_normalized_name_same_club
+291,Hull City,Eliot Matazo,535834.0,Eliot Matazo,unique_exact_normalized_name_same_club
+292,Hull City,Abdülkadir Ömür,271495.0,Abdülkadir Ömür,unique_exact_normalized_name_same_club
+293,Hull City,Abu Kamara,,,unmatched_or_ambiguous
+294,Hull City,Óscar Zambrano,893658.0,Óscar Zambrano,unique_exact_normalized_name_same_club
+295,Hull City,Oli McBurnie,298477.0,Oli McBurnie,unique_exact_normalized_name_same_club
+296,Hull City,David Akintola,,,unmatched_or_ambiguous
+297,Hull City,Darko Gyabi,663264.0,Darko Gyabi,unique_exact_normalized_name_same_club
+298,Hull City,Enis Destan,,,unmatched_or_ambiguous
+299,Hull City,Mason Burstow,,,unmatched_or_ambiguous
+340,Hull City,Joe Gelhardt,503980.0,Joe Gelhardt,unique_exact_normalized_name_same_club
+556,Hull City,Matt Targett,250478.0,Matt Targett,unique_exact_normalized_name_same_club
+563,Hull City,Hidemasa Morita,524315.0,Hidemasa Morita,unique_exact_normalized_name_same_club
+572,Hull City,Konstantinos Tzolakis,554389.0,Konstantinos Tzolakis,unique_exact_normalized_name_same_club
+574,Hull City,Jens Hjertø-Dahl,923535.0,Jens Hjertø-Dahl,unique_exact_normalized_name_same_club
+576,Hull City,Elliot Stroud,687622.0,Elliot Stroud,unique_exact_normalized_name_same_club
+585,Hull City,Lucas Herrington,1279984.0,Lucas Herrington,unique_exact_normalized_name_same_club
+586,Hull City,Nobel Mendy,1034853.0,Nobel Mendy,unique_exact_normalized_name_same_club
+589,Hull City,Lucas Gourna-Douath,620313.0,Lucas Gourna-Douath,unique_exact_normalized_name_same_club
+617,Hull City,Mohamed-Ali Cho,670847.0,Mohamed-Ali Cho,unique_exact_normalized_name_same_club
+632,Hull City,Ilyas Ansah,1035765.0,Ilyas Ansah,unique_exact_normalized_name_same_club
+637,Hull City,Robinio Vaz,1131161.0,Robinio Vaz,unique_exact_normalized_name_same_club
+638,Hull City,Brooke Norton-Cuffy,728733.0,Brooke Norton-Cuffy,unique_exact_normalized_name_same_club
+642,Hull City,Sorba Thomas,475416.0,Sorba Thomas,unique_exact_normalized_name_same_club
+645,Hull City,Christos Mouzakitis,964426.0,Christos Mouzakitis,unique_exact_normalized_name_same_club
+259,Ipswich Town,Issa Diop,272622.0,Issa Diop,unique_exact_normalized_name_same_club
+267,Ipswich Town,Saša Lukić,245056.0,Saša Lukić,unique_exact_normalized_name_same_club
+300,Ipswich Town,Christian Walton,208379.0,Christian Walton,unique_exact_normalized_name_same_club
+301,Ipswich Town,Alex Palmer,245625.0,Alex Palmer,unique_exact_normalized_name_same_club
+302,Ipswich Town,David Button,61814.0,David Button,unique_exact_normalized_name_same_club
+303,Ipswich Town,Cédric Kipré,364827.0,Cédric Kipré,unique_exact_normalized_name_same_club
+304,Ipswich Town,Dara O'Shea,401320.0,Dara O'Shea,unique_exact_normalized_name_same_club
+305,Ipswich Town,Leif Davis,596446.0,Leif Davis,unique_exact_normalized_name_same_club
+306,Ipswich Town,Jacob Greaves,693095.0,Jacob Greaves,unique_exact_normalized_name_same_club
+307,Ipswich Town,Ben Johnson,,,unmatched_or_ambiguous
+308,Ipswich Town,Darnell Furlong,351755.0,Darnell Furlong,unique_exact_normalized_name_same_club
+309,Ipswich Town,Marcelino Núñez,715558.0,Marcelino Núñez,unique_exact_normalized_name_same_club
+310,Ipswich Town,Azor Matusiwa,315145.0,Azor Matusiwa,unique_exact_normalized_name_same_club
+311,Ipswich Town,Wes Burns,,,unmatched_or_ambiguous
+312,Ipswich Town,Jack Taylor,458178.0,Jack Taylor,unique_exact_normalized_name_same_club
+313,Ipswich Town,Jack Clarke,559794.0,Jack Clarke,unique_exact_normalized_name_same_club
+314,Ipswich Town,Chiedozie Ogbene,,,unmatched_or_ambiguous
+315,Ipswich Town,Abdul Fatawu,864121.0,Abdul Fatawu,unique_exact_normalized_name_same_club
+316,Ipswich Town,Emersonn Correia da Silva,743599.0,Emersonn,unique_birthdate_shared_name_token_same_club
+317,Ipswich Town,George Hirst,,,unmatched_or_ambiguous
+318,Ipswich Town,Jaden Philogene,665390.0,Jaden Philogene,unique_exact_normalized_name_same_club
+319,Ipswich Town,Sam Szmodics,,,unmatched_or_ambiguous
+320,Ipswich Town,Chuba Akpom,197642.0,Chuba Akpom,unique_exact_normalized_name_same_club
+321,Ipswich Town,Sindre Walle Egeli,923504.0,Sindre Walle Egeli,unique_exact_normalized_name_same_club
+322,Ipswich Town,Ali Al-Hamadi,,,unmatched_or_ambiguous
+323,Ipswich Town,Kasey McAteer,621193.0,Kasey McAteer,unique_exact_normalized_name_same_club
+324,Ipswich Town,Anis Mehmeti,530813.0,Anis Mehmeti,unique_exact_normalized_name_same_club
+554,Ipswich Town,Kayne van Oevelen,,,unmatched_or_ambiguous
+562,Ipswich Town,Daizen Maeda,420931.0,Daizen Maeda,unique_exact_normalized_name_same_club
+564,Ipswich Town,Kjell Scherpen,463527.0,Kjell Scherpen,unique_exact_normalized_name_same_club
+571,Ipswich Town,Florentino Ibrain Morris Luís,357162.0,Florentino,unique_birthdate_shared_name_token_same_club
+591,Ipswich Town,Julio Enciso,660867.0,Julio Enciso,unique_exact_normalized_name_same_club
+592,Ipswich Town,Abdoul Ouattara,991487.0,Abdoul Ouattara,unique_exact_normalized_name_same_club
+602,Ipswich Town,Cameron Humphreys,,,unmatched_or_ambiguous
+619,Ipswich Town,Exequiel Palacios,401578.0,Exequiel Palacios,unique_exact_normalized_name_same_club
+640,Ipswich Town,Zian Flemming,411537.0,Zian Flemming,unique_exact_normalized_name_same_club
+260,Leeds United,Harry Wilson,279455.0,Harry Wilson,unique_exact_normalized_name_same_club
+326,Leeds United,Lucas Estella Perri,,,unmatched_or_ambiguous
+327,Leeds United,Jaka Bijol,371851.0,Jaka Bijol,unique_exact_normalized_name_same_club
+329,Leeds United,Joe Rodon,297212.0,Joe Rodon,unique_exact_normalized_name_same_club
+330,Leeds United,Jayden Bogle,465717.0,Jayden Bogle,unique_exact_normalized_name_same_club
+331,Leeds United,Gabriel Gudmundsson,362108.0,Gabriel Gudmundsson,unique_exact_normalized_name_same_club
+332,Leeds United,James Justin,413220.0,James Justin,unique_exact_normalized_name_same_club
+333,Leeds United,Sebastiaan Bornauw,,,unmatched_or_ambiguous
+334,Leeds United,Tarik Muharemović,679423.0,Tarik Muharemović,unique_exact_normalized_name_same_club
+335,Leeds United,Anton Stach,344069.0,Anton Stach,unique_exact_normalized_name_same_club
+336,Leeds United,Noah Okafor,346890.0,Noah Okafor,unique_exact_normalized_name_same_club
+337,Leeds United,Brenden Aaronson,393323.0,Brenden Aaronson,unique_exact_normalized_name_same_club
+338,Leeds United,Ethan Ampadu,392771.0,Ethan Ampadu,unique_exact_normalized_name_same_club
+339,Leeds United,Sean Longstaff,346707.0,Sean Longstaff,unique_exact_normalized_name_same_club
+341,Leeds United,Wilfried Gnonto,,,unmatched_or_ambiguous
+342,Leeds United,Jack Harrison,,,unmatched_or_ambiguous
+343,Leeds United,Daniel James,319301.0,Daniel James,unique_exact_normalized_name_same_club
+344,Leeds United,Ilia Gruev,381753.0,Ilia Gruev,unique_exact_normalized_name_same_club
+345,Leeds United,Tanaka Ao,489359.0,Ao Tanaka,unique_birthdate_shared_name_token_same_club
+346,Leeds United,Dominic Calvert-Lewin,306024.0,Dominic Calvert-Lewin,unique_exact_normalized_name_same_club
+347,Leeds United,Lukas Nmecha,314288.0,Lukas Nmecha,unique_exact_normalized_name_same_club
+348,Leeds United,Joël Piroe,,,unmatched_or_ambiguous
+349,Leeds United,Mateo Joseph Fernández-Regatillo,834742.0,Mateo Joseph,unique_birthdate_shared_name_token_same_club
+385,Leeds United,James Trafford,566799.0,James Trafford,unique_exact_normalized_name_same_club
+598,Leeds United,Nico Elvedi,192635.0,Nico Elvedi,unique_exact_normalized_name_same_club
+603,Leeds United,Jayden Lienou,,,unmatched_or_ambiguous
+604,Leeds United,Alfie Cresswell,,,unmatched_or_ambiguous
+625,Leeds United,Alex Cairns,194386.0,Alex Cairns,unique_exact_normalized_name_same_club
+629,Leeds United,Michael Zetterer,196813.0,Michael Zetterer,unique_exact_normalized_name_same_club
+641,Leeds United,Melvin Bard,532775.0,Melvin Bard,unique_exact_normalized_name_same_club
+648,Leeds United,Jean-Mattéo Bahoya,939964.0,Jean-Mattéo Bahoya,unique_exact_normalized_name_same_club
+350,Liverpool,Alisson Becker,105470.0,Alisson,unique_birthdate_shared_name_token_same_club
+351,Liverpool,Giorgi Mamardashvili,502676.0,Giorgi Mamardashvili,unique_exact_normalized_name_same_club
+352,Liverpool,Freddie Woodman,226049.0,Freddie Woodman,unique_exact_normalized_name_same_club
+353,Liverpool,Armin Pecsi,,,unmatched_or_ambiguous
+354,Liverpool,Vitezslav Jaros,486604.0,Vitezslav Jaros,unique_exact_normalized_name_same_club
+355,Liverpool,Harvey Davies,706815.0,Harvey Davies,unique_exact_normalized_name_same_club
+356,Liverpool,Virgil van Dijk,139208.0,Virgil van Dijk,unique_exact_normalized_name_same_club
+357,Liverpool,Jeremie Frimpong,484547.0,Jeremie Frimpong,unique_exact_normalized_name_same_club
+358,Liverpool,Milos Kerkez,730861.0,Milos Kerkez,unique_exact_normalized_name_same_club
+359,Liverpool,Joe Gomez,256178.0,Joe Gomez,unique_exact_normalized_name_same_club
+360,Liverpool,Conor Bradley,624258.0,Conor Bradley,unique_exact_normalized_name_same_club
+361,Liverpool,Wellity Lucky,,,unmatched_or_ambiguous
+362,Liverpool,Jeremy Jacquet,1004301.0,Jérémy Jacquet,unique_exact_normalized_name_same_club
+363,Liverpool,Giovanni Leoni,1086619.0,Giovanni Leoni,unique_exact_normalized_name_same_club
+364,Liverpool,Kostas Tsimikas,338070.0,Konstantinos Tsimikas,unique_birthdate_shared_name_token_same_club
+365,Liverpool,Calvin Ramsay,,,unmatched_or_ambiguous
+366,Liverpool,Florian Wirtz,598577.0,Florian Wirtz,unique_exact_normalized_name_same_club
+367,Liverpool,Cody Gakpo,434675.0,Cody Gakpo,unique_exact_normalized_name_same_club
+368,Liverpool,Dominik Szoboszlai,451276.0,Dominik Szoboszlai,unique_exact_normalized_name_same_club
+369,Liverpool,Rio Ngumoha,1108466.0,Rio Ngumoha,unique_exact_normalized_name_same_club
+370,Liverpool,Federico Chiesa,341092.0,Federico Chiesa,unique_exact_normalized_name_same_club
+371,Liverpool,Ryan Gravenberch,478573.0,Ryan Gravenberch,unique_exact_normalized_name_same_club
+372,Liverpool,Alexis Mac Allister,534033.0,Alexis Mac Allister,unique_exact_normalized_name_same_club
+373,Liverpool,Curtis Jones,,,unmatched_or_ambiguous
+374,Liverpool,Endo Wataru,146310.0,Wataru Endo,unique_birthdate_shared_name_token_same_club
+375,Liverpool,Trey Nyoni,1045123.0,Trey Nyoni,unique_exact_normalized_name_same_club
+376,Liverpool,Stefan Bajčetić Maquieira,,,unmatched_or_ambiguous
+377,Liverpool,Victor Munoz,935231.0,Víctor Muñoz,unique_exact_normalized_name_same_club
+378,Liverpool,James McConnell,845289.0,James McConnell,unique_exact_normalized_name_same_club
+379,Liverpool,Alexander Isak,349066.0,Alexander Isak,unique_exact_normalized_name_same_club
+380,Liverpool,Hugo Ekitiké,709726.0,Hugo Ekitiké,unique_exact_normalized_name_same_club
+381,Liverpool,Lewis Koumas,922462.0,Lewis Koumas,unique_exact_normalized_name_same_club
+382,Liverpool,Jayden Danns,,,unmatched_or_ambiguous
+383,Liverpool,Harvey Elliott,,,unmatched_or_ambiguous
+579,Liverpool,Ronald Araujo,480267.0,Ronald Araujo,unique_exact_normalized_name_same_club
+627,Liverpool,Bradley Barcola,708265.0,Bradley Barcola,unique_exact_normalized_name_same_club
+155,Manchester City,Enzo Fernández,648195.0,Enzo Fernández,unique_exact_normalized_name_same_club
+237,Manchester City,Iliman Ndiaye,623570.0,Iliman Ndiaye,unique_exact_normalized_name_same_club
+384,Manchester City,Gianluigi Donnarumma,315858.0,Gianluigi Donnarumma,unique_exact_normalized_name_same_club
+386,Manchester City,Marcus Bettinelli,116648.0,Marcus Bettinelli,unique_exact_normalized_name_same_club
+387,Manchester City,Nico O'Reilly,743413.0,Nico O'Reilly,unique_exact_normalized_name_same_club
+388,Manchester City,Marc Guéhi,392757.0,Marc Guéhi,unique_exact_normalized_name_same_club
+389,Manchester City,Matheus Nunes,601883.0,Matheus Nunes,unique_exact_normalized_name_same_club
+390,Manchester City,Rúben dos Santos Gato Alves Dias,258004.0,Rúben Dias,unique_birthdate_shared_name_token_same_club
+391,Manchester City,Joško Gvardiol,475959.0,Josko Gvardiol,unique_exact_normalized_name_same_club
+392,Manchester City,Rayan Aït-Nouri,578391.0,Rayan Aït-Nouri,unique_exact_normalized_name_same_club
+393,Manchester City,Abdukodir Khusanov,763079.0,Abdukodir Khusanov,unique_exact_normalized_name_same_club
+394,Manchester City,Max Alleyne,,,unmatched_or_ambiguous
+395,Manchester City,Rico Lewis,701057.0,Rico Lewis,unique_exact_normalized_name_same_club
+396,Manchester City,Vitor de Oliveira Nunes dos Reis,1005575.0,Vitor Reis,unique_birthdate_shared_name_token_same_club
+397,Manchester City,Antoine Semenyo,583255.0,Antoine Semenyo,unique_exact_normalized_name_same_club
+398,Manchester City,Phil Foden,406635.0,Phil Foden,unique_exact_normalized_name_same_club
+399,Manchester City,Rayan Cherki,607223.0,Rayan Cherki,unique_exact_normalized_name_same_club
+400,Manchester City,Jérémy Doku,486049.0,Jérémy Doku,unique_exact_normalized_name_same_club
+402,Manchester City,Rodrigo 'Rodri' Hernandez Cascante,,,unmatched_or_ambiguous
+404,Manchester City,Tijjani Reijnders,,,unmatched_or_ambiguous
+406,Manchester City,Mateo Kovačić,51471.0,Mateo Kovacic,unique_exact_normalized_name_same_club
+407,Manchester City,Claudio Echeverri,,,unmatched_or_ambiguous
+408,Manchester City,Kalvin Phillips,,,unmatched_or_ambiguous
+409,Manchester City,Divine Mukasa,,,unmatched_or_ambiguous
+410,Manchester City,Jeremy Monga,,,unmatched_or_ambiguous
+411,Manchester City,Erling Haaland,418560.0,Erling Haaland,unique_exact_normalized_name_same_club
+481,Manchester City,Elliot Anderson,567576.0,Elliot Anderson,unique_exact_normalized_name_same_club
+587,Manchester City,Gerónimo Rulli,229604.0,Gerónimo Rulli,unique_exact_normalized_name_same_club
+616,Manchester City,Ayyoub Bouaddi,1097139.0,Ayyoub Bouaddi,unique_exact_normalized_name_same_club
+621,Manchester City,Ryan McAidoo,1187640.0,Ryan McAidoo,unique_exact_normalized_name_same_club
+622,Manchester City,Kaden Braithwaite,,,unmatched_or_ambiguous
+628,Manchester City,Allan Andrade Elias,1082631.0,Allan,unique_birthdate_shared_name_token_same_club
+653,Manchester City,Floyd Samba,,,unmatched_or_ambiguous
+43,Manchester United,Youri Tielemans,249565.0,Youri Tielemans,unique_exact_normalized_name_same_club
+131,Manchester United,Carlos Baleba,973085.0,Carlos Baleba,unique_exact_normalized_name_same_club
+162,Manchester United,Andrey Nascimento dos Santos,743600.0,Andrey Santos,unique_birthdate_shared_name_token_same_club
+325,Manchester United,Karl Darlow,99397.0,Karl Darlow,unique_exact_normalized_name_same_club
+412,Manchester United,Senne Lammens,503883.0,Senne Lammens,unique_exact_normalized_name_same_club
+413,Manchester United,Altay Bayındır,,,unmatched_or_ambiguous
+414,Manchester United,Tom Heaton,34130.0,Tom Heaton,unique_exact_normalized_name_same_club
+415,Manchester United,Patrick Dorgu,926952.0,Patrick Dorgu,unique_exact_normalized_name_same_club
+416,Manchester United,Matthijs de Ligt,326031.0,Matthijs de Ligt,unique_exact_normalized_name_same_club
+417,Manchester United,Diogo Dalot Teixeira,357147.0,Diogo Dalot,unique_birthdate_shared_name_token_same_club
+418,Manchester United,Harry Maguire,177907.0,Harry Maguire,unique_exact_normalized_name_same_club
+419,Manchester United,Lisandro Martínez,480762.0,Lisandro Martínez,unique_exact_normalized_name_same_club
+420,Manchester United,Leny Yoro,923831.0,Leny Yoro,unique_exact_normalized_name_same_club
+421,Manchester United,Ayden Heaven,1078163.0,Ayden Heaven,unique_exact_normalized_name_same_club
+422,Manchester United,Noussair Mazraoui,340456.0,Noussair Mazraoui,unique_exact_normalized_name_same_club
+423,Manchester United,Luke Shaw,183288.0,Luke Shaw,unique_exact_normalized_name_same_club
+424,Manchester United,Harry Amass,1011738.0,Harry Amass,unique_exact_normalized_name_same_club
+425,Manchester United,Tyler Fredricson,,,unmatched_or_ambiguous
+426,Manchester United,Bruno Borges Fernandes,240306.0,Bruno Fernandes,unique_birthdate_shared_name_token_same_club
+427,Manchester United,Bryan Mbeumo,413039.0,Bryan Mbeumo,unique_exact_normalized_name_same_club
+428,Manchester United,Matheus Santos Carneiro da Cunha,517894.0,Matheus Cunha,unique_birthdate_shared_name_token_same_club
+429,Manchester United,Marcus Rashford,258923.0,Marcus Rashford,unique_exact_normalized_name_same_club
+430,Manchester United,Mason Mount,346483.0,Mason Mount,unique_exact_normalized_name_same_club
+431,Manchester United,Amad Diallo,536835.0,Amad Diallo,unique_exact_normalized_name_same_club
+432,Manchester United,Kobbie Mainoo,820374.0,Kobbie Mainoo,unique_exact_normalized_name_same_club
+433,Manchester United,Manuel Ugarte Ribeiro,476701.0,Manuel Ugarte,unique_birthdate_shared_name_token_same_club
+434,Manchester United,Jack Fletcher,,Tyler Fletcher,rejected_many_to_one_collision
+435,Manchester United,Shea Lacey,926309.0,Shea Lacey,unique_exact_normalized_name_same_club
+436,Manchester United,Toby Collyer,,,unmatched_or_ambiguous
+437,Manchester United,Bendito Mantato,,,unmatched_or_ambiguous
+438,Manchester United,Tyler Fletcher,,Tyler Fletcher,rejected_many_to_one_collision
+439,Manchester United,Benjamin Sesko,627442.0,Benjamin Šeško,unique_exact_normalized_name_same_club
+440,Manchester United,Joshua Zirkzee,435648.0,Joshua Zirkzee,unique_exact_normalized_name_same_club
+441,Manchester United,Chido Obi,,,unmatched_or_ambiguous
+405,Newcastle United,Nico González Iglesias,466805.0,Nico González,unique_birthdate_shared_name_token_same_club
+442,Newcastle United,Nick Pope,192080.0,Nick Pope,unique_exact_normalized_name_same_club
+443,Newcastle United,Mark Gillespie,142389.0,Mark Gillespie,unique_exact_normalized_name_same_club
+444,Newcastle United,Ewen Jaouen,923757.0,Ewen Jaouen,unique_exact_normalized_name_same_club
+445,Newcastle United,Malick Thiaw,521964.0,Malick Thiaw,unique_exact_normalized_name_same_club
+446,Newcastle United,Fabian Schär,135343.0,Fabian Schär,unique_exact_normalized_name_same_club
+447,Newcastle United,Sven Botman,361093.0,Sven Botman,unique_exact_normalized_name_same_club
+448,Newcastle United,Dan Burn,134270.0,Dan Burn,unique_exact_normalized_name_same_club
+449,Newcastle United,Lewis Hall,670858.0,Lewis Hall,unique_exact_normalized_name_same_club
+450,Newcastle United,Tino Livramento,503981.0,Tino Livramento,unique_exact_normalized_name_same_club
+451,Newcastle United,Alex Murphy,,,unmatched_or_ambiguous
+453,Newcastle United,Harvey Barnes,398065.0,Harvey Barnes,unique_exact_normalized_name_same_club
+454,Newcastle United,Anthony Elanga,583189.0,Anthony Elanga,unique_exact_normalized_name_same_club
+456,Newcastle United,Jacob Ramsey,503749.0,Jacob Ramsey,unique_exact_normalized_name_same_club
+457,Newcastle United,Jacob Murphy,199527.0,Jacob Murphy,unique_exact_normalized_name_same_club
+458,Newcastle United,Joelinton Cássio Apolinário de Lira,333241.0,Joelinton,unique_birthdate_shared_name_token_same_club
+459,Newcastle United,Lewis Miley,922769.0,Lewis Miley,unique_exact_normalized_name_same_club
+460,Newcastle United,Joe Willock,340329.0,Joe Willock,unique_exact_normalized_name_same_club
+461,Newcastle United,Bazoumana Touré,1067904.0,Bazoumana Touré,unique_exact_normalized_name_same_club
+462,Newcastle United,Sean Steur,1111063.0,Sean Steur,unique_exact_normalized_name_same_club
+463,Newcastle United,Nick Woltemade,,,unmatched_or_ambiguous
+464,Newcastle United,Yoane Wissa,388165.0,Yoane Wissa,unique_exact_normalized_name_same_club
+465,Newcastle United,William Osula,609556.0,William Osula,unique_exact_normalized_name_same_club
+466,Newcastle United,Sean Neave,,,unmatched_or_ambiguous
+559,Newcastle United,Aladji Bamba,975347.0,Aladji Bamba,unique_exact_normalized_name_same_club
+567,Newcastle United,Lukás Hornícek,629773.0,Lukas Hornicek,unique_exact_normalized_name_same_club
+593,Newcastle United,Amar Dedic,519184.0,Amar Dedic,unique_exact_normalized_name_same_club
+609,Newcastle United,Leo Shahar,,,unmatched_or_ambiguous
+634,Newcastle United,Matias Fernandez-Pardo,724129.0,Matias Fernandez-Pardo,unique_exact_normalized_name_same_club
+659,Newcastle United,Mason Miley,,,unmatched_or_ambiguous
+663,Newcastle United,Miodrag Pivas,,,unmatched_or_ambiguous
+664,Newcastle United,Vakhtang Salia,,,unmatched_or_ambiguous
+665,Newcastle United,Michael Mills,,,unmatched_or_ambiguous
+666,Newcastle United,Kyran Thompson,,,unmatched_or_ambiguous
+167,Nottingham Forest,Liam Delap,610849.0,Liam Delap,unique_exact_normalized_name_same_club
+201,Nottingham Forest,Daniel Muñoz Mejía,493003.0,Daniel Muñoz,unique_birthdate_shared_name_token_same_club
+467,Nottingham Forest,Matz Sels,127202.0,Matz Sels,unique_exact_normalized_name_same_club
+468,Nottingham Forest,John Victor Maciel Furtado,432914.0,John Victor,unique_birthdate_shared_name_token_same_club
+469,Nottingham Forest,Neco Williams,503680.0,Neco Williams,unique_exact_normalized_name_same_club
+470,Nottingham Forest,Felipe Rodrigues da Silva,,,unmatched_or_ambiguous
+471,Nottingham Forest,Nikola Milenković,413507.0,Nikola Milenković,unique_exact_normalized_name_same_club
+472,Nottingham Forest,Murillo Costa dos Santos,1005649.0,Murillo,unique_birthdate_shared_name_token_same_club
+473,Nottingham Forest,Ola Aina,236490.0,Ola Aina,unique_exact_normalized_name_same_club
+474,Nottingham Forest,Jair Paula da Cunha Filho,984096.0,Jair Cunha,unique_birthdate_shared_name_token_same_club
+475,Nottingham Forest,Nicolò Savona,708072.0,Nicolò Savona,unique_exact_normalized_name_same_club
+476,Nottingham Forest,Omar Richards,,,unmatched_or_ambiguous
+477,Nottingham Forest,Zach Abbott,,,unmatched_or_ambiguous
+478,Nottingham Forest,Luca Netz,524285.0,Luca Netz,unique_exact_normalized_name_same_club
+479,Nottingham Forest,Tyler Bindon,,,unmatched_or_ambiguous
+480,Nottingham Forest,Morgan Gibbs-White,429014.0,Morgan Gibbs-White,unique_exact_normalized_name_same_club
+482,Nottingham Forest,Callum Hudson-Odoi,392768.0,Callum Hudson-Odoi,unique_exact_normalized_name_same_club
+483,Nottingham Forest,Dan Ndoye,365108.0,Dan Ndoye,unique_exact_normalized_name_same_club
+484,Nottingham Forest,Omari Hutchinson,,,unmatched_or_ambiguous
+485,Nottingham Forest,Dilane Bakwa,,,unmatched_or_ambiguous
+486,Nottingham Forest,James McAtee,583199.0,James McAtee,unique_exact_normalized_name_same_club
+487,Nottingham Forest,Nicolás Domínguez,497291.0,Nicolás Domínguez,unique_exact_normalized_name_same_club
+488,Nottingham Forest,Ibrahim Sangaré,375885.0,Ibrahim Sangaré,unique_exact_normalized_name_same_club
+489,Nottingham Forest,Ryan Yates,425902.0,Ryan Yates,unique_exact_normalized_name_same_club
+490,Nottingham Forest,Chris Wood,108725.0,Chris Wood,unique_exact_normalized_name_same_club
+491,Nottingham Forest,Igor Jesus Maciel da Cruz,432164.0,Igor Jesus,unique_birthdate_shared_name_token_same_club
+493,Nottingham Forest,Arnaud Kalimuendo,585959.0,Arnaud Kalimuendo,unique_exact_normalized_name_same_club
+558,Nottingham Forest,Xaver Schlager,223979.0,Xaver Schlager,unique_exact_normalized_name_same_club
+581,Nottingham Forest,Ousmane Diomande,974982.0,Ousmane Diomande,unique_exact_normalized_name_same_club
+590,Nottingham Forest,Steven Benda,381469.0,Steven Benda,unique_exact_normalized_name_same_club
+112,Tottenham Hotspur,Jan Paul van Hecke,576314.0,Jan Paul van Hecke,unique_exact_normalized_name_same_club
+147,Tottenham Hotspur,Tosin Adarabioyo,258878.0,Tosin Adarabioyo,unique_exact_normalized_name_same_club
+401,Tottenham Hotspur,Omar Marmoush,445939.0,Omar Marmoush,unique_exact_normalized_name_same_club
+403,Tottenham Hotspur,Sávio Moreira de Oliveira,743591.0,Sávio,unique_birthdate_shared_name_token_same_club
+455,Tottenham Hotspur,Sandro Tonali,397033.0,Sandro Tonali,unique_exact_normalized_name_same_club
+494,Tottenham Hotspur,Guglielmo Vicario,,,unmatched_or_ambiguous
+495,Tottenham Hotspur,Brandon Austin,428016.0,Brandon Austin,unique_exact_normalized_name_same_club
+496,Tottenham Hotspur,Antonín Kinský,725912.0,Antonín Kinský,unique_exact_normalized_name_same_club
+497,Tottenham Hotspur,Martin Dubravka,74960.0,Martin Dúbravka,unique_exact_normalized_name_same_club
+498,Tottenham Hotspur,Marcos Senesi Barón,469781.0,Marcos Senesi,unique_birthdate_shared_name_token_same_club
+499,Tottenham Hotspur,Pedro Porro Sauceda,553875.0,Pedro Porro,unique_birthdate_shared_name_token_same_club
+500,Tottenham Hotspur,Cristian Romero,,,unmatched_or_ambiguous
+502,Tottenham Hotspur,Andrew Robertson,234803.0,Andrew Robertson,unique_exact_normalized_name_same_club
+503,Tottenham Hotspur,Micky van de Ven,557459.0,Micky van de Ven,unique_exact_normalized_name_same_club
+505,Tottenham Hotspur,Djed Spence,,,unmatched_or_ambiguous
+506,Tottenham Hotspur,Destiny Udogie,556385.0,Destiny Udogie,unique_exact_normalized_name_same_club
+507,Tottenham Hotspur,Ashley Phillips,,,unmatched_or_ambiguous
+508,Tottenham Hotspur,Ben Davies,192765.0,Ben Davies,unique_exact_normalized_name_same_club
+509,Tottenham Hotspur,Jun'ai Byfield,,,unmatched_or_ambiguous
+510,Tottenham Hotspur,James Rowswell,,,unmatched_or_ambiguous
+511,Tottenham Hotspur,João Victor de Souza Menezes,,,unmatched_or_ambiguous
+512,Tottenham Hotspur,Mohammed Kudus,543499.0,Mohammed Kudus,unique_exact_normalized_name_same_club
+513,Tottenham Hotspur,Xavi Simons,566931.0,Xavi Simons,unique_exact_normalized_name_same_club
+514,Tottenham Hotspur,Mathys Tel,801734.0,Mathys Tel,unique_exact_normalized_name_same_club
+515,Tottenham Hotspur,James Maddison,294057.0,James Maddison,unique_exact_normalized_name_same_club
+516,Tottenham Hotspur,Rodrigo Bentancur,354362.0,Rodrigo Bentancur,unique_exact_normalized_name_same_club
+517,Tottenham Hotspur,Wilson Odobert,743498.0,Wilson Odobert,unique_exact_normalized_name_same_club
+518,Tottenham Hotspur,Pape Matar Sarr,,,unmatched_or_ambiguous
+519,Tottenham Hotspur,Conor Gallagher,488362.0,Conor Gallagher,unique_exact_normalized_name_same_club
+520,Tottenham Hotspur,Lucas Bergvall,866246.0,Lucas Bergvall,unique_exact_normalized_name_same_club
+521,Tottenham Hotspur,Dejan Kulusevski,431755.0,Dejan Kulusevski,unique_exact_normalized_name_same_club
+522,Tottenham Hotspur,Archie Gray,922693.0,Archie Gray,unique_exact_normalized_name_same_club
+523,Tottenham Hotspur,Mikey Moore,,,unmatched_or_ambiguous
+524,Tottenham Hotspur,Callum Olusesi,,,unmatched_or_ambiguous
+525,Tottenham Hotspur,Mateus Fernandes,880245.0,Mateus Fernandes,unique_exact_normalized_name_same_club
+526,Tottenham Hotspur,Dominic Solanke-Mitchell,258889.0,Dominic Solanke,unique_birthdate_shared_name_token_same_club
+527,Tottenham Hotspur,Richarlison de Andrade,378710.0,Richarlison,unique_birthdate_shared_name_token_same_club
+528,Tottenham Hotspur,Dane Scarlett,,,unmatched_or_ambiguous
+578,Tottenham Hotspur,Mykhailo Mudryk,537860.0,Mykhaylo Mudryk,unique_birthdate_shared_name_token_same_club
+601,Tottenham Hotspur,Luca Williams-Barnett,,,unmatched_or_ambiguous
+501,Sunderland,Kevin Danso,263236.0,Kevin Danso,unique_exact_normalized_name_same_club
+529,Sunderland,Robin Roefs,646991.0,Robin Roefs,unique_exact_normalized_name_same_club
+530,Sunderland,Anthony Patterson,,,unmatched_or_ambiguous
+531,Sunderland,Melker Ellborg,605426.0,Melker Ellborg,unique_exact_normalized_name_same_club
+532,Sunderland,Daniel Ballard,503686.0,Dan Ballard,unique_birthdate_shared_name_token_same_club
+533,Sunderland,Nordi Mukiele,348026.0,Nordi Mukiele,unique_exact_normalized_name_same_club
+534,Sunderland,Trai Hume,515544.0,Trai Hume,unique_exact_normalized_name_same_club
+535,Sunderland,Omar Alderete,353032.0,Omar Alderete,unique_exact_normalized_name_same_club
+536,Sunderland,Reinildo Mandava,240692.0,Reinildo Mandava,unique_exact_normalized_name_same_club
+537,Sunderland,Jenson Seelt,,,unmatched_or_ambiguous
+538,Sunderland,Leo Fuhr Hjelde,,,unmatched_or_ambiguous
+539,Sunderland,Luke O'Nien,282939.0,Luke O'Nien,unique_exact_normalized_name_same_club
+540,Sunderland,Arthur Masuaku,,,unmatched_or_ambiguous
+541,Sunderland,Thomas Meunier,100986.0,Thomas Meunier,unique_exact_normalized_name_same_club
+542,Sunderland,Enzo Le Fée,633992.0,Enzo Le Fée,unique_exact_normalized_name_same_club
+543,Sunderland,Habib Diarra,876631.0,Habib Diarra,unique_exact_normalized_name_same_club
+544,Sunderland,Granit Xhaka,111455.0,Granit Xhaka,unique_exact_normalized_name_same_club
+545,Sunderland,Noah Sadiki,727089.0,Noah Sadiki,unique_exact_normalized_name_same_club
+546,Sunderland,Simon Adingra,,,unmatched_or_ambiguous
+547,Sunderland,Romaine Mundle,696181.0,Romaine Mundle,unique_exact_normalized_name_same_club
+548,Sunderland,Chris Rigg,947411.0,Chris Rigg,unique_exact_normalized_name_same_club
+549,Sunderland,Chemsdine Talbi,743384.0,Chemsdine Talbi,unique_exact_normalized_name_same_club
+550,Sunderland,Djiamgone Jocelin Ta Bi,1322090.0,Jocelin Ta Bi,unique_birthdate_shared_name_token_same_club
+551,Sunderland,Nilson Angulo,903611.0,Nilson Angulo,unique_exact_normalized_name_same_club
+552,Sunderland,Brian Brobbey,473169.0,Brian Brobbey,unique_exact_normalized_name_same_club
+553,Sunderland,Wilson Isidor,494237.0,Wilson Isidor,unique_exact_normalized_name_same_club
+612,Sunderland,Dayann Méthalie,1191444.0,Dayann Méthalie,unique_exact_normalized_name_same_club
+613,Sunderland,Jules Ahoka,1401779.0,Jules Ahoka,unique_exact_normalized_name_same_club
+646,Sunderland,Malick Fofana,743386.0,Malick Fofana,unique_exact_normalized_name_same_club
+651,Sunderland,Juan Angulo,,,unmatched_or_ambiguous

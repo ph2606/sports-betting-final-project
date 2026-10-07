@@ -1,0 +1,21 @@
+{
+  "notebook_all_code_cells_executed": true,
+  "notebook_errors": 0,
+  "notebook_sha256": "9b58428d2e2d64dc4ba6f74a02a827d2eabf3da39ea0dcf1af53ecaff77e6001",
+  "workbook_sheets": [
+    "Current clubs",
+    "Dataset catalog",
+    "Team coverage",
+    "Field dictionary",
+    "Quality checks",
+    "Current players",
+    "Club values",
+    "Reported injuries",
+    "Current fixtures"
+  ],
+  "workbook_tables_verified": true,
+  "formula_cells": 0,
+  "dataset_tables": 90,
+  "raw_hashes_verified": 6522,
+  "failed_quality_checks": 0
+}

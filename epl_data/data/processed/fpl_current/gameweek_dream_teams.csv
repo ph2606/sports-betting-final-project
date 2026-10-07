@@ -1,0 +1,56 @@
+element,points,position,event,player_code,web_name,current_roster_team,is_top_player,season,source_url,retrieved_at_utc,requested_as_of_date,data_role
+572,10,1,1,473284,Tzolakis,Hull City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+115,17,2,1,465730,De Cuyper,Brighton & Hove Albion,True,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+586,15,3,1,606930,Mendy,Hull City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+279,14,4,1,146426,Ajayi,Hull City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+88,13,5,1,607464,Kayode,Brentford,False,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+123,16,6,1,532529,Hinshelwood,Brighton & Hove Albion,False,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+565,14,7,1,513545,M.Sangaré,Brentford,False,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+154,13,8,1,244851,Palmer,Chelsea,False,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+335,13,9,1,466525,Stach,Leeds United,False,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+367,12,10,1,243298,Gakpo,Liverpool,False,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+165,11,11,1,475168,João Pedro,Chelsea,False,2026-27,https://fantasy.premierleague.com/api/dream-team/1/,2026-10-07T03:05:55.681153+00:00,2026-10-06,post_match_gameweek_selection
+572,10,1,2,473284,Tzolakis,Hull City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+229,12,2,2,17761,Tarkowski,Everton,False,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+449,11,3,2,487838,Hall,Newcastle United,False,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+593,11,4,2,463726,Dedić,Newcastle United,False,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+8,11,5,2,466075,Calafiori,Arsenal,False,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+426,23,6,2,141746,B.Fernandes,Manchester United,True,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+399,14,7,2,466052,Cherki,Manchester City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+124,13,8,2,60307,Groß,Brighton & Hove Albion,False,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+480,13,9,2,222531,Gibbs-White,Nottingham Forest,False,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+69,12,10,2,503139,Scott,Bournemouth,False,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+411,13,11,2,223094,Haaland,Manchester City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/2/,2026-10-07T03:05:59.020091+00:00,2026-10-06,post_match_gameweek_selection
+597,10,1,3,433969,Suzuki,Aston Villa,False,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+204,15,2,3,244723,Mitchell,Crystal Palace,True,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+330,14,3,3,226182,Bogle,Leeds United,False,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+504,12,4,3,610799,Vuskovic,Brighton & Hove Albion,False,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+453,12,5,3,201666,Barnes,Newcastle United,False,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+367,11,6,3,243298,Gakpo,Liverpool,False,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+98,11,7,3,204580,Janelt,Brentford,False,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+15,10,8,3,184029,Ødegaard,Arsenal,False,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+68,10,9,3,201658,Tavernier,Bournemouth,False,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+379,13,10,3,219168,Isak,Liverpool,False,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+411,9,11,3,223094,Haaland,Manchester City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/3/,2026-10-07T03:06:01.777120+00:00,2026-10-06,post_match_gameweek_selection
+1,14,1,4,154561,Raya,Arsenal,False,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+330,15,2,4,226182,Bogle,Leeds United,False,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+305,14,3,4,455084,Davis,Ipswich Town,False,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+116,12,4,4,83299,Dunk,Brighton & Hove Albion,False,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+115,11,5,4,465730,De Cuyper,Brighton & Hove Albion,False,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+233,11,6,4,224967,Mykolenko,Everton,False,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+124,17,7,4,60307,Groß,Brighton & Hove Albion,True,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+94,15,8,4,513418,Schade,Brentford,False,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+286,13,9,4,540324,Belloumi,Hull City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+316,12,10,4,543968,Emersonn,Ipswich Town,False,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+165,12,11,4,475168,João Pedro,Chelsea,False,2026-27,https://fantasy.premierleague.com/api/dream-team/4/,2026-10-07T03:06:04.944214+00:00,2026-10-06,post_match_gameweek_selection
+110,11,1,5,472739,Rushworth,Coventry City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection
+176,15,2,5,173878,Dasilva,Coventry City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection
+93,14,3,5,513086,Schuster,Brentford,False,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection
+229,14,4,5,17761,Tarkowski,Everton,False,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection
+449,13,5,5,487838,Hall,Newcastle United,False,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection
+397,17,6,5,437730,Semenyo,Manchester City,False,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection
+124,14,7,5,60307,Groß,Brighton & Hove Albion,False,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection
+53,13,8,5,614071,Manzambi,Aston Villa,False,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection
+41,12,9,5,195546,Buendía,Aston Villa,False,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection
+552,17,10,5,441264,Brobbey,Sunderland,True,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection
+138,10,11,5,647850,Kostoulas,Brighton & Hove Albion,False,2026-27,https://fantasy.premierleague.com/api/dream-team/5/,2026-10-07T03:06:07.993892+00:00,2026-10-06,post_match_gameweek_selection

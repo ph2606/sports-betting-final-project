@@ -1,0 +1,2058 @@
+[PAGE 1]
+           Spread trading strategies in the
+               crude oil futures market
+
+
+
+
+
+                             Thorben Lubnau
+
+
+
+
+
+___________________________________________________________________
+
+
+                European University Viadrina Frankfurt (Oder)
+
+             Department of Business Administration and Economics
+
+                           Discussion Paper No. 353
+
+                                          April 2014
+
+                          ISSN 1860 0921
+
+___________________________________________________________________
+
+[PAGE 2]
+                          Title of Paper:
+
+Spread trading strategies in the crude oil futures market
+
+
+
+
+ • Thorben Manfred Lubnau
+
+   Chair of Business Administration, in particular Finance and Capital Market Theory
+
+   European University Viadrina, Frankfurt (Oder), Germany
+
+
+   E-mail:       lubnau@europa-uni.de
+
+   Postal adress:  European University Viadrina
+
+                 Chair of Business Administration, in particular Finance and Capital Market Theory
+
+                P.O.Box 1786
+
+                D-15207 Frankfurt (Oder)
+
+              Germany
+
+[PAGE 3]
+   Spread trading strategies in the crude oil futures
+                     market
+
+
+
+
+  This article explores whether common technical trading strategies used in equity mar-
+kets can be employed proﬁtably in the markets for WTI and Brent crude oil. The strategies
+tested are Bollinger Bands, based on a mean-reverting hedge portfolio of WTI and Brent.
+The trading systems are tested with historical data from 1992 to 2013, representing 22
+years of data and for various speciﬁcations. The hedge ratio for the crude oil portfolio
+is derived by using the Johansen procedure and a dynamic linear model with Kalman
+ﬁltering. The signiﬁcance of the results is evaluated with a bootstrap test in which ran-
+domly generated orders are employed. Results show that some setups of the system are
+able to be proﬁtable over every ﬁve-year period tested. Furthermore they generate proﬁts
+and Sharpe ratios that are signiﬁcantly higher than those of randomly generated orders
+of approximately the same holding time. The best results with some Sharpe ratios in
+excess of three, are obtained when a dynamic linear model with Kalman ﬁltering and
+maximum likelihood estimates of the unknown variance of the state equation is employed
+to constantly update the hedge ratio of the portfolio. The results indicate that the crude
+oil market may not be weak-form eﬃcient.
+
+Keywords: Oil Prices; Commodities; Technical trading; Market eﬃciency; Future returns;
+Kalman Filtering
+
+
+1 Introduction
+
+
+In the new Millenium, investors’ interest in commodities, especially crude oil, has risen
+
+dramatically. On the one hand commodities are by and large seen as an additional asset
+
+class that widens the opportunity set for portfolio optimization and allows for less volatile
+
+portfolios due to rather low historical correlation between equity and commodity markets.
+
+On the other hand, markets with a high liquidity like crude oil attract short-term investors
+
+who intend to go long or short the asset for only a few days or even on an intraday basis.
+
+What Yergin (2012) calls paper barrels, meaning investing in the oil market via derivative
+
+ﬁnancial instruments without any interest in receiving or selling the physical commodity
+
+itself, seem to have changed the market dramatically ever since the New York Mercan-
+
+tile Exchange (NYMEX) introduced futures on light sweet crude linked to West Texas
+
+Intermediate (WTI) in March 1983. An albeit extreme example given by Yergin (2012) is
+
+CalPERS, the largest retirement fund in the US. Having discovered commodities as a new
+
+asset class the fund announced a sixteenfold increase of its investments in commodities in
+
+
+
+                                      1
+
+[PAGE 4]
+2008. Bern (2011) points out that institutional investors today are active even beyond the
+
+futures market by holding physical inventories as well.1 Even oil-producing countries are
+
+participants in the market, for example Mexico used OTC derivatives to hedge against
+
+falling oil prices in 2008, cashing in $8 billion with this trade (Yergin 2012).
+
+  However, not only ﬁnancial speculation but more fundamental factors like the ones
+
+brought forward among others by Alquist and Gervais (2013) give rise to the strong trends
+
+that can be observed in the crude oil market. The forces of demand and supply are still
+
+moving the prices of crude brands and, of course, oil is an extremely political commodity
+
+for the importing nations as well as for those exporting petroleum. The increasing demand
+
+from the emerging economies of Asia has a considerable impact on the market. According
+
+to BP (2013), China alone has doubled its consumption of crude oil over the ten years
+
+from 2002 to 2012 to reach a level of more than ten million barrels per day.
+
+  On the supply side, political tensions in the Middle East and North Africa like the
+
+embargo on Iranian oil and the civil unrest in Libya, and a peaking or slowly decreas-
+
+ing traditional production in many oil producing countries may be reasons for higher
+
+price levels than those in the 1990s or 1980s. While this causes the price to trend up-
+
+wards, downward pressure on the price may result from the increasing production of
+
+non-traditional oil ﬁelds, so-called tight oil, mainly in the states of Montana, Colorado,
+
+North Dakota and Texas. Especially in the US hydraulic fracturing, or fracking, is used
+
+on a large scale and has already led to a considerable increase in production so that the
+
+US is now recording the highest crude production levels since 1988.  According to the
+
+BP Statistical Review of World Energy June 2013, US production in 2012 rose by more
+
+than 13 % on a year to year basis (BP 2013).  It should also be noted that the Energy
+
+Policy and Conservation Act, dating back to 1975, bans exports of crude oil from the US
+
+with only small exceptions. In light of the growing production of crude oil there may be
+
+initiatives in Congress to lift the export ban, but the outcome is far from certain. Besides
+
+fracking technological advances like directional drilling allow to increase production up to
+
+ten times the level of conventional drilling as one well can reach multiple reservoirs (see
+
+
+ 1A way to hold large quantities of physical oil is for example to lease storage capacity in Cushing, OK,
+   one of the most important pipeline hubs in the United States and point of delivery of the WTI Futures
+    contracts.
+
+
+
+                                      2
+
+[PAGE 5]
+Bern 2011 for details). Deepwater production is becoming more and more important as
+
+well, with large basins being explored in the Golden Triangle oﬀBrazil, West Africa and
+
+the Gulf of Mexico. Whereas, based on an estimation given in Yergin (2012), only about
+
+35% to 40% of the crude from an oil ﬁeld can be extracted using traditional methods, oil
+
+companies are working on new technologies to raise this rate considerably.2 Therefore, the
+
+danger of reaching a peak in oil production and then moving into decline must be placed
+
+in perspective to technological advances and the ongoing discoveries of new ﬁelds. Given
+
+these developments, the crude oil market nowadays does not seem to be under extreme
+
+pressure from the supply side, although there are no longer lavish spare capacities like
+
+the East Texas ﬁeld up to the 1970s or Saudi-Arabia up to the 1990s and disruptions in
+
+the production or export of crude like in Libya after the ousting of the Gaddaﬁregime
+
+may lead to spikes in the price of oil.
+
+  Inspecting the settlement prices of the nearest-month WTI (West Texas Intermediate)
+
+and Brent futures in Fig. 1 reveals that the arguments given may result in the growing
+
+spread between WTI and Brent over the last three years. Another reason cited for WTI
+
+being traded at a discount to Brent is the bottleneck of pipeline capacity at Cushing, Ok-
+
+lahoma, the main storage for WTI in the US, although the completion of the southern leg
+
+of TransCanada Corp.’s Keystone XL pipeline that connects Cushing with Port Arthur,
+
+Texas, will ease this problem. On a press conference in January 2014 TransCanada stated
+
+that the pipeline oﬀers a 700,000 barrel capacity to ﬂoat oil from Cushing to the Gulf
+
+Coast, highlighting the importance of transportation for crude pricing.3 Nevertheless, as
+
+pointed out by Carollo (2012), it is nowadays very hard to distinguish movements due to
+
+shifts in demand and supply from those initiated by ﬁnancial speculation. Financial insti-
+
+tutions closely monitor the oil market and react accordingly to news reaching the market,
+
+for example the weekly reports on US stocks by the Energy Information Administration
+
+(EIA) are closely monitored. This ampliﬁes price movements and leads to more volatile
+
+prices than in the 1980s or 1990s.
+
+  Technical trading systems are discussed in a number of research studies like Brock et al.
+
+(1992), Levich and Thomas (1993), Bessembinder and Chan (1998) or Kwon and Kish
+
+ 2For an in depth discussion see the chapter on exploration and production in Downey (2009).
+ 3Numbers taken from Bloomberg’s news on February 4.
+
+
+
+                                      3
+
+[PAGE 6]
+(2002). The comprehensive survey by Park and Irwin (2007) shows that the main focus
+
+of attention of academic research is on equity and foreign exchange markets. Lukac et al.
+
+(1988) is one of the studies that test various commodities, but do not address the crude
+
+oil market. More recent studies, like Dunis et al. (2006) and Dunis et al. (2008), target
+
+the crude oil market and use spread trading strategies in their studies. Dunis et al. (2006)
+
+for example examine the proﬁtability of trading the WTI-Brent spread but use a slightly
+
+diﬀerent set-up for their trading rules. However, they ﬁnd their rules to be proﬁtable for a
+
+data sample from 1995 to 2004. Despite the fact that Bollinger Bands form an important
+
+part in lots of trading setups used by practitioners, the academic literature investigating
+
+their performance is rather limited. Moreover, these studies cast substantial doubts on
+
+their proﬁtability. Using data of equity indices and the forex market, Lento et al. (2007)
+
+establish that the Bollinger Bands are consistently unable to earn proﬁts in excess of
+
+a buy-and-hold strategy. Leung and Chong (2003) compare the proﬁtability of Moving
+
+Average Envelopes and Bollinger Bands for a broad sample of equity market indices and
+
+ﬁnd that Bollinger Bands to underperform the Moving Average Envelopes.
+
+  Price forecasts for WTI are discussed in Alquist et al. (2011) and Merino and Albacete
+
+(2010), albeit not in connection with trading systems, but on a rather macroeconomic scale
+
+as a means to allow producers and consumers of oil to assess economic risks associated
+
+with sudden price changes. Soucek and Todorova (2013) use oil prices as an indicator
+
+for a trading system in emerging markets equities. The eﬃciency of the oil market is
+
+also a much discussed topic, examples include Alvarez-Ramirez et al. (2008), who ﬁnd
+
+markets ineﬃcient in the short term and becoming more eﬃcient in the long term for
+
+their sample 1987 to 2007, Wang and Liu (2010) who extent this line of research and
+
+conclude that the WTI market gets more eﬃcient over time by studying the dynamics of
+
+local Hurst exponents with the method of rolling windows based on multiscale detrended
+
+ﬂuctuation analysis. Alvarez-Ramirez et al. (2010) test WTI spot prices from 1986 to
+
+2009 to ﬁnd deviations from eﬃciency. Tabak and Cajueiro (2007) test especially for
+
+weak-form eﬃciency and conclude that Brent and WTI markets were more ineﬃcient in
+
+the 1980s than in the 1990s. Lean et al. (2010) study WTI crude oil spot and futures
+
+prices using mean-variance and stochastic dominance approaches and ﬁnd that there are
+
+
+
+
+                                      4
+
+[PAGE 7]
+no arbitrage opportunities between spot and futures prices.
+
+  There is a large gap between academic perception and use by practitioners of technical
+
+analysis and trading systems based upon it. The Eﬃcient Market Hypothesis (EMH)
+
+brought forth by Nobel laureate Eugene Fama (Fama 1970), the foundation of modern
+
+ﬁnance, rules out the existence of proﬁtable trading systems based on historical data
+
+whenever markets are weakly eﬃcient.  In the wake of Fama (1970) academia looked
+
+upon chart analysis as a kind of esotericism and defended the EMH vigorously, good
+
+examples being Jensen (1978) and Malkiel (2003). On the other hand studies like Taylor
+
+and Allen (1992) or Menkhoﬀand Taylor (2007), show again and again the widespread
+
+use of technical analysis by institutional and private investors.  The large number of
+
+websites and books devoted to technical analysis, like Appel (2007) or Stridsman (2001),
+
+give further proof to its importance in practical trading. The use of computer generated
+
+orders contributes to the inﬂuence of technical indicators as well, as these algorithms
+
+often place orders around certain moving averages or resistance and support levels, as is
+
+indicated by the common reference of these levels in information sources like Bloomberg.
+
+  This paper extends the existing literature on technical trading systems and market
+
+eﬃciency by implementing a set of rather simple trading rules based on Bollinger Bands for
+
+a hedge portfolio consisting of WTI and Brent. Various techniques to calculate the hedge
+
+ratio are used, including a dynamic linear model with Kalman ﬁltering.  Furthermore,
+
+data spanning 22 years is used to assess the performance of the technical trading systems,
+
+starting in 1992 and going up to the end of 2013. Thus, this study contains periods with
+
+very distinct characteristics, like the 1990s with rather low oil prices, the ﬁrst years of the
+
+new millennium with prices spiking up to almost $150 and then dropping to barely over
+
+$30, and the years since 2010 marked by a steadily growing production of unconventional
+
+oil production.
+
+  The remainder of the paper is organized as follows. Section 2 gives an overview of the
+
+data used in the testing of the trading strategies. The methodology of the various trading
+
+strategies and signiﬁcance tests is presented in Section 3. Section 4 follows up with the
+
+results of the backtests, Section 5 concludes.
+
+
+
+
+
+                                      5
+
+[PAGE 8]
+2 Data
+
+
+Settlement prices of the nearest month futures for WTI and Brent were obtained from
+
+Datastream. WTI and Brent are benchmark crudes for the US and North Sea oil. Ac-
+
+cording to ICE, Brent is used for pricing approximately 60% of the world’s traded oil and
+
+the crude light futures of the NYMEX are the most actively traded commodity futures
+
+worldwide (Wang and Yang 2010). Pricing of futures for these crudes is available on the
+
+NYMEX and ICE exchanges and trading takes place almost all day long. Therefore, an
+
+investor can use these ﬁnancial instruments in a liquid market to set up a trading strategy.
+
+  Summary statistics for WTI and Brent daily prices and returns from January 1992 to
+
+December 2013 are reported in Table 1. Fig. 1 shows that WTI and Brent prices reached
+
+their peaks in 2008 with both brands being traded at prices of $145, far above the prices
+
+in the 1990s where Brent recorded prices even below $10 per barrel in the wake of the
+
+Asian ﬁnancial crises and increasing production by OPEC. The ﬁnancial crises starting
+
+in 2008 led to a sharp decline of oil prices so that both WTI and Brent traded in the $40
+
+range only a few months after they reached their all-time highs. Bern (2011) states that
+
+”the industriy has never before witnessed the top of the commodity cycle and the bottom
+
+within two quarters”. Over the next four years the market witnessed a rebound with
+
+Brent trading in a stable range of $100 to $120 and WTI in a range of $85 to $110. This
+
+spread is remarkable as the chemical characteristics of WTI like gravity and sulfur content
+
+make it superior compared to Brent and in general no other light crude exhibits such a
+
+discount to Brent. As already discussed, a negative WTI-Brent spread cannot simply be
+
+arbitraged away as cheap WTI is banned from exports and thus cannot be brought to
+
+European reﬁneries. On the other hand, as soon as Brent trades at a discount to WTI
+
+that makes Atlantic arbitrage proﬁtable, more oil will be moved westwards preventing the
+
+spread form becoming too wide.
+
+
+
+
+
+                                      6
+
+[PAGE 9]
+3 Methodology
+
+
+Mean-Reversion Trading Rules
+
+
+The trading rules considered are based on mean-reversion characteristics of price time
+
+series. A short term investor would be rather happy to ﬁnd a time series that exhibits
+
+this kind of behavior as it translates to a simple set of trading rules, namely go long (short)
+
+whenever the price is considerably below (above) the mean and exit the position when the
+
+price is back at the mean. Unfortunately it is hard to ﬁnd assets that mean-revert in the
+
+real world. WTI and Brent are no exception, as the standard Augmented Dickey-Fuller
+
+tests for the whole sample period and two sub periods in Table 2 show that the hypothesis
+
+that the price series are non-stationary cannot be rejected at the 5% signiﬁcance level.
+
+Therefore, a mean-reverting strategy is not appropriate for trading either WTI or Brent
+
+individually. However, an investor is not conﬁned to single price series but can set up
+
+a portfolio of assets which may lead to a stationary market value of the portfolio.  In
+
+other words, if the price series of WTI and Brent are cointegrated, then there exists a
+
+linear combination of both series that is stationary. The Johansen-procedure shows that
+
+a combination of WTI and Brent is cointegrated. However, due to the changing spread
+
+between the two brands of crude oil, the test statistic is getting weaker over time. The
+
+test statistics for the periods 1992-2013, 1992-2002 and 2003-2013 are reported in Table 3.
+
+As can be seen, for the second sub period the test statistic is no longer signiﬁcant even
+
+at the 10% level.
+
+ A setup for the mean-reverting trading strategy is provided by the so-called Bollinger
+
+Bands, as described for example in Chan (2013). The indicator z is made up of the value
+
+of the WTI/Brent-portfolio p, a simple moving average of p, practitioners usually using
+
+one of length 20, and the rolling standard deviation of p as speciﬁed in Eq. 1. Although
+
+the classical Bollinger Band uses the moving average length of 20, we test moving averages
+
+and rolling standard deviations of length 50, 100 and 200 as well.
+
+
+                                                pt −MAt
+                                             zt =                                              (1)
+                                                σt
+
+  Entry signals for long and short positions in the portfolio are generated whenever the
+
+
+
+                                      7
+
+[PAGE 10]
+indicator reaches certain extreme values, for example -2 and 2 on the lower and upper
+
+side. This rule translates to a deviation of the current portfolio value of more than two
+
+standard deviation away from the moving average. The simple moving average is used to
+
+allow for changes in the portfolio value level over time.
+
+  An exit value has to be provided as well, values of z = 0, 0.2 are used. The indicator
+
+z = 0 means that the long or short position is closed whenever the portfolio value reaches
+
+the moving average again. The second combination using z = 0.2 is implemented because
+
+often price movements will not stop at the moving average but tend to overshoot this
+
+mark. To proﬁt from this overshooting an investor should close the long or short position
+
+when the price has crossed the moving average and moved a little bit further.4 In case
+
+the mean-reversion trading system is in the market at the end of the sample period, the
+
+position is closed using the last available closing price. For backtesting we assume that an
+
+investor starts with $100 of equity. Whenever the system signals an entry he goes either
+
+long or short one unit of the portfolio, that means he is either long WTI and short Brent
+
+or the other way round.
+
+  The trading rules described tend to stay only a fraction of the available time in the
+
+market. We assume that an investor does not earn any interest during times he is not
+
+invested. In other words, the money market rate is rf = 0.
+
+
+Static Hedging Ratio for Mean-Reverting Strategies
+
+What remains is to specify the crude oil hedge ratio of WTI and Brent. Taking pH to be
+
+the value of the hedge portfolio leads to
+
+
+
+                          pH = QW · pW −QB · pB                              (2)
+
+
+with pW and pB being the prices of WTI and Brent and QW and QB the quantities of
+
+WTI and Brent in the portfolio. The change of the portfolio value is therefore
+
+
+
+                    ∆pH = QW · ∆pW −QB · ∆pB.                           (3)
+
+
+
+ 4To be precise: The exit z-score for the long position is 0.2, the one for the short position −0.2.
+
+
+
+                                      8
+
+[PAGE 11]
+  As the intention of building a hedge portfolio is to achieve ∆pH = 0, the hedge ratio h
+
+is given by
+
+
+                          QB   ∆pW
+                           h =   =          .                                 (4)
+                        QW   ∆pB
+
+  As the Johansen-procedure gives eigenvectors of the linear combinations of the inputs
+
+we can use this information in building the portfolio. The hedge ratio is estimated by
+
+using the WTI and Brent prices of the last year before the test period starts and is not
+
+changed over the course of the test period, although it would be possible to adjust the
+
+weights on a more frequent basis. The portfolio values pt needed for the indicator function
+
+in Eq. 1 are calculated by combining the daily closing prices of WTI and Brent with the
+
+hedge ratio.
+
+
+
+                                         pt = pW,t −hpB,t.                                  (5)
+
+
+Dynamic Hedging Ratio for Mean-Reverting Strategies
+
+
+As argued in Hatemi-J and Roca (2006) while the hedge ratio can be represented as the
+
+coeﬃcient in a regression, having time varying instead of static coeﬃcients is appropriate
+
+if the value of the hedged portfolio should be kept relatively stable. The introduction of
+
+a time varying hedge ratio can be justiﬁed because of changes in certain non-observable
+
+factors.  In the oil market, investor sentiment and expectations tend to change rather
+
+frequently.  Especially the Brent market tends to be inﬂuenced by political tensions in
+
+the Middle East, like the economic sanctions and oil embargo against Iran because of
+
+its nuclear arms program or the ongoing turmoil in Lybia that disrupts production and
+
+shipment of oil for the European market. WTI’s price reactions depend to a large extend
+
+on US speciﬁc factors like crude production and inventories of crude and destillates.
+
+  To account for changes in the hedge ratio of WTI and Brent, a dynamic linear model
+
+in state space form is used with a Kalman Filter to update the estimated ratio according
+
+to the arrival of new data over time. The Kalman Filter has its roots in engineering
+
+applications but is widely used in the ﬁeld of ﬁnance nowadays and is no stranger to
+
+
+
+
+
+                                      9
+
+[PAGE 12]
+hedging applications (see for example Schwartz 1997 or Lautier and Galli 2004). However,
+
+most studies do not address hedges of two diﬀerent futures but rather hedging a spot
+
+instrument with its futures.
+
+  When using a linear regression setting or the Johansen eigenvectors, the lookback period
+
+is speciﬁed and the data sampled in this lookback period is used to get the best estimate
+
+of the hedge ratio over the whole sample period. This approach gives rise to a number
+
+of problems. First of all the lookback period is set arbitrarily to, in this study, one year.
+
+Another critical point is that as the lookback period shifts forward certain observations are
+
+dropped from the calculation while new observations are added. This can lead to abrupt
+
+changes in the hedge ratio. One way to cope with this problem is to use exponential
+
+weighting to preserve the impact of older observations.  Another is to set up a state
+
+space model and use the Kalman Filter which, in its simplest form, is a linear algorithm
+
+that updates the forecast of an unobservable variable, the hedge ratio, with every new
+
+information coming in. Although the trading system uses daily closing prices and therefore
+
+rather low frequent data an investor is interested in updating the input parameters as fast
+
+as possible. The Kalman Filter is a very fast means to achieve this goal as pointed out by
+
+Lautier and Galli (2004) and allows to update the forecast of the hedge ratio very quickly.
+
+The state space model used in this study is a dynamic linear model (DLM), that is, as
+
+the name already tells, linear and Gaussian.
+
+  To avoid the pitfall of hindsight bias in parameter estimation, the Kalman Filter is not
+
+set up once for the whole sample period, as this would include observations an investor
+
+does not know yet. However, making use of the fast algorithm helps to circumvent this
+
+problem. The ﬁlter is recalculated every trading day when new prices for WTI and Brent
+
+become available.5
+
+  The dynamic linear model presented here is similar to the linear regression but allows
+
+for time-varying coeﬃcients. The speciﬁcation of the model is as follows.
+
+
+                          pW,t = β1,t + β2,tpB,t + ϵt   ϵt ∼N  0, σ2                       (6)
+
+
+ 5Given the data processing capabilities even a private investor usually has at hand, it does not take
+   more than a few seconds to update the hedge ratio. Software for implementing the Kalman Filter is
+    freely available, like the dlm-package in the R statistical software suite, see Petris et al. (2009).
+
+
+
+                                      10
+
+[PAGE 13]
+  The daily forecast of the hedge ratio, β2,t, is used to calculate the market value of the
+
+crude oil hedge portfolio. The dynamic linear model (DLM) used for the trading strategy
+
+in general can be described in two equations, namely the observation equation and the
+
+state equation.
+
+
+
+                             pW,t = x′tθt + vt   vt ∼N  0, σ2t                              (7)
+
+                                  θt = Gtθt−1 + wt  wt ∼N (0, Wt)                        (8)
+
+
+where x′t =  [1, pt,B] is the vector of explanatory variables with a constant term and
+
+the price of Brent. Gt is called the evolution matrix and, following the default setting
+
+of Petris et al. (2009),  is an identity matrix here.6  The unobservable variables θt =
+
+[β1,t, β2,t] are the intercept and the hedge ratio. Matrix W models the variances in the
+
+state equation and is usually diagonal which translates to independent random walks
+
+for the regression coeﬃcients. The Kalman Filter is the method of choice to recursively
+
+update the parameter estimates whenever new information arrives. A prior view on the
+
+distribution of the parameters, θ0 ∼N (m0, C0) is speciﬁed, although we assume a low
+
+level of conﬁdence in this view. Therefore, the ﬁltering process is started with m0 = 1.0
+
+and C0 = 1e7, the default value of the dlm-package in the R software suite.
+
+  Following the description given in Petris et al. (2009), the Kalman Filtering for the
+
+dynamic linear model speciﬁed in Eq. 7 and Eq. 8 proceeds as follows. Using the data
+
+available up to time t −1, the parameter estimate at t −1 is
+
+
+
+                                θt−1|pW,1:t−1 ∼N (mt−1, Ct−1) ,                           (9)
+
+
+and we move ahead to predict the Gaussian distributions of θt and pW,t with parameters
+
+
+
+
+
+ 6G could be changed to reﬂect seasonal eﬀects, for example.
+
+
+
+                                      11
+
+[PAGE 14]
+                            at = E (θt|pW,1:t−1) = Gtmt−1                              (10)
+
+                     Rt = V ar (θt|pW,1:t−1) = GtCt−1G′t + Wt                    (11)
+
+                             ft = E (pW,t|pW,1:t−1) = xtat                               (12)
+
+                    Qt = V ar (pW,t|pW,1:t−1) = xtRtx′t + Vt.                     (13)
+
+
+The updates for the ﬁltering distribution after the arrival of new price information and
+
+with a forecast error of et = pW,t −ft are
+
+
+                  mt = E (θt|pW,1:t) = at + Rtx′tQ−1t  et                         (14)
+
+                     Ct = V ar (θt|pW,1:t) = Rt −Rtx′tQ−1t  xtRt.                   (15)
+
+
+To maintain numerical stability, the variance Vt is set to a value of 0.0025 to prevent
+
+singular matrices in the optimization procedure. A special and indeed the most simple
+
+case is to set the variance terms in Wt to zero, as it translates to a static regression model
+
+with frequent parameter updates on the arrival of new data or in the words of Petris et al.
+
+(2009) ”mt  is the Bayesian estimate under a quadratic loss function of the regression
+
+coeﬃcients”.
+
+  Another approach tested is to derive estimates of the unknown variance terms in Wt by
+
+using a Maximum-Likelihood Estimation (MLE). With a vector of unknown parameters
+
+Φ representing the variances in the state equation, the loglikelihood L is
+
+
+
+                             n               n
+          L (Φ) = −1 X log |Qt| −1             X (pW,t −ft)′ Q−1t  (pW,t −ft)           (16)
+                       2             2
+                               t=1              t=1
+
+and is numerically optimized to get the Maximum Likelihood Estimation (MLE). The
+
+parameters from the MLE are then plugged into Eq. 8 and the Kalman Filtering process
+
+is run to calculate the dynamic hedge ratio.
+
+  Inspection of Figure 2 on page 23 reveals that the hedge ratio for the zero variance
+
+model was quite stable in the second half of the 1990s but is subject to frequent changes
+
+since 2000/2001, taking values greater than 1 in 2005 and experiencing a sharp decline
+
+
+
+
+                                      12
+
+[PAGE 15]
+since 2010 to values of about 0.9. The decrease in the hedge ratio over the last four years
+
+reﬂects the widening spread between WTI and Brent in that period.
+
+  The MLE variance version of the Dynamic Linear Model, represented by the dotted
+
+line, moves more erratically as the estimate is more inﬂuenced by new data. Nevertheless
+
+the general trends are also present in the MLE variance DLM. Since 2010 the ratio is
+
+signiﬁcantly below 1, there is only an up spike in the summer of 2013 when the spread
+
+narrowed and almost was closed for a short period of time.
+
+
+Testing the Signiﬁcance
+
+
+Based on the the approaches discussed in Lo et al. (2000), to assess the signiﬁcance of the
+
+results of the trading simulations sets of simulated trades are generated. The simulated
+
+trades are constrained in so far as the number of long and short trades has to be equal
+
+to the number of long and short trades in the original back test and they should have
+
+the same mean holding time, that means the average period of time until the position
+
+is closed, as the original trades.  For each test period, the number of long and short
+
+entries and the average holding period is recorded. Then random entries on the long
+
+and short side are generated and the positions are closed after the passing of the average
+
+holding period. The proﬁt and loss and the daily returns and their standard deviations
+
+are recorded and compared to those of the strategies tested. This procedure is repeated
+
+1,000 times. The number of simulated runs that perform better than the tested strategy
+
+is used to calculate an achieved signiﬁcance level or simulated p-value. This procedure
+
+follows the idea of the computer-based bootstrap methodology outlined in Efron and
+
+Tibshirani (1986) and Efron and Tibshirani (1993). Assume, for example, that out of
+
+1,000 bootstrap runs 15 show a proﬁt in excess of the original back test. This yields an
+
+achieved signiﬁcance level or simulated p-value of 0.015 or 1.5 %.
+
+  In the words of Shleifer (2000) ”[s]howing that a particular strategy based on exploiting
+
+stale information on average earns a positive cash ﬂow over some period of time is not,
+
+therefore, by itself evidence of market ineﬃciency. To earn this proﬁt, an investor may
+
+have to bear risk and his proﬁt may just be a fair market compensation for risk-bearing.”
+
+Whenever the performance of technical trading systems is assessed, it is of utmost impor-
+
+
+
+
+                                      13
+
+[PAGE 16]
+tance to consider the investor’s risk exposure. We calculate the Sharpe ratio by adjusting
+
+the mean daily returns of the strategy with the standard deviation as we assume a risk-
+
+free rate of 0.0 and annualize this number. This statistic is calculated for each bootstrap
+
+sample, too.
+
+  Although speculative investors in the crude oil market will act rather short-term, this
+
+only means that they are frequently entering and existing positions. However, trading
+
+systems like the ones described here should be evaluated given their long-run performance.
+
+Therefore, rolling ﬁve year periods are used to test the proﬁtability of the technical rules.
+
+This is in line with investment practice as an investor should not abandon a strategy just
+
+because it produced some losing trades. The strategy should rather be able to produce
+
+more proﬁts than losses and proﬁts should rather come constantly from trades than just
+
+depending on one lucky punch.
+
+
+The Choice of Financial Instruments
+
+
+We assume that an investor uses WTI and Brent futures that are traded on the New York
+
+Mercantile Exchange (NYMEX) and the Intercontinental Exchange (ICE) in London.
+
+More speciﬁcally, we are using the nearest-month futures as they are usually the most
+
+liquid. Professional commodity trading companies are active in the physical market as well
+
+(see Carollo 2012), but adding physical oil to a strategy based on ﬁnancial instruments
+
+introduces various new aspects that have to be considered, like terms of delivery, storage
+
+costs, transportation, insurance etc. Although trading physical oil allows for an abundance
+
+of strategies, it is a ﬁeld not open to the retail investor and is therefore not considered
+
+here. On the other hand, even if an investor chooses not to use the instruments oﬀered
+
+by NYMEX and ICE, certiﬁcates for diﬀerence (CFD) or mini futures oﬀered by banks to
+
+retail customers are in general priced according to these futures prices. Thus it makes sense
+
+to set up a trading strategy based on these instruments. The nearest-month contract is,
+
+with the exception of maybe one or two days before expiry, by far the most liquid futures
+
+contract traded, therefore it is the natural choice for an investor.
+
+
+
+
+
+                                      14
+
+[PAGE 17]
+Transaction Costs
+
+
+To account for costs of entering and exiting futures positions, transaction fees of 0.1%
+
+of the respective futures price are assumed for each trade. As an investor is trading the
+
+spread of WTI and Brent, one round-turn transaction consists of four trades, for example
+
+entering long Brent and short WTI and then closing both positions. The transaction costs
+
+used are higher than the numbers given for example by Dunis et al. (2008) and Dunis
+
+et al. (2006), however the strategy may make it necessary to roll over to the next futures
+
+contract at expiry or to make adjustments due to changes in the hedge ratio. Therefore,
+
+working with a kind of additional safety margin in the costs reﬂects these problems.
+
+
+4 Results
+
+
+The average results of the backtests of the strategies for the ﬁve year testing periods are
+
+reported in Tables 4 and 5. All in all, there are 18 ﬁve year periods in the sample, the ﬁrst
+
+starting in January 1992 and the last in January 2009. The ﬁrst two columns indicate
+
+the strategy used by giving the length of the moving average and the exit z score. The
+
+proﬁt (or loss) is reported in the third column, followed by the total number of trades
+
+and the winning trades. The sixth and seventh columns contain information about the
+
+mean holding time of one trade and the strategy’s time in the market. To evaluate the
+
+performance of a strategy we report the mean daily return and standard deviation as
+
+well as the Sharpe Ratio in the last three columns. No matter whether the static or the
+
+dynamic hedging versions are used, the shortest moving average rules (20 days) are by
+
+far the most proﬁtable in terms of absolute proﬁt as well as Sharpe ratio. This is quite
+
+interesting in so far as the 20 days moving average is the standard length of the Bollinger
+
+Band system. To assess the performance of these rules in depth, the results for each ﬁve
+
+year period from 1992 up to 2009 are reported as well, Tables 6, 7 and 8 contain detailed
+
+information.  Here, the starting year of the tested ﬁve year period is given in the ﬁrst
+
+column, for example the starting year 1992 is the ﬁve year period spanning 1992 to 1996.
+
+The last period under consideration is therefore 2009 to 2013.
+
+  Inspecting the average results, we ﬁnd the 20 days moving average rules to produce the
+
+
+
+
+                                      15
+
+[PAGE 18]
+largest number of trades, with the averages over the ﬁve year testing periods ranging from
+
+53.2 for the zero variance dynamic hedging strategy with an exit score of 0.2 to 66.1 for
+
+the MLE DLM strategy with an exit score of 0.0. As the short moving averages tend to
+
+react the fastest to movements of the hedge portfolio, the mean holding time per trade is
+
+signiﬁcantly shorter than for the longer moving averages. This is clearly exempliﬁed by
+
+comparing the average 7.8 days per trade for the zero variance DLM 20/0.0 strategy with
+
+the 45.2 days for the 200/0.0 strategy. Although the 20 days moving average produces
+
+the most trades, because of the short holding period its time in the market is the lowest of
+
+all strategies for example only 32.4% compared to 39.6% for the 100 days moving average
+
+in the zero variance DLM setting with a z score of 0.0. The very concept of trying to
+
+capture the overshooting movement above or below the moving average with the 0.2 exit
+
+score leads to longer average holding periods compared to the 0.0 exit score as the closing
+
+of the respective positions will occur later. This is evident for all setups.
+
+  Even though the 20 days moving average rules spend the least time in the market and
+
+produce the most trades and therefore the highest transaction costs, they generate the
+
+highest proﬁts and Sharpe ratios in the static as well as the dynamic setups. A possible
+
+explanation is that on the entry side they react the fastest to extreme deviations in the
+
+value of the hedge portfolio and are also the fastest to exit the market when the move back
+
+to the mean has occurred. Another beneﬁt of the short time in market is that the standard
+
+deviation of the daily returns is smallest for the 20 days moving average rules in all three
+
+setups, with the MLE DLM having by far the smallest standard deviation. However, the
+
+trading strategies seem to exhibit higher standard deviations than the randomly placed
+
+orders, as the simulated p-values indicate. Nevertheless for the most part an investor is
+
+more than compensated for the higher risk by the higher returns he earns, as the highly
+
+signiﬁcant Sharpe ratios show.  For the MLE DLM, all Sharpe ratios have p-values of
+
+0.0. The zero variance DLM’s Sharpe ratios are signiﬁcant at the 5% level except for
+
+the 50 days moving average rules. The static version performs worst with only the 20
+
+days moving average rules’ Sharpe ratios being signiﬁcant at the 5% level. Comparing
+
+the Sharpe ratios of the static and dynamic setups, we ﬁnd the MLE DLM to strongly
+
+outperform the other two approaches. The smallest Sharpe ratio for the MLE DLM is
+
+
+
+
+                                      16
+
+[PAGE 19]
+recorded for the 200 days moving average with an exit score of 0.2, but it is still higher
+
+than all Sharpe ratios for the static system and the zero variance DLM.
+
+  The detailed results for the 20 days rules reveal that the performance deteriorates for
+
+all setups over the last ﬁve year period starting in 2009, with the static hedge ratio’s proﬁt
+
+turning negative. The MLE DLM, even though recording lower proﬁts than in the years
+
+before, still keeps up its good performance, with only one losing trade and Sharpe ratios
+
+well above three in the last ﬁve year period. The dynamic setups are able to generate
+
+(positive) proﬁts over each and every ﬁve year period under consideration. With the
+
+exception of the last ﬁve year period for the zero variance DLM, the trading systems’
+
+performances are much better than using random entries and deliver signiﬁcantly higher
+
+Sharpe ratios. As expected, the highest proﬁts were generated from 2000 on, due to
+
+more volatile prices and larger involvement of ﬁnancial investors. The mean-reverting
+
+strategies, no matter whether the static or dynamic versions are used, record the highest
+
+Sharpe ratios in the periods starting in 2000, 2001, 2002 and 2003. The highest absolute
+
+proﬁts occur in the periods starting 2004 and 2005, but obviously these proﬁts came at a
+
+higher risk.
+
+  The main disadvantage of the static version is that it produces a rather high number of
+
+losing trades compared to the dynamic versions. Over the last ﬁve years, out of 44 signals
+
+only 30 are proﬁtable (MLE DLM 76 and 72 out of 77 and 73). The static setup has the
+
+highest percentage of time in market and the longest average holding periods per trade.
+
+We already saw that this usually leads to higher risk. The standard deviation is indeed
+
+higher than for the dynamic versions leading to lower Sharpe ratios.
+
+  The zero variance DLM mean-reverting trading system shows highly signiﬁcant proﬁts.
+
+Except for the very last ﬁve year period, the strategy performs obviously a lot better
+
+than just placing random orders, with simulated p-values of 0.0. The number of winning
+
+trades compared to the total number of trades is remarkably high except for the last two
+
+ﬁve year periods. This fact supports that the devised system works quite well and does
+
+not depend on just a few lucky and proﬁtable trades to balance the losers. Although the
+
+strategy tends to be riskier than the random orders, as is indicated by the low simulated
+
+p-values for the standard deviation, the higher returns compared to the random strategy
+
+
+
+
+                                      17
+
+[PAGE 20]
+lead to signiﬁcantly higher Sharpe ratios in almost all ﬁve year periods tested.
+
+  The MLE DLM system is by far the best performing of the three setups. The system
+
+is able to identify proﬁtable trades with almost 100% certainty, as can be seen by the
+
+high number of winning trades in comparison to the total number of trades. Proﬁts, daily
+
+mean returns and Sharpe ratios are signiﬁcantly higher than those of random entries with
+
+p-values of 0.000. The system is the one with the lowest time in market, the 20 days
+
+moving average has just between 15% and 27% time in market as Table 8 shows. For
+
+this setup, trades last only about three to four days on average. This leads to smaller
+
+risk exposure compared to the other setups, although the standard deviation of the daily
+
+returns tends to be higher than for random orders. The high Sharpe ratios, often in
+
+excess of three further highlight this favorable risk-reward characteristics. One other fact
+
+places this setup way ahead of the other two. Over the last ﬁve year period from 2009
+
+to 2013, the system still performs remarkably well, with much higher proﬁts and Sharpe
+
+ratios than the other strategies. As the standard deviation of the strategy’s daily returns
+
+is lower than for the preceding periods, the Sharpe ratios of 3.6 and 3.3 for the exit z
+
+scores of 0.0 and 0.2 are amongst the highest recorded. Except for the last three ﬁve year
+
+periods, the exit z score of 0.2 gives slightly better proﬁts and Sharpe ratios, however,
+
+diﬀerences tend to be small.
+
+
+5 Conclusion
+
+
+The markets for WTI and Brent have evolved dramatically since futures trading started
+
+in the 1980s. The number of participants in these markets has risen considerably over the
+
+years, from just a few professional investors to hedge funds, pension funds and all kinds
+
+of institutional and retail investors. Over the last decade investors have moved signiﬁcant
+
+funds into various forms of alternative investments, among them energy commodities
+
+and especially crude oil.  This coincided with growing global demand for oil, mainly
+
+driven by the fast booming economies in Asia. The growing amount of money invested
+
+in commodities naturally gives rise to questions as to how trading strategies originating
+
+from the equity markets perform in the crude oil market. This study showed that trading
+
+
+
+
+
+                                      18
+
+[PAGE 21]
+the WTI-Brent spread is proﬁtable, especially since 2000.
+
+  That a rather simple mean-reverting strategy based on the widely used Bollinger Bands
+
+and applied to a hedge portfolio of the two crudes proved to be very successful, although
+
+it is only based on an analysis of historical data, may be a hint that the Eﬃcient Market
+
+Hypothesis in its weak form does not hold. In fact, the strategies tested only incorporate
+
+historical price series, macroeconomic data usually used to forecast oil prices, like oil
+
+inventories or spare capacity as in Merino and Albacete (2010), is not employed.
+
+  To establish whether our ﬁndings are signiﬁcant, we compare the results of the trading
+
+rules with those of randomly generated orders. Over each testing period, the same number
+
+of random orders as in the original series is generated and they share the same mean
+
+holding time. Given that the Bollinger Band did not possess any kind of predictive power,
+
+one would expect randomly placed orders to perform on average as well as the rules tested.
+
+If, on the other hand, the Bollinger Band performs better we may be inclined to question
+
+whether the WTI-Brent market is weakly eﬃcient.  Although rather high transaction
+
+costs are incorporated into the backtests, the total proﬁts, mean daily returns and Sharpe
+
+ratios especially of the short moving average strategies are signiﬁcantly higher than those
+
+of random entry strategies.
+
+   It may come as a surprise that a trading system whose basic setup is known for decades is
+
+signiﬁcantly proﬁtable in the crude oil market. To use a strategy that aims at keeping the
+
+time in the market and therefore the exposure to risk as low as possible is a reasonable
+
+approach in a market that is characterized by frequent periods of high volatility and
+
+dramatic price changes. Furthermore, the inherent hedge given a portfolio of similar assets
+
+like WTI and Brent makes it clear that the focus is not on picking trends but rather to
+
+exploit extreme deviations from an average spread level.  It must be stressed that the
+
+general idea of setting up a hedge portfolio is to achieve a certain degree of immunization
+
+from adverse market movements. A comparison of the Bollinger Band results with those
+
+of buy and hold strategies of either WTI or Brent would therefore be misleading.
+
+  An investor implementing the Bollinger Band system described here would in fact be
+
+hedged against inﬂuences aﬀecting the oil market as a whole, like the global recession in
+
+the wake of the ﬁnancial crisis of 2007/2008. But when extreme deviations in the ratio
+
+
+
+
+                                      19
+
+[PAGE 22]
+of oil prices appear, the system indicates favorable trading opportunities with a high
+
+probability. Nevertheless, structural changes in the WTI-Brent spread may occur. The
+
+situation since 2010 makes it obvious that although WTI and Brent are both benchmark
+
+crude brands, their prices are sometimes driven by diﬀerent forces as WTI is basically an
+
+American benchmark that must not be exported whereas Brent as benchmark for about
+
+60% of the traded oil worldwide is much more prone to global inﬂuences.7 Today it seems
+
+that the price of WTI is mainly driven by factors unique to the US market, like the
+
+rising production of unconventional oil and inventory levels. Brent on the other hand is
+
+strongly inﬂuenced on the supply side by production rates in countries like Libya and
+
+Nigeria. Political decisions like lifting the economic sanctions against Iran or the tensions
+
+in Eastern Europe are directly reﬂected in the price of Brent. The trading rules are able to
+
+account for these factors because they work with moving averages and standard deviations
+
+and, in case of the DLMs, with constant updates of the hedge ratio.
+
+ A ﬁnding of this study is that the proﬁtability of the Bollinger Band strategy, after
+
+peaking in the ﬁrst years of the new millennium, seems to become lower over time, in line
+
+with the widening of the spread between WTI and Brent over the last few years and with
+
+the results of other studies like Alvarez-Ramirez et al. (2008) and Tabak and Cajueiro
+
+(2007). Although the systems still records proﬁts in this wide spread environment, in
+
+the case of the MLE DLM still with quite high returns and Sharpe ratios,  it can be
+
+assumed that a reduction in or closing of the spread would boost proﬁtability again to
+
+levels recorded up to the years 2008 or 2009. This may be the case when political tensions
+
+in Europe and the Middle East are solved or the American export ban on crude is lifted
+
+by Congress.
+
+  However, it may be premature to assign to the oil markets the tribute of weak eﬃciency.
+
+The results reported in this study indicate a strong deviation from market eﬃciency, given
+
+the fact that especially the short moving average combinations record highly signiﬁcant
+
+proﬁts, daily returns and Sharpe ratios most of the time and only two versions lose
+
+their signiﬁcance in the last ﬁve year period. Although the basic idea behind the tested
+
+systems is straightforward and rather simple, the results show that what can be considered
+
+ 7To circumvent this problem an investor may consider to use calendar spreads instead of inter-market
+   spreads.
+
+
+
+                                      20
+
+[PAGE 23]
+to be the most sophisticated approach, namely the MLE DLM that utilizes maximum
+
+likelihood estimators of the unknown variances in the state equation, oﬀers the most
+
+rewarding characteristics like low time in market and high Sharpe ratios and keeps up
+
+its good performance even over the last few years. The MLE DLM may perform the
+
+most advanced calculations, but it still depends solely on the input of historical price
+
+information. Therefore, this leads to the conclusion that a system of technical rules can
+
+show a remarkably steady performance and that the oil market considered here is not
+
+eﬃcient as deﬁned in the EMH.
+
+
+
+
+
+                                      21
+
+[PAGE 24]
+Appendix A: Figures
+
+
+
+
+
+                  WTI
+           140          Brent
+
+
+           120
+
+  $  100
+
+  /
+           Barrel 80
+      per
+          Price 60
+
+
+
+       40
+
+
+
+       20
+
+
+
+                      1995         2000         2005         2010         2015
+
+
+
+
+         Figure 1: Nearest-month Futures Prices of WTI and Brent 1992-2013
+
+
+
+
+
+                                      22
+
+[PAGE 25]
+     1.2         Zero−Variance
+            MLE
+
+
+     1.1
+
+
+     1.0
+Brent/WTI
+     0.9
+Ratio
+Hedge     0.8
+
+
+     0.7
+
+
+     0.6
+
+                 1995         2000         2005         2010         2015
+
+
+
+
+
+Figure 2: Dynamic Hedge Ratios of WTI and Brent using Kalman Filtering with zero
+          variance (solid line) and MLE variance (dotted line) in the state equation 1992-
+         2013
+
+
+
+
+
+                                      23
+
+[PAGE 26]
+Appendix B: Tables
+
+
+                         WTI                      Brent
+                                   Prices   Returns            Prices   Returns
+             Observations        5775      5774            5775      5774
+             Arithmetic Mean     47.09      0.000             48.16     0.0005
+            Geometric Mean     37.74     0.0003             36.98     0.0003
+          Minimum            10.72    -0.1525              9.64    -0.1344
+             Quartile 1           20.14    -0.0108             18.79    -0.0098
+           Median              31.04     0.0000             29.06     0.0004
+             Quartile 3           73.52     0.0120             73.61     0.0110
+          Maximum          145.29     0.1783           146.08     0.1377
+          SE Mean              0.41     0.0003              0.47     0.0003
+             Variance            993.12     0.0005          1255.13     0.0004
+               St. Deviation        31.51     0.0223             35.43     0.0205
+            Skewness              0.74     0.1209              0.82    -0.0328
+             Kurtosis              -0.77     5.1237              -0.74     3.5673
+             Jarque-Bera       673.827  6329.801          787.254  3062.579
+
+Table 1: Summary Statistics for WTI and Brent Futures daily settlement prices and re-
+        turns 1992-2013
+
+
+
+
+                        Statistic   p-value   Statistic  p-value   Statistic  p-value
+                        1992-2013          1992-2002          2003-2013
+         WTI    -3.2119  0.08579    -2.8454   0.2204    -2.7168   0.2749
+            Brent    -2.7633   0.2551    -2.7039   0.2803    -2.5062    0.364
+
+   Table 2: Standard augmented Dickey-Fuller tests for WTI and Brent futures prices
+
+
+
+
+
+                                      24
+
+[PAGE 27]
+                          Test Statistic  10pct   5pct   1pct
+                                      1992-2013
+                       r ≤1           1.69    7.52   9.24  12.97
+                       r = 0          23.37   13.75  15.67  20.20
+                                      1992-2002
+                       r ≤1           3.95    7.52   9.24  12.97
+                       r = 0         113.30   13.75  15.67  20.20
+                                      2003-2013
+                       r ≤1           3.04    7.52   9.24  12.97
+                       r = 0          13.00   13.75  15.67  20.20
+
+          Table 3: Johansen-procedure for WTI and Brent futures prices
+
+
+
+
+
+MA   Exit      PNL      Trades      Win   MeanHold     TiM    MeanR       SD      Sharpe
+ 20     0.0    36.618153   55.894737   49.894737     8.272943   0.348756     0.000241     0.003350     1.352872
+              (0.026474)                                                    (0.024526)   (0.158526)   (0.027053)
+ 50     0.0    20.264616   29.526316   25.631579   19.065520   0.418032     0.000148     0.003867     0.810976
+              (0.056789)                                                    (0.048947)   (0.096158)   (0.057421)
+100     0.0    17.941426   18.368421   16.842105   33.494072   0.437360     0.000134     0.003830     0.719242
+              (0.057421)                                                    (0.049368)   (0.096053)   (0.059368)
+200     0.0    18.446959   11.947368   11.473684   46.649549   0.370708     0.000135     0.003657     0.722865
+              (0.050895)                                                    (0.044526)   (0.109474)   (0.052632)
+
+ 20     0.2    36.777660   54.052632   48.157895     9.510986   0.388859     0.000243     0.003492     1.337735
+              (0.027632)                                                    (0.022474)   (0.157211)   (0.029158)
+ 50     0.2    15.679794   27.157895   23.157895   23.241921   0.467457     0.000119     0.004102     0.702258
+              (0.103105)                                                    (0.092737)   (0.084947)   (0.097737)
+100     0.2    18.538331   17.315789   15.947368   38.956081   0.482105     0.000137     0.003872     0.699306
+              (0.058895)                                                    (0.051368)   (0.104842)   (0.056368)
+200     0.2    18.869097   11.052632   10.368421   53.754912   0.403512     0.000139     0.003721     0.723512
+              (0.047579)                                                    (0.040421)   (0.110000)   (0.051211)
+
+  Table 4: Mean results of the mean-reversion trading system with static hedging
+
+
+
+
+
+                                    25
+
+[PAGE 28]
+MA   Exit      PNL      Trades      Win   MeanHold     TiM    MeanR       SD      Sharpe
+                                      Zero Variance State Space Model
+ 20     0.0    51.197471   55.222222   50.722222     7.756220   0.324177     0.000315     0.003133     1.716639
+              (0.011333)                                                    (0.008889)   (0.173000)   (0.011167)
+ 50     0.0    25.470785   28.555556   25.333333   18.521474   0.390315     0.000179     0.003742     0.955174
+              (0.047222)                                                    (0.039444)   (0.100889)   (0.053389)
+100     0.0    27.186994   19.611111   18.166667   27.884817   0.395768     0.000190     0.003643     0.925780
+              (0.011722)                                                    (0.006556)   (0.100444)   (0.018333)
+200     0.0    21.934872   11.444444   11.166667   45.226577   0.366254     0.000156     0.003601     0.751150
+              (0.027278)                                                    (0.020222)   (0.127389)   (0.038278)
+
+ 20     0.2    50.874731   53.222222   49.111111     9.055247   0.364593     0.000314     0.003195     1.686722
+              (0.014667)                                                    (0.011611)   (0.202889)   (0.015500)
+ 50     0.2    23.111274   27.055556   24.111111   22.307103   0.446361     0.000165     0.003872     0.889298
+              (0.068556)                                                    (0.056833)   (0.110111)   (0.070944)
+100     0.2    27.320127   18.111111   17.222222   34.496384   0.457647     0.000191     0.003696     0.898589
+              (0.015833)                                                    (0.006611)   (0.122278)   (0.017889)
+200     0.2    21.521411   10.555556   10.055556   53.790659   0.396748     0.000154     0.003683     0.729671
+              (0.029389)                                                    (0.022667)   (0.134556)   (0.035389)
+
+                           MLE State Space Model
+ 20     0.0    52.873644   66.055556   65.722222     4.163076   0.210892     0.000323     0.001765     2.898995
+              (0.000000)                                                    (0.000000)   (0.169556)   (0.000000)
+ 50     0.0    47.937422   52.277778   51.944444     6.157263   0.244707     0.000298     0.001786     2.626845
+              (0.000000)                                                    (0.000000)   (0.186722)   (0.000000)
+100     0.0    42.652698   40.833333   40.777778     9.449586   0.281845     0.000270     0.001857     2.279819
+              (0.000000)                                                    (0.000000)   (0.178722)   (0.000000)
+200     0.0    35.724065   31.944444   31.388889   17.024717   0.357091     0.000231     0.001938     1.893131
+              (0.000000)                                                    (0.000000)   (0.245556)   (0.000000)
+
+ 20     0.2    54.070684   65.333333   65.000000     4.764267   0.239510     0.000329     0.001787     2.925147
+              (0.000000)                                                    (0.000000)   (0.200833)   (0.000000)
+ 50     0.2    49.258031   50.500000   50.444444     8.046707   0.304415     0.000303     0.001877     2.523928
+              (0.000000)                                                    (0.000000)   (0.206000)   (0.000000)
+100     0.2    42.791387   39.277778   39.222222   11.509171   0.328478     0.000271     0.001916     2.230340
+              (0.000000)                                                    (0.000000)   (0.204222)   (0.000000)
+200     0.2    35.236115   29.888889   29.333333   21.535045   0.429192     0.000228     0.002040     1.754336
+              (0.000000)                                                    (0.000000)   (0.263944)   (0.000000)
+
+ Table 5: Mean results of the mean-reversion trading system with dynamic hedging
+
+
+
+
+
+                                    26
+
+[PAGE 29]
+         Year  MA   Exit    PNL   Trades  Win   MeanHold    TiM               ¯r       σ   Sharpe
+         1992    20     0.0   23.1438       55     53         6.56   0.2766    0.0002    0.0018    1.4198
+                                  (0.000)                                            (0.000)   (0.002)   (0.000)
+                  20    -0.2   22.6002       52     49         8.21   0.3272    0.0002    0.0018    1.3709
+                                  (0.000)                                            (0.000)   (0.010)   (0.000)
+         1993    20     0.0   26.9704       61     58         6.31   0.2952    0.0002    0.0018    1.5992
+                                  (0.000)                                            (0.000)   (0.012)   (0.000)
+                  20    -0.2   27.4326       58     55         7.71   0.3428    0.0002    0.0018    1.6104
+                                  (0.000)                                            (0.000)   (0.015)   (0.000)
+         1994    20     0.0   26.4237       58     55         6.22   0.2768    0.0002    0.0020    1.4648
+                                  (0.000)                                            (0.000)   (0.002)   (0.000)
+                  20    -0.2   27.7755       57     54         7.19   0.3144    0.0002    0.0020    1.5312
+                                  (0.000)                                            (0.000)   (0.009)   (0.000)
+         1995    20     0.0   31.8558       61     57         6.84   0.3195    0.0002    0.0020    1.6731
+                                  (0.000)                                            (0.000)   (0.005)   (0.000)
+                  20    -0.2   32.5835       59     55         7.95   0.3594    0.0002    0.0020    1.6955
+                                  (0.000)                                            (0.000)   (0.013)   (0.000)
+         1996    20     0.0   29.6931       54     50         7.61   0.3149    0.0002    0.0023    1.3862
+                                  (0.000)                                            (0.000)   (0.015)   (0.000)
+                  20    -0.2   31.2244       53     50         8.43   0.3425    0.0002    0.0023    1.4465
+                                  (0.000)                                            (0.000)   (0.030)   (0.000)
+         1997    20     0.0   27.6936       57     51         8.07   0.3528    0.0002    0.0021    1.4100
+                                  (0.000)                                            (0.000)   (0.098)   (0.000)
+                  20    -0.2   28.8440       56     50         9.02   0.3873    0.0002    0.0021    1.4474
+                                  (0.000)                                            (0.000)   (0.019)   (0.000)
+         1998    20     0.0   30.5008       56     50         7.98   0.3428    0.0002    0.0024    1.3888
+                                  (0.000)                                            (0.000)   (0.070)   (0.000)
+                  20    -0.2   32.0793       54     48         9.07   0.3758    0.0002    0.0024    1.4264
+                                  (0.000)                                            (0.000)   (0.147)   (0.000)
+         1999    20     0.0   40.0285       60     54         7.65   0.3520    0.0003    0.0025    1.6323
+                                  (0.000)                                            (0.000)   (0.007)   (0.000)
+                  20    -0.2   42.2990       59     54         8.53   0.3857    0.0003    0.0026    1.6951
+                                  (0.000)                                            (0.000)   (0.025)   (0.000)
+         2000    20     0.0   52.5632       66     60         7.73   0.3908    0.0003    0.0027    1.9074
+                                  (0.000)                                            (0.000)   (0.146)   (0.000)
+                  20    -0.2   53.6027       63     57         9.46   0.4567    0.0003    0.0028    1.8763
+                                  (0.000)                                            (0.000)   (0.216)   (0.000)
+         2001    20     0.0   47.5737       61     55         8.33   0.3893    0.0003    0.0024    1.9565
+                                  (0.000)                                            (0.000)   (0.501)   (0.000)
+                  20    -0.2   51.4345       60     55         9.72   0.4467    0.0003    0.0025    2.0194
+                                  (0.000)                                            (0.000)   (0.467)   (0.000)
+         2002    20     0.0   52.7495       56     54         6.89   0.2960    0.0003    0.0026    1.9644
+                                  (0.000)                                            (0.000)   (0.077)   (0.000)
+                  20    -0.2   51.1910       55     53         7.95   0.3351    0.0003    0.0027    1.8500
+                                  (0.000)                                            (0.000)   (0.086)   (0.000)
+         2003    20     0.0   41.5510       57     48         9.32   0.4072    0.0003    0.0033    1.3025
+                                  (0.000)                                            (0.000)   (0.347)   (0.000)
+                  20    -0.2   42.3931       56     49        10.61   0.4555    0.0003    0.0034    1.2918
+                                  (0.000)                                            (0.000)   (0.377)   (0.000)
+         2004    20     0.0   61.3811       56     52         7.11   0.3050    0.0004    0.0042    1.4016
+                                  (0.000)                                            (0.000)   (0.391)   (0.000)
+                  20    -0.2   63.9477       55     50         8.18   0.3448    0.0004    0.0043    1.4319
+                                  (0.000)                                            (0.000)   (0.390)   (0.000)
+         2005    20     0.0   60.9795       52     46         8.27   0.3298    0.0004    0.0047    1.2715
+                                  (0.000)                                            (0.000)   (0.373)   (0.000)
+                  20    -0.2   63.5539       51     45         9.18   0.3589    0.0004    0.0047    1.3070
+                                  (0.000)                                            (0.000)   (0.371)   (0.000)
+         2006    20     0.0   49.1995       54     44         9.28   0.3839    0.0003    0.0050    1.0147
+                                  (0.000)                                            (0.000)   (0.343)   (0.000)
+                  20    -0.2   38.7941       51     42        10.75   0.4199    0.0003    0.0062    0.6917
+                                  (0.001)                                            (0.000)   (0.094)   (0.012)
+         2007    20     0.0   50.0798       52     44         9.90   0.3946    0.0003    0.0058    0.8953
+                                  (0.001)                                            (0.001)   (0.363)   (0.005)
+                  20    -0.2   52.3621       51     43        10.92   0.4268    0.0003    0.0057    0.9338
+                                  (0.000)                                            (0.000)   (0.408)   (0.003)
+         2008    20     0.0   29.2618       47     34        12.57   0.4529    0.0002    0.0080    0.4498
+                                  (0.035)                                            (0.010)   (0.075)   (0.053)
+                  20    -0.2   21.1507       44     30        14.64   0.4935    0.0002    0.0089    0.3329
+                                  (0.109)                                            (0.039)   (0.026)   (0.132)
+         2009    20     0.0    -3.3665       44     30        14.25   0.4808   -0.0001    0.0067      neg.
+                                  (0.467)                                            (0.455)   (0.063)   (0.454)
+                  20    -0.2    -0.4692       44     30        14.82   0.5000    0.0000    0.0067    0.0482
+                                  (0.415)                                            (0.388)   (0.043)   (0.407)
+
+Table 6: Results of the mean-reversion trading system with static hedging and 20 days
+       moving average for all ﬁve year periods 1992-2009
+
+
+                                      27
+
+[PAGE 30]
+        Year  MA   Exit    PNL   Trades  Win   MeanHold    TiM  MeanR      SD   Sharpe
+        1992    20     0.0   25.8913       54     52         6.50   0.2690    0.0002      0.0018    1.5869
+                                (0.000)                                            (0.000)      (0.002)   (0.000)
+                20    -0.2   24.9034       50     46         8.40   0.3218    0.0002      0.0018    1.5055
+                                (0.000)                                            (0.000)      (0.007)   (0.000)
+        1993    20     0.0   28.5387       55     54         6.65   0.2807    0.0002      0.0018    1.7363
+                                (0.000)                                            (0.000)      (0.006)   (0.000)
+                20    -0.2   28.0016       52     50         8.29   0.3305    0.0002      0.0018    1.6773
+                                (0.000)                                            (0.000)      (0.020)   (0.000)
+        1994    20     0.0   27.0430       51     49         6.96   0.2722    0.0002      0.0019    1.5478
+                                (0.000)                                            (0.000)      (0.000)   (0.000)
+                20    -0.2   27.3525       50     47         8.28   0.3175    0.0002      0.0019    1.5471
+                                (0.000)                                            (0.000)   (0.04528)   (0.000)
+        1995    20     0.0   30.3848       53     50         6.70   0.2720    0.0002      0.0019    1.7374
+                                (0.000)                                            (0.000)    (0.0030)   (0.000)
+                20    -0.2   31.4873       52     49         7.58   0.3019    0.0002      0.0019    1.7856
+                                (0.000)                                            (0.000)      (0.007)   (0.000)
+        1996    20     0.0   36.6878       55     52         7.35   0.3096    0.0002      0.0023    1.6523
+                                (0.000)                                            (0.000)    (0.0120)   (0.000)
+                20    -0.2   39.2283       54     51         8.54   0.3533    0.0003      0.0023    1.7370
+                                (0.000)                                            (0.000)      (0.016)   (0.000)
+        1997    20     0.0   31.0364       53     48         7.72   0.3137    0.0002      0.0022    1.5150
+                                (0.000)                                            (0.000)    (0.0040)   (0.000)
+                20    -0.2   34.3814       52     48         8.98   0.3581    0.0002      0.0022    1.6457
+                                (0.000)                                            (0.000)      (0.020)   (0.000)
+        1998    20     0.0   36.7305       56     52         6.80   0.2922    0.0002      0.0023    1.6703
+                                (0.000)                                            (0.000)    (0.0120)   (0.000)
+                20    -0.2   38.7952       54     51         8.19   0.3390    0.0003      0.0023    1.7285
+                                (0.000)                                            (0.000)      (0.023)   (0.000)
+        1999    20     0.0   48.8197       62     58         6.95   0.3305    0.0003      0.0024    1.9938
+                                (0.000)                                            (0.000)    (0.0120)   (0.000)
+                20    -0.2   48.8214       59     56         8.49   0.3842    0.0003      0.0025    1.9505
+                                (0.000)                                            (0.000)      (0.035)   (0.000)
+        2000    20     0.0   65.8692       64     61         6.73   0.3303    0.0004      0.0027    2.2650
+                                (0.000)                                            (0.000)      (0.059)   (0.000)
+                20    -0.2   65.6017       62     60         8.15   0.3870    0.0004      0.0028    2.2106
+                                (0.000)                                            (0.000)      (0.154)   (0.000)
+        2001    20     0.0   63.0342       61     58         6.92   0.3234    0.0004      0.0024    2.4876
+                                (0.000)                                            (0.000)      (0.220)   (0.000)
+                20    -0.2   61.7258       59     57         8.17   0.3693    0.0004      0.0025    2.3645
+                                (0.000)                                            (0.000)      (0.359)   (0.000)
+        2002    20     0.0   66.8635       61     58         6.66   0.3113    0.0004      0.0025    2.5201
+                                (0.000)                                            (0.000)      (0.251)   (0.000)
+                20    -0.2   62.7566       58     55         7.98   0.3551    0.0004      0.0026    2.2699
+                                (0.000)                                            (0.000)      (0.187)   (0.000)
+        2003    20     0.0   66.8688       59     55         7.34   0.3321    0.0004      0.0027    2.2851
+                                (0.000)                                            (0.000)      (0.402)   (0.000)
+                20    -0.2   66.3222       58     54         8.12   0.3612    0.0004      0.0028    2.2203
+                                (0.000)                                            (0.000)      (0.450)   (0.000)
+        2004    20     0.0   82.1748       57     55         6.81   0.2973    0.0005      0.0039    1.9102
+                                (0.000)                                            (0.000)      (0.393)   (0.000)
+                20    -0.2   84.5011       56     54         7.54   0.3234     0.005      0.0039    1.9299
+                                (0.000)                                            (0.000)      (0.424)   (0.000)
+        2005    20     0.0   78.3628       53     48         8.08   0.3282    0.0005      0.0043    1.6537
+                                (0.000)                                            (0.000)      (0.380)   (0.000)
+                20    -0.2   80.9102       52     47         8.79   0.3505    0.0005      0.0044    1.6862
+                                (0.000)                                            (0.000)      (0.396)   (0.000)
+        2006    20     0.0   76.4599       53     47         8.70   0.3533    0.0004      0.0046    1.5321
+                                (0.000)                                            (0.000)      (0.351)   (0.000)
+                20    -0.2   73.0615       50     44        10.02   0.3839    0.0004      0.0047    1.4643
+                                (0.000)                                            (0.000)      (0.428)   (0.000)
+        2007    20     0.0   72.4443       52     46         9.62   0.3831    0.0004      0.0053    1.2794
+                                (0.000)                                            (0.000)      (0.428)   (0.000)
+                20    -0.2   69.3082       50     44        10.90   0.4176    0.0004      0.0053    1.2347
+                                (0.000)                                            (0.000)      (0.493)   (0.001)
+        2008    20     0.0   66.8309       50     40         9.96   0.3816    0.0004      0.0057    1.1379
+                                (0.000)                                            (0.000)      (0.399)   (0.000)
+                20    -0.2   65.7510       48     40        11.35   0.4176    0.0004      0.0057    1.1142
+                                (0.000)                                            (0.000)      (0.496)   (0.000)
+        2009    20     0.0   17.5140       45     30        13.18   0.4548    0.0001      0.0057    0.3886
+                                (0.204)                                            (0.160)      (0.182)   (0.201)
+                20    -0.2   12.8358       42     31        15.24   0.4908    0.0001      0.0061    0.2890
+                                (0.264)                                            (0.209)      (0.136)   (0.278)
+
+Table 7: Results of the mean-reversion trading system with zero variance dynamic hedging
+       and 20 days moving average for all ﬁve year periods 1992-2009
+
+
+                                      28
+
+[PAGE 31]
+         Year  MA   Exit    PNL   Trades  Win   MeanHold    TiM               ¯r       σ   Sharpe
+         1992    20     0.0   30.7261       58     58         4.34   0.1931    0.0002    0.0013    2.5091
+                                  (0.000)                                            (0.000)   (0.018)   (0.000)
+                  20    -0.2   31.4253       58     58         4.69   0.2084    0.0002    0.0013    2.5669
+                                  (0.000)                                            (0.000)   (0.015)   (0.000)
+         1993    20     0.0   31.3472       58     58         4.43   0.1971    0.0002    0.0013    2.5211
+                                  (0.000)                                            (0.000)   (0.012)   (0.000)
+                  20    -0.2   32.2676       58     58         4.74   0.2109    0.0002    0.0013    2.5912
+                                  (0.000)                                            (0.000)   (0.013)   (0.000)
+         1994    20     0.0   32.1673       57     57         4.21   0.1840    0.0002    0.0014    2.3900
+                                  (0.000)                                            (0.000)   (0.002)   (0.000)
+                  20    -0.2   33.1249       57     57         4.61   0.2017    0.0002    0.0014    2.4530
+                                  (0.000)                                            (0.000)   (0.008)   (0.000)
+         1995    20     0.0   31.9983       56     56         3.71   0.1594    0.0002    0.0014    2.3457
+                                  (0.000)                                            (0.000)   (0.000)   (0.000)
+                  20    -0.2   33.3695       56     56         4.20   0.1801    0.0002    0.0014    2.4289
+                                  (0.000)                                            (0.000)   (0.001)   (0.000)
+         1996    20     0.0   37.9789       56     56         4.18   0.1793    0.0002    0.0017    2.3248
+                                  (0.000)                                            (0.000)   (0.005)   (0.000)
+                  20    -0.2   40.0175       56     56         4.71   0.2023    0.0003    0.0017    2.4099
+                                  (0.000)                                            (0.000)   (0.002)   (0.000)
+         1997    20     0.0   35.3690       56     56         4.12   0.1771    0.0002    0.0014    2.5702
+                                  (0.000)                                            (0.000)   (0.075)   (0.000)
+                  20    -0.2   38.0340       56     56         4.68   0.2009    0.0002    0.0015    2.6953
+                                  (0.000)                                            (0.000)   (0.007)   (0.000)
+         1998    20     0.0   40.2418       59     59         4.05   0.1833    0.0003    0.0015    2.7389
+                                  (0.000)                                            (0.000)   (0.075)   (0.000)
+                  20    -0.2   42.9344       59     59         4.66   0.2109    0.0003    0.0015    2.8503
+                                  (0.000)                                            (0.000)   (0.048)   (0.000)
+         1999    20     0.0   48.5860       61     61         4.46   0.2086    0.0003    0.0015    3.1422
+                                  (0.000)                                            (0.000)   (0.124)   (0.000)
+                  20    -0.2   51.8637       61     61         4.90   0.2293    0.0003    0.0016    3.2654
+                                  (0.000)                                            (0.000)   (0.095)   (0.000)
+         2000    20     0.0   59.7663       64     64         4.31   0.2115    0.0004    0.0018    3.1850
+                                  (0.000)                                            (0.000)   (0.126)   (0.000)
+                  20    -0.2   61.7018       64     64         4.62   0.2268    0.0004    0.0018    3.2615
+                                  (0.000)                                            (0.000)   (0.010)   (0.000)
+         2001    20     0.0   60.8460       70     70         3.86   0.2069    0.0004    0.0016    3.6697
+                                  (0.000)                                            (0.000)   (0.109)   (0.000)
+                  20    -0.2   62.9369       70     70         4.29   0.2299    0.0004    0.0016    3.7712
+                                  (0.000)                                            (0.000)   (0.318)   (0.000)
+         2002    20     0.0   63.9020       72     72         3.62   0.2002    0.0004    0.0016    3.6776
+                                  (0.000)                                            (0.000)   (0.047)   (0.000)
+                  20    -0.2   65.8376       72     72         4.03   0.2224    0.0004    0.0016    3.7360
+                                  (0.000)                                            (0.000)   (0.152)   (0.000)
+         2003    20     0.0   63.9354       70     70         3.87   0.2078    0.0004    0.0017    3.6140
+                                  (0.000)                                            (0.000)   (0.037)   (0.000)
+                  20    -0.2   65.9485       70     70         4.43   0.2377    0.0004    0.0017    3.6585
+                                  (0.000)                                            (0.000)   (0.167)   (0.000)
+         2004    20     0.0   68.1747       72     71         4.35   0.2398    0.0004    0.0022    2.8282
+                                  (0.000)                                            (0.000)   (0.337)   (0.000)
+                  20    -0.2   68.9086       71     70         5.04   0.2743    0.0004    0.0023    2.8358
+                                  (0.000)                                            (0.000)   (0.396)   (0.000)
+         2005    20     0.0   72.1207       75     74         4.27   0.2454    0.0004    0.0022    2.9556
+                                  (0.000)                                            (0.000)   (0.358)   (0.000)
+                  20    -0.2   73.6814       74     73         5.05   0.2868    0.0004    0.0023    2.9815
+                                  (0.000)                                            (0.000)   (0.447)   (0.000)
+         2006    20     0.0   71.2737       75     74         4.17   0.2398    0.0004    0.0023    2.8088
+                                  (0.000)                                            (0.000)   (0.286)   (0.000)
+                  20    -0.2   72.7847       74     73         4.82   0.2736    0.0004    0.0024    2.8250
+                                  (0.000)                                            (0.000)   (0.292)   (0.000)
+         2007    20     0.0   72.7709       75     74         4.09   0.2352    0.0004    0.0025    2.6712
+                                  (0.000)                                            (0.000)   (0.256)   (0.000)
+                  20    -0.2   71.8219       72     71         5.25   0.2897    0.0004    0.0025    2.5940
+                                  (0.000)                                            (0.000)   (0.312)   (0.000)
+         2008    20     0.0   74.0692       78     77         4.65   0.2782    0.0004    0.0027    2.5458
+                                  (0.000)                                            (0.000)   (0.255)   (0.000)
+                  20    -0.2   72.5918       75     74         5.69   0.3272    0.0004    0.0027    2.4528
+                                  (0.000)                                            (0.000)   (0.287)   (0.000)
+         2009    20     0.0   56.4521       77     76         4.22   0.2492    0.0003    0.0015    3.6840
+                                  (0.000)                                            (0.000)   (0.930)   (0.000)
+                  20    -0.2   54.0220       73     72         5.33   0.2983    0.0003    0.0016    3.2753
+                                  (0.000)                                            (0.000)   (0.876)   (0.000)
+
+Table 8: Results of the mean-reversion trading system with dynamic MLE hedging and
+        20 days moving average for all ﬁve year periods 1992-2009
+
+
+                                      29
+
+[PAGE 32]
+References
+
+
+Alquist, R., & Gervais, O. (2013). The Role of Financial Speculation in Driving the Price
+
+  of Crude Oil. The Energy Journal 2013, 35-54.
+
+
+Alquist, R., Kilian, L., & Vigfusson, R. (2011). Forecasting the price of oil. International
+
+  Finance Discussion Paper No. 1022, Board of Governors of the Federal Reserve System
+
+
+Alvarez-Ramirez, J., Alvarez, J., Rodriguez, E., 2008. Short-term predictability of crude
+
+   oil markets: a detrended ﬂuctuation analysis approach. Energy Econ. 30, 2645–2656.
+
+
+Alvarez-Ramirez, J., Alvarez, J., Solis, R., 2010. Crude oil market eﬃciency and modeling:
+
+  insights from the multiscaling autocorrelation pattern. Energy Econ. 32, 993–1000.
+
+
+Appel, G. (2007). Technical Analysis - Power tools for active investors. New Jersey: FT
+
+  Press.
+
+
+Bern, G. (2011). Investing in energy: a primer on the economics of the energy industry.
+
+  New Jersey: Wiley.
+
+
+Bessembinder, H., & Chan, K. (1998). Market eﬃciency and the returns to technical
+
+  analysis. Financial Management, 27, 5–17.
+
+
+BP   plc   (2013).  BP   Statistical   Review   of  World   Energy   June   2013.
+
+  bp.com/statisticalreview.
+
+
+Brock, W., Lakonishok, J., & LeBaron, B. (1992). Simple technical trading rules and the
+
+  stochastic properties of stock returns. The Journal of Finance, 47, 1731–1764.
+
+
+Carollo, S. (2012). Understanding oil prices: a guide to what drives the price of oil in
+
+  today’s markets. New Jersey: Wiley.
+
+
+Chan, E. (2013). Algorithmic trading: winning strategies and their rationale. New Jersey:
+
+  Wiley.
+
+
+Downey, M. (2009). Oil 101. Milton Keynes: Wodden Table Press.
+
+
+
+
+
+                                      30
+
+[PAGE 33]
+Dunis, C., Laws, J., & Evans, B. (2006). Trading futures spreads: an application of
+
+  correlation and threshold ﬁlters. Applied Financial Economics, 16, 903–914.
+
+
+Dunis, C., Laws, J., & Evans, B. (2008). Trading and ﬁltering futures spread portfolios:
+
+  Further applications of threshold and correlation ﬁlters. Journal of Derivatives & Hedge
+
+  Funds, 15, 274–287.
+
+
+Efron, B., & Tibshirani, R. (1986). Bootstrap methods for standard errors, conﬁdence
+
+   intervals, and other measures of statistical accuracy. Statistical Science, 1, 54–75.
+
+
+Efron, B., & Tibshirani, R. (1993). An introduction to the bootstrap. New York: Chapman
+
+  and Hall.
+
+
+Fama, E. (1970) Eﬃcient capital markets: a review of theory and empirical work, The
+
+  Journal of Finance, 25, 383–417.
+
+
+Hatemi-J, A., & Roca, E. (2006). Calculating the optimal hedge ratio: constant, time
+
+  varying and the Kalman Filter approach. Applied Economics Letters, 13, 293-299.
+
+
+Jensen, M. (1978) Some anomalous evidence regarding market eﬃciency, Journal of Fi-
+
+  nancial Economics, 6, 95–101.
+
+
+Kwon, K.-Y. and Kish, R. (2002) Technical trading strategies and return predictability:
+
+  NYSE, Applied Financial Economics, 12, 639–653.
+
+
+Lautier, D., & Galli, A. (2004). Simple and extended Kalman ﬁlters: an application to
+
+  term structures of commodity prices. Applied Financial Economics, 14, 963–973.
+
+
+Lean, H.H., McAleer, M., Wong, W.-K., 2010. Market eﬃciency of oil spot and futures:
+
+  a mean-variance and stochastic dominance approach. Energy Econ. 32, 979–986.
+
+
+Lento, C., Gradojevic, N., Wright, C.S., 2007. Investment information content in Bollinger
+
+  Bands? Appl. Fin. Econ. Let. 3, 263–267.
+
+
+Leung, J., Chong, T., 2003. An empirical comparison of moving average envelopes and
+
+  Bollinger Bands. Appl. Econ. Let. 10, 339–341.
+
+
+
+
+
+                                      31
+
+[PAGE 34]
+Levich, R. and Thomas, L. (1993) The signiﬁcance of technical trading-rule proﬁts in the
+
+  foreign exchange market: a bootstrap approach, Journal of International Money and
+
+  Finance, 12, 451–474.
+
+
+Lo, A., Mamaysky, H., & Wang, J. (2000). Foundations of Technical Analysis: Computa-
+
+  tional Algorithms, Statistical Inference and Empirical Implementation. The Journal of
+
+  Finance, 55, 1705–1770.
+
+
+Lukac, L., Brorsen, B., & Irwin, S. (1988). A test of futures market disequilibrium using
+
+  twelve diﬀerent technical trading systems. Applied Economics, 20, 623–639.
+
+
+Malkiel, B. (2003) A random walk down wall street, W.W. Norton, New York.
+
+
+Menkhoﬀ, L., and Taylor, M. (2007) The obstinate passion of foreign exchange profes-
+
+   sionals: Technical analysis, Journal of Economic Literature, 45, 936–972.
+
+
+Merino, A., and Albacete, R. (2010) Econometric modelling for short-term oil price fore-
+
+  casting, Energy Review, 34, 25–41.
+
+
+Park, C.-H. and Irwin, S. (2007) What do we know about the proﬁtability of technical
+
+  analysis?, Journal of Economic Surveys, 21, 786–826
+
+
+Petris, G., Petrone, S., & Campagnoli, P. (2009). Dynamic Linear Models with R. New
+
+  York: Springer Science.
+
+
+Schwartz, E. (1997). The Stochastic Behavior of Commodity Prices:  Implications for
+
+  Valuation and Hedging. The Journal of Finance, 52, 923–973.
+
+
+Shleifer, A. (2000). Ineﬃcient markets - an introduction to behavioral ﬁnance. Oxford:
+
+  Oxford University Press.
+
+
+Soucek, M., and Todorova, N. (2013). Economic signiﬁcance of oil price changes on Rus-
+
+  sian and Chinese stock markets. Applied Financial Economics, 23, 561–571.
+
+
+Stridsman, T. (2001). Trading systems that work: building and evaluating eﬀective tard-
+
+  ing systems. New York: McGraw-Hill.
+
+
+
+
+
+                                      32
+
+[PAGE 35]
+Tabak, B.M., Cajueiro, D.O., 2007. Are the crude oil markets becoming weakly eﬃcient
+
+  over time? A test for time-varying long-range dependence in prices and volatility. Energ.
+
+  Econ. 29, 28–36.
+
+
+Taylor, M. and Allen, H. (1992) The use of technical analysis in the foreign exchange
+
+  market, Journal of International Money and Finance, 11, 304–314
+
+
+Wang, Y., Liu, L., 2010. Is WTI crude oilmarket becoming weakly eﬃcient over time?
+
+  New evidence from multiscale analysis based on detrended ﬂuctuation analysis. Energ.
+
+  Econ. 32, 987–992.
+
+
+Wang, T., Yang, J., 2010. Nonlinearity and intraday eﬃciency tests on energy futures
+
+  markets. Energy Econ. 32, 496–503.
+
+
+Yergin, D. (2012). The Quest - Energy, Security, and the Remaking of the Modern World.
+
+  Revised and Updated Edition, Penguin Books, London.
+
+
+
+
+
+                                      33

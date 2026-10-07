@@ -1,0 +1,11 @@
+# Local Python/runtime files and credentials are not project artifacts.
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+Thumbs.db
+.DS_Store

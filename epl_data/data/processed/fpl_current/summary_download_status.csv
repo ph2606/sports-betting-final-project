@@ -1,0 +1,668 @@
+element,code,canonical_team,status,source_url,retrieved_at_utc
+1,154561,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/1/,2026-10-07T03:00:58.128302+00:00
+2,109745,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/2/,2026-10-07T03:00:58.134302+00:00
+3,437495,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/3/,2026-10-07T03:00:58.142827+00:00
+4,226597,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/4/,2026-10-07T03:00:58.148827+00:00
+5,445122,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/5/,2026-10-07T03:00:58.171830+00:00
+6,462424,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/6/,2026-10-07T03:00:59.405207+00:00
+7,499169,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/7/,2026-10-07T03:00:59.468728+00:00
+8,466075,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/8/,2026-10-07T03:00:59.472729+00:00
+9,448104,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/9/,2026-10-07T03:00:59.475728+00:00
+10,198869,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/10/,2026-10-07T03:00:59.484730+00:00
+11,500040,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/11/,2026-10-07T03:01:00.338682+00:00
+12,223340,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/12/,2026-10-07T03:01:00.375202+00:00
+13,204480,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/13/,2026-10-07T03:01:00.428216+00:00
+14,232413,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/14/,2026-10-07T03:01:00.440219+00:00
+15,184029,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/15/,2026-10-07T03:01:00.508741+00:00
+16,248857,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/16/,2026-10-07T03:01:01.289155+00:00
+17,195384,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/17/,2026-10-07T03:01:01.359683+00:00
+18,444145,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/18/,2026-10-07T03:01:01.361686+00:00
+19,481655,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/19/,2026-10-07T03:01:01.373685+00:00
+20,616077,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/20/,2026-10-07T03:01:01.381680+00:00
+22,499175,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/22/,2026-10-07T03:01:02.250457+00:00
+23,438098,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/23/,2026-10-07T03:01:02.350979+00:00
+24,200641,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/24/,2026-10-07T03:01:02.357983+00:00
+25,224117,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/25/,2026-10-07T03:01:02.452509+00:00
+26,219847,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/26/,2026-10-07T03:01:02.496513+00:00
+27,205651,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/27/,2026-10-07T03:01:03.132441+00:00
+31,199798,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/31/,2026-10-07T03:01:03.146957+00:00
+452,208706,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/452/,2026-10-07T03:01:03.157954+00:00
+557,439509,Arsenal,downloaded,https://fantasy.premierleague.com/api/element-summary/557/,2026-10-07T03:01:03.277476+00:00
+29,72147,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/29/,2026-10-07T03:01:03.410008+00:00
+30,101188,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/30/,2026-10-07T03:01:04.092121+00:00
+32,199796,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/32/,2026-10-07T03:01:04.129131+00:00
+33,149484,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/33/,2026-10-07T03:01:04.158652+00:00
+34,244954,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/34/,2026-10-07T03:01:04.269180+00:00
+35,515597,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/35/,2026-10-07T03:01:04.403708+00:00
+36,441302,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/36/,2026-10-07T03:01:05.144893+00:00
+37,184667,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/37/,2026-10-07T03:01:05.190900+00:00
+38,606798,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/38/,2026-10-07T03:01:05.207899+00:00
+39,578545,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/39/,2026-10-07T03:01:05.287424+00:00
+41,195546,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/41/,2026-10-07T03:01:05.503477+00:00
+44,215711,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/44/,2026-10-07T03:01:05.991703+00:00
+45,122806,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/45/,2026-10-07T03:01:06.059233+00:00
+46,88894,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/46/,2026-10-07T03:01:06.082234+00:00
+47,226944,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/47/,2026-10-07T03:01:06.259285+00:00
+48,449871,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/48/,2026-10-07T03:01:06.592857+00:00
+49,469247,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/49/,2026-10-07T03:01:07.018953+00:00
+50,645618,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/50/,2026-10-07T03:01:07.139499+00:00
+51,577285,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/51/,2026-10-07T03:01:07.179008+00:00
+52,653481,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/52/,2026-10-07T03:01:07.242020+00:00
+53,614071,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/53/,2026-10-07T03:01:07.478583+00:00
+54,448089,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/54/,2026-10-07T03:01:08.054989+00:00
+55,178301,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/55/,2026-10-07T03:01:08.326052+00:00
+56,173879,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/56/,2026-10-07T03:01:08.365582+00:00
+160,493105,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/160/,2026-10-07T03:01:08.441593+00:00
+166,517052,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/166/,2026-10-07T03:01:08.573632+00:00
+582,690838,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/582/,2026-10-07T03:01:08.937228+00:00
+596,487992,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/596/,2026-10-07T03:01:09.353978+00:00
+597,433969,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/597/,2026-10-07T03:01:09.405982+00:00
+606,569577,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/606/,2026-10-07T03:01:09.739337+00:00
+607,571380,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/607/,2026-10-07T03:01:09.754847+00:00
+611,214590,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/611/,2026-10-07T03:01:09.872382+00:00
+618,119090,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/618/,2026-10-07T03:01:10.419843+00:00
+630,245719,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/630/,2026-10-07T03:01:10.623888+00:00
+631,638987,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/631/,2026-10-07T03:01:10.911480+00:00
+667,481283,Aston Villa,downloaded,https://fantasy.premierleague.com/api/element-summary/667/,2026-10-07T03:01:10.948005+00:00
+57,457569,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/57/,2026-10-07T03:01:10.964007+00:00
+58,40383,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/58/,2026-10-07T03:01:11.445213+00:00
+59,444172,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/59/,2026-10-07T03:01:11.591266+00:00
+60,463981,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/60/,2026-10-07T03:01:11.798267+00:00
+61,494521,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/61/,2026-10-07T03:01:11.992883+00:00
+62,242882,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/62/,2026-10-07T03:01:12.167928+00:00
+63,620487,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/63/,2026-10-07T03:01:12.659549+00:00
+64,54469,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/64/,2026-10-07T03:01:12.789074+00:00
+65,436893,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/65/,2026-10-07T03:01:12.801076+00:00
+66,575901,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/66/,2026-10-07T03:01:13.119649+00:00
+67,499604,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/67/,2026-10-07T03:01:13.226181+00:00
+68,201658,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/68/,2026-10-07T03:01:13.710742+00:00
+69,503139,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/69/,2026-10-07T03:01:13.771602+00:00
+70,222683,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/70/,2026-10-07T03:01:13.826605+00:00
+71,155408,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/71/,2026-10-07T03:01:14.223639+00:00
+72,496208,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/72/,2026-10-07T03:01:14.440901+00:00
+73,200785,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/73/,2026-10-07T03:01:14.696204+00:00
+74,111317,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/74/,2026-10-07T03:01:14.807745+00:00
+75,158499,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/75/,2026-10-07T03:01:14.840751+00:00
+76,614574,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/76/,2026-10-07T03:01:15.224835+00:00
+77,489888,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/77/,2026-10-07T03:01:15.608933+00:00
+78,560262,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/78/,2026-10-07T03:01:15.737461+00:00
+79,444102,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/79/,2026-10-07T03:01:16.010027+00:00
+80,168636,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/80/,2026-10-07T03:01:16.093553+00:00
+81,561245,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/81/,2026-10-07T03:01:16.544670+00:00
+566,483067,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/566/,2026-10-07T03:01:16.620188+00:00
+573,494928,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/573/,2026-10-07T03:01:16.748830+00:00
+608,523700,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/608/,2026-10-07T03:01:16.998828+00:00
+615,230650,Bournemouth,downloaded,https://fantasy.premierleague.com/api/element-summary/615/,2026-10-07T03:01:17.144361+00:00
+82,200720,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/82/,2026-10-07T03:01:17.693327+00:00
+83,507433,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/83/,2026-10-07T03:01:17.907382+00:00
+84,432830,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/84/,2026-10-07T03:01:17.921375+00:00
+85,444765,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/85/,2026-10-07T03:01:17.964897+00:00
+86,249231,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/86/,2026-10-07T03:01:18.106439+00:00
+87,191866,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/87/,2026-10-07T03:01:18.940138+00:00
+88,607464,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/88/,2026-10-07T03:01:19.051186+00:00
+89,194010,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/89/,2026-10-07T03:01:19.416767+00:00
+90,472713,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/90/,2026-10-07T03:01:19.492295+00:00
+92,570241,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/92/,2026-10-07T03:01:19.615831+00:00
+93,513086,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/93/,2026-10-07T03:01:20.110328+00:00
+94,513418,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/94/,2026-10-07T03:01:20.404918+00:00
+95,533463,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/95/,2026-10-07T03:01:20.844062+00:00
+96,440089,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/96/,2026-10-07T03:01:20.954109+00:00
+97,207283,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/97/,2026-10-07T03:01:21.046127+00:00
+98,204580,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/98/,2026-10-07T03:01:21.243975+00:00
+99,543295,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/99/,2026-10-07T03:01:21.403023+00:00
+100,244858,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/100/,2026-10-07T03:01:22.117704+00:00
+102,508395,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/102/,2026-10-07T03:01:22.148714+00:00
+103,183656,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/103/,2026-10-07T03:01:22.194236+00:00
+105,444180,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/105/,2026-10-07T03:01:22.293775+00:00
+106,502500,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/106/,2026-10-07T03:01:23.042574+00:00
+107,593174,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/107/,2026-10-07T03:01:23.327138+00:00
+108,75115,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/108/,2026-10-07T03:01:23.618708+00:00
+565,513545,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/565/,2026-10-07T03:01:23.648716+00:00
+620,613804,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/620/,2026-10-07T03:01:23.661229+00:00
+657,626464,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/657/,2026-10-07T03:01:24.628884+00:00
+660,612534,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/660/,2026-10-07T03:01:24.630884+00:00
+661,235448,Brentford,downloaded,https://fantasy.premierleague.com/api/element-summary/661/,2026-10-07T03:01:25.362097+00:00
+109,489639,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/109/,2026-10-07T03:01:25.410102+00:00
+111,49262,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/111/,2026-10-07T03:01:25.438112+00:00
+113,231416,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/113/,2026-10-07T03:01:25.874787+00:00
+114,204120,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/114/,2026-10-07T03:01:26.024315+00:00
+115,465730,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/115/,2026-10-07T03:01:27.018552+00:00
+116,83299,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/116/,2026-10-07T03:01:27.046558+00:00
+117,550090,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/117/,2026-10-07T03:01:27.200611+00:00
+118,223434,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/118/,2026-10-07T03:01:27.296130+00:00
+119,451490,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/119/,2026-10-07T03:01:27.676227+00:00
+120,454490,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/120/,2026-10-07T03:01:28.245480+00:00
+121,451340,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/121/,2026-10-07T03:01:28.672086+00:00
+122,592031,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/122/,2026-10-07T03:01:28.943142+00:00
+123,532529,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/123/,2026-10-07T03:01:29.027658+00:00
+124,60307,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/124/,2026-10-07T03:01:29.512277+00:00
+125,463067,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/125/,2026-10-07T03:01:29.556802+00:00
+126,219249,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/126/,2026-10-07T03:01:30.327480+00:00
+127,514254,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/127/,2026-10-07T03:01:30.527524+00:00
+128,536916,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/128/,2026-10-07T03:01:30.761099+00:00
+129,509416,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/129/,2026-10-07T03:01:30.779100+00:00
+130,467779,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/130/,2026-10-07T03:01:31.188670+00:00
+132,597320,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/132/,2026-10-07T03:01:32.281311+00:00
+133,549074,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/133/,2026-10-07T03:01:32.392243+00:00
+134,556637,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/134/,2026-10-07T03:01:32.403239+00:00
+135,700308,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/135/,2026-10-07T03:01:32.809378+00:00
+137,608181,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/137/,2026-10-07T03:01:33.328367+00:00
+138,647850,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/138/,2026-10-07T03:01:33.994474+00:00
+139,487117,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/139/,2026-10-07T03:01:34.304068+00:00
+328,222694,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/328/,2026-10-07T03:01:34.372609+00:00
+504,610799,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/504/,2026-10-07T03:01:34.478139+00:00
+594,538007,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/594/,2026-10-07T03:01:35.122329+00:00
+600,612855,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/600/,2026-10-07T03:01:35.182853+00:00
+605,611695,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/605/,2026-10-07T03:01:36.064608+00:00
+614,512123,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/614/,2026-10-07T03:01:36.118613+00:00
+624,519324,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/624/,2026-10-07T03:01:36.175129+00:00
+639,592984,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/639/,2026-10-07T03:01:36.718758+00:00
+652,471551,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/652/,2026-10-07T03:01:36.978324+00:00
+658,661016,Brighton & Hove Albion,downloaded,https://fantasy.premierleague.com/api/element-summary/658/,2026-10-07T03:01:37.445430+00:00
+28,98980,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/28/,2026-10-07T03:01:37.977576+00:00
+40,244850,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/40/,2026-10-07T03:01:38.208141+00:00
+101,56979,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/101/,2026-10-07T03:01:39.037372+00:00
+136,50175,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/136/,2026-10-07T03:01:39.082895+00:00
+140,215059,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/140/,2026-10-07T03:01:40.081161+00:00
+141,508479,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/141/,2026-10-07T03:01:40.463267+00:00
+142,225796,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/142/,2026-10-07T03:01:40.892368+00:00
+143,180736,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/143/,2026-10-07T03:01:41.301698+00:00
+144,482609,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/144/,2026-10-07T03:01:41.396234+00:00
+145,444463,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/145/,2026-10-07T03:01:42.508909+00:00
+146,242880,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/146/,2026-10-07T03:01:42.661960+00:00
+148,551210,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/148/,2026-10-07T03:01:43.204609+00:00
+149,460028,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/149/,2026-10-07T03:01:43.228610+00:00
+150,574458,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/150/,2026-10-07T03:01:43.962852+00:00
+151,577016,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/151/,2026-10-07T03:01:43.977853+00:00
+152,620109,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/152/,2026-10-07T03:01:45.239212+00:00
+154,244851,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/154/,2026-10-07T03:01:45.685892+00:00
+156,247632,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/156/,2026-10-07T03:01:46.070040+00:00
+157,624773,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/157/,2026-10-07T03:01:46.493184+00:00
+158,463936,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/158/,2026-10-07T03:01:46.992262+00:00
+159,486672,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/159/,2026-10-07T03:01:47.162323+00:00
+161,514356,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/161/,2026-10-07T03:01:48.312144+00:00
+163,491007,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/163/,2026-10-07T03:01:49.305445+00:00
+164,593117,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/164/,2026-10-07T03:01:49.327446+00:00
+165,475168,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/165/,2026-10-07T03:01:49.447981+00:00
+168,499309,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/168/,2026-10-07T03:01:50.310719+00:00
+169,567119,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/169/,2026-10-07T03:01:51.478003+00:00
+170,503037,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/170/,2026-10-07T03:01:51.624537+00:00
+200,437499,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/200/,2026-10-07T03:01:52.757978+00:00
+560,549939,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/560/,2026-10-07T03:01:53.090088+00:00
+561,622758,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/561/,2026-10-07T03:01:53.490530+00:00
+568,543158,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/568/,2026-10-07T03:01:54.196237+00:00
+583,498444,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/583/,2026-10-07T03:01:54.716241+00:00
+662,636846,Chelsea,downloaded,https://fantasy.premierleague.com/api/element-summary/662/,2026-10-07T03:01:55.762046+00:00
+91,231065,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/91/,2026-10-07T03:01:55.956580+00:00
+104,428580,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/104/,2026-10-07T03:01:56.048107+00:00
+110,472739,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/110/,2026-10-07T03:01:57.256433+00:00
+171,484389,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/171/,2026-10-07T03:01:57.963655+00:00
+172,110690,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/172/,2026-10-07T03:01:58.111190+00:00
+173,461102,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/173/,2026-10-07T03:01:59.202141+00:00
+174,436761,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/174/,2026-10-07T03:02:00.076901+00:00
+175,451284,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/175/,2026-10-07T03:02:00.557043+00:00
+176,173878,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/176/,2026-10-07T03:02:00.699090+00:00
+177,465390,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/177/,2026-10-07T03:02:00.825619+00:00
+178,80178,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/178/,2026-10-07T03:02:02.130469+00:00
+179,204813,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/179/,2026-10-07T03:02:02.832160+00:00
+180,220583,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/180/,2026-10-07T03:02:02.880682+00:00
+181,577411,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/181/,2026-10-07T03:02:03.160746+00:00
+182,539142,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/182/,2026-10-07T03:02:03.664903+00:00
+183,480457,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/183/,2026-10-07T03:02:04.775691+00:00
+184,168144,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/184/,2026-10-07T03:02:05.354334+00:00
+185,501459,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/185/,2026-10-07T03:02:05.511385+00:00
+186,241293,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/186/,2026-10-07T03:02:05.841969+00:00
+187,439668,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/187/,2026-10-07T03:02:06.050034+00:00
+188,226965,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/188/,2026-10-07T03:02:06.974291+00:00
+189,684268,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/189/,2026-10-07T03:02:07.174344+00:00
+190,469272,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/190/,2026-10-07T03:02:07.314872+00:00
+191,492498,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/191/,2026-10-07T03:02:07.991546+00:00
+192,629397,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/192/,2026-10-07T03:02:08.280119+00:00
+193,176412,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/193/,2026-10-07T03:02:09.412870+00:00
+194,230730,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/194/,2026-10-07T03:02:09.466390+00:00
+195,218997,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/195/,2026-10-07T03:02:09.620924+00:00
+196,551262,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/196/,2026-10-07T03:02:10.299592+00:00
+197,549653,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/197/,2026-10-07T03:02:10.747695+00:00
+492,210156,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/492/,2026-10-07T03:02:11.249331+00:00
+575,661888,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/575/,2026-10-07T03:02:11.480897+00:00
+584,196100,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/584/,2026-10-07T03:02:11.658434+00:00
+599,627221,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/599/,2026-10-07T03:02:12.259539+00:00
+623,79602,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/623/,2026-10-07T03:02:12.424997+00:00
+655,242893,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/655/,2026-10-07T03:02:12.929622+00:00
+656,566213,Coventry City,downloaded,https://fantasy.premierleague.com/api/element-summary/656/,2026-10-07T03:02:12.929622+00:00
+42,485337,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/42/,2026-10-07T03:02:13.202213+00:00
+153,220362,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/153/,2026-10-07T03:02:13.765835+00:00
+198,172649,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/198/,2026-10-07T03:02:13.815354+00:00
+199,121709,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/199/,2026-10-07T03:02:14.443400+00:00
+202,427623,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/202/,2026-10-07T03:02:14.688545+00:00
+203,651426,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/203/,2026-10-07T03:02:14.798069+00:00
+204,244723,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/204/,2026-10-07T03:02:15.197020+00:00
+205,218364,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/205/,2026-10-07T03:02:15.276421+00:00
+206,515621,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/206/,2026-10-07T03:02:15.766541+00:00
+207,242313,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/207/,2026-10-07T03:02:16.066119+00:00
+208,232185,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/208/,2026-10-07T03:02:16.251176+00:00
+210,496221,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/210/,2026-10-07T03:02:16.911856+00:00
+211,488024,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/211/,2026-10-07T03:02:17.123909+00:00
+212,108413,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/212/,2026-10-07T03:02:17.664547+00:00
+213,152551,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/213/,2026-10-07T03:02:17.893119+00:00
+214,209400,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/214/,2026-10-07T03:02:18.331246+00:00
+215,489706,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/215/,2026-10-07T03:02:18.829307+00:00
+216,606921,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/216/,2026-10-07T03:02:19.044366+00:00
+217,536694,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/217/,2026-10-07T03:02:19.995182+00:00
+218,438464,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/218/,2026-10-07T03:02:20.154719+00:00
+219,450542,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/219/,2026-10-07T03:02:20.594371+00:00
+220,590014,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/220/,2026-10-07T03:02:21.146165+00:00
+221,672492,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/221/,2026-10-07T03:02:21.609558+00:00
+222,247412,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/222/,2026-10-07T03:02:22.244909+00:00
+223,231747,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/223/,2026-10-07T03:02:22.483496+00:00
+224,205533,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/224/,2026-10-07T03:02:23.173209+00:00
+225,660392,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/225/,2026-10-07T03:02:23.281736+00:00
+241,433154,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/241/,2026-10-07T03:02:24.039003+00:00
+555,169593,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/555/,2026-10-07T03:02:24.472634+00:00
+577,223723,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/577/,2026-10-07T03:02:24.844249+00:00
+588,570794,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/588/,2026-10-07T03:02:25.310700+00:00
+595,559152,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/595/,2026-10-07T03:02:25.583273+00:00
+633,605972,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/633/,2026-10-07T03:02:26.616549+00:00
+643,172850,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/643/,2026-10-07T03:02:26.774596+00:00
+644,450063,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/644/,2026-10-07T03:02:27.144176+00:00
+647,533646,Crystal Palace,downloaded,https://fantasy.premierleague.com/api/element-summary/647/,2026-10-07T03:02:27.649832+00:00
+21,128295,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/21/,2026-10-07T03:02:27.803889+00:00
+209,242898,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/209/,2026-10-07T03:02:28.395049+00:00
+226,111234,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/226/,2026-10-07T03:02:28.582102+00:00
+227,229600,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/227/,2026-10-07T03:02:28.893006+00:00
+228,138001,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/228/,2026-10-07T03:02:29.562188+00:00
+229,17761,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/229/,2026-10-07T03:02:30.161343+00:00
+230,480455,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/230/,2026-10-07T03:02:30.457928+00:00
+231,106611,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/231/,2026-10-07T03:02:30.509450+00:00
+232,512462,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/232/,2026-10-07T03:02:30.738512+00:00
+233,224967,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/233/,2026-10-07T03:02:31.427202+00:00
+234,243571,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/234/,2026-10-07T03:02:32.413391+00:00
+235,499300,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/235/,2026-10-07T03:02:32.598327+00:00
+236,215413,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/236/,2026-10-07T03:02:32.631323+00:00
+238,114283,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/238/,2026-10-07T03:02:32.759855+00:00
+239,232928,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/239/,2026-10-07T03:02:33.457723+00:00
+242,550615,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/242/,2026-10-07T03:02:34.533417+00:00
+243,502697,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/243/,2026-10-07T03:02:34.760493+00:00
+244,609873,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/244/,2026-10-07T03:02:34.816015+00:00
+245,496661,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/245/,2026-10-07T03:02:34.872025+00:00
+246,513466,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/246/,2026-10-07T03:02:35.466707+00:00
+247,244860,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/247/,2026-10-07T03:02:36.523508+00:00
+248,486385,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/248/,2026-10-07T03:02:36.812097+00:00
+249,586309,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/249/,2026-10-07T03:02:36.870109+00:00
+649,154043,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/649/,2026-10-07T03:02:37.021157+00:00
+654,629068,Everton,downloaded,https://fantasy.premierleague.com/api/element-summary/654/,2026-10-07T03:02:37.566842+00:00
+250,80201,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/250/,2026-10-07T03:02:38.813342+00:00
+251,86873,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/251/,2026-10-07T03:02:39.016408+00:00
+252,505079,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/252/,2026-10-07T03:02:39.246463+00:00
+253,174874,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/253/,2026-10-07T03:02:39.664593+00:00
+254,169528,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/254/,2026-10-07T03:02:39.966194+00:00
+255,246301,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/255/,2026-10-07T03:02:41.213077+00:00
+256,167074,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/256/,2026-10-07T03:02:41.317601+00:00
+257,232892,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/257/,2026-10-07T03:02:41.692693+00:00
+258,166477,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/258/,2026-10-07T03:02:41.881751+00:00
+261,153133,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/261/,2026-10-07T03:02:42.081808+00:00
+262,209289,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/262/,2026-10-07T03:02:43.106120+00:00
+263,560552,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/263/,2026-10-07T03:02:43.226649+00:00
+264,477555,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/264/,2026-10-07T03:02:43.751861+00:00
+265,207189,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/265/,2026-10-07T03:02:44.111987+00:00
+266,76357,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/266/,2026-10-07T03:02:44.464583+00:00
+268,577725,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/268/,2026-10-07T03:02:45.084760+00:00
+269,184349,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/269/,2026-10-07T03:02:45.284813+00:00
+270,153366,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/270/,2026-10-07T03:02:45.818450+00:00
+271,244042,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/271/,2026-10-07T03:02:45.911978+00:00
+272,631786,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/272/,2026-10-07T03:02:46.810411+00:00
+569,551466,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/569/,2026-10-07T03:02:47.019482+00:00
+570,571779,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/570/,2026-10-07T03:02:47.299067+00:00
+580,463210,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/580/,2026-10-07T03:02:47.902438+00:00
+610,547686,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/610/,2026-10-07T03:02:47.903438+00:00
+626,616069,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/626/,2026-10-07T03:02:49.028684+00:00
+635,551050,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/635/,2026-10-07T03:02:49.280259+00:00
+636,500033,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/636/,2026-10-07T03:02:49.551334+00:00
+650,442299,Fulham,downloaded,https://fantasy.premierleague.com/api/element-summary/650/,2026-10-07T03:02:49.959655+00:00
+240,490094,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/240/,2026-10-07T03:02:50.139592+00:00
+273,167825,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/273/,2026-10-07T03:02:50.931033+00:00
+274,105666,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/274/,2026-10-07T03:02:51.108920+00:00
+275,494950,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/275/,2026-10-07T03:02:51.755093+00:00
+276,444307,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/276/,2026-10-07T03:02:51.759095+00:00
+277,108416,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/277/,2026-10-07T03:02:51.952136+00:00
+278,501902,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/278/,2026-10-07T03:02:52.608754+00:00
+279,146426,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/279/,2026-10-07T03:02:52.917309+00:00
+280,193278,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/280/,2026-10-07T03:02:53.733148+00:00
+281,433590,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/281/,2026-10-07T03:02:53.778159+00:00
+282,232351,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/282/,2026-10-07T03:02:54.332506+00:00
+283,449428,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/283/,2026-10-07T03:02:54.629117+00:00
+284,661800,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/284/,2026-10-07T03:02:55.024539+00:00
+285,160817,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/285/,2026-10-07T03:02:55.620638+00:00
+286,540324,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/286/,2026-10-07T03:02:55.699171+00:00
+287,232905,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/287/,2026-10-07T03:02:56.763706+00:00
+288,171270,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/288/,2026-10-07T03:02:56.806236+00:00
+289,101282,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/289/,2026-10-07T03:02:57.262190+00:00
+290,243413,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/290/,2026-10-07T03:02:57.636303+00:00
+291,465525,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/291/,2026-10-07T03:02:57.863367+00:00
+292,208481,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/292/,2026-10-07T03:02:58.368512+00:00
+293,490161,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/293/,2026-10-07T03:02:58.705608+00:00
+294,553783,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/294/,2026-10-07T03:02:58.847139+00:00
+295,169432,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/295/,2026-10-07T03:02:59.210351+00:00
+296,213292,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/296/,2026-10-07T03:02:59.302881+00:00
+297,470294,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/297/,2026-10-07T03:03:00.036437+00:00
+298,500957,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/298/,2026-10-07T03:03:00.264332+00:00
+299,534392,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/299/,2026-10-07T03:03:00.615438+00:00
+340,462635,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/340/,2026-10-07T03:03:00.683448+00:00
+556,169359,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/556/,2026-10-07T03:03:01.035674+00:00
+563,445028,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/563/,2026-10-07T03:03:01.736308+00:00
+572,473284,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/572/,2026-10-07T03:03:02.009900+00:00
+574,552946,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/574/,2026-10-07T03:03:02.253529+00:00
+576,608227,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/576/,2026-10-07T03:03:02.536117+00:00
+585,597462,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/585/,2026-10-07T03:03:02.859705+00:00
+586,606930,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/586/,2026-10-07T03:03:03.545020+00:00
+589,469266,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/589/,2026-10-07T03:03:03.803608+00:00
+617,490884,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/617/,2026-10-07T03:03:03.953135+00:00
+632,626751,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/632/,2026-10-07T03:03:04.773333+00:00
+637,631000,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/637/,2026-10-07T03:03:04.819849+00:00
+638,496181,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/638/,2026-10-07T03:03:05.473719+00:00
+642,243951,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/642/,2026-10-07T03:03:05.780704+00:00
+645,647839,Hull City,downloaded,https://fantasy.premierleague.com/api/element-summary/645/,2026-10-07T03:03:05.801221+00:00
+259,219924,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/259/,2026-10-07T03:03:06.136655+00:00
+267,212314,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/267/,2026-10-07T03:03:06.159657+00:00
+300,108813,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/300/,2026-10-07T03:03:06.482265+00:00
+301,112520,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/301/,2026-10-07T03:03:06.662376+00:00
+302,50093,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/302/,2026-10-07T03:03:06.680391+00:00
+303,183015,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/303/,2026-10-07T03:03:06.988932+00:00
+304,216616,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/304/,2026-10-07T03:03:07.207042+00:00
+305,455084,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/305/,2026-10-07T03:03:07.253041+00:00
+306,449429,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/306/,2026-10-07T03:03:07.472980+00:00
+307,222018,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/307/,2026-10-07T03:03:07.491111+00:00
+308,176420,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/308/,2026-10-07T03:03:07.798699+00:00
+309,501390,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/309/,2026-10-07T03:03:08.122308+00:00
+310,241117,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/310/,2026-10-07T03:03:08.129025+00:00
+311,149929,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/311/,2026-10-07T03:03:08.403550+00:00
+312,231899,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/312/,2026-10-07T03:03:08.538090+00:00
+313,443261,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/313/,2026-10-07T03:03:08.625626+00:00
+314,229164,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/314/,2026-10-07T03:03:09.038491+00:00
+315,531442,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/315/,2026-10-07T03:03:09.132014+00:00
+316,543968,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/316/,2026-10-07T03:03:09.270223+00:00
+317,222625,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/317/,2026-10-07T03:03:09.401101+00:00
+318,481624,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/318/,2026-10-07T03:03:09.476117+00:00
+319,172453,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/319/,2026-10-07T03:03:09.866865+00:00
+320,147675,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/320/,2026-10-07T03:03:09.911393+00:00
+321,557012,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/321/,2026-10-07T03:03:10.036929+00:00
+322,462387,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/322/,2026-10-07T03:03:10.233057+00:00
+323,461587,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/323/,2026-10-07T03:03:10.240057+00:00
+324,232457,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/324/,2026-10-07T03:03:11.254880+00:00
+554,546600,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/554/,2026-10-07T03:03:11.487848+00:00
+562,442967,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/562/,2026-10-07T03:03:11.892474+00:00
+564,240514,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/564/,2026-10-07T03:03:12.683091+00:00
+571,216055,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/571/,2026-10-07T03:03:12.900649+00:00
+591,474120,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/591/,2026-10-07T03:03:12.987663+00:00
+592,572584,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/592/,2026-10-07T03:03:13.886699+00:00
+602,524180,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/602/,2026-10-07T03:03:14.075760+00:00
+619,218543,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/619/,2026-10-07T03:03:14.371410+00:00
+640,431639,Ipswich Town,downloaded,https://fantasy.premierleague.com/api/element-summary/640/,2026-10-07T03:03:15.636745+00:00
+260,153682,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/260/,2026-10-07T03:03:15.932325+00:00
+326,201595,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/326/,2026-10-07T03:03:16.269430+00:00
+327,434752,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/327/,2026-10-07T03:03:16.453450+00:00
+329,214225,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/329/,2026-10-07T03:03:16.702028+00:00
+330,226182,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/330/,2026-10-07T03:03:18.014610+00:00
+331,243526,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/331/,2026-10-07T03:03:18.531160+00:00
+332,220627,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/332/,2026-10-07T03:03:18.563160+00:00
+333,437738,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/333/,2026-10-07T03:03:18.820730+00:00
+334,522047,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/334/,2026-10-07T03:03:19.420759+00:00
+335,466525,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/335/,2026-10-07T03:03:19.443759+00:00
+336,435997,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/336/,2026-10-07T03:03:21.012399+00:00
+337,427637,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/337/,2026-10-07T03:03:22.215864+00:00
+338,199598,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/338/,2026-10-07T03:03:22.437169+00:00
+339,180135,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/339/,2026-10-07T03:03:22.579539+00:00
+341,492859,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/341/,2026-10-07T03:03:23.481448+00:00
+342,221399,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/342/,2026-10-07T03:03:23.589990+00:00
+343,200617,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/343/,2026-10-07T03:03:24.512322+00:00
+344,486520,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/344/,2026-10-07T03:03:25.840873+00:00
+345,248056,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/345/,2026-10-07T03:03:25.904394+00:00
+346,177815,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/346/,2026-10-07T03:03:26.023927+00:00
+347,174594,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/347/,2026-10-07T03:03:26.762828+00:00
+348,235826,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/348/,2026-10-07T03:03:26.899885+00:00
+349,565297,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/349/,2026-10-07T03:03:27.377994+00:00
+385,432720,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/385/,2026-10-07T03:03:28.704423+00:00
+598,173774,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/598/,2026-10-07T03:03:29.155543+00:00
+603,643970,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/603/,2026-10-07T03:03:29.591799+00:00
+604,592740,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/604/,2026-10-07T03:03:30.272312+00:00
+625,97846,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/625/,2026-10-07T03:03:30.532407+00:00
+629,155465,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/629/,2026-10-07T03:03:30.825872+00:00
+641,437497,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/641/,2026-10-07T03:03:32.575678+00:00
+648,587982,Leeds United,downloaded,https://fantasy.premierleague.com/api/element-summary/648/,2026-10-07T03:03:32.839936+00:00
+350,116535,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/350/,2026-10-07T03:03:33.528640+00:00
+351,449027,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/351/,2026-10-07T03:03:34.319410+00:00
+352,155503,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/352/,2026-10-07T03:03:34.349407+00:00
+353,586268,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/353/,2026-10-07T03:03:34.768204+00:00
+354,432987,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/354/,2026-10-07T03:03:35.923100+00:00
+355,464353,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/355/,2026-10-07T03:03:37.740851+00:00
+356,97032,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/356/,2026-10-07T03:03:38.143827+00:00
+357,216094,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/357/,2026-10-07T03:03:38.837540+00:00
+358,544877,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/358/,2026-10-07T03:03:39.262430+00:00
+359,171287,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/359/,2026-10-07T03:03:39.454919+00:00
+360,492777,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/360/,2026-10-07T03:03:40.349757+00:00
+361,519440,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/361/,2026-10-07T03:03:40.911148+00:00
+362,606702,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/362/,2026-10-07T03:03:42.308902+00:00
+363,647681,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/363/,2026-10-07T03:03:43.521508+00:00
+364,214285,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/364/,2026-10-07T03:03:43.597518+00:00
+365,489580,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/365/,2026-10-07T03:03:44.076060+00:00
+366,494595,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/366/,2026-10-07T03:03:44.573458+00:00
+367,243298,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/367/,2026-10-07T03:03:44.882212+00:00
+368,424876,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/368/,2026-10-07T03:03:44.886212+00:00
+369,611922,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/369/,2026-10-07T03:03:46.358137+00:00
+370,223541,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/370/,2026-10-07T03:03:47.858128+00:00
+371,441266,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/371/,2026-10-07T03:03:47.881130+00:00
+372,243016,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/372/,2026-10-07T03:03:48.619341+00:00
+373,206915,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/373/,2026-10-07T03:03:48.991367+00:00
+374,158983,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/374/,2026-10-07T03:03:49.342266+00:00
+375,591386,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/375/,2026-10-07T03:03:49.527315+00:00
+376,535928,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/376/,2026-10-07T03:03:50.738770+00:00
+377,551499,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/377/,2026-10-07T03:03:52.135735+00:00
+378,491501,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/378/,2026-10-07T03:03:52.458235+00:00
+379,219168,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/379/,2026-10-07T03:03:52.497243+00:00
+380,510663,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/380/,2026-10-07T03:03:52.894367+00:00
+381,514514,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/381/,2026-10-07T03:03:54.192674+00:00
+382,500058,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/382/,2026-10-07T03:03:54.650162+00:00
+383,444884,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/383/,2026-10-07T03:03:55.885809+00:00
+579,445087,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/579/,2026-10-07T03:03:56.356002+00:00
+627,482616,Liverpool,downloaded,https://fantasy.premierleague.com/api/element-summary/627/,2026-10-07T03:03:57.115313+00:00
+155,448047,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/155/,2026-10-07T03:03:57.132314+00:00
+237,440993,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/237/,2026-10-07T03:03:57.478591+00:00
+384,204936,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/384/,2026-10-07T03:03:58.936457+00:00
+386,122074,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/386/,2026-10-07T03:03:58.939459+00:00
+387,472769,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/387/,2026-10-07T03:04:00.403307+00:00
+388,209036,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/388/,2026-10-07T03:04:00.617818+00:00
+389,465351,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/389/,2026-10-07T03:04:01.325747+00:00
+390,171314,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/390/,2026-10-07T03:04:01.443673+00:00
+391,477424,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/391/,2026-10-07T03:04:02.120350+00:00
+392,448514,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/392/,2026-10-07T03:04:02.137352+00:00
+393,578153,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/393/,2026-10-07T03:04:03.334759+00:00
+394,494307,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/394/,2026-10-07T03:04:04.726357+00:00
+395,477064,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/395/,2026-10-07T03:04:05.215021+00:00
+396,616222,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/396/,2026-10-07T03:04:05.241275+00:00
+397,437730,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/397/,2026-10-07T03:04:05.709455+00:00
+398,209244,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/398/,2026-10-07T03:04:06.305623+00:00
+399,466052,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/399/,2026-10-07T03:04:06.946318+00:00
+400,248875,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/400/,2026-10-07T03:04:08.410230+00:00
+402,220566,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/402/,2026-10-07T03:04:08.476751+00:00
+404,433036,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/404/,2026-10-07T03:04:09.209310+00:00
+406,91651,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/406/,2026-10-07T03:04:09.465706+00:00
+407,575204,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/407/,2026-10-07T03:04:09.828398+00:00
+408,155405,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/408/,2026-10-07T03:04:09.874401+00:00
+409,590039,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/409/,2026-10-07T03:04:11.477753+00:00
+410,649208,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/410/,2026-10-07T03:04:11.946274+00:00
+411,223094,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/411/,2026-10-07T03:04:12.370776+00:00
+481,215379,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/481/,2026-10-07T03:04:12.701781+00:00
+587,106921,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/587/,2026-10-07T03:04:13.343455+00:00
+616,637238,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/616/,2026-10-07T03:04:13.411468+00:00
+621,616288,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/621/,2026-10-07T03:04:14.899325+00:00
+622,554054,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/622/,2026-10-07T03:04:15.142902+00:00
+628,624777,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/628/,2026-10-07T03:04:15.535298+00:00
+653,595480,Manchester City,downloaded,https://fantasy.premierleague.com/api/element-summary/653/,2026-10-07T03:04:15.983198+00:00
+43,166989,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/43/,2026-10-07T03:04:16.911082+00:00
+131,535301,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/131/,2026-10-07T03:04:17.624606+00:00
+162,532605,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/162/,2026-10-07T03:04:17.808148+00:00
+325,59735,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/325/,2026-10-07T03:04:18.678462+00:00
+412,465247,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/412/,2026-10-07T03:04:19.395880+00:00
+413,451302,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/413/,2026-10-07T03:04:19.592935+00:00
+414,21205,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/414/,2026-10-07T03:04:19.986652+00:00
+415,596777,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/415/,2026-10-07T03:04:20.820833+00:00
+416,209365,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/416/,2026-10-07T03:04:21.140012+00:00
+417,216051,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/417/,2026-10-07T03:04:22.216858+00:00
+418,95658,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/418/,2026-10-07T03:04:23.327051+00:00
+419,221820,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/419/,2026-10-07T03:04:23.363054+00:00
+420,550864,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/420/,2026-10-07T03:04:23.818232+00:00
+421,606745,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/421/,2026-10-07T03:04:25.137209+00:00
+422,230001,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/422/,2026-10-07T03:04:25.487790+00:00
+423,106760,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/423/,2026-10-07T03:04:25.741369+00:00
+424,577974,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/424/,2026-10-07T03:04:26.692775+00:00
+425,547676,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/425/,2026-10-07T03:04:27.376824+00:00
+426,141746,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/426/,2026-10-07T03:04:27.387821+00:00
+427,446008,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/427/,2026-10-07T03:04:28.926033+00:00
+428,430871,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/428/,2026-10-07T03:04:29.197134+00:00
+429,176297,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/429/,2026-10-07T03:04:29.295656+00:00
+430,184341,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/430/,2026-10-07T03:04:30.016649+00:00
+431,493250,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/431/,2026-10-07T03:04:31.374166+00:00
+432,516895,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/432/,2026-10-07T03:04:31.578222+00:00
+433,232112,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/433/,2026-10-07T03:04:32.091879+00:00
+434,547037,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/434/,2026-10-07T03:04:32.578132+00:00
+435,576628,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/435/,2026-10-07T03:04:33.141889+00:00
+436,490881,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/436/,2026-10-07T03:04:33.581994+00:00
+437,576620,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/437/,2026-10-07T03:04:35.120377+00:00
+438,519913,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/438/,2026-10-07T03:04:35.163390+00:00
+439,485711,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/439/,2026-10-07T03:04:36.081229+00:00
+440,458249,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/440/,2026-10-07T03:04:36.570580+00:00
+441,596047,Manchester United,downloaded,https://fantasy.premierleague.com/api/element-summary/441/,2026-10-07T03:04:37.024418+00:00
+405,465694,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/405/,2026-10-07T03:04:37.427397+00:00
+442,98747,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/442/,2026-10-07T03:04:38.727192+00:00
+443,81441,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/443/,2026-10-07T03:04:39.114307+00:00
+444,554578,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/444/,2026-10-07T03:04:39.398830+00:00
+445,465642,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/445/,2026-10-07T03:04:39.562877+00:00
+446,119471,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/446/,2026-10-07T03:04:40.027202+00:00
+447,220237,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/447/,2026-10-07T03:04:41.407423+00:00
+448,78916,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/448/,2026-10-07T03:04:42.332535+00:00
+449,487838,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/449/,2026-10-07T03:04:42.363440+00:00
+450,441191,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/450/,2026-10-07T03:04:42.512977+00:00
+451,545477,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/451/,2026-10-07T03:04:43.254585+00:00
+453,201666,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/453/,2026-10-07T03:04:43.338108+00:00
+454,449434,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/454/,2026-10-07T03:04:45.343736+00:00
+456,232653,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/456/,2026-10-07T03:04:45.519173+00:00
+457,114243,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/457/,2026-10-07T03:04:45.567693+00:00
+458,180974,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/458/,2026-10-07T03:04:45.952814+00:00
+459,547719,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/459/,2026-10-07T03:04:46.579044+00:00
+460,200089,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/460/,2026-10-07T03:04:47.363947+00:00
+461,611665,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/461/,2026-10-07T03:04:48.735609+00:00
+462,636852,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/462/,2026-10-07T03:04:48.945675+00:00
+463,470313,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/463/,2026-10-07T03:04:49.240262+00:00
+464,216646,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/464/,2026-10-07T03:04:49.720094+00:00
+465,538207,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/465/,2026-10-07T03:04:49.831141+00:00
+466,599303,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/466/,2026-10-07T03:04:51.112121+00:00
+559,632794,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/559/,2026-10-07T03:04:52.341822+00:00
+567,470551,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/567/,2026-10-07T03:04:52.762989+00:00
+593,463726,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/593/,2026-10-07T03:04:53.263626+00:00
+609,553746,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/609/,2026-10-07T03:04:53.314636+00:00
+634,613221,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/634/,2026-10-07T03:04:53.344158+00:00
+659,665243,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/659/,2026-10-07T03:04:55.366988+00:00
+663,578512,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/663/,2026-10-07T03:04:55.862981+00:00
+664,601767,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/664/,2026-10-07T03:04:56.096035+00:00
+665,655585,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/665/,2026-10-07T03:04:56.199565+00:00
+666,671875,Newcastle United,downloaded,https://fantasy.premierleague.com/api/element-summary/666/,2026-10-07T03:04:56.630100+00:00
+167,463034,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/167/,2026-10-07T03:04:57.525280+00:00
+201,247348,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/201/,2026-10-07T03:04:59.280824+00:00
+467,85633,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/467/,2026-10-07T03:04:59.411348+00:00
+468,221389,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/468/,2026-10-07T03:04:59.681103+00:00
+469,215136,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/469/,2026-10-07T03:05:00.189564+00:00
+470,485047,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/470/,2026-10-07T03:05:00.448154+00:00
+471,227444,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/471/,2026-10-07T03:05:01.226207+00:00
+472,575476,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/472/,2026-10-07T03:05:02.396034+00:00
+473,159506,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/473/,2026-10-07T03:05:02.754892+00:00
+474,575458,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/474/,2026-10-07T03:05:02.801896+00:00
+475,500151,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/475/,2026-10-07T03:05:03.855149+00:00
+476,204822,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/476/,2026-10-07T03:05:04.454309+00:00
+477,549067,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/477/,2026-10-07T03:05:04.520318+00:00
+478,470315,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/478/,2026-10-07T03:05:06.060123+00:00
+479,538638,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/479/,2026-10-07T03:05:06.380696+00:00
+480,222531,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/480/,2026-10-07T03:05:06.515224+00:00
+482,209046,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/482/,2026-10-07T03:05:07.589953+00:00
+483,456512,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/483/,2026-10-07T03:05:07.658469+00:00
+484,503301,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/484/,2026-10-07T03:05:07.779261+00:00
+485,476887,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/485/,2026-10-07T03:05:08.947479+00:00
+486,432714,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/486/,2026-10-07T03:05:09.547647+00:00
+487,250199,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/487/,2026-10-07T03:05:09.678180+00:00
+488,210462,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/488/,2026-10-07T03:05:10.031450+00:00
+489,204968,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/489/,2026-10-07T03:05:10.438073+00:00
+490,60689,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/490/,2026-10-07T03:05:10.671125+00:00
+491,482973,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/491/,2026-10-07T03:05:11.335740+00:00
+493,465680,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/493/,2026-10-07T03:05:11.759094+00:00
+558,204561,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/558/,2026-10-07T03:05:11.764092+00:00
+581,568420,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/581/,2026-10-07T03:05:12.641700+00:00
+590,428971,Nottingham Forest,downloaded,https://fantasy.premierleague.com/api/element-summary/590/,2026-10-07T03:05:12.644950+00:00
+112,469142,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/112/,2026-10-07T03:05:12.703917+00:00
+147,109646,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/147/,2026-10-07T03:05:14.000864+00:00
+401,438234,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/401/,2026-10-07T03:05:14.273451+00:00
+403,510281,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/403/,2026-10-07T03:05:14.392848+00:00
+455,432422,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/455/,2026-10-07T03:05:15.164668+00:00
+494,184254,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/494/,2026-10-07T03:05:15.497590+00:00
+495,214572,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/495/,2026-10-07T03:05:15.659642+00:00
+496,485055,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/496/,2026-10-07T03:05:16.463195+00:00
+497,67089,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/497/,2026-10-07T03:05:16.696272+00:00
+498,221466,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/498/,2026-10-07T03:05:16.833878+00:00
+499,441164,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/499/,2026-10-07T03:05:17.349304+00:00
+500,221632,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/500/,2026-10-07T03:05:17.861668+00:00
+502,122798,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/502/,2026-10-07T03:05:18.051628+00:00
+503,491279,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/503/,2026-10-07T03:05:18.732804+00:00
+505,232859,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/505/,2026-10-07T03:05:18.941376+00:00
+506,487053,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/506/,2026-10-07T03:05:19.349438+00:00
+507,548308,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/507/,2026-10-07T03:05:19.698019+00:00
+508,115556,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/508/,2026-10-07T03:05:20.282830+00:00
+509,640419,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/509/,2026-10-07T03:05:20.532894+00:00
+510,499716,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/510/,2026-10-07T03:05:20.899160+00:00
+511,616221,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/511/,2026-10-07T03:05:21.259217+00:00
+512,460842,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/512/,2026-10-07T03:05:21.648330+00:00
+513,493362,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/513/,2026-10-07T03:05:21.941279+00:00
+514,511499,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/514/,2026-10-07T03:05:22.467701+00:00
+515,172780,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/515/,2026-10-07T03:05:22.848320+00:00
+516,202993,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/516/,2026-10-07T03:05:23.016741+00:00
+517,550839,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/517/,2026-10-07T03:05:23.475286+00:00
+518,482442,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/518/,2026-10-07T03:05:24.129559+00:00
+519,232787,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/519/,2026-10-07T03:05:24.132559+00:00
+520,570526,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/520/,2026-10-07T03:05:24.515520+00:00
+521,445044,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/521/,2026-10-07T03:05:25.183947+00:00
+522,547701,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/522/,2026-10-07T03:05:25.283477+00:00
+523,499721,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/523/,2026-10-07T03:05:25.784100+00:00
+524,499726,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/524/,2026-10-07T03:05:26.417039+00:00
+525,551226,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/525/,2026-10-07T03:05:26.466566+00:00
+526,154566,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/526/,2026-10-07T03:05:26.932682+00:00
+527,212319,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/527/,2026-10-07T03:05:27.533343+00:00
+528,490145,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/528/,2026-10-07T03:05:27.658383+00:00
+578,465920,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/578/,2026-10-07T03:05:27.964097+00:00
+601,611917,Tottenham Hotspur,downloaded,https://fantasy.premierleague.com/api/element-summary/601/,2026-10-07T03:05:28.844654+00:00
+501,135720,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/501/,2026-10-07T03:05:29.183994+00:00
+529,498016,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/529/,2026-10-07T03:05:29.210995+00:00
+530,232571,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/530/,2026-10-07T03:05:30.149231+00:00
+531,515046,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/531/,2026-10-07T03:05:30.224236+00:00
+532,223827,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/532/,2026-10-07T03:05:30.380241+00:00
+533,200834,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/533/,2026-10-07T03:05:31.423038+00:00
+534,487676,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/534/,2026-10-07T03:05:31.603094+00:00
+535,201895,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/535/,2026-10-07T03:05:31.701619+00:00
+536,434399,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/536/,2026-10-07T03:05:32.666521+00:00
+537,519634,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/537/,2026-10-07T03:05:32.674522+00:00
+538,477547,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/538/,2026-10-07T03:05:33.029115+00:00
+539,167512,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/539/,2026-10-07T03:05:33.486683+00:00
+540,105717,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/540/,2026-10-07T03:05:33.780263+00:00
+541,93605,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/541/,2026-10-07T03:05:34.293993+00:00
+542,484420,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/542/,2026-10-07T03:05:34.666925+00:00
+543,547027,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/543/,2026-10-07T03:05:34.833476+00:00
+544,84450,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/544/,2026-10-07T03:05:35.598526+00:00
+545,577669,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/545/,2026-10-07T03:05:36.109598+00:00
+546,535818,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/546/,2026-10-07T03:05:36.185246+00:00
+547,461199,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/547/,2026-10-07T03:05:36.704890+00:00
+548,554197,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/548/,2026-10-07T03:05:36.858952+00:00
+549,549912,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/549/,2026-10-07T03:05:36.997481+00:00
+550,699989,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/550/,2026-10-07T03:05:38.091670+00:00
+551,536661,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/551/,2026-10-07T03:05:38.652121+00:00
+552,441264,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/552/,2026-10-07T03:05:38.809711+00:00
+553,437505,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/553/,2026-10-07T03:05:39.389821+00:00
+612,638411,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/612/,2026-10-07T03:05:39.783934+00:00
+613,696104,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/613/,2026-10-07T03:05:39.903866+00:00
+646,549940,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/646/,2026-10-07T03:05:41.173472+00:00
+651,661313,Sunderland,downloaded,https://fantasy.premierleague.com/api/element-summary/651/,2026-10-07T03:05:41.759918+00:00

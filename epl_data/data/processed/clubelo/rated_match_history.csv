@@ -1,0 +1,321 @@
+date,venue,opponent_display,prior_rating_difference_display,home_field_advantage_display,elo_probability_display,full_time_score,extra_time_score,penalty_score,game_rating_difference_display,post_game_rating_difference_display,elo_change_display,new_elo,new_rank,team,opponent_slug,retrieved_at_utc,data_role
+2026-09-19,A,12 BRI Brighton,176 ±80,40,68.6 69 %,0-3,,,-324 ±338,150 ±78,-12.7,2040,2,Arsenal,Brighton,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-09-15,A,119 IPS Ipswich,350 ±81,41,85.6 86 %,4-2,,,475 ±427,354 ±80,2.2,2052,1,Arsenal,Ipswich,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-09-12,A,76 SUN Sunderland,310 ±82,41,82.5 82 %,2-0,,,455 ±411,315 ±80,1.9,2049,1,Arsenal,Sunderland,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-09-09,A,25 NAP Napoli,208 ±84,77,68.1 68 %,1-0,,,440 ±471,215 ±83,3.7,2047,1,Arsenal,Napoli,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-09-06,H,11 CHE Chelsea,152 ±79,40,75.1 75 %,2-1,,,342 ±487,157 ±78,2.4,2042,1,Arsenal,Chelsea,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-08-31,A,10 AVL Aston Villa,144 ±80,38,64.8 65 %,1-0,,,396 ±471,151 ±78,3.5,2040,2,Arsenal,AstonVilla,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-08-21,H,132 COV Coventry,342 ±83,38,89.9 90 %,3-0,,,438 ±396,346 ±82,1.9,2036,2,Arsenal,Coventry,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-08-16,N,3 MCI Man City,14 ±79,0,52.0 52 %,3-0,,,348 ±348,30 ±77,7.8,2034,2,Arsenal,ManCity,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-05-30,N,6 PSG Paris SG,62 ±74,0,58.9 59 %,1-1,0-0,L,0 ±356,60 ±73,-1.3,2027,2,Arsenal,ParisSG,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-05-24,A,28 CRY Crystal Palace,200 ±73,38,71.7 72 %,2-1,,,410 ±474,204 ±72,2.1,2028,2,Arsenal,CrystalPalace,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-05-18,H,133 BUR Burnley,335 ±76,37,89.5 89 %,1-0,,,434 ±515,337 ±75,0.9,2025,2,Arsenal,Burnley,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-05-10,A,58 WHU West Ham,256 ±75,38,77.8 78 %,1-0,,,430 ±490,260 ±74,1.8,2025,2,Arsenal,WestHam,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-05-05,H,9 ATM Atlético,110 ±73,73,74.2 74 %,1-0,,,306 ±486,114 ±72,2.1,2023,2,Arsenal,atletico,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-05-02,H,38 FUL Fulham,208 ±76,40,80.6 81 %,3-0,,,365 ±375,214 ±74,2.9,2021,2,Arsenal,Fulham,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-04-29,A,9 ATM Atlético,112 ±74,73,55.5 55 %,1-1,,,73 ±411,110 ±73,-0.8,2017,2,Arsenal,atletico,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-04-25,H,17 NEW Newcastle,141 ±73,35,73.4 73 %,1-0,,,342 ±487,145 ±72,2.2,2018,2,Arsenal,Newcastle,2026-10-07T03:00:39.390740+00:00,retrospective_rating_match_history
+2026-09-19,A,44 TOT Tottenham,85 ±79,40,56.4 56 %,3-1,,,390 ±395,97 ±78,5.6,1895,11,Aston Villa,Tottenham,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-09-16,A,158 COV Coventry,201 ±82,39,71.7 72 %,3-1,,,411 ±409,209 ±81,4.2,1888,12,Aston Villa,Coventry,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-09-12,H,35 FOR Forest,87 ±78,41,67.6 68 %,1-2,,,-404 ±445,72 ±77,-7.7,1883,14,Aston Villa,Forest,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-09-08,A,40 BRU Brugge,77 ±83,77,50.0 50 %,3-2,,,425 ±465,88 ±82,5.8,1890,11,Aston Villa,Brugge,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-09-05,A,242 HUL Hull,261 ±83,40,78.2 78 %,0-0,,,40 ±411,253 ±81,-4.3,1885,13,Aston Villa,Hull,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-08-31,H,2 ARS Arsenal,-144 ±80,38,35.2 35 %,0-1,,,-396 ±471,-151 ±78,-3.6,1889,10,Aston Villa,Arsenal,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-08-23,A,17 BRI Brighton,49 ±83,37,51.7 52 %,0-4,,,-310 ±326,27 ±80,-10.3,1892,10,Aston Villa,Brighton,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-08-12,N,5 PSG Paris SG,-59 ±81,0,41.6 42 %,1-2,,,-351 ±471,-68 ±80,-4.3,1903,9,Aston Villa,ParisSG,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-05-24,A,3 MCI Man City,-120 ±72,38,28.7 29 %,2-1,,,409 ±446,-106 ±71,7.0,1907,9,Aston Villa,ManCity,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-05-20,N,56 FRE Freiburg,125 ±76,0,67.3 67 %,3-0,,,362 ±364,135 ±75,4.9,1900,10,Aston Villa,Freiburg,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-05-15,H,8 LIV Liverpool,-45 ±73,37,48.9 49 %,4-2,,,310 ±388,-33 ±72,6.2,1895,10,Aston Villa,Liverpool,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-05-10,A,127 BUR Burnley,204 ±77,38,72.2 72 %,2-2,,,38 ±411,199 ±75,-2.6,1889,10,Aston Villa,Burnley,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-05-07,H,32 FOR Forest,64 ±72,74,68.8 69 %,4-0,,,292 ±337,74 ±71,5.3,1892,10,Aston Villa,Forest,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-05-03,H,35 TOT Tottenham,85 ±74,38,67.0 67 %,1-2,,,-400 ±450,72 ±73,-6.4,1886,12,Aston Villa,Tottenham,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-04-30,A,33 FOR Forest,88 ±73,73,52.1 52 %,0-1,,,-274 ±456,79 ±72,-4.2,1892,10,Aston Villa,Forest,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-04-25,A,34 FUL Fulham,99 ±77,35,59.1 59 %,0-1,,,-316 ±453,87 ±76,-5.7,1897,10,Aston Villa,Fulham,2026-10-07T03:00:40.713497+00:00,retrospective_rating_match_history
+2026-09-20,H,8 LIV Liverpool,-67 ±82,42,46.5 46 %,0-1,,,-390 ±467,-76 ±81,-5.0,1861,20,Bournemouth,Liverpool,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-09-17,A,60 RSO Real Sociedad,92 ±87,78,51.9 52 %,2-1,,,426 ±464,103 ±85,6.3,1866,19,Bournemouth,Sociedad,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-09-12,H,22 BRE Brentford,11 ±84,41,57.4 57 %,2-2,,,-41 ±411,9 ±82,-1.4,1858,19,Bournemouth,Brentford,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-09-08,H,321 LIN Lincoln City,244 ±86,39,83.7 84 %,4-0,,,382 ±359,252 ±83,5.3,1859,19,Bournemouth,LincolnCity,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-09-05,A,14 NEW Newcastle,-30 ±83,40,40.0 40 %,2-2,,,40 ±411,-28 ±82,1.2,1854,19,Bournemouth,Newcastle,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-08-29,H,32 EVE Everton,38 ±86,34,60.3 60 %,1-1,,,-34 ±411,35 ±84,-1.6,1852,19,Bournemouth,Everton,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-08-23,A,3 MCI Man City,-148 ±83,37,25.5 26 %,1-2,,,-343 ±490,-154 ±82,-3.2,1852,19,Bournemouth,ManCity,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-05-24,A,33 FOR Forest,42 ±76,38,50.5 51 %,1-1,,,38 ±411,42 ±75,0.1,1857,18,Bournemouth,Forest,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-05-19,H,3 MCI Man City,-167 ±76,38,32.2 32 %,1-1,,,-38 ±411,-163 ±75,2.4,1856,18,Bournemouth,ManCity,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-05-09,A,40 FUL Fulham,42 ±80,38,50.6 51 %,1-0,,,386 ±462,52 ±78,4.8,1854,20,Bournemouth,Fulham,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-05-03,H,28 CRY Crystal Palace,8 ±77,38,56.5 57 %,3-0,,,311 ±352,22 ±76,7.7,1849,21,Bournemouth,CrystalPalace,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-04-22,H,42 LEE Leeds,53 ±79,36,62.5 63 %,2-2,,,-36 ±411,50 ±78,-1.7,1841,24,Bournemouth,Leeds,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-04-18,A,15 NEW Newcastle,-45 ±76,42,37.7 38 %,2-1,,,397 ±456,-33 ±75,6.6,1843,22,Bournemouth,Newcastle,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-04-11,A,2 ARS Arsenal,-206 ±76,39,19.6 20 %,2-1,,,442 ±438,-186 ±75,10.9,1837,25,Bournemouth,Arsenal,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-03-20,H,16 MNU Man United,-55 ±78,34,47.0 47 %,2-2,,,-34 ±411,-54 ±77,0.3,1825,30,Bournemouth,ManUnited,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-03-14,A,107 BUR Burnley,123 ±79,37,62.2 62 %,0-0,,,37 ±411,120 ±77,-1.2,1824,31,Bournemouth,Burnley,2026-10-07T03:00:40.730019+00:00,retrospective_rating_match_history
+2026-09-18,H,12 CHE Chelsea,-36 ±81,40,50.6 51 %,3-0,,,308 ±355,-19 ±79,8.9,1862,20,Brentford,Chelsea,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-09-15,A,673 REA Reading,332 ±84,41,84.2 84 %,2-1,,,466 ±513,335 ±83,1.7,1852,22,Brentford,ENG,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-09-12,A,19 BOU Bournemouth,-11 ±84,41,42.6 43 %,2-2,,,41 ±411,-9 ±82,0.7,1850,22,Brentford,Bournemouth,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-09-05,H,80 SUN Sunderland,121 ±85,40,71.6 72 %,1-1,,,-40 ±411,115 ±83,-3.3,1847,22,Brentford,Sunderland,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-08-30,A,35 LEE Leeds,42 ±84,36,50.8 51 %,1-1,,,36 ±411,42 ±82,-0.1,1850,20,Brentford,Leeds,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-08-25,A,300 BIR Birmingham,224 ±86,38,74.5 74 %,6-1,,,418 ±324,237 ±83,7.0,1849,20,Brentford,Birmingham,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-08-22,H,39 TOT Tottenham,21 ±84,38,58.4 58 %,3-0,,,313 ±359,36 ±82,7.0,1843,22,Brentford,Tottenham,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-05-24,A,8 LIV Liverpool,-94 ±76,38,31.8 32 %,1-1,,,38 ±411,-90 ±75,2.5,1836,24,Brentford,Liverpool,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-05-17,H,28 CRY Crystal Palace,9 ±76,37,56.6 57 %,2-2,,,-37 ±411,7 ±74,-1.5,1833,24,Brentford,CrystalPalace,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-05-09,A,3 MCI Man City,-175 ±75,38,22.6 23 %,0-3,,,-352 ±377,-182 ±74,-3.8,1834,26,Brentford,ManCity,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-05-02,H,57 WHU West Ham,59 ±78,40,63.8 64 %,3-0,,,317 ±362,70 ±76,5.7,1837,27,Brentford,WestHam,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-04-27,A,13 MNU Man United,-44 ±79,40,38.2 38 %,1-2,,,-314 ±475,-51 ±78,-3.6,1831,27,Brentford,ManUnited,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-04-18,H,36 FUL Fulham,34 ±79,42,60.7 61 %,0-0,,,-42 ±411,31 ±78,-1.2,1835,27,Brentford,Fulham,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-04-11,H,30 EVE Everton,14 ±79,39,57.6 58 %,2-2,,,-39 ±411,12 ±77,-0.4,1836,27,Brentford,Everton,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-03-21,A,56 LEE Leeds,63 ±78,34,54.1 54 %,0-0,,,34 ±411,62 ±76,0.1,1836,26,Brentford,Leeds,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-03-16,H,84 WOL Wolves,107 ±77,35,69.3 69 %,2-2,,,-35 ±411,102 ±76,-2.4,1835,25,Brentford,Wolves,2026-10-07T03:00:42.299981+00:00,retrospective_rating_match_history
+2026-09-19,H,2 ARS Arsenal,-176 ±80,40,31.4 31 %,3-0,,,324 ±338,-150 ±78,14.0,1891,12,Brighton & Hove Albion,Arsenal,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-09-16,A,13 MNU Man United,-15 ±82,39,42.3 42 %,3-2,,,390 ±459,-2 ±81,6.4,1876,16,Brighton & Hove Albion,ManUnited,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-09-13,A,149 COV Coventry,170 ±85,41,67.8 68 %,5-0,,,405 ±322,186 ±82,,1869,17,Brighton & Hove Albion,Coventry,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-09-05,H,35 LEE Leeds,55 ±83,40,63.3 63 %,1-1,,,-40 ±411,52 ±81,-2.3,1861,17,Brighton & Hove Albion,Leeds,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-08-30,A,11 CHE Chelsea,-16 ±81,36,42.5 42 %,3-4,,,-314 ±471,-25 ±80,-4.5,1864,16,Brighton & Hove Albion,Chelsea,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-08-27,H,368 TRO Tromsø,274 ±87,76,88.2 88 %,4-0,,,382 ±367,280 ±85,3.1,1868,17,Brighton & Hove Albion,Tromso,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-08-23,H,10 AVL Aston Villa,-49 ±83,37,48.3 48 %,4-0,,,310 ±326,-27 ±80,11.3,1864,17,Brighton & Hove Albion,AstonVilla,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-08-20,A,356 TRO Tromsø,274 ±89,75,75.9 76 %,0-0,,,75 ±411,265 ±87,-4.4,1854,19,Brighton & Hove Albion,Tromso,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-05-24,H,10 MNU Man United,-22 ±79,38,52.4 52 %,0-3,,,-386 ±351,-39 ±77,-8.6,1858,17,Brighton & Hove Albion,ManUnited,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-05-17,A,41 LEE Leeds,79 ±78,37,56.0 56 %,0-1,,,-312 ±457,68 ±77,-6.1,1866,17,Brighton & Hove Albion,Leeds,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-05-09,H,96 WOL Wolves,151 ±78,38,74.8 75 %,3-0,,,343 ±371,159 ±77,4.0,1872,16,Brighton & Hove Albion,Wolves,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-05-02,A,15 NEW Newcastle,1 ±76,40,44.4 44 %,1-3,,,-309 ±396,-10 ±75,-6.1,1868,17,Brighton & Hove Albion,Newcastle,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-04-21,H,11 CHE Chelsea,-29 ±75,37,51.2 51 %,3-0,,,310 ±354,-14 ±73,8.1,1874,17,Brighton & Hove Albion,Chelsea,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-04-18,A,37 TOT Tottenham,63 ±77,42,53.0 53 %,2-2,,,42 ±411,63 ±75,-0.3,1866,17,Brighton & Hove Albion,Tottenham,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-04-11,A,116 BUR Burnley,160 ±79,39,66.7 67 %,2-0,,,400 ±399,169 ±78,4.9,1867,17,Brighton & Hove Albion,Burnley,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-03-21,H,7 LIV Liverpool,-96 ±74,34,41.1 41 %,2-1,,,317 ±456,-86 ±73,6.3,1861,18,Brighton & Hove Albion,Liverpool,2026-10-07T03:00:43.305348+00:00,retrospective_rating_match_history
+2026-09-18,A,20 BRE Brentford,36 ±81,40,49.4 49 %,0-3,,,-308 ±355,19 ±79,-8.0,1881,12,Chelsea,Brentford,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-09-12,H,238 HUL Hull,263 ±81,41,85.2 85 %,2-2,,,-41 ±411,251 ±80,-5.6,1887,12,Chelsea,Hull,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-09-09,H,37 LEE Leeds,75 ±81,40,66.0 66 %,6-3,,,320 ±364,87 ±79,6.0,1892,10,Chelsea,Leeds,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-09-06,A,1 ARS Arsenal,-152 ±79,40,24.9 25 %,1-2,,,-342 ±487,-157 ±78,-2.4,1885,11,Chelsea,Arsenal,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-08-30,H,16 BRI Brighton,16 ±81,36,57.5 58 %,4-3,,,314 ±471,25 ±80,3.9,1888,11,Chelsea,Brighton,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-08-27,H,463 LUT Luton,318 ±83,34,88.3 88 %,2-0,,,425 ±441,322 ±82,2.1,1884,12,Chelsea,Luton,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-08-24,A,40 FUL Fulham,69 ±84,39,54.3 54 %,3-2,,,387 ±465,79 ±82,4.5,1881,12,Chelsea,Fulham,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-05-24,A,86 SUN Sunderland,164 ±75,38,67.3 67 %,1-2,,,-324 ±444,150 ±74,-6.5,1877,13,Chelsea,Sunderland,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-05-19,H,35 TOT Tottenham,68 ±74,38,64.8 65 %,2-1,,,320 ±482,74 ±73,2.7,1884,13,Chelsea,Tottenham,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-05-16,N,3 MCI Man City,-135 ±71,0,31.5 32 %,0-1,,,-365 ±484,-140 ±70,-2.4,1882,13,Chelsea,ManCity,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-05-09,A,8 LIV Liverpool,-53 ±72,38,37.2 37 %,1-1,,,38 ±411,-50 ±71,1.3,1884,12,Chelsea,Liverpool,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-05-04,H,31 FOR Forest,77 ±72,38,66.0 66 %,1-3,,,-398 ±377,60 ±71,-8.1,1882,12,Chelsea,Forest,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-04-26,N,48 LEE Leeds,97 ±74,0,63.6 64 %,1-0,,,356 ±477,103 ±73,2.8,1890,11,Chelsea,Leeds,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-04-21,A,17 BRI Brighton,29 ±75,37,48.8 49 %,0-3,,,-310 ±354,14 ±73,-6.4,1888,11,Chelsea,Brighton,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-04-18,H,14 MNU Man United,28 ±76,42,59.9 60 %,0-1,,,-394 ±459,17 ±75,-5.1,1895,11,Chelsea,ManUnited,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-04-12,H,3 MCI Man City,-99 ±71,40,41.6 42 %,0-3,,,-391 ±360,-110 ±70,-5.6,1900,10,Chelsea,ManCity,2026-10-07T03:00:44.264067+00:00,retrospective_rating_match_history
+2026-09-19,A,40 FOR Forest,-134 ±82,40,26.8 27 %,1-0,,,417 ±443,-116 ±81,10.0,1690,131,Coventry City,Forest,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-09-16,H,12 AVL Aston Villa,-201 ±82,39,28.3 28 %,1-3,,,-411 ±409,-209 ±81,-4.2,1679,158,Coventry City,AstonVilla,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-09-13,H,17 BRI Brighton,-170 ±85,41,32.2 32 %,0-5,,,-405 ±322,-186 ±82,,1684,149,Coventry City,Brighton,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-09-05,A,3 MCI Man City,-323 ±83,40,11.0 11 %,0-1,,,-426 ±525,-325 ±82,0.2,1690,131,Coventry City,ManCity,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-08-29,H,257 HUL Hull,77 ±82,34,65.5 65 %,0-1,,,-393 ±449,62 ±81,-6.7,1690,129,Coventry City,Hull,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-08-25,A,574 PLY Plymouth,152 ±84,38,65.7 66 %,4-2,,,398 ±405,162 ±82,4.3,1697,119,Coventry City,ENG,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-08-21,A,2 ARS Arsenal,-342 ±83,38,10.1 10 %,0-3,,,-438 ±396,-346 ±82,-2.2,1690,132,Coventry City,Arsenal,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-05-02,A,577 WAT Watford,143 ±75,40,64.4 64 %,4-0,,,397 ±336,155 ±73,5.8,1690,127,Coventry City,ENG,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-04-26,H,284 WRE Wrexham,63 ±75,40,64.3 64 %,3-1,,,318 ±401,71 ±74,4.2,1684,140,Coventry City,Wrexham,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-04-21,H,513 POR Portsmouth,122 ±75,37,71.4 71 %,5-1,,,334 ±341,132 ±73,5.2,1680,144,Coventry City,Portsmouth,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-04-17,A,446 BLA Blackburn,112 ±75,42,59.9 60 %,1-1,,,42 ±411,110 ±74,-1.1,1675,155,Coventry City,Blackburn,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-04-11,H,SHW Sheffield Weds,234 ±75,39,82.8 83 %,0-0,,,-39 ±411,225 ±74,-4.3,1676,151,Coventry City,ENG,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-04-06,A,358 HUL Hull,91 ±75,41,57.1 57 %,0-0,,,41 ±411,89 ±74,-0.6,1680,148,Coventry City,Hull,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-04-03,H,354 DER Derby,84 ±76,40,67.1 67 %,3-2,,,322 ±475,90 ±75,3.2,1679,149,Coventry City,Derby,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-03-21,A,437 SWA Swansea,96 ±75,34,58.9 59 %,3-0,,,385 ±356,109 ±73,6.4,1676,157,Coventry City,Swansea,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-03-14,H,200 SOU Southampton,26 ±75,37,58.9 59 %,1-2,,,-388 ±457,15 ±74,-4.9,1669,175,Coventry City,Southampton,2026-10-07T03:00:45.299524+00:00,retrospective_rating_match_history
+2026-09-20,A,32 LEE Leeds,6 ±80,42,44.9 45 %,0-0,,,42 ±411,8 ±79,0.9,1824,28,Crystal Palace,Leeds,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-09-17,H,169 LEC Lech,144 ±82,78,78.2 78 %,4-0,,,315 ±351,152 ±80,4.9,1824,28,Crystal Palace,Lech,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-09-12,H,115 IPS Ipswich,137 ±82,41,73.6 74 %,2-3,,,-418 ±442,119 ±81,-9.0,1818,32,Crystal Palace,Ipswich,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-09-08,H,212 MID Middlesbrough,170 ±82,39,77.0 77 %,3-0,,,349 ±371,179 ±80,5.3,1826,30,Crystal Palace,Middlesbrough,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-09-05,A,46 FUL Fulham,16 ±83,40,46.6 47 %,3-2,,,388 ±453,28 ±81,5.5,1820,31,Crystal Palace,Fulham,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-08-28,H,3 MCI Man City,-187 ±79,35,29.3 29 %,1-4,,,-404 ±364,-197 ±77,-5.1,1815,33,Crystal Palace,ManCity,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-08-22,A,36 EVE Everton,25 ±84,38,48.1 48 %,0-2,,,-310 ±381,9 ±82,-7.7,1819,31,Crystal Palace,Everton,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-05-27,N,67 RAY Rayo Vallecano,72 ±76,0,60.1 60 %,1-0,,,352 ±461,79 ±75,3.7,1827,27,Crystal Palace,RayoVallecano,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-05-24,H,2 ARS Arsenal,-200 ±73,38,28.3 28 %,1-2,,,-410 ±474,-204 ±72,-2.5,1823,28,Crystal Palace,Arsenal,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-05-17,A,24 BRE Brentford,-9 ±76,37,43.4 43 %,2-2,,,37 ±411,-7 ±74,0.6,1826,28,Crystal Palace,Brentford,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-05-13,A,3 MCI Man City,-188 ±72,37,21.5 22 %,0-3,,,-358 ±373,-194 ±71,-3.1,1825,30,Crystal Palace,ManCity,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-05-10,H,32 EVE Everton,12 ±77,38,57.2 57 %,2-2,,,-38 ±411,10 ±76,-0.8,1828,27,Crystal Palace,Everton,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-05-07,H,129 SHA Shakhtar,135 ±80,74,76.8 77 %,2-1,,,314 ±487,139 ±79,2.1,1829,28,Crystal Palace,Shakhtar,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-05-03,A,21 BOU Bournemouth,-8 ±77,38,43.5 43 %,0-3,,,-311 ±352,-22 ±76,-6.5,1827,28,Crystal Palace,Bournemouth,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-04-30,A,130 SHA Shakhtar,133 ±81,73,58.6 59 %,3-1,,,424 ±389,146 ±80,5.4,1833,27,Crystal Palace,Shakhtar,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-04-25,A,8 LIV Liverpool,-104 ±73,35,31.0 31 %,1-3,,,-331 ±400,-111 ±72,-3.5,1828,29,Crystal Palace,Liverpool,2026-10-07T03:00:46.700646+00:00,retrospective_rating_match_history
+2026-09-19,H,125 IPS Ipswich,127 ±84,40,72.4 72 %,1-0,,,334 ±482,133 ±82,2.7,1827,27,Everton,Ipswich,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-09-16,H,88 WOL Wolves,94 ±82,39,68.3 68 %,1-0,,,325 ±474,101 ±81,3.8,1823,29,Everton,Wolves,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-09-12,A,37 TOT Tottenham,13 ±83,41,46.0 46 %,0-0,,,41 ±411,14 ±81,-0.2,1819,30,Everton,Tottenham,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-09-06,H,13 MNU Man United,-68 ±85,40,45.9 46 %,2-2,,,-40 ±411,-67 ±83,0.5,1817,32,Everton,ManUnited,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-08-29,A,19 BOU Bournemouth,-38 ±86,34,39.7 40 %,1-1,,,34 ±411,-35 ±84,1.2,1817,32,Everton,Bournemouth,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-08-26,A,567 PRE Preston,268 ±86,34,79.4 79 %,4-0,,,432 ±346,278 ±84,5.0,1815,33,Everton,ENG,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-08-22,H,31 CRY Crystal Palace,-25 ±84,38,51.9 52 %,2-0,,,310 ±381,-9 ±82,7.3,1809,36,Everton,CrystalPalace,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-05-24,A,34 TOT Tottenham,-4 ±77,38,44.0 44 %,0-1,,,-311 ±464,-12 ±76,-4.2,1802,40,Everton,Tottenham,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-05-17,H,89 SUN Sunderland,110 ±79,37,69.9 70 %,1-3,,,-405 ±366,87 ±77,-12.1,1806,36,Everton,Sunderland,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-05-10,A,27 CRY Crystal Palace,-12 ±77,38,42.8 43 %,2-2,,,38 ±411,-10 ±76,0.9,1818,32,Everton,CrystalPalace,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-05-04,H,4 MCI Man City,-201 ±76,38,28.1 28 %,3-3,,,-38 ±411,-196 ±75,3.0,1817,33,Everton,ManCity,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-04-25,A,56 WHU West Ham,52 ±79,35,52.4 52 %,1-2,,,-313 ±453,41 ±78,-5.4,1813,33,Everton,WestHam,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-04-19,H,8 LIV Liverpool,-109 ±76,37,39.7 40 %,1-2,,,-389 ±464,-117 ±75,-4.4,1819,32,Everton,Liverpool,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-04-11,A,27 BRE Brentford,-14 ±79,39,42.4 42 %,2-2,,,39 ±411,-12 ±77,1.1,1824,30,Everton,Brentford,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-03-21,H,10 CHE Chelsea,-101 ±75,34,40.5 41 %,3-0,,,318 ±342,-82 ±73,11.2,1822,31,Everton,Chelsea,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-03-14,A,1 ARS Arsenal,-228 ±75,37,17.9 18 %,0-2,,,-376 ±414,-233 ±74,-2.2,1810,34,Everton,Arsenal,2026-10-07T03:00:47.216584+00:00,retrospective_rating_match_history
+2026-09-20,H,15 MNU Man United,-74 ±84,42,45.4 45 %,1-1,,,-42 ±411,-73 ±82,0.8,1807,38,Fulham,ManUnited,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-09-15,A,52 WHU West Ham,15 ±82,41,46.4 46 %,3-2,,,389 ±459,27 ±81,6.3,1805,40,Fulham,WestHam,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-09-12,A,8 LIV Liverpool,-136 ±83,41,26.6 27 %,0-0,,,41 ±411,-129 ±81,3.2,1798,43,Fulham,Liverpool,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-09-05,H,31 CRY Crystal Palace,-16 ±83,40,53.4 53 %,2-3,,,-388 ±453,-28 ±81,-6.5,1792,46,Fulham,CrystalPalace,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-08-30,A,82 SUN Sunderland,84 ±86,36,56.7 57 %,0-1,,,-313 ±448,70 ±84,-6.8,1799,42,Fulham,Sunderland,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-08-27,H,AFC AFC Wimbledon,395 ±86,34,92.2 92 %,3-0,,,474 ±402,399 ±85,2.2,1806,39,Fulham,ENG,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-08-24,H,12 CHE Chelsea,-69 ±84,39,45.7 46 %,2-3,,,-387 ±465,-79 ±82,-5.5,1803,40,Fulham,Chelsea,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-05-24,H,15 NEW Newcastle,-81 ±77,38,43.9 44 %,2-0,,,311 ±385,-66 ±75,8.2,1809,37,Fulham,Newcastle,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-05-17,A,97 WOL Wolves,89 ±79,37,57.4 57 %,1-1,,,37 ±411,87 ±77,-1.5,1801,39,Fulham,Wolves,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-05-09,H,20 BOU Bournemouth,-42 ±80,38,49.4 49 %,0-1,,,-386 ±462,-52 ±78,-5.1,1802,40,Fulham,Bournemouth,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-05-02,A,2 ARS Arsenal,-208 ±76,40,19.4 19 %,0-3,,,-365 ±375,-214 ±74,-3.5,1806,38,Fulham,Arsenal,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-04-25,H,10 AVL Aston Villa,-99 ±77,35,40.9 41 %,1-0,,,316 ±453,-87 ±76,6.2,1810,34,Fulham,AstonVilla,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-04-18,A,27 BRE Brentford,-34 ±79,42,39.3 39 %,0-0,,,42 ±411,-31 ±78,1.3,1803,36,Fulham,Brentford,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-04-11,A,7 LIV Liverpool,-130 ±76,39,27.4 27 %,0-2,,,-335 ±409,-137 ±75,-3.5,1803,36,Fulham,Liverpool,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-03-21,H,109 BUR Burnley,96 ±78,34,67.8 68 %,3-1,,,329 ±399,104 ±77,5.0,1805,38,Fulham,Burnley,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-03-15,A,53 FOR Forest,25 ±76,34,48.6 49 %,0-0,,,34 ±411,25 ±75,0.2,1799,41,Fulham,Forest,2026-10-07T03:00:48.652601+00:00,retrospective_rating_match_history
+2026-09-19,A,27 EVE Everton,-127 ±84,40,27.6 28 %,0-1,,,-334 ±482,-133 ±82,-2.7,1695,125,Ipswich Town,Everton,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-09-15,H,1 ARS Arsenal,-350 ±81,41,14.4 14 %,2-4,,,-475 ±427,-354 ±80,-2.4,1697,119,Ipswich Town,Arsenal,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-09-12,A,32 CRY Crystal Palace,-137 ±82,41,26.4 26 %,3-2,,,418 ±442,-119 ±81,10.4,1700,115,Ipswich Town,CrystalPalace,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-09-04,H,8 LIV Liverpool,-230 ±83,40,25.1 25 %,0-2,,,-421 ±416,-237 ±81,-3.9,1689,133,Ipswich Town,Liverpool,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-08-30,A,13 MNU Man United,-185 ±86,36,21.9 22 %,2-5,,,-357 ±380,-193 ±84,-3.9,1692,129,Ipswich Town,ManUnited,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-08-25,H,379 LEI Leicester,102 ±83,38,69.1 69 %,3-1,,,328 ±406,111 ±81,4.0,1695,123,Ipswich Town,Leicester,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-08-22,H,88 SUN Sunderland,-44 ±86,38,49.1 49 %,2-1,,,309 ±454,-32 ±84,7.7,1691,133,Ipswich Town,Sunderland,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-05-02,H,497 QPR QPR,121 ±74,40,71.6 72 %,3-0,,,332 ±369,129 ±73,4.0,1682,141,Ipswich Town,QPR,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-04-28,A,132 SOU Southampton,-12 ±74,40,42.5 43 %,2-2,,,40 ±411,-10 ±73,0.9,1677,151,Ipswich Town,Southampton,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-04-25,A,414 WBA West Brom,107 ±75,35,60.2 60 %,0-0,,,35 ±411,104 ±74,-1.1,1677,155,Ipswich Town,WestBrom,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-04-22,A,591 CHA Charlton,138 ±75,36,64.3 64 %,2-1,,,393 ±473,144 ±74,3.1,1678,151,Ipswich Town,ENG,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-04-19,H,257 MID Middlesbrough,54 ±76,37,62.8 63 %,2-2,,,-37 ±411,51 ±75,-1.8,1675,156,Ipswich Town,Middlesbrough,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-04-14,A,514 POR Portsmouth,146 ±76,40,64.7 65 %,0-2,,,-318 ±378,128 ±74,-9.4,1676,151,Ipswich Town,Portsmouth,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-04-11,A,318 NOR Norwich,74 ±76,39,55.0 55 %,2-0,,,388 ±394,85 ±74,5.7,1685,137,Ipswich Town,Norwich,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-04-06,H,344 BIR Birmingham,78 ±76,41,66.5 67 %,2-1,,,320 ±475,84 ±75,2.9,1679,149,Ipswich Town,Birmingham,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-03-21,H,246 MIL Millwall,45 ±75,34,61.2 61 %,1-1,,,-34 ±411,43 ±73,-0.9,1675,158,Ipswich Town,Millwall,2026-10-07T03:00:50.051430+00:00,retrospective_rating_match_history
+2026-09-19,A,15 NEW Newcastle,-243 ±82,40,16.4 16 %,1-2,,,-381 ±508,-246 ±81,-0.8,1635,243,Hull City,Newcastle,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-09-12,A,12 CHE Chelsea,-263 ±81,41,14.8 15 %,2-2,,,41 ±411,-251 ±80,6.5,1636,238,Hull City,Chelsea,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-09-08,A,74 SUN Sunderland,-99 ±84,39,31.1 31 %,0-1,,,-326 ±470,-106 ±83,-3.6,1630,250,Hull City,Sunderland,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-09-05,H,13 AVL Aston Villa,-261 ±83,40,21.8 22 %,0-0,,,-40 ±411,-253 ±81,5.7,1633,242,Hull City,AstonVilla,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-08-29,A,129 COV Coventry,-77 ±82,34,34.5 35 %,1-0,,,393 ±449,-62 ±81,8.1,1627,257,Hull City,Coventry,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-08-25,A,583 STO Stoke,88 ±82,38,57.1 57 %,1-1,,,38 ±411,86 ±81,-1.5,1620,278,Hull City,ENG,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-08-22,H,12 MNU Man United,-295 ±87,38,18.6 19 %,2-0,,,370 ±370,-260 ±85,18.3,1621,271,Hull City,ManUnited,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-05-23,N,251 MID Middlesbrough,-35 ±75,38,50.4 50 %,1-0,,,310 ±459,-26 ±74,4.4,1601,322,Hull City,Middlesbrough,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-05-11,A,228 MIL Millwall,-58 ±73,37,36.6 37 %,2-0,,,393 ±374,-41 ±72,8.5,1596,338,Hull City,Millwall,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-05-08,H,211 MIL Millwall,-59 ±74,38,47.0 47 %,0-0,,,-38 ±411,-58 ±73,0.3,1588,358,Hull City,Millwall,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-05-02,H,312 NOR Norwich,-27 ±75,40,51.8 52 %,2-1,,,308 ±464,-19 ±74,3.9,1587,361,Hull City,Norwich,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-04-25,A,563 CHA Charlton,54 ±75,35,52.8 53 %,1-2,,,-313 ±455,45 ±74,-4.8,1583,373,Hull City,ENG,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-04-21,A,344 LEI Leicester,-6 ±76,37,43.8 44 %,2-2,,,37 ±411,-4 ±74,0.8,1588,354,Hull City,Leicester,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-04-18,H,309 BIR Birmingham,-14 ±75,42,54.0 54 %,1-1,,,-42 ±411,-15 ±74,-0.1,1588,356,Hull City,Birmingham,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-04-11,A,278 SHU Sheffield United,-19 ±75,39,41.7 42 %,1-2,,,-312 ±468,-27 ±75,-3.4,1588,359,Hull City,SheffieldUnited,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-04-06,H,148 COV Coventry,-91 ±75,41,42.9 43 %,0-0,,,-41 ±411,-89 ±74,1.1,1591,358,Hull City,Coventry,2026-10-07T03:00:50.120444+00:00,retrospective_rating_match_history
+2026-09-20,H,28 CRY Crystal Palace,-6 ±80,42,55.1 55 %,0-0,,,-42 ±411,-8 ±79,-0.9,1817,32,Leeds United,CrystalPalace,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-09-14,H,15 NEW Newcastle,-80 ±82,40,44.2 44 %,4-1,,,309 ±349,-60 ±80,10.4,1816,35,Leeds United,Newcastle,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-09-09,A,10 CHE Chelsea,-75 ±81,40,34.0 34 %,3-6,,,-320 ±364,-87 ±79,-5.6,1806,37,Leeds United,Chelsea,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-09-05,A,17 BRI Brighton,-55 ±83,40,36.7 37 %,1-1,,,40 ±411,-52 ±81,2.1,1810,35,Leeds United,Brighton,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-08-30,H,20 BRE Brentford,-42 ±84,36,49.2 49 %,1-1,,,-36 ±411,-42 ±82,0.2,1808,35,Leeds United,Brentford,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-08-25,A,42 FOR Forest,-10 ±82,38,43.1 43 %,2-0,,,388 ±380,8 ±80,9.8,1807,36,Leeds United,Forest,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-08-22,A,38 FOR Forest,-24 ±83,38,41.1 41 %,1-0,,,389 ±451,-11 ±81,6.7,1797,42,Leeds United,Forest,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-05-24,A,54 WHU West Ham,38 ±77,38,49.9 50 %,0-3,,,-309 ±350,22 ±76,-7.9,1791,45,Leeds United,WestHam,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-05-17,H,17 BRI Brighton,-79 ±78,37,44.0 44 %,1-0,,,312 ±457,-68 ±77,5.3,1798,41,Leeds United,Brighton,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-05-11,A,36 TOT Tottenham,-22 ±77,37,41.6 42 %,1-1,,,37 ±411,-20 ±75,1.0,1793,44,Leeds United,Tottenham,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-05-01,H,133 BUR Burnley,97 ±78,39,68.7 69 %,3-1,,,326 ±400,105 ±76,4.1,1792,43,Leeds United,Burnley,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-04-26,N,11 CHE Chelsea,-97 ±74,0,36.4 36 %,0-1,,,-356 ±477,-103 ±73,-3.3,1787,48,Leeds United,Chelsea,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-04-22,A,24 BOU Bournemouth,-53 ±79,36,37.5 37 %,2-2,,,36 ±411,-50 ±78,1.5,1791,42,Leeds United,Bournemouth,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-04-18,H,91 WOL Wolves,57 ±78,42,63.8 64 %,3-0,,,315 ±359,68 ±77,6.1,1790,45,Leeds United,Wolves,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-04-13,A,16 MNU Man United,-104 ±79,41,30.3 30 %,2-1,,,408 ±448,-88 ±78,7.6,1784,48,Leeds United,ManUnited,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-04-05,A,64 WHU West Ham,18 ±79,41,46.6 47 %,2-2,,W,41 ±411,18 ±77,0.5,1775,56,Leeds United,WestHam,2026-10-07T03:00:51.708864+00:00,retrospective_rating_match_history
+2026-09-20,A,20 BOU Bournemouth,67 ±82,42,53.5 54 %,1-0,,,390 ±467,76 ±81,4.7,1937,8,Liverpool,Bournemouth,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-09-15,H,43 TOT Tottenham,121 ±80,41,71.8 72 %,3-1,,,332 ±411,129 ±79,4.0,1932,8,Liverpool,Tottenham,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-09-12,H,43 FUL Fulham,136 ±83,41,73.4 73 %,0-0,,,-41 ±411,129 ±81,-3.5,1927,8,Liverpool,Fulham,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-09-09,H,12 ATM Atlético,35 ±82,77,65.6 66 %,2-1,,,283 ±481,42 ±80,3.7,1930,8,Liverpool,atletico,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-09-04,A,133 IPS Ipswich,230 ±83,40,74.9 75 %,2-0,,,421 ±416,237 ±81,3.4,1926,8,Liverpool,Ipswich,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-08-29,H,41 FOR Forest,125 ±80,34,71.3 71 %,2-2,,,-34 ±411,119 ±79,-2.8,1922,8,Liverpool,Forest,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-08-23,A,14 NEW Newcastle,51 ±81,37,51.9 52 %,2-2,,,37 ±411,50 ±80,-0.3,1924,8,Liverpool,Newcastle,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-05-24,H,24 BRE Brentford,94 ±76,38,68.2 68 %,1-1,,,-38 ±411,90 ±75,-2.1,1925,8,Liverpool,Brentford,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-05-15,A,10 AVL Aston Villa,45 ±73,37,51.1 51 %,2-4,,,-310 ±388,33 ±72,-6.1,1928,8,Liverpool,AstonVilla,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-05-09,H,12 CHE Chelsea,53 ±72,38,62.8 63 %,1-1,,,-38 ±411,50 ±71,-1.5,1934,8,Liverpool,Chelsea,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-05-03,A,11 MNU Man United,57 ±76,38,52.7 53 %,2-3,,,-310 ±463,47 ±75,-4.4,1935,8,Liverpool,ManUnited,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-04-25,H,29 CRY Crystal Palace,104 ±73,35,69.0 69 %,3-1,,,331 ±400,111 ±72,3.8,1940,8,Liverpool,CrystalPalace,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-04-19,A,32 EVE Everton,109 ±76,37,60.3 60 %,2-1,,,389 ±464,117 ±75,3.0,1935,8,Liverpool,Everton,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-04-14,H,5 PSG Paris SG,-27 ±74,73,56.6 57 %,0-2,,,-423 ±386,-41 ±73,-7.0,1933,8,Liverpool,ParisSG,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-04-11,H,36 FUL Fulham,130 ±76,39,72.6 73 %,2-0,,,335 ±409,137 ±75,3.5,1940,7,Liverpool,Fulham,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-04-08,A,6 PSG Paris SG,-24 ±75,72,36.5 36 %,0-2,,,-284 ±403,-33 ±74,-4.2,1935,8,Liverpool,ParisSG,2026-10-07T03:00:52.694548+00:00,retrospective_rating_match_history
+2026-09-20,H,73 SUN Sunderland,287 ±81,42,86.9 87 %,5-3,,,403 ±426,291 ±79,1.7,2028,3,Manchester City,Sunderland,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-09-17,H,278 NOR Norwich,404 ±81,39,92.8 93 %,5-0,,,479 ±363,408 ±79,2.5,2027,3,Manchester City,Norwich,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-09-13,A,13 MNU Man United,132 ±81,41,62.8 63 %,1-0,,,397 ±477,140 ±80,,2024,3,Manchester City,ManUnited,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-09-08,A,29 POR Porto,182 ±84,77,64.7 65 %,2-0,,,435 ±394,193 ±82,6.2,2020,3,Manchester City,porto,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-09-05,H,131 COV Coventry,323 ±83,40,89.0 89 %,1-0,,,426 ±525,325 ±82,1.0,2014,3,Manchester City,Coventry,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-08-28,A,33 CRY Crystal Palace,187 ±79,35,70.7 71 %,4-1,,,404 ±364,197 ±77,4.7,2012,3,Manchester City,CrystalPalace,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-08-23,H,19 BOU Bournemouth,148 ±83,37,74.5 74 %,2-1,,,343 ±490,154 ±82,2.3,2006,3,Manchester City,Bournemouth,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-08-16,N,2 ARS Arsenal,-14 ±79,0,48.0 48 %,0-3,,,-348 ±348,-30 ±77,-8.4,2005,3,Manchester City,Arsenal,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-05-24,H,9 AVL Aston Villa,120 ±72,38,71.3 71 %,1-2,,,-409 ±446,106 ±71,-6.6,2013,3,Manchester City,AstonVilla,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-05-19,A,18 BOU Bournemouth,167 ±76,38,67.8 68 %,1-1,,,38 ±411,163 ±75,-1.8,2019,3,Manchester City,Bournemouth,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-05-16,N,13 CHE Chelsea,135 ±71,0,68.5 68 %,1-0,,,365 ±484,140 ±70,2.5,2021,3,Manchester City,Chelsea,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-05-13,H,30 CRY Crystal Palace,188 ±72,37,78.5 78 %,3-0,,,358 ±373,194 ±71,3.0,2019,3,Manchester City,CrystalPalace,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-05-09,H,26 BRE Brentford,175 ±75,38,77.4 77 %,3-0,,,352 ±377,182 ±74,2.9,2016,3,Manchester City,Brentford,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-05-04,A,33 EVE Everton,201 ±76,38,71.9 72 %,3-3,,,38 ±411,196 ±75,-2.5,2013,4,Manchester City,Everton,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-04-25,N,134 SOU Southampton,324 ±74,0,86.6 87 %,2-1,,,443 ±518,326 ±73,1.4,2015,3,Manchester City,Southampton,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-04-22,A,127 BUR Burnley,320 ±75,36,83.7 84 %,1-0,,,458 ±505,323 ±74,1.3,2013,3,Manchester City,Burnley,2026-10-07T03:00:53.620442+00:00,retrospective_rating_match_history
+2026-09-20,A,38 FUL Fulham,74 ±84,42,54.6 55 %,1-1,,,42 ±411,73 ±82,-0.6,1879,15,Manchester United,Fulham,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-09-16,H,16 BRI Brighton,15 ±82,39,57.7 58 %,2-3,,,-390 ±459,2 ±81,-6.0,1879,13,Manchester United,Brighton,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-09-13,H,3 MCI Man City,-132 ±81,41,37.2 37 %,0-1,,,-397 ±477,-140 ±80,,1884,13,Manchester United,ManCity,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-09-10,H,470 SAB Sabah FK,322 ±89,78,90.9 91 %,4-0,,,411 ±379,327 ±87,2.2,1888,13,Manchester United,AZE,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-09-06,A,32 EVE Everton,68 ±85,40,54.1 54 %,2-2,,,40 ±411,67 ±83,-0.7,1884,13,Manchester United,Everton,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-08-30,H,129 IPS Ipswich,185 ±86,36,78.1 78 %,5-2,,,357 ±380,193 ±84,4.2,1885,13,Manchester United,Ipswich,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-08-22,A,271 HUL Hull,295 ±87,38,81.4 81 %,0-2,,,-370 ±370,260 ±85,-18.1,1879,12,Manchester United,Hull,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-05-24,A,17 BRI Brighton,22 ±79,38,47.6 48 %,3-0,,,386 ±351,39 ±77,9.0,1897,10,Manchester United,Brighton,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-05-17,H,33 FOR Forest,67 ±76,37,64.6 65 %,3-2,,,321 ±475,74 ±75,3.0,1888,11,Manchester United,Forest,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-05-09,A,101 SUN Sunderland,182 ±79,38,69.6 70 %,0-0,,,38 ±411,177 ±78,-2.7,1885,11,Manchester United,Sunderland,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-05-03,H,8 LIV Liverpool,-57 ±76,38,47.3 47 %,3-2,,,310 ±463,-47 ±75,5.5,1887,11,Manchester United,Liverpool,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-04-27,H,27 BRE Brentford,44 ±79,40,61.8 62 %,2-1,,,314 ±475,51 ±78,3.7,1882,13,Manchester United,Brentford,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-04-18,A,11 CHE Chelsea,-28 ±76,42,40.1 40 %,1-0,,,394 ±459,-17 ±75,6.3,1878,14,Manchester United,Chelsea,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-04-13,H,48 LEE Leeds,104 ±79,41,69.7 70 %,1-2,,,-408 ±448,88 ±78,-7.8,1872,16,Manchester United,Leeds,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-03-20,A,30 BOU Bournemouth,55 ±78,34,53.0 53 %,2-2,,,34 ±411,54 ±77,-0.4,1879,16,Manchester United,Bournemouth,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-03-15,H,13 AVL Aston Villa,-18 ±76,34,52.4 52 %,3-1,,,313 ±390,-6 ±75,6.4,1879,15,Manchester United,AstonVilla,2026-10-07T03:00:55.092837+00:00,retrospective_rating_match_history
+2026-09-19,H,243 HUL Hull,243 ±82,40,83.6 84 %,2-1,,,381 ±508,246 ±81,1.5,1880,15,Newcastle United,Hull,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-09-14,A,35 LEE Leeds,80 ±82,40,55.8 56 %,1-4,,,-309 ±349,60 ±80,-9.8,1876,15,Newcastle United,Leeds,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-09-08,A,222 MIL Millwall,235 ±81,39,75.5 76 %,1-0,,,423 ±489,240 ±80,3.9,1885,13,Newcastle United,Millwall,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-09-05,H,19 BOU Bournemouth,30 ±83,40,60.0 60 %,2-2,,,-40 ±411,28 ±82,-1.4,1881,14,Newcastle United,Bournemouth,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-08-29,A,40 TOT Tottenham,66 ±81,34,54.6 55 %,2-0,,,382 ±398,78 ±80,6.0,1883,13,Newcastle United,Tottenham,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-08-26,H,366 WBA West Brom,282 ±84,34,86.0 86 %,3-2,,,405 ±512,285 ±83,1.8,1876,14,Newcastle United,WestBrom,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-08-23,H,8 LIV Liverpool,-51 ±81,37,48.1 48 %,2-2,,,-37 ±411,-50 ±80,0.2,1874,14,Newcastle United,Liverpool,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-05-24,A,37 FUL Fulham,81 ±77,38,56.1 56 %,0-2,,,-311 ±385,66 ±75,-6.9,1875,15,Newcastle United,Fulham,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-05-17,H,60 WHU West Ham,114 ±76,37,70.5 70 %,3-1,,,332 ±410,121 ±75,2.8,1881,13,Newcastle United,WestHam,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-05-10,A,33 FOR Forest,61 ±73,38,53.3 53 %,1-1,,,38 ±411,60 ±72,-0.3,1879,14,Newcastle United,Forest,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-05-02,H,17 BRI Brighton,-1 ±76,40,55.6 56 %,3-1,,,309 ±396,10 ±75,5.1,1878,15,Newcastle United,Brighton,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-04-25,A,2 ARS Arsenal,-141 ±73,35,26.6 27 %,0-1,,,-342 ±487,-145 ±72,-2.2,1873,17,Newcastle United,Arsenal,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-04-18,H,22 BOU Bournemouth,45 ±76,42,62.3 62 %,1-2,,,-397 ±456,33 ±75,-5.7,1875,15,Newcastle United,Bournemouth,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-04-12,A,24 CRY Crystal Palace,51 ±74,40,51.6 52 %,1-2,,,-307 ±458,42 ±73,-4.2,1882,15,Newcastle United,CrystalPalace,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-03-22,H,99 SUN Sunderland,194 ±75,38,79.1 79 %,1-2,,,-435 ±437,176 ±74,-8.2,1885,14,Newcastle United,Sunderland,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-03-18,A,3 BAR Barcelona,-113 ±74,73,25.6 26 %,2-7,,,-307 ±337,-122 ±72,-3.7,1892,11,Newcastle United,Barcelona,2026-10-07T03:00:56.547403+00:00,retrospective_rating_match_history
+2026-09-19,H,131 COV Coventry,134 ±82,40,73.2 73 %,0-1,,,-417 ±443,116 ±81,-8.7,1805,40,Nottingham Forest,Coventry,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-09-12,A,14 AVL Aston Villa,-87 ±78,41,32.4 32 %,2-1,,,404 ±445,-72 ±77,6.9,1811,35,Nottingham Forest,AstonVilla,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-09-05,H,38 TOT Tottenham,-1 ±80,40,55.5 56 %,0-0,,,-40 ±411,-2 ±79,-1.2,1803,40,Nottingham Forest,Tottenham,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-08-29,A,8 LIV Liverpool,-125 ±80,34,28.7 29 %,2-2,,,34 ±411,-119 ±79,2.8,1803,41,Nottingham Forest,Liverpool,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-08-25,H,36 LEE Leeds,10 ±82,38,56.9 57 %,0-2,,,-388 ±380,-8 ±80,-7.7,1800,42,Nottingham Forest,Leeds,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-08-22,H,42 LEE Leeds,24 ±83,38,58.9 59 %,0-1,,,-389 ±451,11 ±81,-7.1,1808,38,Nottingham Forest,Leeds,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-05-24,H,18 BOU Bournemouth,-42 ±76,38,49.5 49 %,1-1,,,-38 ±411,-42 ±75,0.4,1815,33,Nottingham Forest,Bournemouth,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-05-17,A,11 MNU Man United,-67 ±76,37,35.4 35 %,2-3,,,-321 ±475,-74 ±75,-3.5,1814,33,Nottingham Forest,ManUnited,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-05-10,H,14 NEW Newcastle,-61 ±73,38,46.7 47 %,1-1,,,-38 ±411,-60 ±72,-0.3,1817,33,Nottingham Forest,Newcastle,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-05-07,A,10 AVL Aston Villa,-64 ±72,74,31.2 31 %,0-4,,,-292 ±337,-74 ±71,-4.8,1818,32,Nottingham Forest,AstonVilla,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-05-04,A,12 CHE Chelsea,-77 ±72,38,34.0 34 %,3-1,,,398 ±377,-60 ±71,8.6,1822,31,Nottingham Forest,Chelsea,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-04-30,H,10 AVL Aston Villa,-88 ±73,73,47.9 48 %,1-0,,,274 ±456,-79 ±72,4.9,1814,33,Nottingham Forest,AstonVilla,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-04-24,A,100 SUN Sunderland,87 ±77,36,57.4 57 %,5-0,,,386 ±306,105 ±74,8.1,1809,34,Nottingham Forest,Sunderland,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-04-19,H,126 BUR Burnley,99 ±77,37,68.6 69 %,4-1,,,328 ±359,109 ±75,4.4,1801,38,Nottingham Forest,Burnley,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-04-16,H,29 POR Porto,-45 ±78,73,54.0 54 %,1-0,,,276 ±456,-36 ±77,4.3,1796,40,Nottingham Forest,porto,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-04-12,H,11 AVL Aston Villa,-106 ±74,40,40.6 41 %,1-1,,,-40 ±411,-104 ±73,1.2,1793,42,Nottingham Forest,AstonVilla,2026-10-07T03:00:58.151825+00:00,retrospective_rating_match_history
+2026-09-19,H,11 AVL Aston Villa,-85 ±79,40,43.6 44 %,1-3,,,-390 ±395,-97 ±78,-6.4,1798,44,Tottenham Hotspur,AstonVilla,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-09-15,A,8 LIV Liverpool,-121 ±80,41,28.2 28 %,1-3,,,-332 ±411,-129 ±79,-3.7,1802,43,Tottenham Hotspur,Liverpool,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-09-12,H,30 EVE Everton,-13 ±83,41,54.0 54 %,0-0,,,-41 ±411,-14 ±81,-0.8,1806,37,Tottenham Hotspur,Everton,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-09-05,A,40 FOR Forest,1 ±80,40,44.5 44 %,0-0,,,40 ±411,2 ±79,-0.0,1805,38,Tottenham Hotspur,Forest,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-08-29,H,13 NEW Newcastle,-66 ±81,34,45.4 45 %,0-2,,,-382 ±398,-78 ±80,-6.2,1805,40,Tottenham Hotspur,Newcastle,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-08-26,H,490 CHA Charlton,248 ±85,34,83.5 83 %,5-1,,,387 ±358,255 ±82,3.8,1810,36,Tottenham Hotspur,ENG,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-08-22,A,22 BRE Brentford,-21 ±84,38,41.6 42 %,0-3,,,-313 ±359,-36 ±82,-8.3,1806,39,Tottenham Hotspur,Brentford,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-05-24,H,40 EVE Everton,4 ±77,38,56.0 56 %,1-0,,,311 ±464,12 ±76,4.0,1814,34,Tottenham Hotspur,Everton,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-05-19,A,13 CHE Chelsea,-68 ±74,38,35.2 35 %,1-2,,,-320 ±482,-74 ±73,-3.0,1810,35,Tottenham Hotspur,Chelsea,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-05-11,H,44 LEE Leeds,22 ±77,37,58.4 58 %,1-1,,,-37 ±411,20 ±75,-1.0,1813,36,Tottenham Hotspur,Leeds,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-05-03,A,12 AVL Aston Villa,-85 ±74,38,33.0 33 %,2-1,,,400 ±450,-72 ±73,6.4,1814,35,Tottenham Hotspur,AstonVilla,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-04-25,A,94 WOL Wolves,82 ±76,35,56.7 57 %,1-0,,,385 ±470,89 ±75,3.9,1807,38,Tottenham Hotspur,Wolves,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-04-18,H,17 BRI Brighton,-63 ±77,42,47.0 47 %,2-2,,,-42 ±411,-63 ±75,0.2,1803,37,Tottenham Hotspur,Brighton,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-04-12,A,98 SUN Sunderland,99 ±77,40,58.4 58 %,0-1,,,-311 ±450,87 ±76,-5.3,1804,35,Tottenham Hotspur,Sunderland,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-03-22,H,44 FOR Forest,38 ±73,38,60.7 61 %,0-3,,,-390 ±344,20 ±71,-9.8,1808,36,Tottenham Hotspur,Forest,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-03-18,H,9 ATM Atlético,-115 ±74,73,43.9 44 %,3-2,,,276 ±461,-105 ±73,5.1,1817,33,Tottenham Hotspur,atletico,2026-10-07T03:00:59.962077+00:00,retrospective_rating_match_history
+2026-09-20,A,3 MCI Man City,-287 ±81,42,13.1 13 %,3-5,,,-403 ±426,-291 ±79,-2.3,1737,73,Sunderland,ManCity,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-09-16,H,137 AZ AZ,43 ±85,79,66.8 67 %,1-0,,,283 ±472,50 ±83,3.9,1739,74,Sunderland,Alkmaar,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-09-12,H,1 ARS Arsenal,-310 ±82,41,17.5 18 %,0-2,,,-455 ±411,-315 ±80,-2.6,1735,76,Sunderland,Arsenal,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-09-08,H,250 HUL Hull,99 ±84,39,68.9 69 %,1-0,,,326 ±470,106 ±83,4.4,1737,74,Sunderland,Hull,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-09-05,A,22 BRE Brentford,-121 ±85,40,28.4 28 %,1-1,,,40 ±411,-115 ±83,3.4,1732,80,Sunderland,Brentford,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-08-30,H,42 FUL Fulham,-84 ±86,36,43.3 43 %,1-0,,,313 ±448,-70 ±84,7.0,1729,82,Sunderland,Fulham,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-08-22,A,133 IPS Ipswich,44 ±86,38,50.9 51 %,1-2,,,-309 ±454,32 ±84,-5.9,1721,88,Sunderland,Ipswich,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-05-24,H,13 CHE Chelsea,-164 ±75,38,32.7 33 %,2-1,,,324 ±444,-150 ±74,7.5,1727,86,Sunderland,Chelsea,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-05-17,A,36 EVE Everton,-110 ±79,37,30.1 30 %,3-1,,,405 ±366,-87 ±77,11.0,1720,89,Sunderland,Everton,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-05-09,H,11 MNU Man United,-182 ±79,38,30.4 30 %,0-0,,,-38 ±411,-177 ±78,2.4,1708,101,Sunderland,ManUnited,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-05-02,A,95 WOL Wolves,-13 ±79,40,42.4 42 %,1-1,,,40 ±411,-11 ±77,0.7,1705,102,Sunderland,Wolves,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-04-24,H,34 FOR Forest,-87 ±77,36,42.6 43 %,0-5,,,-386 ±306,-105 ±74,-9.6,1704,100,Sunderland,Forest,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-04-19,A,10 AVL Aston Villa,-184 ±77,37,21.9 22 %,3-4,,,-356 ±485,-188 ±76,-2.7,1713,99,Sunderland,AstonVilla,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-04-12,H,35 TOT Tottenham,-99 ±77,40,41.6 42 %,1-0,,,311 ±450,-87 ±76,6.4,1716,98,Sunderland,Tottenham,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-03-22,A,14 NEW Newcastle,-194 ±75,38,20.9 21 %,2-1,,,435 ±437,-176 ±74,9.6,1708,99,Sunderland,Newcastle,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history
+2026-03-14,H,18 BRI Brighton,-150 ±78,37,34.3 34 %,0-1,,,-396 ±469,-156 ±77,-2.9,1698,116,Sunderland,Brighton,2026-10-07T03:01:01.703268+00:00,retrospective_rating_match_history

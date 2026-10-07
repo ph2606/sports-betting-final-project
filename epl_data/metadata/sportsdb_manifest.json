@@ -1,0 +1,195 @@
+{
+  "source": "sportsdb",
+  "requested_as_of_date": "2026-10-06",
+  "created_at_utc": "2026-10-07T03:04:10.331046+00:00",
+  "notes": "Current club profiles: formation year, stadium, location/capacity, website, description, provider IDs. Current fields are not historical snapshots.",
+  "requests": [
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/search_all_teams.php",
+      "parameters": {
+        "l": "English Premier League"
+      },
+      "retrieved_at_utc": "2026-10-07T03:03:22.352181+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/teams.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/search_all_teams.php?l=English+Premier+League",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 63379,
+      "status": "downloaded",
+      "sha256": "e3e95b3b38d9284404472fcce493f54a0a61841ca0ed5febbe231026adf5fbd1"
+    },
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php",
+      "parameters": {
+        "t": "Hull City"
+      },
+      "retrieved_at_utc": "2026-10-07T03:03:26.355515+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/club_Hull_City.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Hull+City",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 3919,
+      "status": "downloaded",
+      "sha256": "b957ae0ecbb8a070fc5e2a5285f01d7dc92ac6a3e5b83ebf3284a3cbe9605145"
+    },
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php",
+      "parameters": {
+        "t": "Ipswich Town"
+      },
+      "retrieved_at_utc": "2026-10-07T03:03:30.253312+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/club_Ipswich_Town.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Ipswich+Town",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 5361,
+      "status": "downloaded",
+      "sha256": "4ac9fabd44bb753a16bc9c03e452be9a0c1fc8f29aa4ceed5d8742892234bb4f"
+    },
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php",
+      "parameters": {
+        "t": "Leeds United"
+      },
+      "retrieved_at_utc": "2026-10-07T03:03:33.899285+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/club_Leeds_United.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Leeds+United",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 4515,
+      "status": "downloaded",
+      "sha256": "daeb0d04bd26e39846a44c86dccee016b935439c668d4f631cd1b1bae3e626af"
+    },
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php",
+      "parameters": {
+        "t": "Liverpool"
+      },
+      "retrieved_at_utc": "2026-10-07T03:03:39.472923+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/club_Liverpool.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Liverpool",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 6543,
+      "status": "downloaded",
+      "sha256": "f74453d890d5262a74dcfef5f15638e13ec994892ed392bb1792b703091593eb"
+    },
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php",
+      "parameters": {
+        "t": "Manchester City"
+      },
+      "retrieved_at_utc": "2026-10-07T03:03:44.156334+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/club_Manchester_City.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Manchester+City",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 6260,
+      "status": "downloaded",
+      "sha256": "664d4261d75de643e9ac6ffa3080209c0fbc4cec52f39c0043f7d72c38e0f5f7"
+    },
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php",
+      "parameters": {
+        "t": "Manchester United"
+      },
+      "retrieved_at_utc": "2026-10-07T03:03:48.582814+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/club_Manchester_United.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Manchester+United",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 10171,
+      "status": "downloaded",
+      "sha256": "35b35d74fd17243fd1b103b03c2e42600b571d0685b855899d4a0dce42d4a7d3"
+    },
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php",
+      "parameters": {
+        "t": "Newcastle United"
+      },
+      "retrieved_at_utc": "2026-10-07T03:03:53.466246+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/club_Newcastle_United.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Newcastle+United",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 4824,
+      "status": "downloaded",
+      "sha256": "7f397c21b5dee4c141e22c9ca1d4a1b9f4c67b344920263b0c07b93f85993466"
+    },
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php",
+      "parameters": {
+        "t": "Nottingham Forest"
+      },
+      "retrieved_at_utc": "2026-10-07T03:03:58.628877+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/club_Nottingham_Forest.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Nottingham+Forest",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 1397,
+      "status": "downloaded",
+      "sha256": "4f258adc75426fcb5dcee3494f1afcfd70281e989650fb7cec22d8071c34c9fe"
+    },
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php",
+      "parameters": {
+        "t": "Tottenham Hotspur"
+      },
+      "retrieved_at_utc": "2026-10-07T03:04:02.803152+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/club_Tottenham_Hotspur.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Tottenham+Hotspur",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 16616,
+      "status": "downloaded",
+      "sha256": "2a279436e6db589b8393269a0c5d33ac5a30fdfd5222f82ead886d608c60e0f3"
+    },
+    {
+      "source": "sportsdb",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php",
+      "parameters": {
+        "t": "Sunderland"
+      },
+      "retrieved_at_utc": "2026-10-07T03:04:06.830797+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/sportsdb/club_Sunderland.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Sunderland",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 4738,
+      "status": "downloaded",
+      "sha256": "557b59aca1d1d0c2ddfda99a2accd31a49147ac8f20cbcb08fc91930aa9cd0ce"
+    }
+  ]
+}

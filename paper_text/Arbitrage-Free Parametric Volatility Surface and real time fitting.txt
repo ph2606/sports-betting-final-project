@@ -1,0 +1,1800 @@
+[PAGE 1]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+         Arbitrage-Free Parametric Volatility
+          Surfaces and Real-Time Fitting
+
+
+                      Timothy R. Klassen
+
+            CEO & founder, Vola Dynamics LLC
+
+                 timothy.klassen@VolaDynamics.com
+
+
+
+         Global Derivatives Chicago             Nov. 2, 2017
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                         1/63
+
+[PAGE 2]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+ Outline
+
+
+
+           Dividend modeling (very brieﬂy, details in SSRN paper)
+
+            Implied volatility curve design
+
+           No-Arbitrage constraints in price- and vol-space
+
+                     Including some non-trivial, exact results on vol parameter constraints
+
+            Arbitrage-free vol surface ﬁtting in practice
+
+
+
+        For background see (available at SSRN):
+
+          Pricing Vanilla Options with Cash Dividends
+
+         Necessary and Suﬃcient No-Arbitrage Conditions for the SSVI/S3 Volatility Curve
+
+           J. Gatheral, A. Jacquier: Arbitrage-free SVI volatility surfaces
+
+           J. Gatheral: The Volatility Surface, Wiley 2006
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                         2/63
+
+[PAGE 3]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+ Implied Vols and Surfaces
+
+
+
+
+              Implied volatility surfaces (and borrow cost curves) are the standard approach
+              to summarizing the vanilla options market in an intuitive and compact manner.
+
+           They provide the fundamental building blocks for trading and risk-managing
+               vanillas (listed and OTC), as well as ﬂow derivatives and exotics.
+
+             Options market makers use a Black-Scholes framework with some added bells
+            and whistles for valuation and risk management. (BS as language...)
+
+             For more exotic applications: (i) An arbitrage-free vol surface is equivalent to
+             the existence of a local volatility surface. (ii) Having an arbitrage-free, sensible
+              surface for all (T, K) makes calibrating fancy “SLVJ” models much easier.
+
+          Many of the most liquid options allow American exercise:
+             “De-Americanization” is necessary and in principle introduces
+             model-dependence, since American options are (very light) “exotics”.
+
+             So, from now on all implied vols will be the “European-equivalent” ones.
+
+           But what do we mean by implied vols in the presence of cash dividends... ?
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                         3/63
+
+[PAGE 4]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Dividend Modeling
+
+
+            Forty years after Black-Scholes there is no consensus on how to
+          model cash dividends (even for vanillas)!
+
+          Cash dividends mean that the observed stock price can not follow
+           geometric Brownian motion (GBM).
+
+             In a vanilla context the question is how to combine the stochastic
+            part of underlier evolution (e.g. who follows GBM?) with...
+
+          Three types of dividends:
+           A dividend yield – used to model borrow cost
+               Cash dividends – how most dividends are actually paid
+                 Discrete proportional dividends
+
+         Most ﬁrms use a blending scheme to transition from cash dividends
+          on short end to proportional dividends in long term.
+
+            Proportional divs are also useful in times of extreme uncertainty
+           (market-wise or name-speciﬁc). E.g. during 2008 crisis.
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                         4/63
+
+[PAGE 5]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Dividend Models
+
+
+
+         Main two classes of dividend models are:
+               Spot model: The dividends come out of the observed stock
+                    price. (Need to modify cash dividends at low stock price.)
+                Hybrid models: The dividends come out of a “cash buﬀer”,
+                  related to the PV of future dividends: St = ˜St + Dt
+          Spot model might seem naively more reasonable, but in practice
+            leads to a lot of complications, since not GBM.
+
+           Hybrid models are much simpler to handle for both vanillas and
+             exotics, since pure stock ˜St still follows GBM. Can also easily
+           handle credit risk, extension to (light) exotics, local vols, etc.
+
+       We will assume a hybrid model from now on.
+
+           For a detailed review, synthesis, and new results see SSRN paper.
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                         5/63
+
+[PAGE 6]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+                                        Hybrid Model Shifts
+                    6
+
+                    5                                FHM
+
+                    4                               PHM
+                                                  SKA
+        D  3
+                                       Shift  2
+
+                    1
+
+                    0
+
+                  -1
+                      0             1             2             3             4
+
+                                                Time t
+
+      The shifts Dt for various hybrid models with r =3%, q =1%, and a quarterly cash
+       dividend of 0.5 ﬁrst paid at t1 =0.085, using blending scheme (2, 4).
+
+       For PHM, SKA: using T =1.01.     FHM = HM2, PHM = HM1, SKA = HM3
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                         6/63
+
+[PAGE 7]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+                                    Calibrated Volatility Term Structure
+                      0.30
+                       HM3
+                      0.29
+                       HM1
+                      0.28
+                       HM0
+                      0.27            DivYield
+                        Vol                      0.26
+
+                      0.25
+
+                      0.24
+
+                      0.23
+
+                        0             1             2             3             4
+
+                                               Term T
+
+       Implied ATF volatility term-structure of various models calibrated to reference market
+
+    HM2 with r =3%, q =1%, σ =30%, and a quarterly cash dividend of 2 ﬁrst paid at
+
+        t1 =0.085. Exercise-style is American.
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                         7/63
+
+[PAGE 8]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Volatility Curve Parametrization Wish List
+
+
+     Parametric vol curves are better than non-parametric ones!
+
+           Parameters should have simple, intuitive meaning, esp. ﬁrst three.
+
+           Parameters should be as “independent” as possible, and stable from
+          day to day (parsimonious).
+
+              Little term-structure, if possible.
+
+           No-arbitrage constraints should be “easy” to incorporate.
+
+           Parametric vols should be easy/fast to compute.
+
+        No hacks!  (in wings, etc)
+
+           Vol curves arising from standard “SLVJ”-type model should be
+            ﬁttable within a few bps (at worst).
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                         8/63
+
+[PAGE 9]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Our parametrization approach
+
+
+
+         Work one term at a time, impose smoothness across terms.
+
+           Factor out overall vol level (ATF) as: σ0 := σ(T, K =F).
+
+         Deﬁne the “shape” curve f (z) = f (z|p) as a function of normalized
+             strike
+                                         y     log(K/F)
+                    NS = z :=   =   √
+                                                           ˆσ0      σ0 T
+           such that
+                                 σ(z)2 = σ20 f (z|p)
+
+          There are no standard deﬁnitions – we deﬁne the dimensionless
+          “skew” and “smile/convexity” as slope and curvature of the shape
+            curve:
+                                       f (z) =: 1 + s2 z + 12c2 z2 + . . .
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                         9/63
+
+[PAGE 10]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Our parametrization approach (cont’d)
+
+
+             s2 and c2 tend to have mild term-structure (except maybe as
+       T →0). They are even comparable across names. Have been
+           range-bound for decades.
+
+          Sometimes it is useful to work with s1, c1 deﬁned via
+                       σ(z) =: σ0 (1 + s1 z + 12c1 z2 + . . .)
+              Trivially: s2 = 2s1, c2 = 2(c1 + s21).
+          Note that
+                                                s1
+                        σ(z) = σ0 + √  log(K/F) + . . . ,
+                           T
+           so that an alternative deﬁnition of skew
+                              ∂σ             s1
+                                                     ˜s1 := K    |K=F = √
+                           ∂K        T
+
+        No simple relationships between alternative deﬁnitions of
+            curvature/convexity/smile.
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        10/63
+
+[PAGE 11]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ No-Arbitrage: Basic issues
+
+
+
+           In price space arbitrage conditions are well-known.
+             It’s easy to detect when there is arbitrage.
+        But it is not at all clear, a priori, how to remove it.
+         There are an inﬁnity of ways of doing so – almost all of
+        them are “bad”, especially when working in price space.
+      We ﬁnd it easier to remove arbitrage in vol-space.
+        Due to de-Americanization issue, one has to be a bit
+           careful when moving from price- to vol-space for
+         American options.
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        11/63
+
+[PAGE 12]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ No-Arbitrage Constraints in Vol-Space
+
+
+
+       No butterﬂy arbitrage: Implied density ρ should be positive:
+
+                          Z ∞
+                    ˆC(T, K) =     dST (ST −K)+ ρT(S0 →ST)
+                                         0
+
+            ⇒   ∂2K ˆC(T, K) = ρT(S0 →S)|S=K
+
+       No calendar arbitrage: Total BS variance w(y) := Tσ(y)2
+           has to be increasing in T at any ﬁxed y.
+
+           Necessary (but generally not suﬃcient) constraint on the
+           asymptotic wing behavior of implied vols (TRK 2001, R. Lee, 2004):
+
+                      w(y) ≤2|y|          as  |y| →∞
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        12/63
+
+[PAGE 13]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Simple consequences: Implied density 1
+
+
+
+           Local vols and implied densities can be calculated most neatly in
+           terms of the total variance w(y) = Tσ(z)2. Eg the implied density:
+
+                                    g(y)
+                             ρ(y) =       n(d−(y)) ,
+                                             ˆσ(y)
+
+          where n(x) = N′(x) is the normal density, and
+
+          g(y) =   1 −y w ′(y)  2 −1    1 + 1 w ′(y)2 + 1 w ′′(y)
+                       2w(y)       4  w(y)   4            2
+
+          Absence of butterﬂy arbitrage: g(y) ≥0 for all y.
+
+             In Black-Scholes case: g(y) = 1 for all y.
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        13/63
+
+[PAGE 14]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Simple consequences: Implied density 2
+
+
+           For our vol curve parametrizations w(y) = ˆσ20 f (z).
+         Then w ′(y) = ˆσ0f ′(z) and w ′′(y) = f ′′(z), so that
+
+                                                     1          g(y) =  1 −z f ′(z)  2 −1 f ′(z)2 −ˆσ2                                                           0 f ′(z)2 +                                                                                         f ′′(z) =: g(z) .
+                            2f (z)      4  f (z)    16        2
+
+         The vol level appears in only one place! All else only depends on
+           shape parameters.
+
+         Makes the analysis of butterﬂy arbitrage signiﬁcantly simpler (but is
+                 still very hard in general).
+
+          But for the S3/SSVI curve the butterﬂy arb question can be
+           completely answered!   See below, but ﬁrst...
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        14/63
+
+[PAGE 15]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ ATF No-Arbitrage Constraints
+
+               If w(z) =  ˆσ20 (1 + s2z + 2c2z21   + . . .), then
+                 g(z =0) = 1 + 12c2 −14s22 (1 + 14 ˆσ20)
+
+         g(0) ≥0 implies upper bound on slope
+
+                                4 + 2c2
+                                s22 ≤       1                                1 +                                                         ˆσ20                                                  4
+
+          or lower bound on curvature (c1 = 12c2 −14s22)
+                        c1 ≥ −1 +  161 s22 ˆσ20 ≈−1
+
+         Very relevant around FOMC and earnings where not just
+           c1 < 0 but even c2 < 0 can happen!
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        15/63
+
+[PAGE 16]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Speciﬁc Curves: Parabolas
+
+
+
+       What are simplest possible implied vol curves? Need at
+           least 3 parameters for ATF behavior.
+         Vendors often use
+
+          σ(y)n = σn0 (1 + s y + 2c1  y 2)     (or in terms of z)
+
+         Obviously has arbitrage in wings for n = 1, 2.
+           Slight hope for n = 4, but would imply symmetric wings,
+         which is intuitively and empirically wrong.
+           Positivity has to be enforced too.
+        Must do better...
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        16/63
+
+[PAGE 17]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Speciﬁc Curves: S3/SSVI
+
+          Simplest sensible curve with 3 parameters  (c2 ≥0):
+
+                                 1     q 1                1
+           σ2(z) = σ20   2(1 + s2z) +   4(1 + s2z)2 + 2c2z2
+
+
+       Was independently discovered by TRK (2003, “S3”) and
+          Gatheral/Jacquier (2013, “SSVI” = Simple SVI).
+          Allows surprisingly varied skew shapes, including
+          “takeover-for-cash” curves as c2 →0.
+          Allows ﬁtting of vast majority of US equity names.
+         Very easy to avoid (butterﬂy) arbitrage.
+           In fact, in terms of the dimensionless variables ˆσ0, s2, c2
+         can completely answer the butterﬂy-arbitrage question...
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        17/63
+
+[PAGE 18]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+                        S3 curve for different terms, same parameters
+
+                   0.55
+                                                     T = 0.02
+                                                     T = 0.10
+                   0.50                                     T = 1.00
+
+                   0.45
+
+
+                   0.40
+                      Vol
+                   0.35
+
+
+                   0.30
+
+
+                   0.25
+
+
+                   0.20
+
+
+                   0.15
+
+
+                   0.10
+                       70        80        90       100       110       120       130
+
+                                                                        Strike K
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        18/63
+
+[PAGE 19]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+                         S3 curve for different curvatures c2, T = 0.25
+                   0.80
+                                                           c2 = 0.002
+                                                           c2 = 0.100
+                   0.70                                         c2 = 0.500
+
+
+                   0.60
+
+                      Vol  0.50
+
+
+                   0.40
+
+
+                   0.30
+
+
+                   0.20
+
+
+                   0.10
+
+
+                   0.00
+                       20       40       60       80      100      120      140      160
+
+                                                                        Strike K
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        19/63
+
+[PAGE 20]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+                            S3 curve for different curvatures c2
+                   0.16
+                                                           c2 = 0.002
+                   0.14                                         c2 = 0.100
+                                                           c2 = 0.500
+
+                   0.12
+
+
+         2   0.10
+                      Vol
+
+                   0.08
+
+
+                   0.06
+
+
+                   0.04
+
+
+                   0.02
+
+
+                   0.00
+
+                           -4        -3        -2        -1       0       1       2       3       4
+
+                                                        Normalized Strike z
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        20/63
+
+[PAGE 21]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Necessary and Suﬃcient No-Arb Conditions for S3/SSVI
+
+                           SSVI/S3 No-Arbitrage Region
+             10                                                     σ0=0
+                                                                     σ0=0.5              8
+                                                                   σ0=1
+
+              6                                                G/J
+        C2                                             Lee 1
+              4                                                        Lee 2
+
+
+              2
+
+
+              0
+                 0.0             0.5             1.0             1.5             2.0
+
+                                         S2
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        21/63
+
+[PAGE 22]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Necessary and Suﬃcient No-Arb Conditions for S3/SSVI
+
+              Exact and previous bounds on c2 for s2=0
+           15
+                                                  Exact
+
+                                             Lee UB
+
+           10                                   G/J LB
+
+      *c2
+
+
+            5
+
+
+
+            0
+             0          1          2          3          4
+                                                    σ0
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        22/63
+
+[PAGE 23]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Beyond the Simplest Curves: 5 Parameters (SVI, etc)
+
+
+
+           Besides 3 parameters for ATF would be nice to have independent
+           parameters C± for wings:
+
+                σ(z)2 →σ20 C± |z|     as  z →±∞     (ˆσ0C± ≤2)
+
+               q 1      1        1
+           For S3/SSVI:  C± =    4s22 + 2c2 ± 2s2
+           For Gatheral’s SVI and others (JW/L5, TRK) the C± are
+           independent parameters (constrained by −C−≤s2 ≤C+).
+            Just some algebra to re-express their “raw” parametrization in
+           terms of natural parameters σ0, s2, c2, C−, C+.
+         Can ﬁt some names better than with S3/SSVI.... but not much
+            better in many cases!?
+            Certainly can not ﬁt W-shaped curves around events (still c2 ≥0).
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        23/63
+
+[PAGE 24]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ What curves to use for most liquid names?
+
+
+
+
+         For very liquid names (ES, SPX, SPY, other ETFs,
+        AAPL, KOSPI, etc) none of the standard curves (SVI, L5
+          or amendments) work well, even in the absence of events.
+         There is a fundamental problem with the shapes allowed
+         by these curves: Curvature has unique maximum around
+        ATF, but that’s not what the market wants!
+        Need more ﬂexible shapes that can handle more generic
+          curvature structures, incl. negative curvature around ATF:
+         C5, C6, C7, C8, C10, . . ..
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        24/63
+
+[PAGE 25]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Volatility ﬁtting framework
+
+
+           Input to ﬁtter are implied vols with error bars (after proper div
+           modeling, borrow implication, etc).
+
+             All our vol curves have sensible dimensionless parameters (ﬁrst
+            three are universal), which allows the use of curve-independent
+             heuristics from decades of vol ﬁtting experience across many
+          names, geographies and asset classes.
+
+             Fit one term at a time, for speed, transfer information between
+           terms, for smoothness and stability.
+
+           Minimize chi-square + soft penalties, for robustness and to allow
+           the ﬁtting of terms with less (eﬀective) data than parameters.
+
+         Good microprices help, but even then various heuristics are needed
+            to deal with data issues in real-time.
+
+          Keeping track of quality-of-ﬁt metrics and error bars for ﬁnal
+           outputs is crucial for real-time trading applications.
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        25/63
+
+[PAGE 26]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Volatility ﬁtting examples
+
+
+
+          Examples of ﬁtting American-style stock, ETF and futures options,
+            as well as European-style index options.
+
+            Starting with options and underlier prices for stocks/ETFs, we:
+                   1  pick interest rate (we like “SPIBOR”)
+                   2  pick cash divs (if appropriate)
+                   3  imply borrow cost for each term to get “American PCP”
+                   4  imply vol-by-strike
+                   5  ﬁt all terms to various vol curves
+
+          Advanced topics:
+               Smart temporal ﬁltering, to ﬁll in missing data or discount
+               “bad” snapshots or ﬁts.
+                 No-arbitrage ﬁtting (see later).
+
+           Simple metrics shown below: chi = reduced chi-square, avE5.
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        26/63
+
+[PAGE 27]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+           ESM6 20160504-103000 S5: T=0.1257, i=0, chi=6.458, avE5=23.9
+
+              0.35                                                                    Fit
+                                                            Mkt
+
+
+
+              0.30
+
+
+              vol
+              0.25
+
+
+
+
+              0.20
+
+
+
+
+              0.15
+
+
+
+
+              0.10
+                       -6       -5       -4       -3       -2       -1      0      1      2      3
+
+                                          NS
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        27/63
+
+[PAGE 28]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+           ESM6 20160504-103000 S5: T=0.1257, i=0, chi=6.458, avE5=23.9
+
+             0.020
+                                                                                  Fit - Mkt
+
+             0.015
+
+
+             0.010
+
+                 diff   0.005
+            vol
+
+             0.000
+
+
+             -0.005
+
+
+             -0.010
+
+
+             -0.015
+
+
+             -0.020
+                       -6       -5       -4       -3       -2       -1      0      1      2      3
+
+                                          NS
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        28/63
+
+[PAGE 29]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+            ESM6 20160504-103000 C8: T=0.1257, i=0, chi=0.599, avE5=3.2
+
+              0.35                                                                    Fit
+                                                            Mkt
+
+
+
+              0.30
+
+
+              vol
+              0.25
+
+
+
+
+              0.20
+
+
+
+
+              0.15
+
+
+
+
+              0.10
+                      -6       -5       -4       -3       -2       -1      0      1      2
+
+                                          NS
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        29/63
+
+[PAGE 30]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+            ESM6 20160504-103000 C8: T=0.1257, i=0, chi=0.599, avE5=3.2
+
+             0.020
+                                                                                  Fit - Mkt
+
+             0.015
+
+
+             0.010
+
+                 diff   0.005
+            vol
+
+             0.000
+
+
+             -0.005
+
+
+             -0.010
+
+
+             -0.015
+
+
+             -0.020
+                      -6       -5       -4       -3       -2       -1      0      1      2
+
+                                          NS
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        30/63
+
+[PAGE 31]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+           ESM6 20160504-103000 C12m: T=0.1257, i=0, chi=0.021, avE5=1.4
+
+              0.35                                                                    Fit
+                                                            Mkt
+
+
+
+              0.30
+
+
+              vol
+              0.25
+
+
+
+
+              0.20
+
+
+
+
+              0.15
+
+
+
+
+              0.10
+                      -6       -5       -4       -3       -2       -1      0      1      2
+
+                                          NS
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        31/63
+
+[PAGE 32]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+           ESM6 20160504-103000 C12m: T=0.1257, i=0, chi=0.021, avE5=1.4
+
+             0.020
+                                                                                  Fit - Mkt
+
+             0.015
+
+
+             0.010
+
+                 diff   0.005
+            vol
+
+             0.000
+
+
+             -0.005
+
+
+             -0.010
+
+
+             -0.015
+
+
+             -0.020
+                      -6       -5       -4       -3       -2       -1      0      1      2
+
+                                          NS
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        32/63
+
+[PAGE 33]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+           SPY 20150820-155000 C10m: T=0.0029, i=0, chi=0.192, avE5=1.4
+
+
+                                                                                        Fit
+                                                            Mkt
+              0.45
+
+
+
+              0.40
+
+              vol
+              0.35
+
+
+
+              0.30
+
+
+
+              0.25
+
+
+
+              0.20
+
+
+                    190         195         200         205         210         215
+
+                                                                  Strike K
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        33/63
+
+[PAGE 34]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+           SPY 20150820-155000 C10m: T=0.1564, i=8, chi=0.046, avE5=0.5
+
+
+                                                                                        Fit
+                                                            Mkt
+              0.40
+
+
+
+              0.35
+
+              vol  0.30
+
+
+
+              0.25
+
+
+
+              0.20
+
+
+
+              0.15
+
+
+
+              0.10
+                   140    150    160    170    180    190    200    210    220    230
+
+                                                                  Strike K
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        34/63
+
+[PAGE 35]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+                SPY 20150825-100000 C10m, chiAv=0.048, e5Av=3.4
+
+
+                                                                        i=1
+              0.60                                                       i=2
+                                                                        i=3
+                                                                        i=7
+
+              0.50
+
+              vol
+              0.40
+
+
+
+
+              0.30
+
+
+
+
+              0.20
+
+
+
+
+              0.10
+                    -0.15          -0.1         -0.05         0          0.05          0.1
+
+                                                LKF
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        35/63
+
+[PAGE 36]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+            AAPL 20150721-154500 C8: T=0.0084, i=0, chi=0.247, avE5=13.2
+
+              1.05
+                                                                                        Fit
+                                                            Mkt
+              1.00
+
+
+              0.95
+
+
+              0.90
+              vol
+              0.85
+
+
+              0.80
+
+
+              0.75
+
+
+              0.70
+
+
+              0.65
+
+
+              0.60
+                            110         120         130         140         150
+
+                                                                  Strike K
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        36/63
+
+[PAGE 37]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+            VXX 20151216-135400 C7: T=0.1784, i=7, chi=0.041, avE5=20.4
+              1.40
+                          Fit
+              1.30   Mkt
+
+
+              1.20
+
+
+              1.10
+              vol
+              1.00
+
+
+              0.90
+
+
+              0.80
+
+
+              0.70
+
+
+              0.60
+
+
+                    10          20          30          40          50          60
+
+                                                                  Strike K
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        37/63
+
+[PAGE 38]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+            ESZ5 20151216-135901 SVI5: T=0.0050, i=0, chi=0.137, avE5=99
+
+              0.60                                                                    Fit
+                                                            Mkt
+
+
+              0.50
+
+
+          Vol   0.40
+
+
+
+              0.30
+
+
+
+              0.20
+
+
+
+              0.10
+                         1950        2000        2050        2100        2150
+                                                       Strike K
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        38/63
+
+[PAGE 39]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+            ESZ5 20151216-135951 SVI5: T=0.0050, i=0, chi=0.126, avE5=219
+
+              0.60                                                                    Fit
+                                                            Mkt
+
+
+              0.50
+
+
+          Vol   0.40
+
+
+
+              0.30
+
+
+
+              0.20
+
+
+
+              0.10
+                         1950        2000        2050        2100        2150
+                                                       Strike K
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        39/63
+
+[PAGE 40]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+      Time series of the ATF vol of the front month, with error bars, from snapshot ﬁts
+
+       (blue) and after temporal ﬁltering (orange) for the NKY/N225 around the open
+
+      (9:00am) on 20170516.
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        40/63
+
+[PAGE 41]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Arbitrage Elimination in Practice
+
+
+
+         Our volatility curve framework makes it (almost) impossible to have
+           butterﬂy arbitrage in the ﬁtted curves.
+
+          Complete calendar arbitrage elimination is accomplished by
+            algorithmic means (“no-arb mode”) considering:
+                 With a proper shape parametrization, the term-structure of the (shape)
+                   parameters should be “pretty smooth” (except maybe due to events).
+                   Enforce total variance constraint taking error bars into account to spread
+                  shape information across terms.
+
+         Many potential arbitrages in a vol surface ﬁt of a snapshot can
+            already be eliminated via smart temporal ﬁltering.
+
+            Final result: arbitrage-free vol surface “closest” to the vol surface
+            that ﬁts market prices best, in parametric form.
+
+         Some examples, with “regular” and “no-arb” ﬁt mode.
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        41/63
+
+[PAGE 42]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+                           Total Vars SPY 20150820-154500 C8, chiAv=0.096, e5Av=1.5
+
+
+                                                                  0                    0.016                                                                  1
+                                                                  2
+                    0.014                                               3
+                                                                  4
+                                                                  5
+                    0.012                                               6
+                                                                  7
+       w                                                    8                    0.010
+                                                                  9
+                                                                10
+                    0.008
+
+
+                    0.006
+
+
+                    0.004
+
+
+                    0.002
+
+
+                    0.000                               -0.3           -0.2           -0.1          0            0.1           0.2
+
+                                                     LKF
+                                 Regular ﬁt mode
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        42/63
+
+[PAGE 43]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+                           Total Vars SPY 20150820-154500 C8, chiAv=0.096, e5Av=1.5
+
+
+                                                                  0                    0.016                                                                  1
+                                                                  2
+                    0.014                                               3
+                                                                  4
+                                                                  5
+                    0.012                                               6
+                                                                  7
+       w                                                    8                    0.010
+                                                                  9
+                                                                10
+                    0.008
+
+
+                    0.006
+
+
+                    0.004
+
+
+                    0.002
+
+
+                    0.000                               -0.3           -0.2           -0.1          0            0.1           0.2
+
+                                                     LKF
+                                 Regular ﬁt mode
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        43/63
+
+[PAGE 44]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+                           Total Vars SPY 20150820-154500 C8, chiAv=0.104, e5Av=1.6
+
+
+                                                                  0                    0.016                                                                  1
+                                                                  2
+                    0.014                                               3
+                                                                  4
+                                                                  5
+                    0.012                                               6
+                                                                  7
+       w                                                    8                    0.010
+                                                                  9
+                                                                10
+                    0.008
+
+
+                    0.006
+
+
+                    0.004
+
+
+                    0.002
+
+
+                    0.000                               -0.3           -0.2           -0.1          0            0.1           0.2
+
+                                                     LKF
+                                No-arb ﬁt mode
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        44/63
+
+[PAGE 45]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+                    Total Vars VXX 20151216-155500 C7, chiAv=0.070, e5Av=14.0
+
+
+                                                            0            0.2000
+                                                            1
+                                                            2
+                                                            3
+                                                            4
+                                                            5
+            0.1500                                               6
+                                                            7
+    w
+
+
+
+            0.1000
+
+
+
+
+            0.0500
+
+
+
+
+            0.0000                                     -0.5             0                0.5              1
+
+                                                LKF
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        45/63
+
+[PAGE 46]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+                    Total Vars VXX 20151216-155500 C7, chiAv=0.070, e5Av=14.0
+
+
+                                                            0            0.2000
+                                                            1
+                                                            2
+                                                            3
+                                                            4
+                                                            5
+            0.1500                                               6
+                                                            7
+    w
+
+
+
+            0.1000
+
+
+
+
+            0.0500
+
+
+
+
+            0.0000                                     -0.5             0                0.5              1
+
+                                                LKF
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        46/63
+
+[PAGE 47]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+                    Total Vars VXX 20151216-155500 C7, chiAv=0.077, e5Av=13.6
+
+
+                                                            0            0.2000
+                                                            1
+                                                            2
+                                                            3
+                                                            4
+                                                            5
+            0.1500                                               6
+                                                            7
+    w
+
+
+
+            0.1000
+
+
+
+
+            0.0500
+
+
+
+
+            0.0000                                     -0.5             0                0.5              1
+
+                                                LKF
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        47/63
+
+[PAGE 48]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        48/63
+
+[PAGE 49]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        49/63
+
+[PAGE 50]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        50/63
+
+[PAGE 51]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+              AEX vols on the day of the Brexit vote!
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        51/63
+
+[PAGE 52]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+                     AEX total variances
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        52/63
+
+[PAGE 53]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+          AEX total variances with input and output error bars
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        53/63
+
+[PAGE 54]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Fitting Options on Illiquid Names
+
+
+
+
+         The vast majority (95%+) of the 4000+ underliers with options in
+           the US are relatively illiquid.
+
+          Mids and even “naive” theos (from some curve ﬁt...) will often
+          have arbitrage (at least when spreads are ignored).
+
+         As far as vol curve ﬁtting is concerned, they can fortunately usually
+          be ﬁtted with the simple 3-parameter curve “S3” (aka “SSVI”).
+
+           No-arbitrage constraints and careful consideration of error bars are
+           extremely helpful in spreading information in the limited set of more
+             liquid options across all options and to a complete surface.
+
+            Let’s consider the example of Sprint, ticker S, with closing data.
+       We will show ﬁts in “regular” and “no-arb” mode again.
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        54/63
+
+[PAGE 55]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+                          Total variances in regular ﬁt mode
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        55/63
+
+[PAGE 56]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+                  Total variances with error bars in regular ﬁt mode
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        56/63
+
+[PAGE 57]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+                          Total variances in no-arb ﬁt mode
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        57/63
+
+[PAGE 58]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+                               Vols in regular ﬁt mode
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        58/63
+
+[PAGE 59]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+                               Vols in no-arb ﬁt mode
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        59/63
+
+[PAGE 60]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+                           S3 ﬁt of S (Sprint) options, T = 0.1263y, i = 6, regular ﬁt mode
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        60/63
+
+[PAGE 61]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+
+
+
+                           S3 ﬁt of S (Sprint) options, T = 0.1263y, i = 6, no-arb ﬁt mode
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        61/63
+
+[PAGE 62]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+
+ Other important topics we do not have time for
+
+
+
+           Speed: Price and ﬁt the whole US options universe on one box.
+
+          Spot vol dynamics: How do vol surfaces move when the underlier
+          moves? (Simple rules like “sticky-strike” or “sticky-delta” vols are
+           not realistic.) This is relevant for:
+                   Realistic parametric scenario generation; overnight moves
+               Smart delta
+               Smart temporal ﬁltering
+
+        How do vol surfaces behave under shifts of “as-of-time” (events...)?
+
+        How does new vol level and skew information in one term spread
+            across the surface?
+
+        How “local” are our parametrizations? Can our parametric volatility
+            surfaces be simply and realistically deformed?
+
+
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        62/63
+
+[PAGE 63]
+   Intro  Divs  Curve Design  No-Arbitrage  Curves & No-Arb   Fitting                  No-Arb Surface Fitting         End
+
+ Summary and Conclusion
+
+
+          There is no standardization in the equity options markets around
+            dividend modeling, borrow costs, or vol curves and their calibration.
+
+        No vol curves in the public domain can ﬁt liquid names like ES,
+         SPX, SPY, AAPL, AMZN, etc.
+
+           Guaranteed arbitrage elimination while still ﬁtting the market “as
+          good as possible” is a hard problem even for simple curves/surfaces.
+
+         Our ﬁtting framework allows to eﬃciently eliminate arbitrage for
+          any underlier, liquid or illiquid, with any curve types, in real time.
+
+           Standards for div modeling, borrows & vol ﬁtting are at hand:
+               Improved price transparency facilitates wider use of options
+               and the eﬃcient transfer of vol information across related
+                 products.
+             Hope to achieve same as in transition from old to new VIX:
+           A healthier market, larger volumes, esp. from smaller players.
+
+
+
+T.R. Klassen: Arbitrage-Free Parametric Volatility Surfaces and Real-Time Fitting                                        63/63

@@ -1,0 +1,28 @@
+{
+  "validation": "passed",
+  "csv_tables": 8,
+  "parquet_copies": 8,
+  "match_rows": 21782,
+  "team_match_rows": 27304,
+  "team_seasons": 680,
+  "odds_snapshot_rows": 193622,
+  "current_epl_matches": 50,
+  "current_teams": 20,
+  "current_xg_rows": 100,
+  "current_team_latest_date": "2026-09-20",
+  "source_files": 136,
+  "first_date": "1993-08-14",
+  "last_date": "2026-09-20",
+  "runtime_seconds": 77.55,
+  "checks": [
+    "unique fixtures and team-match keys",
+    "exact current 20-club focal cohort",
+    "no future outcomes",
+    "5 current matches per club and complete current xG",
+    "all lag feature dates strictly earlier",
+    "season features reset at first match",
+    "independent rolling means/cumulative points/xG/prior-season checks for Arsenal Coventry Hull",
+    "all eight Parquet copies readable",
+    "no stale Parquet error logs"
+  ]
+}

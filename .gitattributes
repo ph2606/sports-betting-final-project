@@ -1,0 +1,10 @@
+# Preserve exact source bytes and their recorded hashes.
+* -text
+
+# Store large datasets with Git LFS.
+"epl_data/data/processed/espn/player_match_lineups.csv" filter=lfs diff=lfs merge=lfs -text
+"epl_data/data/processed/fpl_archive/player_gameweeks.csv" filter=lfs diff=lfs merge=lfs -text
+"epl_data/data/processed/statsbomb/events_2003_04.csv" filter=lfs diff=lfs merge=lfs -text
+"epl_data/data/processed/statsbomb/events_2015_16.csv" filter=lfs diff=lfs merge=lfs -text
+"epl_data/data/processed/statsbomb/events_2015_16.parquet" filter=lfs diff=lfs merge=lfs -text
+"epl_data/data/raw/transfermarkt_archive/game_lineups.csv.gz" filter=lfs diff=lfs merge=lfs -text

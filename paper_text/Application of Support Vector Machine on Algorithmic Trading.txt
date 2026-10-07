@@ -1,0 +1,452 @@
+[PAGE 1]
+400                                                                                                              Int'l Conf. Artificial Intelligence | ICAI'18  |
+
+    Application of Support Vector Machine on Algorithmic
+                        Trading
+
+                      Szklarz J1., Rosillo R2., Alvarez N2., Fernández I2., and Garcia N2.
+
+                                1Programmer, Izertis S.L, Gijón, Asturias, Spain
+             2Business Management Dept., University of Oviedo, Gijón, Asturias, Spain. rosillo@uniovi.es
+
+                                                                    fixed  rules  in  order  to  trigger  the  purchases and  sales
+   Abstract  - The following research provides a thoughtful
+                                                                     operations, producing a solid system that, if well designed,
+   analysis regarding the use of machine learning techniques
+                                                            can provide massive profit to the user. On the other hand,
+   applied to algorithmic trading using common indexes such as
+                                                          machine learning, which is increasingly gathering popularity
+   the S&P500 and  the Chicago Board  Options Exchange
+                                                                        in our society, relies on artificial intelligence techniques, and
+   Market Volatility Index (VIX). A trading simulation is carried
+                                                       by  extending  quantitative  techniques,  they  can  become
+   out in order to  test the efficiency of the algorithms in up
+                                                                  adaptive in changing situations and provide earnings even
+   trending and down trending periods. Statistical and economic
+                                                    when the initial configuration is not valid anymore [3].
+   performance measures are obtained and compared in order to
+   discuss the most effective technique. The inputs used in the
+                                                   As a way to carry out the research, a programming language is
+   analysis are well-known quantitative indicators such as the
+                                                                      required, presenting a variety of options to choose from.
+   Relative   Strength   Index  and   the  Moving   Average
+                                                          Matlab is selected as the most convenient software to prepare
+   Convergence-Divergence. The relevance of the results lies in
+                                                          and fulfil the analysis thanks to the different toolboxes that are
+   the use of separated training models for each kind of trend.
+                                                              provided  to  support  machine  learning  and  quantitative
+                                                                         analysis, as well as direct linkage to Interactive Brokers API
+  Keywords: Support Vector Machines, Quantitative trading,
+                                                                        in order to test the results in a real environment.
+  VIX, Machine learning, ADX, RSI.
+
+                                                      The proposed analysis considers basic quantitative algorithms
+  1  Introduction                                       using indicators such as RSI, MACD and Momentum, as well                                                                  as machine learning techniques such as Naïve-Bayes and
+       Trading is one of the most ancient ways of improving   Random Forest to be compared versus the use of a Support
+   the personal economic situation, either by exchanging certain    Vector Machine in order to present the best decision-making
+   goods in favorable situations or using currency, by purchasing   system  for  trading,  using two  different  trainings  for up
+  by a low amount, and selling by a higher one. Nowadays,    trending and down trending periods based on the indexes data
+   trading system have become well-regulated and information is    of S&P500 and VIX. Metrics such as the Sharpe Ratio, and
+   spread around the world, making  it possible to gather the    the Maximum Drawdown are used as comparative vertexes.
+   necessary  data  in  order  to perform  the most  successful
+   operation [1]. However, the immense amount of information  2  Background
+   provided becomes unbearable by humans, who need to rely in
+   computers in order to maximize the decision-making process.         In this section, the relevant literature regarding technical
+   Using predefined systems in this process in order to avoid    analysis and machine learning is presented.
+  manual trading is called Algorithmic Trading.
+                                                        2.1  Technical Analysis
+   There are many trading techniques which are suitable to be
+                                                                    Technical  analysts  argue  that  their  methods  take   used in financial markets. From a global point of view, they
+                                                              advantage  of market  psychology.  In  particular,  technical   can be classified in two main families, the technical trading
+                                                                textbooks such as Murphy (1986) and Pring (1991) outline   and the fundamental trading. Fundamental analysis uses the
+                                                                      three principles that guide this behavior [4]. The first is price   social information as a source of knowledge in the decision-
+                                                          and volume “discounts” everything, which means  that an  making process [2]. On the other hand, technical analysis
+                                                                         asset’s price history incorporates  all relevant information,   relies in the price movements to forecast the future situation.
+                                                          removing the need of research asset “fundamentals.” Recent
+                                                                    findings by Engel and West (2005), Murphy (1986) claims   Algorithmic  trading  is  especially  useful  in  this  kind  of
+                                                                           that asset price changes often precede observed changes in   techniques, which are the ones that will be under use in this
+                                                              fundamentals [5]. The second principle is that asset prices   research. Regarding technical analysis, there will be two main
+                                                   move in trends. This is essential to the success of technical   group  of  techniques  that  will be  discussed:  quantitative
+                                                                      analysis  because  trends  imply  predictability.  The  third   techniques and machine learning. Quantitative techniques use
+
+
+
+                                   ISBN: 1-60132-480-4, CSREA Press ©
+
+[PAGE 2]
+Int'l Conf. Artificial Intelligence | ICAI'18  |                                                            401
+
+
+   principle is that history repeats itself. This implies that the   2.2  Machine Learning
+   future could be forecasted relying on past behavior of price.
+                                                                      Several  authors have  discussed  the use  of machine
+  The technical indicators that are used are the following ones.      learning techniques in quantitative trading. The techniques
+                                                                           that are used in this paper are the following ones.
+  The  Relative  Strength Index  (RSI)  is an  oscillator  that
+   compares the magnitude of a  stock's recent gains  to the   Random Forest (RF) is a supervised classification algorithm
+   magnitude of its recent losses and turns that information into a   which  is based in the generation of a random number of
+  number that ranges from 0 to 100. It was created by J. Welles    decision trees. As opposing to a single decision tree method,
+   Wilder [6]. Eq. 1 displays the calculation of this oscillator,    the information gain ratio is not taken in consideration, but the
+   being n  the number of periods which  is a user defined    result of a voting algorithm using random test data is obtained
+   parameter, although wilder has suggested to use 14 by default.    instead. Tsai, Lin, Yen, and Chen (2011) investigated the
+                                                                    prediction  performance  that  utilizes  the  random  forest
+                                                                             classifier method to analyze stock returns [10].
+
+                                                                 (1)   Naïve-Bayes (NB) method consist in using a probabilistic
+                                                                             classifier based on applying Bayes’ theorem (Eq. 5a) with
+                                                                   strong independence assumptions between the features and
+  The Moving Average Convergence Divergence (MACD) is an   combining it with a decision rule, most likely the hypothesis
+   oscillator that turns two moving averages (Eq. 2a), into a    that  is most probable;  this  is known as the maximum a
+  momentum  oscillator  by  subtracting  the  longer  moving    posteriori or MAP decision rule (Eq. 5b). Prof. Chate P.J
+   average from the shorter moving average. It also relies in a    (2016)  researched  the use  of Naïve-Bayes techniques  in
+   third moving average called the MACD line in order to trigger    financial markets optimization [11].
+   the operation signals (Eq. 2b).  It was designed by Gerald
+  Appel and the proposed basic configuration of this set of
+  moving averages are 12 and 26 periods for the two moving
+   averages that get subtracted, and 9 periods for the line [7].                                                                         (5)
+
+
+
+                                                                 (2)
+                                                             Neural Networks (NN) are computing systems based on a
+                                                                      collection of nodes with inputs and outputs. Each of those
+                                                           nodes contains parameters called weights (the w in Eq 6),
+                                                          which are modified each time data travels across them. This
+  The momentum is an oscillator designed to identify the speed    behavior results in a change of the chosen output, which ends
+   (or strength) of price movement. It simply deducts the current   up conditioning the result of the whole network. Chen, Leung,
+   closing price minus the closing price n days ago, being n a   and Daouk  (2003)  investigated  the  probabilistic  neural
+   user-defined parameter. It is unknown who has created this   network to forecast the direction of index after trained [12].
+   indicator but there is extensive literature about it by the hand
+   of Pring [8]. It is also common to normalize this indicator
+                                                                                                                                       (6)
+   between 0 and 100, and with n-value of 12 (Eq. 3).
+
+                                                                         Finally, Support Vector Machines (SVM) are classification or
+                                                                    regression methods  of  supervised  learning  based  in  the
+  The Bollinger Bands are a couple of volatility bands that were(3)   construction  a  hyperplane  as  the  decision  surface.  This
+   developer by John Bollinger and are placed above and below    hyperplane can be built by the use of kernel functions, which
+   a moving average. They are calculated using the standard    are functions that transform a vector space in another one of
+   deviation (std) of the price from the same amount of days that    superior dimension. Huang, Nakamori, and Wang (2005)
+   the moving average is pointing [9]. By default, two stds (M =    investigated the predictability of financial movement direction
+   2) are used in the calculation (Eq. 4).                           with SVM by fore-casting the weekly movement direction of
+                                                NIKKEI 225 index [13]. Equation 7 represents the problem
+                                                                           that SVM must resolve, being w the normal vector to the
+                                                                 (4)   hyperplane, and C the cost of misclassification.
+
+
+
+                                                                                                                                       (7)
+
+
+
+
+                                   ISBN: 1-60132-480-4, CSREA Press ©
+
+[PAGE 3]
+402                                                                                                              Int'l Conf. Artificial Intelligence | ICAI'18  |
+
+
+  3  Strategy Scope                      4  Algorithm Design
+
+      The design process uses the following three phases:           Firstly,  the  quantitative  trading  algorithms  will  be
+   scope choice, trade logic design and optimization. In this    presented. In second place, the machine learnings algorithm
+   section, the first one is described in detail.                         will be described, as they require an additional configuration
+                                                                           step. After  that, the SVM algorithm will be described in
+  3.1  Indexes and Data Sources                              detail. Finally the backtesting process will be illustrated.
+
+      The proposed system has been designed as a mid-term
+   strategy, rather than an intraday system, due to the cost of the
+   real time data needed  for the intraday one. The strategy
+   presented in this paper is recommended for the index S&P500
+   due to the relationship with the VIX index which  is also
+   studied. S&P500 is composed of 505 stocks issued by 500
+   large companies with capitalizations of at least $6.1 billion. It
+    is seen as a leading indicator of U.S. equities and a reflection
+   of the performance of the large-cap universe [14]. A large
+  number of researches has been conducted using this index.
+
+  The Chicago Board Options Exchange Market  Volatility
+   Index (VIX) is an index that shows the market's expectation of
+   30-day  volatility.   It   is  constructed  using  the  implied
+   volatilities of a wide range of S&P 500 index options. This
+   volatility is meant to be forward looking, is calculated from
+   both calls and puts, and is a widely used measure of market    Fig. 1. Closing value of the S&P500 and VIX. Yellow frame
+   risk,  often  referred  to  as  the  "investor  fear gauge." As    correspond to training data and green ones designate test data.
+   researched by R. Rosillo in [15] there is a short relationship
+   between this index and S&P500, which treated accordingly
+                                                        4.1   Quantitative Algorithms   could provide an accurate forecast of the S&P500 movement,
+   especially in down trending periods.                           The quantitative algorithms follow the same structure:
+                                                            each one of them returns an indicator with a value inside a
+  The data from both indexes  is obtained from Bloomberg    specific range. The selling (buying) orders will get triggered
+   Service. It is used as a table containing the following fields:   when that value crosses above (or below) a threshold. The
+   close, high, low, open, volume and change for each of the    algorithm will finally output a vector of trading orders (+1)
+   days of the training and testing periods. This data is imported    for purchases and (-1) for sales that will be later evaluated by
+   into Matlab program and stored as matrix.                      a backtester module. The threshold as well as the different
+                                                               parameters that define the algorithm are based on the default
+  3.2  Analyzed Periods                                  parameters used in the papers that they were taken from,
+                                                               passed  through  an  optimization  module  which  will  be
+      The presented strategy requires at least four periods for    described in a later section. Table II shows the trading rules
+   the  testing  phase, two  training and two  testing  periods,    for each one of the quantitative algorithms.
+   although it is advisable to use more periods, the research has
+   been conducted using only two due to time constraints.             Indicator         Purchase TH.       Sale TH.       Other value
+                                                              RSI                   30              70        N = 14
+  The periods selected are presented in the table I. and the line   MACD               >0             <0                      -
+   plots are shown in figure 1. The chosen periods match other   Momentum            15              85        N = 12
+   researches such as the one from R. Rosillo [16].                      Bol. Band.           <L. Band        >U. Band       STD = 2
+                                                             Table II: Trading rules for each quantitative algorithm.
+
+                                                        4.2  Machine Learning Algorithms          Period                Start Date           End Date
+   Up trending training         14/02/2003             09/10/2007           Machine   learning  algorithms   require  a   different
+     Down trending           01/09/2000             13/02/2003
+                                                                approach. In first place, a training process is performed. This           training
+     Up trending test           09/04/2009             26/03/2010         training is equal for every machine learning algorithm used in
+    Down trending test         09/10/2007             26/09/2008          this paper, including SVM one. This training requires a set of
+   Table I: Selected periods used in the research.                    inputs and an expected output for the training period. The 10
+                                                                     inputs to the training are the following ones [15]:
+
+
+
+
+                                   ISBN: 1-60132-480-4, CSREA Press ©
+
+[PAGE 4]
+Int'l Conf. Artificial Intelligence | ICAI'18  |                                                            403
+
+
+
+           RSI (14) at close.                             The training phase use the same inputs and training outputs as
+           RSI (14) at previous day’s close.                       the other algorithms. The training of the SVM requires three
+           RSI (14) at previous two day’s close.                  parameters: C, lambda and a kernel. According to R. Rosillo’s
+       MACD (26, 12, 9) at close.                            research, best results for this algorithm requires the use of the
+       MACD (26, 12, 9) at previous day’s close.            parameters showed in table IV [16].
+       MACD (26, 12, 9) at previous two days’ close.
+         VIX data at close.
+         VIX data at previous day’s close.                      Parameter                                 Value
+         VIX data at previous two day’s close.            C                                          100
+          S&P500 change at close.                         Lambda                                   0.0000001
+                                                                      Kernel                      High Tail Radial Basis Function (HTRFB)
+  An expected output  is also needed in order to feed the      Table IV: Training parameters for SVM algorithm.
+   training process. This output  is obtained by designing a
+   special algorithm which runs taking  in consideration  the
+                                                      The training  is performed for both up trending and down  whole training data vector (making it non-realistic for a test
+                                                                   trending period and is stored in two separated matrixes.   period). The  trading  rules used by the algorithm are as
+   follows: “Purchase orders are generated when the price from
+                                                     Once the algorithm process starts, the input data is fed to the   five days  later has  increased,  whereas,  sell  orders are
+                                                             model. The evaluation of this model returns two vectors: the   generated when it has decreased”.
+                                                                    forecasted suitable operation for each evaluated day and the
+                                                               degree of belonging for each of the analyzed classes (being  The training requires another set of parameters that differ in
+                                                               only two: a purchase or a sale). Combining these two outputs   each of the methods, however they are not mentioned here
+                                                                      returns  a  vector  of  values from  the  range  [-1,  1]  that   because the default values offered by Matlab are used.
+                                                                   designates the selected order for each testing day. This vector
+                                                                                    is optimized using the optimization module. Results from this  Each training is stored as a model using the corresponding
+                                                                  optimization are shown in the discussion section.   function.  This model  is  evaluated  during  the  algorithm
+   processing  phase. The  output  data  is composed  of two
+   variables: forecast output by the model and likelihood of the   4.4   Backtesting Process
+   forecast. Some algorithms such as the NN only returns the                                                     To evaluate the proposed algorithms a backtester system
+   likelihood towards one of the values (+1) for purchase and (-                                                                                    is designed. Backtester is a tool that can output performance
+   1) for sale. Using this likelihood and normalizing it from 0 to                                                            measures receiving as inputs the price data and the algorithm
+   100,  will make  the algorithm capable  of  forecasting  the                                                                 order vectors [19]. Backtester must be configured with an
+   market. Finally the optimization process is run once again in                                                                                    initial capital input and commissions, which are chosen to be
+   order to select the most suitable purchase and sale thresholds                                                       10000$ and 0.35% of the cost from each operation, as it is an
+   that will be later evaluated in the backtester [17].                                                               average value for brokerage fees. Also the backtester requires
+                                                               a logic in order to perform the operations. In this research, the
+   Table III shows the selected thresholds that were obtained                                                            chosen logic is as follows:
+   during the optimization process,  these thresholds are  the
+  minimum percentage of likelihood for each order type.                                                                  “In up trending markets, there can be only one long operation
+                                                           ongoing that must be exited in order to start a new one, in
+                                                   down trending markets there can be only one short operation
+   Technique         Purchase TH.    Sale TH.        Other value      on going that must be exited in order to start a new one. In
+  Random Forest       55%        30%     Number of trees = 100   either situation, the operation must be opened with the total
+   Naïve-Bayes         40%        20%                      -            capital available in the account at each moment”.
+   Neural Network       25%        20%       Hidden layers = 10
+     Table III: Trading rules for each ML algorithm.               This module also provides the performance of the Buy and
+                                                       Hold (BH) strategy as a benchmark for the evaluation. BH
+                                                                       strategy uses the following rule: “A purchase is made during
+  4.3  Support Vector Machine Algorithm             the first day of evaluation and sale is made at last day” [20].
+
+      The SVM algorithm is the core of the research, thus it
+   will be described in detail. The SVM implementation used in  5  Optimization
+   this  research  is known as SVM-KM being a SVM  that        This  section  will  describe  the  optimization  phase.
+   combines a clustering technique known as K-means [18]. This     Firstly, quality metrics will be introduced. In second place, the
+   added step provides a more solid output from the SVM,    optimization module will be described. Finally the post-filter
+   benefiting from the advantages of clustering methods such as   module will be explained and justified.
+   the identification of outliers or non-useful values in the data.
+
+
+
+                                   ISBN: 1-60132-480-4, CSREA Press ©
+
+[PAGE 5]
+404                                                                                                              Int'l Conf. Artificial Intelligence | ICAI'18  |
+
+
+  5.1  Quality Metrics                               5.3   Post-Filtering
+
+      The measures used in this paper are the following ones.         The post-filtering module is designed in order to refine
+                                                                     the output from the algorithm as  it provides a step that is
+  The return (R) is obtained subtracting the equity of each day    usually skipped in researches. In this paper two filters will be
+  from evaluation period. It is also presented as a percentage    used: Gain / Stop Loss (G/SL) and Average Directional Index
+   over  the  base  capital,  adding  the sum  of  returns  and   (ADX), both will be analyzed and justified.
+   subtracting them from the initial capital set (Eq. 8a).
+                                                      The G/SL ratio is a filtering measure which will analyze the
+  The Sharpe Ratio (SR) is a measure of risk of the investment    algorithm  return on  each  iteration  and  will  cancel  the
+  which is calculated as the returns divided by their standard    algorithm exit operation if the gain doesn’t match the fixed
+   deviation (Eq. 8b).                                              percentage, or  will create an  exit operation that was not
+                                                                  previously planned  if the price goes below the stop loss
+  The Maximum Drawdown (MDD) is a measure of risk which    percentage that was fixed [22].
+   displays the biggest performance fall of the return (Eq. 9). It is
+   calculated by subtracting the peak minus the valley after each   The ADX filter uses the indicator of the same name in order
+    fall, and getting the maximum from them.                          to check the strength of the trend for each day (Eq. 10). If the
+                                                                     strength doesn’t match the required threshold, any order that
+  The volatility (Vol) is a measure of risk which displays the   was planned for that day is cancelled. The ADX requires a n
+   variation of the returns over time (Eq. 8c). It is calculated as    value that is once again set as 14, as advised by Schaap [23].
+   the standard deviation of the return divided by their mean.
+                                                              This research has been conducted, using both these filters and
+  R and SR are required to be as high as possible, with a    without using them. Comparative results are taken from this
+   negative cipher denoting loss, and a positive one denoting    analysis and presented in the following section.
+   benefit. MDD and Vol are required to be as low as possible,
+   and must be necessarily positive numbers. They are usually    Figure 2 shows a schema of the entire process that has been
+   presented in percentage.                                       explained in the previous sections.
+
+  5.2  Optimization Module
+
+      The optimization module takes as inputs a range of
+   values that must be optimized, such as the n parameter from
+   the RSI algorithm. The module will iterate along this range of
+   values and perform a backtest phase for each one of them,
+   producing a matrix that stores the metrics from the evaluation.
+
+  A condition must be  set  in order  to rank the evaluated
+   iterations. In this paper, the chosen condition is: highest SR.
+
+  The module will finally output the most successful iteration
+   and will perform a full evaluation using the most suitable
+   configuration of parameters [21]. It will also output a heat
+  map of the process, in which, the axis will be the purchase and
+   sale thresholds, and the values of the map are the SR for each    Fig. 2. Schema of the proposed algorithm system.
+   iteration, where the areas with high value use hotter colors.
+
+                                                                (8)  6  Results
+                                                          The  results from the research are separated  in two
+                                                                     sections for each one of the analyzed periods, each of them                                                                (9)
+                                                                  containing  the  result  of  the  optimization and  backtester
+                                                          modules for the SVM and a table containing the backtester                                                            (10)
+                                                                           results for each experiment. There  is a  third section that
+                                                                    presents an exhaustive discussion of these results, as well as
+                                                           (11)                                                                      future work suggestions in order to extend the research.
+
+
+
+
+
+                                   ISBN: 1-60132-480-4, CSREA Press ©
+
+[PAGE 6]
+Int'l Conf. Artificial Intelligence | ICAI'18  |                                                            405
+
+
+  6.1  Up Trending Analysis                         6.2  Down Trending Analysis
+
+
+
+
+
+    Fig. 3. Heat map of the trading rules analysis in the up trending period, using     Fig. 5.  Heat map of the trading rules analysis in the down trending period,
+    the SR as the value and the purchase and sale threshold as the axis.              using the SR as the value and the purchase and sale threshold as the axis.
+
+
+
+
+
+                                                                                        Fig. 6.  Backtester output from SVM algorithm in down trending period,    Fig. 4.   Backtester output from SVM algorithm in up trending period,
+                                                                       showing in upper chart the selected orders alongside the close price of   showing in upper chart the selected orders alongside the close price of
+                                                                  S&P500, and in the lower chart the equity during the testing period vs the   S&P500, and in the lower chart the equity during the testing period vs the
+                                                                                  equity that would be obtained using Buy and Hold strategy.    equity that would be obtained using Buy and Hold strategy.
+
+   Algorithm      R (%)      SR    MDD (%)     Vol (%)      Algorithm      R (%)      SR    MDD (%)     Vol (%)
+   RSI              19.47%       1.39        3.45%        5.9%      RSI              6.98%        0.95        2.90%       2.54%
+  MACD           14.28%       0.88        4.69%        3.9%    MACD           6.58%        0.61        3.6%        2.29%
+  Momentum       18.41%       1.39        2.52%       5.76%     Momentum        6.27%        0.86        2.95%       1.84%
+   Bol. Bands        14.57%       1.09        3.12%       4.34%       Bol. Bands        7.41%        1.02        2.63%       2.32%
+  Random Forest    12.86%       1.04        3.46%       4.08%     Random Forest     5.26%        0.65        3.02%        1.7%
+   Naïve-Bayes       14.37%       1.03        3.65%       4.42%       Naïve-Bayes       8.93%        0.56        7.04%       1.89%
+   Neural Network    16.56%       0.94        4.36%       4.68%      Neural Network    8.05%        0.57        4.51%       2.68%
+  SVM             11.78%       1.03        2.13%       3.18%    SVM             22.53%       1.67        2.09%       4.48%
+   G/SL filter        12.7%        0.77        5.02%       4.23%      G/SL filter        13.56%       0.85        4.43%       1.91%
+  ADX filter        17.99%       0.92        4.6%        4.87%    ADX filter        16.17%       1.13        3.59%       2.55%
+     Table V: Results for each algorithm in up trending period.     Table VI: Results for each algorithm in down trending period.
+
+
+
+
+
+                                   ISBN: 1-60132-480-4, CSREA Press ©
+
+[PAGE 7]
+406                                                                                                              Int'l Conf. Artificial Intelligence | ICAI'18  |
+
+
+  6.3   Discussion                                         optimized with a Gain / Stop Loss and an ADX filter, and it
+                                                               has gone under a parameter-optimization process.
+      As shown in table V and VI, most algorithms output a
+   positive income, except MACD one, which incurs in losses.   The results show that the SVM doesn’t return the best results
+  So  far, the returns from all algorithms tend to be similar,    in up trending periods, being outperformed by RSI and B&H
+  which is caused due to the short size of the testing period    systems. However,  it shows a strong performance in down
+  However, this size was required due to the short duration of    trending periods making  it more suitable than quantitative
+   the trends that were required to analyze.                         techniques and other machine learning systems. The results
+                                                           improve further when applying the Stop Loss filter.
+  The B&H strategy outperforms every algorithm in the up
+   trending period, which is the expected result due to the strong   As  further work,  it would be advisable to reproduce the
+   dependence with price movement presented by this strategy,    current research in a higher amount of. Another interesting
+  which is also a weakness in a down trend.                     improve would be to develop a decision-logic to make the
+                                       SVM autonomous in the training selection step.
+  The SVM algorithm has a pretty high performance in the up
+   trending period, although not being able to beat the B&H.  8  References  However  it is noticeable that in up trending periods SVM
+  becomes a risky option as the MDD and Vol results show.     [1] R. Oka C. M. Kusimba. (2008) The Archaeology of Trading
+   There are other algorithms which present a higher SR such as    Systems.
+  RSI and NN. RSI’s performance goes as expected as  it     [2] D. Seng (2012) Fundamental Analysis and the Prediction of
+   appears in other researches such as the one from R. Rosillo    Earnings.
+                                                                              [3] R. Huerta (2013) Nonlinear  support  vector machines can   [19]. Also NN presents a great performance, reinforcing the
+                                                                            systematically identify stocks with high and low future returns.
+   research by Chootang [24].                                                                              [4]
+                                                                              [5] C. Engel and K. D.   (2001) West Exchange Rates and
+   In down trending periods, the first fact to notice is the greatly    Fundamentals.
+   performance  loss  that  all  quantitative algorithms presents     [6]  J. W. Wilder (1978) New Concepts  in Technical Trading
+  compared to the up trending periods. This fact supports the    Systems.
+    initial  premise  regarding  the  need  of  machine  learning    [7] Gerard Appel (2008) Understanding Macd (Moving Average
+   techniques in order to adapt to changing situations in the stock    Convergence Divergence).
+                                                                              [8] M. Pring (2009) Definitive guide to momentum indicators.   market. Furthermore, the SVM shows a strong performance,
+                                                                              [9] J. Bollinger (2001) Bollinger on Bollinger Bands.  which coincides with the expected result as researched by R.
+                                                                         [10] Tsai, Lin, Yen, and Chen (2011) Predicting stock markets
+   Rosillo in [18] and supporting other researches that point the                                                                             return by classifier ensembles.
+   adaptive traits from the SVM algorithm.                            [11] Chate P.J (2016) Stock Market Prediction and Analysis Using
+                                                                 Naïve Bayes.
+   Regarding the filters,  it is noticeable that the gain and stop    [12]  Chen,  Leung,  and Daouk  (2003)  Application  of  neural
+   loss filter improves the result in both periods. This is a result    networks to an emerging financial market: Forecasting and trading
+   of using security measures such as the Stop Loss in order to    the taiwan stock index.
+   protect the assets, which is strongly recommended by many    [13] Huang, Nakamori, and Wang (2005) Forecasting stock market
+                                                           movement direction with support vector machine.   investors,  and  as shown  in  the  results,   it  is  perfectly
+                                                                         [14] D. Indrani (2013) Understanding the S&P 500: This Index
+   compatible with the SVM. On the other hand, the ADX filter                                                                         Offers a Lot of International Exposure.
+   reduces the performance of the SVM. This is due to the fact                                                                         [15] R. Rosillo (2013). The effectiveness of the combined use of
+   that this filter restricts the amount of outgoing operations from   VIX and Support Vector Machines on the prediction of S&P 500.
+   the  algorithm,  making   it  warier  from  the  risks.  Safer    [16] R. Rosillo (2012). Technical analysis and the Spanish stock
+   algorithms are usually expected to have less income.              exchange: testing the RSI, MACD, momentum and stochastic rules
+                                                                       using Spanish market companies.
+   Regarding the optimization process  it is noticeable that the    [17] Y. Nevmyvaka (2006) Reinforcement Learning for Optimized
+  SVM tends to have better results the more sure  it is in the    Trade Execution.
+                                                                         [18] D. Weiguo W. Li W. Yijang (2012) An Improved SVM-KM   predictions in down trending periods, however the phenomena
+                                                           Model for Imbalanced Datasets.
+   gets reverted in the up trending one. This confirms once again                                                                         [19]  S.  D.  Campbell  (2005) A Review  of  Backtesting  and
+   the hypothesis proposed by R. Rosillo [18] about the use of    Backtesting Procedures.
+   this strategy in down trending periods rather than up trending.     [20] D. M. Muriuki (2015) A comparative analysis of stop loss and
+                                                             buy and hold strategies at the Nairobi Securities Exchange.
+  7  Conclusion and Future Work                  [21] R. Pardo (2008). The evaluation and optimization of trading                                                                                     strategies.
+  The SVM algorithm has been trained using different trainings    [22] A. W. Lo (2013). When do stop-loss rules stop losses?
+   for each period, and fed with common technical indicators    [23] C. B. Schaap [2006] ADXcellence: Power Trend Strategies.
+                                                                         [24] C. Chootong (2012) Trading Signal Generation Using A   such as RSI and MACD, and the VIX index. It has been also
+                                                                 Combination of Chart Patterns and Indicators.
+
+
+
+                                   ISBN: 1-60132-480-4, CSREA Press ©

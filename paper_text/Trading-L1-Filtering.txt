@@ -1,0 +1,1248 @@
+[PAGE 1]
+      Trading Strategies with L1 Filtering
+
+          Benjamin Bruder                Tung-Lam Dao
+       Research & Development           Research & Development
+   Lyxor Asset Management, Paris    Lyxor Asset Management, Paris
+    benjamin.bruder@lyxor.com       tung-lam.dao@lyxor.com
+
+                            Thierry Roncalli
+                        Research & Development
+                   Lyxor Asset Management, Paris
+                   thierry.roncalli@lyxor.com
+
+                          March 2011
+
+
+
+                                   Abstract
+
+         In this article, we discuss various implementation of L1 ﬁltering in order to detect
+     some properties of noisy signals. This ﬁlter consists of using a L1 penalty condition
+      in order to obtain the ﬁltered signal composed by a set of straight trends or steps.
+      This penalty condition, which determines the number of breaks, is implemented in a
+      constrained least square problem and is represented by a regularization parameter λ
+     which is estimated by a cross-validation procedure. Financial time series are usually
+      characterized by a long-term trend (called the global trend) and some short-term trends
+      (which are named local trends). A combination of these two time scales can form a
+      simple model describing the process of a global trend process with some mean-reverting
+      properties. Explicit applications to momentum strategies are also discussed in detail
+      with appropriate uses of the trend conﬁgurations.
+
+Keywords: Momentum strategy, L1 ﬁltering, L2 ﬁltering, trend-following, mean-reverting.
+
+JEL classiﬁcation: C01, C60, G11.
+
+1  Introduction
+
+Trend detection is a major task of time series analysis from both mathematical and ﬁnancial
+point of view. The trend of a time series is considered as the component containing the global
+change which is in contrast to the local change due to the noise. The procedure of trend
+ﬁltering concerns not only the problem of denoising but it must take into account also the
+dynamic of the underlying process. That explains why mathematical approaches to trend
+extraction have a long history and this subject still gives a great interest in the scientiﬁc
+community 1. In an investment perspective, trend ﬁltering is the core of most momentum
+strategies developed in the asset management industry and the hedge funds community in
+order to improve performance and to limit risk of portfolios.
+
+   The paper is organized as follows. In section 2, we discuss the trend-cycle decomposition
+of time series and review general properties of L1 and L2 ﬁltering. In section 3, we describe
+
+   1For a general review, see Alexandrov et al. (2008).
+
+
+                                       1
+
+[PAGE 2]
+                         Trading Strategies with L1 Filtering
+
+
+
+the L1 ﬁlter with its various extensions and the calibration procedure. In section 4, we apply
+L1 ﬁlters to some momentum strategies and present the results of some backtests with the
+S&P 500 index. In section 5, we discuss the possible extension to the multivariate case and
+we conclude in the last section.
+
+2  Motivations
+
+In economics, the trend-cycle decomposition plays an important role to describe a non-
+stationary time series into permanent and transitory stochastic components. Generally, the
+permanent component is assimilated to a trend whereas the transitory component may be a
+noise or a stochastic cycle. Moreover, the literature on business cycle has produced a large
+number of empirical research on this topic (see for example Cleveland and Tiao (1976),
+Beveridge and Nelson (1991), Harvey (1991) or Hodrick and Prescott (1997)). These last
+authors have then introduced a new method to estimate the trend of long-run GDP. The
+method widely used by economists is based on L2 ﬁltering. Recently, Kim et al. (2009) have
+developed a similar ﬁlter by replacing the L2 penalty function by a L1 penalty function.
+
+   Let us consider a time series yt which can be decomposed by a slowly varying trend xt
+and a rapidly varying noise εt process:
+
+                                            yt = xt + εt
+
+Let us ﬁrst remind the well-known L2 ﬁlter (so-called Hodrick-Prescott ﬁlter). This scheme
+consists to determine the trend xt by minimizing the following objective function:
+
+                     1 Xn             n−1X
+                                (yt −xt)2 + λ    (xt−1 −2xt + xt+1)2
+                     2
+                          t=1               t=2
+
+with λ > 0 the regularization parameter which control the competition between the smooth-
+ness of xt and the residual yt −xt (or the noise εt). We remark that the second term is the
+discrete derivative of the trend xt which characterizes the smoothness of the curve. Mini-
+mizing this objective function gives a solution which is the trade-oﬀbetween the data and
+the smoothness of its curvature. In ﬁnance, this scheme does not give a clear signature of
+the market tendency. By contrast, if we replace the L2 norm by the L1 norm in the objective
+function, we can obtain more interesting properties. Therefore, Kim et al. (2009) propose
+to consider the following objective function:
+
+                     1 Xn             n−1X
+                                 (yt −xt)2 + λ    |xt−1 −2xt + xt+1|
+                     2
+                          t=1               t=2
+
+This problem is closely related to the Lasso regression of Tibshirani (1996) or the L1 reg-
+ularized least square problem of Daubechies et al. (2004). Here, the fact of taking the L1
+norm will impose the condition that the second derivation of the ﬁltered signal must be zero.
+Hence, the ﬁltered signal is composed by a set of straight trends and breaks2. The compe-
+tition between these two terms in the objective function turns to the competition between
+the number of straight trends (or number of breaks) and the closeness to the raw data.
+Therefore, the smoothing parameter λ plays an important role for detecting the number of
+breaks. In the later, we present brieﬂy how the L1 ﬁlter works for the trend detection and
+its extension to mean-reverting processes. The calibration procedure for λ parameter will
+be also discussed in detail.
+
+  2A break is the position where the trend of signal changes.
+
+
+                                       2
+
+[PAGE 3]
+                         Trading Strategies with L1 Filtering
+
+
+3  L1 ﬁltering schemes
+
+3.1  Application to trend-stationary process
+
+The Hodrick-Prescott scheme discussed in last section can be rewritten in the vectorial space
+Rn and its L2 norm ∥·∥2 as:
+                               1
+                                ∥y −x∥22 + λ ∥Dx∥22                               2
+where y = (y1, . . . , yn), x = (x1, . . . , xn) ∈Rn and the D operator is the (n −2) × n matrix:
+                                        
+                              1  −2    1
+                                  1  −2   1
+              D =                     ...                                       (1)                                                                                                                                        1  −2  1                  
+                                                1  2  1
+
+The exact solution of this estimation is given by
+
+                                     ¡           ¢−1
+                     x⋆=  I + 2λD⊤D    y
+
+The explicit expression of x⋆allows a very simple numerical implementation with sparse
+matrix. As L2 ﬁlter is a linear ﬁlter, the regularization parameter λ is calibrated by com-
+paring to the usual moving-average ﬁlter. The detail of the calibration procedure is given
+in Appendix A.4.
+
+   The idea of L2 ﬁlter can be generalized to a lager class so-called Lp ﬁlter by using Lp
+penalty condition instead of L2 penalty. This generalization is already discussed in the work
+of Daubechies et al. (2004) for the linear inverse problem or in the Lasso regression problem
+by Tibshirani et al. (1996). If we consider a L1 ﬁlter, the objective function becomes:
+
+                     1 Xn             n−1X
+                                 (yt −xt)2 + λ    |xt−1 −2xt + xt+1|
+                     2
+                          t=1               t=2
+
+which is equivalent to the following vectorial form:
+
+                               1
+                                ∥y −x∥22 + λ ∥Dx∥1                               2
+
+It has been demonstrated in Kim et al. (2009) that the dual problem of this L1 ﬁlter scheme
+is a quadratic program with some boundary constraints. The detail of this derivation is
+shown in Appendix A.1.1. In order to optimize the numerical computation speed, we follow
+Kim et al. (2009) by using a “primal-dual interior point” method (see Appendix A.2). In
+the following, we check the eﬃcient of this technique on various trend-stationary processes.
+
+   The ﬁrst model consists of data simulated by a set of straight trend lines with a white
+noise perturbation:              
+                      +                                               εt                                     ¡
+                                            0,                                    σ2¢               ytεt ∼N= xt
+                               xt = xt−1 + vt                                            (2)
+                         Pr                          = p                                  {vt = vt−1}                         ©                                        ¡                                           ¢ª              
+                         Pr  vt = b  U[0,1] −12  = 1 −p
+
+                                       3
+
+[PAGE 4]
+                         Trading Strategies with L1 Filtering
+
+
+
+We present in Figure 1 the comparison between L1 −T and HP ﬁltering schemes3. The
+top-left graph is the real trend xt whereas the top-right graph presents the noisy signal yt.
+The bottom graphs show the results of the L1 −T and HP ﬁlters. Here, we have chosen
+λ = 5 258 for the L1 −T ﬁltering and λ = 1 217 464 for HP ﬁltering. This choice of λ for
+L1 −T ﬁltering is based on the number of breaks in the trend, which is ﬁxed to 10 in this
+example4. The second model model is a random walk generated by the following process:
+              
+               yt = yt−1¡ + vt + εt                                   εt ∼N  0, σ2¢                                                                                           (3)
+               Pr ©{vt = vt−1}¡  = p  ¢ª
+                         Pr  vt = b  U[0,1] −12  = 1 −p
+
+We present in Figure 2 the comparison between L1 −T ﬁltering and HP ﬁltering on this
+second model5.
+
+
+             Figure 1: L1 −T ﬁltering versus HP ﬁltering for the model (2)
+
+                    Signal                          Noisy signal
+
+       100                                           100
+
+
+        50                                            50
+
+
+         0                                             0
+
+
+       −50                                          −50
+
+                  500     1000     1500     2000                500     1000     1500     2000
+                            t                                              t
+               L1-T ﬁlter                  HP ﬁlter
+
+       100                                           100
+
+
+        50                                            50
+
+
+         0                                             0
+
+
+       −50                                          −50
+
+                  500     1000     1500     2000                500     1000     1500     2000
+                            t                                              t
+
+
+
+3.2  Extension to mean-reverting process
+
+As shown in the last paragraph, the use of L1 penalty on the second derivative gives the
+correct description of the signal tendency. Hence, similar idea can be applied for other order
+of the derivatives. We present here the extension of this L1 ﬁltering technique to the case of
+mean-reverting processes. If we impose now the L1 penalty condition to the ﬁrst derivative,
+we can expect to get the ﬁtted signal with zero slope. The cost of this penalty will be
+proportional to the number of jumps. In this case, we would like to minimize the following
+
+  3We consider n = 2000 observations. The parameters of the simulation are p = 0.99, b = 0.5 and σ = 15.
+  4We discuss how to obtain λ in the next section.
+  5The parameters of the simulation are p = 0.993, b = 5 and σ = 15.
+
+
+                                       4
+
+[PAGE 5]
+                         Trading Strategies with L1 Filtering
+
+
+              Figure 2: L1-T ﬁltering versus HP ﬁltering for the model (3)
+
+                     Signal                          Noisy signal
+
+
+       1500                                          1500
+
+
+       1000                                          1000
+
+
+        500                                           500
+
+
+          0                                             0
+
+                   500     1000     1500     2000                500     1000     1500     2000
+                             t                                              t
+               L1-T ﬁlter                  HP ﬁlter
+
+
+       1500                                          1500
+
+
+       1000                                          1000
+
+
+        500                                           500
+
+
+          0                                             0
+
+                   500     1000     1500     2000                500     1000     1500     2000
+                             t                                              t
+
+
+
+
+objective function:
+                         1 Xn     Xn
+                                      (yt −xt)2 + λ     |xt −xt−1|
+                         2
+                               t=1               t=2
+
+or in the vectorial form:
+                               1
+                                ∥y −x∥22 + λ ∥Dx∥1                               2
+
+Here the D operator is (n −1) × n matrix which is the discrete version of the ﬁrst order
+derivative:
+                                       
+                        −1    1  0
+                                0  −1  1    0
+               D =                      ...                                     (4)                                                                                                                                           −1    1  0    
+                                     −1  1
+
+We may apply the same minimization algorithm as previously (see Appendix A.1.2). To
+illustrate that, we consider the model with step trend lines perturbed by a white noise
+process:
+              
+               yt = xt ¡+ εt                                   εt ∼N  0, σ2¢                                                                                           (5)
+               Pr ©{xt = xt−1}¡  = p  ¢ª
+                         Pr  xt = b  U[0,1] −12  = 1 −p
+
+                                       5
+
+[PAGE 6]
+                         Trading Strategies with L1 Filtering
+
+
+
+We employ this model for testing the L1 −C ﬁltering and HP ﬁltering adapted to the ﬁrst
+derivative6, which corresponds to the following optimization program:
+                          1 Xn     Xn
+                    min       (yt −xt)2 + λ    (xt −xt−1)2
+                          2
+                                t=1               t=2
+
+In Figure 3, we have reported the corresponding results7. For the second test, we consider
+a mean-reverting process (Ornstein-Uhlenbeck process) with mean value following a regime
+switching process:              
+               yt = yt−1¡ + θ(xt −yt−1) + εt                                   εt ∼N  0, σ2¢                                                                                           (6)
+               Pr ©{xt = xt−1}¡  = p  ¢ª
+                         Pr  xt = b  U[0,1] −12  = 1 −p
+Here, µt is the process which characterizes the mean value and θ is inversely proportional to
+the return time to the mean value. In Figure 4, we show how the L1 −C ﬁlter can capture
+the original signal in comparison to the HP ﬁlter8.
+
+
+             Figure 3: L1 −C ﬁltering versus HP ﬁltering for the model (5)
+
+                    Signal                          Noisy signal
+
+        80                                            80
+        60                                            60
+        40                                            40
+        20                                            20
+         0                                             0
+       −20                                          −20
+       −40                                          −40
+
+                  500     1000     1500     2000                500     1000     1500     2000
+                            t                                              t
+               L1-C ﬁlter                  HP ﬁlter
+
+        80                                            80
+        60                                            60
+        40                                            40
+        20                                            20
+         0                                             0
+       −20                                          −20
+       −40                                          −40
+
+                  500     1000     1500     2000                500     1000     1500     2000
+                            t                                              t
+
+
+3.3  Mixing trend and mean-reverting properties
+
+We now combine the two schemes proposed above. In this case, we deﬁne two regulariza-
+                                               Pn−1
+tion parameters λ1 and λ2 corresponding to two penalty conditions   t=1 |xt −xt−1| and
+
+  6We use the term HP ﬁlter in order to keep homogeneous notations. However, we notice that this ﬁlter
+is indeed the FLS ﬁlter proposed by Kalaba and Tesfatsion (1989) when the exogenous regressors are only
+a constant.
+  7The parameters are p = 0.998, b = 50 and σ = 8.
+   8For the simulation of the Ornstein-Uhlenbeck process, we have chosen p = 0.9985, b = 20, θ = 0.1 and
+σ = 2
+
+
+                                       6
+
+[PAGE 7]
+                         Trading Strategies with L1 Filtering
+
+
+             Figure 4: L1 −C ﬁltering versus HP ﬁltering for the model (6)
+
+                    Signal                          Noisy signal
+        40                                            40
+
+        30                                            30
+
+        20                                            20
+
+        10                                            10
+
+         0                                             0
+
+       −10                                          −10
+
+       −20                                          −20
+                  500     1000     1500     2000                500     1000     1500     2000
+                            t                                              t
+               L1-C ﬁlter                  HP ﬁlter
+        40                                            40
+
+        30                                            30
+
+        20                                            20
+
+        10                                            10
+
+         0                                             0
+
+       −10                                          −10
+
+       −20                                          −20
+                  500     1000     1500     2000                500     1000     1500     2000
+                            t                                              t
+
+
+
+Pn−1
+  t=2 |xt−1 −2xt + xt+1|. Our objective function for the primal problem becomes now:
+
+            1 Xn              n−1X              n−1X
+                      (yt −xt)2 + λ1     |xt −xt−1| + λ2    |xt−1 −2xt + xt+1|
+            2
+                t=1                t=1                 t=2
+
+which can be again rewritten in the matrix form:
+
+                        1
+                          ∥y −x∥22 + λ1 ∥D1x∥1 + λ2 ∥D2x∥1                        2
+
+where the D1 and D2 operators are respectively the (n −1) × n and (n −2) × n matrices
+deﬁned in equations (4) and (1).
+
+
+   In Figures 5 and 6, we test the eﬃciency of the mixing scheme on the straight trend lines
+model (2) and the random walk model (3)9.
+
+
+3.4  How to calibrate the regularization parameters?
+
+As shown above, the trend obtained from L1 ﬁltering depends on the parameter λ of the
+regularization procedure. For large values of λ, we obtain the long-term trend of the data
+while for small values of λ, we obtain short-term trends of the data.  In this paragraph,
+we attempt to deﬁne a procedure which permits to do the right choice on the smoothing
+parameter according to our need of trend extraction.
+
+   9For both models, the parameters are p = 0.99, b = 0.5 and σ = 5.
+
+
+                                       7
+
+[PAGE 8]
+                   Trading Strategies with L1 Filtering
+
+
+
+
+      Figure 5: L1 −TC ﬁltering versus HP ﬁltering for the model (2)
+
+               Signal                          Noisy signal
+ 100                                           100
+
+  50                                            50
+
+   0                                             0
+
+ −50                                          −50
+
+−100                                         −100
+
+
+            500     1000     1500     2000                500     1000     1500     2000
+                      t                                              t
+         L1-TC ﬁlter                 HP ﬁlter
+ 100                                           100
+
+  50                                            50
+
+   0                                             0
+
+ −50                                          −50
+
+−100                                         −100
+
+
+            500     1000     1500     2000                500     1000     1500     2000
+                      t                                              t
+
+
+
+
+
+      Figure 6: L1 −TC ﬁltering versus HP ﬁltering for the model (3)
+
+               Signal                          Noisy signal
+1500                                          1500
+
+1000                                          1000
+
+ 500                                           500
+
+   0                                             0
+
+−500                                         −500
+
+            500     1000     1500     2000                500     1000     1500     2000
+                      t                                              t
+         L1-TC ﬁlter                 HP ﬁlter
+1500                                          1500
+
+1000                                          1000
+
+ 500                                           500
+
+   0                                             0
+
+−500                                         −500
+
+            500     1000     1500     2000                500     1000     1500     2000
+                      t                                              t
+
+
+
+
+                                  8
+
+[PAGE 9]
+                         Trading Strategies with L1 Filtering
+
+
+
+3.4.1 A preliminary remark
+
+For small value of λ, we recover the original form of the signal. For large value of λ, we
+remark that there exists a maximum value λmax above which the trend signal has the aﬃne
+form:
+                                        xt = α + βt
+
+where α and β are two constants which do not depend on the time t. The value of λmax is
+given by:
+                                        ¡                            λmax = °°° DD⊤¢−1 Dy °°°
+                               ∞
+We can use this remark to get an idea about the order of magnitude of λ which should be
+used to determine the trend over a certain time period T. In order to show this idea, we
+take the data over the total period T.  If we want to have the global trend on this period,
+we ﬁx λ = λmax. This λ will gives the unique trend for the signal over the whole period. If
+one need to get more detail on the trend over shorter periods, we can divide the signal into
+p time intervals and then estimate λ via the mean value of all the λimax parameter:
+
+                                     1 Xp
+                             λ =      λimax                                     p
+                                             i=1
+
+In Figure 7, we show the results obtained with p = 2 (λ = 1 500) and p = 6 (λ = 75) on the
+S&P 500 index.
+
+
+                   Figure 7: Inﬂuence of the smoothing parameter λ
+
+
+
+
+
+   Moreover, the explicit calculation of a Brownian motion process gives us the scaling
+law of the the smoothing parameter λmax. For the trend ﬁltering scheme, λmax scales as
+T 5/2 while for the mean-reverting scheme, λmax scales as T 3/2 (see Figure 8). Numerical
+
+
+                                       9
+
+[PAGE 10]
+                         Trading Strategies with L1 Filtering
+
+
+
+calculation of these powers for 500 simulations of the model (3) gives very good agreement
+with the analytical result for Brownian motion.  Indeed, we obtain empirically that the
+power for L1 −T ﬁlter is 2.51 while the one for L1 −C ﬁlter is 1.52.
+
+
+             Figure 8: Scaling power law of the smoothing parameter λmax
+
+
+
+
+
+3.4.2  Cross validation procedure
+
+In this paragraph, we discuss how to employ a cross-validation scheme in order to calibrate
+the smoothing parameter λ of our model. We deﬁne two additional parameters which char-
+acterize the trend detection mechanism. The ﬁrst parameter T1 is the width of the data
+windows to estimate the optimal λ with respect to our target strategy.  This parameter
+controls the precision of our calibration. The second parameter T2 is used to estimate the
+prediction error of the trends obtained in the main window. This parameter characterizes
+the time horizon of the investment strategy. Figure 9 shows how the data set is divided into
+
+
+          Figure 9: Cross-validation procedure for determining optimal value λ⋆
+
+                      Training set     Test set           Forecasting
+                                  |      - |    -            |    -
+                           T1           T2               T2                  |                                       ∥        -
+                        Historical data              Today       Prediction
+
+
+diﬀerent windows in the cross validation procedure. In order to get the optimal parameter λ,
+we compute the total error after scanning the whole data by the window T1. The algorithm
+of this calibration process is described as following:
+
+
+                                       10
+
+[PAGE 11]
+                         Trading Strategies with L1 Filtering
+
+Algorithm 1 Cross validation procedure for L1 ﬁltering
+  procedure CV_Filter(T1, T2)
+     Divide the historical data by m rolling test sets T 2i (i = 1, . . . , m)
+     For each test window                       ¡                     T 2,i ¢ compute the statistic λimax
+    From the array of  λimax  , compute the average ¯λ and the standard deviation σλ
+    Compute the boundaries λ1 = ¯λ −2σλ and λ2 = ¯λ + 2σλ
+     for j = 1 : n do
+       Compute λj = λ1 (λ2/λ1)(j/n)
+        Divide the historical data by p rolling training sets T 1k (k = 1, . . . , p)
+         for k = 1 : p do
+           For each training window T 1k , run the L1 ﬁlter
+            Forecast the trend for the adjacent test window T 2k
+          Compute the error ek (λj) on the test window T 2k
+       end for
+                     Pm
+       Compute the total error e (λj) =   k=1 ek (λj)
+    end for
+     Minimize the total error e (λ) to ﬁnd the optimal value λ⋆
+    Run the L1 ﬁlter with λ = λ⋆
+  end procedure
+
+
+   Figure 10 illustrates the calibration procedure for the S&P 500 index with T1 = 400 and
+T2 = 50 for the S&P 500 index (the number of observations is equal to 1 008 trading days).
+With m = p = 12 and n = 15, the estimated optimal value λ⋆for the L1 −T ﬁlter is equal
+to 7.03.
+
+
+               Figure 10: Calibration procedure with the S&P 500 index
+
+
+
+
+
+  We have observed that this calibration procedure is more favorable for long-term time
+horizon, that is to estimate a global trend. For short-term time horizon, the prediction of
+local trends is much more perturbed by the noise. We have computed the probability of
+
+
+                                       11
+
+[PAGE 12]
+                         Trading Strategies with L1 Filtering
+
+
+
+having good prediction on the tendency of the market for long-term and short-term time
+horizons. This probability is about 70% for 3 months time horizon while it is just 50% for
+one week time horizon. It comes that even if the ﬁt is good for the past, the noise is however
+large meaning that the prediction of the future tendency is just 1/2 for an increasing market
+and 1/2 for a decreasing market. In order to obtain better results for smaller time horizons,
+we improve the last algorithm by proposing a two-trend model. The ﬁrst trend is the local
+one which is determined by the ﬁrst algorithm with the parameter T2 corresponding to the
+local prediction. The second trend is the global one which gives the tendency of the market
+over a longer period T3. The choice of this global trend parameter is very similar to the
+choice of the moving-average parameter. This model can be considered as a simple version
+of mean-reverting model for the trend. In Figure 11, we describe how the data set is divided
+for estimating the local trend and the global trend.
+
+
+               Figure 11: Cross validation procedure for two-trend model
+
+
+                  Training set     Test set           Forecasting
+                                                                             ¤                 ¡
+                                                      |      -    |      -  Global trend
+                           |      -     T3               T3           £¤               ¡ ¢
+                       T1          |    -            |    -     Local trend                                                                             £               ¢                                    T2               T2           |                                       ∥        -
+                   Historical data              Today       Prediction
+
+
+   The procedure for estimating the trend of the signal in the two-trend model is summarized
+in Algorithm 2. The corrected trend is now determined by studying the relative position
+of the historical data to the global trend. The reference position is characterized by the                    ¡       ¢
+standard deviation σ  yt −xGt  where xGt  is the ﬁltered global trend.
+
+Algorithm 2 Prediction procedure for the two-trend model
+  procedure Predict_Filter(Tl, Tg)
+    Compute the local trend xLt  for the time horizon T2 with the CV_FILTER procedure
+    Compute the global trend xGt  for the¡ time horizon¢    T3 with the CV_FILTER procedure
+    Compute the standard deviation σ  yt −xGt   of data with respect to the global trend
+       if  ¯¯yt −xGt  ¯¯ < σ ¡yt −xGt ¢ then
+         Prediction ←xLt
+     else
+         Prediction ←xGt
+    end if
+  end procedure
+
+
+4  Application to momentum strategies
+
+In this section, we apply the previous framework to the S&P 500 index. First, we illustrate
+the calibration procedure for a given trading date. Then, we backtest a momentum strategy
+by estimating dynamically the optimal ﬁlters.
+
+
+
+                                       12
+
+[PAGE 13]
+                         Trading Strategies with L1 Filtering
+
+
+
+4.1  Estimating the optimal ﬁlter for a given trading date
+
+We would like to estimate the optimal ﬁlter for January 3rd, 2011 by considering the period
+from January 2007 to December 2010. We use the previous algorithms with T1 = 400 and
+T2 = 50. The optimal parameters are λ1 = 2.46 (for the L1 −C ﬁlter) and λ2 = 15.94 (for
+the L2 −T ﬁlter). Results are reported in Figure 12. The trend for the next 50 trading days
+is estimated to 7.34% for the L1 −T ﬁlter and 7.84% for the HP ﬁlter whereas it is null for
+the L1 −C and L1 −TC ﬁlters. By comparison, the true performance of the S&P 500 index
+is 1.90% from January 3rd, 2011 to March 15th, 201110.
+
+
+          Figure 12: Comparison between diﬀerent L1 ﬁlters on S&P 500 Index
+
+
+
+
+
+4.2  Backtest of a momentum strategy
+
+4.2.1  Design of the strategy
+
+Let us consider a class of self-ﬁnanced strategies on a risky asset St and a risk-free asset Bt.
+We assume that the dynamics of these assets is:
+
+                         dBt =  rtBt dt
+                            dSt =  µtSt dt + σtSt dWt
+
+where rt is the risk-free rate, µt is the trend of the asset price and σt is the volatility. We
+denote αt the proportion of investment in the risky asset and (1 −αt) the part invested in
+the risk-free asset. We start with an initial budget W0 and expect a ﬁnal wealth WT . The
+optimal strategy is the one which optimizes the expectation of the utility function U (WT )
+which is increasing and concave. It is equivalent to the Markowitz problem which consists
+
+  10It corresponds exactly to a period of 50 trading days
+
+
+                                       13
+
+[PAGE 14]
+                         Trading Strategies with L1 Filtering
+
+
+
+of maximizing the wealth of the portfolio under a penalty of risk:
+                     ½            ¾
+                                               α )                            sup E (W Tα ) −λ σ2 (WT
+                          α∈R           2
+
+which is equivalent to:                      ½          ¾
+                             sup  αtµt −λ W0α2t σ2t
+                            α∈R        2
+
+As the objective function is concave, the maximum corresponds to the zero point of the
+gradient µt −λW0αtσ2t . We obtain the optimal solution:
+
+                                        1  µt
+                                α⋆t =
+                              λW0 σ2t
+
+In order to limit the explosion of αt, we also impose the following constraint αmin ≤αt ≤
+αmax:                  µ  µ        ¶    ¶
+                                       1  µt
+                     α⋆t = max  min                , αmin   , αmax
+                             λW0 σ2t
+The wealth of the portfolio is then given by the following expression:
+                       µ  µSt+1   ¶        ¶
+                Wt+1 = Wt + Wt  α⋆t     −1 + (1 −α⋆t )rt
+                                            St
+
+4.2.2  Results
+
+In the following simulations, we use the estimators ˆµt and ˆσt in place of µt and σt. For ˆµt,
+we consider diﬀerent models like L1, HP and moving-average ﬁlters11 whereas we use the
+following estimator for the volatility:
+
+                           Z T                            1                                         1 Xt        Si
+                                  ˆσ2t =      σ2t dt =            ln2
+                        T  0        T i=t−T +1    Si−1
+
+We consider a long/short strategy, that is (αmin, αmax) = (−1, 1). In the particular case of
+the ˆµL1t  estimator, we consider three diﬀerent models:
+
+   1. the ﬁrst one is based on the local trend;
+
+   2. the second one is based on the global trend;
+
+   3. the combination of both local and global trends corresponds to the third model.
+
+For all these strategies, the test set of the local trend T2 is equal to 6 months (or 130 trading
+days) whereas the length of the test set for global trend is four times the length of the test
+set – T3 = 4T2 – meaning that T3 is one year (or 520 trading days). This choice of T3 agrees
+with the habitual choice of the width of the windows in moving average estimator. The
+length of the training set is also four times the length of the test set T1. The study period
+is from January 1998 to December 2010. In the backtest, the trend estimation is updated
+every day. In Table 1, we summarize the results obtained with the diﬀerent models cited
+above for the backtest. We remark that the best performances correspond to the case of
+global trend, HP and two-trend models. Because HP ﬁlter is calibrated to the window of
+the moving-average ﬁlter which is equal to T3, it is not surprising that the performances of
+
+  11We note them respectively ˆµL1t   , ˆµHPt  and ˆµMAt    .
+
+
+                                       14
+
+[PAGE 15]
+                         Trading Strategies with L1 Filtering
+
+
+                          Table 1: Results for the Backtest
+
+       Model    Trend   Performance   Volatility  Sharpe   IR   Drawdown
+     S&P 500             2.04%      21.83%    −0.06            56.78
+         ˆµMAt                 3.13%      18.27%    −0.01   0.03     33.83
+          ˆµHPt                 6.39%      18.28%      0.17   0.13     39.60
+            ˆµL1t       (LT)      3.17%      17.55%    −0.01   0.03     25.11
+            ˆµL1t      (GT)      6.95%      19.01%      0.19   0.14     31.02
+            ˆµL1t     (LGT)     6.47%      18.18%      0.17   0.13     31.99
+
+
+
+
+these three models are similar. On the considered period of the backtest, the S&P does not
+have a clear upward or downward trend. Hence, the local trend estimator does not give a
+good prediction and this strategy gives the worst performance. By contrast, the two-trend
+model takes into account the trade-oﬀbetween local trend and global trend and gives a
+better result
+
+
+5  Extension to the multivariate case
+                                                       ³          ´
+We now extend the L1 ﬁltering scheme to a multivariate time series yt =  y(1)t   , . . . , y(m)t      .
+The underlying idea is to estimate the common trend of several univariate time series.
+In ﬁnance, the time series correspond to the prices of several assets.  Therefore, we can
+build long/short strategies between these assets by comparing the individual trends and the
+common trend.
+
+
+   For the sake of simplicity, we assume that all the signals are rescaled to the same order
+of magnitude12. The objective function becomes new:
+
+                     m
+                            1 X °°°y(i) −x°°° 2 + λ ∥Dx∥1                            2                2
+                                  i=1
+
+In Appendix A.1.4, we show that this problem is equivalent to the L1 univariate problem            Pm
+by considering ¯yt = m−1   i=1 y(i) as the signal.
+
+6  Conclusion
+
+Momentum strategies are eﬃcient ways to use the market tendency for building trading
+strategies. Hence, a good estimator of the trend is essential from this perspective. In this
+paper, we show that we can use L1 ﬁlters to forecast the trend of the market in a very simple
+way. We also propose a cross-validation procedure to calibrate the optimal regularization
+parameter λ where the only information to provide is the investment time horizon. More
+sophisticated models based on a local and global trends is also discussed. We remark that
+these models can reﬂect the eﬀect of mean-reverting to the global trend of the market.
+Finally, we consider several backtests on the S&P 500 index and obtain competing results
+with respect to the traditional moving-average ﬁlter.
+
+  12For example, we may center and standardize the time series by subtracting the mean and dividing by
+the standard deviation.
+
+
+                                       15
+
+[PAGE 16]
+                         Trading Strategies with L1 Filtering
+
+
+References
+
+ [1] Alexandrov T., Bianconcini S., Dagum E.B., Maass P. and McElroy T. (2008),
+   A Review of Some Modern Approaches to the Problem of Trend Extraction , US Census
+    Bureau, RRS #2008/03.
+
+ [2] Beveridge S. and Nelson C.R. (1981), A New Approach to the Decomposition of
+    Economic Time Series into Permanent and Transitory Components with Particular
+    Attention to Measurement of the Business Cycle, Journal of Monetary Economics,
+     7(2), pp. 151-174.
+
+ [3] Boyd S. and Vandenberghe L. (2009), Convex Optimization, Cambridge University
+     Press.
+
+ [4] Cleveland W.P. and Tiao G.C. (1976), Decomposition of Seasonal Time Series: A
+    Model for the Census X-11 Program, Journal of the American Statistical Association,
+     71(355), pp. 581-587.
+
+ [5] Daubechies I., Defrise M. and De Mol C. (2004), An Iterative Thresholding Al-
+    gorithm for Linear Inverse Problems with a Sparsity Constraint, Communications on
+    Pure and Applied Mathematics, 57(11), pp. 1413-1457.
+
+ [6] Efron B., Tibshirani R. and Friedman R. (2009), The Elements of Statistical Learn-
+     ing, Second Edition, Springer.
+
+ [7] Harvey A. (1991), Forecasting, Structural Time Series Models and the Kalman Filter,
+    Cambridge University Press.
+
+ [8] Hodrick R.J. and Prescott E.C. (1997), Postwar U.S. Business Cycles: An Empirical
+     Investigation, Journal of Money, Credit and Banking, 29(1), pp. 1-16.
+
+ [9] Kalaba R. and Tesfatsion L. (1989), Time-varying Linear Regression via Flexible
+    Least Squares, Computers & Mathematics with Applications, 17, pp. 1215-1245.
+
+[10] Kim S-J., Koh K., Boyd S. and Gorinevsky D. (2009), ℓ1 Trend Filtering, SIAM
+    Review, 51(2), pp. 339-360.
+
+[11] Tibshirani R. (1996), Regression Shrinkage and Selection via the Lasso, Journal of
+     the Royal Statistical Society B, 58(1), pp. 267-288.
+
+
+
+
+
+                                       16
+
+[PAGE 17]
+                         Trading Strategies with L1 Filtering
+
+
+A  Computational aspects of L1, L2 ﬁlters
+
+A.1  The dual problem
+
+A.1.1  The L1 −T ﬁlter
+
+This problem can be solved by considering the dual problem which is a QP program. We
+ﬁrst rewrite the primal problem with new variable z = Dx:
+
+                                   1
+                          min    ∥y −x∥22 + λ ∥z∥1                                   2
+                                      u.c.  z = Dx
+
+We construct now the Lagrangian function with the dual variable ν ∈Rn−2:
+
+                              1
+              L (x, z, ν) =  ∥y −x∥22 + λ ∥z∥1 + ν⊤(Dx −z)                              2
+
+The dual objective function is obtained in the following way:
+                            infx,z L (x, z, ν) = −1      + y⊤D⊤ν                             2ν⊤DD⊤ν
+
+for −λ1 ≤ν ≤λ1. According to the Kuhn-Tucker theorem, the initial problem is equivalent
+to the dual problem:
+
+                                  1
+                          min  2ν⊤DD⊤ν −y⊤D⊤ν
+                                     u.c.  −λ1 ≤ν ≤λ1
+
+This QP program can be solved by traditional Newton algorithm or by interior-point meth-
+ods, and the ﬁnal solution of the trend reads
+
+                        x⋆= y −D⊤ν
+
+A.1.2  The L1 −C ﬁlter
+
+The optimization procedure for L1 −C ﬁlter follows the same strategy as the L1 −T ﬁlter.
+We obtain the same quadratic program with the D operator replaced by (n −1) × n matrix
+which is the discrete version of the ﬁrst order derivative:
+                                       
+                        −1    1  0
+                                0  −1  1    0
+               D =                      ...                                                                                                                                           −1    1  0    
+                                     −1  1
+
+A.1.3  The L1 −TC ﬁlter
+
+In order to follow the same strategy presented above, we introduce two additional variables
+z1 = D1x and z2 = D2x. The initial problem becomes:
+
+                             1
+                     min    ∥y −x∥22 + λ1 ∥z1∥1 + λ2 ∥z2∥1                             2                   ½
+                                     z1 = D1x                               u.c.
+                                     z2 = D2x
+
+                                       17
+
+[PAGE 18]
+                         Trading Strategies with L1 Filtering
+
+
+
+The Lagrangian function with the dual variables ν1 ∈Rn−1 and ν2 ∈Rn−2 is:
+
+                    1
+ L (x, z1, z2, ν1, ν2) =  ∥y −x∥22 + λ1 ∥z1∥1 + λ2 ∥z2∥1 + ν⊤1 (D1x −z1) + ν⊤2 (D2x −z2)                    2
+
+whereas the dual objective function is:
+                                  + y⊤¡D⊤1 ν1 + D⊤2 ν2 ¢           infx,z1,z2 L (x, z1, z2, ν1, ν2) = −1 °°D⊤1 ν1 + D⊤2 ν2 °°22                                   2
+
+for −λi1 ≤νi ≤λi1 (i = 1, 2). Introducing the variable z = (z1, z2) and ν = (ν1, ν2), the
+initial problem is equivalent to the dual problem:
+
+                                     1
+                            min  2ν⊤Qν −R⊤ν
+                                         u.c.  −ν+ ≤ν ≤ν+
+      µ   ¶                    µ   ¶
+          D1                                   λ1with D =               , Q = DD⊤, R = Dy and ν+ =         1. The solution of the primal
+          D2                                   λ2
+problem is then given by x⋆= y −D⊤ν.
+
+A.1.4  The L1 −T multivariate ﬁlter
+
+As in the univariate case, this problem can be solved by considering the dual problem which
+is a QP program. The primal problem is:
+
+                        m                                1 X           2                        min            °°°y(i) −x °°° + λ ∥z∥1                                2                2
+                                       i=1
+                                   u.c.  z = Dx
+                   Pm
+Let us deﬁne ¯y = (¯yt) with ¯yt = m−1   i=1 y(i). The dual objective function becomes:
+                                               1 Xm ³     ´⊤³     ´           infx,z L (x, z, ν) = −1      + ¯y⊤D⊤ν +         y(i) −¯y      y(i) −¯y                   2ν⊤DD⊤ν            2
+                                                         i=1
+
+for −λ1 ≤ν ≤λ1. According to the Kuhn-Tucker theorem, the initial problem is equivalent
+to the dual problem:
+
+                                  1
+                          min  2ν⊤DD⊤ν −¯y⊤D⊤ν
+                                     u.c.  −λ1 ≤ν ≤λ1
+
+This QP program can be solved by traditional Newton algorithm or by interior-point meth-
+ods and the solution is:
+                        x⋆= ¯y −D⊤ν
+
+A.2  The interior-point algorithm
+
+We present brieﬂy the interior-point algorithm of Boyd and Vandenberghe (2009) in the case
+of the following optimization problem:
+
+                      min  f0 (x)
+                    ½
+                        Ax = b
+                               u.c.
+                                          fi (x) < 0   for i = 1, . . . , m
+
+                                       18
+
+[PAGE 19]
+                         Trading Strategies with L1 Filtering
+
+
+
+where f0, . . . , fm : Rn →R are convex and twice continuously diﬀerentiable and rank (A) =
+p < n. The inequality constraints will become implicit if one rewrite the problem as:
+
+              Xm
+                         min  f0 (x) +    I−(fi (x))
+                                                i=1
+                                    u.c.  Ax = b
+
+where I−(u) : R →R is the non-positive indicator function13. This indicator function is
+discontinuous, hence the Newton method can not be applied.  In order to overcome this
+problem, we approximate I−(u) by the logarithmic barrier function I⋆−(u) = −τ −1 ln (−u)
+with τ →∞.  Finally the Kuhn-Tucker condition for this approximation problem gives
+rt (x, λ, ν) = 0 with:
+                                 
+                             ∇f0 (x) + ∇f (x)⊤λ + A⊤ν
+                       rτ (x, λ, ν) =    −diag (λ) f (x) −τ −11  
+                                Ax −b
+
+The solution of rτ (x, λ, ν) = 0 can be obtained by Newton’s iteration for the triple y =
+(x, λ, ν):
+                            rτ (y + ∆y) ≃rτ (y) + ∇rτ (y) ∆y = 0
+This equation gives the Newton’s step ∆y = −∇rτ (y)−1 rτ (y) which deﬁnes the search
+direction.
+
+A.3  The scaling of smoothing parameter of L1 ﬁlter
+
+We can try to estimate the order of magnitude of the parameter λmax by considering the
+continuous case. Assuming that the signal is a process Wt. The value of λmax in the discrete
+case deﬁned by:
+                                        ¡                            λmax = °°° DD⊤¢−1 Dy °°°
+                               ∞
+                                               R T
+can be considered as the ﬁrst primitive I1 (T) =  0 Wt dt of the process Wt  if D = D1                                               R T R t
+(L1 −C ﬁltering) or the second primitive I2 (T) =  0   0 Ws ds dt of Wt if D = D2 (L1 −T
+ﬁltering). We have:
+                                  Z T
+                                I1 (T) =    Wt dt
+                                                0
+                                        Z T
+                      = WT T −      t dWt
+                                                         0
+                                  Z T
+                      =      (T −t) dWt
+                                                0
+
+The process I1 (T) is a Wiener integral (or a Gaussian process) with variance:
+                                 Z T                                £      ¤                                             T 3
+                   E I21 (T) =    (T −t)2 dt =
+                                               0               3
+  13We have:                  0   u ≤0
+                                I−(u) =                       ∞  u > 0
+
+
+
+                                       19
+
+[PAGE 20]
+                         Trading Strategies with L1 Filtering
+
+
+
+In this case, we expect that λmax ∼T 3/2. The second order primitive can be calculated in
+the following way:
+                         Z T
+                        I2 (T) =     I1 (t) dt
+                                    0
+                                 Z T
+                = I1 (T) T −      t dI1 (T)
+                                                0
+                                 Z T
+                = I1 (T) T −    tWt dt
+                                                0
+                                                2     Z T                                                                 t2                = I1 (T) T −T WT +     dWt
+                                      2          0  2
+                                       2     Z T µ        ¶                                                       2          t2                = −T WT +     T −Tt +    dWt
+                              2          0             2
+                          Z T                            1
+                =      (T −t)2 dWT
+                            2  0
+
+This quantity is again a Gaussian process with variance:
+                                 Z T                  5                                   1              T
+                          E[I22 (T)] =      (T −t)4 dt =
+                                   4  0              20
+
+In this case, we expect that λmax ∼T 5/2.
+
+A.4  Calibration of the L2 ﬁlter
+
+We discuss here how to calibrate the L2 ﬁlter in order to extract the trend with respect to
+the investment time horizon T. Though the L2 ﬁlter admits an explicit solution which is a
+great advantage for numerical implementation, the calibration of the smoothing parameter
+λ is not trivial. We propose to calibrate the L2 ﬁlter by comparing the spectral density of
+this ﬁlter with the one obtained with the moving-average ﬁlter. For this last ﬁlter, we have:
+
+                                       1 Xt−1
+                                  ˆxMAt  =          yi                                 T
+                                            i=t−T
+
+It comes that the spectral density is:
+
+                                                              2
+                                           TX−1                                      1
+                              f (ω) =         e−iωt                                T 2     ¯¯¯¯¯                                                            ¯¯¯¯¯
+                                               t=0
+                                                      ¡          ¢−1
+For the L2 ﬁlter, we k now that the solution is ˆxHP =  1 + 2λDT D    y. Therefore, the
+spectral density is:
+                     µ                      ¶2
+                   HP                   1                     f   (ω) =
+                                1 + 4λ (3 −4 cos ω + cos 2ω)
+                     µ       ¶2
+                                   1
+                  ≃
+                                1 + 2λω4
+
+The width of the spectral density for the L2 ﬁlter is then (2λ)−1/4 whereas it is 2πT −1
+for the moving-average ﬁlter. Calibrate the L2 ﬁlter could be done by matching this two
+
+
+                                       20
+
+[PAGE 21]
+                         Trading Strategies with L1 Filtering
+
+
+
+quantities. Finally, we obtain the following relationship:
+                            µ  ¶4
+                                        1  T
+                           λ ∝λ⋆=
+                                        2  2π
+
+In Figure 13, we represent the spectral density of the moving-average ﬁlter for diﬀerent
+windows T. We report also the spectral density of the corresponding L2 ﬁlters. For that,
+we have calibrated the optimal parameter λ⋆by least square minimization. In Figure 14,
+we compare the optimal estimator λ⋆with the one corresponding to 10.27 × λ⋆. We notice
+that the approximation is very good.
+
+A.5  Implementation issues
+
+The computational time may be large when working with dense matrices even if we consider
+interior-point algorithms.  It could be reduced by using sparse matrices. But the eﬃcient
+way to optimize the implementation is to consider band matrices. Moreover, we may also
+notice that we have to solve a large linear system at each iteration.  Depending on the
+ﬁltering problem (L1 −T, L1 −C and L1 −TC ﬁlters), the system is 6-bands or 3-bands
+but always symmetric. For computing λmax, one may remark that it is equivalent to solve a
+band system which is positive deﬁnite. We suggest to adapt the algorithms in order to take
+into account all these properties.
+
+
+
+
+
+                                       21
+
+[PAGE 22]
+                        Trading Strategies with L1 Filtering
+
+
+
+
+
+              Figure 13: Spectral density of moving-average and L2 ﬁlters
+
+
+
+
+
+Figure 14: Relationship between the value of λ and the length of the moving-average ﬁlter
+
+
+
+
+
+                                       22

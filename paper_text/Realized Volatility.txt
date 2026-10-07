@@ -1,0 +1,1432 @@
+[PAGE 1]
+             Realized Volatility
+
+              Torben G. Andersen and Luca BenzoniChicago
+of
+Bank
+Reserve
+Federal             WP 2008-14
+
+[PAGE 2]
+Realized Volatility∗
+
+
+Torben G. Andersen1 and Luca Benzoni2
+
+1 Kellogg School of Management, Northwestern University, Evanston, IL; NBER,
+  Cambridge, MA; and CREATES, Aarhus, Denmark
+2 Federal Reserve Bank of Chicago, Chicago, IL
+
+
+
+Summary. Realized volatility is a nonparametric ex-post estimate of the return
+variation. The most obvious realized volatility measure is the sum of ﬁnely-sampled
+squared return realizations over a ﬁxed time interval. In a frictionless market the
+estimate achieves consistency for the underlying quadratic return variation when
+returns are sampled at increasingly higher frequency. We begin with an account
+of how and why the procedure works in a simpliﬁed setting and then extend the
+discussion to a more general framework. Along the way we clarify how the real-
+ized volatility and quadratic return variation relate to the more commonly applied
+concept of conditional return variance. We then review a set of related and useful
+notions of return variation along with practical measurement issues (e.g., discretiza-
+tion error and microstructure noise) before brieﬂy touching on the existing empirical
+applications.
+
+
+1 Introduction
+
+Given the importance of return volatility on a number of practical ﬁnan-
+cial management decisions, there have been extensive eﬀorts to provide good
+real-time estimates and forecasts of current and future volatility. One com-
+plicating feature is that, contrary to the raw return, actual realizations of
+return volatility are not directly observable. A common approach to deal with
+the fundamental latency of return volatility is to conduct inference regarding
+volatility through strong parametric assumptions, invoking, e.g., an ARCH or
+
+
+ ∗This draft: July 22, 2008. Chapter prepared for the Handbook of Financial Time
+   Series, Springer Verlag. We are grateful to Neil Shephard, Olena Chyruk, and
+   the Editors Richard Davis and Thomas Mikosch for helpful comments and sug-
+   gestions. Of course, all errors remain our sole responsibility. The views expressed
+   herein are those of the authors and not necessarily those of the Federal Reserve
+  Bank of Chicago or the Federal Reserve System. The work of Andersen is sup-
+  ported by a grant from the NSF to the NBER and support from CREATES
+  funded by the Danish National Research Foundation.
+
+[PAGE 3]
+2      Torben G. Andersen and Luca Benzoni
+
+a stochastic volatility (SV) model estimated with data at daily or lower fre-
+quency. An alternative approach is to invoke option pricing models to invert
+observed derivatives prices into market-based forecasts of “implied volatility”
+over a ﬁxed future horizon. Such procedures remain model-dependent and
+further incorporate a potentially time-varying volatility risk premium in the
+measure so they generally do not provide unbiased forecasts of the volatility
+of the underlying asset. Finally, some studies rely on “historical” volatility
+measures that employ a backward looking rolling sample return standard de-
+viation, typically computed using one to six months of daily returns, as a
+proxy for the current and future volatility level. Since volatility is persistent
+such measures do provide information but volatility is also clearly mean re-
+verting, implying that such unit root type forecasts of future volatility are
+far from optimal and, in fact, conditionally biased given the history of the
+past returns. In sum, while actual returns may be measured with minimal
+(measurement) error and may be analyzed directly via standard time series
+methods, volatility modeling has traditionally relied on more complex econo-
+metric procedures in order to accommodate the inherent latent character of
+volatility.
+   The notion of realized volatility eﬀectively reverses the above characteriza-
+tion. Given continuously observed price or quote data, and absent transaction
+costs, the realized return variation may be measured without error along with
+the (realized) return. In addition, the realized variation is conceptually related
+to the cumulative expected variability of the returns over the given horizon
+for a wide range of underlying arbitrage-free diﬀusive data generating pro-
+cesses. In contrast, it is impossible to relate the actual (realized) return to
+the expected return over shorter sample periods in any formal manner absent
+very strong auxiliary assumptions. In other words, we learn much about the
+expected return volatility and almost nothing about the expected mean return
+from ﬁnely-sampled asset prices. This insight has fueled a dramatic increase in
+research into the measurement and application of realized volatility measures
+obtained from high frequency, yet noisy, observations on returns. For liquid
+ﬁnancial markets with high trade and quote frequency and low transaction
+costs, it is now prevailing practice to rely on intra-day return data to con-
+struct ex-post volatility measures. Given the rapidly increasing availability of
+high-quality transaction data across many ﬁnancial assets, it is inevitable that
+this approach will continue to be developed and applied within ever broader
+contexts in the future.
+   This chapter provides a short and largely intuitive overview of the realized
+volatility concept and the associated applications. We begin with an account
+of how and why the procedure works in a simpliﬁed setting and then discuss
+more formally how the results apply in general settings. Next, we detail more
+formally how the realized volatility and quadratic return variation relate to
+the more common conditional return variance concept. We then review a set
+of related and useful notions of return variation along with practical measure-
+ment issues before brieﬂy touching on the existing empirical applications.
+
+[PAGE 4]
+                                                      Realized Volatility      3
+
+2 Measuring Mean Return versus Return Volatility
+
+The theory of realized volatility is tied closely to the availability of asset price
+observations at arbitrarily high frequencies. Hence, it is natural to consider the
+volatility measurement problem in a continuous-time framework, even if we
+ultimately only allow sampling at discrete intervals. We concentrate on a single
+risky asset whose price may be observed at equally-spaced discrete points in
+time over a given interval, [0, T], namely t = 0, 1/n, 2/n, . . . , T −(1/n), T,
+where n and T are positive integers and the unit interval corresponds to
+the primary time period over which we desire to measure return volatility,
+e.g., one trading day. We denote the logarithmic asset price at time t by
+s(t) and the continuously compounded returns over [t −k, t] is then given by
+r(t, k) = s(t) −s(t −k) where 0 ≤t −k < t ≤T and k = j/n for some
+positive integer j. When k = 1 it is convenient to use the shorthand notation
+r(t) = r(t, 1), where t is an integer 1 ≤t ≤T, for the unit period, or “daily,”
+return.
+   To convey the basic rationale behind the realized volatility approach, we
+initially consider a simpliﬁed setting with the continuously compounded re-
+turns driven by a simple time-invariant Brownian motion, so that
+
+                      ds(t) = αdt + σdW(t), 0 ≤t ≤T ,                   (1)
+
+where α and σ (σ > 0) denote the constant drift and diﬀusion coeﬃcients,
+respectively, scaled to correspond to the unit time interval.
+   For a given measurement period, say [0, K], where K is a positive integer,
+we have n · K intraday return observations r(t, 1/n) = s(t) −s(t −1/n) for
+t = 1/n, . . . , (n −1) · K/n, K, that are i.i.d. normally distributed with mean
+α/n and variance σ2/n. It follows that the maximum likelihood estimator for
+the drift coeﬃcient is given by
+
+                 1                    n·KX             r(K, K)   s(K) −s(0)
+               ˆαn =       r(j/n, 1/n) =      =                    .          (2)
+          K           K      K
+                     j=1
+
+Hence, for a ﬁxed interval the in-ﬁll asymptotics, obtained by continually
+increasing the number of intraday observations, are irrelevant for estimating
+the expected return. The estimator of the drift is independent of the sampling
+frequency, given by n, and depends only on the span of the data, K. For
+example, one may readily deduce that
+
+                                     σ2
+                               Var(ˆαn) =      .                             (3)
+                      K
+
+In other words, although the estimator is unbiased, the mean drift cannot be
+estimated consistently over any ﬁxed interval. Even for the simplest case of
+a constant mean, long samples (large K) are necessary for precise inference.
+Thus, in a setting where the expected returns are stipulated to vary condition-
+ally on features of the underlying economic environment, auxiliary identifying
+
+[PAGE 5]
+4      Torben G. Andersen and Luca Benzoni
+
+assumptions are required for sensible inference about α. This is the reason
+why critical empirical questions such as the size of the equity premium and
+the pattern of the expected returns in the cross-section of individual stocks
+remain contentious and unsettled issues within ﬁnancial economics.
+   The situation is radically diﬀerent for estimation of return volatility. Even
+if the expected return cannot be inferred with precision, nonparametric mea-
+surement of volatility may be based on un-adjusted or un-centered squared
+returns. This is feasible as the second return moment dominates the ﬁrst mo-
+ment in terms of inﬂuencing the high-frequency squared returns. Speciﬁcally,
+we have,
+                           £              ¤   α2   σ2
+               E r(j/n, 1/n)2 =  +      ,                     (4)
+                                      n2   n
+and
+                     £              ¤   α4            E r(j/n, 1/n)4 =  + 6α2σ2 + 3σ4 .                (5)
+                                  n4     n3     n2
+It is evident that the terms involving the drift coeﬃcient are an order of
+magnitude smaller, for n large, than those that pertain only to the diﬀusion
+coeﬃcient. This feature allows us to estimate the return variation with a high
+degree of precision even without specifying the underlying mean drift, e.g.,3
+
+                                n·KX                            1
+                                  ˆσ2n =       r2(j/n, 1/n).                       (6)                K
+                                 j=1
+
+It is straightforward to establish that
+
+                                £    ¤   α2
+                   E  ˆσ2n =  + σ2 ,                           (7)                             n
+
+while some additional calculations yield
+
+                              £    ¤             σ4                     Var  ˆσ2n = 4α2σ2 + 2       .                      (8)                          n2K   nK
+It follows by a standard L2 argument that, in probability, ˆσ2n →σ2 for n →∞.
+Hence, the realized variation measure is a biased but consistent estimator of
+the underlying (squared) volatility coeﬃcient. Moreover, it is evident that,
+for n large, the bias is close to negligible. In fact, as n →∞we have the
+distributional convergence,
+            √
+                  n · K (ˆσ2n −σ2) →N(0, 2σ4) .                    (9)
+
+   These insights are not new. For example, within a similar context, they
+were stressed by Merton [97]. However, the lack of quality intraday price data
+and the highly restrictive setting have long led scholars to view them as bereft
+
+ 3 The quantity (K · ˆσ2n) is a “realized volatility” estimator of the return variation
+   over [0, K] and it moves to the forefront of our discussion in the following section.
+
+[PAGE 6]
+                                                      Realized Volatility      5
+
+of practical import. This situation has changed fundamentally over the last
+decade, as it has been shown that the basic results apply very generally, high-
+frequency data have become commonplace, and the measurement procedures,
+through suitable strategies, can be adapted to deal with intraday observations
+for which the relative impact of microstructure noise may be substantial.
+
+
+3 Quadratic Return Variation and Realized Volatility
+
+This section outlines the main steps in generalizing the above ﬁndings to an
+empirically relevant setting with stochastic volatility. We still operate within
+the continuous-time diﬀusive setting, for simplicity ruling out price jumps,
+and assume a frictionless market. In this setting the asset’s logarithmic price
+process s must be a semimartingale to rule out arbitrage opportunities (e.g.,
+Back [29]). We then have,
+
+                  ds(t) = µ(t)dt + σ(t) dW(t) ,   0 ≤t ≤T ,             (10)
+
+where W is a standard Brownian motion process, µ(t) and σ(t) are predictable
+processes, µ(t) is of ﬁnite variation, while σ(t) is strictly positive and square
+              ³R t    ´
+integrable, i.e., E   0 σ2sds < ∞. Hence, the processes µ(t) and σ(t) signify
+the instantaneous conditional mean and volatility of the return. The contin-
+uously compounded return over the time interval from t −k to t, 0 < k ≤t,
+is therefore
+                            Z t         Z t
+           r(t, k) = s(t) −s(t −k) =     µ(τ)dτ +    σ(τ)dW(τ) ,     (11)
+                                    t−k           t−k
+
+and its quadratic variation QV (t, k) is
+                             Z t
+                QV (t, k) =     σ2(τ)dτ .                     (12)
+                                     t−k
+
+Equation (12) shows that innovations to the mean component µ(t) do not
+aﬀect the sample path variation of the return. Intuitively, this is because the
+mean term, µ(t)dt, is of lower order in terms of second order properties than
+the diﬀusive innovations, σ(t)dW(t). Thus, when cumulated across many high-
+frequency returns over a short time interval of length k they can eﬀectively
+be neglected. The diﬀusive sample path variation over [t −k, t] is also known
+as the integrated variance IV (t, k),
+                             Z t
+                     IV (t, k) =     σ2(τ)dτ .                      (13)
+                                     t−k
+
+Equations (12) and (13) show that, in this setting, the quadratic and inte-
+grated variation coincide. This is however no longer true for more general
+
+[PAGE 7]
+6      Torben G. Andersen and Luca Benzoni
+
+return process like, e.g., the stochastic volatility jump-diﬀusion model dis-
+cussed in Section 5 below.
+   Absent microstructure noise and measurement error, the return quadratic
+variation can be approximated arbitrarily well by the corresponding cumula-
+tive squared return process. Consider a partition {t −k + n,j  j = 1, . . . n · k}
+of the [ t −k, t ] interval. Then the realized volatility (RV) of the logarithmic
+price process is
+                                      n·k µ          ¶2          X            j  1
+             RV (t, k; n) =    r   t −k + n, n      .               (14)
+                                j=1
+
+Semimartingale theory ensures that the realized volatility measure converges
+in probability to the return quadratic variation QV, previously deﬁned in
+equation (12), when the sampling frequency n increases:
+
+            RV (t, k; n) −→QV (t, k)   as n →∞.               (15)
+
+This ﬁnding extends the consistency result for the (constant) volatility coeﬃ-
+cient discussed below equation (8) to a full-ﬂedged stochastic volatility setting.
+This formal link between realized volatility measures based on high-frequency
+returns and the quadratic variation of the underlying (no arbitrage) price
+process follows immediately from the theory of semimartingales (e.g., Protter
+[102]) and was ﬁrst applied in the context of empirical return volatility mea-
+surement by Andersen and Bollerslev [9]. The distributional result in equation
+(9) also generalizes directly, as we have, for n →∞,
+            Ã             !
+        √     RV (t, k; n) −QV (t, k)
+             n · k    p           →N(0, 1) ,           (16)
+                            2 IQ(t, k)
+                 R t
+where IQ(t, k) ≡  t−k σ4(τ)dτ is the integrated quarticity, with IQ(t, k) in-
+dependent from the limiting Gaussian distribution on the right hand side.
+This result was developed and brought into the realized volatility literature
+by Barndorﬀ-Nielsen and Shephard [37].4
+   Equation (16) sets the stage for formal ex-post inference regarding the
+actual realized return variation over a given period. However, the result is
+not directly applicable as the so-called integrated quarticity, IQ(t, k), is un-
+observed and is likely to display large period-to-period variation. Hence, a
+consistent estimator for the integrated quarticity must be used in lieu of the
+true realization to enable feasible inference. Such estimators, applicable for any
+integrated power of the diﬀusive coeﬃcient, have been proposed by Barndorﬀ-
+Nielsen and Shephard [37]. The realized power variation of order p, V (p; t, k; n)
+is the (scaled) cumulative sum of the absolute p-th power of the high-frequency
+returns and it converges, as n →∞, to the corresponding power variation of
+order p, V (p; t, k). That is, deﬁning the p-th realized power variation as,
+
+ 4 The unpublished note by Jacod [88] implies the identical result but this note was
+  not known to the literature at the time.
+
+[PAGE 8]
+                                                      Realized Volatility      7
+
+                                             n·k  µ       ¶            X             j  1    p         V (p; t, k; n) ≡np/2−1 µ−1p             ¯¯¯r   t −k +                             ¯¯¯   ,        (17)                                                n, n
+                                     j=1
+
+where µp denotes the p-th absolute moment of a standard normal variable,
+we have, in probability,
+                          Z t
+             V (p; t, k; n) →     σp(τ)dτ ≡V (p; t, k) .             (18)
+                                 t−k
+
+In other words, V (4; t, k; n) is a natural choice as a consistent estimator for
+the integrated quarticity IQ(t, k). It should be noted that this conclusion is
+heavily dependent on the absence of jumps in the price process which is an
+issue we address in more detail later. Moreover, the notion of realized power
+variation is a direct extension of realized volatility as RV (t, k; n) = V (2; t, k; n)
+so equation (18) reduces to equation (15) for p = 2.
+   More details regarding the asymptotic results and multivariate general-
+izations of realized volatility may be found in, e.g., Andersen et al. [16, 17],
+Barndorﬀ-Nielsen and Shephard [36, 37, 38], Meddahi [95], and Mykland [98].
+
+
+4 Conditional Return Variance and Realized Volatility
+
+This section discusses the relationship between quadratic variation or inte-
+grated variance along with its associated empirical measure, realized volatility,
+and the conditional return variance. In the case of constant drift and volatil-
+ity coeﬃcients, the conditional (and unconditional) return variance equals
+the quadratic variation of the log price process. In contrast, when volatility is
+stochastic we must distinguish clearly between the conditional variance, rep-
+resenting the (ex-ante) expected size of future squared return innovations over
+a certain period, and the quadratic variation, reﬂecting the actual (ex-post)
+realization of return variation, over the corresponding horizon. Hence, the dis-
+tinction is one of a priori expectations versus subsequent actual realizations
+of return volatility. Under ideal conditions, the realized volatility captures
+the latter, but not the former. Nonetheless, realized volatility measures are
+useful in gauging the conditional return variance as one may construct well
+calibrated forecasts (conditional expectations) of return volatility from a time
+series of past realized volatilities. In fact, within a slightly simpliﬁed setting,
+we can formally strengthen these statements. If the instantaneous return is the
+continuous-time process (10) and the return, mean, and volatility processes
+are uncorrelated (i.e., dW(t) and innovations to µ(t) and σ(t) are mutually
+independent), then r(t, k) is normally distributed conditional on the cumula-
+                  R t
+tive drift µ(t, k) ≡  t−k µ(τ)dτ and the quadratic variation QV (t, k) (which
+in this setting equals the integrated variance IV (t, k) as noted in equations
+(12) and (13)):
+             ¡                      ¢     ¡               ¢
+                 r(t, k) | µ(t, k), IV (t, k) ∼N  µ(t, k), IV (t, k)   .         (19)
+
+[PAGE 9]
+8      Torben G. Andersen and Luca Benzoni
+
+Consequently, the return distribution is mixed Gaussian with the mixture gov-
+erned by the realizations of the integrated variance (and integrated mean) pro-
+cess. Extreme realizations (draws) from the integrated variance process render
+return outliers likely while persistence in the integrated variance process in-
+duces volatility clustering. Moreover, for short horizons, where the conditional
+mean is negligible relative to the cumulative absolute return innovations, the
+integrated variance may be directly related to the conditional variance as,
+
+    Var[ r(t, k) | Ft−k ] ≈E[ RV (t, k; n) | Ft−k ] ≈E[ QV (t, k) | Ft−k ] .    (20)
+
+A volatility forecast is an estimate of the conditional return variance on the
+far left-hand side of equation (20), which in turn approximates the expected
+quadratic variation. Since RV is approximately unbiased for the corresponding
+unobserved quadratic variation, the realized volatility measure is the natural
+benchmark against which to gauge the performance of volatility forecasts.
+Goodness-of-ﬁt tests may be conducted on the residuals given by the diﬀer-
+ence between the ex-post realized volatility measure and the ex-ante forecast.
+We review some of the evidence obtained via applications inspired by these
+relations in Section 7. In summary, the quadratic variation is directly related
+to the actual return variance as demonstrated by equation (19) and to the
+expected return variance, as follows from equation (20).
+    Finally, note that the realized volatility concept is associated with the re-
+turn variation measured over a discrete time interval rather than with the
+so-called spot or instantaneous volatility. This distinction separates the real-
+ized volatility approach from a voluminous literature in statistics seeking to
+estimate spot volatility from discrete observations, predominantly in a setting
+with a constant diﬀusion coeﬃcient. It also renders it distinct from the early
+contributions in ﬁnancial econometrics allowing explicitly for time-varying
+volatilities, e.g., Foster and Nelson [73]. In principle, the realized volatility
+measurement can be adapted to spot volatility estimation: as k goes to zero,
+QV (t, k) converges to the instantaneous volatility σ2(t), i.e., in principle RV
+converges to instantaneous volatility when both k and k/n shrink. For this to
+happen, however, k/n must converge at a rate higher than k, so as the interval
+shrinks we must sample returns at an ever increasing frequency. In practice,
+this is infeasible, because intensive sampling over tiny intervals magniﬁes the
+eﬀects of microstructure noise. We return to this point in Section 6 where we
+discuss the bias in RV measures when returns are sampled with error.
+
+
+5 Jumps and Bipower Variation
+
+The return process in equation (10) is continuous under the stated regularity
+conditions, even  if σ may display jumps. This is quite restrictive as asset
+prices often appear to exhibit sudden discrete movements when unexpected
+news hits the market. A broad class of SV models that allow for the presence
+of jumps in returns is deﬁned by
+
+[PAGE 10]
+                                                      Realized Volatility      9
+
+                    ds(t) = µ(t)dt + σ(t)dW(t) + ξ(t) dqt ,               (21)
+
+where q is a Poisson process uncorrelated with W and governed by the jump
+intensity λt, i.e., Prob(dqt = 1) = λt dt, with λt positive and ﬁnite. This as-
+sumption implies that there can only be a ﬁnite number of jumps in the price
+path per time period. This is a common restriction in the ﬁnance literature,
+though it rules out inﬁnite activity L´evy processes. The scaling factor ξ(t)
+denotes the magnitude of the jump in the return process if a jump occurs at
+time t. While explicit distributional assumptions often are invoked for para-
+metric estimation, such restrictions are not required as the realized volatility
+approach is fully nonparametric in this dimension as well.
+   In this case, the quadratic return variation process over the interval from
+t −k to t, 0 ≤k ≤t ≤T, is the sum of the diﬀusive integrated variance and
+the cumulative squared jumps:
+           Z t    X       X
+ QV (t, k) =     σ2(s)ds +        J2(s) ≡IV (t, k) +        J2(s) ,  (22)
+               t−k          t−k≤s≤t                  t−k≤s≤t
+
+where J(t) ≡ξ(t)dq(t) is non-zero only if there is a jump at time t.
+   The RV estimator (14) remains a consistent measure of the total QV in
+the presence of jumps, i.e., result (15) still holds; see, e.g., Protter [102] and
+the discussion in Andersen, Bollerslev, and Diebold [11]. However, since the
+diﬀusive and jump volatility components appear to have distinctly diﬀerent
+persistence properties it is useful both for analytic and predictive purposes
+to obtain separate estimates of these two factors in the decomposition of the
+quadratic variation implied by equation (22).
+   To this end, the h-skip bipower variation, BV, introduced by Barndorﬀ-
+Nielsen and Shephard [39] provides a consistent estimate of the IV component,
+
+                         n·k   µ        ¶  µ           ¶              π X              ik  1                   (i −h)k  1 BV (t, k; h, n) =                                   ¯¯¯ r   t −k +     ,                 ¯¯¯  ¯¯¯ r   t −k +              ,                 ¯¯¯ .
+                 2              n n              n    n
+                   i=h+1
+                                                                        (23)
+Setting h = 1 in deﬁnition (23) yields the ‘realized bipower variation’
+BV (t, k; n) ≡BV (t, k; 1, n). The bipower variation is robust to the presence of
+jumps and therefore, in combination with RV, it yields a consistent estimate
+of the cumulative squared jump component:
+                  X
+  RV (t, k; n) −BV (t, k; n) n→∞QV−→       (t, k) −IV (t, k) =        J2(s) .  (24)
+                                                    t−k≤s≤t
+
+   The results in equations (22)-(24) along with the associated asymptotic
+distributions have been exploited to improve the accuracy of volatility fore-
+casts and to design tests for the presence of jumps in volatility. We discuss
+these applications in Section 7 below.
+
+[PAGE 11]
+10     Torben G. Andersen and Luca Benzoni
+
+6 Eﬃcient Sampling versus Microstructure Noise
+
+The convergence relation in equation (15) states that RV approximates QV
+arbitrarily well as the sampling frequency n increases. Two issues, however,
+complicate the application of this result. First, even for the most liquid assets a
+continuous price record is unavailable. This limitation introduces an inevitable
+discretization error in the RV measures which forces us to recognize the pres-
+ence of a measurement error. Although we may gauge the magnitude of such
+errors via the continuous record asymptotic theory outlined in equations (16)-
+(18), such inference is always subject to some ﬁnite sample distortions and
+it is only strictly valid in the absence of price jumps. Second, a wide array
+of microstructure eﬀects induces spurious autocorrelations in the ultra-high
+frequency return series. The list includes price discreteness and rounding, bid-
+ask bounces, trades taking places on diﬀerent markets and networks, gradual
+response of prices to a block trade, diﬀerence in information contained in
+order of diﬀerent size, strategic order ﬂows, spread positioning due to dealer
+inventory control, and, ﬁnally, data recording mistakes. Such “spurious” auto-
+correlations can inﬂate the RV measures and thus generate a traditional type
+of bias-variance trade oﬀ. The highest possible sampling frequency should be
+used for eﬃciency. However, sampling at ultra-high frequency tends to bias
+the RV estimate.
+  A useful tool to assess this trade-oﬀis the volatility signature plot, which
+depicts the sample average of the RV estimator over a long time span as a
+function of the sampling frequency. The long time span mitigates the impact
+of sampling variability so, absent microstructure noise, the plot should be
+close to a horizontal line. In practice, however, for transaction data obtained
+from liquid stocks the plot spikes at high sampling frequencies and decays
+rather smoothly to stabilize at frequencies in the 5- to 40-minute range. In
+contrast, the opposite often occurs for returns constructed from bid-ask quote
+midpoints as asymmetric adjustment of the spread induces positive serial cor-
+relation and biases the signature plot downward at the very highest sampling
+frequencies. Likewise, for illiquid stocks the inactive trading induces positive
+return serial autocorrelation which renders the signature plot increasing at
+lower sampling frequencies, see, e.g., Andersen, Bollerslev, Diebold, and Labys
+[14]. A¨ıt-Sahalia, Mykland, and Zhang [4] and Bandi and Russell [33] extend
+this approach by explicitly trading oﬀeﬃcient sampling versus bias-inducing
+noise to derive optimal sampling schemes.
+   Other researchers have suggested dealing with the problem by using al-
+ternative QV estimators that are less sensitive to microstructure noise. For
+instance, Huang and Tauchen [87] and Andersen, Bollerslev, and Diebold [12]
+note that using staggered returns and BV helps reduce the eﬀect of noise, while
+Andersen, Bollerslev, Frederiksen, and Nielsen [20] extend volatility signature
+plots to include power and h-skip bipower variation. Other studies have in-
+stead relied on the high-low price range measure (e.g., Alizadeh, Brandt, and
+Diebold [5], Brandt and Diebold [48], Brandt and Jones [49], Gallant et al.
+
+[PAGE 12]
+                                                      Realized Volatility     11
+
+[74], Garman and Klass [76], Parkinson [99], Schwert [104], and Yang and
+Zhang [114]) to deal with situations in which the noise to signal ratio is high.
+Christensen and Podolskij [55] and Dobrev [62] generalize the range estimator
+to high-frequency data in distinct ways and discuss the link to RV.
+  A diﬀerent solution to the problem is considered in the original contri-
+bution of Zhou [119] who seeks to correct the bias of RV style estimators by
+explicitly accounting for the covariance in lagged squared return observations.
+Hansen and Lunde [82] extend Zhou’s approach to the case of non-i.i.d. noise.
+In contrast, A¨ıt-Sahalia et al. [4] explicitly determine the requisite bias correc-
+tion when the noise term is i.i.d. normally distributed, while Zhang et al. [116]
+propose a consistent volatility estimator that uses the entire price record by
+averaging RVs computed from diﬀerent sparse sub-samples and correcting for
+the remaining bias. A¨ıt-Sahalia et al. [3] extend the sub-sampling approach to
+account for certain types of serially correlated errors. Another prominent and
+general approach is the recently proposed kernel-based technique of Barndorﬀ-
+Nielsen et al. [40, 41].
+
+
+7 Empirical Applications
+
+Since the early 1990s transaction data have become increasingly available to
+academic research. This development has opened the way for a wide array
+of empirical applications exploiting the realized return variation approach.
+Below we brieﬂy review the progress in diﬀerent areas of research.
+
+
+7.1 Early Work
+
+Hsieh [86] provides one of the ﬁrst estimates of the daily return variation
+constructed from intra-daily S&P500 returns sampled at the 15-minute fre-
+quency. The investigation is informal in the sense that there is no direct as-
+sociation with the concept of quadratic variation. More in-depth applications
+were pursued in publications by the Olsen & Associates group and later sur-
+veyed in Dacorogna et al. [60] as they explore both intraday periodicity and
+longer run persistence issues for volatility related measures. Another signiﬁ-
+cant early contribution is a largely unnoticed working paper by Dybvig [65]
+who explores interest rate volatility through the cumulative sum of squared
+daily yield changes for the three-month Treasury bill and explicitly refers to
+it as an empirical version of the quadratic variation process used in analysis
+of semimartingales. More recently, Zhou [119] provides an initial study of RV
+style estimators. He notes that the linkage between sampling frequency and
+autocorrelation in the high-frequency data series may be induced by sam-
+pling noise and he proposes a method to correct for this bias. Andersen and
+Bollerslev [8, 10] document the simultaneous impact of intraday volatility
+patterns, the volatility shocks due to macroeconomic news announcements,
+and the long-run dependence in realized volatility series through an analysis
+
+[PAGE 13]
+12     Torben G. Andersen and Luca Benzoni
+
+of the cumulative absolute and squared ﬁve-minute returns for the Deutsche
+Mark-Dollar exchange rate. The pronounced intraday features motivate the
+focus on (multiples of) one trading as the basic aggregation unit for real-
+ized volatility measures since this approach largely annihilates repetitive high
+frequency ﬂuctuations and brings the systematic medium and low frequency
+volatility variation into focus. Comte and Renault [58] point to the potential
+association between RV measures and instantaneous volatility. Finally, early
+empirical analyses of daily realized volatility measures are provided in, e.g.,
+Andersen et al. [15] and Barndorﬀ-Nielsen and Shephard [36].
+
+
+7.2 Volatility Forecasting
+
+As noted in Section 3, RV is the natural benchmark against which to gauge
+volatility forecasts. Andersen and Bollerslev [9] stress this point which is fur-
+ther developed by Andersen et al. [17, 22, 23] and Patton [100] through dif-
+ferent analytic means.
+   Several studies pursue alternative approaches in order to improve predic-
+tive performance. Ghysels et al. [77] consider Mixed Data Sampling (MIDAS)
+regressions that use a combination of volatility measures estimated at diﬀerent
+frequencies and horizons. Related, Engle and Gallo [67] exploit the informa-
+tion in diﬀerent volatility measures, modelled with a multivariate extension
+of the multiplicative error model suggested by Engle [66], to predict multi-
+step volatility. A rapidly growing literature studies jump detection (e.g., A¨ıt-
+Sahalia and Jacod [1], Andersen et al. [21, 19], Fleming and Paye [71], Huang
+and Tauchen [87], Jiang and Oomen [89], Lee and Mykland [90], Tauchen and
+Zhou [108], and Zhang [117]). Andersen et al. [12] show that separating the
+jump and diﬀusive components in QV estimates enhances the model forecast-
+ing performance. Related, Liu and Maheu [91] and Forsberg and Ghysels [72]
+show that realized power variation, which is more robust to the presence of
+jumps than RV, can improve volatility forecasts.
+   Other researchers have been investigating the role of microstructure noise
+on forecasting performance (e.g., A¨ıt-Sahalia and Mancini [2], Andersen et
+al. [24, 25], and Ghysels and Sinko [78]) and the issue of how to use noisy
+overnight return information to enhance volatility forecasts (e.g., Hansen and
+Lunde [81] and Fleming et al. [70]).
+  A critical feature of volatility is the degree of its temporal dependence.
+Correlogram plots for the (logarithmic) RV series show a distinct hyperbolic
+decay that is described well by a fractionally-integrated process. Andersen and
+Bollerslev [8] document this feature using the RV series for the Deutsche Mark-
+Dollar exchange rate. Subsequent studies have documented similar properties
+across ﬁnancial markets for the RV on equities (e.g., Andersen et al. [13], Areal
+and Taylor [28], Deo et al. [61], Martens [93]), currencies (e.g., Andersen and
+Bollerslev [10], Andersen et al. [16, 17], and Zumbach [120]), and bond yields
+(e.g., Andersen and Benzoni [6]). This literature concurs on the value of the
+fractional integration coeﬃcient, which is estimated in the 0.30–0.48 range,
+
+[PAGE 14]
+                                                      Realized Volatility     13
+
+i.e., the stationarity condition is satisﬁed. Accounting for long memory in
+volatility can prove useful in forecasting applications (e.g., Deo et al. [61]). A
+particularly convenient approach to accommodate the persistent behavior of
+the RV series is to use a component-based regression to forecast the k-step-
+ahead quadratic variation (e.g., Andersen et al. [12], Barndorﬀ-Nielsen and
+Shephard [36], and Corsi [59]):
+
+ RV (t+k, k) = β0+βDRV (t, 1)+βW RV (t, 5)+βMRV (t, 21)+ε(t+k) . (25)
+
+Simple OLS estimation yields consistent estimates for the coeﬃcients in the
+regression (25), which can be used to forecast volatility out of sample.
+
+
+7.3 The Distributional Implications of the No-Arbitrage Condition
+
+Equation (19) implies that, approximately, the daily return r(t) follows a
+Gaussian mixture directed by the IV process. This  is reminiscent of the
+mixture-of-distributions hypothesis analyzed by, e.g., Clark [57] and Tauchen
+and Pitts [106]. However, in the case of equation (19) the mixing variable is
+directly measurable by the RV estimator which facilitates testing the distri-
+butional restrictions implied by the no-arbitrage condition embedded in the
+return dynamics (10). Andersen et al. [15] and Thomakos and Wang [110]
+ﬁnd that returns standardized by RV are closer to normal than the standard-
+ized residuals from parametric SV models estimated at the daily frequency.
+Any remaining deviation from normality may be due to a bias in RV stem-
+ming from microstructure noise or model misspeciﬁcation. In particular, when
+returns jump as in equation (21), or if volatility and return innovations corre-
+late, condition (19) no longer holds. Peters and de Vilder [101] deal with the
+volatility-return dependence by sampling returns in ‘ﬁnancial time,’ i.e., they
+identify calendar periods that correspond to equal increments to IV, while
+Andersen et al. [19] extend their approach for the presence of jumps. An-
+dersen et al. [21] apply these insights, in combination with alternative jump-
+identiﬁcation techniques, to diﬀerent data sets and ﬁnd evidence consistent
+with the mixing condition. Along the way they document the importance of
+jumps and the asymmetric return-volatility relation. Similar issues are also
+studied in Fleming and Paye [71] and Maheu and McCurdy [92].
+
+
+7.4 Multivariate Quadratic Variation Measures
+
+A growing number of studies uses multivariate versions of realized volatility
+estimators, i.e., realized covariance matrix measures, in portfolio choice (e.g.,
+Bandi et al. [34] and Fleming et al. [70]) and risk measurement problems
+(e.g., Andersen et al. [13, 18] and Bollerslev and Zhang [44]). Multivariate
+applications, however, are complicated by delays in the security price reactions
+to price changes in related assets as well as by non-synchronous trading eﬀects.
+Sheppard [105] discusses this problem but how to best deal with it remains
+
+[PAGE 15]
+14     Torben G. Andersen and Luca Benzoni
+
+largely an open issue. Similar to Scholes and Williams [103], some researchers
+include temporal cross-correlation terms estimated with lead and lag return
+data in covariance measures (e.g., Hayashi and Yoshida [83, 84] and Griﬃn
+and Oomen [79]). Other studies explicitly trade oﬀeﬃciency and noise-induced
+bias in realized covariance estimates (e.g., Bandi and Russell [32] and Zhang
+[115]), while Bauer and Vorkink [42] propose a latent-factor model of the
+realized covariance matrix.
+
+
+7.5 Realized Volatility, Model Speciﬁcation and Estimation
+
+RV gives empirical content to the latent variance variable and is therefore use-
+ful for speciﬁcation testing of the restrictions imposed on volatility by para-
+metric models previously estimated with low-frequency data. For instance,
+Andersen and Benzoni [6] examine the linkage between the quadratic varia-
+tion and level of bond yields embedded in some aﬃne term structure models
+and reject the condition that volatility is spanned by bond yields in the U.S.
+Treasury market. Christoﬀersen et al. [56] reject the Heston [85] model im-
+plication that the standard deviation dynamics are conditionally Gaussian by
+examining the distribution of the changes in the square-root RV measure for
+S&P 500 returns.
+   Further, RV measures facilitate direct estimation of parametric models.
+Barndorﬀ-Nielsen and Shephard [37] decompose RV into actual volatility and
+realized volatility error. They consider a state-space representation for this
+decomposition and apply the Kalman ﬁlter to estimate diﬀerent ﬂavors of the
+SV model. Bollerslev and Zhou [45] and Garcia et al. [75] build on the results
+of Meddahi [96] to obtain eﬃcient moment conditions which they use in the
+estimation of continuous-time stochastic volatility processes. Todorov [112]
+extends the analysis for the presence of jumps.
+
+
+8 Possible Directions for Future Research
+
+In recent years the market for derivative securities oﬀering a pure play on
+volatility has grown rapidly in size and complexity. Well-known examples are
+the over-the-counter markets for variance swaps, which at maturity pay the
+diﬀerence between realized variance and a ﬁxed strike price, and volatility
+swaps with payoﬀs linked to the square root of realized variance. These ﬁ-
+nancial innovations have opened the way for new research on the pricing and
+hedging of these contracts. For instance, while variance swaps admit a simple
+replication strategy through static positions in call and put options combined
+with dynamic trading in the underlying asset (e.g., Britten-Jones and Neu-
+berger [50] and Carr and Madan [53]), it is still an open issue to determine
+the appropriate replication strategy for volatility swaps and other derivatives
+that are non-linear functions of realized variance (e.g., call and put options).
+Carr and Lee [52] make an interesting contribution in this direction.
+
+[PAGE 16]
+                                                      Realized Volatility     15
+
+   Realized volatility is also a useful source of information to learn more about
+the volatility risk premium. Recent contributions have explored the issue by
+combining RV measures with model-free option-implied volatility gauges like
+the VIX (e.g., Bollerslev et al. [43], Carr and Wu [54], and Todorov [112]).
+Other studies are examining the linkage between volatility risk and equity
+premia (Bollerslev and Zhou [46]), bond premia (Wright and Zhou [113]),
+credit spreads (Tauchen and Zhou [109] and Zhang et al. [118]), and hedge-
+fund performance (Bondarenko [47]). In addition, new research is studying the
+pricing of volatility risk in individual stock options (e.g., Bakshi and Kapadia
+[30], Carr and Wu [54], Driessen et al. [63], and Duarte and Jones [64]) and
+in the cross section of stock returns (e.g., Ang et al. [26, 27], Bandi et al. [31],
+and Guo et al. [80]).
+    Finally, more work is needed to better understand the linkage between
+asset return volatility and ﬂuctuations in underlying fundamentals. Several
+studies have proposed general equilibrium models that generate low-frequency
+conditional heteroskedasticity (e.g., Bansal and Yaron [35], Campbell and
+Cochrane [51], McQueen and Vorkink [94], and Tauchen [107]). Related, En-
+gle and Rangel [69] and Engle et al. [68] link macroeconomic variables and
+long-run volatility movements. An attempt to link medium and higher fre-
+quency realized volatility ﬂuctuations in the bond market to both business
+cycle variation and macroeconomic news releases is initiated in Andersen and
+Benzoni [7], but clearly much more work on this front is warranted.
+
+
+References
+
+   1. A¨ıt-Sahalia Y, Jacod J (2006) Testing for jumps in a discretely observed pro-
+       cess. Working Paper, Princeton University and Universite de Paris-6
+   2. A¨ıt-Sahalia Y, Mancini L (2006) Out of sample forecasts of quadratic variation.
+     Working Paper, Princeton University and University of Z¨urich
+   3. A¨ıt-Sahalia Y, Mykland PA, Zhang L (2006) Ultra high frequency volatility
+      estimation with dependent microstructure noise. Working Paper, Princeton
+      University.
+   4. A¨ıt-Sahalia Y, Mykland PA, Zhang L (2005) How  often  to sample a
+      continuous-time process in the presence of market microstructure noise. Re-
+     view of Financial Studies 18:351–416
+   5. Alizadeh S, Brandt MW, Diebold FX (2002) Range-based estimation of
+      stochastic volatility models. Journal of Finance 57:1047–1091
+   6. Andersen TG, Benzoni L (2006) Do bonds span volatility risk in the U.S. Trea-
+      sury market? A speciﬁcation test for aﬃne term structure models. Working
+     Paper, KGSM and Chicago FED
+   7. Andersen TG, Benzoni L (2007) The determinants of volatility in the U.S.
+     Treasury market. Working Paper, KGSM and Chicago FED
+   8. Andersen TG, Bollerslev T (1997) Heterogeneous information arrivals and
+      return volatility dynamics: uncovering the long-run in high frequency returns.
+      Journal of Finance 52:975-1005
+
+[PAGE 17]
+16     Torben G. Andersen and Luca Benzoni
+
+   9. Andersen TG, Bollerslev T (1998a) Answering the skeptics: yes, standard
+       volatility models do provide accurate forecasts. International Economic Re-
+     view 39:885-905
+  10. Andersen TG, Bollerslev T (1998b) Deutsche Mark-Dollar volatility: intraday
+      activity patterns, macroeconomic announcements, and longer run dependen-
+       cies. Journal of Finance 53:219–265
+  11. Andersen TG, Bollerslev T, Diebold FX (2004) Parametric and nonparamet-
+       ric volatility measurement. In: Hansen LP, A¨ıt-Sahalia Y (Eds) Handbook of
+      Financial Econometrics, North-Holland, Amsterdam, Holland, forthcoming
+  12. Andersen TG, Bollerslev T, Diebold FX (2007) Roughing it up: including jump
+     components in measuring, modeling and forecasting asset return volatility.
+     Review of Economics and Statistics, forthcoming
+  13. Andersen TG, Bollerslev T, Diebold FX, Ebens H (2001) The distribution of
+      realized stock return volatility. Journal of Financial Economics 61:43–76
+  14. Andersen TG, Bollerslev T, Diebold FX, Labys P (2000a) Great realizations.
+     Risk 13:105–108
+  15. Andersen TG, Bollerslev T, Diebold FX, Labys P (2000b) Exchange rate re-
+      turns standardized by realized volatility are (nearly) Gaussian. Multinational
+     Finance Journal 4:159–179
+  16. Andersen TG, Bollerslev T, Diebold FX, Labys P (2001) The distribution of
+      realized exchange rate volatility. Journal of the American Statistical Associa-
+      tion 96:42–55
+  17. Andersen TG, Bollerslev T, Diebold FX, Labys P (2003) Modeling and fore-
+      casting realized volatility. Econometrica 71:579–625
+  18. Andersen TG, Bollerslev T, Diebold FX, Wu G (2005) A framework for explor-
+      ing the macroeconomic determinants of systematic risk. American Economic
+     Review 95:398-404
+  19. Andersen TG, Bollerslev T, Dobrev D (2007) No-arbitrage semi-martingale
+      restrictions for continuous-time volatility models subject to leverage eﬀects,
+     jumps and i.i.d. noise: theory and testable distributional implications. Journal
+      of Econometrics 138:125–180
+  20. Andersen TG, Bollerslev T, Frederiksen PH, Nielsen MØ (2006a) Comment
+     on realized variance and market microstructure noise. Journal of Business &
+     Economic Statistics 24:173–179
+  21. Andersen TG, Bollerslev T, Frederiksen PH, Nielsen MØ (2006b) Continuous-
+     time models, realized volatilities, and testable distributional implications for
+      daily stock returns. Working Paper, KGSM
+  22. Andersen TG, Bollerslev T, Lange S (1999) Forecasting ﬁnancial market
+       volatility: sample frequency vis-´a-vis forecast horizon. Journal of Empirical
+     Finance 6:457–477
+  23. Andersen TG, Bollerslev T, Meddahi N (2004) Analytic evaluation of volatility
+      forecasts. International Economic Review 45:1079–1110
+  24. Andersen TG, Bollerslev T, Meddahi N (2005) Correcting the errors: volatility
+      forecast evaluation using high-frequency data and realized volatilities. Econo-
+      metrica 73:279–296
+  25. Andersen TG, Bollerslev T, Meddahi N (2006) Market microstructure noise
+     and realized volatility forecasting. Working Paper, KGSM
+  26. Ang A, Hodrick RJ, Xing Y, Zhang X (2006) The cross-section of volatility
+     and expected returns. Journal of Finance 51:259–299
+
+[PAGE 18]
+                                                    Realized Volatility     17
+
+27. Ang A, Hodrick RJ, Xing Y, Zhang X (2008) Journal of Financial Economics,
+    forthcoming
+28. Areal NMPC, Taylor SJ (2002) The realized volatility of FTSE-100 futures
+     prices. Journal of Futures Markets 22:627–648
+29. Back K (1991) Asset prices for general processes. Journal of Mathematical
+    Economics 20:371–395
+30. Bakshi G, Kapadia N (2003) Delta-hedged gains and the negative market
+     volatility risk premium. Review of Financial Studies 16:527–566
+31. Bandi F, Moise CE, Russell JR (2008) Market volatility, market frictions, and
+    the cross section of stock returns. Working Paper, University of Chicago and
+    Case Western Reserve University.
+32. Bandi F, Russell JR (2005) Realized covariation, realized beta, and microstruc-
+    ture noise. Working Paper, University of Chicago.
+33. Bandi F, Russell JR (2007) Microstructure noise, realized volatility, and opti-
+   mal sampling. Review of Economic Studies, forthcoming
+34. Bandi F, Russell JR, Zhu J (2007) Using high-frequency data in dynamic
+    portfolio choice. Econometric Reviews, forthcoming
+35. Bansal R, Yaron A (2004) Risks for the long run: a potential resolution of
+    asset pricing puzzles. Journal of Finance 59:1481–1509
+36. Barndorﬀ-Nielsen OE, Shephard N (2001) Non-Gaussian OrnsteinUhlenbeck
+    based models and some of their uses in ﬁnancial economics. Journal of the
+    Royal Statistical Society, Series B 63:167–241
+37. Barndorﬀ-Nielsen OE, Shephard N (2002) Econometric analysis of realised
+     volatility and its use in estimating stochastic volatility models. Journal of the
+    Royal Statistical Society, Series B 64:253–80
+38. Barndorﬀ-Nielsen OE, Shephard N (2004a) Econometric analysis of realised
+    covariation: high-frequency covariance, regression and correlation in ﬁnancial
+    econometrics. Econometrica 72:885–925
+39. Barndorﬀ-Nielsen OE, Shephard N (2004b) Power and bipower variation with
+    stochastic volatility and jumps. Journal of Financial Econometrics 2:1-37
+40. Barndorﬀ-Nielsen OE, Hansen PR, Lunde A, Shephard N (2006a) Design-
+    ing realized kernels to measure the ex-post variation of equity prices in the
+    presence of noise. Working Paper, Aarhus, Stanford, Oxford
+41. Barndorﬀ-Nielsen OE, Hansen PR, Lunde A, Shephard N (2006b) Subsam-
+    pling realized kernels. Working Paper, Aarhus, Stanford, Oxford
+42. Bauer GH, Vorkink K (2006) Multivariate realized stock market volatility.
+   Working Paper, Bank of Canada and Brigham Young University
+43. Bollerslev T, Gibson M, Zhou H (2004) Dynamic estimation of volatility risk
+    premia and investor risk aversion from option-implied and realized volatilities.
+   Working Paper, Duke, Federal Reserve Board
+44. Bollerslev T, Zhang BYB (2003) Measuring and modeling systematic risk in
+    factor pricing models using high-frequency data. Journal of Empirical Finance
+    10:533–558
+45. Bollerslev T, Zhou H (2002) Estimating stochastic volatility diﬀusion using
+    conditional moments of integrated volatility. Journal of Econometrics 109:33–
+    65
+46. Bollerslev T, Zhou H (2007) Expected stock returns and variance risk premia.
+   Working Paper, Duke University and Federal Reserve Board
+47. Bondarenko O (2004) Market price of variance risk and performance of hedge
+    funds. Working Paper, UIC
+
+[PAGE 19]
+18     Torben G. Andersen and Luca Benzoni
+
+  48. Brandt MW, Diebold FX (2006) A no-arbitrage approach to range-based es-
+      timation of return covariances and correlations. Journal of Business 79:61–73
+  49. Brandt MW,  Jones CS  (2006)  Volatility  forecasting  with  range-based
+    EGARCH models. Journal of Business & Economic Statistics 24:470–486
+  50. Britten-Jones M, Neuberger A (2000) Option prices, implied price processes,
+     and stochastic volatility. Journal of Finance 55:839–866
+  51. Campbell JY, Cochrane JH (1999) By force of habit: a consumption-based
+      explanation of aggregate stock market behavior. Journal of Political Economy
+     107:205–251
+  52. Carr P, Lee R (2007) Robust replication of volatility derivatives. Working
+     Paper, NYU and UofC
+  53. Carr P, Madan D (1998) Towards a theory of volatility trading. In: Jarrow R
+     (Ed) Volatility, Risk Publications
+  54. Carr P, Wu L (2007) Variance risk premia. Review of Financial Studies, forth-
+     coming
+  55. Christensen K, Podolskij M (2006) Realised range-based estimation of inte-
+      grated variance. Journal of Econometrics, forthcoming
+  56. Christoﬀersen PF, Jacobs K, Mimouni K (2006) Models for S&P 500 dynam-
+       ics: evidence from realized volatility, daily returns, and option prices. Working
+     Paper, Mcgill University
+  57. Clark PK (1973) A subordinated stochastic process model with ﬁnite variance
+       for speculative prices. Econometrica 41:135-155
+  58. Comte F, Renault E (1998) Long memory in continuous-time stochastic
+       volatility models. Mathematical Finance 8:291–323
+  59. Corsi F (2003) A simple long memory model of realized volatility. Working
+      paper, University of Southern Switzerland
+  60. Dacorogna MM, Gencay R, M¨uller U, Olsen RB, Pictet OV (2001) An intro-
+      duction to high-frequency ﬁnance. Academic Press, San Diego, CA
+  61. Deo R, Hurvich C, Lu Y (2006) Forecasting realized volatility using a long-
+    memory stochastic volatility model: estimation, prediction and seasonal ad-
+      justment. Journal of Econometrics 131:29–58
+  62. Dobrev D (2007) Capturing volatility from large price moves: generalized range
+      theory and applications. Working Paper, Federal Reserve Board
+  63. Driessen J, Maenhout P, Vilkov G (2006) Option-implied correlations and
+      the price of correlation risk. Working Paper, University of Amsterdam and
+    INSEAD
+  64. Duarte J, Jones CS (2007) The price of market volatility risk. Working Paper,
+      University of Washington and USC
+  65. Dybvig PH (1991) Exploration of interest rate data. Working Paper, Olin
+     School of Business, Washington University in St. Louis
+  66. Engle RF (2002) New frontiers for ARCH models. Journal of Applied Econo-
+      metrics 17:425–446
+  67. Engle RF, Gallo GM (2006) A multiple indicators model for volatility using
+      intra-daily data. Journal of Econometrics 131:3–27
+  68. Engle RF, Ghysels E, Sohn B (2006) On the economic sources of stock market
+       volatility. Working Paper, NYU and UNC
+  69. Engle RF, Rangel JG (2006) The spline-GARCH model for low frequency
+       volatility and its global macroeconomic causes. Working Paper, NYU
+  70. Fleming J, Kirby C, Ostdiek B (2003) The economic value of volatility timing
+      using realized volatility. Journal of Financial Economics 67:473–509
+
+[PAGE 20]
+                                                    Realized Volatility     19
+
+71. Fleming J, Paye BS (2006) High-frequency returns, jumps and the mixture-
+    of-normals hypothesis. Working Paper, Rice University
+72. Forsberg L, Ghysels E (2007) Why do absolute returns predict volatility so
+    well? Journal of Financial Econometrics 5:31–67
+73. Foster DP, Nelson DB (1996) Continuous record asymptotics for rolling sample
+    variance estimators Econometrica 64: 139-174
+74. Gallant AR, Hsu C, Tauchen GE (1999) Using daily range data to calibrate
+     volatility diﬀusions and extract the forward integrated variance. Review of
+    Economics and Statistics 81:617–631
+75. Garcia R, Lewis MA, Pastorello S, Renault E (2001) Estimation of objective
+   and risk-neutral distributions based on moments of integrated volatility Work-
+    ing Paper, Universit´e de Montr´eal, Banque Nationale du Canada, Universit`a
+    di Bologna, UNC
+76. Garman MB, Klass MJ (1980) On the estimation of price volatility from his-
+     torical data. Journal of Business 53:67–78
+77. Ghysels E, Santa-Clara P, Valkanov R (2006) Predicting volatility: how to
+    get the most out of returns data sampled at diﬀerent frequencies. Journal of
+    Econometrics 131:59-95
+78. Ghysels E, Sinko A (2006) Volatility forecasting and microstructure noise.
+   Working Paper, UNC
+79. Griﬃn JE, Oomen RCA (2006) Covariance measurement in the presence of
+    non-synchronous trading and market microstructure noise. Working Paper,
+    University of Warwick
+80. Guo H, Neely CJ, Higbee J (2007) Foreign exchange volatility is priced in
+    equities Financial Management, forthcoming
+81. Hansen PR, Lunde A (2005) A realized variance for the whole day based on
+    intermittent high-frequency data. Journal of Financial Econometrics 3:525–
+    554
+82. Hansen PR, Lunde A (2006) Realized variance and market microstructure
+    noise. Journal of Business & Economic Statistics 24:127–161
+83. Hayashi T, Yoshida N (2005) On covariance estimation of non-synchronously
+    observed diﬀusion processes. Bernoulli 11:359-379
+84. Hayashi T, Yoshida N (2006) Estimating correlations with nonsynchronous
+    observations in continuous diﬀusion models. Working Paper, Columbia Uni-
+    versity and University of Tokyo
+85. Heston SL (1993) A closed-form solution for options with stochastic volatility
+    with applications to bond and currency options. Review of Financial Studies
+    6:327–343
+86. Hsieh DA (1991) Chaos and nonlinear dynamics: application to ﬁnancial mar-
+     kets. Journal of Finance 46:1839-1877
+87. Huang X, Tauchen G (2005) The relative contribution of jumps to total price
+    variation. Journal of Financial Econometrics 3:456–499
+88. Jacod J (1992) Limit of random measures associated with the increments of a
+   Brownian semimartingale. Working Paper, Publ. Lab. Probabilit N. 120, Paris
+    6
+89. Jiang GJ, Oomen RCA (2005) A new test for jumps in asset prices. Working
+    Paper, University of Arizona and Warwick Business School
+90. Lee S, Mykland PA (2007) Jumps in ﬁnancial markets: a new nonparametric
+    test and jump clustering. Review of Financial Studies, forthcoming
+
+[PAGE 21]
+20     Torben G. Andersen and Luca Benzoni
+
+  91. Liu C, Maheu JM (2005) Modeling and forecasting realized volatility: the role
+      of power variation. Working Paper, University of Toronto.
+  92. Maheu JM, McCurdy TH (2002) Nonlinear features of realized FX volatility.
+     Review of Economics and Statistics 84:668-681
+  93. Martens M (2002) Measuring and forecasting S&P 500 index-futures volatility
+      using high-frequency data. Journal of Futures Market 22:497-518
+  94. McQueen G, Vorkink K (2004) Whence GARCH? A preference-based expla-
+      nation for conditional volatility. Review of Financial Studies 17:915–949
+  95. Meddahi N (2002a) A theoretical comparison between integrated and realized
+       volatilities. Journal of Applied Econometrics 17:479–508
+  96. Meddahi N (2002b) Moments of continuous time stochastic volatility models.
+     Working Paper, Imperial College
+  97. Merton RC (1980) On estimating the expected return on the market: an ex-
+      ploratory investigation. Journal of Financial Economics 8:323–361
+  98. Mykland PA (2006) A Gaussian calculus for inference from high frequency
+      data. Working Paper, University of Chicago
+  99. Parkinson M (1980) The extreme value method for estimating the variance of
+      the rate of return. Journal of Business 53:61-65
+ 100. Patton AJ (2007) Volatility forecast comparison using imperfect volatility
+      proxies. Working Paper, Oxford University
+ 101. Peters RT, de Vilder RG (2006) Testing the continuous semimartingale hy-
+      pothesis for the S&P 500. Journal of Business & Economic Statistics 24:444-
+     454
+ 102. Protter P (1990) Stochastic Integration and Diﬀerential Equations. A New
+     Approach. Springer-Verlag, Berlin Heidelberg, Germany
+ 103. Scholes M, Williams J (1977) Estimating betas from nonsynchronous data.
+      Journal of Financial Economics 5:309-327.
+ 104. Schwert GW (1990) Stock volatility and the crash of ’87. Review of Financial
+      Studies 3:77-102
+ 105. Sheppard K (2006) Realized covariance and scrambling. Working Paper, Uni-
+      versity of Oxford
+ 106. Tauchen GE, Pitts M (1983) The price variability-volume relationship on spec-
+      ulative markets. Econometrica 51:485–505
+ 107. Tauchen GE (2005) Stochastic volatility in general equilibrium. Working Pa-
+      per, Duke
+ 108. Tauchen GE, Zhou H (2006) Identifying realized jumps on ﬁnancial markets.
+     Working Paper, Duke and Federal Reserve Board of Governors
+ 109. Tauchen GE, Zhou H (2007) Realized jumps on ﬁnancial markets and predict-
+      ing credit spreads. Working Paper, Duke and Board of Governors
+ 110. Thomakos DD, Wang T (2003) Realized volatility in the futures markets.
+      Journal of Empirical Finance 10:321-353
+ 111. Todorov V (2006a) Variance risk premium dynamics. Working Paper, KGSM
+ 112. Todorov V (2006b) Estimation of continuous-time stochastic volatility models
+     with jumps using high-frequency data. Working Paper, KGSM
+ 113. Wright J, Zhou H (2007) Bond risk premia and realized jump volatility. Work-
+      ing Paper, Board of Governors
+ 114. Yang D, Zhang Q (2000) Drift-independent volatility estimation based on high,
+      low, open, and close prices. Journal of Business 73:477-491
+ 115. Zhang L (2006) Estimating covariation: Epps eﬀect, microstructure noise.
+     Working Paper, UIC
+
+[PAGE 22]
+                                                     Realized Volatility     21
+
+116. Zhang L, Mykland PA, A¨ıt-Sahalia Y (2005) A tale of two time scales: de-
+     termining integrated volatility with noisy high-frequency data. Journal of the
+    American Statistical Association 100:1394–1411
+117. Zhang L (2007) What you don’t know cannot hurt you: on the detection of
+     small jumps. Working Paper, UIC
+118. Zhang BY, Zhou H, Zhu H (2005) Explaining credit default swap spreads with
+     the equity volatility and jump risks of individual ﬁrms. Working Paper, Fitch
+     Ratings, Federal Reserve Board, BIS
+119. Zhou B (1996) High-frequency data and volatility in foreign exchange rates.
+     Journal of Business and Economic Statistics 14:45–52
+120. Zumbach G (2004) Volatility processes and volatility forecasts with long mem-
+      ory. Quantitative Finance 4:70–86
+
+[PAGE 23]
+Working Paper Series
+
+     A series of research studies on regional economic issues relating to the Seventh Federal
+       Reserve District, and on financial and economic topics.
+
+Firm-Specific Capital, Nominal Rigidities and the Business Cycle                           WP-05-01
+David Altig, Lawrence J. Christiano, Martin Eichenbaum and Jesper Linde
+
+Do Returns to Schooling Differ by Race and Ethnicity?                                     WP-05-02
+Lisa Barrow and Cecilia Elena Rouse
+
+Derivatives and Systemic Risk: Netting, Collateral, and Closeout                            WP-05-03
+Robert R. Bliss and George G. Kaufman
+
+
+Risk Overhang and Loan Portfolio Decisions                                              WP-05-04
+Robert DeYoung, Anne Gron and Andrew Winton
+
+
+Characterizations in a random record model with a non-identically distributed initial record     WP-05-05
+Gadi Barlevy and H. N. Nagaraja
+
+
+Price discovery in a market under stress: the U.S. Treasury market in fall 1998                WP-05-06
+Craig H. Furfine and Eli M. Remolona
+
+
+Politics and Efficiency of Separating Capital and Ordinary Government Budgets              WP-05-07
+Marco Bassetto with Thomas J. Sargent
+
+
+Rigid Prices: Evidence from U.S. Scanner Data                                            WP-05-08
+Jeffrey R. Campbell and Benjamin Eden
+
+
+Entrepreneurship, Frictions, and Wealth                                                  WP-05-09
+Marco Cagetti and Mariacristina De Nardi
+
+
+Wealth inequality: data and models                                                       WP-05-10
+Marco Cagetti and Mariacristina De Nardi
+
+
+What Determines Bilateral Trade Flows?                                                  WP-05-11
+Marianne Baxter and Michael A. Kouparitsas
+
+
+Intergenerational Economic Mobility in the U.S., 1940 to 2000                              WP-05-12
+Daniel Aaronson and Bhashkar Mazumder
+
+
+Differential Mortality, Uncertain Medical Expenses, and the Saving of Elderly Singles         WP-05-13
+Mariacristina De Nardi, Eric French, and John Bailey Jones
+
+
+Fixed Term Employment Contracts in an Equilibrium Search Model                         WP-05-14
+Fernando Alvarez and Marcelo Veracierto
+
+
+
+
+
+                                                                                     1
+
+[PAGE 24]
+Working Paper Series (continued)
+
+
+Causality, Causality, Causality: The View of Education Inputs and Outputs from Economics    WP-05-15
+Lisa Barrow and Cecilia Elena Rouse
+
+
+Competition in Large Markets                                                           WP-05-16
+Jeffrey R. Campbell
+
+
+Why Do Firms Go Public? Evidence from the Banking Industry                             WP-05-17
+Richard J. Rosen, Scott B. Smart and Chad J. Zutter
+
+
+Clustering of Auto Supplier Plants in the U.S.: GMM Spatial Logit for Large Samples         WP-05-18
+Thomas Klier and Daniel P. McMillen
+
+
+Why are Immigrants’ Incarceration Rates So Low?
+Evidence on Selective Immigration, Deterrence, and Deportation                            WP-05-19
+Kristin F. Butcher and Anne Morrison Piehl
+
+Constructing the Chicago Fed Income Based Economic Index – Consumer Price Index:
+Inflation Experiences by Demographic Group: 1983-2005                                   WP-05-20
+Leslie McGranahan and Anna Paulson
+
+
+Universal Access, Cost Recovery, and Payment Services                                    WP-05-21
+Sujit Chakravorti, Jeffery W. Gunther, and Robert R. Moore
+
+
+Supplier Switching and Outsourcing                                                      WP-05-22
+Yukako Ono and Victor Stango
+
+
+Do Enclaves Matter in Immigrants’ Self-Employment Decision?                             WP-05-23
+Maude Toussaint-Comeau
+
+
+The Changing Pattern of Wage Growth for Low Skilled Workers                            WP-05-24
+Eric French, Bhashkar Mazumder and Christopher Taber
+
+
+U.S. Corporate and Bank Insolvency Regimes: An Economic Comparison and Evaluation      WP-06-01
+Robert R. Bliss and George G. Kaufman
+
+
+Redistribution, Taxes, and the Median Voter                                              WP-06-02
+Marco Bassetto and Jess Benhabib
+
+
+Identification of Search Models with Initial Condition Problems                             WP-06-03
+Gadi Barlevy and H. N. Nagaraja
+
+
+Tax Riots                                                                             WP-06-04
+Marco Bassetto and Christopher Phelan
+
+The Tradeoff between Mortgage Prepayments and Tax-Deferred Retirement Savings           WP-06-05
+Gene Amromin, Jennifer Huang,and Clemens Sialm
+
+
+                                                                                     2
+
+[PAGE 25]
+Working Paper Series (continued)
+
+
+Why are safeguards needed in a trade agreement?                                          WP-06-06
+Meredith A. Crowley
+
+Taxation, Entrepreneurship, and Wealth                                                  WP-06-07
+Marco Cagetti and Mariacristina De Nardi
+
+
+A New Social Compact: How University Engagement Can Fuel Innovation                   WP-06-08
+Laura Melle, Larry Isaak, and Richard Mattoon
+
+
+Mergers and Risk                                                                      WP-06-09
+Craig H. Furfine and Richard J. Rosen
+
+
+Two Flaws in Business Cycle Accounting                                                 WP-06-10
+Lawrence J. Christiano and Joshua M. Davis
+
+
+Do Consumers Choose the Right Credit Contracts?                                         WP-06-11
+Sumit Agarwal, Souphala Chomsisengphet, Chunlin Liu, and Nicholas S. Souleles
+
+
+Chronicles of a Deflation Unforetold                                                     WP-06-12
+François R. Velde
+
+Female Offenders Use of Social Welfare Programs Before and After Jail and Prison:
+Does Prison Cause Welfare Dependency?                                                 WP-06-13
+Kristin F. Butcher and Robert J. LaLonde
+
+
+Eat or Be Eaten: A Theory of Mergers and Firm Size                                       WP-06-14
+Gary Gorton, Matthias Kahl, and Richard Rosen
+
+Do Bonds Span Volatility Risk in the U.S. Treasury Market?
+A Specification Test for Affine Term Structure Models                                     WP-06-15
+Torben G. Andersen and Luca Benzoni
+
+Transforming Payment Choices by Doubling Fees on the Illinois Tollway                     WP-06-16
+Gene Amromin, Carrie Jankowski, and Richard D. Porter
+
+
+How Did the 2003 Dividend Tax Cut Affect Stock Prices?                                  WP-06-17
+Gene Amromin, Paul Harrison, and Steven Sharpe
+
+
+Will Writing and Bequest Motives: Early 20th Century Irish Evidence                        WP-06-18
+Leslie McGranahan
+
+How Professional Forecasters View Shocks to GDP                                        WP-06-19
+Spencer D. Krane
+
+Evolving Agglomeration in the U.S. auto supplier industry                                  WP-06-20
+Thomas Klier and Daniel P. McMillen
+
+
+
+
+                                                                                     3
+
+[PAGE 26]
+Working Paper Series (continued)
+
+Mortality, Mass-Layoffs, and Career Outcomes: An Analysis using Administrative Data        WP-06-21
+Daniel Sullivan and Till von Wachter
+
+The Agreement on Subsidies and Countervailing Measures:
+Tying One’s Hand through the WTO.                                                     WP-06-22
+Meredith A. Crowley
+
+How Did Schooling Laws Improve Long-Term Health and Lower Mortality?                 WP-06-23
+Bhashkar Mazumder
+
+Manufacturing Plants’ Use of Temporary Workers: An Analysis Using Census Micro Data     WP-06-24
+Yukako Ono and Daniel Sullivan
+
+
+What Can We Learn about Financial Access from U.S. Immigrants?                         WP-06-25
+Una Okonkwo Osili and Anna Paulson
+
+Bank Imputed Interest Rates: Unbiased Estimates of Offered Rates?                          WP-06-26
+Evren Ors and Tara Rice
+
+Welfare Implications of the Transition to High Household Debt                              WP-06-27
+Jeffrey R. Campbell and Zvi Hercowitz
+
+Last-In First-Out Oligopoly Dynamics                                                    WP-06-28
+Jaap H. Abbring and Jeffrey R. Campbell
+
+Oligopoly Dynamics with Barriers to Entry                                               WP-06-29
+Jaap H. Abbring and Jeffrey R. Campbell
+
+Risk Taking and the Quality of Informal Insurance: Gambling and Remittances in Thailand     WP-07-01
+Douglas L. Miller and Anna L. Paulson
+
+Fast Micro and Slow Macro: Can Aggregation Explain the Persistence of Inflation?            WP-07-02
+Filippo Altissimo, Benoît Mojon, and Paolo Zaffaroni
+
+Assessing a Decade of Interstate Bank Branching                                          WP-07-03
+Christian Johnson and Tara Rice
+
+Debit Card and Cash Usage: A Cross-Country Analysis                                     WP-07-04
+Gene Amromin and Sujit Chakravorti
+
+The Age of Reason: Financial Decisions Over the Lifecycle                                 WP-07-05
+Sumit Agarwal, John C. Driscoll, Xavier Gabaix, and David Laibson
+
+Information Acquisition in Financial Markets: a Correction                                 WP-07-06
+Gadi Barlevy and Pietro Veronesi
+
+Monetary Policy, Output Composition and the Great Moderation                            WP-07-07
+Benoît Mojon
+
+
+
+                                                                                     4
+
+[PAGE 27]
+Working Paper Series (continued)
+
+Estate Taxation, Entrepreneurship, and Wealth                                            WP-07-08
+Marco Cagetti and Mariacristina De Nardi
+
+
+Conflict of Interest and Certification in the U.S. IPO Market                                WP-07-09
+Luca Benzoni and Carola Schenone
+
+The Reaction of Consumer Spending and Debt to Tax Rebates –
+Evidence from Consumer Credit Data                                                    WP-07-10
+Sumit Agarwal, Chunlin Liu, and Nicholas S. Souleles
+
+Portfolio Choice over the Life-Cycle when the Stock and Labor Markets are Cointegrated      WP-07-11
+Luca Benzoni, Pierre Collin-Dufresne, and Robert S. Goldstein
+
+Nonparametric Analysis of Intergenerational Income Mobility                               WP-07-12
+with Application to the United States
+Debopam Bhattacharya and Bhashkar Mazumder
+
+How the Credit Channel Works: Differentiating the Bank Lending Channel                   WP-07-13
+and the Balance Sheet Channel
+Lamont K. Black and Richard J. Rosen
+
+Labor Market Transitions and Self-Employment                                           WP-07-14
+Ellen R. Rissman
+
+First-Time Home Buyers and Residential Investment Volatility                              WP-07-15
+Jonas D.M. Fisher and Martin Gervais
+
+Establishments Dynamics and Matching Frictions in Classical Competitive Equilibrium        WP-07-16
+Marcelo Veracierto
+
+Technology’s Edge: The Educational Benefits of Computer-Aided Instruction                 WP-07-17
+Lisa Barrow, Lisa Markman, and Cecilia Elena Rouse
+
+The Widow’s Offering: Inheritance, Family Structure, and the Charitable Gifts of Women      WP-07-18
+Leslie McGranahan
+
+Demand Volatility and the Lag between the Growth of Temporary
+and Permanent Employment                                                             WP-07-19
+Sainan Jin, Yukako Ono, and Qinghua Zhang
+
+A Conversation with 590 Nascent Entrepreneurs                                           WP-07-20
+Jeffrey R. Campbell and Mariacristina De Nardi
+
+
+Cyclical Dumping and US Antidumping Protection: 1980-2001                              WP-07-21
+Meredith A. Crowley
+
+
+The Effects of Maternal Fasting During Ramadan on Birth and Adult Outcomes               WP-07-22
+Douglas Almond and Bhashkar Mazumder
+
+
+
+                                                                                     5
+
+[PAGE 28]
+Working Paper Series (continued)
+
+
+The Consumption Response to Minimum Wage Increases                                   WP-07-23
+Daniel Aaronson, Sumit Agarwal, and Eric French
+
+
+The Impact of Mexican Immigrants on U.S. Wage Structure                                 WP-07-24
+Maude Toussaint-Comeau
+
+A Leverage-based Model of Speculative Bubbles                                          WP-08-01
+Gadi Barlevy
+
+Displacement, Asymmetric Information and Heterogeneous Human Capital                   WP-08-02
+Luojia Hu and Christopher Taber
+
+BankCaR (Bank Capital-at-Risk): A credit risk model for US commercial bank charge-offs     WP-08-03
+Jon Frye and Eduard Pelz
+
+Bank Lending, Financing Constraints and SME Investment                                 WP-08-04
+Santiago Carbó-Valverde, Francisco Rodríguez-Fernández, and Gregory F. Udell
+
+
+Global Inflation                                                                        WP-08-05
+Matteo Ciccarelli and Benoît Mojon
+
+
+Scale and the Origins of Structural Change                                                WP-08-06
+Francisco J. Buera and Joseph P. Kaboski
+
+
+Inventories, Lumpy Trade, and Large Devaluations                                        WP-08-07
+George Alessandria, Joseph P. Kaboski, and Virgiliu Midrigan
+
+
+School Vouchers and Student Achievement: Recent Evidence, Remaining Questions           WP-08-08
+Cecilia Elena Rouse and Lisa Barrow
+
+
+Does It Pay to Read Your Junk Mail? Evidence of the Effect of Advertising on
+Home Equity Credit Choices                                                            WP-08-09
+Sumit Agarwal and Brent W. Ambrose
+
+
+The Choice between Arm’s-Length and Relationship Debt: Evidence from eLoans             WP-08-10
+Sumit Agarwal and Robert Hauswald
+
+
+Consumer Choice and Merchant Acceptance of Payment Media                             WP-08-11
+Wilko Bolt and Sujit Chakravorti
+
+Investment Shocks and Business Cycles                                                  WP-08-12
+Alejandro Justiniano, Giorgio E. Primiceri, and Andrea Tambalotti
+
+New Vehicle Characteristics and the Cost of the
+Corporate Average Fuel Economy Standard                                               WP-08-13
+Thomas Klier and Joshua Linn
+
+
+
+                                                                                     6
+
+[PAGE 29]
+Working Paper Series (continued)
+
+
+Realized Volatility                                                                     WP-08-14
+Torben G. Andersen and Luca Benzoni
+
+
+
+
+
+                                                                                     7

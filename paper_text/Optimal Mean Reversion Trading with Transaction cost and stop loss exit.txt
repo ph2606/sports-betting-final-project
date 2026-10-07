@@ -1,0 +1,1584 @@
+[PAGE 1]
+                Optimal Mean Reversion Trading
+             with Transaction Costs and Stop-Loss Exit∗
+
+                         Tim Leung†        Xin Li‡
+
+                               December 14, 2014
+
+
+
+
+                                         Abstract
+
+         Motivated by the industry practice of pairs trading, we study the optimal timing strategies for
+      trading a mean-reverting price spread. An optimal double stopping problem is formulated to analyze
+      the timing to start and subsequently liquidate the position subject to transaction costs. Modeling the
+      price spread by an Ornstein-Uhlenbeck process, we apply a probabilistic methodology and rigorously
+      derive the optimal price intervals for market entry and exit. As an extension, we incorporate a stop-loss
+      constraint to limit the maximum loss. We show that the entry region is characterized by a bounded
+      price interval that lies strictly above the stop-loss level. As for the exit timing, a higher stop-loss level
+      always implies a lower optimal take-proﬁt level. Both analytical and numerical results are provided
+      to illustrate the dependence of timing strategies on model parameters such as transaction costs and
+       stop-loss level.
+
+
+Keywords: optimal double stopping, mean reversion trading, Ornstein-Uhlenbeck process, stop-loss
+JEL Classiﬁcation: C41, G11, G12
+Mathematics Subject Classiﬁcation (2010): 60G40, 91G10, 62L15
+
+
+
+
+
+  ∗Work partially supported by NSF grant DMS-0908295.
+   †Corresponding author. IEOR Department, Columbia University, New York, NY 10027; email: leung@ieor.columbia.edu.
+  ‡IEOR Department, Columbia University, New York, NY 10027; email: xl2206@columbia.edu.
+
+
+                                             1
+                     Electronic copy available at: http://ssrn.com/abstract=2222196
+
+[PAGE 2]
+1  Introduction
+
+It has been widely observed that many asset prices exhibit mean reversion, including commodities (see
+Schwartz (1997)), foreign exchange rates (see Engel and Hamilton (1989); Anthony and MacDonald
+(1998); Larsen and Sørensen (2007)), as well as US and global equities (see Poterba and Summers (1988);
+Malliaropulos and Priestley (1999); Balvers et al. (2000); Gropp (2004)).  Mean-reverting processes
+are also used to model the dynamics of interest rate, volatility, and default risk.  In industry, hedge
+fund managers and investors often attempt to construct mean-reverting prices by simultaneously taking
+positions in two highly correlated or co-moving assets. The advent of exchange-traded funds (ETFs) has
+further facilitated this pairs trading approach since some ETFs are designed to track identical or similar
+indexes and assets. For instance, Triantafyllopoulos and Montana (2011) investigate the mean-reverting
+spreads between commodity ETFs and design model for statistical arbitrage. Dunis et al. (2013) also
+examine the mean-reverting spread between physical gold and gold equity ETFs.
+   Given the price dynamics of some risky asset(s), one important problem commonly faced by individual
+and institutional investors is to determine when to open and close a position.  While observing the
+prevailing market prices, a speculative investor can choose to enter the market immediately or wait for
+a future opportunity. After completing the ﬁrst trade, the investor will need to decide when is best to
+close the position. This motivates the investigation of the optimal sequential timing of trades.
+   In this paper, we study the optimal timing of trades subject to transaction costs under the Ornstein-
+Uhlenbeck (OU) model. Speciﬁcally, our formulation leads to an optimal double stopping problem that
+gives the optimal entry and exit decision rules. We obtain analytic solutions for both the entry and
+exit problems. In addition, we incorporate a stop-loss constraint to our trading problem. We ﬁnd that
+a higher stop-loss level induces the investor to voluntarily liquidate earlier at a lower take-proﬁt level.
+Moreover, the entry region is characterized by a bounded price interval that lies strictly above stop-loss
+level. In other words, it is optimal to wait if the current price is too high or too close to the lower stop-loss
+level. This is intuitive since entering the market close to stop-loss implies a high chance of exiting at a loss
+afterwards. As a result, the delay region (complement of the entry region) is disconnected. Furthermore,
+we show that optimal liquidation level decreases with the stop-loss level until they coincide, in which
+case immediate liquidation is optimal at all price levels.
+  A typical solution approach for optimal stopping problems driven by diﬀusion involves the analytical
+and numerical studies of the associated free boundary problems or variational inequalities (VIs); see
+e.g. Bensoussan and Lions (1982), Øksendal (2003), and Sun (1992). For our double optimal stopping
+problem, this method would determine the value functions from a pair of VIs and require regularity
+conditions to guarantee that the solutions to the VIs indeed correspond to the optimal stopping problems.
+As noted by Dayanik (2008), “the variational methods become challenging when the form of the reward
+function and/or the dynamics of the diﬀusion obscure the shape of the optimal continuation region.” In
+our optimal entry timing problem, the reward function involves the value function from the exit timing
+problem, which is not monotone and can be positive and negative.
+   In contrast to the variational inequality approach, our proposed methodology starts with a charac-
+terization of the value functions as the smallest concave majorant of any given reward function. A key
+feature of this approach is that it allows us to directly construct the value function, without a priori
+ﬁnding a candidate value function or imposing conditions on the stopping and delay (continuation) re-
+gions, such as whether they are connected or not. In other words, our method will derive the structure
+of the stopping and delay regions as an output.
+   Our main results provide the analytic expressions for the value functions of the double stopping
+problems; see Theorems 4.2 and 4.5 (without stop-loss), and Theorems 5.1 and 5.5 (with stop-loss). In
+earlier studies, Dynkin and Yushkevich (1969) analyze the concave characterization of excessive functions
+for a standard Brownian motion, and Dayanik and Karatzas (2003) and Dayanik (2008) apply this idea
+to study the optimal single stopping of a one-dimensional diﬀusion. In this regard, we contribute to this
+line of work by solving a number of optimal double stopping problems with and without a stop-loss exit
+under the OU model.
+
+
+                                             2
+                     Electronic copy available at: http://ssrn.com/abstract=2222196
+
+[PAGE 3]
+  Among other related studies, Ekstrom et al. (2011) analyze the optimal single liquidation timing
+under the OU model with zero long-run mean and no transaction cost. The current paper extends their
+model in a number of ways. First, we analyze the optimal entry timing as well as the optimal liquidation
+timing. Our model allows for a non-zero long-run mean and transaction costs, along with a stop-loss
+level. Song et al. (2009) propose a numerical stochastic approximation scheme to solve for the optimal
+buy-low-sell-high strategies over a ﬁnite horizon. Under a similar setting, Zhang and Zhang (2008) and
+Kong and Zhang (2010) also investigate the inﬁnite sequential buying and selling/shorting problem under
+exponential OU price dynamics with slippage cost.
+   In the context of pairs trading, a number of studies have also considered market timing strategy with
+two price levels. For example, Gatev et al. (2006) study the historical returns from the buy-low-sell-high
+strategy where the entry/exit levels are set as ±1 standard deviation from the long-run mean. Similarly,
+Avellaneda and Lee (2010) consider starting and ending a pairs trade based on the spread’s distance from
+its mean. In Elliott et al. (2005), the market entry timing is modeled by the ﬁrst passage time of an OU
+process, followed by an exit at a ﬁxed ﬁnite horizon. In comparison, rather than assigning ad hoc price
+levels or ﬁxed trading times, our approach will generate the entry and exit thresholds as solutions of an
+optimal double stopping problem. Considering an exponential OU asset price with zero mean, Bertram
+(2010) numerically computes the optimal enter and exit levels that maximize the expected return per
+unit time. Gregory et al. (2010) also apply this approach to log-spread following the CIR and GARCH
+diﬀusion models. Other timing strategies adopted by practitioners have been discussed in Vidyamurthy
+(2004).
+  On the other hand, the related problem of constructing portfolios and hedging with mean reverting
+asset prices has been studied. For example, Benth and Karlsen (2005) study the utility maximization
+problem that involves dynamically trading an exponential OU underlying asset. Jurek and Yang (2007)
+analyze a ﬁnite-horizon portfolio optimization problem with an OU asset subject to the power utility
+and Epstein-Zin recursive utility. Chiu and Wong (2012) consider the dynamic trading of co-integrated
+assets with a mean-variance criterion. Tourin and Yan (2013) derive the dynamic trading strategy for
+two co-integrated stocks in order to maximize the expected terminal utility of wealth over a ﬁxed horizon.
+They simplify the associated Hamilton-Jacobi-Bellman equation and obtain a closed-form solution. In
+the stochastic control approach, incorporating transaction costs and stop-loss exit can potentially limit
+model tractability and is not implemented in these studies.
+   The rest of the paper is structured as follows. We formulate the optimal trading problem in Section
+2, followed by a discussion on our method of solution in Section 3. In Section 4, we analytically solve
+the optimal double stopping problem and examine the optimal entry and exit strategies. In Section 5,
+we study the trading problem with a stop-loss constraint. The proofs of all lemmas are provided in the
+Appendix.
+
+
+2  Problem Overview
+
+In the background, we ﬁx the probability space (Ω, F, P) with the historical probability measure P. We
+consider an Ornstein-Uhlenbeck (OU) process driven by the SDE:
+
+                               dXt = µ(θ −Xt) dt + σ dBt,                                   (2.1)
+
+with constants µ, σ > 0, θ ∈R, and state space R. Here, B is a standard Brownian motion under P.
+Denote by F ≡(Ft)t≥0 the ﬁltration generated by X.
+
+2.1 A Pairs Trading Example
+
+Let us discuss a pairs trading example where we model the value of the resulting position by an OU
+process. The primary objective is to motivate our trading problem, rather than proposing new estimation
+
+
+
+                                             3
+
+[PAGE 4]
+methodologies or empirical studies on pairs trading. For related studies and more details, we refer to
+the seminal paper by Engle and Granger (1987), the books Hamilton (1994); Tsay (2005), and references
+therein.
+  We construct a portfolio by holding α shares of a risky asset S(1) and shorting β shares of another
+risky asset S(2), yielding a portfolio value Xα,βt  = αS(1)t  −βS(2)t   at time t ≥0. The pair of assets are
+selected to form a mean-reverting portfolio value.  In addition, one can adjust the strategy (α, β) to
+enhance the level of mean reversion. For the purpose of testing mean reversion, only the ratio between α
+and β matters, so we can keep α constant while varying β without loss of generality. For every strategy
+(α, β), we observe the resulting portfolio values (xα,βi   )i=0,1,...,n realized over an n-day period. We then
+apply the method of maximum likelihood estimation (MLE) to ﬁt the observed portfolio values to an OU
+process and determine the model parameters. Under the OU model, the conditional probability density
+of Xti at time ti given xi−1 at ti−1 with time increment ∆t = ti −ti−1 is given by
+                             (                     )
+                                    1            −xi−1e−µ∆t −θ(1 −e−µ∆t))2              fOU(xi|xi−1; θ, µ, σ) = √     exp  −(xi                                                   ,
+                                         2π˜σ2                           2˜σ2
+
+with the constant
+
+                                            1 −e−2µ∆t
+                                                        ˜σ2 = σ2                  .
+                                           2µ
+
+Using the observed values (xα,βi   )i=0,1,...,n, we maximize the average log-likelihood deﬁned by
+
+           ∑n      (            )                             1
+  ℓ(θ, µ, σ|xα,β0   , xα,β1   , . . . , xα,βn  ) :=       ln fOU  xα,βi  |xα,βi−1; θ, µ, σ                        n
+                                     i=1
+                  ∑n
+                 = −1 ln(2π) −ln(˜σ) −  1      [xα,βi  −xα,βi−1e−µ∆t −θ(1 −e−µ∆t)]2,  (2.2)                              2                   2n˜σ2
+                                                              i=1
+
+and denote by ˆℓ(θ∗, µ∗, σ∗) the maximized average log-likelihood over θ, µ, and σ for a given strategy
+(α, β). For any α, we choose the strategy (α, β∗), where β∗= arg maxβ ˆℓ(θ∗, µ∗, σ∗|xα,β0   , xα,β1   , . . . , xα,βn  ).
+For example, suppose we invest A dollar(s) in asset S(1), so α = A/S(1)0   shares is held. At the same
+time, we short β = B/S(2)0  shares in S(2), for B/A = 0.001, 0.002, . . . , 1. This way, the sign of the initial
+portfolio value depends on the sign of the diﬀerence A −B, which is non-negative. Without loss of
+generality, we set A = 1.
+   In Figure 1, we illustrate an example based on two pairs of exchange-traded funds (ETFs), namely,
+the Market Vectors Gold Miners (GDX) and iShares Silver Trust (SLV) against the SPDR Gold Trust
+(GLD) respectively. These liquidly traded funds aim to track the price movements of the NYSE Arca
+Gold Miners Index (GDX), silver (SLV), and gold bullion (GLD) respectively. These ETF pairs are also
+used in Triantafyllopoulos and Montana (2011) and Dunis et al. (2013) for their statistical and empirical
+studies on ETF pairs trading.
+   Using price data from August 2011 to May 2012 (n = 200, ∆t = 1/252), we compute and plot
+in Figure 1(a) the average log-likelihood against the cash amount B, and ﬁnd that ˆℓis maximized at
+B∗= 0.454 (resp. 0.493) for the GLD-GDX pair (resp. GLD-SLV pair). From this MLE-optimal B∗,
+we obtain the strategy (α, β∗), where α = 1/S(1)0  and β∗= B∗/S(2)0   . In this example, the average log-
+likelihood for the GLD-SLV pair happens to dominate that for GLD-GDX, suggesting a higher degree of
+ﬁt to the OU model. Figure 1(b) depicts the historical price paths with the strategy (α, β∗).
+  We summarize the estimation results in Table 1. For each pair, we ﬁrst estimate the parameters for
+the OU model from empirical price data. Then, we use the estimated parameters to simulate price paths
+according the corresponding OU process. Based on these simulated OU paths, we perform another MLE
+
+
+
+                                             4
+
+[PAGE 5]
+and obtain another set of OU parameters as well as the maximum average log-likelihood  ˆℓ. As we can
+see, the two sets of estimation outputs (the rows names “empirical” and “simulated”) are very close,
+suggesting the empirical price process ﬁts well to the OU model.
+
+
+
+               3.5                                                                               0.62
+                                               GLD−GDX                                                       GLD-GDX
+                                                  GLD−SLV                      0.6                                           GLD-SLV               3.4
+
+               3.3                                                                               0.58
+
+          ˆℓ
+               3.2                                                                               0.56
+
+               3.1                                                                               0.54                                                                           log-likelihood
+                                     Average  3                                                                               0.52
+               2.9                                                                                    0.5
+
+               2.8                                                                               0.48
+
+               2.7                                                                               0.46
+               0           0.2          0.4          0.6          0.8         1                   0             50            100           150           200
+                              B                                                                             Days
+
+                              (a)                                                         (b)
+
+Figure 1:  (a) Average log-likelihood plotted against B. (b) Historical price paths with maximum average log-
+likelihood. The solid line plots the portfolio price with longing $1 GLD and shorting $0.454 GDX, and the dashed
+line plots the portfolio price with longing $1 GLD and shorting $0.493 SLV.
+
+
+                                         Price           ˆθ            ˆµ             ˆσ            ˆℓ
+                                        empirical   0.5388   16.6677   0.1599   3.2117
+                 GLD-GDX
+                                      simulated   0.5425   14.3893   0.1727   3.1304
+                                        empirical   0.5680   33.4593   0.1384   3.3882
+                   GLD-SLV
+                                      simulated   0.5629   28.8548   0.1370   3.3898
+
+
+Table 1: MLE estimates of OU process parameters using historical prices of GLD, GDX, and SLV from August
+2011 to May 2012. The portfolio consists of $1 in GLD and -$0.454 in GDX (resp. -$0.493 in SLV). For each pair,
+the second row (simulated) shows the MLE parameter estimates based on a simulated price path corresponding to
+the estimated parameters from the ﬁrst row (empirical).
+
+
+2.2  Optimal Stopping Problem
+
+Given that a price process or portfolio value evolves according to an OU process, our main objective is
+to study the optimal timing to open and subsequently close the position subject to transaction costs.
+This leads to the analysis of an optimal double stopping problem.
+    First, suppose that the investor already has an existing position whose value process (Xt)t≥0 follows
+(2.1).  If the position is closed at some time τ, then the investor will receive the value Xτ and pay a
+constant transaction cost c ∈R. To maximize the expected discounted value, the investor solves the
+optimal stopping problem
+
+                                      {          }
+                           V (x) = sup Ex e−rτ(Xτ −c)   ,                                  (2.3)
+                                          τ∈T
+
+where T denotes the set of all F-stopping times, and r > 0 is the investor’s subjective constant discount
+rate. We have also used the shorthand notation: Ex{·} ≡E{·|X0 = x}.
+   From the investor’s viewpoint, V (x) represents the expected liquidation value associated with X. On
+the other hand, the current price plus the transaction cost constitute the total cost to enter the trade.
+
+
+                                             5
+
+[PAGE 6]
+The investor can always choose the optimal timing to start the trade, or not to enter at all. This leads
+us to analyze the entry timing inherent in the trading problem. Precisely, we solve
+                              {               }
+                            J(x) = sup Ex  e−ˆrν(V (Xν) −Xν −ˆc)   ,                             (2.4)
+                                     ν∈T
+
+with ˆr > 0, ˆc ∈R. In other words, the investor seeks to maximize the expected diﬀerence between the
+value function V (Xν) and the current Xν, minus transaction cost ˆc. The value function J(x) represents
+the maximum expected value of the investment opportunity in the price process X, with transaction
+costs  ˆc and c incurred, respectively, at entry and exit. For our analysis, the pre-entry and post-entry
+discount rates, ˆr and r, can be diﬀerent, as long as 0 < ˆr ≤r. Moreover, the transaction costs ˆc and c
+can also diﬀer, as long as c + ˆc > 0. Moreover, since τ = +∞and ν = +∞are candidate stopping times
+for (2.3) and (2.4) respectively, the two value functions V (x) and J(x) are non-negative.
+   As extension, we can incorporate a stop-loss level of the pairs trade, that caps the maximum loss. In
+practice, the stop-loss level may be exogenously imposed by the manager of a trading desk. In eﬀect, if
+the price X ever reaches level L prior to the investor’s voluntary liquidation time, then the position will
+be closed immediately. The stop-loss signal is given by the ﬁrst passage time
+
+                                   τL := inf{t ≥0  : Xt ≤L}.
+
+Therefore, we determine the entry and liquidation timing from the constrained optimal stopping problem:
+                              {               }
+                           JL(x) = sup Ex  e−ˆrν(VL(Xν) −Xν −ˆc)   ,                           (2.5)
+                                     ν∈T
+                              {             }
+                           VL(x) = sup Ex  e−r(τ∧τL)(Xτ∧τL −c)   .                              (2.6)
+                                     τ∈T
+
+Due to the additional timing constraint, the investor may be forced to exit early at the stop-loss level
+for any given liquidation level. Hence, the stop-loss constraint reduces the value functions, and precisely
+we deduce that x −c ≤VL(x) ≤V (x) and 0 ≤JL(x) ≤J(x). As we will show in Sections 4 and 5, the
+optimal timing strategies with and without stop-loss are quite diﬀerent.
+
+
+3  Method of Solution
+
+In this section, we disucss our method of solution. First, we denote the inﬁnitesimal generator of the OU
+process X by
+
+                                      σ2 d2           d
+                         L =     + µ(θ −x)                                        (3.1)                                       2 dx2          dx,
+
+and recall the classical solutions of the diﬀerential equation
+
+                                     Lu(x) = ru(x),                                          (3.2)
+
+for x ∈R, are (see e.g. p.542 of Borodin and Salminen (2002) and Prop. 2.1 of Alili et al. (2005)):
+
+                                 √                       ∫∞                                                                          r                                                                      2µ (x−θ)u−u22                                                         µ                                                                      σ2                        F(x) ≡F(x; r) :=    u −1e             du,                         (3.3)
+
+                                 √                       ∫∞0                                                                          r                                                                      2µ (θ−x)u−u22                                                         µ                                                                      σ2                       G(x) ≡G(x; r) :=    u −1e             du.                         (3.4)
+                                                       0
+
+
+
+
+
+                                             6
+
+[PAGE 7]
+Direct diﬀerentiation yields that F ′(x) > 0, F ′′(x) > 0, G′(x) < 0 and G′′(x) > 0. Hence, we observe
+that both F(x) and G(x) are strictly positive and convex, and they are, respectively, strictly increasing
+and decreasing.
+   Deﬁne the ﬁrst passage time of X to some level κ by τκ = inf{t ≥0 : Xt = κ}. As is well known, F
+and G admit the probabilistic expressions (see It¯o and McKean (1965) and Rogers and Williams (2000)):
+
+                           {
+                                                       F(x)
+                                                                                        if x ≤κ,
+                                Ex{e−rτκ} =   F(κ)G(x)                                               (3.5)
+                                                                                        if x ≥κ.                                                      G(κ)
+
+  A key step of our solution method involves the transformation
+
+                                    F
+                                      ψ(x) := G(x).                                           (3.6)
+
+Starting at any x ∈R, we denote by τa ∧τb the exit time from an interval [a, b] with −∞≤a ≤x ≤
+b ≤+∞. With the reward function h(x) = x −c, we compute the corresponding expected discounted
+reward:
+
+          Ex{e−r(τa∧τb)h(Xτa∧τb)} = h(a)Ex{e−rτa1{τa<τb}} + h(b)Ex{e−rτb1{τa>τb}}                (3.7)
+                                        −F(b)G(x)             −F(x)G(a)                    = h(a)F(x)G(b)       + h(b)F(a)G(x)                    (3.8)
+                                    F(a)G(b) −F(b)G(a)       F(a)G(b) −F(b)G(a)
+                                   [                               ]
+                                         h(a) ψ(b) −ψ(x)   h(b) ψ(x) −ψ(a)
+                    = G(x)           +                                      (3.9)
+                                     G(a) ψ(b) −ψ(a)   G(b) ψ(b) −ψ(a)
+                                        [                        ]
+                                                            yb −y         y −ya
+                    = G(ψ−1(y)) H(ya)    + H(yb)              ,                 (3.10)
+                                                           yb −ya          yb −ya
+
+where ya = ψ(a), yb = ψ(b), and
+                     
+                      h ◦ψ−1(y)        if y > 0,                                 G
+                           H(y) :=           (h(x))+                                          (3.11)
+                      lim                  if y = 0.
+                              x→−∞  G(x)
+
+The second equality (3.8) follows from the fact that f(x) := Ex{e−r(τa∧τb)1{τa<τb}} is the unique solution
+to (3.2) with boundary conditions f(a) = 1 and f(b) = 0.  Similar reasoning applies to the function
+g(x) := Ex{e−r(τa∧τb)1{τa>τb}} with g(a) = 0 and g(b) = 1. The last equality (3.10) transforms the
+problem from x coordinate to y = ψ(x) coordinate (see (3.6)).
+   The candidate optimal exit interval [a∗, b∗] is determined by maximizing the expectation in (3.7).
+This is equivalent to maximizing (3.10) over ya and yb in the transformed problem. This leads to
+                                       [                        ]
+                                                          yb −y         y −ya
+                 W(y) :=     sup     H(ya)    + H(yb)              .                  (3.12)
+                                     {ya,yb:ya≤y≤yb}        yb −ya          yb −ya
+
+This is the smallest concave majorant of H. Applying the deﬁnition of W to (3.10), we can express the
+maximal expected discounted reward as
+
+                     G(x)W(ψ(x)) =   sup    Ex{e−r(τa∧τb)h(Xτa∧τb)}.
+                                                {a,b:a≤x≤b}
+
+Remark 3.1 If a = −∞, then we have τa = +∞and 1{τa<τb} = 0 a.s. In eﬀect, this removes the lower
+
+
+
+
+
+                                             7
+
+[PAGE 8]
+exit level, and the corresponding expected discounted reward is
+
+  Ex{e−r(τa∧τb)h(Xτa∧τb)} = Ex{e−rτah(Xτa)1{τa<τb}} + Ex{e−rτbh(Xτb)1{τa>τb}} = Ex{e−rτbh(Xτb)}.
+
+Consequently, by considering interval-type strategies, we also include the class of stopping strategies of
+reaching a single upper level b (see Theorem 4.2 below).
+
+   Next, we prove the optimality of the proposed stopping strategy and provide an expression for the
+value function.
+
+Theorem 3.2 The value function V (x) deﬁned in (2.3) is given by
+
+                              V (x) = G(x)W(ψ(x)),                                    (3.13)
+
+where G, ψ and W are deﬁned in (3.4), (3.6) and (3.12), respectively.
+
+   The proof is provided in Appendix A.1. Let us emphasize that the optimal levels (a∗, b∗) may depend
+on the initial value x, and can potentially coincide, or take values −∞and +∞. As such, the structure
+of the stopping and delay regions can potentially be characterized by multiple intervals, leading to
+disconnected delay regions (see Theorem 5.5 below).
+  We follow the procedure for Theorem 3.2 to derive the expression for the value function J in (2.4).
+First, we denote ˆF(x) = F(x; ˆr) and ˆG(x) = G(x; ˆr) (see (3.3)–(3.4)), with discount rate ˆr. In addition,
+we deﬁne the transformation
+
+                                              ˆF
+                                ˆψ(x) :=   (x)  and   ˆh(x) = V (x) −x −ˆc.                        (3.14)
+                                           ˆG
+
+Using these functions, we consider the function analogous to H:
+                     
+                      ˆh ◦ˆψ−1(y)        if y > 0,
+                                 ˆH(y) :=    ˆG       (ˆh(x))+                                          (3.15)                      lim                  if y = 0.
+                              x→−∞  ˆG(x)
+
+Following the steps (3.7)–(3.12) with F, G, ψ, and H replaced by ˆF, ˆG, ˆψ, and ˆH, respectively, we write
+down the smallest concave majorant ˆW of ˆH, namely,
+                                       [                        ]
+                                                                                     yˆb −y         y −yˆa                      ˆW(y) :=     sup        ˆH(yˆa)    + ˆH(yˆb)              .
+                                               {yˆa,yˆb:yˆa≤y≤yˆb}            yˆb −yˆa              yˆb −yˆa
+
+From this, we seek to determine the candidate optimal entry interval (yˆa∗, yˆb∗) in the y = ˆψ(x) coordinate.
+Following the proof of Theorem 3.2 with the new functions ˆF, ˆG, ˆψ, ˆH, and ˆW, the value function of
+the optimal entry timing problem admits the expression
+
+                                    J(x) = ˆG(x)ˆW(ˆψ(x)).                                    (3.16)
+
+  An alternative way to solve for V (x) and J(x) is to look for the solutions to the pair of variational
+inequalities
+
+                            min{rV (x) −LV (x), V (x) −(x −c)} = 0,                      (3.17)
+                          min{ˆrJ(x) −LJ(x), J(x) −(V (x) −x −ˆc)} = 0,                      (3.18)
+
+for x ∈R. With suﬃcient regularity conditions, this approach can verify that the solutions to the VIs,
+V (x) and J(x), indeed correspond to the optimal stopping problems (see, for example, Theorem 10.4.1 of
+
+
+                                             8
+
+[PAGE 9]
+Øksendal (2003)). Nevertheless, this approach does not immediately suggest candidate optimal timing
+strategies or value functions, and typically begins with a conjecture on the structure of the optimal
+stopping times, followed by veriﬁcation. In contrast, our approach allows us to directly construct the
+value functions, at the cost of analyzing the properties of H, W, ˆH, and ˆW.
+
+
+4  Analytical Results
+
+We will ﬁrst study the optimal exit timing in Section 4.1, followed by the optimal entry timing problem
+in Section 4.2.
+
+
+4.1  Optimal Exit Timing
+
+We now analyze the optimal exit timing problem (2.3). In preparation for the next result, we summarize
+the crucial properties of H.
+
+Lemma 4.1 The function H is continuous on [0, +∞), twice diﬀerentiable on (0, +∞) and possesses
+the following properties:
+
+  (i) H(0) = 0, and
+
+                        {
+                         < 0     if y ∈(0, ψ(c)),
+                              H(y)
+                         > 0     if y ∈(ψ(c), +∞).
+
+ (ii) Let x∗be the unique solution to G(x) −(x −c)G′(x) = 0. Then, we have
+
+                        {
+                                              decreasing     if y ∈(0, ψ(x∗)),
+                       H(y) is strictly
+                                               increasing     if y ∈(ψ(x∗), +∞),
+
+     and x∗< c ∧L∗with
+
+                                            µθ + rc
+                             L∗=             .                                        (4.1)
+                                       µ + r
+
+
+(iii)
+
+                       {
+                                         convex       if y ∈(0, ψ(L∗)],
+                           H(y) is
+                                         concave     if y ∈[ψ(L∗), +∞).
+
+
+   Based on Lemma 4.1, we sketch H in Figure 2. The properties of H are essential in deriving the
+value function and optimal liquidation level, as we show next.
+
+Theorem 4.2 The optimal liquidation problem (2.3) admits the solution
+
+                     {
+                                (b∗−c) F(x)      if x ∈(−∞, b∗),
+                       V (x) =            F(b∗)                                                 (4.2)
+                               x −c           otherwise,
+
+where the optimal liquidation level b∗is found from the equation
+
+                                     F(b) = (b −c)F ′(b),                                        (4.3)
+
+
+                                             9
+
+[PAGE 10]
+                                                           H
+
+
+
+                              W
+
+
+
+
+
+                                                  ψ(x∗)  ψ(L∗)
+                                      0                       ψ(c)                   z = ψ(b∗)                y
+
+
+
+
+
+Figure 2: Sketches of H and W. By Lemma 4.1, H is convex on the left of ψ(L∗) and concave on the right. The
+smallest concave majorant W is a straight line tangent to H at z on [0, z), and coincides with H on [z, +∞).
+
+
+and is bounded below by L∗∨c. The corresponding optimal liquidation time is given by
+
+                                       τ ∗= inf{t ≥0  : Xt ≥b∗}.                                    (4.4)
+
+Proof. From Lemma 4.1 and the fact that H′(y) →0 as y →+∞(see also Figure 2), we infer that
+there exists a unique number z > ψ(L∗) ∨ψ(c) such that
+
+                                    H(z)
+                            = H′(z).                                          (4.5)
+                                            z
+
+In turn, the smallest concave majorant is given by
+                         {
+                                                   H(z)
+                                           y            if y < z,
+                            W(y) =       z                                                  (4.6)
+                                      H(y)      if y ≥z.
+
+Substituting b∗= ψ−1(z) into (4.5), we have the LHS
+
+                              H(z)   H(ψ(b∗))  b∗−c
+                         =      =           ,                                   (4.7)
+                                      z       ψ(b∗)     F(b∗)
+
+and the RHS
+
+                   G(ψ−1(z)) −(ψ−1(z) −c)G′(ψ−1(z))         G(b∗) −(b∗−c)G′(b∗)
+        H′(z) =                           =            F ′(ψ−1(z))G(ψ−1(z)) −F(ψ−1(z))G′(ψ−1(z))  F ′(b∗)G(b∗) −F(b∗)G′(b∗).
+
+Equivalently, we can express condition (4.5) in terms of b∗:
+
+                       b∗−c     G(b∗) −(b∗−c)G′(b∗)
+                       =                               F(b∗)  F ′(b∗)G(b∗) −F(b∗)G′(b∗),
+
+which can be further simpliﬁed to
+
+                                    F(b∗) = (b∗−c)F ′(b∗).
+
+
+
+
+
+                                            10
+
+[PAGE 11]
+Applying (4.7) to (4.6), we get
+
+                      {
+                                      ψ(x)H(z) = F(x) b∗−c      if x < b∗,                                                          z     G(x) F(b∗)                      W(ψ(x)) =                                                                (4.8)
+                                  H(ψ(x)) = x−c              if x ≥b∗.                                                         G(x)
+
+In turn, we obtain the value function V (x) by substituting (4.8) into (3.13).
+   Next, we examine the dependence of the investor’s optimal timing strategy on the transaction cost c.
+
+Proposition 4.3 The value function V (x) of  (2.3) is decreasing in the transaction cost c for every
+x ∈R, and the optimal liquidation level b∗is increasing in c.
+
+Proof. For any x ∈R and τ ∈T , the corresponding expected discounted reward, Ex{e−rτ(Xτ −c)} =
+Ex{e−rτXτ} −c Ex{e−rτ}, is decreasing in c. This implies that V (x) is also decreasing in c. Next, we
+treat the optimal threshold b∗(c) as a function of c, and diﬀerentiate (4.3) w.r.t. c to get
+
+                                  F ′(b∗)
+                                              b∗′(c) =         > 0.
+                                    (b∗−c)F ′′(b∗)
+
+Since F ′(x) > 0, F ′′(x) > 0 (see (3.3)), and b∗> c according to Theorem 4.2, we conclude that b∗is
+increasing in c.
+   In other words, if the transaction cost is high, the investor would tend to liquidate at a higher level, in
+order to compensate the loss on transaction cost. For other parameters, such as µ and σ, the dependence
+of b∗is generally not monotone.
+
+
+4.2  Optimal Entry Timing
+
+Having solved for the optimal exit timing, we now turn to the optimal entry timing problem. In this
+case, the value function is
+
+                        J(x) = sup Ex{e−ˆrν(V (Xν) −Xν −ˆc)},  x ∈R,                        (4.9)
+                                  ν∈T
+
+where V (x) is given by Theorem 4.2.
+   To solve for the optimal entry threshold(s), we will need several properties of ˆH, as we summarize
+below.
+
+Lemma 4.4 The function ˆH is continuous on [0, +∞), diﬀerentiable on (0, +∞), and twice diﬀerentiable
+on (0, ˆψ(b∗)) ∪( ˆψ(b∗), +∞), and possesses the following properties:
+
+  (i) ˆH(0) = 0. Let ¯d denote the unique solution to ˆh(x) = 0, then ¯d < b∗and
+
+                        {
+                         > 0     if y ∈(0, ˆψ(¯d)),
+                                     ˆH(y)
+                         < 0     if y ∈(ˆψ(¯d), +∞).
+
+ (ii) ˆH(y) is strictly decreasing if y ∈( ˆψ(b∗), +∞).
+
+(iii) Let b denote the unique solution to (L −ˆr)ˆh(x) = 0, then b < L∗and
+
+                       {
+                                         concave     if y ∈(0, ˆψ(b)),
+                                  ˆH(y) is
+                                         convex       if y ∈(ˆψ(b), +∞).
+
+
+
+                                            11
+
+[PAGE 12]
+                                                                                                 ˆW
+
+
+
+                                                                                             ˆψ( ¯d)    ˆψ(b∗)
+                                             0           ˆz = ˆψ(d∗)     ˆψ(b)                                y
+
+
+
+
+
+                                                                                                                   ˆH
+
+
+Figure 3: Sketches of ˆH and ˆW. The function ˆW coincides with ˆH on [0, ˆz] and is equal to the constant ˆH(ˆz) on
+(ˆz, +∞).
+
+   In Figure 3, we give a sketch of ˆH according to Lemma 4.4. This will be useful for deriving the
+optimal entry level.
+
+Theorem 4.5 The optimal entry timing problem (2.4) admits the solution
+                  
+                                               V (x) −x −ˆc        if x ∈(−∞, d∗],
+                          J(x) =   V (d∗)−d∗−ˆc                                                  (4.10)                             ˆG(x)     if x ∈(d∗, +∞),                                                       ˆG(d∗)
+
+where the optimal entry level d∗is found from the equation
+
+                                ˆG(d)(V ′(d) −1) = ˆG′(d)(V (d) −d −ˆc).                           (4.11)
+
+Proof. We look for the value function of the form: J(x) = ˆG(x) ˆW( ˆψ(x)), where ˆW is the the smallest
+concave majorant of ˆH. From Lemma 4.4 and Figure 3, we infer that there exists a unique number
+ˆz < ˆψ(b∗) such that
+
+                                                          ˆH′(ˆz) = 0.                                          (4.12)
+
+This implies that
+                         {
+                                                ˆH(y)     if y ≤ˆz,
+                                   ˆW(y) =                                                     (4.13)
+                                                          ˆH(ˆz)     if y > ˆz.
+
+Substituting d∗= ˆψ−1(ˆz) into (4.12), we have
+
+                                ˆG(d∗)(V ′(d∗) −1) −ˆG′(d∗)(V (d∗) −d∗−ˆc)
+                             ˆH′(ˆz) =                         = 0,
+                                                 ˆF ′(d∗)ˆG(d∗) −ˆF(d∗)ˆG′(d∗)
+
+which is equivalent to condition (4.11). Furthermore, using (3.14) and (3.15), we get
+
+                                    V (d∗) −d∗−ˆc
+                                                ˆH(ˆz) =                         .                                   (4.14)
+                                                       ˆG(d∗)
+
+To conclude, we substitute ˆH(ˆz) of (4.14) and ˆH(y) of (3.15) into ˆW of (4.13), which by (3.16) yields
+the value function J(x) in (4.10).
+
+
+                                            12
+
+[PAGE 13]
+   With the analytic solutions for V and J, we can verify by direct substitution that V (x) in (4.2) and
+J(x) in (4.10) satisfy both (3.17) and (3.18).
+   Since the optimal entry timing problem is nested with another optimal stopping problem, the param-
+eter dependence of the optimal entry level is complicated. Below, we illustrate the impact of transaction
+cost.
+
+Proposition 4.6 The optimal entry level d∗of (2.4) is strictly decreasing in the transaction cost ˆc.
+
+Proof. Considering the optimal entry level d∗as a function of ˆc, we diﬀerentiate (4.11) w.r.t.  ˆc to get
+
+                                 −ˆG′(d∗)
+                                   d∗′(ˆc) =                                           [V ′′(d∗) −V (d∗) −d∗−ˆc ˆG′′(d∗)]−1.                    (4.15)
+                                     ˆG(d∗)                 ˆG(d∗)
+
+Since ˆG(d∗) > 0 and ˆG′(d∗) < 0, the sign of d∗′(ˆc) is determined by V ′′(d∗) −V (d∗)−d∗−ˆc ˆG′′(d∗). Denote                                                                                                         ˆG(d∗)
+ˆf(x) = V (d∗)−d∗−ˆc ˆG(x). Recall that ˆh(x) = V (x) −x −ˆc,              ˆG(d∗)
+                                     {ˆh(x)                if x ∈(−∞, d∗],
+                           J(x) =
+                                              ˆf(x) > ˆh(x)     if x ∈(d∗, +∞),
+
+and ˆf(x) smooth pastes ˆh(x) at d∗. Since both ˆh(x) and ˆf(x) are positive decreasing convex functions, it
+                                                                           V (d∗)−d∗−ˆcfollows that ˆh′′(d∗) < ˆf′′(d∗). Observing that ˆh′′(d∗) = V ′′(d∗) and ˆf′′(d∗) =             ˆG′′(d∗), we have                                                                                                         ˆG(d∗)
+V ′′(d∗) −V (d∗)−d∗−ˆc ˆG′′(d∗) < 0. Applying this to (4.15), we conclude that d∗′(ˆc) < 0.                 ˆG(d∗)
+  We end this section with a special example in the OU model with no mean reversion.
+
+Remark 4.7 If we set µ = 0 in (2.1), with r and  ˆr ﬁxed,  it follows that X reduces to a Brownian
+motion: Xt = σBt, t ≥0. In this case, the optimal liquidation level b∗for problem (2.3) is
+
+                                          σ
+                               b∗= c + √ 2r,
+
+and the optimal entry level d∗for problem (2.4) is the root to the equation
+            (  √ ) √        √
+                                                ˆr                                                                 2ˆr                                                2r (d−c− √σ                                                                   )
+                                                           2r                    1 +                               e σ                           =                                                     (d + ˆc) + 1,  d ∈(−∞, b∗).
+                             r                σ
+
+5  Incorporating Stop-Loss Exit
+
+Now we consider the optimal entry and exit problems with a stop-loss constraint. For convenience, we
+restate the value functions from (2.5) and (2.6):
+                              {               }
+                           JL(x) = sup Ex  e−ˆrν(VL(Xν) −Xν −ˆc)   ,                           (5.1)
+                                     ν∈T
+                              {             }
+                           VL(x) = sup Ex  e−r(τ∧τL)(Xτ∧τL −c)   .                              (5.2)
+                                     τ∈T
+
+After solving for the optimal timing strategies, we will also examine the dependence of the optimal
+liquidation threshold on the stop-loss level L.
+
+
+5.1  Optimal Exit Timing
+
+We ﬁrst give an analytic solution to the optimal exit timing problem.
+
+
+                                            13
+
+[PAGE 14]
+Theorem 5.1 The optimal liquidation problem (5.2) with stop-loss level L admits the solution
+
+                     {
+                              CF(x) + DG(x)     if x ∈(L, b∗L),
+                          VL(x) =                                                                 (5.3)
+                               x −c               otherwise,
+
+where
+
+                       (b∗L −c)G(L) −(L −c)G(b∗L)       (L −c)F(b∗L) −(b∗L −c)F(L)          C =                                               , D =                                               .            (5.4)
+                    F(b∗L)G(L) −F(L)G(b∗L)           F(b∗L)G(L) −F(L)G(b∗L)
+
+The optimal liquidation level b∗L is found from the equation
+
+   [(L −c)G(b) −(b −c)G(L)]F ′(b) + [(b −c)F(L) −(L −c)F(b)]G′(b) = G(b)F(L) −G(L)F(b).   (5.5)
+
+
+
+
+
+                                                             H
+
+
+
+
+
+                                       WL
+
+
+                                        ψ(L)          ψ(L∗)
+                                        0                                   zL = ψ(b∗L)                         y
+
+
+
+
+
+Figure 4: Sketch of WL. On [0, ψ(L)] ∪[zL, +∞), WL coincides with H, and over (ψ(L), zL), WL is a straight line
+tangent to H at zL .
+
+Proof. Due to the stop-loss level L, we consider the smallest concave majorant of H(y), denoted by
+WL(y), over the restricted domain [ψ(L), +∞) and set WL(y) = H(y) for y ∈[0, ψ(L)].
+   From Lemma 4.1 and Figure 4, we see that H(y) is convex over (0, ψ(L∗)] and concave in [ψ(L∗), +∞).
+If L ≥L∗, then H(y) is concave over [ψ(L), +∞), which implies that WL(y) = H(y) for y ≥0, and thus
+VL(x) = x −c for x ∈R. On the other hand, if L < L∗, then H(y) is convex on [ψ(L), ψ(L∗)], and
+concave strictly increasing on [ψ(L∗), +∞). There exists a unique number zL > ψ(L∗) such that
+
+                              H(zL) −H(ψ(L))
+                                = H′(zL).                                   (5.6)
+                                     zL −ψ(L)
+
+In turn, the smallest concave majorant admits the form:
+                 {
+                          H(ψ(L)) + (y −ψ(L))H′(zL)     if y ∈(ψ(L), zL),
+                WL(y) =                                                                         (5.7)
+                          H(y)                           otherwise.
+
+   Substituting b∗L = ψ−1(zL) into (5.6), we have from the LHS
+
+                                                                                     b∗L−c                                              −L−c                H(zL) −H(ψ(L))   H(ψ(b∗L)) −H(ψ(L))    G(b∗L)   G(L)                      =             =        = C,
+                     zL −ψ(L)          ψ(b∗L) −ψ(L)        F(b∗L) −F(L)                                                                         G(b∗L)   G(L)
+
+
+
+
+                                            14
+
+[PAGE 15]
+and the RHS
+
+                               G(ψ−1(zL)) −(ψ−1(zL) −c)G′(ψ−1(zL))
+                   H′(zL) =
+                     F ′(ψ−1(zL))G(ψ−1(zL)) −F(ψ−1(zL))G′(ψ−1(zL))
+                              G(b∗L) −(b∗−c)G′(b∗L)                =                     F ′(b∗L)G(b∗L) −F(b∗L)G′(b∗L).
+
+Therefore, we can equivalently express (5.6) in terms of b∗L:
+
+                        (b∗L −c)G(L) −(L −c)G(b∗L)     G(b∗L) −(b∗L −c)G′(b∗L)                             =                     F(b∗L)G(L) −F(L)G(b∗L)    F ′(b∗L)G(b∗L) −F(b∗L)G′(b∗L),
+
+which by rearrangement immediately simpliﬁes to (5.5).
+   Furthermore, for x ∈(L, b∗L), H′(zL) = C implies that
+
+                         WL(ψ(x)) = H(ψ(L)) + (ψ(x) −ψ(L))C.
+
+Substituting this to VL(x) = G(x)WL(ψ(x)), the value function becomes
+                          [                             ]                  [                   ]
+          VL(x) = G(x) H(ψ(L)) + (ψ(x) −ψ(L))C = CF(x) + G(x) H(ψ(L)) −ψ(L)C  ,
+
+which resembles (5.3) after the observation that
+
+                                               L −c)G(L) −(L −c)G(b∗L)                          L −c −F(L) (b∗               H(ψ(L)) −ψ(L)C =
+                                G(L)   G(L)  F(b∗L)G(L) −F(L)G(b∗L)
+                                  (L −c)F(b∗L) −(b∗L −c)F(L)                      =                 = D.
+                                      F(b∗L)G(L) −F(L)G(b∗L)
+
+
+  We can interpret the investor’s timing strategy in terms of three price intervals, namely, the liquidation
+region [b∗L, +∞), the delay region (L, b∗L), and the stop-loss region (−∞, L]. In both liquidation and stop-
+loss regions, the value function VL(x) = x −c, and therefore, the investor will immediately close out the
+position. From the proof of Theorem 5.1, if L ≥L∗= µθ+rc                                                                  (see (4.1)), then VL(x) = x −c, ∀x ∈R.                                                     µ+r
+In other words, if the stop-loss level is too high, then the delay region completely disappears, and the
+investor will liquidate immediately for every initial value x ∈R.
+
+Corollary 5.2 If L < L∗, then there exists a unique solution b∗L ∈(L∗, +∞) that solves (5.5). If L ≥L∗,
+then VL(x) = x −c, for x ∈R.
+
+   The direct eﬀect of a stop-loss exit constraint is forced liquidation whenever the price process reaches
+L before the upper liquidation level b∗L.  Interestingly, there is an additional indirect eﬀect: a higher
+stop-loss level will induce the investor to voluntarily liquidate earlier at a lower take-proﬁt level.
+
+Proposition 5.3 The optimal liquidation level b∗L of  (5.2) strictly decreases as the stop-loss level L
+increases.
+
+Proof. Recall that zL = ψ(b∗L) and ψ is a strictly increasing function. Therefore, it is suﬃcient to show
+that zL strictly decreases as ˜L := ψ(L) increases. As such, we denote zL(˜L) to highlight its dependence
+on ˜L. Diﬀerentiating (5.6) w.r.t. ˜L gives
+
+
+                                          H′(zL) −H′(˜L)
+                                               z′L(˜L) =                           .                                    (5.8)
+                                              H′′(zL)(zL −˜L)
+
+
+                                            15
+
+[PAGE 16]
+                             1
+
+
+                                 0.5
+
+                      b∗L
+
+                             0
+                                                                                             θ = 0.3
+                                                                                             θ = 0
+                                                                                             θ = −0.3
+                              −0.5
+                                −2.5     −2      −1.5     −1      −0.5      0        0.5      1
+                                            L
+
+Figure 5: The optimal exit threshold b∗L is strictly decreasing with respect to the stop-loss level L. The straight
+line is where b∗L = L, and each of the three circles locates the critical stop-loss level L∗.
+
+It follows from the deﬁnitions of WL and zL that H′(zL) > H′(˜L) and zL > ˜L. Also, we have H′′(z) < 0
+since H is concave at zL. Applying these to (5.8), we conclude that z′L(˜L) < 0.
+   Figure 5 illustrates the optimal exit price level b∗L as a function of the stop-loss levels L, for diﬀerent
+long-run means θ. When b∗L is strictly greater than L (on the left of the straight line), the delay region
+is non-empty. As L increases, b∗L strictly decreases and the two meet at L∗(on the straight line), and
+the delay region vanishes.
+    Also, there is an interesting connection between cases with diﬀerent long-run means and transaction
+costs. To this end, let us denote the value function by VL(x; θ, c) to highlight the dependence on θ and c,
+and the corresponding optimal liquidation level by b∗L(θ, c). We ﬁnd that, for any θ1, θ2 ∈R, c1, c2 > 0,
+L1 ≤µθ1+rc1µ+r   , and L2 ≤µθ2+rc2µ+r   , the associated value functions and optimal liquidation levels satisfy the
+relationships:
+
+                            VL1(x + θ1; θ1, c1) = VL2(x + θ2; θ2, c2),                              (5.9)
+                                      b∗L1(θ1, c1) −θ1 = b∗L2(θ2, c2) −θ2,                              (5.10)
+
+as long as θ1 −θ2 = c1 −c2 = L1 −L2. These results (5.9) and (5.10) also hold in the case without
+stop-loss.
+
+
+5.2  Optimal Entry Timing
+
+We now discuss the optimal entry timing problem JL(x) deﬁned in (5.1). Since supx∈R(VL(x)−x−ˆc) ≤0
+implies that JL(x) = 0 for x ∈R, we can focus on the case with
+
+                                   sup (VL(x) −x −ˆc) > 0,                                   (5.11)
+                                   x∈R
+
+and look for non-trivial optimal timing strategies.
+   Associated with reward function ˆhL(x) := VL(x) −x −ˆc from entering the market, we deﬁne the
+function ˆHL as in (3.11) whose properties are summarized in the following lemma.
+
+Lemma 5.4 The function ˆHL is continuous on [0, +∞), diﬀerentiable on (0, ˆψ(L)) ∪(ˆψ(L), +∞), twice
+diﬀerentiable on (0, ˆψ(L)) ∪(ˆψ(L), ˆψ(b∗)) ∪(ˆψ(b∗), +∞), and possesses the following properties:
+
+  (i) ˆHL(0) = 0. ˆHL(y) < 0 for y ∈(0, ˆψ(L)] ∪[ˆψ(b∗L), +∞).
+ (ii) ˆHL(y) is strictly decreasing for y ∈(0, ˆψ(L)) ∪(ˆψ(b∗L), +∞).
+
+
+
+
+                                            16
+
+[PAGE 17]
+(iii) There exists some constant ¯dL ∈(L, b∗L) such that (L −ˆr)ˆhL(¯dL) = 0, and
+                    {
+                                    convex       if y ∈(0, ˆψ(L)) ∪( ˆψ( ¯dL), +∞),
+                           ˆHL(y) is
+                                    concave     if y ∈(ˆψ(L), ˆψ( ¯dL)).
+
+     In addition, ˆz1 ∈(ˆψ(L), ˆψ(¯dL)), where ˆz1 := arg maxy∈[0,+∞) ˆHL(y).
+
+Theorem 5.5 The optimal entry timing problem (5.1) admits the solution
+                   
+                                                                 P ˆF(x)               if x ∈(−∞, a∗L),                   
+                          JL(x) =  VL(x) −x −ˆc     if x ∈[a∗L, d∗L],                           (5.12)                                                                               Q ˆG(x)               if x ∈(d∗L, +∞),
+
+where
+
+                              VL(a∗L) −a∗L −ˆc        VL(d∗L) −d∗L −ˆc                   P =                           ,  Q =                           .                       (5.13)
+                                        ˆF(a∗L)                    ˆG(d∗L)
+
+The optimal entry time is given by
+
+                                    νa∗L,d∗L = inf{t ≥0  : Xt ∈[a∗L, d∗L]},                             (5.14)
+
+where the critical levels a∗L and d∗L satisfy, respectively,
+
+                                ˆF(a)(V L(a)′   −1) = ˆF ′(a)(VL(a) −a −ˆc),                           (5.15)
+
+and
+
+                                ˆG(d)(V L(d)′   −1) = ˆG′(d)(VL(d) −d −ˆc).                           (5.16)
+
+
+
+                                                                                              ˆWL
+
+
+
+                                                 ˆψ(L)                                                 ˆψ(b∗L)
+                                     0                                                                    y
+                                                                                       ˆz0 = ˆψ(a∗L)
+                                                                                                                ˆz1 = ˆψ(d∗L)
+
+
+
+
+                                                                                                                    ˆHL
+
+Figure 6: Sketches of ˆHL and ˆWL. ˆWL is a straight line tangent to ˆHL at ˆz0 on [0, ˆz0), coincides with ˆHL on
+[ˆz0, ˆz1], and is equal to the constant ˆHL(ˆz1) on (ˆz1, +∞). Note that ˆHL is not diﬀerentiable at ˆψ(L).
+
+
+Proof. We look for the value function of the form: JL(x) = ˆG(x)ˆWL( ˆψ(x)), where ˆWL is the smallest
+non-negative concave majorant of ˆHL. From Lemma 5.4 and the sketch of ˆHL in Figure 6, the maximizer
+
+
+
+
+                                            17
+
+[PAGE 18]
+of ˆHL, ˆz1, satisﬁes
+
+                                                      ˆH′L(ˆz1) = 0.                                         (5.17)
+
+Also there exists a unique number ˆz0 ∈(ˆψ(L), ˆz1) such that
+
+                                                 ˆHL(ˆz0)
+                             = ˆH′L(ˆz0).                                      (5.18)
+                                                                      ˆz0
+
+In turn, the smallest non-negative concave majorant admits the form:
+
+                    
+                                         y ˆH′L(ˆz0)     if y ∈[0, ˆz0),
+                              ˆWL(y) =   ˆHL(y)        if y ∈[ˆz0, ˆz1],                                        
+                                                  ˆHL(ˆz1)       if y ∈(ˆz1, +∞).
+
+Substituting a∗L = ˆψ−1(ˆz0) into (5.18), we have
+
+                          ˆHL(ˆz0)   VL(a∗L) −a∗L −ˆc                  =                           ,
+                                        ˆz0            ˆF(a∗L)
+                                   ˆG(a∗L)(V L(a∗′  L) −1) −ˆG′(a∗L)(VL(a∗L) −a∗L −ˆc)                           ˆH′L(ˆz0) =                                                                          .
+                                                   ˆF ′(a∗L)ˆG(a∗L) −ˆF(a∗L)ˆG′(a∗L)
+
+Equivalently, we can express condition (5.18) in terms of a∗L:
+
+                 VL(a∗L) −a∗L −ˆc   ˆG(a∗L)(V L(a∗′  L) −1) −ˆG′(a∗L)(VL(a∗L) −a∗L −ˆc)                    =                                                                          .
+                         ˆF(a∗L)                     ˆF ′(a∗L) ˆG(a∗L) −ˆF(a∗L)ˆG′(a∗L)
+
+Simplifying this shows that a∗L solves (5.15). Also, we can express ˆH′L(ˆz0) in terms of a∗L:
+
+                                               ˆHL(ˆz0)   VL(a∗L) −a∗L −ˆc                                    ˆH′L(ˆz0) =     =          = P.
+                                                                   ˆz0            ˆF(a∗L)
+
+In addition, substituting d∗L = ˆψ−1(ˆz1) into (5.17), we have
+
+                                 ˆG(d∗L)(V L(d∗′  L) −1) −ˆG′(d∗L)(VL(d∗L) −d∗L −ˆc)                         ˆH′L(ˆz1) =                           = 0,
+                                                 ˆF ′(d∗L)ˆG(d∗L) −ˆF(d∗L)ˆG′(d∗L)
+
+which, after a straightforward simpliﬁcation, is identical to (5.16). Also, ˆHL(ˆz1) can be written as
+
+                                         VL(d∗L) −d∗L −ˆc                                         ˆHL(ˆz1) =          = Q.
+                                                      ˆG(d∗L)
+
+Substituting these to JL(x) = ˆG(x)ˆWL( ˆψ(x)), we arrive at (5.12).
+   Theorem 5.5 reveals that the optimal entry region is characterized by a price interval [a∗L, d∗L] strictly
+above the stop-loss level L and strictly below the optimal exit level b∗L. In particular, if the current asset
+price is between L and a∗L, then it is optimal for the investor to wait even though the price is low. This
+is intuitive because if the entry price is too close to L, then the investor is very likely to be forced to
+exit at a loss afterwards. As a consequence, the investor’s delay region, where she would wait to enter
+the market, is disconnected.
+
+
+
+                                            18
+
+[PAGE 19]
+   Figure 7 illustrates two simulated paths and the associated exercise times. We have chosen L to be 2
+standard deviations below the long-run mean θ, with other parameters from our pairs trading example.
+By Theorem 5.5, the investor will enter the market at νa∗L,d∗L (see (5.14)). Since both paths start with
+X0 > d∗L, the investor waits to enter until the OU path reaches d∗L from above, as indicated by ν∗d in
+panels (a) and (b). After entry, Figure 7(a) describes the scenario where the investor exits voluntarily
+at the optimal level b∗L, whereas in Figure 7(b) the investor is forced to exit at the stop-loss level L.
+These optimal levels are calculated from Theorem 5.5 and Theorem 5.1 based on the given estimated
+parameters.
+
+
+
+                                                                                                                                                                       b∗L
+                     0.58                                                                                                                                d∗L
+                                                                                                       L
+
+                     0.56
+
+                     0.54
+
+                     0.52
+
+                       0.5
+
+                     0.48
+
+                     0.46
+                      0         10         20         30         40         50         60         70         80         90        100
+                                                     ν∗d                  Days                                 τ∗b
+
+                                                             (a)
+
+
+
+                                                                                                                                                                       b∗L
+                                                                                                                                                             d∗L                     0.58
+                                                                                                        L
+
+                     0.56
+
+
+                     0.54
+
+
+                     0.52
+
+
+                       0.5
+
+
+                     0.48
+
+
+                     0.46
+                      0         10         20         30         40         50         60         70         80         90        100
+                          ν∗d τL                                          Days
+
+                                                          (b)
+
+Figure 7:  Simulated OU paths and exercise times.  (a) The investor enters at ν∗d = inf{t ≥0  : Xt ≤d∗L}
+with d∗L = 0.4978, and exit at τb∗ = inf{t ≥ν∗d   : Xt ≥b∗L} with b∗L = 0.5570.  (b) The investor enters at
+ν∗d = inf{t ≥0  : Xt ≤d∗L} but exits at stop-loss level L = 0.4834.  Parameters: θ = 0.5388, µ = 16.6677,
+σ = 0.1599, r = ˆr = 0.05, and c = ˆc = 0.05.
+
+
+Remark 5.6 We remark that the optimal levels a∗L, d∗L and b∗L are outputs of the models, depending on
+the parameters (µ, θ, σ) and the choice of stop-loss level L. Recall that our model parameters are estimated
+based on the likelihood maximizing portfolio discussed in Section 2.1. Other estimation methodologies
+and price data can be used, and may lead to diﬀerent portfolio strategies (α, β) and estimated parameters
+values (µ, θ, σ). In turn, the resulting optimal entry and exit thresholds may also change accordingly.
+
+
+
+                                            19
+
+[PAGE 20]
+5.3  Relative Stop-Loss Exit
+
+For some investors, it may be more desirable to set the stop-loss contingent on the entry level. In other
+words, if the value of X at the entry time is x, then the investor would assign a lower stop-loss level
+x −ℓ, for some constant ℓ> 0. Therefore, the investor faces the optimal entry timing problem
+                              {               }
+                            Jℓ(x) = sup Ex  e−ˆrν(Vℓ(Xν) −Xν −ˆc)   ,                          (5.19)
+                                     ν∈T
+
+where Vℓ(x) := Vx−ℓ(x) (see (5.2)) is the optimal exit timing problem with stop-loss level x −ℓ. The
+dependence of Vx−ℓ(x) on x is signiﬁcantly more complicated than V (x) or VL(x), making the problem
+much less tractable. In Figure 8, we illustrate numerically the optimal timing strategies. The investor
+will still enter at a lower level d∗. After entry, the investor will wait to exit at either the stop-loss level
+d∗−ℓor an upper level b∗.
+
+
+      2.5                                                          1
+                                                  Jℓ(x)
+                                                    Vℓ(x) −x −ˆc                              Vd∗−ℓ(x)
+       2                                                                   0.5                                                                         x −c
+                                                                 0      1.5
+                                                                       −0.5
+       1
+                                                               −1
+      0.5
+                                                                       −1.5
+
+       0                                                               −2
+
+                                                                       d∗−ℓ
+     −0.5                                                              −2.5
+       −2     −1.5     −1    d∗−0.5      0       0.5      1           −2     −1.5     −1     −0.5      0       0.5     b∗ 1
+                              x                                                        x
+
+Figure 8: (Left) The optimal entry value function Jℓ(x) dominates the reward function Vℓ(x) −x −ˆc, and they
+coincide for x ≤d∗. (Right) For the exit problem, the stop-loss level is d∗−ℓand the optimal liquidation level is
+b∗.
+
+
+
+5.4  Concluding Remarks
+
+Other extensions include adapting our double optimal stopping problem to the exponential OU, Cox-
+Ingorsoll-Ross (CIR), or other underlying dynamics, and to countable number of trades (Zervos et al.,
+2013; Zhang and Zhang, 2008).  Alternatively, one can model asset prices by specifying the dynamics
+of the dividend stream. For instance, Scheinkman and Xiong (2003) study the optimal timing to trade
+between two speculative traders with diﬀerent beliefs on the mean-reverting (OU) dividend dynamics.
+Other than trading of risky assets, it is also useful to study the timing to buy/sell derivatives written
+on a mean-reverting underlying (see e.g. Leung and Liu (2012) and Leung and Shirai (2013)). For all
+these applications, it is natural to examine the optimal stopping problems over a ﬁnite horizon although
+explicit solutions are less available.
+
+
+A  Appendix
+
+A.1 Proof of Theorem 3.2 (Optimality of V ).
+   Since τa ∧τb ∈T , we have V (x) ≥sup{a,b:a≤x≤b} Ex{e−r(τa∧τb)h(Xτa∧τb)} = G(x)W(ψ(x)).
+   To show the reverse inequality, we ﬁrst show that G(x)W(ψ(x)) ≥Ex{e−r(t∧τ)G(Xt∧τ)W(ψ(Xt∧τ))},
+for τ ∈T and t ≥0. The concavity of W implies that, for any ﬁxed y, there exists an aﬃne function
+
+
+                                            20
+
+[PAGE 21]
+Ly(z) := myz + cy such that Ly(z) ≥W(z) and Ly(y) = W(y) at z = y, where my and cy are both
+constants depending on y. This leads to the inequality
+
+  Ex{e−r(t∧τ)G(Xt∧τ)W(ψ(Xt∧τ))} ≤Ex{e−r(t∧τ)G(Xt∧τ)Lψ(x)(ψ(Xt∧τ))}
+                    = mψ(x)Ex{e−r(t∧τ)G(Xt∧τ)ψ(Xt∧τ)} + cψ(x)Ex{e−r(t∧τ)G(Xt∧τ)}
+                    = mψ(x)Ex{e−r(t∧τ)F(Xt∧τ)} + cψ(x)Ex{e−r(t∧τ)G(Xt∧τ)}
+                    = mψ(x)F(x) + cψ(x)G(x)                                   (A.1)
+                    = G(x)Lψ(x)(ψ(x))
+                    = G(x)W(ψ(x)),                                           (A.2)
+
+where (A.1) follows from the martingale property of (e−rtF(Xt))t≥0 and (e−rtG(Xt))t≥0.
+   By (A.2) and the fact that W majorizes H, it follows that
+
+            G(x)W(ψ(x)) ≥Ex{e−r(t∧τ)G(Xt∧τ)W(ψ(Xt∧τ))}
+                         ≥Ex{e−r(t∧τ)G(Xt∧τ)H(ψ(Xt∧τ))} = Ex{e−r(t∧τ)h(Xt∧τ)}.         (A.3)
+
+Maximizing (A.3) over all τ ∈T and t ≥0 yields that G(x)W(ψ(x)) ≥V (x). ■
+A.2  Proof of Lemma 4.1 (Properties of H). The continuity and twice diﬀerentiability of H on
+(0, +∞) follow directly from those of h, G and ψ. To show the continuity of H at 0, since H(0) =
+          (x−c)+
+limx→−∞  G(x) = 0, we only need to show that limy→0 H(y) = 0. Note that y = ψ(x) →0, as x →−∞.
+Therefore,
+
+                                      h(x)        x −c           1
+                     lim H(y) =  lim    =  lim    =  lim     = 0.
+                   y→0      x→−∞ G(x)  x→−∞ G(x)  x→−∞ G′(x)
+
+We conclude that H is also continuous at 0.
+(i) One can show that ψ(x) ∈(0, +∞) for x ∈R and is a strictly increasing function. Then property (i)
+follows directly from the fact that G(x) > 0.
+(ii) By the deﬁnition of H,
+
+                            1   h        h′(x)G(x) −h(x)G′(x)
+                   H′(y) = ψ′(x)( G)′(x) =      ψ′(x)G2(x)         ,  y = ψ(x).
+
+   Since both ψ′(x) and G2(x) are positive, we only need to determine the sign of h′(x)G(x)−h(x)G′(x) =
+G(x) −(x −c)G′(x).
+   Deﬁne u(x) := (x −c) −G(x)  u(x) + c is the intersecting point at x axis of the tangent line of G(x).                                G′(x).
+Since G(·) is a positive, strictly decreasing and convex function, u(x) is strictly increasing and u(x) < 0
+as x →−∞. Also, note that
+
+                 u(c) = −G(c) > 0,
+                          G′(c)
+               u(L∗) = (L∗−c) −G(x) = µ (θ −L∗) −G(L∗) = −σ2 G′′(L∗) > 0.
+                                  G′(x)    r           G′(L∗)     2r G′(L∗)
+
+Therefore, there exists a unique root x∗that solves u(x) = 0, and x∗< c ∧L∗, such that
+                           {
+                             < 0     if x ∈(−∞, x∗),
+                        G(x) −(x −c)G′(x)
+                             > 0     if x ∈(x∗, +∞).
+
+
+
+
+                                            21
+
+[PAGE 22]
+Thus H(y) is strictly decreasing if y ∈(0, ψ(x∗)), and increasing otherwise.
+(iii) By the deﬁnition of H,
+
+                                      2
+                           H′′(y) =             (L −r)h(x),  y = ψ(x).
+                                  σ2G(x)(ψ′(x))2
+
+Since σ2, G(x) and (ψ′(x))2 are all positive, we only need to determine the sign of (L −r)h(x):
+                                     {
+                                       ≥0     if x ∈(−∞, L∗],
+        (L −r)h(x) = µ(θ −x) −r(x −c) = (µθ + rc) −(µ + r)x
+                                       ≤0     if x ∈[L∗, +∞).
+
+Therefore, H(y) is convex if y ∈(0, ψ(L∗)], and concave otherwise. ■
+A.3 Proof of Lemma 4.4 (Properties of ˆH). We ﬁrst show that V (x) and ˆh(x) are twice diﬀeren-
+tiable everywhere, except for x = b∗. Recall that
+             {
+                     (b∗−c) F(x)      if x ∈(−∞, b∗),
+            V (x) =            F(b∗)                  and   ˆh(x) = V (x) −x −ˆc.
+                    x −c           otherwise,
+
+Therefore, it follows from (4.3) that
+
+                   {
+                             (b∗−c) F ′(x) = F ′(x)      if x ∈(−∞, b∗),
+                    V ′(x) =            F(b∗)   F ′(b∗)
+                                1                                   if x ∈(b∗, +∞),
+
+which implies that V ′(b∗−) = 1 = V ′(b∗+). Therefore, V (x) is diﬀerentiable everywhere and so is ˆh.
+However, V (x) is not twice diﬀerentiable since
+
+                       {
+                                        F ′′(x)                                                                                if x ∈(−∞, b∗),
+                         V ′′(x) =  F ′(b∗)
+                                       0            if x ∈(b∗, +∞),
+
+and V ′′(b∗−) ̸= V ′′(b∗+). Consequently, ˆh(x) = V (x) −x −ˆc is not twice diﬀerentiable at b∗.
+   The twice diﬀerentiability of ˆG and ˆψ are straightforward. The continuity and diﬀerentiability of ˆH
+on (0, +∞) and twice diﬀerentiability on (0, ˆψ(b∗))∪(ˆψ(b∗), +∞) follow directly. Observing that ˆh(x) > 0
+as x →−∞, ˆH is also continuous at 0 by deﬁnition. We now establish the properties of ˆH.
+(i) First we prove the value of ˆH at 0:
+
+                                                   (b∗−c)                            (b∗−c)
+                           (ˆh(x))+             F(b∗) F(x) −x −ˆc             F(b∗) F ′(x) −1
+          ˆH(0) =  lim      = lim sup           = lim sup         = 0.
+            x→−∞  ˆG(x)    x→−∞        ˆG(x)       x→−∞       ˆG′(x)
+
+   Next, observe that limx→−∞ˆh(x) = +∞and ˆh(x) = −(c+ˆc), for x ∈[b∗, +∞). Since F ′(x) is strictly
+increasing and F ′(x) > 0 for x ∈R, we have, for x < b∗,
+
+                                 F ′(x)     F ′(b∗)
+                                 ˆh′(x) = V ′(x) −1 =     −1 <     −1 = 0,
+                                 F ′(b∗)     F ′(b∗)
+
+which implies that ˆh(x) is strictly decreasing for x ∈(−∞, b∗). Therefore, there exists a unique solution
+¯d to ˆh(x) = 0, and ¯d < b∗, such that ˆh(x) > 0 if x ∈(−∞, ¯d) and ˆh(x) < 0 if x ∈(¯d, +∞). It is trivial
+that ˆψ(x) ∈(0, +∞) for x ∈R and is a strictly increasing function. Therefore, along with the fact that
+ˆG(x) > 0, property (i) follows directly.
+
+
+
+
+                                            22
+
+[PAGE 23]
+(ii) With y = ˆψ(x), for x > b∗,
+
+                         1      ˆh         1    + ˆc)      1   (c + ˆc) ˆG′(x)                   ˆH′(y) =       (   )′(x) =     (−(c       )′ =           < 0,
+                              ˆψ′(x)  ˆG         ˆψ′(x)   ˆG(x)        ˆψ′(x)    ˆG2(x)
+
+since ˆψ′(x) > 0, ˆG′(x) < 0, and ˆG2(x) > 0. Therefore, ˆH(y) is strictly decreasing for y > ˆψ(b∗).
+(iii) By the deﬁnition of ˆH,
+
+                                      2
+                               ˆH′′(y) =             (L −ˆr)ˆh(x),  y = ˆψ(x).
+                                σ2 ˆG(x)( ˆψ′(x))2
+
+Since σ2, ˆG(x) and (ˆψ′(x))2 are all positive, we only need to determine the sign of (L −ˆr)ˆh(x):
+
+                           1
+             (L −ˆr)ˆh(x) = 2σ2V ′′(x) + µ(θ −x)V ′(x) −µ(θ −x) −ˆr(V (x) −x −ˆc)                 {
+                                  (r −ˆr)V (x) + (µ + ˆr)x −µθ + ˆrˆc     if x < b∗,
+                =
+                                            ˆr(c + ˆc) > 0                                     if x > b∗.
+
+To determine the sign of (L −ˆr)ˆh(x) in (−∞, b∗), ﬁrst note that [(L −ˆr)ˆh](x) is a strictly increasing
+function in (−∞, b∗), since V (x) is a strictly increasing function and r ≥ˆr by assumption. Next note
+that for x ∈[L∗, b∗),
+
+                 (L −ˆr)ˆh(x) = (r −ˆr)V (x) + (µ + ˆr)x −µθ + ˆrˆc
+                       ≥(r −ˆr)(x −c) + (µ + ˆr)x −µθ + ˆrˆc
+                   = (r + µ)x −(µθ + rc) + ˆr(c + ˆc)
+                       ≥(r + µ)L∗−(µθ + rc) + ˆr(c + ˆc) = ˆr(c + ˆc) > 0.
+
+Also, note that (L −ˆr)ˆh(x) →−∞as x →−∞.  Therefore, (L −ˆr)ˆh(x) < 0  if x ∈(−∞, b) and
+(L −ˆr)ˆh(x) > 0 if x ∈(b, +∞) with b < L∗being the break-even point. From this, we conclude property
+(iii). ■
+A.4 Proof of Lemma 5.4 (Properties of ˆHL).  (i) The continuity of ˆHL(y) on (0, +∞) is implied
+by the continuities of ˆhL, ˆG and ˆψ. The continuity of ˆHL(y) at 0 follows from
+
+                                                (ˆhL(x))+          0
+                               ˆHL(0) =  lim       =  lim    = 0,
+                           x→−∞   ˆG(x)    x→−∞ ˆG(x)
+                                                        ˆhL           −(c + ˆc)
+                          lim ˆHL(y) =  lim     (x) =  lim      = 0,
+                       y→0      x→−∞ ˆG     x→−∞  ˆG(x)
+
+where we have used that y = ˆψ(x) →0 as x →−∞.
+   Furthermore, for x ∈(−∞, L] ∪[b∗L, +∞), we have VL(x) = x −c, and thus, ˆhL(x) = −(c + ˆc). Also,
+with the facts that ˆψ(x) is a strictly increasing function and ˆG(x) > 0, property (i) follows.
+(ii) By the deﬁnition of ˆHL, since ˆG and ˆψ are diﬀerentiable everywhere, we only need to show the
+diﬀerentiability of VL(x). To this end, VL(x) is diﬀerentiable at b∗L by (5.3)-(5.5), but not at L. Therefore,
+ˆHL is diﬀerentiable for y ∈(0, ˆψ(L)) ∪(ˆψ(L), +∞).
+   In view of the facts that ˆG′(x) < 0, ˆψ′(x) > 0, and ˆG2(x) > 0, we have for x ∈(−∞, L) ∪[b∗L, +∞),
+
+                           1    ˆhL         1    + ˆc)     (c + ˆc) ˆG′(x)                       ˆH′L(y) =       (   )′(x) =     (−(c       )′ =        < 0.
+                                  ˆψ′(x)  ˆG          ˆψ′(x)   ˆG(x)        ˆψ′(x)ˆG2(x)
+
+
+
+                                            23
+
+[PAGE 24]
+Therefore, ˆHL(y) is strictly decreasing for y ∈(0, ˆψ(L)) ∪[ˆψ(b∗L), +∞).
+(iii) Both ˆG and ˆψ are twice diﬀerentiable everywhere, while VL(x) is twice diﬀerentiable everywhere ex-
+cept at x = L and b∗, and so is ˆhL(x). Therefore, ˆHL(y) is twice diﬀerentiable on (0, ˆψ(L))∪(ˆψ(L), ˆψ(b∗))∪
+(ˆψ(b∗), +∞).
+   To determine the convexity/concavity of ˆHL, we look at the second order derivative:
+
+                                           2
+                                           ˆH′′L(y) =             (L −ˆr)ˆhL(x),
+                                     σ2 ˆG(x)( ˆψ′(x))2
+
+whose sign is determined by
+
+                       1         ′′                                  ′
+                          L (x) + µ(θ −x)V L(x) −µ(θ −x) −ˆr(VL(x) −x −ˆc)         (L −ˆr)ˆhL(x) = 2σ2V              {
+                              (r −ˆr)VL(x) + (µ + ˆr)x −µθ + ˆrˆc     if x ∈(L, b∗L),              =
+                                      ˆr(c + ˆc) > 0                                      if x ∈(−∞, L) ∪(b∗L, +∞).
+
+This implies that ˆHL is convex for y ∈(0, ˆψ(L)) ∪(ˆψ(b∗L), +∞).
+  On the other hand, the condition supx∈R ˆhL(x) > 0 implies that supy∈[0,+∞) ˆHL(y) > 0. By property
+(i) and twice diﬀerentiability of ˆHL(y) for y ∈(ˆψ(L), ˆψ(b∗L)), there must exist an interval (ˆψ(aL), ˆψ(¯dL)) ⊆
+(ˆψ(L), ˆψ(b∗L)) such that ˆHL(y) is concave, maximized at ˆz1 ∈(ˆψ(aL), ˆψ(¯dL)).
+   Furthermore, if VL(x) is strictly increasing on (L, b∗L), then (L−ˆr)ˆhL(x) is also strictly increasing. To
+prove this, we ﬁrst recall from Lemma 4.1 that H(y) is strictly increasing and concave on (ψ(L∗), +∞).
+By Proposition 5.3, we have b∗L < b∗, which implies zL < z, and thus, H′(zL) > H′(z).
+   Then, it follows from (4.5), (4.6) and (5.7) that W L(y)′  = H′(zL) > H′(z) = W ′(y) for y ∈(ψ(L), zL).
+Next, since WL(y) = VLG ◦ψ−1(y), we have
+
+                                                  ′        1              1    L(x)G(x)′       −VL(x)G′(x)          W L(y) =           )′(x) =                                          ).                           ψ′(x)(VLG       ψ′(x)(V       G2(x)
+
+The same holds for W ′(y) with V (x) replacing VL(x). As both ψ′(x) and G2(x) are positive, W L(y)′  >
+W ′(y) is equivalent to V L(x)G(x)′       −VL(x)G′(x) > V ′(x)G(x) −V (x)G′(x). This implies that
+                      V L(x)′  −V ′(x) = −G′(x) (V (x) −VL(x)) > 0,                                        G(x)
+
+since G(x) > 0, G′(x) < 0, and V (x) > VL(x).  Recalling that V ′(x) > 0, we have established that
+VL(x) is a strictly increasing function, and so is (L −ˆr)ˆhL(x). As we have shown the existence of an
+interval (ˆψ(aL), ˆψ( ¯dL)) ⊆( ˆψ(L), ˆψ(b∗L)) over which ˆH(y) is concave, or equivalently (L −ˆr)ˆhL(x) < 0
+with x = ˆψ−1(y). Then by the strictly increasing property of (L −ˆr)ˆhL(x), we conclude aL = L and
+¯dL ∈(L, b∗L) is the unique solution to (L −ˆr)ˆhL(x) = 0, and
+                   {
+                     < 0     if x ∈(L, ¯dL),
+                  (L −ˆr)ˆhL(x)
+                     > 0     if x ∈(−∞, L) ∪(¯dL, b∗L) ∪(b∗L, +∞).
+
+Hence, we conclude the convexity and concavity of the function ˆHL. ■
+
+References
+
+Alili, L., Patie, P., and Pedersen, J. (2005).  Representations of the ﬁrst hitting time density of an Ornstein-
+  Uhlenbeck process. Stochastic Models, 21(4):967–980.
+
+
+
+                                            24
+
+[PAGE 25]
+Anthony, M. and MacDonald, R. (1998). On the mean-reverting properties of target zone exchange rates: Some
+  evidence from the ERM. European Economic Review, 42(8):1493–1523.
+
+Avellaneda, M. and Lee, J.-H. (2010).  Statistical arbitrage in the us equities market.  Quantitative Finance,
+  10(7):761–782.
+
+Balvers, R., Wu, Y., and Gilliland, E. (2000). Mean reversion across national stock markets and parametric
+  contrarian investment strategies. The Journal of Finance, 55(2):745–772.
+
+Bensoussan, A. and Lions, J.-L. (1982).  Applications of Variational Inequalities in Stochastic Control.  North-
+  Holland Publishing Co., Amsterdam.
+
+Benth, F. E. and Karlsen, K. H. (2005). A note on Merton’s portfolio selection problem for the schwartz mean-
+   reversion model. Stochastic Analysis and Applications, 23(4):687–704.
+
+Bertram, W. (2010). Analytic solutions for optimal statistical arbitrage trading. Physica A: Statistical Mechanics
+  and its Applications, 389(11):2234–2243.
+
+Borodin, A. and Salminen, P. (2002). Handbook of Brownian Motion: Facts and Formulae. Birkhauser, 2nd edition.
+
+Chiu, M. C. and Wong, H. Y. (2012). Dynamic cointegrated pairs trading: Time-consistent mean-variance strate-
+   gies. Technical report, working paper.
+
+Dayanik, S. (2008). Optimal stopping of linear diﬀusions with random discounting. Mathematics of Operations
+  Research, 33(3):645–661.
+
+Dayanik, S. and Karatzas, I. (2003). On the optimal stopping problem for one-dimensional diﬀusions. Stochastic
+  Processes and Their Applications, 107(2):173–212.
+
+Dunis, C. L., Laws, J., Middleton, P. W., and Karathanasopoulos, A. (2013). Nonlinear forecasting of the gold
+  miner spread: An application of correlation ﬁlters. Intelligent Systems in Accounting, Finance and Management,
+  20(4):207–231.
+
+Dynkin, E. and Yushkevich, A. (1969). Markov Processes: Theorems and Problems. Plenum Press.
+
+Ekstrom, E., Lindberg, C., and Tysk, J. (2011).  Optimal liquidation of a pairs trade.  In Nunno, G. D. and
+  Øksendal, B., editors, Advanced Mathematical Methods for Finance, chapter 9, pages 247–255. Springer-Verlag.
+
+Elliott, R., Van Der Hoek, J., and Malcolm, W. (2005). Pairs trading. Quantitative Finance, 5(3):271–276.
+
+Engel, C. and Hamilton, J. D. (1989). Long swings in the exchange rate: Are they in the data and do markets
+  know it? Technical report, National Bureau of Economic Research.
+
+Engle, R. F. and Granger, C. W. (1987).  Co-integration and error correction: representation, estimation, and
+   testing. Econometrica, 55(2):251–276.
+
+Gatev, E., Goetzmann, W., and Rouwenhorst, K. (2006). Pairs trading: Performance of a relative-value arbitrage
+   rule. Review of Financial Studies, 19(3):797–827.
+
+Gregory, I., Ewald, C.-O., and Knox, P. (2010). Analytical pairs trading under diﬀerent assumptions on the spread
+  and ratio dynamics. In 23rd Australasian Finance and Banking Conference.
+
+Gropp, J. (2004). Mean reversion of industry stock returns in the US, 1926–1998. Journal of Empirical Finance,
+  11(4):537–551.
+
+Hamilton, J. D. (1994). Time Series Analysis, volume 2. Princeton university press Princeton.
+
+It¯o, K. and McKean, H. (1965). Diﬀusion Processes and Their Sample Paths. Springer Verlag.
+
+Jurek, J. W. and Yang, H. (2007). Dynamic portfolio selection in arbitrage. In EFA 2006 Meetings Paper.
+
+Kong, H. T. and Zhang, Q. (2010). An optimal trading rule of a mean-reverting asset. Discrete and Continuous
+  Dynamical Systems, 14(4):1403 – 1417.
+
+Larsen, K. S. and Sørensen, M. (2007). Diﬀusion models for exchange rates in a target zone. Mathematical Finance,
+  17(2):285–306.
+
+
+
+                                            25
+
+[PAGE 26]
+Leung, T. and Liu, P. (2012). Risk premia and optimal liquidation of credit derivatives. International Journal of
+   Theoretical & Applied Finance, 15(8).
+
+Leung, T. and Shirai, Y. (2013).  Optimal derivative liquidation timing under path-dependent risk penalties.
+  Submitted.
+
+Malliaropulos, D. and Priestley, R. (1999). Mean reversion in Southeast Asian stock markets. Journal of Empirical
+  Finance, 6(4):355–384.
+
+Øksendal, B. (2003). Stochastic Diﬀerential Equations: an Introduction with Applications. Springer.
+
+Poterba, J. M. and Summers, L. H. (1988). Mean reversion in stock prices: Evidence and implications. Journal of
+  Financial Economics, 22(1):27–59.
+
+Rogers, L. and Williams, D. (2000). Diﬀusions, Markov Processes and Martingales, volume 2. Cambridge University
+   Press, UK, 2nd edition.
+
+Scheinkman, J. A. and Xiong, W. (2003). Overconﬁdence and speculative bubbles. Journal of Political Economy,
+  111(6):1183–1220.
+
+Schwartz, E. (1997). The stochastic behavior of commodity prices: Implications for valuation and hedging. The
+  Journal of Finance, 52(3):923–973.
+
+Song, Q., Yin, G., and Zhang, Q. (2009). Stochastic optimization methods for buying-low-and-selling-high strate-
+   gies. Stochastic Analysis and Applications, 27(3):523–542.
+
+Sun, M. (1992). Nested variational inequalities and related optimal starting-stopping problems. Journal of Applied
+   Probability, 29(1):104–115.
+
+Tourin, A. and Yan, R. (2013). Dynamic pairs trading using the stochastic control approach. Journal of Economic
+  Dynamics and Control, 37(10):1972–1981.
+
+Triantafyllopoulos, K. and Montana, G. (2011). Dynamic modeling of mean-reverting spreads for statistical arbi-
+   trage. Computational Management Science, 8(1-2):23–49.
+
+Tsay, R. S. (2005). Analysis of Financial Time Series, volume 543. John Wiley & Sons.
+
+Vidyamurthy, G. (2004). Pairs Trading: Quantitative Methods and Analysis. Wiley.
+
+Zervos, M., Johnson, T., and Alazemi, F. (2013).  Buy-low and sell-high investment strategies.  Mathematical
+  Finance, 23(3):560–578.
+
+Zhang, H. and Zhang, Q. (2008). Trading a mean-reverting asset: Buy low and sell high. Automatica, 44(6):1511–
+  1518.
+
+
+
+
+
+                                            26

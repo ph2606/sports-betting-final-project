@@ -1,0 +1,2527 @@
+[PAGE 1]
+          Trend Filtering Methods
+             for Momentum Strategies∗
+
+          Benjamin Bruder                Tung-Lam Dao
+       Research & Development           Research & Development
+   Lyxor Asset Management, Paris    Lyxor Asset Management, Paris
+    benjamin.bruder@lyxor.com        tung-lam.dao@lyxor.com
+
+         Jean-Charles Richard                  Thierry Roncalli
+       Research & Development            Research & Development
+    Lyxor Asset Management, Paris      Lyxor Asset Management, Paris
+  jean-charles.richard@lyxor.com    thierry.roncalli@lyxor.com
+
+                         December 2011
+
+
+
+
+                                   Abstract
+
+         This paper studies trend ﬁltering methods. These methods are widely used in mo-
+     mentum strategies, which correspond to an investment style based only on the history
+       of past prices.  For example, the CTA strategy used by hedge funds is one of the
+     best-known momentum strategies. In this paper, we review the diﬀerent econometric
+      estimators to extract a trend of a time series. We distinguish between linear and non-
+       linear models as well as univariate and multivariate ﬁltering. For each approach, we
+      provide a comprehensive presentation, an overview of its advantages and disadvantages
+     and an application to the S&P 500 index. We also consider the calibration problem of
+      these ﬁlters. We illustrate the two main solutions, the ﬁrst based on prediction error,
+     and the second using a benchmark estimator. We conclude the paper by listing some
+       issues to consider when implementing a momentum strategy.
+
+
+Keywords: Momentum strategy, trend following, moving average, ﬁltering, trend extrac-
+tion.
+
+JEL classiﬁcation: G11, G17, C63.
+
+1  Introduction
+
+The eﬃcient market hypothesis tells us that ﬁnancial asset prices fully reﬂect all available
+information (Fama, 1970). One consequence of this theory is that future returns are not
+predictable.  Nevertheless, since the beginning of the nineties, a large body of academic
+research has rejected this assumption. One of the arguments is that risk premiums are time
+varying and depend on the business cycle (Cochrane, 2001).  In this framework, returns
+on ﬁnancial assets are related to some slow-moving economic variables that exhibit cyclical
+patterns in accordance with the business cycle. Another argument is that some agents are
+
+  ∗We are grateful to Guillaume Jamet and Hoang-Phong Nguyen for their helpful comments.
+
+[PAGE 2]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+not fully rational, meaning that prices may underreact in the short run but overreact at long
+horizons (Hong and Stein, 1997). This phenomenon may be easily explained by the theory
+of behavioural ﬁnance (Barberis and Thaler, 2002).
+
+
+   Based on these two arguments, it is now commonly accepted that prices may exhibit
+trends or cycles. In some sense, these arguments chime with the Dow theory (Brown et al.,
+1998), which is one of the ﬁrst momentum strategies. A momentum strategy is an investment
+style based only on the history of past prices (Chan et al., 1996). We generally distinguish
+between two types of momentum strategy:
+
+   1. the trend following strategy, which consists of buying (or selling) an asset if the esti-
+     mated price trend is positive (or negative);
+
+   2. the contrarian (or mean-reverting) strategy, which consists of selling (or buying) an
+      asset if the estimated price trend is positive (or negative).
+
+Contrarian strategies are clearly the opposite of trend following strategies. One of the tasks
+involved in these strategies is to estimate the trend, excepted when based on mean-reverting
+processes (see D’Aspremont, 2011).  In this paper, we provide a survey of the diﬀerent
+trend ﬁltering methods. However, trend ﬁltering is just one of the diﬃculties in building a
+momentum strategy. The complete process of constructing a momentum strategy is highly
+complex, especially as regards transforming past trends into exposures – an important factor
+that is beyond the scope of this paper.
+
+
+   The paper is organized as follows. Section two presents a survey of the diﬀerent econo-
+metric trend estimators.  In particular, we distinguish between methods based on linear
+ﬁltering and nonlinear ﬁltering. In section three, we consider some issues that arise when
+trend ﬁltering is applied in practice. We also propose some methods for calibrating trend
+ﬁltering models and highlight the problem of estimator variance. Section four oﬀers some
+concluding remarks.
+
+
+2 A review of econometric estimators for trend ﬁltering
+
+Trend ﬁltering (or trend detection) is a major task of time series analysis from both a
+mathematical and ﬁnancial viewpoint. The trend of a time series is considered to be the
+component containing the global change, which contrasts with local changes due to noise.
+The trend ﬁltering procedure concerns not only the problem of denoising;  it must also
+take into account the dynamics of the underlying process. This explains why mathematical
+approaches to trend extraction have a long history, and why this subject is still of great
+interest to the scientiﬁc community1. From an investment perspective, trend ﬁltering is
+fundamental to most momentum strategies developed in asset management and hedge funds
+sectors in order to improve performance and limit portfolio risks.
+
+
+2.1  The trend-cycle model
+
+In economics, trend-cycle decomposition plays an important role by identifying the perma-
+nent and transitory stochastic components in a non-stationary time series. Generally, the
+permanent component can be interpreted as a trend, whereas the transitory component may
+
+   1See Alexandrov et al. (2008).
+
+                                       2
+
+[PAGE 3]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+be a noise or a stochastic cycle. Let yt be a stochastic process. We assume that yt is the
+sum of two diﬀerent unobservable parts:
+
+                                            yt = xt + εt
+
+where xt represents the trend and εt is a stochastic (or noise) process. There is no precise
+deﬁnition for trend, but it is generally accepted to be a smooth function representing long-
+term movements:
+
+        “[...] the essential idea of trend is that it shall be smooth.” (Kendall, 1973).
+
+It means that changes in the trend xt must be smaller than those of the process yt. From a
+statistical standpoint, it implies that the volatility of yt −yt−1 is higher than the volatility
+of xt −xt−1:
+                        σ (yt −yt−1) ≫σ (xt −xt−1)
+
+One of the major problems in ﬁnancial econometrics is the estimation of xt. This is the
+subject of signal extraction and ﬁltering (Pollock, 2009).
+
+   Finite moving average ﬁltering for trend estimation has a long history. It has been used
+in actuarial science since the beginning of the twentieth century2. But the modern theory of
+signal ﬁltering has its origins in the Second World War and was formulated independently
+by Norbert Wiener (1941) and Andrei Kolmogorov (1941) in two diﬀerent ways. Wiener
+worked principally in the frequency domain whereas Kolmogorov considered a time-domain
+approach. This theory was extensively developed in the ﬁfties and sixties by mathematicians
+and statisticians such as Hermann Wold, Peter Whittle, Rudolf Kalman, Maurice Priestley,
+George Box, etc. In economics, the problem of trend ﬁltering is not a recent one, and may
+date back to the seminal article of Muth (1960). It was extensively studied in the eighties and
+nineties in the literature on business cycles, which led to a vast body of empirical research
+being carried out in this area3. However, it is in climatology that trend ﬁltering is most
+extensively studied nowadays. Another important point is that the development of ﬁltering
+techniques has evolved according to the development of computational power and the IT
+industry. The Savitzky-Golay smoothing procedure may appear very basic today though it
+was revolutionary4 when it was published in 1964.
+
+   In what follows, we review the class of ﬁltering techniques that is generally used to
+estimate a trend. Moving average ﬁlters play an important role in ﬁnance. As they are very
+intuitive and easy to implement, they undoubtedly represent the model most commonly used
+in trading strategies. The moving average technique belongs to the class of linear ﬁlters,
+which share a lot of common properties.  After studying this class of ﬁlters, we consider
+some nonlinear ﬁltering techniques, which may be well suited to solving ﬁnancial problems.
+
+2.2  Linear ﬁltering
+
+2.2.1  The convolution representation
+
+We denote by y = {. . . , y−2, y−1, y0, y1, y2, . . .} the ordered sequence of observations of the
+process yt. Let ˆxt be the estimator of the underlying trend xt which is by deﬁnition an
+
+   2See, in particular, the works of Henderson (1916), Whittaker (1923) and Macaulay (1931).
+   3See for example Cleveland and Tiao (1976), Beveridge and Nelson (1981), Harvey (1991) or Hodrick and
+Prescott (1997).
+  4The paper of Savitzky and Golay (1964) is still considered by the Analytical Chemistry journal to be
+one of its 10 seminal papers.
+
+                                       3
+
+[PAGE 4]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+unobservable process. A ﬁltering procedure consists of applying a ﬁlter L to the data y:
+
+                                                               ˆx = L (y)
+
+with ˆx = {. . . , ˆx−2, ˆx−1, ˆx0, ˆx1, ˆx2, . . .}. When the ﬁlter is linear, we have ˆx = Ly with the
+normalisation condition 1 = L1.  If we assume that the signal yt is observed at regular
+dates5, we obtain:
+             ∑∞
+                                                     ˆxt =       Lt,t−iyt−i                                 (1)
+                              i=−∞
+
+We deduce that linear ﬁltering may be viewed as a convolution. The previous ﬁlter may not
+be of much use, however, because it uses future values of yt. As a result, we generally impose
+some restriction on the coeﬃcients Lt,t−i in order to use only past and present values of the
+signal. In this case, we say that the ﬁlter is causal. Moreover, if we restrict our study to
+time invariant ﬁlters, the equation (1) becomes a simple convolution of the observed signal
+yt with a window function Li:
+                                     n−1∑
+                                                         ˆxt =    Liyt−i                                    (2)
+                                            i=0
+
+With this notation, a linear ﬁlter is characterised by a window kernel Li and its support.
+The kernel deﬁnes the type of ﬁltering, whereas the support deﬁnes the range of the ﬁlter.
+For instance,  if we take a square window on a compact support [0, T] with T = n∆the
+width of the averaging window, we obtain the well-known moving average ﬁlter:
+
+                                      1
+                                  Li = n1 {i < n}
+
+We ﬁnish this description by considering the lag representation:
+
+                                     n−1∑
+                                                         ˆxt =    LiLiyt
+                                            i=0
+
+with the lag operator L satisfying Lyt = yt−1.
+
+
+2.2.2  Measuring the trend and its derivative
+
+We discuss here how to use linear ﬁltering to measure the trend of an asset price and its
+derivative. Let St be the asset price which follows the dynamics of the Black-Scholes model:
+
+                               dSt
+                      = µt dt + σt dWt
+                                  St
+
+where µt  is the drift, σt  is the volatility and Wt  is a standard Brownian motion.  The
+asset price St is observed in a series of discrete dates {t0, . . . , tn}. Within this model, the
+appropriate signal to be ﬁltered is the logarithm of the price yt = ln St but not the price
+itself. Let Rt = ln St −ln St−1 represent the realised return at time t over a unit period. If
+µt and σt are known, we have:
+                     (     )
+                         Rt =  µt −1  t ∆+ σt √ ∆ηt                                  2σ2
+
+  5We have ti+1 −ti = ∆.
+
+                                       4
+
+[PAGE 5]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+where ηt is a standard Gaussian white noise. The ﬁltered trend can be extracted using the
+following equation:
+                                     n−1∑
+                                                         ˆxt =    Liyt−i
+                                            i=0
+and the estimator of µt is6:
+                                      n−1∑
+                                                    ˆµt ≃1    LiRt−i
+                      ∆
+                                             i=0
+
+We can also obtain the same result by applying the ﬁlter directly to the signal and deﬁning
+the derivative of the window function as ℓi = ˙Li:
+
+              ∑n
+                                                     ˆµt ≃1     ℓiyt−i
+                      ∆
+                                              i=0
+
+We obtain the following correspondence:
+               
+                L0              if i = 0
+                                 ℓi =   Li −Li−1    if i = 1, . . . , n −1                         (3)
+               
+                         −Ln−1        if i = n
+
+Remark 1 In some senses, ˆµt and ˆxt are related by the following expression:
+
+                                     d
+                                                           ˆµt =     ˆxt
+                                            dt
+
+Econometric methods principally involve ˆxt, whereas ˆµt is more important for trading strate-
+gies.
+
+Remark 2  ˆµt is a biased estimator of µt and the bias increases with the volatility of the
+process σt. The expression of the unbiased estimator is then:
+
+                                         n−1∑                                 1     1
+                                             LiRt−i                                                           t +                                               ˆµt = 2σ2                        ∆
+                                                i=0
+
+Remark 3 In the previous analysis, ˆxt and ˆµt are two estimators. We may also represent
+them by their corresponding probability density functions.   It is therefore easy to derive
+estimates, but we should not forget that these estimators present some variance. In ﬁnance,
+and in particular in trading strategies, the question of statistical inference is generally not
+addressed. However, it is a crucial factor in designing a successful momentum strategy.
+
+
+2.2.3  Moving average ﬁlters
+
+Average return over a given period  Here, we consider the simplest case corresponding
+to the moving average ﬁlter where the form of the window is:
+
+                                      1
+                                  Li = n1 {i < n}
+
+In this case, the only calibration parameter is the window support, i.e. T = n∆.  It char-
+acterises the smoothness of the ﬁltered signal. For the limit T →0, the window becomes
+a Dirac distribution δt and the ﬁltered signal is exactly the same as the observed signal:
+
+   6If we neglect the contribution from the term σ2t . Moreover, we consider ∆= 1 to simplify the calculation.
+
+                                       5
+
+[PAGE 6]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+ˆxt = yt. For T > 0, if we assume that the noise εt is independent from xt and is a centered
+process, the ﬁrst contribution of the ﬁltered signal is the average trend:
+
+                                       n−1∑                                      1
+                                                         ˆxt =       xt−i
+                                n
+                                              i=0
+
+If the trend is homogeneous, this average value is located at t −(n −1) /2 by construction.
+It means that the ﬁltered signal lags the observed signal by a time period which is half the
+window. To extract the derivative of the trend, we compute the derivative kernel ℓi which
+is given by the following formula:
+
+                                    1
+                                            ℓi = n∆(δi,0 −δi,n)
+where δi,j is the Kronecker delta7. The main advantage of using a moving average ﬁlter is
+the reduction of noise due to the central limit theorem. For the limit case n →∞, the signal
+is completely denoised but it corresponds to the average value of the trend. The estimator is
+also biased. In trend ﬁltering, we also face a trade-oﬀbetween denoising maximisation and
+bias minimisation. The problem is the calibration procedure for the lag window T. Another
+way to determine the optimal parameter T ⋆is to take into account the dynamics of the
+trend.
+
+   The above moving average ﬁlter can be applied directly to the signal. However, ˆµt is
+simply the cumulative return over the window period. It needs only the ﬁrst and last dates
+of the period under consideration.
+
+
+Moving average crossovers  Many practitioners, and even individual investors, use the
+moving average of the price itself as a trend indication, instead of the moving average of
+returns. These moving averages are generally uniform moving averages of the price. Here
+we will consider an average of the logarithm of the price, in order to be consistent with the
+previous examples:
+                                       n−1∑                                      1
+                                                 ˆynt =       yt−i
+                                n
+                                              i=0
+Of course, an average price does not estimate the trend µt. This trend is estimated from
+the diﬀerence between two moving averages over two diﬀerent time horizons n1 and n2.
+Supposing that n1 > n2, the trend µ may be estimated from:
+
+                                     2
+                                             ˆµt ≃                                                                          t  −ˆyn1t  )                             (4)                                   (n1 −n2) ∆(ˆyn2
+
+In particular, the estimated trend is positive  if the short-term moving average is higher
+than the long-term moving average. Thus, the sign of the trend changes when the short-
+term moving average crosses the long-term moving average. Of course, when the short-term
+horizon n1 is one, then the short-term moving average is just the current asset price. The
+scaling term 2 (n1 −n2)−1 is explained below. It is derived from the interpretation of this
+estimator as a weighted moving average of asset returns.  Indeed, this estimator can be
+interpreted in terms of asset returns by inverting the formula (3) with Li being interpreted
+as the primitive of ℓi:     
+                ℓ0              if i = 0
+                       Li =     ℓi + Li−1    if i = 1, . . . , n −1
+               
+                            −ℓn+1        if i = n
+
+   7δi,j is equal to 1 if i = j and 0 otherwise.
+
+                                       6
+
+[PAGE 7]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+The weighting of each return in the estimator (4) is represented in Figure 1.  It forms a
+triangle, and the biggest weighting is given at the horizon of the smallest moving average.
+Therefore, depending on the horizon n2 of the shortest moving average, the indicator can
+be focused toward the current trend (if n2 is small) or toward past trends (if n2 is as large
+as n1/2 for instance). From these weightings, in the case of a constant trend µ, we can
+compute the expectation of the diﬀerence between the two moving averages:
+                              (     )
+                                     n1 −n2                 E [ˆyn2t  −ˆyn1t  ] =        µ −1  t ∆                                        2        2σ2
+
+Therefore, the scaling factor in formula (4) appears naturally.
+
+
+         Figure 1: Window function Li of moving average crossovers (n1 = 100)
+
+
+
+
+
+Enhanced ﬁlters  To improve the uniform moving average estimator, we may take the
+following kernel function:
+                                    4   (n   )
+                                            ℓi =    sgn   −i
+                                    n2     2
+We notice that the estimator ˆµt now takes into account all the dates of the window period.
+By taking the primitive of the function ℓi, the trend ﬁlter is given as follows:
+                                         )                                   4 (n                               Li =    −  i −n
+                                   n2  2       2
+
+We now move to the second type of moving average ﬁlter which is characterised by an
+asymmetric form of the convolution kernel. One possibility is to take an asymmetric window
+function with a triangular form:
+
+                                  2
+                              Li =    (n −i) 1 {i < n}
+                                  n2
+
+                                       7
+
+[PAGE 8]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+By computing the derivative of this window function, we obtain the following kernel:
+
+                                  2
+                                           ℓi =   (δi −1 {i < n})
+                             n
+
+The ﬁltering equation of µt then becomes:
+                      (        )
+                                          n−1∑                                 2                                               ˆµt =     xt −1     xt−i
+                            n      n
+                                                  i=0
+
+Remark 4 Another way to deﬁne  ˆµt  is to consider the Lanczos generalised derivative
+(Groetsch, 1998).  Let f (x) be a function. We deﬁne the Lanczos derivative of f (x) in
+terms of the following relationship:
+                              ∫ε                      dL            3
+                     dxf (x) = ε→0lim 2ε3  −ε tf (x + t) dt
+
+In the discrete case, we have:
+                         ∑n
+                      dL            k=−n kf (x + kh)
+                     dxf (x) = h→0lim    2 ∑nk=1 k2h
+
+We ﬁrst notice that the Lanczos derivative is more general than the traditional derivative.
+Although Lanczos’ formula is a more onerous method for ﬁnding the derivative,  it oﬀers
+some advantages. This technique allows us to compute a “pseudo-derivative” at points where
+the function is not diﬀerentiable. For the observable signal yt, the traditional derivative does
+not exist because of the noise εt, but does in the case of the Lanczos derivative. Let us apply
+the Lanczos’ formula to estimate the derivative of the trend at the point t−T/2. We obtain:
+
+                         dL     12 ∑n (n   )
+                                                    ˆxt =       −i  yt−i
+                               dt     n3     2
+                                            i=0
+
+We deduce that the kernel is:
+                                 )                               12 (n
+                                      ℓi =     −i 1 {0 ≤i ≤n}
+                               n3  2
+
+By computing an integration by parts, we obtain the trend ﬁlter:
+
+                                6
+                           Li =     i (n −i) 1 {0 ≤i ≤n}
+                                n3
+
+   In Figure 2, we have represented the diﬀerent functions Li given in this paragraph. We
+may extend these ﬁlters by computing the convolution of two or more ﬁlters. For exemple,
+the mixed ﬁlter in Figure 2 is the convolution of the asymmetric ﬁlter with the Lanczos
+ﬁlter. Let us apply these ﬁlters to the S&P 500 index. The results are given in Figure 3
+for two values of the window length (n = 65 days and n = 260 days). We notice that the
+choice of n has a big impact on the ﬁltered series. The choice of the window function seems
+to be less important at ﬁrst sight. However, we should mention that traders are principally
+interested in the derivative of the trend, and not the absolute value of the trend itself. In
+this case, the window function may have a signiﬁcant impact. Figure 4 is the scatterplot of
+the ˆµt statistic in the case of the S&P 500 index from January 2000 to July 2011 (we have
+considered the uniform and Lanczos ﬁlters using n = 260). We may also show that this
+impact increases when we reduce the length of the window as illustrated in Table 1.
+
+                                       8
+
+[PAGE 9]
+      Trend Filtering Methods for Momentum Strategies
+
+
+
+
+Figure 2: Window function Li of moving average ﬁlters (n = 100)
+
+
+
+
+
+        Figure 3: Trend estimate for the S&P 500 index
+
+
+
+
+
+                            9
+
+[PAGE 10]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+           Table 1: Correlation between the uniform and Lanczos derivatives
+
+           n             5     10     22     65    130    260
+              Pearson ρ     84.67   87.86   90.14   90.52   92.57   94.03
+              Kendall τ     65.69   68.92   70.94   71.63   73.63   76.17
+             Spearman ϱ   83.15   86.09   88.17   88.92   90.18   92.19
+
+
+                  Figure 4: Comparison of the derivative of the trend
+
+
+
+
+
+2.2.4  Least squares ﬁlters
+
+L2 ﬁltering  The previous Lanczos ﬁlter may be viewed as a local linear regression (Burch
+et al., 2005). More generally, least squares methods are often used to deﬁne trend estimators:
+
+                                           1 ∑n
+                                {ˆx1, . . . , ˆxn} = arg min       (yt −ˆxt)2
+                                           2
+                                                    t=1
+
+However, this problem is not well-deﬁned. We also need to impose some restrictions on the
+underlying process yt or on the ﬁltered trend ˆxt to obtain a solution. For example, we may
+consider a deterministic constant trend:
+
+                                       xt = xt−1 + µ
+
+In this case, we have:
+                                            yt = µt + εt                                      (5)
+
+Estimating the ﬁltered trend ˆxt is also equivalent to estimating the coeﬃcient µ:
+                        ∑n
+                                              t=1 tyt                                                        ˆµ = ∑n
+                                              t=1 t2
+
+                                       10
+
+[PAGE 11]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+If we consider a trend that is not constant, we may deﬁne the following objective function:
+
+                     1 ∑n              n−1∑
+                                (yt −ˆxt)2 + λ     (ˆxt−1 −2ˆxt + ˆxt+1)2
+                     2
+                          t=1               t=2
+
+In this function, λ is the regularisation parameter which controls the competition between
+the smoothness8 of ˆxt and the noise yt −ˆxt. We may rewrite the objective function in the
+vectorial form:
+                               1
+                                ∥y −ˆx∥22 + λ ∥Dˆx∥22                               2
+where y = (y1, . . . , yn), ˆx = (ˆx1, . . . , ˆxn) and the D operator is the (n −2) × n matrix:
+                                        
+                              1  −2    1
+                                  1  −2   1
+              D =                     ...                                                                                                                                        1  −2  1                  
+                                                1  2  1
+
+The estimator is then given by the following solution:
+                                     (           )−1
+                                                     ˆx =  I + 2λD⊤D    y
+
+It is known as the Hodrick-Prescott ﬁlter (or L2 ﬁlter). This ﬁlter plays an important role
+in calibrating the business cycle.
+
+
+Kalman ﬁltering  Another important trend estimation technique is the Kalman ﬁlter,
+which is described in Appendix A.1. In this case, the trend µt is a hidden process which
+follows a given dynamic. For example, we may assume that the model is9:
+                    {
+                               Rt = µt + σζζt
+                                                                                           (6)
+                                     µt = µt−1 + σηηt
+
+Here, the equation of Rt is the measurement equation and Rt is the observable signal of
+realised returns. The hidden process µt is supposed to follow a random walk. We deﬁne                                   [(          )2]
+ˆµt|t−1 = Et−1 [µt] and Pt|t−1 = Et−1   ˆµt|t−1 −µt     . Using the results given in Appendix
+A.1, we have:
+                                     ˆµt+1|t = (1 −Kt) ˆµt|t−1 + KtRt
+               (        )
+where Kt = Pt|t−1/  Pt|t−1 + σ2ζ   is the Kalman gain. The estimation error is determined
+by Riccati’s equation:
+                               Pt+1|t = Pt|t−1 + σ2η −Pt|t−1Kt
+
+Riccati’s equation gives us the stationary solution:
+                              (  √      )                                 ση
+                     P ∗=     ση +    σ2η + 4σ2ζ                                 2
+
+The ﬁlter equation becomes:
+
+                                       ˆµt+1|t = (1 −κ) ˆµt|t−1 + κRt
+
+  8We notice that the second term is the discrete derivative of the trend ˆxt which characterises the smooth-
+ness of the curve.
+   9Equation (5) is a special case of this model if ση = 0.
+
+                                       11
+
+[PAGE 12]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+with:
+                                         2ση
+                           κ =   √
+                                   ση +    σ2η + 4σ2ζ
+
+This Kalman ﬁlter can be considered as an exponential moving average ﬁlter with parame-
+ter10 λ = −ln (1 −κ):
+                                   (   ∑∞                                              ˆµt = 1 −e−λ)    e−λiRt−i
+                                                i=0
+
+with11  ˆµt = Et [µt]. The ﬁlter of the trend  ˆxt  is therefore determined by the following
+equation:
+                                   (   ∑∞                                                ˆxt = 1 −e−λ)    e−λiyt−i
+                                                i=0
+
+while the derivative of the trend may be directly related to the observed signal yt as follows:
+
+                        (             (         (      ) ∑∞                             ˆµt = 1 −e−λ) yt − 1 −e−λ) eλ −1     e−λiyt−i
+                                                            i=1
+
+In Figure 5, we reported the window function of the Kalman ﬁlter for several values of λ.
+We notice that the cumulative weightings increase strongly with λ. The half-life of this ﬁlter                            (is approximatively equal to ⌈ λ−1 −2−1) ln 2⌉. For example, the half-life for λ = 5% is 14
+days.
+
+
+
+                   Figure 5: Window function Li of the Kalman ﬁlter
+
+
+
+
+
+  10We have 0 < κ < 1 and lambda > 0.
+  11We notice that ˆµt+1|t = ˆµt.
+
+                                       12
+
+[PAGE 13]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+  We may wonder what the link is between the regression model (5) and the Markov model
+(6). Equation (5) is equivalent to the following state space model12:
+
+                     {
+                                           yt = xt + σεεt
+                                       xt = xt−1 + µ
+
+If we now consider that the trend is stochastic, the model becomes:
+
+                   {
+                                        yt = xt + σεεt
+                                    xt = xt−1 + µ + σζζt
+
+This model is called the local level model. We may also assume that the slope of the trend
+is stochastic, in which case we obtain the local linear trend model:
+               
+                yt = xt + σεεt
+                                  xt = xt−1 + µt−1 + σζζt
+               
+                                 µt = µt−1 + σηηt
+
+These three models are special cases of structural models (Harvey, 1989) and may be easily
+solved by Kalman ﬁltering. We also deduce that the Markov model (6) is a special case of
+the latter when σε = 0.
+
+
+Remark 5 We have shown that Kalman ﬁltering may be viewed as an exponential moving
+average ﬁlter when we consider the Markov model (6). Nevertheless, we cannot regard the
+Kalman ﬁlter simply as a moving average ﬁlter.  First, the Kalman ﬁlter is the optimal
+ﬁlter in the case of the linear Gaussian model described in Appendix A.1. Second, it could
+be regarded as “an eﬃcient computational solution of the least squares method” (Sorensen,
+1970). Third, we could use it to solve more sophisticated processes than the Markov model
+(6).  However, some nonlinear or non Gaussian models may be too complex for Kalman
+ﬁltering. These nonlinear models can be solved by particle ﬁlters or sequential Monte Carlo
+methods (see Doucet et al., 1998).
+
+
+   Another important feature of the Kalman approach  is the derivation of an optimal
+smoother (see Appendix A.1). At time t, we are interested by the numerical value of xt, but
+also by the past values of xt−i because we would like to measure the slope of the trend. The
+Kalman smoother improves the estimate of ˆxt−i by using all the information between t −i
+and t. Let us consider the previous example in relation to the S&P 500 index, using the local
+level model. Figure 6 gives the ﬁltered and smoothed components xt and µt for two sets
+of parameters13. We verify that the Kalman smoother reduces the noise by incorporating
+more information. We also notice that the restriction σε = 0 increases the variance of the
+trend and slope estimators.
+
+
+2.3  Nonlinear ﬁltering
+
+In this section, we review other ﬁltering approaches. They are generally classed as nonlinear
+ﬁlters, because it is not possible to express the trend as a linear convolution of the signal
+and a window function.
+
+  12In what follows, the noise processes are white noise: εt ∼N (0, 1), ζt ∼N (0, 1) and ηt ∼N (0, 1).
+  13For the ﬁrst set of parameters, we assume that σε = 100σζ and ση = 1/100σζ. For the second set of
+parameters, we impose the restriction σε = 0.
+
+                                       13
+
+[PAGE 14]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+                  Figure 6: Kalman ﬁltered and smoothed components
+
+
+
+
+
+2.3.1  Nonparametric regression
+
+In the regression model (5), we assume that xt = f (t) while f (t) = µt. The model is said to
+be parametric because the estimation of the trend consists of estimating the parameter µ.
+We then have ˆxt = ˆµt. With nonparametric regression, we directly estimate the function f,
+obtaining ˆxt = ˆf (t). Some examples of nonparametric regression are kernel regression, loess
+regression and spline regression. A popular method for trend ﬁltering is local polynomial
+regression:
+
+                             yt =  f (t) + εt
+             ∑p
+                 =  β0 (τ) +    βj (τ) (τ −t)j + εt
+                                         j=1
+
+For a given value of τ, we estimate the parameters ˆβj (τ) using weighted least squares with
+the following weightings:
+                              (τ −t )
+                                wt = K
+                                     h
+
+where K is the kernel function with a bandwidth h. We deduce that:
+
+                                                  ˆxt = E [yt| τ = t] = ˆβ0 (t)
+
+Cleveland (1979) proposed an improvement to the kernel regression through a two-stage
+procedure (loess regression). First, we ﬁt a polynomial regression to estimate the residuals                           (      )
+ˆεt. Then, we compute δt =  1 −u2t   · 1 {|ut| ≤1} with ut = ˆεt/ (6 median (|ˆε|)) and run a
+second kernel regression14 with weightings δtwt.
+
+  14Cleveland (1979) suggests using the tricube kernel function to deﬁne K.
+
+                                       14
+
+[PAGE 15]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+  A spline function is a C2 function S (τ) which corresponds to a cubic polynomial function
+on each interval [t, t + 1[. Let SP be the set of spline functions. We then have to solve the
+following optimisation programme:
+          ∑n            ∫T
+               min (1 −h)   wt (yt −S (t))2 + h    wτS′′ (τ)2 dτ
+               S∈SP
+                                t=0                       0
+
+where h is the smoothing parameter – h = 0 corresponds to the interpolation case15 and
+h = 1 corresponds to the linear regression16.
+
+
+
+               Figure 7: Illustration of the kernel, loess and spline ﬁlters
+
+
+
+
+
+  We illustrate these three nonparametric methods in Figure 7. The calibration of these
+ﬁlters is more complicated than for moving average ﬁlters, where the only parameter is the
+length n of the window. With these methods, we have to decide the polynomial degree17 p,
+the kernel function18 K and the smoothing parameter19 h.
+
+2.3.2  L1 ﬁltering
+
+The idea of the Hodrick-Prescott ﬁlter can be generalised to a larger class of ﬁlters by using
+the Lp penalty condition instead of the L2 penalty.  This generalisation was previously
+
+  15We have ˆxt = S (t) = yt.
+  16We have ˆxt = S (t) = ˆc + ˆµt with (ˆc, ˆµ) the OLS estimate of yt on a constant and time t because the
+optimum is reached for S′′ (τ) = 0.
+  17For the kernel regression, we use a Gaussian kernel with a bandwidth h = 0.10. We notice the impact
+of the degree of polynomial. The higher the degree, the smoother the trend (and the slope of the trend).
+  18For the loess regression, the degree of polynomial is set to 1 and the bandwidth h is 0.02. We show the
+impact of the second step which modiﬁes the kernel function.
+  19For the spline regression, we consider a uniform kernel function. We notice that the parameter h has an
+impact on the smoothness of the trend.
+
+                                       15
+
+[PAGE 16]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+discussed in the work of Daubechies et al. (2004) in relation to the linear inverse problem,
+while Tibshirani (1996) considers the Lasso regression problem. If we consider an L1 ﬁlter,
+the objective function becomes:
+
+                     1 ∑n             n−1∑
+                                 (yt −ˆxt)2 + λ     |ˆxt−1 −2ˆxt + ˆxt+1|
+                     2
+                          t=1               t=2
+
+which is equivalent to the following vectorial form:
+
+                               1
+                                ∥y −ˆx∥22 + λ ∥Dˆx∥1                               2
+
+Kim et al.  (2009) shows that the dual problem of this L1 ﬁlter scheme is a quadratic
+programme with some boundary constraints20. To ﬁnd ˆx, we may also use the quadratic
+programming algorithm, but Kim et al. (2009) suggest using the primal-dual interior point
+method in order to optimise the numerical computation speed.
+
+  We have illustrated the L1 ﬁlter in Figure 8. Contrary to all other previous methods, the
+ﬁltered signal comprises a set of straight trends and breaks21, because the L1 norm imposes
+the condition that the second derivative of the ﬁltered signal must be zero. The competition
+between the two terms in the objective function turns to the competition between the number
+of straight trends (or the number of breaks) and the closeness to the data.  Thus, the
+smoothing parameter λ plays an important role for detecting the number of breaks. This
+explains why L1 ﬁltering is radically diﬀerent to L2 (or Hodrick-Prescott) ﬁltering. Moreover,
+it is easy to compute the slope of the trend ˆµt for the L1 ﬁlter. It is a step function, indicating
+clearly if the trend is up or down, and when it changes (see Figure 8).
+
+
+2.3.3  Wavelet ﬁltering
+
+Another way to estimate the trend xt is to denoise the signal yt by using spectral analy-
+sis. The Fourier transform is an alternative representation of the original signal yt, which
+becomes a frequency function:
+             ∑n
+                                y (ω) =    yte−iωt
+                                            t=1
+We note y (ω) = F (y). By construction, we have y = F−1 (y) with F−1 the inverse Fourier
+transform. A simple idea for denoising in spectral analysis is to set some coeﬃcients y (ω)
+to zero before reconstructing the signal. Figure 9 is an illustration of denoising using the
+thresholding rule. Selected parts of the frequency spectrum can easily be manipulated by
+ﬁltering tools. For example, some can be attenuated, and others may be completely removed.
+Applying the inverse Fourier transform to this ﬁltered spectrum leads to a ﬁltered time series.
+Therefore, a smoothing signal can be easily performed by applying a low-pass ﬁlter, that is,
+by removing the higher frequencies. For example, we have represented two denoised signals
+of the S&P 500 index in Figure 9. For the ﬁrst one, we use a 95% thresholding procedure
+whereas 99% of the Fourier coeﬃcients are set to zero in the second case. One diﬃculty
+with this approach is the bad time location for low frequency signals and the bad frequency
+location for the high frequency signals. It is then diﬃcult to localise when the trend (which
+is located in low frequencies) reverses. But the main drawback of spectral analysis is that
+it is not well suited to nonstationary processes (Martin and Flandrin, 1985, Fuentes, 2002,
+Oppenheim and Schafer, 2009).
+
+
+  20The detail of this derivation is shown in Appendix A.2.
+  21A break is the position where the signal trend changes.
+
+                                       16
+
+[PAGE 17]
+Trend Filtering Methods for Momentum Strategies
+
+
+
+
+         Figure 8: L1 versus L2 ﬁltering
+
+
+
+
+
+           Figure 9: Spectral ﬁltering
+
+
+
+
+
+                     17
+
+[PAGE 18]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+  A solution consists of adopting a double dimension analysis, both in time and frequency.
+This approach corresponds to the wavelet analysis. The method of denoising is the same as
+described previously and the estimation of xt is done in three steps:
+
+   1. we compute the wavelet transform W of the original signal yt to obtain the wavelet
+     coeﬃcients ω = W (y);
+
+   2. we modify the wavelet coeﬃcients according to a denoising rule D:
+
+                          ω⋆= D (ω)
+
+
+   3. We convert the modiﬁed wavelet coeﬃcients into a new signal using the inverse wavelet
+     transform W−1:
+                                x = W−1 (ω⋆)
+
+There are two principal choices in this approach.  First, we have to specify which mother
+wavelet to use. Second, we have to deﬁne the denoising rule. Let ω−and ω+ be two scalars
+with 0 < ω−< ω+. Donoho and Johnstone (1995) deﬁne several shrinkage methods22:
+
+   • Hard shrinkage                                    {
+                              ω⋆i = ωi · 1  |ωi| > ω+}
+
+   • Soft shrinkage                                               (
+                            ω⋆i = sgn (ωi) ·  |ωi| −ω+) +
+
+   • Semi-soft shrinkage
+          
+           0                                                si |ωi| ≤ω−
+            ω⋆i =   sgn (ωi) (ω+ −ω−)−1 ω+ (|ωi| −ω−)   si ω−< |ωi| ≤ω+          
+                       ωi                                               si |ωi| > ω+
+
+   • Quantile shrinkage is a hard shrinkage method where w+ is the qth quantile of the
+     coeﬃcients |ωi|.
+
+Wavelet ﬁltering is illustrated in Figure 10. We have computed the wavelet coeﬃcients
+using the cascade algorithm of Mallat (1989) and the low-pass and high-pass ﬁlters of order
+6 proposed by Daubechies (1992). The ﬁltered trend is obtained using quantile shrinkage.
+In the ﬁrst case, the noisy signal remains because we consider all the coeﬃcients (q = 0). In
+the second and third cases, 95% and 99% of the wavelet coeﬃcients are set to zero23.
+
+
+2.3.4  Other methods
+
+Many other methods can be used to perform trend ﬁltering. The most recent include, for
+example, singular spectrum analysis24 (Vautard et al., 1992), support vector machines25
+and empirical mode decomposition (Flandrin et al., 2004). Moreover, we notice that traders
+sometimes use their own techniques (see, inter alia, Ehlers, 2001).
+
+  22In practice, the coeﬃcients ωi are standardised before being computed.
+  23It is interesting to note that the denoising procedure retains some wavelet coeﬃcients corresponding to
+high and medium frequencies and located around the 2008 crisis.
+  24See Appendix A.5 for an illustration.
+  25A brief presentation is given in Appendix A.4.
+
+                                       18
+
+[PAGE 19]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+                              Figure 10: Wavelet ﬁltering
+
+
+
+
+
+2.4  Multivariate ﬁltering
+
+
+Until now, we have assumed that the trend is speciﬁc to a ﬁnancial asset. However, we may
+be interested in estimating the common trend of several ﬁnancial assets. For example, if we
+wanted to estimate the trend of emerging markets equities, we could use a global index like
+the MSCI EM or extract the trend by considering several indices, e.g. the Bovespa index
+(Brazil), the RTS index (Russia), the Nifty index (India), the HSCEI index (China), etc. In
+this case, the trend-cycle model becomes:
+
+
+                         
+                                       y(1)t                    ε(1)t                         
+                                          +                              ...  = xt                                       ... 
+                                y(m)t                ε(m)t
+
+
+where y(j)t  and ε(j)t  are respectively the signal and the noise of the ﬁnancial asset j and xt
+is the common trend. One idea for estimating the common trend is to obtain the mean of
+the speciﬁc trends:
+
+
+                                      1 ∑m
+                                                         ˆxt =          ˆx(j)t
+                      m
+                                            j=1
+
+                                       19
+
+[PAGE 20]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+If we consider moving average ﬁltering, it is equivalent to applying the ﬁlter to the average
+              1 ∑mﬁlter26 ¯yt = m   j=1 y(j)t   . This rule is also valid for some nonlinear ﬁlters such as L1 ﬁltering
+(see Appendix A.2).  In what follows, we consider the two main alternative approaches
+developed in econometrics to estimate a (stochastic) common trend.
+
+
+2.4.1  Error-correction model, common factors and the P-T decomposition
+
+The econometrics of nonstationary time series may also help us to estimate a common trend.
+y(j)t   is said to be integrated of order 1 if the change y(j)t  −y(j)(t−1 is stationary.)  We will note
+y(j)t ∼I (1) and (1 −L) y(j)t ∼I (0). Let us now deﬁne yt =  y(1)t   , . . . , y(m)t      . The vector yt
+is cointegrated of rank r if there exists a matrix β of rank r such that zt = β⊤yt ∼I (0).
+In this case, we show that yt may be speciﬁed by an error-correction model (Engle and
+Granger, 1987):
+              ∑∞
+                        ∆yt = γzt−1 +    Φi∆yt−i + ζt                            (7)
+                                              i=1
+
+where ζt is a I (0) vector process.  Stock and Watson (1988) propose another interesting
+representation of cointegration systems. Let ft be a vector of r common factors which are
+I (1). Therefore, we have:
+
+                                           yt = Aft + ηt                                     (8)
+
+where ηt is a I (0) vector process and ft is a I (1) vector process. One of the diﬃculties with
+this type of model is the identiﬁcation step (Peña and Box, 1987). Gonzalo and Granger
+(1995) suggest deﬁning a permanent-transitory (P-T) decomposition:
+
+                                            yt = Pt + Tt
+
+such that the permanent component Pt is diﬀerence stationary, the transitory component Tt
+is covariance stationary and (∆Pt, Tt) satisﬁes a constrained autoregressive representation.
+Using this framework and some other conditions, Gonzalo and Granger show that we may
+obtain the representation (8) by estimating the relationship (7):
+
+                                             ft = ˘γ⊤yt                                       (9)
+
+where ˘γ⊤γ = 0. They then follow the works of Johansen (1988, 1991) to derive the maximum
+likelihood estimator of ˘γ. Once we have estimated the relationship (9), it is also easy to
+identify the common trend27 ˆxt.
+
+  26We have:
+
+                                          1 ∑m n−1∑
+                                                       ˆxt  =             Liy(j)t−i                       m
+                                            j=1 i=0
+                                 
+                                     n−1∑   ∑m
+                                                          =      Li 1     y(j)t−i                            m
+                                            i=0       j=1
+
+                                     n−1∑
+                        =       Li¯yt−i
+                                            i=0
+
+  27If a common trend exists, it is necessarily one of the common factors.
+
+                                       20
+
+[PAGE 21]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+2.4.2  Common stochastic trend model
+
+Another idea is to consider an extension of the local linear trend model:
+               
+                yt = αxt + εt
+                                  xt = xt−1 + µt−1 + σζζt
+               
+                                 µt = µt−1 + σηηt
+
+       (          )     (         )
+with yt =  y(1)t   , . . . , y(m)t      , εt =  ε(1)t   , . . . , ε(m)t  ∼N (0, Ω), ζt ∼N (0, 1) and ηt ∼N (0, 1).
+Moreover, we assume that εt, ζt and ηt are independent of each other. Given the parameters
+(α, Ω, σζ, ση), we may run the Kalman ﬁlter to estimate the trend xt and the slope µt whereas
+the Kalman smoother allows us to estimate xt−i and µt−i at time t.
+
+Remark 6 The case ση = 0 has been extensively studied by Chang et al.  (2009).  In
+particular, they show that yt is cointegrated with β = Ω−1Γ and Γ a m × (m −1) matrix
+such that Γ⊤Ω−1α = 0 and Γ⊤Ω−1Γ = Im−1. Using the P-T decomposition, they also found
+that the common stochastic trend is given by α⊤Ω−1yt, implying that the above averaging
+rule is not optimal.
+
+
+  We come back to the example given in Figure 6 page 14.  Using the second set of
+parameters, we now consider three stock indices: the S&P 500 index, the Stoxx 600 index
+and the MSCI EM index. For each index, we estimate the ﬁltered trend. Moreover, using the
+previous common stochastic trend model28, we estimate the common trend for the bivariate
+signal (S&P 500, Stoxx 600) and the trivariate signal (S&P 500, Stoxx 600, MSCI EM).
+
+
+                       Figure 11: Multivariate Kalman ﬁltering
+
+
+
+
+
+  28We assume that αj takes the value 1 for the three signals.
+
+                                       21
+
+[PAGE 22]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+3  Trend ﬁltering in practice
+
+3.1  The calibration problem
+
+For the practical use of the trend extraction techniques discussed above, the calibration of
+ﬁltering parameters is crucial. These calibrated parameters must incorporate our prediction
+requirement or they can be mapped to a commonly-known benchmark estimator. These
+constraints oﬀer us some criteria for determining the optimal parameters for our expected
+prediction horizon.  Below, we consider two possible calibration schemes based on these
+criteria.
+
+
+3.1.1  Calibration based on prediction error
+
+One idea for estimating the parameters of a model is to use statistical inference tools. Let
+us consider the local linear trend model. We may estimate the set of parameters (σε, σζ, ση)
+by maximising the log-likelihood function29:
+
+                                1 ∑n                v2t
+                   ℓ=       ln 2π + ln Ft +
+                                2                  Ft                                      t=1
+                                                                     [  ]
+where vt = yt −Et−1 [yt] is the innovation process and Ft = Et−1 v2t   is the variance of vt.
+In Figure 12, we have reported the ﬁltered and smoothed trend and slope estimated by the
+maximum likelihood method. We notice that the estimated components are more noisy than
+those obtained in Figure 6. We can explain this easily because maximum likelihood is based
+on the one-day innovation process. If we want to look at a longer trend, we have to consider
+the innovation process vt = yt −Et−h [yt] where h is the horizon time. We have reported
+the slope for h = 50 days in Figure 12. It is very diﬀerent from the slope corresponding to
+h = 1 day.
+
+
+   The problem is that the computation of the log-likelihood for the innovation process
+vt = yt −Et−h [yt] is trickier because there is generally no analytic expression.  This is
+why we do not recommend this technology for trend ﬁltering problems, because the trends
+estimated are generally very short-term. A better solution is to employ a cross-validation
+procedure to calibrate the parameters θ of the ﬁlters discussed above. Let us consider the
+calibration scheme presented in Figure 13. We divide our historical data into a training set
+and a validation set, which are characterised by two time parameters T1 and T2. The size
+of training set T1 controls the precision of our calibration, for a ﬁxed parameter θ. For this
+training set, the value of the expectation of Et−h [yt] is computed. The second parameter
+
+  29Another way of estimating the parameters is to consider the log-likelihood function in the frequency
+domain analysis (Roncalli, 2010). In the case of the local linear trend model, the stationary form of yt is
+S (yt) = (1 −L)2 yt. We deduce that the associated log-likelihood function is:
+
+                                       n−1∑           n−1∑ I (λj)                  ℓ= −n ln 2π −1     ln f (λj) −1
+                                2        2                                                        2                                                                f (λj)                                           j=0                                                          j=0
+
+where I (λj) is the periodogram of S (yt) and f (λ) is the spectral density:
+
+                                σ2η + 2 (1 −cos λ) σ2ζ + 4 (1 −cos λ)2 σ2ε
+                           f (λ) =
+                                              2π
+
+because we have:
+                     S (yt) = σηηt−1 + σζ (1 −L) ζt + σε (1 −L)2 εt
+
+
+                                       22
+
+[PAGE 23]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+           Figure 12: Maximum likelihood of the trend and slope components
+
+
+
+
+
+T2 determines the size of the validation set, which is used to estimate the prediction error:
+
+                                 n−h∑
+                             e (θ; h) =     (yt −Et−h [yt])2
+                                         t=1
+
+This quantity is directly related to the prediction horizon h = T2 for a given investment
+strategy. The minimisation of the prediction error leads to the optimal value θ⋆of the ﬁlter
+parameters which will be used to predict the trend for the test set. For example, we apply
+this calibration scheme for L1 ﬁltering for h equal to 50 days.  Figure 14 illustrates the
+calibration procedure for the S&P 500 index with T1 = 400 and T2 = 50. Minimising the
+cumulative prediction error over the validation set gives the optimal value λ⋆= 7.03.
+
+
+      Figure 13: Cross-validation procedure for determining optimal parameters θ⋆
+
+                      Training set     Test set           Forecasting
+                                  |      - |    -            |    -
+                           T1           T2                                                         T2    -                  |                                                  ∥
+                        Historical data              Today       Prediction
+
+
+
+
+3.1.2  Calibration based on benchmark estimator
+
+The trend ﬁltering algorithm can be calibrated with a benchmark estimator. In order to
+illustrate this idea, we present in this discussion the calibration procedure for L2 ﬁlters by
+
+                                       23
+
+[PAGE 24]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+        Figure 14: Calibration procedure with the S&P 500 index for the L1 ﬁlter
+
+
+
+
+
+using spectral analysis. Though the L2 ﬁlter provides an explicit solution which is a great
+advantage for numerical implementation, the calibration of the smoothing parameter λ is
+not straightforward. We propose to calibrate the L2 ﬁlter by comparing the spectral density
+of this ﬁlter with that obtained using the uniform moving average ﬁlter with horizon n for
+which the spectral density is:
+
+                                         n−1       2
+                       MA       1 ∑                             f   (ω) =         e−iωt
+                                       n2
+                                                t=0
+                                                       (           )−1
+For the L2 ﬁlter, the solution has the analytical form ˆx = 1 + 2λD⊤D    y. Therefore, the
+spectral density can also be computed explicitly:
+                     (                      )2
+                   HP                   1                     f   (ω) =
+                                1 + 4λ (3 −4 cos ω + cos 2ω)
+
+                                                      (This spectral density can then be approximated by 1/ 1 + 2λω4)2.  Hence, the spectral
+width is (2λ)−1/4 for the L2 ﬁlter whereas it is 2πn−1 for the uniform moving average ﬁlter.
+The calibration of the L2 ﬁlter could be achieved by matching these two quantities. Finally,
+we obtain the following relationship:
+
+                                   (                                        1                                     n )4
+                           λ ∝λ⋆=
+                                        2  2π
+
+In Figure 15, we represent the spectral density of the uniform moving average ﬁlter for
+diﬀerent window sizes n. We also report the spectral density of the corresponding L2 ﬁlters.
+To obtain this, we calibrated the optimal parameter λ⋆by least square minimisation. In
+
+                                       24
+
+[PAGE 25]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+Figure 16, we compare the optimal estimator λ⋆with that corresponding to 10.27 × λ⋆. We
+notice that the approximation is very good30.
+
+
+              Figure 15: Spectral density of moving average and L2 ﬁlters
+
+
+
+
+
+3.2  What about the variance of the estimator?
+
+Let ˆµt be the estimator of the slope of the trend. There may be a confusion between the
+estimator of the slope and the estimated value of the slope (or the estimate). The estimator
+is a random variable and is deﬁned by a probability distribution function. Based on the
+sample data, the estimator takes a value which is the estimate of the slope. Suppose that
+we obtain an estimate of 10%. It means that 10% is the most likely value of the slope given
+the data. But it does not mean that 10% is the true value of the slope.
+
+
+3.2.1  Measuring the eﬃciency of trend ﬁlters
+
+Let µ0t be the true value of the slope. In statistical inference, the quality of an estimator is
+deﬁned by the mean squared error (or MSE):
+                                            [(       )2]
+                    MSE (ˆµt) = E    ˆµt −µ0t
+
+It indicates how far the estimates are from the true value. We say that the estimator ˆµ(1)t
+is more eﬃcient than the estimator ˆµ(2)t    if its MSE is lower:
+                                 (   )      (   )
+                                  ˆµ(1)t  ≻ˆµ(2)t ⇔MSE  ˆµ(1)t  ≤MSE  ˆµ(2)t
+
+  30We estimated the ﬁgure 10.27 using least squares.
+
+                                       25
+
+[PAGE 26]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+Figure 16: Relationship between the value of λ and the length of the moving average ﬁlter
+
+
+
+
+
+We may decompose the MSE statistic into two components:
+                                [                   [(           )]2             MSE (ˆµt) = E  (ˆµt −E [ˆµt])2] + E  E [ˆµt] −µ0t
+
+The ﬁrst component is the variance of the estimator var (ˆµt) whereas the second component
+is the square of the bias B (ˆµt). Generally, we are interested by estimators that are unbiased
+(B (ˆµt) = 0). If this is the case, comparing two estimators is equivalent to comparing their
+variances.
+
+   Let us assume that the price process is a geometric Brownian motion:
+
+                             dSt = µ0St dt + σ0St dWt
+
+In this case, the slope of the trend is constant and is equal to µ0. In Figure 17, we have
+reported the probability density function of the estimator ˆµt when the true slope µ0 is 10%.
+We consider the estimator based on a uniform moving average ﬁlter of length n. First, we
+notice that using ﬁlters is better than using the noisy signal. We also observe that the
+variance of the estimators increases with the parameter σ0 and decreases with the length n.
+
+
+3.2.2  Trend detection versus trend ﬁltering
+
+In the previous paragraph, we saw that an estimate of the trend may not be signiﬁcant if
+the variance of the estimator is too large. Before computing an estimate of the trend, we
+then have to decide if there is a trend or not. This process is called trend detection. Mann
+(1945) considers the following statistic:
+
+                               n−2∑ n−1∑
+                              S(n)t =         sgn (yt−i −yt−j)
+                                     i=0 j=i+1
+
+                                       26
+
+[PAGE 27]
+Trend Filtering Methods for Momentum Strategies
+
+
+
+
+      Figure 17: Density of the estimator ˆµt
+
+
+
+
+
+   Figure 18: Impact of µ0 on the estimator ˆµt
+
+
+
+
+
+                     27
+
+[PAGE 28]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+with sgn (yt−i −yt−j) = 1 if yt−i > yt−j and sgn (yt−i −yt−j) = −1 if yt−i < yt−j. We
+have31:                        (   )                                n (n −1) (2n + 5)
+                             var  S(n)t  =
+                                             18
+We can show that:
+                  −n (n + 1) ≤S(n)t ≤n (n + 1)
+                                2                2
+The bounds are reached if yt < yt−i (negative trend) or yt > yt−i (positive trend) for i ∈N∗.
+We can then normalise the score:
+
+                                               2S(n)t                                    S(n)t  =
+                                 n (n + 1)
+
+S(n)t   takes the value +1 (or −1) if we have a perfect positive (or negative) trend. If there is
+no trend, it is obvious that S(n)t  ≃0. Under this null hypothesis, we have:
+
+                                  Z(n)t  n→∞N−→    (0, 1)
+
+with:
+                                                 S(n)t
+                                 Z(n)t  = √   (   )
+                                            var  S(n)t
+
+
+   In Figure 19, we reported the normalised score S(n)t   for the S&P 500 index and diﬀerent
+values of n.  Statistics relating to the null hypothesis are given in Table 2 for the study
+period. We notice that we generally reject the hypothesis that there is no trend when we
+consider a period of one year. The number of cases when we observe a trend increases if we
+consider a shorter period. For example, if n is equal to 10 days, we accept the hypothesis
+that there is no trend in 42% of cases when the conﬁdence level α is set to 90%.
+
+
+       Table 2: Frequencies of rejecting the null hypothesis with conﬁdence level α
+
+                α            90%    95%    99%
+                 n = 10 days    58.06%  49.47%  29.37%
+                 n = 3 months  85.77%  82.87%  76.68%
+                 n = 1 year     97.17%  96.78%  95.33%
+
+
+Remark 7 We have reported the statistic S(10)t    against the trend estimate32 ˆµt for the S&P
+500 index since January 2000. We notice that ˆµt may be positive whereas S(10)t    is negative.
+This illustrates that a trend measurement is just an estimate. It does not mean that a trend
+exists.
+
+
+  31If there are some tied sequences (yt−i = yt−i−1), the formula becomes:
+                     (                                               )
+                  (   )                  ∑g                               1
+                    var  S(n)t  =    n (n −1) (2n + 5) −    nk (nk −1) (2nk + 5)
+                              18
+                                                  k=1
+
+with g the number of tied sequences and nk the number of data points in the kth tied sequence.
+  32It is computed with a uniform moving average of 10 days.
+
+                                       28
+
+[PAGE 29]
+Trend Filtering Methods for Momentum Strategies
+
+
+
+
+Figure 19: Trend detection for the S&P 500 index
+
+
+
+
+
+ Figure 20: Trend detection versus trend ﬁltering
+
+
+
+
+
+                     29
+
+[PAGE 30]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+3.3  From trend ﬁltering to trend forecasting
+
+There are two possible applications for the trend following problem.  First, trend ﬁltering
+can analyse the past. A noisy signal can be transformed into a smoother signal, which can be
+interpreted more easily. An ex-post analysis of this kind can, for instance, clearly separate
+increasing price periods from decreasing price periods. This analysis can be performed on
+any time series, or even on a random walk. For example, we have reported four simulations
+of a geometric Brownian motion without drift and annual volatility of 20% in Figure 21. In
+this context, trend ﬁltering could help us to estimate the diﬀerent trends in the past.
+
+
+
+        Figure 21: Four simulations of a geometric Brownian motion without drift
+
+
+
+
+
+  On the other hand, trend analysis may be used as a predictive tool.  Prediction is a
+much more ambitious objective than analysing the past.  It cannot be performed on any
+time series. For instance, trend following predictions suppose that the last observed trend
+inﬂuences future returns. More precisely, these predictors suppose that positive (or negative)
+trends are more likely to be followed by positive (or negative) returns. Such an assumption
+has to be tested empirically. For example, it is obvious that the time series in Figure 21
+exhibit certain trends, whereas we know that there is no trend in a geometric Brownian
+motion without drift. Thus, we may still observe some trends in an ex-post analysis. It does
+not mean, however, that trends will persist in the future.
+
+   The persistence of trends is tested here in a simple framework for major ﬁnancial in-
+dices33. For each of these indices the average one-month returns are separated into two sets.
+The ﬁrst set includes one-month returns that immediately follow a positive three-month
+return (this is negative for the second set). The average one-month return is computed for
+each of these two sets, and the results are given in Table 3.  These results clearly show
+
+  33The study period begins in January 1995 (January 1999 for the MSCI EM) and ﬁnish in October 2011.
+
+                                       30
+
+[PAGE 31]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+         Figure 22: Distribution of the conditional standardised monthly return
+
+
+
+
+
+that, on average, higher returns can be expected after a positive three-month return than
+after a negative three-month period. Therefore, observation of the current trend may have a
+predictive value for the indices under consideration. Moreover, we consider the distribution
+of the one-month returns, based on past three-month returns. Figure 22 illustrates the case
+of the GSCI index. In the ﬁrst quadrant, the one-month returns are divided into two sets,
+depending on whether the previous three-month return is positive or negative. The cumu-
+lative distributions of these two sets are shown. In the second quadrant, we consider, on
+the one hand, the distribution of one-month returns following a three-month return below
+−5% and, on the other hand, the distribution of returns following a three-month return
+exceeding +5%. The same procedure is repeated in the other quadrants, for a 10% and a
+15% threshold. This simple test illustrates the usefulness of trend following strategies. Here,
+trends seem persistent enough to study such strategies. Of course, on other time scales or
+for other assets, one may obtain opposite results that would support contrarian strategies.
+
+
+          Table 3: Average one-month conditional return based on past trends
+
+                 Trend             Positive   Negative  Diﬀerence
+                  Eurostoxx 50     1.1%      0.2%     0.9%
+             S&P 500         0.9%      0.5%     0.4%
+              MSCI WORLD    0.6%    −0.3%     1.0%
+              MSCI EM        1.9%    −0.3%     2.2%
+              TOPIX          0.4%    −0.4%     0.9%
+             EUR/USD       0.2%    −0.2%     0.4%
+              USD/JPY        0.2%    −0.2%     0.4%
+               GSCI            1.3%    −0.4%     1.6%
+
+
+
+                                       31
+
+[PAGE 32]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+4  Conclusion
+
+The ultimate goal of trend ﬁltering in ﬁnance is to design portfolio strategies that may
+beneﬁt from these trends. But the path between trend measurement and portfolio allocation
+is not straightforward. It involves studies and explanations that would not ﬁt in this paper.
+Nevertheless, let us point out some major issues. Of course, the ﬁrst problem is the selection
+of the trend ﬁltering method. This selection may lead to a single procedure or to a pool of
+methods. The selection of several methods raises the question of an aggregation procedure.
+This can be done through averaging or dynamic model selection, for instance. The resulting
+trend indicator is meant to forecast future asset returns at a given horizon.
+
+    Intuitively, an investor should buy assets with positive return forecasts and sell assets
+with negative forecasts. But the size of each long or short position is a quantitative problem
+that requires a clear investment process.  This process should take into account the risk
+entailed by each position, compared with the expected return.  Traditionally, individual
+risks can be calculated in relation to asset volatility. A correlation matrix can aggregate
+those individual risks into a global portfolio risk. But in the case of a multi-asset trend
+following strategy, should we consider the correlation of assets or the correlation of each
+individual strategy? These may be quite diﬀerent, as the correlations between strategies
+are usually smaller than the correlations between assets in absolute terms. Even when the
+portfolio risks can be calculated, the distribution of those risks between assets or strategies
+remains an open problem. Clearly, this distribution should take into account the individual
+risks, their correlations and the expected return of each asset. But there are many competing
+allocation procedures, such as Markowitz portfolio theory or risk budgeting methods.
+
+   In addition, the total amount of risk in the portfolio must be decided. The average target
+volatility of the portfolio is closely related to the risk aversion of the ﬁnal investor. But this
+total amount of risk may not be constant over time, as some periods could bring higher
+expected returns than others. For example, some funds do not change the average size of
+their positions during period of high market volatility. This increases their risks, but they
+consider that their return opportunities, even when risk-adjusted, are greater during those
+periods. On the contrary, some investors reduce their exposure to markets during volatility
+peaks, in order to limit their potential drawdowns.  Anyway, any consistent investment
+process should measure and control the global risk of the portfolio.
+
+   These are just a few questions relating to trend following strategies. Many more arise in
+practical cases, such as execution policies and transaction cost management. Each of these
+issues must be studied in depth, and re-examined on a regular basis. This is the essence of
+quantitative management processes.
+
+
+
+
+
+                                       32
+
+[PAGE 33]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+A   Statistical complements
+
+A.1  State space model and Kalman ﬁltering
+
+A state space model is deﬁned by a transition equation and a measurement equation. In
+the measurement equation, we postulate the relationship between an observable vector and
+a state vector, while the transition equation describes the generating process of the state
+variables. The state vector αt is generated by a ﬁrst-order Markov process of the form:
+
+                               αt = Ttαt−1 + ct + Rtηt
+
+where αt is the vector of the m state variables, Tt is a m × m matrix, ct is a m × 1 vector
+and Rt is a m × p matrix. The measurement equation of the state-space representation is:
+
+                                        yt = Ztαt + dt + εt
+
+where yt is a n-dimension time series, Zt is a n × m matrix, dt is a n × 1 vector. ηt and εt
+are assumed to be white noise processes of dimensions p and n respectively. These two last
+uncorrelated processes are Gaussian with zero mean and respective covariance matrices Qt
+and Ht. α0 ∼N (a0, P0) describes the initial position of the state vector. We deﬁne at and
+a t|t−1 as the optimal estimators of αt based on all the information available respectively at
+time t and t −1. Let Pt and P t|t−1 be the associated covariance matrices34. The Kalman
+ﬁlter consists of the following set of recursive equations (Harvey, 1990):
+             
+                        a                    =                         +                                   Ttat−1                                                        ct                                   t|t−1
+                                ⊤                    P                    =                           +                                 TtPt−1T                                    t|t−1                                                                  t                                    RtQtR⊤t
+                          y                    =                          +                                            Zta                                                    dt                                   t|t−1                                                 t|t−1
+                                vt = yt −y t|t−1
+                  =                           Ft                           ZtP                          + Ht                                   t|t−1Z⊤                                                                t
+                  =                            a                       + P                              at                                         t|t−1                                         t|t−1Z⊤                                                                        t                                (                                   Ft−1 vt)                                                         −1
+                           Pt = Im −P t|t−1Z⊤t F t  Zt P t|t−1
+
+where vt is the innovation process with covariance matrix Ft and y t|t−1 = Et−1 [yt]. Harvey
+(1989) shows that we can obtain a t+1|t directly from a t|t−1:
+
+                a t+1|t = (Tt+1 −KtZt) a t|t−1 + Ktyt + (ct+1 −Ktdt)
+where Kt = Tt+1P t|t−1Z⊤t F t−1 is the matrix of gain. We also have:
+                                                 (                 )
+                a t+1|t = Tt+1a t|t−1 + ct+1 + Kt  yt −Zta t|t−1 −dt
+
+Finally, we obtain:               {
+                                   yt =  Zta t|t−1 + dt + vt
+                       a t+1|t =  Tt+1a t|t−1 + ct+1 + Ktvt
+This system is called the innovation representation.
+                                                                    [(         ) (        )⊤]
+   Let t⋆be a ﬁxed given date. We deﬁne a t|t⋆= Et⋆[αt] and P t|t⋆= Et⋆  a t|t⋆−αt  a t|t⋆−αt
+with t ≤t⋆. We have a t⋆|t⋆= at⋆and P t⋆|t⋆= Pt⋆. The Kalman smoother is then deﬁned
+by the following set of recursive equations:
+
+                                      −1
+                  P t∗ =  PtT t+1P⊤                                          (t+1|t                                                         )
+                    a t|t⋆ =  at + Pt∗ (a t+1|t⋆−a t+1|t )
+                 P t|t⋆ =  Pt + Pt∗ P t+1|t⋆−P t+1|t Pt∗⊤
+                                                              [
+  34We have  at =  Et [αt],  a t|t−1 =  Et−1 [αt],  Pt =  Et  (at −αt) (at −αt)⊤] and P t|t−1 =
+     [(           ) (         )⊤]
+Et−1  a t|t−1 −αt  a t|t−1 −αt    where Et indicates the conditional expectation operator.
+
+                                       33
+
+[PAGE 34]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+A.2  L1 ﬁltering
+
+A.2.1  The dual problem
+
+The L1 ﬁltering problem can be solved by considering the dual problem which is a QP
+programme. We ﬁrst rewrite the primal problem with a new variable z = Dˆx:
+
+                                   1
+                          min    ∥y −ˆx∥22 + λ ∥z∥1                                   2
+                                      u.c.  z = Dˆx
+
+We now construct the Lagrangian function with the dual variable ν ∈Rn−2:
+
+                              1
+              L (ˆx, z, v) =  ∥y −ˆx∥22 + λ ∥z∥1 + ν⊤(Dˆx −z)                              2
+
+The dual objective function is obtained in the following way:
+                            inf ˆx,z L (ˆx, z, ν) = −1      + y⊤D⊤ν                             2ν⊤DD⊤ν
+
+for −λ1 ≤ν ≤λ1. According to the Kuhn-Tucker theorem, the initial problem is equivalent
+to the dual problem:
+
+                                  1
+                          min  2ν⊤DD⊤ν −y⊤D⊤ν
+                                     u.c.  −λ1 ≤ν ≤λ1
+
+This QP programme can be solved by a traditional Newton algorithm or by interior-point
+methods, and ﬁnally, the solution of the trend is:
+
+                                                            ˆx = y −D⊤ν
+
+
+A.2.2  Solving using interior-point algorithms
+
+We brieﬂy present the interior-point algorithm of Boyd and Vandenberghe (2009) in the case
+of the following optimisation problem:
+
+                      min  f0 (θ)
+                    {
+                          Aθ = b
+                                u.c.
+                                          fi (θ) < 0   for i = 1, . . . , m
+
+where f0, . . . , fm : Rn →R are convex and twice continuously diﬀerentiable and rank (A) =
+p < n. The inequality constraints will become implicit if the problem is rewritten as:
+
+              ∑m
+                          min  f0 (θ) +    I−(fi (θ))
+                                                i=1
+                                     u.c.  Aθ = b
+
+where I−(u) : R →R is the non-positive indicator function35. This indicator function is
+discontinuous, so the Newton method can not be applied. In order to overcome this prob-
+lem, we approximate I−(u) using the logarithmic barrier function I⋆−(u) = −τ −1 ln (−u)
+
+  35We have:                      {
+                                               0   u ≤0
+                                I−(u) =
+                        ∞  u > 0
+
+
+                                       34
+
+[PAGE 35]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+with τ →∞.  Finally the Kuhn-Tucker condition for this approximation problem gives
+rt (θ, λ, ν) = 0 with:
+                                 
+                             ∇f0 (θ) + ∇f (θ)⊤λ + A⊤ν
+                        rτ (θ, λ, ν) =    −diag (λ) f (θ) −τ −11  
+                                   Aθ −b
+
+The solution of rτ (θ, λ, ν) = 0 can be obtained using Newton’s iteration for the triple
+π = (θ, λ, ν):
+                            rτ (π + ∆π) ≃rτ (π) + ∇rτ (π) ∆π = 0
+This equation gives the Newton step ∆π = −∇rτ (π)−1 rτ (π), which deﬁnes the search
+direction.
+
+
+A.2.3  The multivariate case
+
+In the multivariate case, the primal problem is:
+
+                                1 ∑m             2
+                        min           y(j) −ˆx  + λ ∥z∥1                                2                2
+                                     j=1
+                                  u.c.  z = Dˆx
+
+The dual objective function becomes:
+                                               1 ∑m (     )⊤(      )           inf ˆx,z L (ˆx, z, ν) = −1      + ¯y⊤D⊤ν +         y(j) −¯y     y(j) −¯y                   2ν⊤DD⊤ν            2
+                                                     j=1
+
+for −λ1 ≤ν ≤λ1. According to the Kuhn-Tucker theorem, the initial problem is equivalent
+to the dual problem:
+
+                                  1
+                          min  2ν⊤DD⊤ν −¯y⊤D⊤ν
+                                     u.c.  −λ1 ≤ν ≤λ1
+
+The solution is then ˆx = ¯y −D⊤ν.
+
+
+A.2.4  The scaling of the smoothing parameter
+
+We can attempt to estimate the order of magnitude of the parameter λmax by considering
+the continuous case. We assume that the signal is a process Wt. The value of λmax in the
+discrete case is deﬁned by:
+                                        (                            λmax =  DD⊤)−1 Dy
+                               ∞
+                                       ∫T
+can be considered as the ﬁrst primitive I1 (T) =  0 Wt dt of the process Wt  if D = D1                                       ∫T ∫t
+(L1 −C ﬁltering) or the second primitive I2 (T) =  0   0 Ws ds dt of Wt if D = D2 (L1 −T
+ﬁltering). We have:
+                         ∫T
+                                I1 (T) =    Wt dt
+                                                0
+                              ∫T
+                      = WT T −      t dWt
+                                                         0
+                         ∫T
+                      =      (T −t) dWt
+                                                0
+
+                                       35
+
+[PAGE 36]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+The process I1 (T) is a Wiener integral (or a Gaussian process) with variance:
+                         ∫T                                [      ]                                             T 3
+                   E I21 (T) =    (T −t)2 dt =
+                                               0               3
+
+In this case, we expect that λmax ∼T 3/2. The second order primitive can be calculated in
+the following way:
+                   ∫T
+                        I2 (T) =     I1 (t) dt
+                                    0
+                         ∫T
+                = I1 (T) T −      t dI1 (T)
+                                                0
+                         ∫T
+                = I1 (T) T −    tWt dt
+                                                0
+                                                2    ∫T
+                = I1 (T) T −T WT +      t2 dWt
+                                      2          0  2
+                                       2    ∫T (        )                                                                     t2
+                                                       2 −Tt +                = −T WT +     T                                               dWt
+                              2          0             2
+                    ∫T
+                            1
+                =      (T −t)2 dWT
+                            2  0
+
+This quantity is again a Gaussian process with variance:
+                         ∫T                  5                                   1              T
+                          E[I22 (T)] =      (T −t)4 dt =
+                                   4  0              20
+
+In this case, we expect that λmax ∼T 5/2.
+
+A.3  Wavelet analysis
+
+The time analysis can detect anomalies in time series, such as a market crash on a speciﬁc
+date. The frequency analysis detects repeated sequences in a signal. The double dimension
+analysis makes it possible to coordinate time and frequency detection, as we use a larger
+time window than a smaller frequency interval (see Figure 23). In this area, the uncertainty
+of localisation is 1/dt, with dt the sampling step and f = 1/dt the sampling frequency. The
+wavelet transform can be a solution to analysing time series in terms of the time-frequency
+dimension.
+
+   The ﬁrst wavelet approach appeared in the early eighties in seismic data analysis. The
+term wavelet was introduced in the scientiﬁc community by Grossmann and Morlet (1984).
+Since 1986, a great deal of theoretical research, including wavelets, has been developed.
+The wavelet transform uses a basic function, called the mother wavelet, then dilates and
+translates it to capture features that are local in time and frequency. The distribution of the
+time-frequency domain with respect to the wavelet transform is long in time when capturing
+low frequency events and long in frequency when capturing high frequency events. As an
+example, we represent some mother wavelets in Figure 24.
+
+   The aim of wavelet analysis is to separate signal trends and details.  These diﬀerent
+components can be distinguished by diﬀerent levels of resolution or diﬀerent sizes/scales
+of detail. In this sense, it generates a phase space decomposition which is deﬁned by two
+
+                                       36
+
+[PAGE 37]
+Trend Filtering Methods for Momentum Strategies
+
+
+
+
+      Figure 23: Time-frequency dimension
+
+
+
+
+
+        Figure 24: Some mother wavelets
+
+
+
+
+
+                     37
+
+[PAGE 38]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+parameters (scale and location) in opposition to a Fourier decomposition. A wavelet ψ (t)
+is a function of time t such that:
+                    ∫+∞
+                            ψ (t) dt =  0
+                       −∞
+                  ∫+∞
+                                      |ψ (t)|2 dt =  1
+                      −∞
+
+The continuous wavelet transform is a function of two variables W(u, s) and is given by
+projecting the time series x (t) onto a particular wavelet ψ by:
+                      ∫+∞
+              W (u, s) =     x (t) ψu,s (t) dt
+                          −∞
+with:                              )                                       1  (t −u
+                                  ψu,s (t) = √sψ    s
+which corresponds to the mother wavelet translated by u (location parameter) and dilated
+by s (scale parameter). If the wavelet satisﬁes the previous properties, the inverse operation
+may be performed to produce the original signal from its wavelet coeﬃcients:
+                  ∫+∞ ∫+∞
+                   x (t) =      W (u, s) ψ (u, s) du ds
+                     −∞  −∞
+
+
+   The continuous wavelet transform of a time series signal x (t) gives an inﬁnite number
+of coeﬃcients W(u, s) where u ∈R and s ∈R+, but many coeﬃcients are close or equal to
+zero. The discrete wavelet transform can be used to decompose a signal into a ﬁnite number
+of coeﬃcients where we use s = 2−j as the scale parameter and u = k2−j as the location
+parameter with j ∈Z and k ∈Z. Therefore ψu,s (t) becomes:
+                                                                   j  (       )
+                                    ψj,k(t) = 2 2 ψ  2jt −k
+
+where j = 1, 2, ..., J in a J-level decomposition. The wavelet representation of a discrete
+signal x (t) is given by:
+
+                                      J−1∑ 2j−1∑
+                    x (t) = s(0)ϕ (t) +          d(j),kψj,k(t)
+                                           j=0 k=0
+
+where ϕ (t) = 1  if t ∈[0, 1] and J  is the number of multi-resolution levels.  Therefore,
+computing the wavelet transform of the discrete signal is equivalent to compute the smooth
+coeﬃcient s(0) and the detail coeﬃcients d(j),k.
+
+   Introduced by Mallat (1989), the multi-scale analysis corresponds to the following iter-
+ative scheme:
+
+                                               x
+                         ↙   ↘
+                                                s               d
+                     ↙   ↘
+                                      ss                 sd
+                ↙    ↘
+                            sss                ssd
+           ↙   ↘
+                  ssss               sssd
+
+                                       38
+
+[PAGE 39]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+where the high-pass ﬁlter deﬁnes the details of the data and the low-pass ﬁlter deﬁnes the
+smoothing signal. In this example, we obtain these wavelet coeﬃcients:
+                                
+                                           ssss
+                                          sssd
+                  W =   ssd                                                                                                                                                sd       
+                                        d
+
+Applying this pyramidal algorithm to the time series signal up to the J resolution level gives
+us the wavelet coeﬃcients:                                  
+                                                       s(0)
+                                                     d(0)
+                                                     d(1)
+                 W =          .
+                                                                           .                                                                                                                                                                                                                                                                 .                       
+                                            d(J−1)
+
+
+A.4  Support vector machine
+
+The support vector machine is an important part of statistical learning theory (Hastie et al.,
+2009). It was ﬁrst introduced by Boser et al. (1992) and has been used in various domains
+such as pattern recognition, biometrics, etc. This technique can be employed in diﬀerent
+contexts such as classiﬁcation, regression or density estimation (see Vapnik, 1998). Recently,
+applications in ﬁnance have been developed in two main directions. The ﬁrst employs the
+SVM as a nonlinear estimator in order to forecast the trend or volatility of ﬁnancial assets.
+In this context, the SVM is used as a regression technique with the possibility for extension
+to nonlinear cases thank to the kernel approach. The second direction consists of using
+the SVM as a classiﬁcation technique which aims to deﬁne the stock selection in trading
+strategies.
+
+
+A.4.1 SVM in a nutshell
+
+We illustrate here the basic idea of the SVM as a classiﬁcation method. Let us deﬁne the
+training data set consisting of n pairs of “input/output” points (xi, yi) where xi ∈X and
+yi ∈{−1, 1}. The idea of linear classiﬁcation is to look for a possible hyperplane that
+can separate {xi ⊂X} into two classes corresponding to the labels yi = ±1. It consists of
+constructing a linear discriminant function h (x) = w⊤x+b where w is the vector of weights
+and b is called the bias. The hyperplane is then deﬁned by the following equation:
+
+                H = {x : h (x) = w⊤x + b = 0}
+
+The vector w is interpreted as the normal vector to the hyperplane. We denote its norm
+∥w∥and its direction ˆw = w/ ∥w∥. In Figure 25, we give a geometric interpretation of the
+margin in the linear case. Let x+ and x−be the closest points to the hyperplane from the
+positive side and negative side. These points determine the margin to the boundary from
+which the two classes of points D are separated:
+
+                                  1                 1
+                 mD (h) =  ˆw⊤(x+ −x−) =
+                                  2             ∥w∥
+
+                                       39
+
+[PAGE 40]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+           Figure 25: Geometric interpretation of the margin in a linear SVM
+
+
+
+
+
+The main idea of a maximum margin classiﬁer is to determine the hyperplane that maximises
+the margin. For a separable dataset, the margin SVM is deﬁned by the following optimisation
+problem:
+
+                            1
+                     min    ∥w∥2
+                              w,b   2
+                                 (         )
+                              u.c.   yi w⊤xi + b > 1   for i = 1, . . . , n
+
+
+The historical approach to solving this quadratic problem with nonlinear constraints is to
+map the primal problem to the dual problem:
+
+          ∑n   ∑n ∑n
+                   max      αi −1       αiαjyiyjx⊤i xj
+                        α           2
+                                   i=1        i=1 j=1
+                               u.c.   αi ≥0   for i = 1, . . . , n
+
+Because of the Kuhn-Tucker conditions, the optimised solution (w⋆, b⋆) of the primal problem
+          ∑n
+is given by w⋆=   i=1 α⋆i yixi where α⋆= (α⋆1, . . . , α⋆n) is the solution of the dual problem.
+
+
+  We notice that linear SVM depends on input data via the inner product. An intelligent
+way to extend SVM formalism to the nonlinear case is then to replace the inner product
+with a nonlinear kernel. Hence, the nonlinear SVM dual problem can be obtained by sys-
+tematically replacing the inner product x⊤i xj by a general kernel K (xi, xj). Some standard
+kernels are widely used in pattern recognition, for example polynomial, radial basis or neural
+
+                                       40
+
+[PAGE 41]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+network kernels36. Finally, the decision/prediction function is then given by:
+                         (           )
+              ∑n
+                    f (x) = sgn h (x) = sgn     αiyiK (x, xi) + b
+                                                i=1
+
+A.4.2 SVM regression
+
+In the last discussion, we presented the basic idea of the SVM in the classiﬁcation context.
+We now show how the regression problem can be interpreted as a SVM problem. In the
+general framework of statistical learning, the SVM problem consists of minimising the risk
+function R (f) depending on the form of the prediction function f (x). The risk function is
+calculated via the loss function L (f (x) , y) which clearly deﬁnes our objective (classiﬁcation
+or regression):                              ∫
+               R (f) =  L (f (x) , y) dP (x, y)
+
+where the distribution P (x, y) can be computed by empirical distribution37 or an approx-
+imated distribution38.  For the regression problem, the loss function is simply deﬁned as
+L (f (x) , y) = (f (x) −y)2 or L (f (x) , y) = |f (x) −y|p in the case of Lp norm.
+
+  We have seen that the linear SVM is a special case of nonlinear SVM within the kernel
+approach. We therefore consider the nonlinear case directly where the approximate function
+of the regression has the following form f (x) = w⊤ϕ (x) + b. In the VRM framework, we
+assume that P (x, y) is a Gaussian noise with variance σ2:
+
+                               1 ∑n
+              R (f) =        |f (xi) −yi|p + σ2 ∥w∥2
+                          n
+                                      i=1
+
+We introduce the variable ξ = (ξ1, . . . , ξn) which satisﬁes yi = f (xi) + ξi. The optimisa-
+tion problem of the risk function can now be written as a QP programme with nonlinear
+constraints:
+
+                           1        (   ∑n                   min    ∥w∥2 + 2nσ2)−1     |ξi|p
+                             w,b,ξ  2
+                                                   i=1
+                           u.c.   yi = w⊤ϕ (xi) + b + ξi   for i = 1, . . . , n
+
+In the present form, the regression looks very similar to the SVM classiﬁcation problem and
+can be solved in the same way by mapping to the dual problem. We notice that the SVM
+regression can be easily generalised in two possible ways:
+
+   1. by introducing a more general loss function such as the ε-SV regression proposed by
+     Vapnik (1998);
+
+   2. by using a weighting distribution ω for the empirical distribution:
+
+              ∑n
+                        dP (x, y) =    ωiδxi (x) δyi (y)
+                                              i=1
+                                            (                         (              (  36We  have,  respectively, K (xi, xj) =  x⊤i xj + 1 )p, K (xi, xj) =  exp −∥xi −xj∥2 / 2σ2))  or
+                 (          )
+K (xi, xj) = tanh ax⊤i xj −b  .
+  37This framework called ERM was ﬁrst introduced by Vapnik and Chervonenskis (1991).
+  38This framework is called VRM (Chapelle, 2002).
+
+                                       41
+
+[PAGE 42]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+
+    As ﬁnancial series have short memory and depend more on the recent past, an asym-
+     metric weight distribution focusing on recent data would improve the prediction39.
+
+The dual problem in the case p = 1 is given by:
+
+                       max  α⊤y −1                             α       2α⊤Kα
+                       {
+                             α⊤1 = 0
+                                     u.c.           (                                              |α| ≤ 2nσ2)−1 1
+
+As previously, the optimal vector α⋆is obtained by solving the QP programme. We then
+          ∑n
+deduce that w⋆=   i=1 α⋆i ϕ (xi) and b⋆is computed using the Kuhn-Tucker condition:
+
+                       w⊤ϕ (xi) + b −yi = 0
+
+for support vectors (xi, yi). In order to achieve a good level of accuracy for the estimation
+of b, we average out the set of support vectors and obtain b⋆. The SVM regressor is then
+given by the following formula:
+
+            ∑n
+                            f (x) =    α⋆i K (x, xi) + b⋆
+                                        i=1
+
+with K (x, xi) = ϕ (x) ϕ (xi).
+
+   In Figure 26, we apply SVM regression with the Gaussian kernel to the S&P 500 index.
+The kernel parameter σ characterises the estimation horizon which is equivalent to period
+n in the moving average regression.
+
+A.5  Singular spectrum analysis
+
+In recent years the singular spectrum analysis (SSA) technique has been developed as a
+time-frequency domain method40.  It consists of decomposing a time series into a trend,
+oscillatory components and a noise.
+
+   The method is based on the principal component analysis of the auto-covariance matrix
+of the time series y = (y1, . . . , yt). Let n be the window length such that n = t −m + 1 with
+m < t/2. We deﬁne the n × m Hankel matrix H as the matrix of the m concatenated lag
+vector of y:                               
+                                 y1    y2     y3      · · ·   ym
+                 y2    y3     y4      · · ·  ym+1                                
+                                                                                                                                                                                                                                                                                                                         ...               H =                                                 y3    y4     y5      · · ·
+                               
+                                                   ...                        ...                              ...      ...   yt−1
+                              yn  yn+1  yn+2    · · ·     yt
+
+We recover the time series y by diagonal averaging:
+
+                                     1 ∑m
+                                   yp =         H(i,j)                                (10)
+                                   αp                                           j=1
+
+  39See Gestel et al. (2001) and Tay and Cao 2002.
+  40Introduced by Broomhead and King (1986).
+
+                                       42
+
+[PAGE 43]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+                               Figure 26: SVM ﬁltering
+
+
+
+
+
+where i = p −j + 1, 0 < i < n + 1 and:
+                 
+                  p               if p < m
+                       αp =   t −p + 1   if p > t −m + 1
+                 
+                  m         otherwise
+
+This relationship seems trivial because each H(i,j) is equal to yp with respect to the condi-
+tions for i and j. But this equality no longer holds if we apply factor analysis. Let C = H⊤H
+be the covariance matrix of H. By performing the eigenvalue decomposition C = V ΛV ⊤, we
+can deduce the corresponding principal components:
+
+                                Pk = HVk
+
+where Vk is the matrix of the ﬁrst kth eigenvectors of C.
+
+   Let us now deﬁne the n × m matrix ˆH as follows:
+
+                                         ˆH = PkV k⊤
+We have ˆH = H if all the components are selected. If k < m, we have removed the noise and
+the trend ˆx is estimated by applying the diagonal averaging procedure (10) to the matrix
+ˆH.
+
+  We have applied the singular spectrum decomposition to the S&P 500 index with diﬀerent
+lags m. For each lag, we compute the Hankel matrix H, then deduce the matrix ˆH using
+only the ﬁrst eigenvector (k = 1) and estimate the corresponding trend. Results are given
+in Figure 27. As for other methods, such as nonlinear ﬁlters, the calibration depends on the
+parameter m, which controls the window length.
+
+                                       43
+
+[PAGE 44]
+Trend Filtering Methods for Momentum Strategies
+
+
+
+
+
+             Figure 27: SSA ﬁltering
+
+
+
+
+
+                     44
+
+[PAGE 45]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+References
+
+ [1] Alexandrov T., Bianconcini S., Dagum E.B., Maass P. and McElroy T. (2008),
+   A Review of Some Modern Approaches to the Problem of Trend Extraction , US Census
+    Bureau, RRS #2008/03.
+
+ [2] Antoniadis A., Gregoire G. and McKeague I.W. (1994), Wavelet Methods for
+    Curve Estimation, Journal of the American Statistical Association, 89(428), pp. 1340-
+     1353.
+
+ [3] Barberis N. and Thaler T. (2002), A Survey of Behavioral Finance, NBER Working
+    Paper, 9222.
+
+ [4] Beveridge S. and Nelson C.R. (1981), A New Approach to the Decomposition of
+    Economic Time Series into Permanent and Transitory Components with Particular
+    Attention to Measurement of the Business Cycle, Journal of Monetary Economics,
+     7(2), pp. 151-174.
+
+ [5] Boser B.E., Guyon I.M. and Vapnik V. (1992), A Training Algorithm for Optimal
+    Margin Classiﬁer, Proceedings of the Fifth Annual Workshop on Computational Learn-
+     ing Theory, pp. 114-152.
+
+ [6] Boyd S. and Vandenberghe L. (2009), Convex Optimization, Cambridge University
+     Press.
+
+ [7] Brockwell P.J. and Davis R.A. (2003), Introduction to Time Series and Forecasting,
+     Springer.
+
+ [8] Broomhead D.S. and King G.P. (1986), On the Qualitative Analysis of Experimental
+    Dynamical Systems, in Sarkar S. (ed.), Nonlinear Phenomena and Chaos, Adam Hilger,
+    pp. 113-144.
+
+ [9] Brown S.J., Goetzmann W.N. and Kumar A. (1998), The Dow Theory: William
+    Peter Hamilton’s Track Record Reconsidered, Journal of Finance, 53(4), pp. 1311-1333.
+
+[10] Burch N., Fishback P.E. and Gordon R. (2005), The Least-Squares Property of the
+    Lanczos Derivative, Mathematics Magazine, 78(5), pp. 368-378.
+
+[11] Carhart M.M. (1997), On Persistence in Mutual Fund Performance, Journal of Fi-
+    nance, 52(1), pp. 57-82.
+
+[12] Chan L.K.C., Jegadeesh N. and Lakonishok J. (1996), Momentum Strategies, Jour-
+     nal of Finance, 51(5), pp. 1681-1713.
+
+[13] Chang Y., Miller J.I. and Park J.Y. (2009), Extracting a Common Stochastic Trend:
+    Theory with Some Applications, Journal of Econometrics, 150(2), pp. 231-247.
+
+[14] Chapelle O. (2002), Support Vector Machine: Induction Principles, Adaptive Tuning
+    and Prior Knowledge, PhD thesis, University of Paris 6.
+
+[15] Cleveland W.P. and Tiao G.C. (1976), Decomposition of Seasonal Time Series: A
+    Model for the Census X-11 Program, Journal of the American Statistical Association,
+     71(355), pp. 581-587.
+
+[16] Cleveland W.S. (1979), Robust Locally Regression and Smoothing Scatterplots, Jour-
+     nal of the American Statistical Association, 74(368), pp. 829-836.
+
+                                       45
+
+[PAGE 46]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+[17] Cleveland W.S. and Devlin S.J. (1988), Locally Weighted Regression: An Approach
+     to Regression Analysis by Local Fitting, Journal of the American Statistical Associa-
+     tion, 83(403), pp. 596-610.
+
+[18] Cochrane J. (2001), Asset Pricing, Princeton University Press.
+
+[19] Cortes C. and Vapnik V. (1995), Support-Vector Networks, Machine Learning, 20(3),
+    pp. 273-297.
+
+[20] D’Aspremont A. (2011), Identifying Small Mean Reverting Portfolios, Quantitative
+    Finance, 11(3), pp. 351-364.
+
+[21] Daubechies I. (1992), Ten Lectures on Wavelets, SIAM.
+
+[22] Daubechies I., Defrise M. and De Mol C. (2004), An Iterative Thresholding Al-
+    gorithm for Linear Inverse Problems with a Sparsity Constraint, Communications on
+    Pure and Applied Mathematics, 57(11), pp. 1413-1457.
+
+[23] Donoho D.L. (1995), De-Noising by Soft-Thresholding, IEEE Transactions on Infor-
+    mation Theory, 41(3), pp. 613-627.
+
+[24] Donoho D.L. and Johnstone I.M. (1994), Ideal Spatial Adaptation via Wavelet
+     Shrinkage, Biometrika, 81(3), pp. 425-455.
+
+[25] Donoho D.L. and Johnstone I.M. (1995), Adapting to Unknown Smoothness via
+    Wavelet Shrinkage, Journal of the American Statistical Association, 90(432), pp. 1200-
+     1224.
+
+[26] Doucet A., De Freitas N. and Gordon N. (2001), Sequential Monte Carlo in Prac-
+      tice, Springer.
+
+[27] Ehlers J.F. (2001), Rocket Science for Traders: Digital Signal Processing Applications,
+    John Wiley & Sons.
+
+[28] Elton E.J. and Gruber M.J. (1972), Earnings Estimates and the Accuracy of Expec-
+     tational Data, Management Science, 18(8), pp. 409-424.
+
+[29] Engle R.F. and Granger C.W.J. (1987), Co-Integration and Error Correction: Rep-
+     resentation, Estimation, and Testing, Econometrica, 55(2), pp. 251-276.
+
+[30] Fama E. (1970), Eﬃcient Capital Markets: A Review of Theory and Empirical Work,
+    Journal of Finance, 25(2), pp. 383-417.
+
+[31] Flandrin P., Rilling G. and Goncalves P. (2004), Empirical Mode Decomposition
+     as a Filter Bank, Signal Processing Letters, 11(2), pp. 112-114.
+
+[32] Fliess M. and Join C. (2009), A Mathematical Proof of the Existence of Trends in
+     Financial Time Series, in El Jai A., AﬁﬁL. and Zerrik E. (eds), Systems Theory:
+    Modeling, Analysis and Control, Presses Universitaires de Perpignan, pp. 43-62.
+
+[33] Fuentes M. (2002), Spectral Methods for Nonstationary Spatial Processes, Biometrika,
+     89(1), pp. 197-210.
+
+[34] Gençay R., Selçuk F. and Whitcher B. (2002), An Introduction to Wavelets and
+    Other Filtering Methods in Finance and Economics, Academic Press.
+
+                                       46
+
+[PAGE 47]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+[35] Gestel T.V., Suykens J.A.K., Baestaens D., Lambrechts A., Lanckriet G.,
+   Vandaele B., De Moor B. and Vandewalle J. (2001), Financial Time Series Pre-
+     diction Using Least Squares Support Vector Machines Within the Evidence Framework,
+   IEEE Transactions on Neural Networks, 12(4), pp. 809-821.
+
+[36] Golyandina N., Nekrutkin V.V. and Zhigljavsky A.A. (2001), Analysis of Time
+     Series Structure: SSA and Related Techniques, Chapman & Hall, CRC.
+
+[37] Gonzalo J. and Granger C.W.J. (1995), Estimation of Common Long-Memory Com-
+    ponents in Cointegrated Systems, Journal of Business & Economic Statistics, 13(1), pp.
+     27-35.
+
+[38] Grinblatt M., Titman S. and Wermers R. (1995), Momentum Investment Strate-
+     gies, Portfolio Performance, and Herding: A Study of Mutual Fund Behavior, American
+    Economic Review, 85(5), pp. 1088-1105.
+
+[39] Groetsch C.W. (1998), Lanczo’s Generalized Derivative, American Mathematical
+    Monthly, 105(4), pp. 320-326.
+
+[40] Grossmann A. and Morlet J. (1984), Decomposition of Hardy Functions into Square
+     Integrable Wavelets of Constant Shape, SIAM Journal of Mathematical Analysis, 15,
+    pp. 723-736.
+
+[41] Härdle W. (1992), Applied Nonparametric Regression, Cambridge University Press.
+
+[42] Harvey A.C. (1989), Forecasting, Structural Time Series Models and the Kalman Fil-
+      ter, Cambridge University Press.
+
+[43] Harvey A.C. and Trimbur T.M. (2003), General Model-Based Filters for Extracting
+    Cycles and Trends in Economic Time Series, Review of Economics and Statistics, 85(2),
+    pp. 244-255.
+
+[44] Hastie T., Tibshirani R. and Friedman R. (2009), The Elements of Statistical Learn-
+     ing, second edition, Springer.
+
+[45] Henderson R. (1916), Note on Graduation by Adjusted Average, Transactions of the
+     Actuarial Society of America, 17, pp. 43-48.
+
+[46] Hodrick R.J. and Prescott E.C. (1997), Postwar U.S. Business Cycles: An Empirical
+     Investigation, Journal of Money, Credit and Banking, 29(1), pp. 1-16.
+
+[47] Holt C.C. (1959), Forecasting Seasonals and Trends by Exponentially Weighted Mov-
+     ing Averages, ONR Research Memorandum, 52, reprinted in International Journal of
+     Forecasting, 2004, 20(1), pp. 5-10.
+
+[48] Hong H. and Stein J.C. (1977), A Uniﬁed Theory of Underreaction, Momentum Trad-
+     ing and Overreaction in Asset Markets, NBER Working Paper, 6324.
+
+[49] Johansen S. (1988), Statistical Analysis of Cointegration Vectors, Journal of Economic
+    Dynamics and Control, 12(2-3), pp. 231-254.
+
+[50] Johansen S. (1991), Estimation and Hypothesis Testing of Cointegration Vectors in
+    Gaussian Vector Autoregressive Models, Econometrica, 52(6), pp. 1551-1580.
+
+[51] Kalaba R. and Tesfatsion L. (1989), Time-varying Linear Regression via Flexible
+    Least Squares, Computers & Mathematics with Applications, 17, pp. 1215-1245.
+
+                                       47
+
+[PAGE 48]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+[52] Kalman R.E. (1960), A New Approach to Linear Filtering and Prediction Problems,
+    Transactions of the ASME – Journal of Basic Engineering, 82(D), pp. 35-45.
+
+[53] Kendall M.G. (1973), Time Series, Charles Griﬃn.
+
+[54] Kim S-J., Koh K., Boyd S. and Gorinevsky D. (2009), ℓ1 Trend Filtering, SIAM
+    Review, 51(2), pp. 339-360.
+
+[55] Kolmogorov A.N. (1941), Interpolation and Extrapolation of Random Sequences,
+     Izvestiya Akademii Nauk SSSR, Seriya Matematicheskaya, 5(1), pp. 3-14.
+
+[56] Macaulay F. (1931), The Smoothing of Time Series, National Bureau of Economic
+    Research.
+
+[57] Mallat S.G. (1989), A Theory for Multiresolution Signal Decomposition: The Wavelet
+     Representation, IEEE Transactions on Pattern Analysis and Machine Intelligence,
+     11(7), pp. 674-693.
+
+[58] Mann H.B. (1945), Nonparametric Tests against Trend, Econometrica, 13(3), pp. 245-
+     259.
+
+[59] Martin W. and Flandrin P. (1985), Wigner-Ville Spectral Analysis of Nonstationary
+     Processes, IEEE Transactions on Acoustics, Speech and Signal Processing, 33(6), pp.
+    1461-1470.
+
+[60] Muth J.F. (1960), Optimal Properties of Exponentially Weighted Forecasts, Journal
+     of the American Statistical Association, 55(290), pp. 299-306.
+
+[61] Oppenheim A.V. and Schafer R.W. (2009), Discrete-Time Signal Processing, third
+     edition, Prentice-Hall.
+
+[62] Peña D. and Box, G.E.P. (1987), Identifying a Simplifying Structure in Time Series,
+    Journal of the American Statistical Association, 82(399), pp. 836-843.
+
+[63] Pollock, D.S.G. (2006), Wiener-Kolmogorov Filtering Frequency-Selective Filtering
+    and Polynomial Regression, Econometric Theory, 23, pp. 71-83.
+
+[64] Pollock D.S.G. (2009), Statistical Signal Extraction: A Partial Survey, in Kon-
+     toghiorges E. and Belsley D.E. (eds.), Handbook of Empirical Econometrics, John Wiley
+    and Sons.
+
+[65] Rao S.T. and Zurbenko I.G. (1994), Detecting and Tracking Changes in Ozone air
+     Quality, Journal of Air and Waste Management Association, 44(9), pp. 1089-1092.
+
+[66] Roncalli T. (2010), La Gestion d’Actifs Quantitative, Economica.
+
+[67] Savitzky A. and Golay M.J.E. (1964), Smoothing and Diﬀerentiation of Data by
+    Simpliﬁed Least Squares Procedures, Analytical Chemistry, 36(8), pp. 1627-1639.
+
+[68] Silverman B.W. (1985), Some Aspects of the Spline Smoothing Approach to Non-
+    Parametric Regression Curve Fitting, Journal of the Royal Statistical Society, B47(1),
+    pp. 1-52.
+
+[69] Sorenson H.W. (1970), Least-Squares Estimation: From Gauss to Kalman, IEEE
+    Spectrum, 7, pp. 63-68.
+
+                                       48
+
+[PAGE 49]
+                 Trend Filtering Methods for Momentum Strategies
+
+
+
+[70] Stock J.H. and Watson M.W. (1988), Variable Trends in Economic Time Series,
+    Journal of Economic Perspectives, 2(3), pp. 147-174.
+
+[71] Tay F.E.H. and Cao L.J. (2002), Modiﬁed Support Vector Machines in Financial Times
+     Series Forecasting, Neurocomputing, 48(1-4), pp. 847-861.
+
+[72] Tibshirani R. (1996), Regression Shrinkage and Selection via the Lasso, Journal of
+     the Royal Statistical Society, B58(1), pp. 267-288.
+
+[73] Vapnik V. (1998), Statistical Learning Theory, John Wiley and Sons, New York.
+
+[74] Vapnik V. and Chervonenskis A. (1991), On the Uniform Convergence of Relative
+    Frequency of Events to their Probabilities, Theory of Probability and its Applications,
+     16(2), pp. 264-280.
+
+[75] Vautard R., Yiou P., and Ghil M. (1992), Singular Spectrum Analysis: A Toolkit
+     for Short, Noisy Chaotic Signals, Physica D, 58(1-4), pp. 95-126.
+
+[76] Wahba G. (1990), Spline Models for Observational Data, CBMS-NSF Regional Con-
+     ference Series in Applied Mathematics, 59, SIAM.
+
+[77] Wang Y. (1998), Change Curve Estimation via Wavelets, Journal of the American
+     Statistical Association, 93(441), pp. 163-172.
+
+[78] Wiener N. (1949), Extrapolation, Interpolation and Smoothing of Stationary Time
+     Series with Engineering Applications, MIT Technology Press and John Wiley & Sons
+     (originally published in 1941 as a Report on the Services Research Project, DIC-6037).
+
+[79] Whittaker E.T. (1923), On a New Method of Graduation, Proceedings of the Edin-
+    burgh Mathematical Society, 41, pp. 63-75.
+
+[80] Winters P.R. (1960), Forecasting Sales by Exponentially Weighted Moving Averages,
+    Management Science, 6(3), 324-342.
+
+[81] Yue S. and Pilon P. (2004), A Comparison of the Power of the t-test, Mann-Kendall
+    and Bootstrap Tests for Trend Detection, Hydrological Sciences Journal, 49(1), 21-37.
+
+[82] Zurbenko I., Porter P.S., Rao S.T., Ku J.K., Gui R. and Eskridge R.E. (1996),
+    Detecting Discontinuities in Time Series of Upper-Air Data: Demonstration of an Adap-
+     tive Filter Technique, Journal of Climate, 9(12), pp. 3548-3560.
+
+
+
+
+
+                                       49

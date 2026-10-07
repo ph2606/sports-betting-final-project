@@ -1,0 +1,21 @@
+team,fpl_team_id,fpl_team_code,fpl_name,short_name,season,as_of_date,membership_source,transfermarkt_club_id,espn_team_id,understat_team_id,sportsdb_team_id,clubelo_slug
+Arsenal,1,3,Arsenal,ARS,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,11,359,83,133604,Arsenal
+Aston Villa,2,7,Aston Villa,AVL,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,405,362,71,133601,AstonVilla
+Bournemouth,3,91,Bournemouth,BOU,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,989,349,73,134301,Bournemouth
+Brentford,4,94,Brentford,BRE,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,1148,337,244,134355,Brentford
+Brighton & Hove Albion,5,36,Brighton,BHA,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,1237,331,220,133619,Brighton
+Chelsea,6,8,Chelsea,CHE,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,631,363,80,133610,Chelsea
+Coventry City,7,9,Coventry City,COV,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,990,388,294,133625,Coventry
+Crystal Palace,8,31,Crystal Palace,CRY,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,873,384,78,133632,CrystalPalace
+Everton,9,11,Everton,EVE,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,29,368,72,133615,Everton
+Fulham,10,54,Fulham,FUL,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,931,370,228,133600,Fulham
+Hull City,11,88,Hull City,HUL,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,3008,306,91,133617,Hull
+Ipswich Town,12,40,Ipswich Town,IPS,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,677,373,285,133622,Ipswich
+Leeds United,13,2,Leeds,LEE,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,399,357,245,133635,Leeds
+Liverpool,14,14,Liverpool,LIV,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,31,364,87,133602,Liverpool
+Manchester City,15,43,Man City,MCI,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,281,382,88,133613,ManCity
+Manchester United,16,1,Man Utd,MUN,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,985,360,89,133612,ManUnited
+Newcastle United,17,4,Newcastle,NEW,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,762,361,86,134777,Newcastle
+Nottingham Forest,18,17,Nott'm Forest,NFO,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,703,393,249,148600,Forest
+Tottenham Hotspur,19,6,Spurs,TOT,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,148,367,82,133616,Tottenham
+Sunderland,20,56,Sunderland,SUN,2026-27,2026-10-06,https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts,289,366,77,133603,Sunderland

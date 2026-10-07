@@ -1,0 +1,1870 @@
+[PAGE 1]
+         Noname manuscript No.
+                 (will be inserted by the editor)
+
+
+
+
+         Dealing with the Inventory Risk
+
+      A solution to the market making problem
+
+            Olivier Gu´eant  · Charles-Albert Lehalle  ·
+           Joaquin Fernandez-Tapia
+
+
+
+
+
+               This draft: July 20122012
+           Abstract Market makers continuously set bid and ask quotes for the stocks
+             they have under consideration. Hence they face a complex optimization prob-Aug       lem in which their return, based on the bid-ask spread they quote and the fre-
+            quency at which they indeed provide liquidity, is challenged by the price risk3
+             they bear due to their inventory. In this paper, we consider a stochastic con-
+                trol problem similar to the one introduced by Ho and Stoll [17] and formalized
+             mathematically by Avellaneda and Stoikov [3]. The market is modeled using
+            a reference price St following a Brownian motion with standard deviation σ,
+               arrival rates of buy or sell liquidity-consuming orders depend on the distance
+              to the reference price St and a market maker maximizes the expected utility of
+                 its P&L over a ﬁnite time horizon. We show that the Hamilton-Jacobi-Bellman[q-fin.TR]       equations associated to the stochastic optimal control problem can be trans-
+            formed into a system of linear ordinary diﬀerential equations and we solve the
+            market making problem under inventory constraints. We also shed light on the
+             asymptotic behavior of the optimal quotes and propose closed-form approxi-
+
+
+               This research has been conducted within the Research  Initiative “Microstructure des
+                March´es Financiers” under the aegis of the Europlace Institute of Finance.
+
+                 Olivier Gu´eant
+                  Universit´e Paris-Diderot, UFR de Math´ematiques, Laboratoire Jacques-Louis Lions. 175,
+                rue du Chevaleret, 75013 Paris, France.
+                E-mail: olivier.gueant@ann.jussieu.fr
+
+
+                Charles-Albert Lehalle
+             Head of Quantitative Research, Cr´edit Agricole Cheuvreux. 9, Quai du Pr´esident Paul
+             Doumer, 92400 Courbevoie, France.arXiv:1105.3115v5         E-mail: clehalle@cheuvreux.com
+
+
+               Joaquin Fernandez-Tapia
+                  Universit´e Pierre et Marie Curie, LPMA. 4 place Jussieu, 75005 Paris, France.
+
+[PAGE 2]
+2                                                                       Olivier Gu´eant et al.
+
+
+mations based on a spectral characterization of the optimal quotes.
+
+Keywords Stochastic optimal control · High-frequency Market Making ·Avellaneda-Stoikov problem
+
+
+1 Introduction
+
+From a quantitative viewpoint, market microstructure is a sequence of auc-
+tion games between market participants. It implements the balance between
+supply and demand, forming an equilibrium traded price to be used as refer-
+ence for valuation. The rule of each auction game (ﬁxing auction, continuous
+auction, ...) is ﬁxed by the ﬁrm operating each trading venue. Nevertheless,
+most of all trading mechanisms on electronic markets rely on market partic-
+ipants sending orders to a “queuing system” where their open interests are
+consolidated as “liquidity provision” or form transactions [1]. The eﬃciency
+of such a process relies on an adequate timing between buyers and sellers, to
+avoid too many non-informative oscillations of the transaction price (for more
+details and modeling, see for example [20]).
+
+   In practice, it is possible to provide liquidity to an impatient buyer (re-
+spectively seller) and maintain an inventory until the arrival of the next im-
+patient seller (respectively buyer). Market participants focused on this kind of
+liquidity-providing activity are called “market makers”. On one hand they are
+buying at the bid price and selling at the ask price they choose, making money
+out of this “bid-ask spread”. On the other hand, their inventory is exposed to
+price ﬂuctuations mainly driven by the volatility of the market (see [2,5,10,
+11,18,24]).
+
+   The recent evolution of both technology and market regulation reshaped
+the nature of the interactions between market participants during continuous
+electronic auctions, one consequence being the emergence of “high-frequency
+market makers” who are said to be part of 70% of the electronic trades in
+the US (40% in the EU and 35% in Japan) and have a massively passive
+(i.e. liquidity-providing) behavior – a typical balance between passive and
+aggressive orders for such market participants being around 80% of passive
+interactions (see [22]).
+
+   From a mathematical modeling point of view, the market making problem
+corresponds to the choice of optimal quotes (i.e. the bid and ask prices) that
+such agents provide to other market participants, taking into account their in-
+ventory limits and their risk constraints often represented by a utility function
+(see [9,16,19,21,23,25]).
+
+   Avellaneda and Stoikov proposed, in a widely cited paper [3], an innovative
+framework for “market making in an order book”. In their approach, rooted to
+
+[PAGE 3]
+Dealing with the Inventory Risk                                                  3
+
+
+an old paper by Ho and Stoll [17], the market is modeled using a reference price
+or fair price St following a Brownian motion with standard deviation σ, and
+the arrival of a buy or sell liquidity-consuming order at a distance δ from the
+reference price St is described by a point process with intensity A exp(−kδ),A and k being two positive constants which characterize statistically the liq-
+uidity of the stock.
+
+  We consider the same model as in [3] – adding inventory limits – and
+we show, using a new change of variables, that the Hamilton-Jacobi-Bellman
+equations associated to the problem boil down to a system of linear ordinary
+diﬀerential equations. This new change of variables (i) simpliﬁes the compu-
+tation of a solution since numerical approximation of partial diﬀerential equa-
+tions is now unnecessary, and (ii) allows to study the asymptotic behavior
+of the optimal quotes. In addition to these two contributions, we use results
+from spectral analysis to provide an approximation of the optimal quotes in
+closed-form. Finally, we provide in the case of our model with inventory limits
+a veriﬁcation theorem that was absent from the original paper (the admissi-
+bility of the quotes obtained in the original Avellaneda-Stoikov model appears
+in fact to be an open problem!).
+
+   Since Avellaneda and Stoikov seminal paper, other authors have consid-
+ered related market making models. Cartea, Jaimungal and Ricci [8] consider a
+more sophisticated model inspired from the Avellaneda-Stoikov one1, including
+richer dynamics of market orders, impact on the limit order book, adverse se-
+lection eﬀects and predictable α. They obtained closed-form approximations of
+the optimal quotes using a ﬁrst-order Taylor expansion. Cartea and Jaimungal
+[7] recently used a similar model to introduce risk measures for high-frequency
+trading. Earlier, they used a model inspired from Avellaneda-Stoikov [6] in
+which the mid-price is modeled by a Hidden Markov Model. Guilbaud and
+Pham [14] also used a model inspired from the Avellaneda-Stoikov framework
+but including market orders and limit orders at best (and next to best) bid
+and ask together with stochastic spreads. Very recently, Guilbaud and Pham
+[15] used another model inspired from the Avellanada-Stoikov one in a pro-
+rata microstructure.
+
+    It is also noteworthy that the model we use to ﬁnd the orders a market
+maker should optimally send to the market has been used in a totally diﬀerent
+domain of algorithmic trading: optimal execution. Bayraktar and Ludkovski
+[4] and Gu´eant, Lehalle, Fernandez-Tapia [12] used indeed a similar model to
+optimally liquidate a portfolio.
+
+   This paper starts in section 2 with the description of the model. Section 3 is
+dedicated to the introduction of our change of variables and solves the control
+problem in the presence of inventory limits. Section 4 focuses on the asymptotic
+
+  1 The objective function is diﬀerent.
+
+[PAGE 4]
+4                                                                       Olivier Gu´eant et al.
+
+
+behavior of the optimal quotes and characterizes the asymptotic value using
+an eigenvalue problem that allows to propose a rather good approximation
+in closed-form. Section 5 generalizes the model in two diﬀerent directions: (i)
+the introduction of a drift in the price dynamics and (ii) the introduction
+of market impact that may also be regarded as adverse selection. Section 6
+carries out the comparative statics. Section 7 provides backtests of the model.
+Adaptations of our results are in use at Cheuvreux.
+
+
+
+2 Setup of the model
+
+Let us ﬁx a probability space (Ω, F, P) equipped with a ﬁltration (Ft)t≥0 satis-fying the usual conditions. We assume that all random variables and stochastic
+processes are deﬁned on (Ω, F, (Ft)t≥0, P).
+  We consider a high-frequency market maker operating on a single stock2.
+We suppose that the mid-price of this stock or more generally a reference
+price3 of the stock moves as an arithmetic Brownian motion4:
+
+                              dSt = σdWt
+
+   The market maker under consideration will continuously propose bid and
+ask prices denoted respectively Sbt and Sat and will hence buy and sell shares
+according to the rate of arrival of market orders at the quoted prices. His
+inventory q, that is the (signed) quantity of shares he holds, is given by
+
+                                             a
+                                                                t                                     qt = N tb −N
+where N b and N a are the point processes (independent of (Wt)t) giving the
+number of shares the market maker respectively bought and sold (we assume
+that transactions are of constant size, scaled5 to 1). Arrival rates obviously
+depend on the prices Sbt and Sat quoted by the market maker and we assume,
+in accordance with the model proposed by Avellaneda and Stoikov [3], that
+intensities λb and λa associated respectively to N b and N a depend on the
+
+                                                                                                               tdiﬀerence between the quoted prices and the reference price (i.e. δbt = St −Sb
+and δat = Sat −St) and are of the following form6:
+λb(δb) = Ae−kδb = A exp(−k(s−sb))    λa(δa)                           = Ae−kδa = A exp(−k(sa−s))
+  2 We suppose that this high-frequency market maker does not “make” the price in the
+sense that he has no market power. In other words, we assume that the size of his orders
+is small enough to consider price dynamics exogenous. Market impact will be introduced in
+section 5.
+  3 This reference price for the stock can be thought of as a smoothed mid-price for instance.
+  4 Since we will only consider short horizon problems, this assumption is almost equivalent
+to the usual Black-Scholes one.
+  5 The only important hypothesis is the constant size of orders since we can easily replace
+1 by any positive size ∆.
+  6 Some authors also used a linear form for the intensity functions – see [17] for instance.
+
+[PAGE 5]
+Dealing with the Inventory Risk                                                  5
+
+
+where A and k are positive constants that characterize the liquidity of the
+stock. In particular, this speciﬁcation means – for positive δb and δa – that
+the closer to the reference price an order is posted, the faster it will be executed.
+
+   As a consequence of his trades, the market maker has an amount of cash
+evolving according to the following dynamics:
+
+                                                                     b
+                                                                                t                dXt = (St + δat )dN ta −(St −δbt)dN
+
+   To this original setting introduced by Avellaneda and Stoikov (itself fol-
+lowing partially Ho and Stoll [17]), we add a bound Q to the inventory that
+a market maker is authorized to have. In other words, we assume that a mar-
+ket maker with inventory Q (Q > 0 depending in practice on risk limits) will
+never set a bid quote and symmetrically that a market maker with inventory
+−Q, that is a short position of Q shares in the stock under consideration, willnever set an ask quote. This realistic restriction may be read as a risk limit
+and allows to solve rigorously the problem.
+
+   Now, coming to the objective function, the market maker has a time horizon
+T and his goal is to optimize the expected utility of his P&L at time T . In
+line with [3], we will focus on CARA utility functions and we suppose that the
+market maker optimizes:
+
+                    sup   E [−exp (−γ(XT + qT ST ))]                       (δat )t,(δb                         t)t∈A
+where A is the set of predictable processes bounded from below, γ  is the
+absolute risk aversion coeﬃcient characterizing the market maker, XT  is the
+amount of cash at time T and qT ST is the evaluation of the (signed) remaining
+quantity of shares in the inventory at time T (liquidation at the reference price
+ST 7).
+
+
+
+
+3 Characterization of the optimal quotes
+
+The optimization problem set up in the preceding section can be solved using
+the classical tools of stochastic optimal control. The ﬁrst step of our reason-
+ing is therefore to introduce the Hamilton-Jacobi-Bellman (HJB) equation
+associated to the problem. More exactly, we introduce a system of Hamilton-
+Jacobi-Bellman partial diﬀerential equations which consists of the following
+equations indexed by q ∈{−Q, . . . , Q} for (t, s, x) ∈[0, T ] × R2:
+
+  7 Our results would be mutatis mutandis the same  if we added a penalization term
+−b(|qT |) for the shares remaining at time T. The rationale underlying this point is that
+price risk prevents the trader from having important exposure to the stock. Hence, qt should
+naturally mean-revert around 0.
+
+[PAGE 6]
+6                                                                       Olivier Gu´eant et al.
+
+For |q| < Q:
+                                 1
+                        ∂tu(t, x, q, s) + 2σ2∂2ssu(t, x, q, s)
+
+        + sup                   λb(δb) u(t, x −s + δb, q + 1, s) −u(t, x, q, s)                    δb
+
+      + sup                λa(δa) [u(t, x + s + δa, q −1, s) −u(t, x, q, s)] = 0                δa
+
+For q = Q:
+                                 1
+                       ∂tu(t, x, Q, s) + 2σ2∂2ssu(t, x, Q, s)
+
+      + sup               λa(δa) [u(t, x + s + δa, Q −1, s) −u(t, x, Q, s)] = 0               δa
+For q = −Q:                                 1
+                     ∂tu(t, x, −Q, s) + 2σ2∂2ssu(t, x, −Q, s)
+
+     + sup               λb(δb) u(t, x −s + δb, −Q + 1, s) −u(t, x, −Q, s) = 0               δb
+
+with the ﬁnal condition:
+
+         ∀q ∈{−Q, . . ., Q},     u(T, x, q, s) = −exp (−γ(x + qs))
+
+   To solve these equations we will use a change of variables based on two
+diﬀerent ideas. First, the choice of a CARA utility function allows to factor
+out the Mark-to-Market value of the portfolio (x + qs). Then, the exponential
+decay for the intensity functions λb and λa allows to reduce the Hamilton-
+Jacobi-Bellman (HJB) equations associated to our control problem to a linear
+system of ordinary diﬀerential equations:
+
+
+Proposition 1 (Change of variables for (HJB)) Let us consider a fam-
+ily (vq)|q|≤Q of positive functions solution of:
+    ∀q ∈{−Q + 1, . . . , Q −1},   ˙vq(t) = αq2vq(t) −η (vq−1(t) + vq+1(t))
+                           ˙vQ(t) = αQ2vQ(t) −ηvQ−1(t)
+                       ˙v−Q(t) = αQ2v−Q(t) −ηv−Q+1(t)
+
+                                                                                       γ                                                                                      k ).with                   . . . ,    vq(T ) = 1, where α = k2γσ2 and η = A(1 + γk )−(1+    ∀q ∈{−Q,    Q},
+Then, u(t, x, q, s) =       + qs))vq(t)−γ               −exp(−γ(x               k  is solution of (HJB).
+
+
+   Then, the following proposition proves that there exists such a family of
+positive functions:
+
+[PAGE 7]
+Dealing with the Inventory Risk                                                  7
+
+
+Proposition 2 (Solution of the ordinary diﬀerential equations) Let us
+introduce the matrix M deﬁned by:
+                              
+               αQ2   −η     0   · · ·  · · ·       · · ·     0                                           α(Q          0  ...     ...                           ...                                         −η     −1)2 −η                      0       ...     ... ... ...     ...                           ...                               
+                              
+                                     M = 
+                                                ...       ...     ... ... ...     ...                           ...
+                              
+                                        
+                                                ...       ...     ... ... ...     ...     0
+                              
+                                                                                                                                       ...       ...     ...  0    α(Q                              −η    −1)2 −η
+                   0         · · ·       · · ·  · · ·  0    −η   αQ2
+               k                     γ       γk   where α = 2γσ2 and η = A(1 + k )−(1+  ).
+
+   Let us deﬁne
+            v(t) = (v−Q(t), v−Q+1(t), . . . , v0(t), . . . , vQ−1(t), vQ(t))′
+             = exp(−M(T −t)) × (1, . . . , 1)′
+Then, (vq)|q|≤Q is a family of positive functions solution of the equations of
+Proposition 1.
+
+
+   Using the above change of variables and a veriﬁcation approach, we are
+now able to solve the stochastic control problem, that is to ﬁnd the value
+function of the problem and the optimal quotes:
+
+Theorem 1 (Solution of the control problem) Let consider (vq)|q|≤Q as
+in Proposition 2.
+
+   Then u(t, x, q, s) =       + qs))vq(t)−γ                  −exp(−γ(x               k  is the value function of thecontrol problem.
+
+   Moreover, the optimal quotes are given by:
+
+                            1      vq(t)     1       γ
+    s −sb∗(t, q, s) = δb∗(t, q) = k ln  vq+1(t) + γ ln  1 + k   ,   q ̸= Q
+
+                            1       vq(t)      1       γ
+    sa∗(t, q, s) −s = δa∗(t, q) = k ln       + γ ln  1 + k   ,   q ̸= −Q                                     vq−1(t)
+and the resulting bid-ask spread quoted by the market maker is given by:
+        ψ∗(t, q) = −1k ln  vq+1(t)vq−1(t)vq(t)2    + γ2 ln  1 + γk   ,   |q| ̸= Q
+
+[PAGE 8]
+8                                                                       Olivier Gu´eant et al.
+
+
+4 Asymptotic behavior and approximation of the optimal quotes
+
+To exemplify our ﬁndings and in order to motivate the asymptotic approxi-
+mations we shall provide, we plotted on Figure 1 and Figure 2 the behavior
+with time and inventory of the optimal quotes. The resulting bid-ask spread
+quoted by the market maker is plotted on Figure 3.
+
+  We clearly see that the optimal quotes are almost independent of t, as
+soon as t is far from the terminal time T . This observation is at odds with the
+approximations proposed8 in Avellaneda and Stoikov [3] using an expansion
+in q. It motivates however the study of the asymptotic behavior of the quotes.
+
+
+
+
+
+               5.5
+
+              5
+
+               4.5
+
+              4
+                    [Tick]  3.5
+     sb  3
+   −
+   s  2.5
+
+              2
+
+               1.5
+
+              1
+            600
+                 500
+                     400
+                          300                                                             20      30
+                               200                                               10
+                                                                         0
+                                    100                         −10
+                                                       −20
+                     Time [Sec]              0   −30
+                                                                                   Inventory
+
+Fig. 1 Behavior of the optimal bid quotes with time and inventory. σ = 0.3  Tick · s−1/2,
+A = 0.9  s−1, k = 0.3  Tick−1, γ = 0.01  Tick−1, T = 600   s.
+
+
+
+
+
+  8 In [3], the approximations obtained by the authors using an expansion in q leads to the
+following expressions:
+
+                          δb∗t ≃1 ln  1 + γ + 1 + 2q γσ2(T −t)
+                           γ       k      2
+
+                        δa∗t ≃1 ln  1 + γ + 1 −2q γσ2(T −t)
+                           γ       k      2
+
+One can easily show, using the results of Theorem 1, that these approximations are nothing
+but the Taylor expansions of the optimal quotes for t close to T.
+
+[PAGE 9]
+Dealing with the Inventory Risk                                                  9
+
+
+
+
+
+               5.5
+
+              5
+
+               4.5
+
+              4
+                     [Tick]  3.5
+
+   s
+   −   3
+     sa
+               2.5
+
+              2
+                                                                                                   600
+               1.5                                                                                              500
+              1                                                                          400
+            −30
+                    −20                                                            300
+                             −10                                               200
+                                        0
+                                               10                         100
+                                                        20
+                                                                30   0              Time [Sec]
+
+                                                     Inventory
+
+Fig. 2 Behavior of the optimal ask quotes with time and inventory. σ = 0.3  Tick · s−1/2,
+A = 0.9  s−1, k = 0.3  Tick−1, γ = 0.01  Tick−1, T = 600   s.
+
+
+
+
+
+              6.64
+
+              6.63
+
+              6.62
+
+              6.61
+                     [Tick]  6.6
+    ψ 6.59
+
+              6.58
+
+              6.57
+                                                                                                   600
+              6.56                                                                                               500
+              6.55                                                                          400
+             −30
+                     −20                                                            300
+                             −10                                               200
+                                        0
+                                                10                         100
+                                                        20
+                                                                 30   0              Time [Sec]
+
+                                                     Inventory
+
+Fig. 3 Behavior of the resulting bid-ask spread with time and inventory. σ = 0.3  Tick ·
+s−1/2, A = 0.9  s−1, k = 0.3  Tick−1, γ = 0.01  Tick−1, T = 600   s.
+
+[PAGE 10]
+10                                                                      Olivier Gu´eant et al.
+
+
+Theorem 2 (Asymptotics for the optimal quotes) The optimal quotes
+have asymptotic limits
+
+                           lim        q) = δb∗
+                         T                       →+∞δb∗(0,     ∞(q)
+                           lim        q) = δa∗
+                         T                      →+∞δa∗(0,     ∞(q)
+    that can be expressed as:
+
+                    !                     !
+        1       γ    1     f q0             1       γ    1     f q0
+                                                                               0                                   0       δa∗∞(q) = γ ln  1 + k + k ln  fδb∗∞(q) = γ ln  1 + k + k ln  f q+1                                                                   q−1
+where f 0 ∈R2Q+1 is an eigenvector corresponding to the smallest eigenvalueof the matrix M introduced in Proposition 2 and characterized (up to a mul-
+tiplicative constant) by:
+
+       XQ           Q−1X
+   f 0 ∈    argmin         αq2fq 2 + η     (fq+1 −fq)2 + ηfQ 2 + ηf−Q 2
+        f∈R2Q+1,∥f∥2=1 q=−Q         q=−Q
+
+The resulting bid-ask spread quoted by the market maker is asymptotically:
+                        !
+                              f q+1f0    0       2       γ
+             ψ∗  =     ln        2q−1  +   ln  1 +                                         γ       k               ∞(q)  −1k       f 0q
+
+   The above result, along with the example of Figure 1, Figure 2 and Figure
+3, encourages to approximate the optimal quotes and the resulting bid-ask
+spread by their asymptotic value. These asymptotic values depend on f 0 and
+we shall provide a closed-form approximation for f 0.
+
+   The above characterization of f 0 corresponds to an eigenvalue problem in
+R2Q+1 and we propose to replace it by a similar eigenvalue problem in L2(R)
+for which a closed-form solution can be computed. More precisely we replace
+the criterion
+
+
+       XQ           Q−1X
+   f 0 ∈    argmin         αq2fq 2 + η     (fq+1 −fq)2 + ηfQ 2 + ηf−Q 2
+        f∈R2Q+1,∥f∥2=1 q=−Q         q=−Q
+   by the following criterion for ˜f0 ∈L2(R):
+                        Z
+                   0         +∞
+                   ˜f ∈  argmin       αx2 ˜f(x)2 + η ˜f′(x)2  dx
+                   ∥˜f∥L2(R)=1 −∞
+   The introduction of this new criterion is rooted to the following proposition
+that states (up to its sign) the expression for ˜f0 in closed form:
+
+[PAGE 11]
+Dealing with the Inventory Risk                                                  11
+
+
+Proposition 3 Let us consider
+                         Z
+                     ˜f0 ∈  argmin  R  αx2 ˜f(x)2 + η ˜f′(x)2  dx
+                    ∥˜f∥L2(R)=1
+
+Then:
+                                                  1
+                           1  α   8     rα
+                        ˜f0(x) = ± π 41   η   exp −12   η x2
+
+   From the above proposition, we expect f q0 to behave, up to a multiplicative         q
+                    α
+                         η q2  . This heuristic viewpoint induces an approxima-                      2constant, as exp −1
+tion of the optimal quotes and the resulting optimal bid-ask-spread:
+
+                           γ     1 rα
+                    +                          ln  1 +                                            (2q + 1)
+                           k                                 2k   η              δb∗∞(q) ≃1γ
+                    r
+                           γ    2q + 1   σ2γ      γ  1+ γk
+                          ln  1 +  +              1 +          ≃1γ       k      2    2kA     k
+                           γ    rα
+                          ln  1 +                           k −12k   η                                            (2q −1)             δa∗∞(q) ≃1γ
+                    r
+                           γ            σ2γ      γ  1+ γk
+          ≃1γ ln  1 + k −2q 2−1  2kA  1 + k
+
+                  r
+                              γ      σ2γ      γ  1+ γk
+                      +                                            1 +                             ln  1 +
+                              k                                2kA                                              k             ψ∗∞(q) ≃2γ
+
+
+
+
+
+           10                                                                                           7
+
+
+            8                                                                                           6
+
+
+            6                                                                                           5
+
+                [Tick]   4                                                                                                                                                                                                                   [Tick]  4
+
+                                        −s  3    sb−s   2                                                     sb
+
+
+            0                                                                                           2
+
+
+          −2                                                                                           1
+
+
+          −4−30          −20          −10            0            10           20           30         −300            −20          −10            0            10           20           30
+                                                            Inventory                                                                                                       Inventory
+
+Fig. 4 Asymptotic behavior of optimal bid quote (bold line). Approximation (dotted line).
+Left: σ = 0.4  Tick · s−1/2, A = 0.9  s−1, k = 0.3  Tick−1, γ = 0.01  Tick−1, T =
+600   s. Right: σ = 1.0  Tick · s−1/2, A = 0.2  s−1, k = 0.3  Tick−1, γ = 0.01  Tick−1,
+T = 600   s.
+
+
+  We exhibit on Figure 4 and Figure 5 the values of the optimal quotes, along
+with their associated approximations. Empirically, these approximations for
+
+[PAGE 12]
+12                                                                      Olivier Gu´eant et al.
+
+
+
+           10                                                                                           7
+
+
+            8                                                                                           6
+
+
+            6                                                                                           5
+
+
+                                                                                                       4
+
+                                        s−                [Tick]s−   4                                                                                                                                                                                                                   [Tick]
+    sa  2                                                     sa 3
+
+
+            0                                                                                           2
+
+
+          −2                                                                                           1
+
+
+          −4−30          −20          −10            0            10           20           30         −300            −20          −10            0            10           20           30
+                                                            Inventory                                                                                                       Inventory
+
+Fig. 5 Asymptotic behavior of optimal ask quote (bold line). Approximation (dotted line).
+Left: σ = 0.4  Tick · s−1/2, A = 0.9  s−1, k = 0.3  Tick−1, γ = 0.01  Tick−1, T =
+600   s. Right: σ = 1.0  Tick · s−1/2, A = 0.2  s−1, k = 0.3  Tick−1, γ = 0.01  Tick−1,
+T = 600   s.
+
+
+the quotes are satisfactory in most cases and are always very good for small
+values of the inventory q. In fact, even though f 0 appears to be well approxi-
+mated by the gaussian approximation, we cannot expect a very good ﬁt for the
+quotes when q is large because we are approximating expressions that depend
+                         fq0       fq0
+                             0   or f 0    .on ratios of the form fq+1                                 q−1
+
+
+
+5 Extensions of the model
+
+5.1 The case of a trend in the price dynamics
+
+So far, the reference price was supposed to be a Brownian motion. In what
+follows we extend the model to the case of a trend in the price dynamics:
+
+                           dSt = µdt + σdWt
+
+In that case we have the following proposition (the proof is not repeated):
+
+Proposition 4 (Solution with a drift) Let us consider a family of func-
+tions (vq)|q|≤Q solution of the linear system of ODEs that follows:
+  ∀q ∈{−Q + 1, . . . , Q −1}, ˙vq(t) = (αq2 −βq)vq(t) −η (vq−1(t) + vq+1(t))
+                       ˙vQ(t) = (αQ2 −βQ)vQ(t) −ηvQ−1(t)
+                   ˙v−Q(t) = (αQ2 + βQ)v−Q(t) −ηv−Q+1(t)
+                k      Q},with ∀qγ ∈{−Q,γ     . . .,    vq(T ) = 1, where α =  k2γσ2, β = kµ and η =A(1 + k )−(1+  ).
+   Then, u(t, x, q, s) =       + qs))vq(t)−γ                  −exp(−γ(x               k is the value function of thecontrol problem.
+
+[PAGE 13]
+Dealing with the Inventory Risk                                                  13
+
+
+   The optimal quotes are given by:
+
+                                1      vq(t)     1       γ
+         s −sb∗(t, q, s) = δb∗(t, q) = k ln  vq+1(t) + γ ln  1 + k
+
+                                 1      vq(t)     1       γ
+          sa∗(t, q, s) −s = δa∗(t, q) = k ln       + γ ln  1 + k                                           vq−1(t)
+and the resulting bid-ask spread of the market maker is :
+              ψ∗(t, q) = −1k ln  vq+1(t)vq−1(t)vq(t)2    + γ2 ln  1 + γk
+
+Moreover,
+                                 !
+                             1       γ    1     f q0
+                          +                                     ln  1 +                                                      ln
+              T                            γ                                    k                                         k                                                  f q+10             →+∞δb∗(0,lim        q) =
+                                 !
+                             1       γ    1     f q0
+                          +                                     ln  1 +                                                      ln
+              T                            γ                                    k                                         k                                                  f 0             →+∞δa∗(0,lim        q) =                          !       q−1
+                                  f q+1f0    0      2       γ
+                                   ln                                                         ln  1 +                                         q−1  +
+           T                                            γ                                                    k                  −1k                                     f 0q 2          →+∞ψ∗(0,lim        q) =
+where f 0 is an eigenvector corresponding to the smallest eigenvalue of:
+                                       
+ αQ2 −βQ       −η          0   · · ·  · · ·                · · ·             0                                               α(Q                    0  ...            ...                                                                 ...                                            −η       −1)2 −β(Q −1) −η                        0                 ...            ... ... ...            ...                                                                 ...                                         
+                                       
+                                                             ...                 ...            ... ... ...            ...                                                                 ...                                        
+                                       
+                                                            ...                 ...            ... ... ...            ...             0  
+                                       
+                                                                     ...                 ...            ...  0    α(Q                             −η    −1)2 −β(Q −1)   −η
+      0                       · · ·                · · ·  · · ·  0        −η       αQ2 −βQ
+   In addition to this theoretical result, we can consider an approximation
+similar to the approximation used for the initial model with no drift. We then
+obtain the following approximations for the optimal quotes and the bid-ask
+spread:
+
+                      r
+                      γ              2q + 1    σ2γ      γ  1+ γk
+                 +                                                    1 +                   ln  1 +                      +
+                      k                                       2     2kA                                                     k              −µγσ2        δb∗∞(q) ≃1γ
+
+                      r
+                       γ     µ             σ2γ      γ  1+ γk        δa∗         ln  1 +  +       −1         1 +       ∞(q) ≃1γ       k     γσ2 −2q 2     2kA     k
+                  r
+                              γ      σ2γ      γ  1+ γk
+                      +                                            1 +                             ln  1 +
+                              k                                2kA                                              k             ψ∗∞(q) ≃2γ
+
+[PAGE 14]
+14                                                                      Olivier Gu´eant et al.
+
+
+5.2 The case of market impact
+
+Another extension of the model consists in introducing market impact. The
+simplest way to proceed is to consider the following dynamics for the price:
+
+                                                          b ,     ξ > 0                                                                   t                 dSt = σdWt + ξdN ta −ξdN
+When a limit order on the bid side is ﬁlled, the reference price decreases. On
+the contrary, when a limit order on the ask side is ﬁlled, the reference price in-
+creases. This is in line with the classical modeling of market impact for market
+orders, ξ being a constant since the limit orders posted by the market maker
+are all supposed to be of the same size.
+Adverse selection is another way to interpret the interaction we consider be-
+tween the price process and the point processes modeling execution: trades on
+the bid side are often followed by a price decrease and, conversely, trades on
+the ask side are often followed by a price increase.
+
+   In this modiﬁed framework, the problem can be solved using a change of
+variables that is slightly more involved than the one presented above but the
+method is exactly the same and we have the following proposition (the proof
+is not repeated):
+
+Proposition 5 (Solution with market impact) Let us consider a family
+of functions (vq)|q|≤Q solution of the linear system of ODEs that follows:
+                                                                    2 ξ (vq−1(t) + vq+1(t))   ∀q ∈{−Q + 1, . . . , Q −1}, ˙vq(t) = αq2vq(t) −ηe−k
+
+
+                                                           2                                            ξvQ−1(t)                        ˙vQ(t) = αQ2vQ(t) −ηe−k
+
+                                                            2                                           ξv−Q+1(t)                    ˙v−Q(t) = αQ2v−Q(t) −ηe−k
+                k      Q},        exp(−1with ∀qγ ∈{−Q,γ    . . . ,    vq(T ) =       2kξq2), where α = k2γσ2 and η =A(1 + k )−(1+  ).
+   Then, u(t, x, q, s) =                   2ξq2))vq(t)−γ1                 −exp(−γ(x+qs+               k is the value functionof the control problem.
+
+   The optimal quotes are given by:
+
+                              1       vq(t)      ξ   1       γ
+       s −sb∗(t, q, s) = δb∗(t, q) = k ln  vq+1(t) + 2 + γ ln  1 + k
+
+                               1      vq(t)      ξ   1       γ
+        sa∗(t, q, s) −s = δa∗(t, q) = k ln       + 2 + γ ln  1 + k                                         vq−1(t)
+and the resulting bid-ask spread of the market maker is :
+            ψ∗(t, q) = −1k ln  vq+1(t)vq−1(t)vq(t)2    + ξ + γ2 ln  1 + γk
+
+[PAGE 15]
+Dealing with the Inventory Risk                                                  15
+
+
+Moreover,
+                                   !
+                           1       γ     ξ   1     f q0
+                                   ln  1 +                            +                                                        ln                         +
+            T                          γ                                  k                                         2                                           k                                                    f q+10            →+∞δb∗(0,lim        q) =
+                                   !
+                           1       γ     ξ   1     f q0
+                         +                                   ln  1 +                            +                                                        ln
+            T                          γ                                   k                                         2                                           k                                                    f 0           →+∞δa∗(0,lim        q) =                                                       q−1
+                         !
+                                f q+1f0    0          2       γ                                       q−1  + ξ +                                 ln                                                           ln  1 +
+          T                                              γ                                                      k                 −1k                                   f 0q 2         →+∞ψ∗(0,lim        q) =
+where f 0 is an eigenvector corresponding to the smallest eigenvalue of:
+                                 
+        αQ2   −ηe−k                                2 ξ     0      · · ·      · · ·           · · ·       0      
+                                                                                  2 ξ  0     ...        ...                                  ...                                             2 ξ α(Q     −ηe−k     −1)2 −ηe−k                
+           0         ...        ...    ...    ...        ...                                  ...  
+                                 
+                        ...         ...        ...    ...    ...        ...                                  ...  
+                                 
+                        ...         ...        ...    ...    ...        ...       0  
+                                 
+                                      
+                                                      ...         ...        ...    0          2                                                          ξ α(Q                2 ξ                               −ηe−k                                         −1)2                                             −ηe−k                                                                        2 ξ           0                                       0                                  · · ·           · · ·      · · ·        −ηe−k   αQ2
+   In addition to this theoretical result, we can consider an approximation
+similar to the approximation used for the initial model. We then obtain the
+following approximations for the optimal quotes and the bid-ask spread:
+                     r
+
+                                                     k                                  ξ                                                    γ  1+ γk                        γ                                   2q + 1                                           σ2γ                                                            4 ξ                  +                                                  1 +                    +                                          e          δb∗         ln  1 +        ∞(q) ≃1γ       k    2     2      2kA     k
+                     r
+
+                                                      k                                                    γ  1+ γk                        γ                                           σ2γ                                                            4 ξ                  +                                                  1 +         δa∗         ln  1 +                                  ξ    −1 e        ∞(q) ≃1γ       k    2 −2q 2      2kA     k
+                    r
+
+                                                  k                                        σ2γ                                                 γ  1+ γk                           γ                                                       4 ξ                    + ξ + e                                               1 +          ψ∗          ln  1 +            ∞(q) ≃2γ       k          2kA     k
+
+
+6 Comparative statics
+
+We argued in section 4 that the value of the optimal quotes was almost inde-
+pendent of t for t suﬃciently far from the terminal time T and we characterized,
+using spectral arguments, the asymptotic value of the optimal quotes. In or-
+der to obtain closed-form formulae, we also provided approximations for the
+asymptotic value of the optimal quotes. Although these closed-form formu-
+lae are only approximations, they provide a rather good intuition about the
+inﬂuence of the diﬀerent parameters on the optimal quotes.
+
+[PAGE 16]
+16                                                                      Olivier Gu´eant et al.
+
+6.1 Dependence on σ2
+
+The dependence of optimal quotes on σ2 depends on the sign of the inventory.
+More precisely, we observe numerically, in accordance with the approximations,
+that:
+
+           
+                             ∂δb∗         ∂δa∗
+            ∂σ2                 ∞ < 0,   ∂σ2∞ > 0, if q < 0
+                             ∂δb∗         ∂δa∗
+                         ∞ > 0, if q = 0                                      ∂σ2            ∂δb∗∂σ2∞ > 0,   ∂δa∗
+                          ∂σ2                 ∞ > 0,   ∂σ2∞ < 0, if q > 0
+
+   For the bid-ask spread, we obtain:
+
+                           ∂ψ∗
+                    ∞ > 0
+                             ∂σ2
+
+   The rationale behind this is that an increase in σ2 increases inventory risk.
+Hence, to reduce this risk, a market maker that has a long position will try
+to reduce his exposure and hence ask less for his stocks (to get rid of some
+of them) and accept to buy at a lower price (to avoid buying new stocks).
+Similarly, a market maker with a short position tries to buy stocks, and hence
+increases its bid quote, while avoiding short selling new stocks, and he increases
+its ask quote to that purpose. Overall, due to the increase in price risk, the
+bid-ask spread widens as it is well instanced in the case of a market maker with
+a ﬂat position (this one wants indeed to earn more per trade to compensate
+the increase in inventory risk).
+
+
+
+6.2 Dependence on µ
+
+The dependence of optimal quotes on the drift µ is straightforward and corre-
+sponds to the intuition. If the agent expect the price to increase (resp. decrease)
+he will post orders with higher (resp. lower) prices. Hence we have:
+
+                           ∂δb∗       ∂δa∗
+                 ∞ < 0,   ∞ > 0
+                     ∂µ       ∂µ
+
+
+
+6.3 Dependence on A
+
+Because of the form of the system of equations that deﬁnes v, the dependence
+on A must be the exact opposite of the dependence on σ2:
+
+           
+                            ∂δb∗         ∂δa∗
+            ∂A                 ∞ > 0,   ∂A∞ < 0, if q < 0;
+                            ∂δb∗         ∂δa∗
+                         ∞ < 0, if q = 0                               ∂A            ∂δb∗∂A∞ < 0,   ∂δa∗
+                     ∂A                 ∞ < 0,   ∂A∞ > 0, if q > 0
+
+[PAGE 17]
+Dealing with the Inventory Risk                                                  17
+
+
+   For the bid-ask spread, we obtain:
+                           ∂ψ∗
+                    ∞ < 0
+                       ∂A
+   The rationale behind these results is that an increase in A reduces the
+inventory risk. An increase in A indeed increases the frequency of trades and
+hence reduces the risk of being stuck with a large inventory (in absolute value).
+For this reason, an increase in A should have the same eﬀect as a decrease in
+σ2.
+
+
+6.4 Dependence on γ
+
+Using the closed-form approximations, we see that the dependence on γ  is
+ambiguous. The market maker faces indeed two diﬀerent risks that contribute
+to inventory risk: (i) trades occur at random times and (ii) the reference price
+is stochastic. But  if risk aversion increases, the market maker will mitigate
+the two risks: (i) he may set his quotes closer to one another to reduce the
+randomness in execution and (ii) he may widen his spread to reduce price
+risk. The tension between these two roles played by γ explains the diﬀerent
+behaviors we may observe, as on Figure 6 and Figure 7 for the bid-ask spread
+resulting from the asymptotic optimal quotes:
+
+
+
+
+
+             7
+
+             6.5
+
+             6
+                            [Tick]
+             5.5
+                            Spread
+             5
+
+             4.5                                                                                    0
+                                                                                                              0.1
+             4
+                                                                                                       0.2            30
+                    20
+                             10                                                           0.3
+                                      0
+                                            −10                               0.4
+                                                    −20
+                                                             −30    0.5             γ
+
+                                                   Inventory
+
+Fig. 6 Bid-ask spread resulting from the asymptotic optimal quotes for diﬀerent inventories
+and diﬀerent values for the risk aversion parameter γ. σ = 0.3  Tick · s−1/2, A = 0.9  s−1,
+k = 0.3  Tick−1, T = 600   s.
+
+[PAGE 18]
+18                                                                      Olivier Gu´eant et al.
+
+
+
+
+
+             2.5
+
+             2.4
+
+             2.3
+
+             2.2                            [Tick]
+
+             2.1                            Spread
+             2
+
+             1.9                                                                                    0
+                                                                                                              0.1
+             1.8
+                                                                                                       0.2            30
+                    20
+                             10                                                           0.3
+                                      0
+                                            −10                               0.4
+                                                    −20
+                                                             −30    0.5             γ
+
+                                                   Inventory
+
+Fig. 7 Bid-ask spread resulting from the asymptotic optimal quotes for diﬀerent inventories
+and diﬀerent values for the risk aversion parameter γ. σ = 0.6  Tick · s−1/2, A = 0.9  s−1,
+k = 0.9  Tick−1, T = 600   s.
+
+
+
+6.5 Dependence on k
+
+From the closed-form approximations, we expect δb∗∞to be decreasing in k for
+q greater than some negative threshold. Below this threshold, we expect it to
+be increasing. Similarly we expect δa∗∞to be decreasing in k for q smaller than
+some positive threshold. Above this threshold we expect it to be increasing.
+
+
+   Eventually, as far as the bid-ask spread is concerned, the closed-form ap-
+proximations indicate that the resulting bid-ask spread should be a decreasing
+function of k.
+
+                           ∂ψ∗
+                    ∞ < 0
+                            ∂k
+
+In fact several eﬀects are in interaction. On one hand, there is a “no-volatility”
+eﬀect that is completely orthogonal to any reasoning on the inventory risk:
+when k increases, in a situation where δb and δa are positive, trades occur
+closer to the reference price St. For this reason, and in absence of inventory
+risk, the optimal bid-ask spread has to shrink. However, an increase in k also
+aﬀects the inventory risk since it decreases the probability to be executed (for
+δb, δa > 0). Hence, an increase in k is also, in some aspects, similar to a de-
+crease in A. These two eﬀects explain the expected behavior.
+
+[PAGE 19]
+Dealing with the Inventory Risk                                                  19
+
+
+
+
+
+           10
+
+            8
+
+            6
+                            [Tick]  4
+           −sb     s  2
+
+            0
+
+           −2
+            2                                                                                   30
+                                                                                          20
+                         1.5
+                                                                                   10
+                                1                                           0
+                                                                     −10
+                                                 0.5
+                                                              −20
+                             k [Tick−1]                 0   −30                  Inventory
+
+Fig. 8 Asymptotic optimal bid quotes for diﬀerent inventories and diﬀerent values of k.
+σ = 0.3  Tick · s−1/2, A = 0.9  s−1, γ = 0.01  Tick−1, T = 600   s.
+
+
+   Numerically, we observed that the “no-volatility” eﬀect dominated for the
+values of the inventory under consideration (see Figure 8 for the case of the
+bid quote9).
+
+
+6.6 Dependence on the market impact ξ
+
+The market impact introduced in 5.2 has two eﬀects on the optimal quotes. In
+the absence of price risk, given the functional form of the execution intensities,
+the direct eﬀect of ξ is approximately to add 2ξ the each optimal quote: the
+market maker approximately maintains his proﬁt per round trip on the market
+but the probability of occurrence of a trade is reduced. This adverse selection
+eﬀect has a side-eﬀect linked to inventory risk: since adverse selection gives
+the market maker an incentive to post orders deeper in the book, it increases
+the risk of being stuck with a large inventory for a market maker holding
+such an inventory. As a consequence, for a trader holding a positive (resp.
+negative) inventory, there is a second eﬀect inciting to buy and sell at lower
+(resp. higher) prices. These two eﬀects are clearly highlighted by the closed-
+form approximations exhibited in the previous section:
+
+                         r
+
+                                                            k                                                   σ2γ                                                            γ  1+ γk                γ                                                                   4 ξ            +                                                          1 +                              ξ     +2q + 1    eδb∗         ln  1 +                                                 |{z}                                            2kA     k ∞(q) ≃1γ       k         2          2                            |{z}
+                          adverse selection          side−effect
+
+  9 The case of the ask quote is obviously similar.
+
+[PAGE 20]
+20                                                                      Olivier Gu´eant et al.
+
+
+
+                         r
+
+                                                            k                                                            γ  1+ kγ                γ                                                   σ2γ                                                                   4 ξ            +                                                          1 +δa∗         ln  1 +                               ξ       −1    e                                                 |{z}                                            2kA     k ∞(q) ≃1γ       k         2     −2q 2                            |{z}
+                          adverse selection          side−effect
+
+
+
+7 Backtests
+
+Before using the above model on historical data, we need to discuss some fea-
+tures of the model that need to be adapted before any backtest is possible.
+
+
+    First of all, the model is continuous in both time and space while the real
+control problem is intrinsically discrete in space, because of the tick size, and
+in time, because orders have a certain priority and changing position too often
+reduces the actual chance to be reached by a market order. Hence, the model
+has to be reinterpreted in a discrete way. In terms of prices, quotes must not
+be between two ticks and we decided to round the optimal quotes to the near-
+est tick. In terms of time, an order of size ATS10 is sent to the market and is
+not canceled nor modiﬁed for a given period of time ∆t, unless a trade occurs
+and, though perhaps partially, ﬁlls the order. Now, when a trade occurs and
+changes the inventory or when an order stayed in the order book for longer
+than ∆t, then the optimal quote is updated and, if necessary, a new order is
+inserted.
+
+
+   Concerning the parameters, σ, A and k can be calibrated on trade-by-trade
+limit order book data while γ has to be chosen. However, it is well known by
+practitioners that A and k have to depend at least on the actual market bid-
+ask spread. Since we do not explicitly take into account the underlying market,
+there is no market bid-ask spread in the model. For the backtest example we
+present below, A and k have been chosen independent of the spread but, in
+practice, the value of A and k are function of the market bid-ask spread. As
+far as γ is concerned, we decided in our backtests to assign γ an arbitrary
+value for which the inventory stayed between -10 and 10 during the day we
+considered (the unit being the ATS).
+
+
+   Turning to the backtests, they were carried out with trade-by-trade data
+and we assumed that our orders were entirely ﬁlled when a trade occurred at
+or above the ask price quoted by the agent. Our goal here is just to exemplify
+the use of the model11 and we considered the case of the French stock France
+Telecom on March 15th 2012.
+
+
+ 10 ATS is the average trade size.
+ 11 We, voluntarily, do not give full details about the algorithm based on the model.
+
+[PAGE 21]
+Dealing with the Inventory Risk                                                  21
+
+  We ﬁrst plot the price of the stock France Telecom on March 15th 2012
+on Figure 9, the evolution of the inventory12 on Figure 10 and the associated
+P&L (the stocks in the portfolio are evaluated at mid-price) on Figure 11.
+
+
+
+
+
+            11.29
+
+            11.28
+
+            11.27
+
+            11.26
+
+            11.25
+                Price            11.24
+
+            11.23
+
+            11.22
+
+            11.21
+
+              11.2
+               10:00      11:00      12:00      13:00      14:00      15:00      16:00
+                                           Time
+
+Fig. 9 Price of the stock France Telecom on 15/03/2012, from 10:00 to 16:00.
+
+
+
+
+
+               8
+
+               6
+
+               4
+
+               2
+
+               0                                      Inventory
+             −2
+
+             −4
+
+             −6
+
+             −8
+               10:00      11:00      12:00      13:00      14:00      15:00      16:00
+                                           Time
+
+Fig. 10 Inventory (in ATS) when the strategy is used on France Telecom (15/03/2012)
+from 10:00 to 16:00.
+
+ 12 The ATS is 1105 for the day we considered.
+
+[PAGE 22]
+22                                                                      Olivier Gu´eant et al.
+
+
+            1400
+
+            1200
+
+            1000
+              EUR]  800
+          [in
+          PnL  600
+
+             400
+
+             200
+
+               0
+               10:00      11:00      12:00      13:00      14:00      15:00      16:00
+                                           Time
+
+Fig. 11 P&L when the strategy is used on France Telecom (15/03/2012) from 10:00 to
+16:00.
+
+
+   This P&L can be compared to the P&L of a naive trader (Figure 12) who
+only posts orders at the ﬁrst limit of the book on each side, whenever he is
+asked to post orders – that is when one of his orders has been executed or
+after a period of time ∆t with no execution.
+
+
+
+             800
+
+             600
+
+             400
+             EUR]  200
+          [in
+          PnL    0
+
+           −200
+
+           −400
+
+           −600
+               10:00      11:00      12:00      13:00      14:00      15:00      16:00
+                                           Time
+
+Fig. 12 P&L of a naive market maker on France Telecom (15/03/2012) from 10:00 to 16:00.
+
+
+
+   Now, to better understand the details of the strategy, we focused on a
+subperiod of 1 hour and we plotted the state of the market along with the
+
+[PAGE 23]
+Dealing with the Inventory Risk                                                  23
+
+
+quotes of the market maker (Figure 13). Trades occurrences involving the
+market maker are signalled by a dot.
+
+
+
+
+
+            11.24
+
+
+            11.23
+                Price            11.22
+
+
+            11.21
+
+
+              11.2
+
+               12:00      12:10      12:20      12:30      12:40      12:50      13:00
+                                           Time
+
+Fig. 13 Details for the quotes and trades when the strategy is used on France Telecom
+(15/03/2012). Thin lines represent the market while bold lines represent the quotes of the
+market maker. Dotted lines are associated to the bid side while plain lines are associated to
+the ask side. Black points represent trades in which the market maker is involved.
+
+
+
+
+
+Conclusion
+
+In this paper we present a model for the optimal quotes of a market maker.
+Starting from a model in line with Avellaneda and Stoikov [3] and rooted to
+Ho and Stoll [17], we introduce a change of variables that allows to trans-
+form the HJB equation into a system of linear ordinary diﬀerential equations.
+This transformation allows to ﬁnd the optimal quotes and to characterize
+their asymptotic behavior. Closed-form approximations are also obtained us-
+ing spectral analysis.
+
+   The change of variables introduced in this paper can also be used to solve
+the initial equations of Avellaneda and Stoikov [3] and we provide a complete
+mathematical proof in [13]. However, in the absence of inventory limits, no
+proof of optimality is available for the quotes claimed to be optimal in [3] and
+their admissibility appears to be an open problem.
+
+  An important topic for future research consists in generalizing the model to
+any intensity function. This is particularly important because the exponential
+form of the intensity is only suited to liquid stocks with a small bid-ask spread.
+Another important topic consists in introducing “passive market impact” (i.e.
+
+[PAGE 24]
+24                                                                      Olivier Gu´eant et al.
+
+
+the perturbations of the price formation process by liquidity provision). This
+is a real modeling challenge since no quantitative model for this type of impact
+has been proposed in the literature.
+
+
+Acknowledgements The authors wish to acknowledge the helpful conversations with Yves
+Achdou (Universit´e Paris-Diderot), Vincent Fardeau (London School of Economics), Thierry
+Foucault (HEC), Jean-Michel Lasry (Universit´e Paris-Dauphine), Antoine Lemenant (Uni-
+versit´e Paris-Diderot), Pierre-Louis Lions (Coll`ege de France), Albert Menkveld (VU Uni-
+versity Amsterdam), Vincent Millot (Universit´e Paris-Diderot) and Nizar Touzi (Ecole Poly-
+technique). The authors also would like to thank two anonymous referees for their sugges-
+tions.
+
+
+
+References
+
+
+1. Amihud, Y., Mendelson, H.: Dealership Market. Market-Making with Inventory. Journal
+  of Financial Economics 8, 31–53 (1980)
+2. Amihud, Y., Mendelson, H.: Asset pricing and the bid-ask spread. Journal of Financial
+  Economics 17(2), 223–249 (1986)
+3. Avellaneda, M., Stoikov, S.: High-frequency trading in a limit order book. Quantitative
+  Finance 8(3), 217–224 (2008).
+4. Bayraktar, E., Ludkovski, M.: Liquidation in limit order books with controlled intensity.
+  Arxiv preprint arXiv:1105.0247 (2011)
+5. Benston Robert, L., George, J.: Determinants of bid-asked spreads in the over-the-counter
+  market. Journal of Financial Economics 1(4), 353–364 (1974)
+6.  ´A. Cartea and S. Jaimungal. Modeling asset prices for algorithmic and high frequency
+  trading. 2010.
+7.  ´A. Cartea and S. Jaimungal. Risk measures and ﬁne tuning of high frequency trading
+  strategies. 2012.
+8. Cartea, ´A., Jaimungal, S., Ricci, J.: Buy low sell high: A high frequency trading perspec-
+  tive (2011)
+9. Cohen, K.J., Maier, S.F., Schwartz, R.A., Whitcomb, D.K.: Market makers and the mar-
+  ket spread: A review of recent literature. Journal of Financial and Quantitative Analysis
+  14(04), 813–835 (1979)
+10. Cohen, K.J., Maier, S.F., Schwartz, R.A., Whitcomb, D.K.: Transaction Costs, Order
+  Placement Strategy, and Existence of the Bid-Ask Spread. The Journal of Political Econ-
+ omy 89(2), 287–305 (1981).
+11. Garman, M.B.: Market microstructure. Journal of Financial Economics 3(3), 257–275
+  (1976)
+12. Gu´eant, O., Lehalle, C.A., Fernandez-Tapia, J.: Optimal Execution with Limit Orders.
+  Working paper (2011)
+13. Gu´eant, O., Lehalle, C.A.: Existence and Uniqueness for the Avellaneda-Stoikov PDE.
+  Working paper (2012)
+14. Guilbaud, F., Pham, H.: Optimal high frequency trading with limit and market orders
+  (2011)
+15. F. Guilbaud and H. Pham. Optimal high frequency trading in a pro-rata microstructure
+  with predictive information. Arxiv preprint arXiv:1205.3051, 2012.
+16. Hendershott, T., Menkveld, A.: Price pressures. Manuscript, VU University Amsterdam
+  (2009)
+17. Ho, T., Stoll, H.R.: Optimal dealer pricing under transactions and return uncertainty.
+  Journal of Financial Economics 9(1), 47–73 (1981).
+18. Ho, T.S.Y., Macris, R.G.: Dealer bid-ask quotes and transaction prices: An empirical
+  study of some AMEX options. Journal of Finance pp. 23–45 (1984)
+19. Ho, T.S.Y., Stoll, H.R.: The dynamics of dealer markets under competition. Journal of
+  Finance 38(4), 1053–1074 (1983)
+
+[PAGE 25]
+Dealing with the Inventory Risk                                                  25
+
+
+20. Lehalle, C.A., Gu´eant, O., Razaﬁnimanana, J.: High Frequency Simulations of an Order
+  Book: a Two-Scales Approach. In: F. Abergel, B.K. Chakrabarti, A. Chakraborti, M. Mitra
+  (eds.) Econophysics of Order-Driven Markets, New Economic Windows. Springer (2010)
+21. Madhavan, A., Smidt, S.: An analysis of changes in specialist inventories and quotations.
+  The Journal of Finance 48(5), 1595–1628 (1993)
+22. Menkveld, A.J.: High Frequency Trading and The New-Market Makers. Social Science
+  Research Network Working Paper Series (2010).
+23. Mildenstein, E., Schleef, H.: The optimal pricing policy of a monopolistic marketmaker
+  in the equity market. Journal of Finance pp. 218–231 (1983)
+24. O’Hara, M., Oldﬁeld, G.S.: The microeconomics of market making. Journal of Financial
+  and Quantitative Analysis 21(04), 361–376 (1986)
+25. Roll, R.: A simple implicit measure of the eﬀective bid-ask spread in an eﬃcient market.
+  Journal of Finance 39(4), 1127–1139 (1984)
+
+
+Appendix: Proofs of the results
+
+Proof of Proposition 1, Proposition 2 and Theorem 1:
+
+   Let us consider a family (vq)|q|≤Q of positive functions solution of the
+system of ODEs introduced in Proposition 1 and let us deﬁne u(t, x, q, s) =
+       + qs)) vq(t)−γ−exp (−γ(x                k .
+
+   Then:
+                      1                  ˙vq(t)    γ2σ2
+                           +                                                q2u
+                                             2                 ∂tu + 2σ2∂2ssu = −γk vq(t)u
+   Now, concerning the hamiltonian parts, we have for the bid part (q ̸= Q):
+             sup                  λb(δb) u(t, x −s + δb, q + 1, s) −u(t, x, q, s)                   δb
+                          "                      #
+                                                 vq+1(t)  −γk      = sup Ae−kδbu(t, x, q, s)                  δb                  exp(−γδb)    vq(t)    −1
+
+   The ﬁrst order condition of this problem corresponds to a maximum (be-
+cause u is negative) and writes:
+                                         vq+1(t)  −γk
+                   (k + γ) exp(−γδb∗)    vq(t)    = k
+
+   Hence:
+
+                       1      vq(t)     1       γ
+               δb∗=   ln       +   ln  1 +
+                      k     vq+1(t)    γ       k
+
+   and
+
+             sup                  λb(δb) u(t, x −s + δb, q + 1, s) −u(t, x, q, s)                   δb
+                        γ
+            = − k + γ A exp(−kδb∗)u(t, x, q, s)
+
+[PAGE 26]
+26                                                                      Olivier Gu´eant et al.
+
+                                              γ vq+1(t)                             γ −k          =         1 +                u(t, x, q, s)          −γAk + γ     k       vq(t)
+    Similarly, the maximizer for the ask part (for q ̸= −Q) is:
+                       1      vq(t)      1       γ
+              δa∗=   ln       +   ln  1 +
+                      k     vq−1(t)    γ       k
+   and
+
+             sup                 λa(δa) [u(t, x + s + δa, q −1, s) −u(t, x, q, s)]                 δa
+                        γ
+            = − k + γ A exp(−kδa∗)u(t, x, q, s)
+
+
+                                              γ                             γ −k          =         1 +          −γAk + γ     k     vq−1(t)vq(t)  u(t, x, q, s)
+   Hence, putting the terms altogether we get for |q| < Q:
+                                 1
+                        ∂tu(t, x, q, s) + 2σ2∂2ssu(t, x, q, s)
+
+        + sup                   λb(δb) u(t, x −s + δb, q + 1, s) −u(t, x, q, s)                    δb
+
+        + sup                  λa(δa) [u(t, x + s + δa, q −1, s) −u(t, x, q, s)]                  δa
+
+                                                       k
+                   γ2σ2                      γA               ˙vq(t)                                      γ  γ  vq+1(t)
+                                   1 +           +                       q2u   =     −γk vq(t)u    2   − k + γ     k       vq(t) + vq−1(t)vq(t)  u
+
+                                                           k )                                                            γ      u                             γ  −(1+=                ˙vq(t)                           q2vq(t) + A  1 +                                                      (vq+1(t) + vq−1(t)) = 0                                    k            −kγσ22 −γk vq(t)
+   For q = −Q we have:
+                                 1
+                        ∂tu(t, x, q, s) + 2σ2∂2ssu(t, x, q, s)
+
+        + sup                   λb(δb) u(t, x −s + δb, q + 1, s) −u(t, x, q, s)                    δb
+                        ˙vq(t)    γ2σ2     γA      γ  γk vq+1(t)
+       =      +     q2u         1 +          u         −γk vq(t)u    2   − k + γ     k     vq(t)
+
+                                                                 k )                                                                  γ          u                             γ  −(1+   =              ˙vq(t)         q2vq(t) + A  1 +           vq+1(t) = 0     −γk vq(t)     −kγσ22                k
+
+    Similarly, for q = Q we have:
+
+                                 1
+                        ∂tu(t, x, q, s) + 2σ2∂2ssu(t, x, q, s)
+        + sup                  λa(δa) [u(t, x −s + δa, q + 1, s) −u(t, x, q, s)]                  δa
+
+[PAGE 27]
+Dealing with the Inventory Risk                                                  27
+
+
+
+                                                               k
+                        γ2σ2                           γA                        ˙vq(t)
+              +                             q2u                                         1 +       =         −γk vq(t)u    2   − k + γ     γk  γ vq−1(t)vq(t) u
+
+                                                                 k )                                                                  γ          u                             γ  −(1+   =                       ˙vq(t)                                q2vq(t) + A  1 +                                         k         vq−1(t) = 0                −kγσ22     −γk vq(t)
+
+   Now, noticing that the terminal condition for vq is consistent with the ter-
+minal condition for u, we get that u veriﬁes (HJB) and this proves Proposition
+1.
+
+   The positivity of the functions (vq)|q|≤Q was essential in the deﬁnition of
+u. Hence we need to prove that the solution to the above linear system of ordi-
+nary diﬀerential equations, namely v(t) = exp(−M(T −t))×(1, . . . , 1)′ (where
+M is given in Proposition 2), deﬁnes a family (vq)|q|≤Q of positive functions.
+
+   In fact, we are going to prove that:
+           ∀t ∈[0, T ], ∀q ∈{−Q, . . ., Q},   vq(t) ≥e−(αQ2−η)(T −t)
+     If this was not true then there would exist ǫ > 0 such that:
+
+                               + ǫ(T −t) < 0         min    e−2η(T −t)  vq(t) −e−(αQ2−η)(T −t)          t∈[0,T ],|q|≤Q
+   But this minimum is achieved at some point (t∗, q∗) with t∗< T and hence:
+
+             d
+                 e−2η(T −t)  vq∗(t)                −t)               dt                −e−(αQ2−η)(T    t=t∗≥ǫ
+   This gives:
+
+                 2ηe−2η(T −t∗)  vq∗(t∗) −e−(αQ2−η)(T −t∗)
+          +e−2η(T −t∗)  v′q∗(t∗) −(αQ2 −η)e−(αQ2−η)(T −t∗) ≥ǫ
+Hence:
+        2ηvq∗(t∗) + v′q∗(t∗)   + αQ2)e−(αQ2−η)(T −t∗)          −t∗)                   −(η                     ≥ǫe2η(T
+   Now, if |q∗| < Q, this gives:
+              αq∗2vq∗(t∗) −η(vq∗+1(t∗) −2vq∗(t∗) + vq∗−1(t∗))
+             + αQ2)e−(αQ2−η)(T −t∗)          −t∗)              −(η                     ≥ǫe2η(T
+Thus:
+
+                                   + vq∗−1(t∗))   αq∗2  vq∗(t∗) −e−(αQ2−η)(T −t∗)  −η(vq∗+1(t∗) −2vq∗(t∗)
+           −(η + α(Q2 −q∗2))e−(αQ2−η)(T −t∗) ≥ǫe2η(T −t∗)
+
+[PAGE 28]
+28                                                                      Olivier Gu´eant et al.
+
+   All the terms on the left hand side are nonpositive by deﬁnition of (t∗, q∗)
+and this gives a contradiction.
+
+     If q∗= Q, we have:
+
+               (αQ2 + η)vQ(t∗) −η(vQ−1(t∗) −vQ(t∗))
+             + αQ2)e−(αQ2−η)(T −t∗)          −t∗)              −(η                     ≥ǫe2η(T
+Thus:
+−η(vQ−1(t∗) −vQ(t∗)) + (η + αQ2)  vQ(t∗) −e−(αQ2−η)(T −t∗)  ≥ǫe2η(T −t∗)
+
+   All the terms on the left hand side are nonpositive by deﬁnition of (t∗, q∗) =
+(t∗, Q) and this gives a contradiction.
+
+    Similarly, if q∗= −Q, we have:
+              (αQ2 + η)v−Q(t∗) −η(v−Q+1(t∗) −vQ(t∗))
+             + αQ2)e−(αQ2−η)(T −t∗)          −t∗)              −(η                     ≥ǫe2η(T
+−η(v−Q+1(t∗)−v−Q(t∗))+(η+αQ2)  v−Q(t∗) −e−(αQ2−η)(T −t∗)  ≥ǫe2η(T −t∗)
+   All the terms on the left hand side are nonpositive by deﬁnition of (t∗, q∗) =
+(t∗, −Q) and this gives a contradiction.
+   As a consequence, vq(t) ≥e−(αQ2−η)(T −t) > 0 and this completes the proofof Proposition 2.
+
+   Combining the above results, we see that u, as deﬁned in Theorem 1, is a
+solution of (HJB). Then, we are going to use a veriﬁcation argument to prove
+that u is the value function of the optimal control problem under consideration
+and prove subsequently that the optimal controls are as given in Theorem 1.
+
+   Let us consider processes (νb) and (νa) ∈A. Let t ∈[0, T ) and let us
+consider the following processes for τ ∈[t, T ]:
+                          dSt,sτ = σdWτ,     St,st = s
+
+                                                                                     t  = x          dXt,x,ντ  = (Sτ + νaτ )dN τa −(Sτ −νbτ)dN τ,b      Xt,x,ν
+
+                                                τ                                         a ,      qt,q,νt  = q                         dqt,q,ντ  = dN τb −dN
+where the point process N b has intensity (λbτ)τ with λbτ = Ae−kνb                                                                                   τ 1qτ−<Q and
+where the point process N a has intensity (λaτ)τ with λaτ = Ae−kνa                                                                                  τ 1qτ−>−Q 13.
+
+ 13 These intensities are bounded since νb and νa are bounded from below.
+
+[PAGE 29]
+Dealing with the Inventory Risk                                                  29
+
+
+   Now, since u is smooth, let us write Itˆo’s formula for u, between t and tn
+
+                                                      τ                                                                          t                                                                            τ                                                                                                     twhere tn = T ∧inf{τ > t, |Sτ −s| ≥n or |N                                              a −N                                                    a | ≥n or |N                                                                                b −N                                                                                       b | ≥n}
+(n ∈N):
+
+                                               tn ) = u(t, x, q, s)                     u(tn, Xt,x,νtn−, qt,q,νtn−, St,s
+     Z tn                                   σ2
+   +                                                                             τ  )  dτ                                         τ  ) +                                      ∂2ssu(τ, Xt,x,ντ−, qt,q,ντ−, St,s            ∂τu(τ, Xt,x,ντ−, qt,q,ντ−, St,s                                    2            t
+  Z tn
+        u(τ, Xt,x,ν+                                                                                τ  ) λaτdτ           + St,sτ + νaτ , qt,q,ν            τ−                                                   τ  ) −u(τ, Xt,x,ντ−, qt,q,ντ−, St,s                          τ− −1, St,s      t
+  Z tn
++      u(τ, Xt,x,ν     τ + νbτ, qt,q,ν + 1, St,sτ  )       Xt,x,ν  qt,q,ν St,sτ  ) λbτdτ      t        τ−  −St,s      τ−         −u(τ, τ−, τ−,
+                  Z tn
+           +                                                           τ )dWτ                         σ∂su(τ, Xt,x,ντ−, qt,q,ντ−, St,s                                  t
+  Z tn
++        u(τ, Xt,x,ν                                                                                τ  ) dM τa           + St,sτ + νaτ , qt,q,ν            τ−                                                   τ  ) −u(τ, Xt,x,ντ−, qt,q,ντ−, St,s                          τ− −1, St,s      t
+  Z tn
++      u(τ, Xt,x,ν     τ + νbτ, qt,q,ν + 1, St,sτ  )       Xt,x,ν  qt,q,ν St,sτ  ) dM τb      t        τ−  −St,s      τ−         −u(τ, τ−, τ−,
+where M b and M a are the compensated processes associated respectively to
+N b and N a for the intensity processes (λbτ)τ and (λaτ)τ.
+
+   Now, because each vq is continuous and positive on a compact set, it has a
+                                       k  is bounded along the trajectory, indepen-positive lower bound and vqτ (τ)−γ
+dently of the trajectory. Also, because νb and νa are bounded from below, and
+because of the deﬁnition of tn, all the terms in the above stochastic integrals
+are bounded and, local martingales being in fact martingales, we have:
+
+                                                tn ) = u(t, x, q, s)            E u(tn, Xt,x,νtn−, qt,q,νtn−, St,s
+      Z tn                                    σ2
+  +E                                                                               τ  )  dτ                                          τ  ) +                                       ∂2ssu(τ, Xt,x,ντ−, qt,q,ντ−, St,s              ∂τu(τ, Xt,x,ντ−, qt,q,ντ−, St,s                                     2             t
+  Z tn
++      u(τ, Xt,x,ν + St,sτ + νaτ , qt,q,ν      St,sτ  )       Xt,x,ν  qt,q,ν St,sτ  ) λaτdτ      t        τ−            τ− −1,    −u(τ, τ−, τ−,
+  Z tn
++      u(τ, Xt,x,ν     τ + νbτ, qt,q,ν + 1, St,sτ  )       Xt,x,ν  qt,q,ν St,sτ  ) λbτdτ     t        τ−  −St,s      τ−         −u(τ, τ−, τ−,
+
+   Using the fact that u solves (HJB), we then have that
+            E u(tn, Xt,x,νtn−, qt,q,νtn−, St,s                                                tn ) ≤u(t, x, q, s)
+with equality when the controls are taken equal the maximizers of the hamil-
+tonians (these controls being in A because v is bounded and has a positive
+
+[PAGE 30]
+30                                                                      Olivier Gu´eant et al.
+
+
+lower bounded).
+
+   Now, if we prove that
+                                          tn ) = E u(T, Xt,x,νT     , qt,q,νT    , St,sT )     n→∞Elim    u(tn, Xt,x,νtn−, qt,q,νtn−, St,s
+we will have that for all controls in A:
+
+E −exp −γ(Xt,x,ν               T  + qt,q,νT   St,sT ) = E u(T, Xt,x,νT     , qt,q,νT    , St,sT ) ≤u(t, x, q, s)
+with equality for νbt = δb∗(t, qt−) and νa                                                        t = δa∗(t, qt−). Hence:
+
+           sup                                  T  + qt,q,νT   St,sT ) = u(t, x, q, s)              E −exp −γ(Xt,x,ν          (νat )t,(νb                        t               )t∈A                      h                              i
+                                   T  + qt,q,δ∗T    St,sT )           = E −exp  −γ(Xt,x,δ∗
+and this will give the result.
+
+    It remains to prove that
+                                          tn ) = E u(T, Xt,x,νT     , qt,q,νT    , St,sT )     n→∞Elim    u(tn, Xt,x,νtn−, qt,q,νtn−, St,s
+                                                                      tn ) tends towards    First, we have, almost surely, that u(tn, Xt,x,νtn−, qt,q,νtn−, St,s
+            T                  T  ). Then, in order to prove that the sequence is uniformlyu(T, Xt,x,νT −, qt,q,ν         −, St,sintegrable we will bound it in L2. However, because of the uniform lower bound
+                                                                                      tn ))on v already used early, it is suﬃcient to bound exp(−γ(Xt,x,νtn−+ qt,q,νtn−St,sin L2.
+
+   But,
+
+                     Z tn        Z tn         Z tn
+                                                                               qt,q,ντ  dWτ                                            νbτdN τb + σ                            νaτ dN τa +                          tn =       Xt,x,νtn−+ qt,q,νtn−St,s                                                                                    t                                                              t                                         t
+                                      Z tn
+                                                    b + σ                                                                   qt,q,ντ  dWτ                           T                                       T          ≥−∥νa−∥∞N                             a −∥νb−∥∞N                                                                       t
+   Hence
+
+
+                                       tn ))   E exp(−2γ(Xt,x,νtn−+ qt,q,νtn−St,s                                              Z tn
+                                                                           τ  dWτ                                        T                       T                         a exp 2γ∥νa−∥∞N ≤E exp 2γ∥νa−∥∞N                                                      b  exp −2γσ  t   qt,q,ν
+                                    1                              1
+                                                             b   3
+                                             T                      T                          −∥∞N ≤E exp 6γ∥νa−∥∞N                         a   3 E exp 6γ∥νb1
+                                                  3                 Z tn
+                                τ  dWτ   ×E exp −6γσ  t   qt,q,ν
+
+[PAGE 31]
+Dealing with the Inventory Risk                                                  31
+
+
+   Now, since the intensity of each point process is bounded, the point pro-
+cesses have a Laplace transform and the ﬁrst two terms of the product are
+
+                                                                                   τﬁnite (and independent of n). Concerning the third term, because |qt,q,ν                                                                                                                     | isbounded by Q, we know (for instance applying Girsanov’s theorem) that:
+
+                 Z tn                 13                                      1
+                                τ  dWτ   ≤E exp 3γ2σ2(tn −t)Q2   3     E exp −6γσ  t   qt,q,ν
+
+                    ≤exp γ2σ2Q2T
+   Hence, the sequence is bounded in L2, then uniformly integrable and we
+have:
+
+
+
+                                                      T                                                            T )                                          tn ) = E u(T, Xt,x,νT −, qt,q,ν                                      −, St,s     n→∞Elim    u(tn, Xt,x,νtn−, qt,q,νtn−, St,s
+              = E u(T, Xt,x,νT     , qt,q,νT    , St,sT )
+  We have proved that u is the value function and that δb∗and δa∗are
+optimal controls.
+                                                                                                    ⊓⊔
+Proof of Theorem 2:
+
+   Let us ﬁrst consider the matrix M +2ηI. This matrix is a symmetric matrix
+and it is therefore diagonalizable. Its smallest eigenvalue λ is characterized by:
+
+                               x′(M + 2ηI)x
+                  λ =      inf
+                            x∈R2Q+1\{0}     x′x
+and the associated eigenvectors x ̸= 0 are characterized by:
+                           x′(M + 2ηI)x
+                      λ =
+                                    x′x
+
+    It is straightforward to see that:
+
+
+       XQ           Q−1X
+   x′(M + 2ηI)x =     αq2xq2 + η     (xq+1 −xq)2 + ηxQ2 + ηx−Q2
+                q=−Q         q=−Q
+
+   Hence, if x is an eigenvector of M + 2ηI associated to λ:
+
+                      +
+                     λ                       ≤|x|′(M   2ηI)|x|                                              |x|′|x|                                              
+     XQ            Q−1X       1
+  =          αq2|xq|2 + η      (|xq+1| −|xq|)2 + η|xQ|2 + η|x−Q|2        |x|′|x|  q=−Q          q=−Q
+
+[PAGE 32]
+32                                                                      Olivier Gu´eant et al.
+
+                                             
+    XQ            Q−1X       1
+ ≤          αq2|xq|2 + η     (xq+1 −xq)2 + η|xQ|2 + η|x−Q|2 = λ      |x|′|x|  q=−Q          q=−Q
+   This proves that |x| is also an eigenvector and that necessarily xq+1 and
+xq are of the same sign (i.e. xqxq+1 ≥0).
+   Now, let x ≥0 be an eigenvector of M + 2ηI associated to λ.
+     If for some q with |q| < Q we have xq = 0 then:
+
+     0 = λxq = αq2xq −η(xq+1 −2xq + xq−1) = −η(xq+1 + xq−1) ≤0
+   Hence, because x ≥0, both xq+1 and xq−1 are equal to 0. By immediateinduction x = 0 and this is a contradiction.
+
+   Now, if xQ = 0, then 0 = λxQ = αQ2xQ −η(−2xQ +xQ−1) = −ηxQ−1 ≤0
+and hence xQ−1 = 0. Then, by the preceding reasoning we obtain a contradic-
+tion.
+
+   Similarly if x−Q = 0, then 0 = λx−Q = αQ2x−Q −η(x−Q+1 −2x−Q) =
+−ηx−Q+1 ≤0 and hence x−Q+1 = 0. Then, as above, we obtain a contradic-tion.
+
+   This proves that any eigenvector x ≥0 of M + 2ηI associated to λ veriﬁesin fact x > 0.
+
+   Now, if the eigenvalue λ was not simple, there would exist two eigenvectors
+x and y of M + 2ηI associated to λ such that |x|′y = 0. Hence, y must have
+positive coordinates and negative coordinates and since yqyq+1 ≥0, we know
+that there must exist q such that yq = 0. However, this contradicts our pre-
+ceding point since |y| ≥0 should also be an eigenvector of M + 2ηI associatedto λ and it cannot have therefore coordinates equal to 0.
+
+   As a conclusion, the eigenspace of M + 2ηI associated to λ is spanned by
+a vector f 0 > 0 and we scaled its R2Q+1-norm to 1.
+   Now, because M is a symmetric matrix, we can write v(0) = exp(−MT )×(1, . . . , 1)′ as:
+
+
+     X2Q
+       vq(0) =    exp(−λiT )⟨gi, (1, . . . , 1)′⟩giq,    ∀q ∈{−Q, . . ., Q}
+                i=0
+where λ0 ≤λ1 ≤. . . ≤λ2Q are the eigenvalues of M (in increasing orderand repeated if necessary) and (gi)i an associated orthonormal basis of eigen-
+vectors. Clearly, we can take g0 = f 0. Then, both f q0 and ⟨f 0, (1, . . . , 1)′⟩arepositive and hence diﬀerent from zero. As a consequence:
+
+[PAGE 33]
+Dealing with the Inventory Risk                                                  33
+
+
+
+
+
+                                                        q                                                    0 ,    ∀q ∈{−Q, . . . , Q}     vq(0) ∼T →+∞exp(−λ0T )⟨f 0, (1, . . . , 1)′⟩f
+   Then, using the expressions for the optimal quotes, we get:
+                                 !
+                             1       γ    1     f q0
+                          +                                     ln  1 +                                                      ln
+              T                            γ                                    k                                         k                                                  f q+10             →+∞δb∗(0,lim        q) =
+                                 !
+                             1       γ    1     f q0
+                          +                                     ln  1 +                                                      ln
+              T                            γ                                    k                                         k                                                  f 0             →+∞δa∗(0,lim        q) =                                                     q−1
+   Turning to the characterization of f 0 stated in Theorem 2, we just need to
+write the Rayleigh ratio associated to the smallest eigenvalue of M + 2ηI:
+
+                    f 0 ∈    argmin   f ′(M + 2ηI)f                           f∈R2Q+1,∥f∥2=1
+Equivalently:
+
+       XQ           Q−1X
+   f 0 ∈    argmin         αq2fq 2 + η     (fq+1 −fq)2 + ηfQ 2 + ηf−Q 2
+        f∈R2Q+1,∥f∥2=1 q=−Q         q=−Q
+                                                                                                    ⊓⊔
+   Proof of Proposition 3:
+
+   Let us ﬁrst introduce H = {u ∈L1loc(R)/x 7→xu(x) ∈L2(R) and u′ ∈
+L2(R)}.                qR
+                                  R (αx2u(x)2 + ηu′(x)2) dx is an HilbertH equipped with the norm ∥u∥H =space.
+
+   Step 1: H ⊂L2(R) with continuous injection.
+   Let us consider u ∈H and ǫ > 0.
+
+  We have:
+            Z                 Z
+                    u(x)2dx             x2u(x)2dx <               ≤1ǫ2           +∞                   R\[−ǫ,ǫ]                   R\[−ǫ,ǫ]
+Hence because u′ ∈L2(R), we have u ∈H1(R \ [−ǫ, ǫ]) with a constant Cǫ
+independent of u such that ∥u∥H1(R\[−ǫ,ǫ]) ≤Cǫ∥u∥H. In particular u is con-tinuous on R∗.
+                                            R 1
+   Now,  if ǫ = 1, ∀x ∈(0, 1), u(x) = u(1) −                                               x u′(t)dt and then |u(x)| ≤   + √1|u(1)|      −x∥u′∥L2((0,1)).
+
+[PAGE 34]
+34                                                                      Olivier Gu´eant et al.
+
+   Because the injection of H1((1, +∞)) in C([1, +∞))  is continuous, we
+know that there exists a constant C independent of u such that |u(1)| ≤
+C∥u∥H1((1,+∞)). Hence, there exists a constant C′ such that |u(1)| ≤C′∥u∥H
+and eventually a constant C′′ such that ∥u∥L∞((0,1)) ≤C′′∥u∥H. Similarly, we
+obtain ∥u∥L∞((−1,0)) ≤C′′∥u∥H.
+
+   Combining the above inequalities we obtain a new constant K so that
+∥u∥L2(R) ≤K∥u∥H.
+                                                                                                    ⊓⊔
+  A consequence of this ﬁrst step is that H ⊂H1(R) ⊂C(R).
+   Step 2: The injection H ֒→L2(R) is compact.
+   Let us consider a sequence (un)n of functions in H with supn ∥un∥H < +∞.
+   Because H ⊂H1(R), ∀m ∈N∗, we can extract from (un)n a sequence
+that converges in L2((−m, m)). Using then a diagonal extraction, there exists
+a subsequence of (un)n, still denoted (un)n, and a function u ∈L2loc(R) such
+that un(x) →u(x) for almost every x ∈R and un →u in the L2loc(R) sense.
+   Now, by Fatou’s lemma:
+          Z                 Z
+                                          H             x2u(x)2dx        inf   x2un(x)2dx       ∥un∥2            R        ≤lim    R         ≤supn α                  n→∞
+   Hence, there exists a constant C such that ∀m ∈N∗:
+
+Z                 Z m                  Z
+                                         1
+ R |u(x)−un(x)|2dx ≤     |u(x)−un(x)|2dx+ m2          x2|u(x)−un(x)|2dx                −m                       R\[−m,m]
+                    Z m
+                                C
+             ≤     |u(x) −un(x)|2dx + m2
+                 −m
+                     R
+                                    C .                    R                                      m2   Hence lim supn→∞                         |u(x) −un(x)|2dx ≤
+   Sending m to +∞we get:
+                        Z
+                     lim sup            = 0                           R |u(x) −un(x)|2dx               n→∞
+Hence (un)n converges towards u in the L2(R) sense.
+                                                                                                    ⊓⊔
+   Now, we consider the equation −ηu′′(x) + αx2u(x) = f(x) for f ∈L2(R)and we deﬁne u = Lf the weak solution of this equation, i.e.:
+
+             Z                            Z
+       ∀v ∈H, R αx2u(x)v(x) + ηu′(x)v′(x) dx =  R f(x)v(x)dx
+
+[PAGE 35]
+Dealing with the Inventory Risk                                                  35
+
+   Step 3: L  : L2(R) →L2(R) is a well deﬁned linear operator, compact,positive and self-adjoint.
+
+                           R
+                          R f(x)v(x)dx is a continuous linear form on H   For f ∈L2(R), v ∈H 7→
+because the injection H  ֒→L2(R) is continuous. Hence, by Lax-Milgram or
+Riesz’s representation theorem, there exists a unique u ∈H weak solution ofthe above equation and L is a well deﬁned linear operator.
+
+   Now, ∥Lf∥2          H = ⟨f, Lf⟩≤∥f∥L2(R)∥Lf∥L2(R). Hence, since the injection
+                                                 HH  ֒→L2(R) is continuous, there exists a constant C such that ∥Lf∥2                                           ≤
+C∥f∥L2(R)∥Lf∥H, which in turn gives ∥Lf∥H ≤C∥f∥L2(R). Since the injec-
+tion H ֒→L2(R) is compact, we obtain that L is a compact operator.
+
+
+                                  H  L is a positive operator because ⟨f, Lf⟩= ∥Lf∥2                                      ≥0.
+   Eventually, L is self-adjoint because ∀f, g ∈L2(R):
+                 Z
+             ⟨f, Lg⟩=  R αx2Lf(x)Lg(x) + η(Lf)′(x)(Lg)′(x) dx
+
+          Z
+      =    αx2Lg(x)Lf(x) + η(Lg)′(x)(Lf)′(x) dx =            R                                                  ⟨g, Lf⟩
+                                                                                                    ⊓⊔
+   Now, using the spectral decomposition of L and classical results on Rayleigh
+ratios we know that the eigenfunctions f corresponding to the largest eigen-
+value λ0 of L satisfy:
+
+                   1              =  ∥f∥H =   inf    ∥g∥H
+                   λ0    ∥f∥L2(R)   g∈H\{0} ∥g∥L2(R)
+   Hence, our problem boils down to proving that the largest eigenvalue of L               q
+                                α
+                                        η x2   is an eigenfunction corresponding                                     2is simple and that g : x 7→exp −1
+to this eigenvalue (it is straightforward that g ∈H).
+
+   Step 4: Any positive eigenfunction corresponds to the largest eigenvalue of
+L.
+
+  By deﬁnition of ∥· ∥H, ∀f ∈H, ∥|f|∥L2(R)∥|f|∥H  =  ∥f∥L2(R)∥f∥H   . Hence,  if f  is an
+eigenfunction of L corresponding to the eigenvalue λ0, then |f| is also aneigenfunction of L corresponding to the eigenvalue λ0. Now, if ˜f is an eigen-
+function of L corresponding to an eigenvalue λ ̸= λ0, ⟨|f|, ˜f⟩= 0. Therefore ˜fcannot be positive.
+                                                                                                    ⊓⊔
+   Step 5: g spans the eigenspace corresponding to the largest eigenvalue of L.
+
+[PAGE 36]
+36                                                                      Olivier Gu´eant et al.
+
+                   q
+                                                  η g(x) + αη x2g(x).   Diﬀerentiating g twice, we get g′′(x) = −  α
+Hence      + αx2g(x) = √αηg(x) and g is a positive eigenfunction, nec-       −ηg′′(x)                                                         1
+essarily associated to the eigenvalue λ0 that is therefore equal to √αη.
+   Now, if we look for an eigenfunction f ∈C∞(R) ∩H – because any eigen-function of L is in C∞(R) – we can look for f of the form f = gh. This
+gives:
+
+0 = −ηf ′′(x) + αx2f(x) −√αηf(x)
+ = −η (g′′(x)h(x) + 2g′(x)h′(x) + g(x)h′′(x)) + αx2g(x)h(x) −√αηg(x)h(x)
+   Hence:
+
+                      rα
+       0 = 2g′(x)h′(x) + g(x)h′′(x) = −2x  η g(x)h′(x) + g(x)h′′(x)
+            rα
+        ⇒h′′(x) = 2x  η h′(x)
+                  rα
+      ⇒∃K1,   h′(x) = K1 exp    η x2
+                           Z x   rα
+      ⇒∃K1, K2,  h(x) = K1  0 exp    η t2  dt + K2
+                               Z x   rα
+      ⇒∃K1, K2,  f(x) = K1g(x)  0 exp    η t2  dt + K2g(x)
+
+
+   Now,
+
+
+                                                    x        Z x   rα         rα    Z                              rα
+      g(x)    exp       t2  dt               x2      exp       t2  dt
+                                                           x                                                        η             0         η     ≥exp −12   η     √                                                                     2
+                 ≥x  1 −1√2
+   Hence, for f to be in H, we must have K1 = 0. Thus, g spans the eigenspace
+corresponding to the largest eigenvalue of L and Proposition 3 is proved.
+                                                                                                    ⊓⊔

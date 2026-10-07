@@ -1,0 +1,36 @@
+{
+  "validated_at_utc": "2026-10-07T03:28:24.776589+00:00",
+  "tables_verified": 14,
+  "event_rows": 930848,
+  "distinct_event_uuids": 930848,
+  "duplicate_event_uuids": 0,
+  "out_of_cohort_event_rows": 0,
+  "out_of_range_shot_xg_rows": 0,
+  "event_player_keys_missing_lineup": 0,
+  "missing_lineup_key_examples": [],
+  "observed_focal_clubs": [
+    "Arsenal",
+    "Aston Villa",
+    "Bournemouth",
+    "Chelsea",
+    "Crystal Palace",
+    "Everton",
+    "Fulham",
+    "Leeds United",
+    "Liverpool",
+    "Manchester City",
+    "Manchester United",
+    "Newcastle United",
+    "Sunderland",
+    "Tottenham Hotspur"
+  ],
+  "missing_current_clubs": [
+    "Brentford",
+    "Brighton & Hove Albion",
+    "Coventry City",
+    "Hull City",
+    "Ipswich Town",
+    "Nottingham Forest"
+  ],
+  "aggregates_reconcile_to_event_rows": true
+}

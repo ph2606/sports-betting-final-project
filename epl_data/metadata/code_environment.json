@@ -1,0 +1,29 @@
+{
+  "python": "3.12.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "pandas": "2.2.2",
+    "numpy": "1.26.4",
+    "pyarrow": "23.0.0",
+    "requests": "2.31.0",
+    "beautifulsoup4": "4.12.3",
+    "openpyxl": "3.1.2",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.2",
+    "pypdf": "6.0.0"
+  },
+  "files": {
+    "scripts/build_catalog.py": "b6cbc6a0bf2d7e3b4dfa7f9e2e4cd60b1b05716371b3a07cbb9bc1685a2e9e9e",
+    "scripts/build_match_links.py": "2985fd477684d462f80a90a4fed7b19dfe50c2b0ed12c06fcac6ebf4a2667bfb",
+    "scripts/build_starter_notebook.py": "6093d2646327c3633cdb719e2e5379903b4574f42b1046c0b2a34dc4d92f78e2",
+    "scripts/collect_advanced.py": "268faf62f8592f171b420a1010e06c2e251db8cbe855c1f2e388b9021bad6228",
+    "scripts/collect_context.py": "8851c7d4f8c87657855e5ee4413b37467fe814bae97b3b6159651d8891e62567",
+    "scripts/collect_football_data.py": "a3e53e3119824fb97781cf1d9f2d1deb8a27e054c0bd446cbf2676fa13f08893",
+    "scripts/collect_fpl.py": "01606e5e2609629045df829604c4a849c4aa7356ac796410c8608d1a8a6f3846",
+    "scripts/collect_statsbomb.py": "d150fecf98e53fbbdce736da3058ab06473f442c534b94b0feac55e2c53f5004",
+    "scripts/collect_transfermarkt_archive.py": "84189cf39f2eaf0c4abe5b56bdba3fb675071ab3cdb5f5126dca72cafd1657b2",
+    "scripts/common.py": "e1bb7d355314bdd7b3c7390aab45d674f89f70e9ac5e486600e68ebb94ff207c",
+    "scripts/normalize_context.py": "3d96c79bddcaf9e9b1f59d6fd371736f681a7c9f14b31c4cf602987df0d41385",
+    "scripts/validate_advanced.py": "1e5af69263ceae36bfddb8f20a697857f6ac09195d6d45af502454ec4271af32"
+  }
+}

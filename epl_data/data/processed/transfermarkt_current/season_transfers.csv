@@ -1,0 +1,608 @@
+team,transfermarkt_player_id,player_name,provider_table_index,provider_cells,season,retrieved_at_utc,data_role
+Manchester City,648195,Enzo Fernández,0,"["""", ""Enzo Fernández Central Midfield"", ""25"", """", ""Chelsea Premier League"", ""€145.00m""]",2026-27,2026-10-07T03:04:20.804305+00:00,current_snapshot
+Manchester City,567576,Elliot Anderson,0,"["""", ""Elliot Anderson Defensive Midfield"", ""23"", """", ""Nott'm Forest Premier League"", ""€135.00m""]",2026-27,2026-10-07T03:04:20.804305+00:00,current_snapshot
+Manchester City,1097139,Ayyoub Bouaddi,0,"["""", ""Ayyoub Bouaddi Defensive Midfield"", ""18"", """", ""Lille Ligue 1"", ""€95.00m""]",2026-27,2026-10-07T03:04:20.804305+00:00,current_snapshot
+Manchester City,623570,Iliman Ndiaye,0,"["""", ""Iliman Ndiaye Left Winger"", ""26"", """", ""Everton Premier League"", ""€70.00m""]",2026-27,2026-10-07T03:04:20.804305+00:00,current_snapshot
+Manchester City,1082631,Allan,0,"["""", ""Allan Right Winger"", ""22"", """", ""Palmeiras Série A"", ""€37.50m""]",2026-27,2026-10-07T03:04:20.804305+00:00,current_snapshot
+Manchester City,1171981,Mathys Detourbet,0,"["""", ""Mathys Detourbet Left Winger"", ""19"", """", ""Troyes Ligue 1"", ""€25.00m""]",2026-27,2026-10-07T03:04:20.804305+00:00,current_snapshot
+Manchester City,1245948,Jeremy Monga,0,"["""", ""Jeremy Monga Left Winger"", ""17"", """", ""Leicester League One"", ""€11.70m""]",2026-27,2026-10-07T03:04:20.804305+00:00,current_snapshot
+Manchester City,229604,Gerónimo Rulli,0,"["""", ""Gerónimo Rulli Goalkeeper"", ""34"", """", ""Marseille Ligue 1"", ""€3.50m""]",2026-27,2026-10-07T03:04:20.805305+00:00,current_snapshot
+Manchester City,861600,Pierce Charles,0,"["""", ""Pierce Charles Goalkeeper"", ""20"", """", ""Sheff Wed League One"", ""€3.50m""]",2026-27,2026-10-07T03:04:20.805305+00:00,current_snapshot
+Manchester City,1187640,Ryan McAidoo,0,"["""", ""Ryan McAidoo Right Winger"", ""18"", """", ""Man City U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:20.805305+00:00,current_snapshot
+Manchester City,1005575,Vitor Reis,0,"["""", ""Vitor Reis Centre-Back"", ""20"", """", ""Girona LaLiga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.805305+00:00,current_snapshot
+Manchester City,284730,Manuel Akanji,0,"["""", ""Manuel Akanji Centre-Back"", ""30"", """", ""Inter Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.805305+00:00,current_snapshot
+Manchester City,994536,Claudio Echeverri,0,"["""", ""Claudio Echeverri Attacking Midfield"", ""20"", """", ""Girona LaLiga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.805305+00:00,current_snapshot
+Manchester City,1245948,Jeremy Monga,0,"["""", ""Jeremy Monga Left Winger"", ""17"", """", ""Swansea Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:20.805305+00:00,current_snapshot
+Manchester City,1121298,Juma Bah,0,"["""", ""Juma Bah Centre-Back"", ""20"", """", ""Nice Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.805305+00:00,current_snapshot
+Manchester City,843595,Max Alleyne,0,"["""", ""Max Alleyne Centre-Back"", ""21"", """", ""Burnley Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:20.805305+00:00,current_snapshot
+Manchester City,649452,Issa Kaboré,0,"["""", ""Issa Kaboré Right-Back"", ""25"", """", ""Wrexham Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.806305+00:00,current_snapshot
+Manchester City,576121,Josh Wilson-Esbrand,0,"["""", ""Josh Wilson-Esbrand Left-Back"", ""23"", """", ""Radomiak Ekstraklasa"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.806305+00:00,current_snapshot
+Manchester City,861600,Pierce Charles,0,"["""", ""Pierce Charles Goalkeeper"", ""21"", """", ""QPR Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:20.806305+00:00,current_snapshot
+Manchester City,743591,Sávio,1,"["""", ""Sávio Left Winger"", ""22"", """", ""Tottenham Premier League"", ""€87.70m""]",2026-27,2026-10-07T03:04:20.809306+00:00,current_snapshot
+Manchester City,460939,Tijjani Reijnders,1,"["""", ""Tijjani Reijnders Central Midfield"", ""28"", """", ""Al-Qadsiah Saudi Pro League"", ""€61.00m""]",2026-27,2026-10-07T03:04:20.809306+00:00,current_snapshot
+Manchester City,357565,Rodri,1,"["""", ""Rodri Defensive Midfield"", ""30"", """", ""Barcelona LaLiga"", ""€60.00m""]",2026-27,2026-10-07T03:04:20.809306+00:00,current_snapshot
+Manchester City,466805,Nico González,1,"["""", ""Nico González Defensive Midfield"", ""24"", """", ""Newcastle Premier League"", ""€56.00m""]",2026-27,2026-10-07T03:04:20.809306+00:00,current_snapshot
+Manchester City,566799,James Trafford,1,"["""", ""James Trafford Goalkeeper"", ""23"", """", ""Leeds Premier League"", ""€46.70m""]",2026-27,2026-10-07T03:04:20.809306+00:00,current_snapshot
+Manchester City,284730,Manuel Akanji,1,"["""", ""Manuel Akanji Centre-Back"", ""30"", """", ""Inter Serie A"", ""€15.00m""]",2026-27,2026-10-07T03:04:20.809306+00:00,current_snapshot
+Manchester City,177476,Nathan Aké,1,"["""", ""Nathan Aké Centre-Back"", ""31"", """", ""Fenerbahçe Süper Lig"", ""€8.17m""]",2026-27,2026-10-07T03:04:20.810308+00:00,current_snapshot
+Manchester City,649452,Issa Kaboré,1,"["""", ""Issa Kaboré Right-Back"", ""25"", """", ""Wrexham Championship"", ""€2.35m""]",2026-27,2026-10-07T03:04:20.810308+00:00,current_snapshot
+Manchester City,1121298,Juma Bah,1,"["""", ""Juma Bah Centre-Back"", ""20"", """", ""Augsburg Bundesliga"", ""Loan fee: €100k""]",2026-27,2026-10-07T03:04:20.810308+00:00,current_snapshot
+Manchester City,241641,Bernardo Silva,1,"["""", ""Bernardo Silva Attacking Midfield"", ""31"", """", ""Real Madrid LaLiga"", ""free transfer""]",2026-27,2026-10-07T03:04:20.810308+00:00,current_snapshot
+Manchester City,186590,John Stones,1,"["""", ""John Stones Centre-Back"", ""32"", """", ""Inter Serie A"", ""free transfer""]",2026-27,2026-10-07T03:04:20.810308+00:00,current_snapshot
+Manchester City,445939,Omar Marmoush,1,"["""", ""Omar Marmoush Centre-Forward"", ""27"", """", ""Tottenham Premier League"", ""loan transfer""]",2026-27,2026-10-07T03:04:20.810308+00:00,current_snapshot
+Manchester City,203460,Jack Grealish,1,"["""", ""Jack Grealish Left Winger"", ""30"", """", ""Everton Premier League"", ""loan transfer""]",2026-27,2026-10-07T03:04:20.810308+00:00,current_snapshot
+Manchester City,994536,Claudio Echeverri,1,"["""", ""Claudio Echeverri Attacking Midfield"", ""20"", """", ""Benfica Liga Portugal"", ""loan transfer""]",2026-27,2026-10-07T03:04:20.810308+00:00,current_snapshot
+Manchester City,1171981,Mathys Detourbet,1,"["""", ""Mathys Detourbet Left Winger"", ""19"", """", ""Monaco Ligue 1"", ""loan transfer""]",2026-27,2026-10-07T03:04:20.810308+00:00,current_snapshot
+Manchester City,1245948,Jeremy Monga,1,"["""", ""Jeremy Monga Left Winger"", ""17"", """", ""Swansea Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:20.810308+00:00,current_snapshot
+Manchester City,911736,Sverre Nypan,1,"["""", ""Sverre Nypan Central Midfield"", ""19"", """", ""Lommel SK Jupiler Pro League"", ""loan transfer""]",2026-27,2026-10-07T03:04:20.811305+00:00,current_snapshot
+Manchester City,843595,Max Alleyne,1,"["""", ""Max Alleyne Centre-Back"", ""21"", """", ""Burnley Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:20.811305+00:00,current_snapshot
+Manchester City,861600,Pierce Charles,1,"["""", ""Pierce Charles Goalkeeper"", ""20"", """", ""QPR Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:20.811305+00:00,current_snapshot
+Arsenal,520624,Bruno Guimarães,0,"["""", ""Bruno Guimarães Central Midfield"", ""28"", """", ""Newcastle Premier League"", ""€87.50m""]",2026-27,2026-10-07T03:04:20.914442+00:00,current_snapshot
+Arsenal,413403,Ezri Konsa,0,"["""", ""Ezri Konsa Centre-Back"", ""28"", """", ""Aston Villa Premier League"", ""€59.60m""]",2026-27,2026-10-07T03:04:20.914442+00:00,current_snapshot
+Arsenal,659813,Piero Hincapié,0,"["""", ""Piero Hincapié Centre-Back"", ""24"", """", ""Leverkusen Bundesliga"", ""€40.00m""]",2026-27,2026-10-07T03:04:20.914442+00:00,current_snapshot
+Arsenal,451677,Christos Tzolis,0,"["""", ""Christos Tzolis Left Winger"", ""24"", """", ""Club Brugge Jupiler Pro League"", ""€40.00m""]",2026-27,2026-10-07T03:04:20.915442+00:00,current_snapshot
+Arsenal,542586,Illan Meslier,0,"["""", ""Illan Meslier Goalkeeper"", ""26"", """", ""Leeds Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:20.915442+00:00,current_snapshot
+Arsenal,848753,Tommy Setford,0,"["""", ""Tommy Setford Goalkeeper"", ""20"", """", ""Arsenal U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:20.915442+00:00,current_snapshot
+Arsenal,425918,Jakub Kiwior,0,"["""", ""Jakub Kiwior Centre-Back"", ""26"", """", ""Porto Liga Portugal"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.915442+00:00,current_snapshot
+Arsenal,890719,Ethan Nwaneri,0,"["""", ""Ethan Nwaneri Attacking Midfield"", ""19"", """", ""Marseille Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.915442+00:00,current_snapshot
+Arsenal,537598,Fábio Vieira,0,"["""", ""Fábio Vieira Attacking Midfield"", ""26"", """", ""Hamburg Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.915947+00:00,current_snapshot
+Arsenal,340325,Reiss Nelson,0,"["""", ""Reiss Nelson Left Winger"", ""26"", """", ""Brentford Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.915947+00:00,current_snapshot
+Arsenal,493513,Karl Hein,0,"["""", ""Karl Hein Goalkeeper"", ""24"", """", ""Werder Bremen Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.915947+00:00,current_snapshot
+Arsenal,848753,Tommy Setford,0,"["""", ""Tommy Setford Goalkeeper"", ""21"", """", ""Stevenage League One"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:20.915947+00:00,current_snapshot
+Arsenal,655488,Gabriel Martinelli,1,"["""", ""Gabriel Martinelli Left Winger"", ""25"", """", ""Al-Hilal Saudi Pro League"", ""€70.00m""]",2026-27,2026-10-07T03:04:20.917957+00:00,current_snapshot
+Arsenal,144028,Leandro Trossard,1,"["""", ""Leandro Trossard Left Winger"", ""31"", """", ""Beşiktaş Süper Lig"", ""€18.00m""]",2026-27,2026-10-07T03:04:20.917957+00:00,current_snapshot
+Arsenal,425918,Jakub Kiwior,1,"["""", ""Jakub Kiwior Centre-Back"", ""26"", """", ""Porto Liga Portugal"", ""€17.00m""]",2026-27,2026-10-07T03:04:20.917957+00:00,current_snapshot
+Arsenal,363205,Gabriel Jesus,1,"["""", ""Gabriel Jesus Centre-Forward"", ""29"", """", ""Barcelona LaLiga"", ""€10.00m""]",2026-27,2026-10-07T03:04:20.917957+00:00,current_snapshot
+Arsenal,537598,Fábio Vieira,1,"["""", ""Fábio Vieira Attacking Midfield"", ""26"", """", ""Hamburg Bundesliga"", ""€9.00m""]",2026-27,2026-10-07T03:04:20.917957+00:00,current_snapshot
+Arsenal,148367,Christian Nørgaard,1,"["""", ""Christian Nørgaard Defensive Midfield"", ""32"", """", ""Everton Premier League"", ""€8.15m""]",2026-27,2026-10-07T03:04:20.918956+00:00,current_snapshot
+Arsenal,493513,Karl Hein,1,"["""", ""Karl Hein Goalkeeper"", ""24"", """", ""Werder Bremen Bundesliga"", ""€3.00m""]",2026-27,2026-10-07T03:04:20.918956+00:00,current_snapshot
+Arsenal,340325,Reiss Nelson,1,"["""", ""Reiss Nelson Left Winger"", ""26"", """", ""Feyenoord Eredivisie"", ""free transfer""]",2026-27,2026-10-07T03:04:20.918956+00:00,current_snapshot
+Arsenal,890719,Ethan Nwaneri,1,"["""", ""Ethan Nwaneri Attacking Midfield"", ""19"", """", ""Dortmund Bundesliga"", ""loan transfer""]",2026-27,2026-10-07T03:04:20.918956+00:00,current_snapshot
+Arsenal,848753,Tommy Setford,1,"["""", ""Tommy Setford Goalkeeper"", ""20"", """", ""Stevenage League One"", ""loan transfer""]",2026-27,2026-10-07T03:04:20.918956+00:00,current_snapshot
+Arsenal,659813,Piero Hincapié,1,"["""", ""Piero Hincapié Centre-Back"", ""24"", """", ""Leverkusen Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:20.918956+00:00,current_snapshot
+Chelsea,503743,Morgan Rogers,0,"["""", ""Morgan Rogers Attacking Midfield"", ""23"", """", ""Aston Villa Premier League"", ""€138.00m""]",2026-27,2026-10-07T03:04:21.319055+00:00,current_snapshot
+Chelsea,434224,Maxence Lacroix,0,"["""", ""Maxence Lacroix Centre-Back"", ""26"", """", ""Crystal Palace Premier League"", ""€60.70m""]",2026-27,2026-10-07T03:04:21.319055+00:00,current_snapshot
+Chelsea,895937,Marco Palestra,0,"["""", ""Marco Palestra Right-Back"", ""21"", """", ""Atalanta Serie A"", ""€57.00m""]",2026-27,2026-10-07T03:04:21.319055+00:00,current_snapshot
+Chelsea,1138758,Geovany Quenda,0,"["""", ""Geovany Quenda Right Winger"", ""19"", """", ""Sporting Liga Portugal"", ""€50.78m""]",2026-27,2026-10-07T03:04:21.319055+00:00,current_snapshot
+Chelsea,849410,Valentín Barco,0,"["""", ""Valentín Barco Central Midfield"", ""22"", """", ""R. Strasbourg Ligue 1"", ""€40.00m""]",2026-27,2026-10-07T03:04:21.319055+00:00,current_snapshot
+Chelsea,559328,Emmanuel Emegha,0,"["""", ""Emmanuel Emegha Centre-Forward"", ""23"", """", ""R. Strasbourg Ligue 1"", ""€25.00m""]",2026-27,2026-10-07T03:04:21.319055+00:00,current_snapshot
+Chelsea,596122,Pep Chavarría,0,"["""", ""Pep Chavarría Left-Back"", ""28"", """", ""Rayo Vallecano LaLiga"", ""€19.00m""]",2026-27,2026-10-07T03:04:21.319055+00:00,current_snapshot
+Chelsea,111873,Emiliano Martínez,0,"["""", ""Emiliano Martínez Goalkeeper"", ""33"", """", ""Aston Villa Premier League"", ""€8.75m""]",2026-27,2026-10-07T03:04:21.320055+00:00,current_snapshot
+Chelsea,67063,Danny Welbeck,0,"["""", ""Danny Welbeck Centre-Forward"", ""35"", """", ""Brighton Premier League"", ""€5.85m""]",2026-27,2026-10-07T03:04:21.320055+00:00,current_snapshot
+Chelsea,1179146,Dastan Satpaev,0,"["""", ""Dastan Satpaev Centre-Forward"", ""18"", """", ""Kairat Almaty Premier Liga"", ""€2.40m""]",2026-27,2026-10-07T03:04:21.320055+00:00,current_snapshot
+Chelsea,61651,Jordan Henderson,0,"["""", ""Jordan Henderson Central Midfield"", ""36"", """", ""Brentford Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:21.320055+00:00,current_snapshot
+Chelsea,1353008,Mahdi Nicoll-Jazuli,0,"["""", ""Mahdi Nicoll-Jazuli Central Midfield"", ""16"", """", ""Chelsea U18 U18 Premier League"", ""-""]",2026-27,2026-10-07T03:04:21.320055+00:00,current_snapshot
+Chelsea,776890,Nicolas Jackson,0,"["""", ""Nicolas Jackson Centre-Forward"", ""25"", """", ""Bayern Munich Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:21.320055+00:00,current_snapshot
+Chelsea,834397,Mike Penders,0,"["""", ""Mike Penders Goalkeeper"", ""20"", """", ""R. Strasbourg Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:21.320055+00:00,current_snapshot
+Chelsea,936874,Tyrique George,0,"["""", ""Tyrique George Left Winger"", ""20"", """", ""Everton Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:21.320055+00:00,current_snapshot
+Chelsea,386047,Axel Disasi,0,"["""", ""Axel Disasi Centre-Back"", ""28"", """", ""West Ham Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:21.320055+00:00,current_snapshot
+Chelsea,1145504,Aarón Anselmino,0,"["""", ""Aarón Anselmino Centre-Back"", ""21"", """", ""R. Strasbourg Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:21.321055+00:00,current_snapshot
+Chelsea,787232,David Datro Fofana,0,"["""", ""David Datro Fofana Centre-Forward"", ""23"", """", ""R. Strasbourg Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:21.321055+00:00,current_snapshot
+Chelsea,648195,Enzo Fernández,1,"["""", ""Enzo Fernández Central Midfield"", ""25"", """", ""Man City Premier League"", ""€145.00m""]",2026-27,2026-10-07T03:04:21.325056+00:00,current_snapshot
+Chelsea,743600,Andrey Santos,1,"["""", ""Andrey Santos Defensive Midfield"", ""22"", """", ""Man Utd Premier League"", ""€56.30m""]",2026-27,2026-10-07T03:04:21.325056+00:00,current_snapshot
+Chelsea,776890,Nicolas Jackson,1,"["""", ""Nicolas Jackson Centre-Forward"", ""25"", """", ""Aston Villa Premier League"", ""€55.50m""]",2026-27,2026-10-07T03:04:21.325056+00:00,current_snapshot
+Chelsea,284857,Marc Cucurella,1,"["""", ""Marc Cucurella Left-Back"", ""27"", """", ""Real Madrid LaLiga"", ""€55.00m""]",2026-27,2026-10-07T03:04:21.325056+00:00,current_snapshot
+Chelsea,610849,Liam Delap,1,"["""", ""Liam Delap Centre-Forward"", ""23"", """", ""Nott'm Forest Premier League"", ""€52.50m""]",2026-27,2026-10-07T03:04:21.325056+00:00,current_snapshot
+Chelsea,346314,Trevoh Chalobah,1,"["""", ""Trevoh Chalobah Centre-Back"", ""27"", """", ""Como Serie A"", ""€30.00m""]",2026-27,2026-10-07T03:04:21.326059+00:00,current_snapshot
+Chelsea,936874,Tyrique George,1,"["""", ""Tyrique George Left Winger"", ""20"", """", ""Everton Premier League"", ""€21.00m""]",2026-27,2026-10-07T03:04:21.326059+00:00,current_snapshot
+Chelsea,938158,Marc Guiu,1,"["""", ""Marc Guiu Centre-Forward"", ""20"", """", ""Leipzig Bundesliga"", ""€15.00m""]",2026-27,2026-10-07T03:04:21.326059+00:00,current_snapshot
+Chelsea,258878,Tosin Adarabioyo,1,"["""", ""Tosin Adarabioyo Centre-Back"", ""28"", """", ""Tottenham Premier League"", ""€11.65m""]",2026-27,2026-10-07T03:04:21.326059+00:00,current_snapshot
+Chelsea,463603,Benoît Badiashile,1,"["""", ""Benoît Badiashile Centre-Back"", ""25"", """", ""Napoli Serie A"", ""Loan fee: €3.00m""]",2026-27,2026-10-07T03:04:21.326059+00:00,current_snapshot
+Chelsea,787232,David Datro Fofana,1,"["""", ""David Datro Fofana Centre-Forward"", ""23"", """", ""Servette FC Super League"", ""€2.50m""]",2026-27,2026-10-07T03:04:21.326059+00:00,current_snapshot
+Chelsea,1179146,Dastan Satpaev,1,"["""", ""Dastan Satpaev Centre-Forward"", ""18"", """", ""Burnley Championship"", ""Loan fee: €350k""]",2026-27,2026-10-07T03:04:21.326059+00:00,current_snapshot
+Chelsea,811779,Alejandro Garnacho,1,"["""", ""Alejandro Garnacho Left Winger"", ""22"", """", ""Aston Villa Premier League"", ""loan transfer""]",2026-27,2026-10-07T03:04:21.326059+00:00,current_snapshot
+Chelsea,403151,Robert Sánchez,1,"["""", ""Robert Sánchez Goalkeeper"", ""28"", """", ""Como Serie A"", ""loan transfer""]",2026-27,2026-10-07T03:04:21.326059+00:00,current_snapshot
+Chelsea,910905,Mamadou Sarr,1,"["""", ""Mamadou Sarr Centre-Back"", ""20"", """", ""Real Sociedad LaLiga"", ""loan transfer""]",2026-27,2026-10-07T03:04:21.326059+00:00,current_snapshot
+Chelsea,386047,Axel Disasi,1,"["""", ""Axel Disasi Centre-Back"", ""28"", """", ""Crystal Palace Premier League"", ""loan transfer""]",2026-27,2026-10-07T03:04:21.327060+00:00,current_snapshot
+Chelsea,585323,Filip Jørgensen,1,"["""", ""Filip Jørgensen Goalkeeper"", ""24"", """", ""R. Strasbourg Ligue 1"", ""loan transfer""]",2026-27,2026-10-07T03:04:21.327060+00:00,current_snapshot
+Chelsea,670717,Dário Essugo,1,"["""", ""Dário Essugo Defensive Midfield"", ""21"", """", ""R. Strasbourg Ligue 1"", ""loan transfer""]",2026-27,2026-10-07T03:04:21.327060+00:00,current_snapshot
+Chelsea,746833,Caleb Wiley,1,"["""", ""Caleb Wiley Left-Back"", ""21"", """", ""Preston Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:21.327060+00:00,current_snapshot
+Chelsea,537860,Mykhaylo Mudryk,1,"["""", ""Mykhaylo Mudryk Left Winger"", ""25"", """", ""Tottenham Premier League"", ""loan transfer""]",2026-27,2026-10-07T03:04:21.327060+00:00,current_snapshot
+Manchester United,973085,Carlos Baleba,0,"["""", ""Carlos Baleba Defensive Midfield"", ""22"", """", ""Brighton Premier League"", ""€75.90m""]",2026-27,2026-10-07T03:04:27.972552+00:00,current_snapshot
+Manchester United,743600,Andrey Santos,0,"["""", ""Andrey Santos Defensive Midfield"", ""22"", """", ""Chelsea Premier League"", ""€56.30m""]",2026-27,2026-10-07T03:04:27.972552+00:00,current_snapshot
+Manchester United,249565,Youri Tielemans,0,"["""", ""Youri Tielemans Central Midfield"", ""29"", """", ""Aston Villa Premier League"", ""€41.00m""]",2026-27,2026-10-07T03:04:27.972552+00:00,current_snapshot
+Manchester United,99397,Karl Darlow,0,"["""", ""Karl Darlow Goalkeeper"", ""35"", """", ""Leeds Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:27.972552+00:00,current_snapshot
+Manchester United,926309,Shea Lacey,0,"["""", ""Shea Lacey Right Winger"", ""19"", """", ""Man Utd U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:27.972552+00:00,current_snapshot
+Manchester United,1049911,Tyler Fletcher,0,"["""", ""Tyler Fletcher Central Midfield"", ""19"", """", ""Man Utd U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:27.973552+00:00,current_snapshot
+Manchester United,620362,Dermot Mee,0,"["""", ""Dermot Mee Goalkeeper"", ""23"", """", ""Man Utd U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:27.973552+00:00,current_snapshot
+Manchester United,610442,Rasmus Højlund,0,"["""", ""Rasmus Højlund Centre-Forward"", ""23"", """", ""Napoli Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:27.973552+00:00,current_snapshot
+Manchester United,258923,Marcus Rashford,0,"["""", ""Marcus Rashford Left Winger"", ""28"", """", ""Barcelona LaLiga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:27.973552+00:00,current_snapshot
+Manchester United,401173,Jadon Sancho,0,"["""", ""Jadon Sancho Left Winger"", ""26"", """", ""Aston Villa Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:27.973552+00:00,current_snapshot
+Manchester United,1011738,Harry Amass,0,"["""", ""Harry Amass Left-Back"", ""19"", """", ""Norwich Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:27.973552+00:00,current_snapshot
+Manchester United,622236,Radek Vítek,0,"["""", ""Radek Vítek Goalkeeper"", ""22"", """", ""Bristol City Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:27.973552+00:00,current_snapshot
+Manchester United,654253,Toby Collyer,0,"["""", ""Toby Collyer Defensive Midfield"", ""22"", """", ""Hull City Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:27.973552+00:00,current_snapshot
+Manchester United,610442,Rasmus Højlund,1,"["""", ""Rasmus Højlund Centre-Forward"", ""23"", """", ""Napoli Serie A"", ""€44.00m""]",2026-27,2026-10-07T03:04:27.975554+00:00,current_snapshot
+Manchester United,622236,Radek Vítek,1,"["""", ""Radek Vítek Goalkeeper"", ""22"", """", ""Middlesbrough Championship"", ""€8.15m""]",2026-27,2026-10-07T03:04:27.975554+00:00,current_snapshot
+Manchester United,654253,Toby Collyer,1,"["""", ""Toby Collyer Defensive Midfield"", ""22"", """", ""West Brom Championship"", ""€3.50m""]",2026-27,2026-10-07T03:04:27.975554+00:00,current_snapshot
+Manchester United,16306,Casemiro,1,"["""", ""Casemiro Defensive Midfield"", ""34"", """", ""Miami MLS"", ""free transfer""]",2026-27,2026-10-07T03:04:27.975554+00:00,current_snapshot
+Manchester United,911424,Tyler Fredricson,1,"["""", ""Tyler Fredricson Centre-Back"", ""21"", """", ""Lausanne-Sport Super League"", ""?""]",2026-27,2026-10-07T03:04:27.975554+00:00,current_snapshot
+Manchester United,336077,Altay Bayındır,1,"["""", ""Altay Bayındır Goalkeeper"", ""28"", """", ""Celta LaLiga"", ""loan transfer""]",2026-27,2026-10-07T03:04:27.975554+00:00,current_snapshot
+Manchester United,401173,Jadon Sancho,1,"["""", ""Jadon Sancho Left Winger"", ""26"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:27.975554+00:00,current_snapshot
+Manchester United,339340,Tyrell Malacia,1,"["""", ""Tyrell Malacia Left-Back"", ""26"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:27.975554+00:00,current_snapshot
+Tottenham Hotspur,397033,Sandro Tonali,0,"["""", ""Sandro Tonali Defensive Midfield"", ""26"", """", ""Newcastle Premier League"", ""€108.00m""]",2026-27,2026-10-07T03:04:28.401231+00:00,current_snapshot
+Tottenham Hotspur,880245,Mateus Fernandes,0,"["""", ""Mateus Fernandes Central Midfield"", ""21"", """", ""West Ham Championship"", ""€99.00m""]",2026-27,2026-10-07T03:04:28.401231+00:00,current_snapshot
+Tottenham Hotspur,743591,Sávio,0,"["""", ""Sávio Left Winger"", ""22"", """", ""Man City Premier League"", ""€87.70m""]",2026-27,2026-10-07T03:04:28.401231+00:00,current_snapshot
+Tottenham Hotspur,576314,Jan Paul van Hecke,0,"["""", ""Jan Paul van Hecke Centre-Back"", ""26"", """", ""Brighton Premier League"", ""€60.00m""]",2026-27,2026-10-07T03:04:28.402231+00:00,current_snapshot
+Tottenham Hotspur,258878,Tosin Adarabioyo,0,"["""", ""Tosin Adarabioyo Centre-Back"", ""28"", """", ""Chelsea Premier League"", ""€11.65m""]",2026-27,2026-10-07T03:04:28.402231+00:00,current_snapshot
+Tottenham Hotspur,469781,Marcos Senesi,0,"["""", ""Marcos Senesi Centre-Back"", ""29"", """", ""Bournemouth Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:28.402231+00:00,current_snapshot
+Tottenham Hotspur,234803,Andrew Robertson,0,"["""", ""Andrew Robertson Left-Back"", ""32"", """", ""Liverpool Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:28.402231+00:00,current_snapshot
+Tottenham Hotspur,74960,Martin Dúbravka,0,"["""", ""Martin Dúbravka Goalkeeper"", ""37"", """", ""Burnley Championship"", ""free transfer""]",2026-27,2026-10-07T03:04:28.402231+00:00,current_snapshot
+Tottenham Hotspur,445939,Omar Marmoush,0,"["""", ""Omar Marmoush Centre-Forward"", ""27"", """", ""Man City Premier League"", ""loan transfer""]",2026-27,2026-10-07T03:04:28.402231+00:00,current_snapshot
+Tottenham Hotspur,537860,Mykhaylo Mudryk,0,"["""", ""Mykhaylo Mudryk Left Winger"", ""25"", """", ""Chelsea Premier League"", ""loan transfer""]",2026-27,2026-10-07T03:04:28.402231+00:00,current_snapshot
+Tottenham Hotspur,879768,Will Lankshear,0,"["""", ""Will Lankshear Centre-Forward"", ""21"", """", ""Tottenham U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:28.402231+00:00,current_snapshot
+Tottenham Hotspur,892160,Luka Vušković,0,"["""", ""Luka Vušković Centre-Back"", ""19"", """", ""Hamburg Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:28.402231+00:00,current_snapshot
+Tottenham Hotspur,396638,Manor Solomon,0,"["""", ""Manor Solomon Left Winger"", ""26"", """", ""Fiorentina Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:28.402231+00:00,current_snapshot
+Tottenham Hotspur,728734,Alfie Devine,0,"["""", ""Alfie Devine Attacking Midfield"", ""21"", """", ""Preston Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:28.403236+00:00,current_snapshot
+Tottenham Hotspur,859951,Ashley Phillips,0,"["""", ""Ashley Phillips Centre-Back"", ""21"", """", ""Stoke City Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:28.403236+00:00,current_snapshot
+Tottenham Hotspur,671108,Kota Takai,0,"["""", ""Kota Takai Centre-Back"", ""21"", """", ""Mönchengladbach Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:28.403236+00:00,current_snapshot
+Tottenham Hotspur,888493,Alejo Veliz,0,"["""", ""Alejo Veliz Centre-Forward"", ""22"", """", ""Rosario Central Torneo Clausura"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:28.403236+00:00,current_snapshot
+Tottenham Hotspur,1004327,Min-hyeok Yang,0,"["""", ""Min-hyeok Yang Right Winger"", ""20"", """", ""Coventry Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:28.403236+00:00,current_snapshot
+Tottenham Hotspur,892160,Luka Vušković,1,"["""", ""Luka Vušković Centre-Back"", ""19"", """", ""Brighton Premier League"", ""€54.00m""]",2026-27,2026-10-07T03:04:28.406238+00:00,current_snapshot
+Tottenham Hotspur,355915,Cristian Romero,1,"["""", ""Cristian Romero Centre-Back"", ""28"", """", ""Atlético LaLiga"", ""€33.00m""]",2026-27,2026-10-07T03:04:28.406238+00:00,current_snapshot
+Tottenham Hotspur,483348,Djed Spence,1,"["""", ""Djed Spence Right-Back"", ""26"", """", ""Inter Serie A"", ""€30.00m""]",2026-27,2026-10-07T03:04:28.406238+00:00,current_snapshot
+Tottenham Hotspur,879768,Will Lankshear,1,"["""", ""Will Lankshear Centre-Forward"", ""21"", """", ""Middlesbrough Championship"", ""€11.70m""]",2026-27,2026-10-07T03:04:28.406238+00:00,current_snapshot
+Tottenham Hotspur,888493,Alejo Veliz,1,"["""", ""Alejo Veliz Centre-Forward"", ""22"", """", ""EC Bahia Série A"", ""€9.00m""]",2026-27,2026-10-07T03:04:28.406238+00:00,current_snapshot
+Tottenham Hotspur,859951,Ashley Phillips,1,"["""", ""Ashley Phillips Centre-Back"", ""21"", """", ""Middlesbrough Championship"", ""€8.20m""]",2026-27,2026-10-07T03:04:28.406238+00:00,current_snapshot
+Tottenham Hotspur,396638,Manor Solomon,1,"["""", ""Manor Solomon Left Winger"", ""27"", """", ""West Ham Championship"", ""€5.85m""]",2026-27,2026-10-07T03:04:28.406238+00:00,current_snapshot
+Tottenham Hotspur,728734,Alfie Devine,1,"["""", ""Alfie Devine Attacking Midfield"", ""21"", """", ""Preston Championship"", ""€5.30m""]",2026-27,2026-10-07T03:04:28.406238+00:00,current_snapshot
+Tottenham Hotspur,263236,Kevin Danso,1,"["""", ""Kevin Danso Centre-Back"", ""27"", """", ""Sunderland Premier League"", ""Loan fee: €2.90m""]",2026-27,2026-10-07T03:04:28.406238+00:00,current_snapshot
+Tottenham Hotspur,568693,Pape Matar Sarr,1,"["""", ""Pape Matar Sarr Central Midfield"", ""23"", """", ""Juventus Serie A"", ""Loan fee: €2.80m""]",2026-27,2026-10-07T03:04:28.407238+00:00,current_snapshot
+Tottenham Hotspur,568559,Radu Drăgușin,1,"["""", ""Radu Drăgușin Centre-Back"", ""24"", """", ""Fiorentina Serie A"", ""Loan fee: €1.50m""]",2026-27,2026-10-07T03:04:28.407238+00:00,current_snapshot
+Tottenham Hotspur,670883,Dane Scarlett,1,"["""", ""Dane Scarlett Centre-Forward"", ""22"", """", ""Leyton Orient League One"", ""free transfer""]",2026-27,2026-10-07T03:04:28.407238+00:00,current_snapshot
+Tottenham Hotspur,286047,Guglielmo Vicario,1,"["""", ""Guglielmo Vicario Goalkeeper"", ""29"", """", ""Juventus Serie A"", ""loan transfer""]",2026-27,2026-10-07T03:04:28.407238+00:00,current_snapshot
+Tottenham Hotspur,1086258,Souza,1,"["""", ""Souza Left-Back"", ""20"", """", ""Porto Liga Portugal"", ""loan transfer""]",2026-27,2026-10-07T03:04:28.407238+00:00,current_snapshot
+Tottenham Hotspur,671108,Kota Takai,1,"["""", ""Kota Takai Centre-Back"", ""21"", """", ""Sint-Truiden Jupiler Pro League"", ""loan transfer""]",2026-27,2026-10-07T03:04:28.407238+00:00,current_snapshot
+Tottenham Hotspur,1004327,Min-hyeok Yang,1,"["""", ""Min-hyeok Yang Right Winger"", ""20"", """", ""KVC Westerlo Jupiler Pro League"", ""loan transfer""]",2026-27,2026-10-07T03:04:28.407238+00:00,current_snapshot
+Tottenham Hotspur,410425,Yves Bissouma,1,"["""", ""Yves Bissouma Defensive Midfield"", ""29"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:28.407238+00:00,current_snapshot
+Tottenham Hotspur,487969,Randal Kolo Muani,1,"["""", ""Randal Kolo Muani Centre-Forward"", ""27"", """", ""PSG Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:28.407238+00:00,current_snapshot
+Tottenham Hotspur,257455,João Palhinha,1,"["""", ""João Palhinha Defensive Midfield"", ""30"", """", ""Bayern Munich Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:28.407238+00:00,current_snapshot
+Liverpool,708265,Bradley Barcola,0,"["""", ""Bradley Barcola Left Winger"", ""23"", """", ""PSG Ligue 1"", ""€125.00m""]",2026-27,2026-10-07T03:04:30.810732+00:00,current_snapshot
+Liverpool,1004301,Jérémy Jacquet,0,"["""", ""Jérémy Jacquet Centre-Back"", ""20"", """", ""Rennes Ligue 1"", ""€63.60m""]",2026-27,2026-10-07T03:04:30.810732+00:00,current_snapshot
+Liverpool,935231,Víctor Muñoz,0,"["""", ""Víctor Muñoz Left Winger"", ""22"", """", ""CA Osasuna LaLiga"", ""€40.00m""]",2026-27,2026-10-07T03:04:30.810732+00:00,current_snapshot
+Liverpool,1105547,Lucca Brughmans,0,"["""", ""Lucca Brughmans Goalkeeper"", ""18"", """", ""Genk Jupiler Pro League"", ""€33.00m""]",2026-27,2026-10-07T03:04:30.810732+00:00,current_snapshot
+Liverpool,1200419,Djylian N'Guessan,0,"["""", ""Djylian N'Guessan Centre-Forward"", ""18"", """", ""Saint-Étienne Ligue 2"", ""€5.00m""]",2026-27,2026-10-07T03:04:30.810732+00:00,current_snapshot
+Liverpool,1167696,Ifeanyi Ndukwe,0,"["""", ""Ifeanyi Ndukwe Centre-Back"", ""18"", """", ""Austria Vienna Bundesliga"", ""€3.00m""]",2026-27,2026-10-07T03:04:30.810732+00:00,current_snapshot
+Liverpool,480267,Ronald Araujo,0,"["""", ""Ronald Araujo Centre-Back"", ""27"", """", ""Barcelona LaLiga"", ""loan transfer""]",2026-27,2026-10-07T03:04:30.811728+00:00,current_snapshot
+Liverpool,922462,Lewis Koumas,0,"["""", ""Lewis Koumas Centre-Forward"", ""20"", """", ""Liverpool U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:30.811728+00:00,current_snapshot
+Liverpool,845289,James McConnell,0,"["""", ""James McConnell Central Midfield"", ""21"", """", ""Liverpool U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:30.811728+00:00,current_snapshot
+Liverpool,565822,Harvey Elliott,0,"["""", ""Harvey Elliott Attacking Midfield"", ""23"", """", ""Aston Villa Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:30.811728+00:00,current_snapshot
+Liverpool,486604,Vitezslav Jaros,0,"["""", ""Vitezslav Jaros Goalkeeper"", ""24"", """", ""Ajax Eredivisie"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:30.811728+00:00,current_snapshot
+Liverpool,338070,Konstantinos Tsimikas,0,"["""", ""Konstantinos Tsimikas Left-Back"", ""30"", """", ""Roma Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:30.811728+00:00,current_snapshot
+Liverpool,633652,Calvin Ramsay,0,"["""", ""Calvin Ramsay Right-Back"", ""23"", """", ""St. Mirren Premiership"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:30.811728+00:00,current_snapshot
+Liverpool,433188,Curtis Jones,1,"["""", ""Curtis Jones Central Midfield"", ""25"", """", ""Inter Serie A"", ""€30.00m""]",2026-27,2026-10-07T03:04:30.813731+00:00,current_snapshot
+Liverpool,864799,Stefan Bajcetic,1,"["""", ""Stefan Bajcetic Defensive Midfield"", ""21"", """", ""Celta Fortuna LaLiga2"", ""€1.20m""]",2026-27,2026-10-07T03:04:30.813731+00:00,current_snapshot
+Liverpool,357119,Ibrahima Konaté,1,"["""", ""Ibrahima Konaté Centre-Back"", ""27"", """", ""Real Madrid LaLiga"", ""free transfer""]",2026-27,2026-10-07T03:04:30.813731+00:00,current_snapshot
+Liverpool,148455,Mohamed Salah,1,"["""", ""Mohamed Salah Right Winger"", ""34"", """", ""Trabzonspor Süper Lig"", ""free transfer""]",2026-27,2026-10-07T03:04:30.813731+00:00,current_snapshot
+Liverpool,234803,Andrew Robertson,1,"["""", ""Andrew Robertson Left-Back"", ""32"", """", ""Tottenham Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:30.813731+00:00,current_snapshot
+Liverpool,565822,Harvey Elliott,1,"["""", ""Harvey Elliott Attacking Midfield"", ""23"", """", ""Valencia LaLiga"", ""loan transfer""]",2026-27,2026-10-07T03:04:30.813731+00:00,current_snapshot
+Liverpool,1200419,Djylian N'Guessan,1,"["""", ""Djylian N'Guessan Centre-Forward"", ""18"", """", ""Stade Brestois Ligue 1"", ""loan transfer""]",2026-27,2026-10-07T03:04:30.813731+00:00,current_snapshot
+Liverpool,1105547,Lucca Brughmans,1,"["""", ""Lucca Brughmans Goalkeeper"", ""18"", """", ""Genk Jupiler Pro League"", ""loan transfer""]",2026-27,2026-10-07T03:04:30.813731+00:00,current_snapshot
+Liverpool,1167696,Ifeanyi Ndukwe,1,"["""", ""Ifeanyi Ndukwe Centre-Back"", ""18"", """", ""Levante LaLiga"", ""loan transfer""]",2026-27,2026-10-07T03:04:30.813731+00:00,current_snapshot
+Liverpool,633652,Calvin Ramsay,1,"["""", ""Calvin Ramsay Right-Back"", ""23"", """", ""St. Mirren Premiership"", ""loan transfer""]",2026-27,2026-10-07T03:04:30.814730+00:00,current_snapshot
+Liverpool,933215,Ármin Pécsi,1,"["""", ""Ármin Pécsi Goalkeeper"", ""21"", """", ""TSV Hartberg Bundesliga"", ""loan transfer""]",2026-27,2026-10-07T03:04:30.814730+00:00,current_snapshot
+Liverpool,503679,Rhys Williams,1,"["""", ""Rhys Williams Centre-Back"", ""25"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:30.814730+00:00,current_snapshot
+Newcastle United,724129,Matias Fernandez-Pardo,0,"["""", ""Matias Fernandez-Pardo Centre-Forward"", ""21"", """", ""Lille Ligue 1"", ""€60.00m""]",2026-27,2026-10-07T03:04:34.801797+00:00,current_snapshot
+Newcastle United,466805,Nico González,0,"["""", ""Nico González Defensive Midfield"", ""24"", """", ""Man City Premier League"", ""€56.00m""]",2026-27,2026-10-07T03:04:34.801797+00:00,current_snapshot
+Newcastle United,1067904,Bazoumana Touré,0,"["""", ""Bazoumana Touré Left Winger"", ""20"", """", ""Hoffenheim Bundesliga"", ""€50.00m""]",2026-27,2026-10-07T03:04:34.801797+00:00,current_snapshot
+Newcastle United,519184,Amar Dedic,0,"["""", ""Amar Dedic Right-Back"", ""24"", """", ""Benfica Liga Portugal"", ""€35.90m""]",2026-27,2026-10-07T03:04:34.801797+00:00,current_snapshot
+Newcastle United,975347,Aladji Bamba,0,"["""", ""Aladji Bamba Defensive Midfield"", ""20"", """", ""Monaco Ligue 1"", ""€35.50m""]",2026-27,2026-10-07T03:04:34.801797+00:00,current_snapshot
+Newcastle United,629773,Lukas Hornicek,0,"["""", ""Lukas Hornicek Goalkeeper"", ""24"", """", ""Braga Liga Portugal"", ""€30.60m""]",2026-27,2026-10-07T03:04:34.802796+00:00,current_snapshot
+Newcastle United,1111063,Sean Steur,0,"["""", ""Sean Steur Central Midfield"", ""18"", """", ""Ajax Eredivisie"", ""€23.50m""]",2026-27,2026-10-07T03:04:34.802796+00:00,current_snapshot
+Newcastle United,923757,Ewen Jaouen,0,"["""", ""Ewen Jaouen Goalkeeper"", ""20"", """", ""Stade Reims Ligue 2"", ""€21.50m""]",2026-27,2026-10-07T03:04:34.802796+00:00,current_snapshot
+Newcastle United,940858,Leo Shahar,0,"["""", ""Leo Shahar Right-Back"", ""19"", """", ""Newcastle U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:34.802796+00:00,current_snapshot
+Newcastle United,559130,Harrison Ashby,0,"["""", ""Harrison Ashby Right-Back"", ""25"", """", ""Luton League One"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:34.802796+00:00,current_snapshot
+Newcastle United,614811,Joe White,0,"["""", ""Joe White Attacking Midfield"", ""23"", """", ""Bradford League One"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:34.802796+00:00,current_snapshot
+Newcastle United,397033,Sandro Tonali,1,"["""", ""Sandro Tonali Defensive Midfield"", ""26"", """", ""Tottenham Premier League"", ""€108.00m""]",2026-27,2026-10-07T03:04:34.804795+00:00,current_snapshot
+Newcastle United,520624,Bruno Guimarães,1,"["""", ""Bruno Guimarães Central Midfield"", ""28"", """", ""Arsenal Premier League"", ""€87.50m""]",2026-27,2026-10-07T03:04:34.804795+00:00,current_snapshot
+Newcastle United,503733,Anthony Gordon,1,"["""", ""Anthony Gordon Left Winger"", ""25"", """", ""Barcelona LaLiga"", ""€80.00m""]",2026-27,2026-10-07T03:04:34.804795+00:00,current_snapshot
+Newcastle United,455661,Nick Woltemade,1,"["""", ""Nick Woltemade Centre-Forward"", ""24"", """", ""Juventus Serie A"", ""Loan fee: €3.60m""]",2026-27,2026-10-07T03:04:34.804795+00:00,current_snapshot
+Newcastle United,250478,Matt Targett,1,"["""", ""Matt Targett Left-Back"", ""30"", """", ""Hull City Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:34.804795+00:00,current_snapshot
+Newcastle United,95810,Kieran Trippier,1,"["""", ""Kieran Trippier Right-Back"", ""35"", """", ""Wolves Championship"", ""free transfer""]",2026-27,2026-10-07T03:04:34.805801+00:00,current_snapshot
+Newcastle United,29712,John Ruddy,1,"["""", ""John Ruddy Goalkeeper"", ""39"", """", ""Wolves Championship"", ""free transfer""]",2026-27,2026-10-07T03:04:34.805801+00:00,current_snapshot
+Newcastle United,614811,Joe White,1,"["""", ""Joe White Attacking Midfield"", ""23"", """", ""Crewe Alexandra League Two"", ""?""]",2026-27,2026-10-07T03:04:34.805801+00:00,current_snapshot
+Newcastle United,900601,Alex Murphy,1,"["""", ""Alex Murphy Left-Back"", ""22"", """", ""1.FC K'lautern 2. Bundesliga"", ""loan transfer""]",2026-27,2026-10-07T03:04:34.805801+00:00,current_snapshot
+Newcastle United,559130,Harrison Ashby,1,"["""", ""Harrison Ashby Right-Back"", ""24"", """", ""Luton League One"", ""loan transfer""]",2026-27,2026-10-07T03:04:34.805801+00:00,current_snapshot
+Newcastle United,940858,Leo Shahar,1,"["""", ""Leo Shahar Right-Back"", ""19"", """", ""Arouca Liga Portugal"", ""loan transfer""]",2026-27,2026-10-07T03:04:34.805801+00:00,current_snapshot
+Newcastle United,184528,Emil Krafth,1,"["""", ""Emil Krafth Right-Back"", ""31"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:34.805801+00:00,current_snapshot
+Newcastle United,427568,Aaron Ramsdale,1,"["""", ""Aaron Ramsdale Goalkeeper"", ""28"", """", ""Southampton Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:34.805801+00:00,current_snapshot
+Brighton & Hove Albion,892160,Luka Vušković,0,"["""", ""Luka Vušković Centre-Back"", ""19"", """", ""Tottenham Premier League"", ""€54.00m""]",2026-27,2026-10-07T03:04:35.329246+00:00,current_snapshot
+Brighton & Hove Albion,1421433,Zadok Yohanna,0,"["""", ""Zadok Yohanna Right Winger"", ""19"", """", ""AIK Allsvenskan"", ""€28.00m""]",2026-27,2026-10-07T03:04:35.329246+00:00,current_snapshot
+Brighton & Hove Albion,410708,Pascal Struijk,0,"["""", ""Pascal Struijk Centre-Back"", ""26"", """", ""Leeds Premier League"", ""€23.20m""]",2026-27,2026-10-07T03:04:35.329246+00:00,current_snapshot
+Brighton & Hove Albion,948279,Chema Andrés,0,"["""", ""Chema Andrés Defensive Midfield"", ""21"", """", ""Stuttgart Bundesliga"", ""€22.00m""]",2026-27,2026-10-07T03:04:35.329246+00:00,current_snapshot
+Brighton & Hove Albion,703408,Femi Azeez,0,"["""", ""Femi Azeez Right Winger"", ""25"", """", ""Millwall Championship"", ""€14.60m""]",2026-27,2026-10-07T03:04:35.329246+00:00,current_snapshot
+Brighton & Hove Albion,750903,Jaouen Hadjam,0,"["""", ""Jaouen Hadjam Left-Back"", ""23"", """", ""Young Boys Super League"", ""€13.00m""]",2026-27,2026-10-07T03:04:35.330246+00:00,current_snapshot
+Brighton & Hove Albion,539252,Costinha,0,"["""", ""Costinha Right-Back"", ""26"", """", ""Olympiacos Super League 1"", ""€12.70m""]",2026-27,2026-10-07T03:04:35.330246+00:00,current_snapshot
+Brighton & Hove Albion,438961,Michael Svoboda,0,"["""", ""Michael Svoboda Centre-Back"", ""27"", """", ""Venezia Serie A"", ""€5.00m""]",2026-27,2026-10-07T03:04:35.330246+00:00,current_snapshot
+Brighton & Hove Albion,1420635,Matías Orozco,0,"["""", ""Matías Orozco Defensive Midfield"", ""18"", """", ""Deportivo Cali Liga DIMAYOR II"", ""€4.10m""]",2026-27,2026-10-07T03:04:35.330246+00:00,current_snapshot
+Brighton & Hove Albion,984544,Rodrigo Rêgo,0,"["""", ""Rodrigo Rêgo Right Winger"", ""21"", """", ""Benfica B Liga Portugal 2"", ""€3.50m""]",2026-27,2026-10-07T03:04:35.330246+00:00,current_snapshot
+Brighton & Hove Albion,888785,Promise David,0,"["""", ""Promise David Centre-Forward"", ""25"", """", ""Union SG Jupiler Pro League"", ""loan transfer""]",2026-27,2026-10-07T03:04:35.330246+00:00,current_snapshot
+Brighton & Hove Albion,670860,James Beadle,0,"["""", ""James Beadle Goalkeeper"", ""21"", """", ""Brighton U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:35.330246+00:00,current_snapshot
+Brighton & Hove Albion,648046,Evan Ferguson,0,"["""", ""Evan Ferguson Centre-Forward"", ""21"", """", ""Roma Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:35.330246+00:00,current_snapshot
+Brighton & Hove Albion,660860,Diego Coppola,0,"["""", ""Diego Coppola Centre-Back"", ""22"", """", ""Paris FC Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:35.330246+00:00,current_snapshot
+Brighton & Hove Albion,983989,Facundo Buonanotte,0,"["""", ""Facundo Buonanotte Attacking Midfield"", ""21"", """", ""Leeds Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:35.330246+00:00,current_snapshot
+Brighton & Hove Albion,878150,Amario Cozier-Duberry,0,"["""", ""Amario Cozier-Duberry Right Winger"", ""22"", """", ""Middlesbrough Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:35.331247+00:00,current_snapshot
+Brighton & Hove Albion,933018,Tommy Watson,0,"["""", ""Tommy Watson Left Winger"", ""21"", """", ""Leicester League One"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:35.331247+00:00,current_snapshot
+Brighton & Hove Albion,670860,James Beadle,0,"["""", ""James Beadle Goalkeeper"", ""22"", """", ""Birmingham Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:35.331247+00:00,current_snapshot
+Brighton & Hove Albion,581330,Eiran Cashin,0,"["""", ""Eiran Cashin Centre-Back"", ""25"", """", ""Derby Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:35.331247+00:00,current_snapshot
+Brighton & Hove Albion,568005,Jeremy Sarmiento,0,"["""", ""Jeremy Sarmiento Left Winger"", ""24"", """", ""Middlesbrough Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:35.331247+00:00,current_snapshot
+Brighton & Hove Albion,1015959,Do-young Yoon,0,"["""", ""Do-young Yoon Right Winger"", ""19"", """", ""FC Dordrecht Keuken Kampioen Divisie"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:35.331247+00:00,current_snapshot
+Brighton & Hove Albion,973085,Carlos Baleba,1,"["""", ""Carlos Baleba Defensive Midfield"", ""22"", """", ""Man Utd Premier League"", ""€75.90m""]",2026-27,2026-10-07T03:04:35.334247+00:00,current_snapshot
+Brighton & Hove Albion,576314,Jan Paul van Hecke,1,"["""", ""Jan Paul van Hecke Centre-Back"", ""26"", """", ""Tottenham Premier League"", ""€60.00m""]",2026-27,2026-10-07T03:04:35.334247+00:00,current_snapshot
+Brighton & Hove Albion,646353,Carl Rushworth,1,"["""", ""Carl Rushworth Goalkeeper"", ""25"", """", ""Coventry Premier League"", ""€25.70m""]",2026-27,2026-10-07T03:04:35.334247+00:00,current_snapshot
+Brighton & Hove Albion,660860,Diego Coppola,1,"["""", ""Diego Coppola Centre-Back"", ""22"", """", ""Paris FC Ligue 1"", ""€17.50m""]",2026-27,2026-10-07T03:04:35.334247+00:00,current_snapshot
+Brighton & Hove Albion,67063,Danny Welbeck,1,"["""", ""Danny Welbeck Centre-Forward"", ""35"", """", ""Chelsea Premier League"", ""€5.85m""]",2026-27,2026-10-07T03:04:35.334247+00:00,current_snapshot
+Brighton & Hove Albion,568005,Jeremy Sarmiento,1,"["""", ""Jeremy Sarmiento Left Winger"", ""24"", """", ""Middlesbrough Championship"", ""€3.70m""]",2026-27,2026-10-07T03:04:35.334247+00:00,current_snapshot
+Brighton & Hove Albion,380350,Igor Julio,1,"["""", ""Igor Julio Centre-Back"", ""28"", """", ""Burnley Championship"", ""€3.50m""]",2026-27,2026-10-07T03:04:35.334247+00:00,current_snapshot
+Brighton & Hove Albion,111195,Joël Veltman,1,"["""", ""Joël Veltman Right-Back"", ""34"", """", ""West Ham Championship"", ""free transfer""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,983989,Facundo Buonanotte,1,"["""", ""Facundo Buonanotte Attacking Midfield"", ""21"", """", ""Elche CF LaLiga"", ""loan transfer""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,933018,Tommy Watson,1,"["""", ""Tommy Watson Left Winger"", ""20"", """", ""Leicester League One"", ""loan transfer""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,670860,James Beadle,1,"["""", ""James Beadle Goalkeeper"", ""22"", """", ""Birmingham Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,581330,Eiran Cashin,1,"["""", ""Eiran Cashin Centre-Back"", ""24"", """", ""Derby Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,878150,Amario Cozier-Duberry,1,"["""", ""Amario Cozier-Duberry Right Winger"", ""21"", """", ""Middlesbrough Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,984544,Rodrigo Rêgo,1,"["""", ""Rodrigo Rêgo Right Winger"", ""21"", """", ""Castellón LaLiga2"", ""loan transfer""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,1420635,Matías Orozco,1,"["""", ""Matías Orozco Defensive Midfield"", ""18"", """", ""Castellón LaLiga2"", ""loan transfer""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,1015959,Do-young Yoon,1,"["""", ""Do-young Yoon Right Winger"", ""19"", """", ""1.FC Magdeburg 2. Bundesliga"", ""loan transfer""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,212847,Adam Webster,1,"["""", ""Adam Webster Centre-Back"", ""31"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,209212,Solly March,1,"["""", ""Solly March Right Winger"", ""31"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:35.335248+00:00,current_snapshot
+Brighton & Hove Albion,3333,James Milner,1,"["""", ""James Milner Central Midfield"", ""40"", """", ""Retired"", ""-""]",2026-27,2026-10-07T03:04:35.336251+00:00,current_snapshot
+Brentford,808348,Mamadou Sangaré,0,"["""", ""Mamadou Sangaré Central Midfield"", ""24"", """", ""Lens Ligue 1"", ""€48.00m""]",2026-27,2026-10-07T03:04:37.525922+00:00,current_snapshot
+Brentford,1111589,El Hadji Malick Diouf,0,"["""", ""El Hadji Malick Diouf Left-Back"", ""21"", """", ""West Ham Championship"", ""€40.80m""]",2026-27,2026-10-07T03:04:37.525922+00:00,current_snapshot
+Brentford,915418,Jannik Schuster,0,"["""", ""Jannik Schuster Centre-Back"", ""20"", """", ""Salzburg Bundesliga"", ""€18.00m""]",2026-27,2026-10-07T03:04:37.525922+00:00,current_snapshot
+Brentford,684210,Jaidon Anthony,0,"["""", ""Jaidon Anthony Left Winger"", ""26"", """", ""Burnley Championship"", ""€17.50m""]",2026-27,2026-10-07T03:04:37.525922+00:00,current_snapshot
+Brentford,123682,Callum Wilson,0,"["""", ""Callum Wilson Centre-Forward"", ""34"", """", ""West Ham Championship"", ""free transfer""]",2026-27,2026-10-07T03:04:37.525922+00:00,current_snapshot
+Brentford,1071138,Benjamin Fredrick,0,"["""", ""Benjamin Fredrick Centre-Back"", ""21"", """", ""Brentford B England"", ""-""]",2026-27,2026-10-07T03:04:37.526920+00:00,current_snapshot
+Brentford,967342,Josh Stephenson,0,"["""", ""Josh Stephenson Centre-Back"", ""20"", """", ""Brentford B England"", ""-""]",2026-27,2026-10-07T03:04:37.526920+00:00,current_snapshot
+Brentford,1086375,Gustavo Nunes,0,"["""", ""Gustavo Nunes Left Winger"", ""20"", """", ""Swansea Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:37.526920+00:00,current_snapshot
+Brentford,1091562,Romelle Donovan,0,"["""", ""Romelle Donovan Right Winger"", ""20"", """", ""Sheff Utd Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:37.526920+00:00,current_snapshot
+Brentford,1141628,Yunus Konak,0,"["""", ""Yunus Konak Defensive Midfield"", ""20"", """", ""Oxford United Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:37.526920+00:00,current_snapshot
+Brentford,709767,Ji-soo Kim,0,"["""", ""Ji-soo Kim Centre-Back"", ""21"", """", ""1.FC K'lautern 2. Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:37.526920+00:00,current_snapshot
+Brentford,741236,Matthew Cox,0,"["""", ""Matthew Cox Goalkeeper"", ""24"", """", ""Barnet League Two"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:37.526920+00:00,current_snapshot
+Brentford,1144158,Benjamin Arthur,0,"["""", ""Benjamin Arthur Centre-Back"", ""20"", """", ""Celtic Premiership"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:37.526920+00:00,current_snapshot
+Brentford,967342,Josh Stephenson,0,"["""", ""Josh Stephenson Centre-Back"", ""20"", """", ""Crewe Alexandra League Two"", ""End of loan 01/01/2027""]",2026-27,2026-10-07T03:04:37.526920+00:00,current_snapshot
+Brentford,421637,Frank Onyeka,1,"["""", ""Frank Onyeka Central Midfield"", ""28"", """", ""Coventry Premier League"", ""€7.00m""]",2026-27,2026-10-07T03:04:37.528920+00:00,current_snapshot
+Brentford,442248,Ethan Pinnock,1,"["""", ""Ethan Pinnock Centre-Back"", ""33"", """", ""Coventry Premier League"", ""€5.85m""]",2026-27,2026-10-07T03:04:37.528920+00:00,current_snapshot
+Brentford,61651,Jordan Henderson,1,"["""", ""Jordan Henderson Central Midfield"", ""36"", """", ""Chelsea Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:37.528920+00:00,current_snapshot
+Brentford,874538,Ryan Trevitt,1,"["""", ""Ryan Trevitt Central Midfield"", ""23"", """", ""Wigan League One"", ""free transfer""]",2026-27,2026-10-07T03:04:37.529921+00:00,current_snapshot
+Brentford,1141628,Yunus Konak,1,"["""", ""Yunus Konak Defensive Midfield"", ""20"", """", ""Lincoln City Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:37.529921+00:00,current_snapshot
+Brentford,1091562,Romelle Donovan,1,"["""", ""Romelle Donovan Right Winger"", ""19"", """", ""Sheff Utd Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:37.529921+00:00,current_snapshot
+Brentford,954104,Jayden Meghoma,1,"["""", ""Jayden Meghoma Left-Back"", ""20"", """", ""Portsmouth Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:37.529921+00:00,current_snapshot
+Brentford,741236,Matthew Cox,1,"["""", ""Matthew Cox Goalkeeper"", ""23"", """", ""Barnet League Two"", ""loan transfer""]",2026-27,2026-10-07T03:04:37.529921+00:00,current_snapshot
+Brentford,1144158,Benjamin Arthur,1,"["""", ""Benjamin Arthur Centre-Back"", ""20"", """", ""Portsmouth Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:37.529921+00:00,current_snapshot
+Brentford,967342,Josh Stephenson,1,"["""", ""Josh Stephenson Centre-Back"", ""20"", """", ""Crewe Alexandra League Two"", ""loan transfer""]",2026-27,2026-10-07T03:04:37.529921+00:00,current_snapshot
+Brentford,1008553,Julian Eyestone,1,"["""", ""Julian Eyestone Goalkeeper"", ""20"", """", ""Rotherham League Two"", ""loan transfer""]",2026-27,2026-10-07T03:04:37.529921+00:00,current_snapshot
+Brentford,340325,Reiss Nelson,1,"["""", ""Reiss Nelson Left Winger"", ""26"", """", ""Arsenal Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:37.529921+00:00,current_snapshot
+Crystal Palace,584769,Dwight McNeil,0,"["""", ""Dwight McNeil Left Winger"", ""26"", """", ""Everton Premier League"", ""€25.80m""]",2026-27,2026-10-07T03:04:41.704998+00:00,current_snapshot
+Crystal Palace,945021,Anan Khalaili,0,"["""", ""Anan Khalaili Right-Back"", ""21"", """", ""Union SG Jupiler Pro League"", ""€24.50m""]",2026-27,2026-10-07T03:04:41.704998+00:00,current_snapshot
+Crystal Palace,420213,Quinten Timber,0,"["""", ""Quinten Timber Central Midfield"", ""25"", """", ""Marseille Ligue 1"", ""€20.00m""]",2026-27,2026-10-07T03:04:41.704998+00:00,current_snapshot
+Crystal Palace,1007383,Zavier Gozo,0,"["""", ""Zavier Gozo Right Winger"", ""19"", """", ""Salt Lake MLS"", ""€13.00m""]",2026-27,2026-10-07T03:04:41.704998+00:00,current_snapshot
+Crystal Palace,881116,Darío Osorio,0,"["""", ""Darío Osorio Right Winger"", ""22"", """", ""Midtjylland Superliga"", ""Loan fee: €2.00m""]",2026-27,2026-10-07T03:04:41.704998+00:00,current_snapshot
+Crystal Palace,331505,Óscar Mingueza,0,"["""", ""Óscar Mingueza Right-Back"", ""27"", """", ""Celta LaLiga"", ""free transfer""]",2026-27,2026-10-07T03:04:41.704998+00:00,current_snapshot
+Crystal Palace,316125,Ben Chilwell,0,"["""", ""Ben Chilwell Left-Back"", ""29"", """", ""R. Strasbourg Ligue 1"", ""free transfer""]",2026-27,2026-10-07T03:04:41.704998+00:00,current_snapshot
+Crystal Palace,331560,Takehiro Tomiyasu,0,"["""", ""Takehiro Tomiyasu Centre-Back"", ""27"", """", ""Ajax Eredivisie"", ""free transfer""]",2026-27,2026-10-07T03:04:41.706000+00:00,current_snapshot
+Crystal Palace,1077175,Honest Ahanor,0,"["""", ""Honest Ahanor Centre-Back"", ""18"", """", ""Atalanta Serie A"", ""loan transfer""]",2026-27,2026-10-07T03:04:41.706000+00:00,current_snapshot
+Crystal Palace,386047,Axel Disasi,0,"["""", ""Axel Disasi Centre-Back"", ""28"", """", ""Chelsea Premier League"", ""loan transfer""]",2026-27,2026-10-07T03:04:41.706000+00:00,current_snapshot
+Crystal Palace,967319,Romain Esse,0,"["""", ""Romain Esse Right Winger"", ""22"", """", ""Millwall Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:41.706000+00:00,current_snapshot
+Crystal Palace,743597,Matheus França,0,"["""", ""Matheus França Second Striker"", ""22"", """", ""Vasco da Gama Série A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:41.706000+00:00,current_snapshot
+Crystal Palace,1047257,Rio Cardines,0,"["""", ""Rio Cardines Left-Back"", ""20"", """", ""Bristol City Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:41.706000+00:00,current_snapshot
+Crystal Palace,814848,Owen Goodman,0,"["""", ""Owen Goodman Goalkeeper"", ""22"", """", ""Barnsley League One"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:41.706000+00:00,current_snapshot
+Crystal Palace,434224,Maxence Lacroix,1,"["""", ""Maxence Lacroix Centre-Back"", ""26"", """", ""Chelsea Premier League"", ""€60.70m""]",2026-27,2026-10-07T03:04:41.709008+00:00,current_snapshot
+Crystal Palace,470607,Brennan Johnson,1,"["""", ""Brennan Johnson Right Winger"", ""25"", """", ""Everton Premier League"", ""€25.80m""]",2026-27,2026-10-07T03:04:41.709008+00:00,current_snapshot
+Crystal Palace,493003,Daniel Muñoz,1,"["""", ""Daniel Muñoz Right-Back"", ""30"", """", ""Nott'm Forest Premier League"", ""€25.70m""]",2026-27,2026-10-07T03:04:41.709008+00:00,current_snapshot
+Crystal Palace,862109,Danny Imray,1,"["""", ""Danny Imray Right-Back"", ""23"", """", ""Wrexham Championship"", ""€6.60m""]",2026-27,2026-10-07T03:04:41.709008+00:00,current_snapshot
+Crystal Palace,747009,Justin Devenny,1,"["""", ""Justin Devenny Attacking Midfield"", ""22"", """", ""Stoke City Championship"", ""€5.85m""]",2026-27,2026-10-07T03:04:41.709008+00:00,current_snapshot
+Crystal Palace,865993,David Ozoh,1,"["""", ""David Ozoh Defensive Midfield"", ""21"", """", ""Derby Championship"", ""€4.65m""]",2026-27,2026-10-07T03:04:41.709008+00:00,current_snapshot
+Crystal Palace,967319,Romain Esse,1,"["""", ""Romain Esse Right Winger"", ""21"", """", ""Millwall Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:41.709008+00:00,current_snapshot
+Crystal Palace,586834,Jesurun Rak-Sakyi,1,"["""", ""Jesurun Rak-Sakyi Right Winger"", ""23"", """", ""Kasimpasa Süper Lig"", ""loan transfer""]",2026-27,2026-10-07T03:04:41.710007+00:00,current_snapshot
+Crystal Palace,743597,Matheus França,1,"["""", ""Matheus França Second Striker"", ""22"", """", ""Alverca Liga Portugal"", ""loan transfer""]",2026-27,2026-10-07T03:04:41.710007+00:00,current_snapshot
+Crystal Palace,293194,Borna Sosa,1,"["""", ""Borna Sosa Left-Back"", ""28"", """", ""1.FC Köln Bundesliga"", ""loan transfer""]",2026-27,2026-10-07T03:04:41.710007+00:00,current_snapshot
+Crystal Palace,814848,Owen Goodman,1,"["""", ""Owen Goodman Goalkeeper"", ""22"", """", ""Dundee FC Premiership"", ""loan transfer""]",2026-27,2026-10-07T03:04:41.710007+00:00,current_snapshot
+Crystal Palace,1047257,Rio Cardines,1,"["""", ""Rio Cardines Left-Back"", ""20"", """", ""Bristol City Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:41.710007+00:00,current_snapshot
+Crystal Palace,85177,Nathaniel Clyne,1,"["""", ""Nathaniel Clyne Right-Back"", ""35"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:41.710007+00:00,current_snapshot
+Crystal Palace,1124005,Christantus Uche,1,"["""", ""Christantus Uche Centre-Forward"", ""23"", """", ""Getafe LaLiga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:41.710007+00:00,current_snapshot
+Bournemouth,650568,António Silva,0,"["""", ""António Silva Centre-Back"", ""22"", """", ""Benfica Liga Portugal"", ""€25.00m""]",2026-27,2026-10-07T03:04:43.174058+00:00,current_snapshot
+Bournemouth,948275,Álvaro Rodríguez,0,"["""", ""Álvaro Rodríguez Centre-Forward"", ""22"", """", ""Elche CF LaLiga"", ""€25.00m""]",2026-27,2026-10-07T03:04:43.174058+00:00,current_snapshot
+Bournemouth,741257,Álex Jiménez,0,"["""", ""Álex Jiménez Right-Back"", ""21"", """", ""AC Milan Serie A"", ""€18.50m""]",2026-27,2026-10-07T03:04:43.174058+00:00,current_snapshot
+Bournemouth,676042,Juanlu Sánchez,0,"["""", ""Juanlu Sánchez Right-Back"", ""22"", """", ""Sevilla FC LaLiga"", ""€11.00m""]",2026-27,2026-10-07T03:04:43.174058+00:00,current_snapshot
+Bournemouth,301238,Michele Di Gregorio,0,"["""", ""Michele Di Gregorio Goalkeeper"", ""29"", """", ""Juventus Serie A"", ""Loan fee: €1.30m""]",2026-27,2026-10-07T03:04:43.174058+00:00,current_snapshot
+Bournemouth,391065,Hamed Traoré,0,"["""", ""Hamed Traoré Left Winger"", ""26"", """", ""Marseille Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:43.174058+00:00,current_snapshot
+Bournemouth,512385,Luis Sinisterra,0,"["""", ""Luis Sinisterra Left Winger"", ""27"", """", ""Cruzeiro Série A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:43.174058+00:00,current_snapshot
+Bournemouth,513970,Julián Araujo,0,"["""", ""Julián Araujo Right-Back"", ""24"", """", ""Celtic Premiership"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:43.174058+00:00,current_snapshot
+Bournemouth,746740,Daniel Jebbison,0,"["""", ""Daniel Jebbison Centre-Forward"", ""22"", """", ""Preston Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:43.174058+00:00,current_snapshot
+Bournemouth,471690,Max Aarons,0,"["""", ""Max Aarons Right-Back"", ""26"", """", ""Rangers Premiership"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:43.175058+00:00,current_snapshot
+Bournemouth,994604,Matai Akinmboni,0,"["""", ""Matai Akinmboni Centre-Back"", ""20"", """", ""Dundee FC Premiership"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:43.175058+00:00,current_snapshot
+Bournemouth,617009,Alex Paulsen,0,"["""", ""Alex Paulsen Goalkeeper"", ""24"", """", ""Motherwell FC Premiership"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:43.175058+00:00,current_snapshot
+Bournemouth,617009,Alex Paulsen,0,"["""", ""Alex Paulsen Goalkeeper"", ""23"", """", ""Lechia Gdansk Ekstraklasa"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:43.175058+00:00,current_snapshot
+Bournemouth,582078,Will Dennis,0,"["""", ""Will Dennis Goalkeeper"", ""25"", """", ""Leyton Orient League One"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:43.175058+00:00,current_snapshot
+Bournemouth,391065,Hamed Traoré,1,"["""", ""Hamed Traoré Left Winger"", ""26"", """", ""Marseille Ligue 1"", ""€7.70m""]",2026-27,2026-10-07T03:04:43.176058+00:00,current_snapshot
+Bournemouth,512385,Luis Sinisterra,1,"["""", ""Luis Sinisterra Left Winger"", ""27"", """", ""Cruzeiro Série A"", ""€3.70m""]",2026-27,2026-10-07T03:04:43.177058+00:00,current_snapshot
+Bournemouth,741257,Álex Jiménez,1,"["""", ""Álex Jiménez Right-Back"", ""21"", """", ""Fiorentina Serie A"", ""Loan fee: €2.00m""]",2026-27,2026-10-07T03:04:43.177058+00:00,current_snapshot
+Bournemouth,469781,Marcos Senesi,1,"["""", ""Marcos Senesi Centre-Back"", ""29"", """", ""Tottenham Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:43.177058+00:00,current_snapshot
+Bournemouth,251106,Enes Ünal,1,"["""", ""Enes Ünal Centre-Forward"", ""29"", """", ""Getafe LaLiga"", ""free transfer""]",2026-27,2026-10-07T03:04:43.177058+00:00,current_snapshot
+Bournemouth,582078,Will Dennis,1,"["""", ""Will Dennis Goalkeeper"", ""26"", """", ""MK Dons League One"", ""?""]",2026-27,2026-10-07T03:04:43.177058+00:00,current_snapshot
+Bournemouth,994604,Matai Akinmboni,1,"["""", ""Matai Akinmboni Centre-Back"", ""19"", """", ""Dundee FC Premiership"", ""loan transfer""]",2026-27,2026-10-07T03:04:43.177058+00:00,current_snapshot
+Bournemouth,617009,Alex Paulsen,1,"["""", ""Alex Paulsen Goalkeeper"", ""24"", """", ""Motherwell FC Premiership"", ""loan transfer""]",2026-27,2026-10-07T03:04:43.177058+00:00,current_snapshot
+Bournemouth,741257,Álex Jiménez,1,"["""", ""Álex Jiménez Right-Back"", ""21"", """", ""AC Milan Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:43.177058+00:00,current_snapshot
+Bournemouth,481675,Christos Mandas,1,"["""", ""Christos Mandas Goalkeeper"", ""24"", """", ""Lazio Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:43.177058+00:00,current_snapshot
+Aston Villa,927353,Johan Manzambi,0,"["""", ""Johan Manzambi Attacking Midfield"", ""20"", """", ""Freiburg Bundesliga"", ""€60.00m""]",2026-27,2026-10-07T03:04:44.251796+00:00,current_snapshot
+Aston Villa,776890,Nicolas Jackson,0,"["""", ""Nicolas Jackson Centre-Forward"", ""25"", """", ""Chelsea Premier League"", ""€55.50m""]",2026-27,2026-10-07T03:04:44.251796+00:00,current_snapshot
+Aston Villa,1185888,Ibrahim Mbaye,0,"["""", ""Ibrahim Mbaye Right Winger"", ""18"", """", ""PSG Ligue 1"", ""€55.00m""]",2026-27,2026-10-07T03:04:44.251796+00:00,current_snapshot
+Aston Villa,735570,João Gomes,0,"["""", ""João Gomes Central Midfield"", ""25"", """", ""Wolves Championship"", ""€40.00m""]",2026-27,2026-10-07T03:04:44.251796+00:00,current_snapshot
+Aston Villa,432298,Zion Suzuki,0,"["""", ""Zion Suzuki Goalkeeper"", ""23"", """", ""Parma Serie A"", ""€30.00m""]",2026-27,2026-10-07T03:04:44.251796+00:00,current_snapshot
+Aston Villa,503977,Taylor Harwood-Bellis,0,"["""", ""Taylor Harwood-Bellis Centre-Back"", ""24"", """", ""Southampton Championship"", ""€29.20m""]",2026-27,2026-10-07T03:04:44.251796+00:00,current_snapshot
+Aston Villa,616631,Matteo Ruggeri,0,"["""", ""Matteo Ruggeri Left-Back"", ""24"", """", ""Atlético LaLiga"", ""€25.00m""]",2026-27,2026-10-07T03:04:44.251796+00:00,current_snapshot
+Aston Villa,1282860,Modou Kéba Cissé,0,"["""", ""Modou Kéba Cissé Centre-Back"", ""20"", """", ""LASK Bundesliga"", ""€5.50m""]",2026-27,2026-10-07T03:04:44.251796+00:00,current_snapshot
+Aston Villa,153084,Leon Goretzka,0,"["""", ""Leon Goretzka Central Midfield"", ""31"", """", ""Bayern Munich Bundesliga"", ""free transfer""]",2026-27,2026-10-07T03:04:44.251796+00:00,current_snapshot
+Aston Villa,811779,Alejandro Garnacho,0,"["""", ""Alejandro Garnacho Left Winger"", ""22"", """", ""Chelsea Premier League"", ""loan transfer""]",2026-27,2026-10-07T03:04:44.251796+00:00,current_snapshot
+Aston Villa,477758,Aaron Wan-Bissaka,0,"["""", ""Aaron Wan-Bissaka Right-Back"", ""28"", """", ""West Ham Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:44.252797+00:00,current_snapshot
+Aston Villa,1023191,George Hemmings,0,"["""", ""George Hemmings Left Winger"", ""19"", """", ""Aston Villa U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:44.252797+00:00,current_snapshot
+Aston Villa,712181,James Wright,0,"["""", ""James Wright Goalkeeper"", ""21"", """", ""Aston Villa U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:44.252797+00:00,current_snapshot
+Aston Villa,326029,Donyell Malen,0,"["""", ""Donyell Malen Centre-Forward"", ""27"", """", ""Roma Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:44.252797+00:00,current_snapshot
+Aston Villa,671915,Enzo Barrenechea,0,"["""", ""Enzo Barrenechea Defensive Midfield"", ""25"", """", ""Benfica Liga Portugal"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:44.252797+00:00,current_snapshot
+Aston Villa,627248,Lewis Dobbin,0,"["""", ""Lewis Dobbin Left Winger"", ""23"", """", ""Preston Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:44.252797+00:00,current_snapshot
+Aston Villa,581672,Samuel Iling-Junior,0,"["""", ""Samuel Iling-Junior Left Winger"", ""22"", """", ""Pisa Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:44.252797+00:00,current_snapshot
+Aston Villa,848682,Kosta Nedeljkovic,0,"["""", ""Kosta Nedeljkovic Right-Back"", ""20"", """", ""Leipzig Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:44.252797+00:00,current_snapshot
+Aston Villa,1043003,Yasin Özcan,0,"["""", ""Yasin Özcan Centre-Back"", ""20"", """", ""Beşiktaş Süper Lig"", ""End of loan 27/01/2027""]",2026-27,2026-10-07T03:04:44.252797+00:00,current_snapshot
+Aston Villa,555074,Oliwier Zych,0,"["""", ""Oliwier Zych Goalkeeper"", ""22"", """", ""Raków Ekstraklasa"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:44.253794+00:00,current_snapshot
+Aston Villa,591844,Joe Gauci,0,"["""", ""Joe Gauci Goalkeeper"", ""25"", """", ""Port Vale League One"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:44.253794+00:00,current_snapshot
+Aston Villa,503743,Morgan Rogers,1,"["""", ""Morgan Rogers Attacking Midfield"", ""23"", """", ""Chelsea Premier League"", ""€138.00m""]",2026-27,2026-10-07T03:04:44.255794+00:00,current_snapshot
+Aston Villa,413403,Ezri Konsa,1,"["""", ""Ezri Konsa Centre-Back"", ""28"", """", ""Arsenal Premier League"", ""€59.60m""]",2026-27,2026-10-07T03:04:44.255794+00:00,current_snapshot
+Aston Villa,324358,Ollie Watkins,1,"["""", ""Ollie Watkins Centre-Forward"", ""30"", """", ""Al-Hilal Saudi Pro League"", ""€58.40m""]",2026-27,2026-10-07T03:04:44.255794+00:00,current_snapshot
+Aston Villa,249565,Youri Tielemans,1,"["""", ""Youri Tielemans Central Midfield"", ""29"", """", ""Man Utd Premier League"", ""€41.00m""]",2026-27,2026-10-07T03:04:44.256794+00:00,current_snapshot
+Aston Villa,326029,Donyell Malen,1,"["""", ""Donyell Malen Centre-Forward"", ""27"", """", ""Roma Serie A"", ""€25.00m""]",2026-27,2026-10-07T03:04:44.256794+00:00,current_snapshot
+Aston Villa,671915,Enzo Barrenechea,1,"["""", ""Enzo Barrenechea Defensive Midfield"", ""25"", """", ""Benfica Liga Portugal"", ""€12.00m""]",2026-27,2026-10-07T03:04:44.256794+00:00,current_snapshot
+Aston Villa,627248,Lewis Dobbin,1,"["""", ""Lewis Dobbin Left Winger"", ""23"", """", ""Southampton Championship"", ""€10.50m""]",2026-27,2026-10-07T03:04:44.256794+00:00,current_snapshot
+Aston Villa,111873,Emiliano Martínez,1,"["""", ""Emiliano Martínez Goalkeeper"", ""33"", """", ""Chelsea Premier League"", ""€8.75m""]",2026-27,2026-10-07T03:04:44.256794+00:00,current_snapshot
+Aston Villa,126664,Lucas Digne,1,"["""", ""Lucas Digne Left-Back"", ""33"", """", ""PSG Ligue 1"", ""€7.00m""]",2026-27,2026-10-07T03:04:44.256794+00:00,current_snapshot
+Aston Villa,387626,Leon Bailey,1,"["""", ""Leon Bailey Right Winger"", ""29"", """", ""Olympiacos Super League 1"", ""€5.00m""]",2026-27,2026-10-07T03:04:44.256794+00:00,current_snapshot
+Aston Villa,581672,Samuel Iling-Junior,1,"["""", ""Samuel Iling-Junior Left Winger"", ""22"", """", ""Bolton Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:44.257795+00:00,current_snapshot
+Aston Villa,1063329,Andrés García,1,"["""", ""Andrés García Right-Back"", ""23"", """", ""Getafe LaLiga"", ""loan transfer""]",2026-27,2026-10-07T03:04:44.257795+00:00,current_snapshot
+Aston Villa,848682,Kosta Nedeljkovic,1,"["""", ""Kosta Nedeljkovic Right-Back"", ""20"", """", ""Rangers Premiership"", ""loan transfer""]",2026-27,2026-10-07T03:04:44.257795+00:00,current_snapshot
+Aston Villa,555074,Oliwier Zych,1,"["""", ""Oliwier Zych Goalkeeper"", ""22"", """", ""Vit. Guimarães Liga Portugal"", ""loan transfer""]",2026-27,2026-10-07T03:04:44.257795+00:00,current_snapshot
+Aston Villa,591844,Joe Gauci,1,"["""", ""Joe Gauci Goalkeeper"", ""26"", """", ""Lincoln City Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:44.257795+00:00,current_snapshot
+Aston Villa,565822,Harvey Elliott,1,"["""", ""Harvey Elliott Attacking Midfield"", ""23"", """", ""Liverpool Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:44.257795+00:00,current_snapshot
+Aston Villa,447661,Douglas Luiz,1,"["""", ""Douglas Luiz Central Midfield"", ""28"", """", ""Juventus Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:44.257795+00:00,current_snapshot
+Aston Villa,401173,Jadon Sancho,1,"["""", ""Jadon Sancho Left Winger"", ""26"", """", ""Man Utd Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:44.258798+00:00,current_snapshot
+Nottingham Forest,610849,Liam Delap,0,"["""", ""Liam Delap Centre-Forward"", ""23"", """", ""Chelsea Premier League"", ""€52.50m""]",2026-27,2026-10-07T03:04:48.285165+00:00,current_snapshot
+Nottingham Forest,974982,Ousmane Diomande,0,"["""", ""Ousmane Diomande Centre-Back"", ""22"", """", ""Sporting Liga Portugal"", ""€40.00m""]",2026-27,2026-10-07T03:04:48.286165+00:00,current_snapshot
+Nottingham Forest,493003,Daniel Muñoz,0,"["""", ""Daniel Muñoz Right-Back"", ""30"", """", ""Crystal Palace Premier League"", ""€25.70m""]",2026-27,2026-10-07T03:04:48.286165+00:00,current_snapshot
+Nottingham Forest,982575,Gustavo Sá,0,"["""", ""Gustavo Sá Attacking Midfield"", ""21"", """", ""Famalicão Liga Portugal"", ""€20.00m""]",2026-27,2026-10-07T03:04:48.286165+00:00,current_snapshot
+Nottingham Forest,223979,Xaver Schlager,0,"["""", ""Xaver Schlager Central Midfield"", ""28"", """", ""Leipzig Bundesliga"", ""free transfer""]",2026-27,2026-10-07T03:04:48.286165+00:00,current_snapshot
+Nottingham Forest,381469,Steven Benda,0,"["""", ""Steven Benda Goalkeeper"", ""27"", """", ""Fulham Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:48.286165+00:00,current_snapshot
+Nottingham Forest,585959,Arnaud Kalimuendo,0,"["""", ""Arnaud Kalimuendo Centre-Forward"", ""24"", """", ""Frankfurt Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:48.286165+00:00,current_snapshot
+Nottingham Forest,891353,Cuiabano,0,"["""", ""Cuiabano Left-Back"", ""23"", """", ""Vasco da Gama Série A"", ""End of loan 31/12/2026""]",2026-27,2026-10-07T03:04:48.286165+00:00,current_snapshot
+Nottingham Forest,663244,Jota Silva,0,"["""", ""Jota Silva Left Winger"", ""26"", """", ""Beşiktaş Süper Lig"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:48.286165+00:00,current_snapshot
+Nottingham Forest,498237,David Carmo,0,"["""", ""David Carmo Centre-Back"", ""26"", """", ""Real Oviedo LaLiga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:48.286165+00:00,current_snapshot
+Nottingham Forest,1007720,Tyler Bindon,0,"["""", ""Tyler Bindon Centre-Back"", ""21"", """", ""Sheff Utd Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:48.287166+00:00,current_snapshot
+Nottingham Forest,424881,Omar Richards,0,"["""", ""Omar Richards Left-Back"", ""28"", """", ""Rio Ave Liga Portugal"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:48.287166+00:00,current_snapshot
+Nottingham Forest,567576,Elliot Anderson,1,"["""", ""Elliot Anderson Defensive Midfield"", ""23"", """", ""Man City Premier League"", ""€135.00m""]",2026-27,2026-10-07T03:04:48.289166+00:00,current_snapshot
+Nottingham Forest,295313,Taiwo Awoniyi,1,"["""", ""Taiwo Awoniyi Centre-Forward"", ""29"", """", ""Coventry Premier League"", ""€10.50m""]",2026-27,2026-10-07T03:04:48.289166+00:00,current_snapshot
+Nottingham Forest,498237,David Carmo,1,"["""", ""David Carmo Centre-Back"", ""26"", """", ""Olympiacos Super League 1"", ""€9.00m""]",2026-27,2026-10-07T03:04:48.289166+00:00,current_snapshot
+Nottingham Forest,741238,Omari Hutchinson,1,"["""", ""Omari Hutchinson Right Winger"", ""22"", """", ""AC Milan Serie A"", ""Loan fee: €4.20m""]",2026-27,2026-10-07T03:04:48.289166+00:00,current_snapshot
+Nottingham Forest,663244,Jota Silva,1,"["""", ""Jota Silva Left Winger"", ""26"", """", ""Olympiacos Super League 1"", ""€4.00m""]",2026-27,2026-10-07T03:04:48.289166+00:00,current_snapshot
+Nottingham Forest,424881,Omar Richards,1,"["""", ""Omar Richards Left-Back"", ""28"", """", ""Aris Saloniki Super League 1"", ""€2.00m""]",2026-27,2026-10-07T03:04:48.289166+00:00,current_snapshot
+Nottingham Forest,85941,Stefan Ortega,1,"["""", ""Stefan Ortega Goalkeeper"", ""33"", """", ""Olympiacos Super League 1"", ""free transfer""]",2026-27,2026-10-07T03:04:48.290166+00:00,current_snapshot
+Nottingham Forest,201574,Angus Gunn,1,"["""", ""Angus Gunn Goalkeeper"", ""30"", """", ""SJ Earthquakes MLS"", ""free transfer""]",2026-27,2026-10-07T03:04:48.290166+00:00,current_snapshot
+Nottingham Forest,540664,Dilane Bakwa,1,"["""", ""Dilane Bakwa Right Winger"", ""24"", """", ""Lille Ligue 1"", ""loan transfer""]",2026-27,2026-10-07T03:04:48.290166+00:00,current_snapshot
+Nottingham Forest,982575,Gustavo Sá,1,"["""", ""Gustavo Sá Attacking Midfield"", ""21"", """", ""Olympiacos Super League 1"", ""loan transfer""]",2026-27,2026-10-07T03:04:48.290166+00:00,current_snapshot
+Nottingham Forest,673492,Morato,1,"["""", ""Morato Centre-Back"", ""25"", """", ""West Ham Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:48.290166+00:00,current_snapshot
+Nottingham Forest,933017,Zach Abbott,1,"["""", ""Zach Abbott Centre-Back"", ""20"", """", ""Southampton Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:48.290166+00:00,current_snapshot
+Nottingham Forest,1007720,Tyler Bindon,1,"["""", ""Tyler Bindon Centre-Back"", ""21"", """", ""Charlton Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:48.290166+00:00,current_snapshot
+Nottingham Forest,897481,Eric da Silva Moreira,1,"["""", ""Eric da Silva Moreira Right-Back"", ""20"", """", ""Excelsior Eredivisie"", ""loan transfer""]",2026-27,2026-10-07T03:04:48.290166+00:00,current_snapshot
+Nottingham Forest,142310,Willy Boly,1,"["""", ""Willy Boly Centre-Back"", ""35"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:48.290166+00:00,current_snapshot
+Nottingham Forest,572265,Lorenzo Lucca,1,"["""", ""Lorenzo Lucca Centre-Forward"", ""25"", """", ""Napoli Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:48.290166+00:00,current_snapshot
+Sunderland,743386,Malick Fofana,0,"["""", ""Malick Fofana Left Winger"", ""21"", """", ""Lyon Ligue 1"", ""€30.00m""]",2026-27,2026-10-07T03:04:50.238262+00:00,current_snapshot
+Sunderland,1191444,Dayann Méthalie,0,"["""", ""Dayann Méthalie Left-Back"", ""20"", """", ""Toulouse Ligue 1"", ""€28.00m""]",2026-27,2026-10-07T03:04:50.243265+00:00,current_snapshot
+Sunderland,1401779,Jules Ahoka,0,"["""", ""Jules Ahoka Defensive Midfield"", ""20"", """", ""Royal Antwerp Jupiler Pro League"", ""€10.00m""]",2026-27,2026-10-07T03:04:50.243265+00:00,current_snapshot
+Sunderland,263236,Kevin Danso,0,"["""", ""Kevin Danso Centre-Back"", ""27"", """", ""Tottenham Premier League"", ""Loan fee: €2.90m""]",2026-27,2026-10-07T03:04:50.243265+00:00,current_snapshot
+Sunderland,100986,Thomas Meunier,0,"["""", ""Thomas Meunier Right-Back"", ""34"", """", ""Lille Ligue 1"", ""free transfer""]",2026-27,2026-10-07T03:04:50.243265+00:00,current_snapshot
+Sunderland,658536,Simon Adingra,0,"["""", ""Simon Adingra Left Winger"", ""24"", """", ""Monaco Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.243265+00:00,current_snapshot
+Sunderland,475946,Anthony Patterson,0,"["""", ""Anthony Patterson Goalkeeper"", ""26"", """", ""Millwall Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.243265+00:00,current_snapshot
+Sunderland,617755,Jenson Seelt,0,"["""", ""Jenson Seelt Centre-Back"", ""24"", """", ""Swansea Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:50.244264+00:00,current_snapshot
+Sunderland,617755,Jenson Seelt,0,"["""", ""Jenson Seelt Centre-Back"", ""23"", """", ""Wolfsburg Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.244264+00:00,current_snapshot
+Sunderland,570336,Dan Neil,0,"["""", ""Dan Neil Central Midfield"", ""24"", """", ""Ipswich Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.244264+00:00,current_snapshot
+Sunderland,181380,Arthur Masuaku,0,"["""", ""Arthur Masuaku Left-Back"", ""32"", """", ""Lens Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.244264+00:00,current_snapshot
+Sunderland,277697,Alan Browne,0,"["""", ""Alan Browne Central Midfield"", ""31"", """", ""Middlesbrough Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.244264+00:00,current_snapshot
+Sunderland,538998,Timothée Pembélé,0,"["""", ""Timothée Pembélé Right-Back"", ""23"", """", ""Le Havre AC Ligue 1"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.244264+00:00,current_snapshot
+Sunderland,661208,Leo Hjelde,0,"["""", ""Leo Hjelde Centre-Back"", ""22"", """", ""Sheff Utd Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.244264+00:00,current_snapshot
+Sunderland,502065,Aji Alese,0,"["""", ""Aji Alese Centre-Back"", ""25"", """", ""Portsmouth Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.244264+00:00,current_snapshot
+Sunderland,366729,Nazariy Rusyn,0,"["""", ""Nazariy Rusyn Centre-Forward"", ""27"", """", ""Arka Gdynia Ekstraklasa"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.244264+00:00,current_snapshot
+Sunderland,559801,Niall Huggins,0,"["""", ""Niall Huggins Right-Back"", ""25"", """", ""Wycombe League One"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.245263+00:00,current_snapshot
+Sunderland,840687,Luís Semedo,0,"["""", ""Luís Semedo Centre-Forward"", ""22"", """", ""Moreirense Liga Portugal"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.245263+00:00,current_snapshot
+Sunderland,967346,Eliezer Mayenda,1,"["""", ""Eliezer Mayenda Centre-Forward"", ""21"", """", ""Rennes Ligue 1"", ""€22.00m""]",2026-27,2026-10-07T03:04:50.247264+00:00,current_snapshot
+Sunderland,475946,Anthony Patterson,1,"["""", ""Anthony Patterson Goalkeeper"", ""26"", """", ""Wrexham Championship"", ""€9.35m""]",2026-27,2026-10-07T03:04:50.247264+00:00,current_snapshot
+Sunderland,1015619,Ahmed Abdullahi,1,"["""", ""Ahmed Abdullahi Centre-Forward"", ""22"", """", ""Eyüpspor Süper Lig"", ""€1.40m""]",2026-27,2026-10-07T03:04:50.247264+00:00,current_snapshot
+Sunderland,568006,Denniss Cirkins,1,"["""", ""Denniss Cirkins Left-Back"", ""24"", """", ""QPR Championship"", ""free transfer""]",2026-27,2026-10-07T03:04:50.247264+00:00,current_snapshot
+Sunderland,570336,Dan Neil,1,"["""", ""Dan Neil Central Midfield"", ""24"", """", ""Rangers Premiership"", ""free transfer""]",2026-27,2026-10-07T03:04:50.248265+00:00,current_snapshot
+Sunderland,181380,Arthur Masuaku,1,"["""", ""Arthur Masuaku Left-Back"", ""32"", """", ""Konyaspor Süper Lig"", ""free transfer""]",2026-27,2026-10-07T03:04:50.248265+00:00,current_snapshot
+Sunderland,538998,Timothée Pembélé,1,"["""", ""Timothée Pembélé Right-Back"", ""23"", """", ""Le Havre AC Ligue 1"", ""free transfer""]",2026-27,2026-10-07T03:04:50.248265+00:00,current_snapshot
+Sunderland,366729,Nazariy Rusyn,1,"["""", ""Nazariy Rusyn Centre-Forward"", ""27"", """", ""Karpaty Lviv Premier Liga"", ""free transfer""]",2026-27,2026-10-07T03:04:50.248265+00:00,current_snapshot
+Sunderland,937840,Harrison Jones,1,"["""", ""Harrison Jones Attacking Midfield"", ""21"", """", ""Peterborough League One"", ""free transfer""]",2026-27,2026-10-07T03:04:50.248265+00:00,current_snapshot
+Sunderland,661208,Leo Hjelde,1,"["""", ""Leo Hjelde Centre-Back"", ""22"", """", ""KV Mechelen Jupiler Pro League"", ""?""]",2026-27,2026-10-07T03:04:50.248265+00:00,current_snapshot
+Sunderland,840687,Luís Semedo,1,"["""", ""Luís Semedo Centre-Forward"", ""23"", """", ""Clermont Foot Ligue 2"", ""?""]",2026-27,2026-10-07T03:04:50.248265+00:00,current_snapshot
+Sunderland,658536,Simon Adingra,1,"["""", ""Simon Adingra Left Winger"", ""24"", """", ""Ajax Eredivisie"", ""loan transfer""]",2026-27,2026-10-07T03:04:50.248265+00:00,current_snapshot
+Sunderland,617755,Jenson Seelt,1,"["""", ""Jenson Seelt Centre-Back"", ""23"", """", ""Swansea Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:50.248265+00:00,current_snapshot
+Sunderland,942738,Milan Aleksic,1,"["""", ""Milan Aleksic Attacking Midfield"", ""20"", """", ""Partizan Super liga Srbije"", ""loan transfer""]",2026-27,2026-10-07T03:04:50.248265+00:00,current_snapshot
+Sunderland,131996,Bertrand Traoré,1,"["""", ""Bertrand Traoré Right Winger"", ""30"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:50.249264+00:00,current_snapshot
+Sunderland,559801,Niall Huggins,1,"["""", ""Niall Huggins Right-Back"", ""25"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:50.249264+00:00,current_snapshot
+Sunderland,420210,Lutsharel Geertruida,1,"["""", ""Lutsharel Geertruida Centre-Back"", ""25"", """", ""Leipzig Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.249264+00:00,current_snapshot
+Leeds United,566799,James Trafford,0,"["""", ""James Trafford Goalkeeper"", ""23"", """", ""Man City Premier League"", ""€46.70m""]",2026-27,2026-10-07T03:04:50.771516+00:00,current_snapshot
+Leeds United,679423,Tarik Muharemović,0,"["""", ""Tarik Muharemović Centre-Back"", ""23"", """", ""Sassuolo Serie A"", ""€37.00m""]",2026-27,2026-10-07T03:04:50.771516+00:00,current_snapshot
+Leeds United,192635,Nico Elvedi,0,"["""", ""Nico Elvedi Centre-Back"", ""29"", """", ""Mönchengladbach Bundesliga"", ""€8.00m""]",2026-27,2026-10-07T03:04:50.771516+00:00,current_snapshot
+Leeds United,196813,Michael Zetterer,0,"["""", ""Michael Zetterer Goalkeeper"", ""31"", """", ""Frankfurt Bundesliga"", ""€5.00m""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,939964,Jean-Mattéo Bahoya,0,"["""", ""Jean-Mattéo Bahoya Left Winger"", ""21"", """", ""Frankfurt Bundesliga"", ""Loan fee: €2.00m""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,532775,Melvin Bard,0,"["""", ""Melvin Bard Left-Back"", ""25"", """", ""Nice Ligue 1"", ""Loan fee: €1.00m""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,279455,Harry Wilson,0,"["""", ""Harry Wilson Right Winger"", ""29"", """", ""Fulham Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,503980,Joe Gelhardt,0,"["""", ""Joe Gelhardt Centre-Forward"", ""24"", """", ""Hull City Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,518644,Largie Ramazani,0,"["""", ""Largie Ramazani Left Winger"", ""26"", """", ""Burnley Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,518644,Largie Ramazani,0,"["""", ""Largie Ramazani Left Winger"", ""25"", """", ""Valencia LaLiga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,417346,Jack Harrison,0,"["""", ""Jack Harrison Left Winger"", ""29"", """", ""Fiorentina Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,834742,Mateo Joseph,0,"["""", ""Mateo Joseph Centre-Forward"", ""22"", """", ""RCD Mallorca LaLiga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,263361,Maximilian Wöber,0,"["""", ""Maximilian Wöber Centre-Back"", ""28"", """", ""Werder Bremen Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,449597,Isaac Schmidt,0,"["""", ""Isaac Schmidt Right-Back"", ""26"", """", ""Werder Bremen Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.772516+00:00,current_snapshot
+Leeds United,410708,Pascal Struijk,1,"["""", ""Pascal Struijk Centre-Back"", ""26"", """", ""Brighton Premier League"", ""€23.20m""]",2026-27,2026-10-07T03:04:50.776523+00:00,current_snapshot
+Leeds United,503980,Joe Gelhardt,1,"["""", ""Joe Gelhardt Centre-Forward"", ""24"", """", ""Hull City Premier League"", ""€7.60m""]",2026-27,2026-10-07T03:04:50.776523+00:00,current_snapshot
+Leeds United,449597,Isaac Schmidt,1,"["""", ""Isaac Schmidt Right-Back"", ""26"", """", ""Young Boys Super League"", ""€1.30m""]",2026-27,2026-10-07T03:04:50.776523+00:00,current_snapshot
+Leeds United,627626,Wilfried Gnonto,1,"["""", ""Wilfried Gnonto Right Winger"", ""22"", """", ""Fiorentina Serie A"", ""Loan fee: €1.00m""]",2026-27,2026-10-07T03:04:50.776523+00:00,current_snapshot
+Leeds United,338629,Sebastiaan Bornauw,1,"["""", ""Sebastiaan Bornauw Centre-Back"", ""27"", """", ""Hamburg Bundesliga"", ""Loan fee: €1.00m""]",2026-27,2026-10-07T03:04:50.776523+00:00,current_snapshot
+Leeds United,417346,Jack Harrison,1,"["""", ""Jack Harrison Left Winger"", ""29"", """", ""New England MLS"", ""€1.00m""]",2026-27,2026-10-07T03:04:50.776523+00:00,current_snapshot
+Leeds United,542586,Illan Meslier,1,"["""", ""Illan Meslier Goalkeeper"", ""26"", """", ""Arsenal Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:50.777521+00:00,current_snapshot
+Leeds United,263361,Maximilian Wöber,1,"["""", ""Maximilian Wöber Centre-Back"", ""28"", """", ""FC Schalke 04 Bundesliga"", ""free transfer""]",2026-27,2026-10-07T03:04:50.777521+00:00,current_snapshot
+Leeds United,236953,Sam Byram,1,"["""", ""Sam Byram Right-Back"", ""32"", """", ""Middlesbrough Championship"", ""free transfer""]",2026-27,2026-10-07T03:04:50.777521+00:00,current_snapshot
+Leeds United,99397,Karl Darlow,1,"["""", ""Karl Darlow Goalkeeper"", ""35"", """", ""Man Utd Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:50.777521+00:00,current_snapshot
+Leeds United,352041,Lucas Perri,1,"["""", ""Lucas Perri Goalkeeper"", ""28"", """", ""Torino Serie A"", ""loan transfer""]",2026-27,2026-10-07T03:04:50.777521+00:00,current_snapshot
+Leeds United,369962,Joël Piroe,1,"["""", ""Joël Piroe Centre-Forward"", ""27"", """", ""West Ham Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:50.777521+00:00,current_snapshot
+Leeds United,518644,Largie Ramazani,1,"["""", ""Largie Ramazani Left Winger"", ""25"", """", ""Burnley Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:50.777521+00:00,current_snapshot
+Leeds United,983989,Facundo Buonanotte,1,"["""", ""Facundo Buonanotte Attacking Midfield"", ""21"", """", ""Brighton Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:50.777521+00:00,current_snapshot
+Fulham,935230,Gonzalo García,0,"["""", ""Gonzalo García Centre-Forward"", ""22"", """", ""Real Madrid LaLiga"", ""€40.00m""]",2026-27,2026-10-07T03:04:55.136925+00:00,current_snapshot
+Fulham,747951,Shea Charles,0,"["""", ""Shea Charles Defensive Midfield"", ""22"", """", ""Southampton Championship"", ""€30.40m""]",2026-27,2026-10-07T03:04:55.136925+00:00,current_snapshot
+Fulham,452483,David Affengruber,0,"["""", ""David Affengruber Centre-Back"", ""25"", """", ""Elche CF LaLiga"", ""€12.00m""]",2026-27,2026-10-07T03:04:55.136925+00:00,current_snapshot
+Fulham,948272,César Palacios,0,"["""", ""César Palacios Attacking Midfield"", ""21"", """", ""Real Madrid LaLiga"", ""€10.00m""]",2026-27,2026-10-07T03:04:55.136925+00:00,current_snapshot
+Fulham,1069512,Jonah Kusi-Asare,0,"["""", ""Jonah Kusi-Asare Centre-Forward"", ""18"", """", ""Bayern Munich Bundesliga"", ""€6.00m""]",2026-27,2026-10-07T03:04:55.136925+00:00,current_snapshot
+Fulham,646824,Manuel Ángel,0,"["""", ""Manuel Ángel Central Midfield"", ""22"", """", ""RM Castilla Primera Federación - Gr. II"", ""€4.00m""]",2026-27,2026-10-07T03:04:55.136925+00:00,current_snapshot
+Fulham,931838,Hugo Larsson,0,"["""", ""Hugo Larsson Central Midfield"", ""22"", """", ""Frankfurt Bundesliga"", ""loan transfer""]",2026-27,2026-10-07T03:04:55.136925+00:00,current_snapshot
+Fulham,921995,Luc De Fougerolles,0,"["""", ""Luc De Fougerolles Centre-Back"", ""20"", """", ""Fulham U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:55.136925+00:00,current_snapshot
+Fulham,817613,Alex Borto,0,"["""", ""Alex Borto Goalkeeper"", ""22"", """", ""Fulham U21 Premier League 2"", ""-""]",2026-27,2026-10-07T03:04:55.136925+00:00,current_snapshot
+Fulham,381469,Steven Benda,0,"["""", ""Steven Benda Goalkeeper"", ""27"", """", ""Feyenoord Eredivisie"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:55.136925+00:00,current_snapshot
+Fulham,245056,Saša Lukić,1,"["""", ""Saša Lukić Central Midfield"", ""29"", """", ""Ipswich Premier League"", ""€10.50m""]",2026-27,2026-10-07T03:04:55.138925+00:00,current_snapshot
+Fulham,272622,Issa Diop,1,"["""", ""Issa Diop Centre-Back"", ""29"", """", ""Ipswich Premier League"", ""€10.00m""]",2026-27,2026-10-07T03:04:55.138925+00:00,current_snapshot
+Fulham,279455,Harry Wilson,1,"["""", ""Harry Wilson Right Winger"", ""29"", """", ""Leeds Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:55.138925+00:00,current_snapshot
+Fulham,206040,Raúl Jiménez,1,"["""", ""Raúl Jiménez Centre-Forward"", ""35"", """", ""Wolves Championship"", ""free transfer""]",2026-27,2026-10-07T03:04:55.138925+00:00,current_snapshot
+Fulham,381469,Steven Benda,1,"["""", ""Steven Benda Goalkeeper"", ""27"", """", ""Nott'm Forest Premier League"", ""free transfer""]",2026-27,2026-10-07T03:04:55.138925+00:00,current_snapshot
+Fulham,921995,Luc De Fougerolles,1,"["""", ""Luc De Fougerolles Centre-Back"", ""20"", """", ""Salt Lake MLS"", ""loan transfer""]",2026-27,2026-10-07T03:04:55.138925+00:00,current_snapshot
+Fulham,401922,Samuel Chukwueze,1,"["""", ""Samuel Chukwueze Right Winger"", ""27"", """", ""AC Milan Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:55.138925+00:00,current_snapshot
+Fulham,1069512,Jonah Kusi-Asare,1,"["""", ""Jonah Kusi-Asare Centre-Forward"", ""18"", """", ""Bayern Munich Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:55.138925+00:00,current_snapshot
+Everton,470607,Brennan Johnson,0,"["""", ""Brennan Johnson Right Winger"", ""25"", """", ""Crystal Palace Premier League"", ""€25.80m""]",2026-27,2026-10-07T03:04:56.761416+00:00,current_snapshot
+Everton,608832,Merlin Röhl,0,"["""", ""Merlin Röhl Central Midfield"", ""23"", """", ""Freiburg Bundesliga"", ""€25.00m""]",2026-27,2026-10-07T03:04:56.761416+00:00,current_snapshot
+Everton,936874,Tyrique George,0,"["""", ""Tyrique George Left Winger"", ""20"", """", ""Chelsea Premier League"", ""€21.00m""]",2026-27,2026-10-07T03:04:56.761416+00:00,current_snapshot
+Everton,538216,Hayden Hackney,0,"["""", ""Hayden Hackney Defensive Midfield"", ""24"", """", ""Middlesbrough Championship"", ""€19.30m""]",2026-27,2026-10-07T03:04:56.761416+00:00,current_snapshot
+Everton,148367,Christian Nørgaard,0,"["""", ""Christian Nørgaard Defensive Midfield"", ""32"", """", ""Arsenal Premier League"", ""€8.15m""]",2026-27,2026-10-07T03:04:56.762414+00:00,current_snapshot
+Everton,285845,Ainsley Maitland-Niles,0,"["""", ""Ainsley Maitland-Niles Right-Back"", ""29"", """", ""Lyon Ligue 1"", ""€3.50m""]",2026-27,2026-10-07T03:04:56.762414+00:00,current_snapshot
+Everton,203460,Jack Grealish,0,"["""", ""Jack Grealish Left Winger"", ""30"", """", ""Man City Premier League"", ""loan transfer""]",2026-27,2026-10-07T03:04:56.762414+00:00,current_snapshot
+Everton,663225,Tyler Onyango,0,"["""", ""Tyler Onyango Central Midfield"", ""23"", """", ""Stockport League One"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:56.762414+00:00,current_snapshot
+Everton,623570,Iliman Ndiaye,1,"["""", ""Iliman Ndiaye Left Winger"", ""26"", """", ""Man City Premier League"", ""€70.00m""]",2026-27,2026-10-07T03:04:56.764412+00:00,current_snapshot
+Everton,584769,Dwight McNeil,1,"["""", ""Dwight McNeil Left Winger"", ""26"", """", ""Crystal Palace Premier League"", ""€25.80m""]",2026-27,2026-10-07T03:04:56.764412+00:00,current_snapshot
+Everton,595809,Beto,1,"["""", ""Beto Centre-Forward"", ""28"", """", ""Fiorentina Serie A"", ""€18.00m""]",2026-27,2026-10-07T03:04:56.764412+00:00,current_snapshot
+Everton,696589,Tim Iroegbunam,1,"["""", ""Tim Iroegbunam Central Midfield"", ""23"", """", ""Hull City Premier League"", ""€15.15m""]",2026-27,2026-10-07T03:04:56.764412+00:00,current_snapshot
+Everton,424015,Nathan Patterson,1,"["""", ""Nathan Patterson Right-Back"", ""24"", """", ""Torino Serie A"", ""free transfer""]",2026-27,2026-10-07T03:04:56.765413+00:00,current_snapshot
+Everton,126665,Idrissa Gueye,1,"["""", ""Idrissa Gueye Defensive Midfield"", ""36"", """", ""Al-Diriyah Saudi Pro League"", ""free transfer""]",2026-27,2026-10-07T03:04:56.765413+00:00,current_snapshot
+Everton,663225,Tyler Onyango,1,"["""", ""Tyler Onyango Central Midfield"", ""23"", """", ""Sheff Wed League One"", ""free transfer""]",2026-27,2026-10-07T03:04:56.765413+00:00,current_snapshot
+Everton,938146,Adam Aznou,1,"["""", ""Adam Aznou Left-Back"", ""20"", """", ""Málaga CF LaLiga"", ""loan transfer""]",2026-27,2026-10-07T03:04:56.765413+00:00,current_snapshot
+Everton,68390,Séamus Coleman,1,"["""", ""Séamus Coleman Right-Back"", ""37"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:04:56.765413+00:00,current_snapshot
+Everton,936874,Tyrique George,1,"["""", ""Tyrique George Left Winger"", ""20"", """", ""Chelsea Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:56.765413+00:00,current_snapshot
+Everton,608832,Merlin Röhl,1,"["""", ""Merlin Röhl Central Midfield"", ""23"", """", ""Freiburg Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:56.765413+00:00,current_snapshot
+Ipswich Town,660867,Julio Enciso,0,"["""", ""Julio Enciso Attacking Midfield"", ""22"", """", ""R. Strasbourg Ligue 1"", ""€30.50m""]",2026-27,2026-10-07T03:04:57.779744+00:00,current_snapshot
+Ipswich Town,743599,Emersonn,0,"["""", ""Emersonn Centre-Forward"", ""21"", """", ""Toulouse Ligue 1"", ""€28.00m""]",2026-27,2026-10-07T03:04:57.779744+00:00,current_snapshot
+Ipswich Town,864121,Abdul Fatawu,0,"["""", ""Abdul Fatawu Right Winger"", ""22"", """", ""Leicester League One"", ""€23.45m""]",2026-27,2026-10-07T03:04:57.779744+00:00,current_snapshot
+Ipswich Town,401578,Exequiel Palacios,0,"["""", ""Exequiel Palacios Central Midfield"", ""27"", """", ""Leverkusen Bundesliga"", ""€22.50m""]",2026-27,2026-10-07T03:04:57.779744+00:00,current_snapshot
+Ipswich Town,991487,Abdoul Ouattara,0,"["""", ""Abdoul Ouattara Right-Back"", ""20"", """", ""R. Strasbourg Ligue 1"", ""€20.00m""]",2026-27,2026-10-07T03:04:57.779744+00:00,current_snapshot
+Ipswich Town,411537,Zian Flemming,0,"["""", ""Zian Flemming Centre-Forward"", ""28"", """", ""Burnley Championship"", ""€19.80m""]",2026-27,2026-10-07T03:04:57.779744+00:00,current_snapshot
+Ipswich Town,357162,Florentino,0,"["""", ""Florentino Defensive Midfield"", ""26"", """", ""Burnley Championship"", ""€18.70m""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,245056,Saša Lukić,0,"["""", ""Saša Lukić Central Midfield"", ""29"", """", ""Fulham Premier League"", ""€10.50m""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,272622,Issa Diop,0,"["""", ""Issa Diop Centre-Back"", ""29"", """", ""Fulham Premier League"", ""€10.00m""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,463527,Kjell Scherpen,0,"["""", ""Kjell Scherpen Goalkeeper"", ""26"", """", ""Union SG Jupiler Pro League"", ""€10.00m""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,420931,Daizen Maeda,0,"["""", ""Daizen Maeda Left Winger"", ""28"", """", ""Celtic Premiership"", ""€9.40m""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,197642,Chuba Akpom,0,"["""", ""Chuba Akpom Centre-Forward"", ""30"", """", ""Ajax Eredivisie"", ""€9.30m""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,364827,Cédric Kipré,0,"["""", ""Cédric Kipré Centre-Back"", ""29"", """", ""Stade Reims Ligue 2"", ""€4.50m""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,790669,Kayne van Oevelen,0,"["""", ""Kayne van Oevelen Goalkeeper"", ""22"", """", ""FC Volendam Keuken Kampioen Divisie"", ""€4.00m""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,371021,Arijanet Murić,0,"["""", ""Arijanet Murić Goalkeeper"", ""27"", """", ""Sassuolo Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,468002,Ben Johnson,0,"["""", ""Ben Johnson Right-Back"", ""27"", """", ""Stoke City Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,392591,Chiedozie Ogbene,0,"["""", ""Chiedozie Ogbene Right Winger"", ""29"", """", ""Lincoln City Championship"", ""End of loan 01/01/2027""]",2026-27,2026-10-07T03:04:57.780744+00:00,current_snapshot
+Ipswich Town,349503,Conor Chaplin,0,"["""", ""Conor Chaplin Attacking Midfield"", ""29"", """", ""Portsmouth Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:57.781744+00:00,current_snapshot
+Ipswich Town,610581,Ali Al-Hamadi,0,"["""", ""Ali Al-Hamadi Centre-Forward"", ""25"", """", ""Sheff Wed League One"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:57.781744+00:00,current_snapshot
+Ipswich Town,610581,Ali Al-Hamadi,0,"["""", ""Ali Al-Hamadi Centre-Forward"", ""24"", """", ""Luton League One"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:57.781744+00:00,current_snapshot
+Ipswich Town,871335,Cameron Humphreys,0,"["""", ""Cameron Humphreys Central Midfield"", ""23"", """", ""Huddersfield League One"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:57.781744+00:00,current_snapshot
+Ipswich Town,621997,Cieran Slicker,0,"["""", ""Cieran Slicker Goalkeeper"", ""24"", """", ""Barnsley League One"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:57.781744+00:00,current_snapshot
+Ipswich Town,922472,Somto Boniface,0,"["""", ""Somto Boniface Left-Back"", ""21"", """", ""Leyton Orient League One"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:04:57.781744+00:00,current_snapshot
+Ipswich Town,420808,George Hirst,1,"["""", ""George Hirst Centre-Forward"", ""27"", """", ""Stoke City Championship"", ""€7.00m""]",2026-27,2026-10-07T03:04:57.784744+00:00,current_snapshot
+Ipswich Town,371021,Arijanet Murić,1,"["""", ""Arijanet Murić Goalkeeper"", ""27"", """", ""Sassuolo Serie A"", ""€7.00m""]",2026-27,2026-10-07T03:04:57.784744+00:00,current_snapshot
+Ipswich Town,528892,Harry Clarke,1,"["""", ""Harry Clarke Right-Back"", ""25"", """", ""Preston Championship"", ""€4.10m""]",2026-27,2026-10-07T03:04:57.784744+00:00,current_snapshot
+Ipswich Town,758030,Elkan Baggott,1,"["""", ""Elkan Baggott Centre-Back"", ""23"", """", ""Millwall Championship"", ""€1.17m""]",2026-27,2026-10-07T03:04:57.784744+00:00,current_snapshot
+Ipswich Town,255731,Wes Burns,1,"["""", ""Wes Burns Right Winger"", ""31"", """", ""Leicester League One"", ""€90k""]",2026-27,2026-10-07T03:04:57.784744+00:00,current_snapshot
+Ipswich Town,349503,Conor Chaplin,1,"["""", ""Conor Chaplin Attacking Midfield"", ""29"", """", ""Leicester League One"", ""free transfer""]",2026-27,2026-10-07T03:04:57.784744+00:00,current_snapshot
+Ipswich Town,146509,Conor Townsend,1,"["""", ""Conor Townsend Left-Back"", ""33"", """", ""West Brom Championship"", ""free transfer""]",2026-27,2026-10-07T03:04:57.784744+00:00,current_snapshot
+Ipswich Town,468002,Ben Johnson,1,"["""", ""Ben Johnson Right-Back"", ""26"", """", ""Stoke City Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:57.784744+00:00,current_snapshot
+Ipswich Town,392591,Chiedozie Ogbene,1,"["""", ""Chiedozie Ogbene Right Winger"", ""29"", """", ""Lincoln City Championship"", ""loan transfer""]",2026-27,2026-10-07T03:04:57.784744+00:00,current_snapshot
+Ipswich Town,790669,Kayne van Oevelen,1,"["""", ""Kayne van Oevelen Goalkeeper"", ""23"", """", ""Valencia LaLiga"", ""loan transfer""]",2026-27,2026-10-07T03:04:57.784744+00:00,current_snapshot
+Ipswich Town,610581,Ali Al-Hamadi,1,"["""", ""Ali Al-Hamadi Centre-Forward"", ""24"", """", ""Sheff Wed League One"", ""loan transfer""]",2026-27,2026-10-07T03:04:57.785745+00:00,current_snapshot
+Ipswich Town,871335,Cameron Humphreys,1,"["""", ""Cameron Humphreys Central Midfield"", ""22"", """", ""Huddersfield League One"", ""loan transfer""]",2026-27,2026-10-07T03:04:57.785745+00:00,current_snapshot
+Ipswich Town,621997,Cieran Slicker,1,"["""", ""Cieran Slicker Goalkeeper"", ""23"", """", ""Barnsley League One"", ""loan transfer""]",2026-27,2026-10-07T03:04:57.785745+00:00,current_snapshot
+Ipswich Town,14086,Ashley Young,1,"["""", ""Ashley Young Right-Back"", ""40"", """", ""Retired"", ""-""]",2026-27,2026-10-07T03:04:57.785745+00:00,current_snapshot
+Ipswich Town,468066,Jens Cajuste,1,"["""", ""Jens Cajuste Defensive Midfield"", ""26"", """", ""Napoli Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:57.785745+00:00,current_snapshot
+Ipswich Town,633306,Iván Azón,1,"["""", ""Iván Azón Centre-Forward"", ""23"", """", ""Como Serie A"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:57.785745+00:00,current_snapshot
+Ipswich Town,570336,Dan Neil,1,"["""", ""Dan Neil Central Midfield"", ""24"", """", ""Sunderland Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:57.785745+00:00,current_snapshot
+Ipswich Town,197642,Chuba Akpom,1,"["""", ""Chuba Akpom Centre-Forward"", ""30"", """", ""Ajax Eredivisie"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:57.785745+00:00,current_snapshot
+Ipswich Town,364827,Cédric Kipré,1,"["""", ""Cédric Kipré Centre-Back"", ""29"", """", ""Stade Reims Ligue 2"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:04:57.785745+00:00,current_snapshot
+Coventry City,1240763,Caleb Yirenkyi,0,"["""", ""Caleb Yirenkyi Central Midfield"", ""20"", """", ""Nordsjaelland Superliga"", ""€27.00m""]",2026-27,2026-10-07T03:05:01.630110+00:00,current_snapshot
+Coventry City,646353,Carl Rushworth,0,"["""", ""Carl Rushworth Goalkeeper"", ""25"", """", ""Brighton Premier League"", ""€25.70m""]",2026-27,2026-10-07T03:05:01.630110+00:00,current_snapshot
+Coventry City,986288,Sidiki Chérif,0,"["""", ""Sidiki Chérif Centre-Forward"", ""19"", """", ""Fenerbahçe Süper Lig"", ""€24.50m""]",2026-27,2026-10-07T03:05:01.630110+00:00,current_snapshot
+Coventry City,607226,Loum Tchaouna,0,"["""", ""Loum Tchaouna Right Winger"", ""22"", """", ""Burnley Championship"", ""€23.00m""]",2026-27,2026-10-07T03:05:01.630110+00:00,current_snapshot
+Coventry City,635645,Aurèle Amenda,0,"["""", ""Aurèle Amenda Centre-Back"", ""22"", """", ""Frankfurt Bundesliga"", ""€18.00m""]",2026-27,2026-10-07T03:05:01.630110+00:00,current_snapshot
+Coventry City,463613,Yann Gboho,0,"["""", ""Yann Gboho Left Winger"", ""25"", """", ""Toulouse Ligue 1"", ""€12.00m""]",2026-27,2026-10-07T03:05:01.631111+00:00,current_snapshot
+Coventry City,295313,Taiwo Awoniyi,0,"["""", ""Taiwo Awoniyi Centre-Forward"", ""29"", """", ""Nott'm Forest Premier League"", ""€10.50m""]",2026-27,2026-10-07T03:05:01.631111+00:00,current_snapshot
+Coventry City,322985,Gustavo Hamer,0,"["""", ""Gustavo Hamer Central Midfield"", ""29"", """", ""Sheff Utd Championship"", ""€7.00m""]",2026-27,2026-10-07T03:05:01.631111+00:00,current_snapshot
+Coventry City,421637,Frank Onyeka,0,"["""", ""Frank Onyeka Central Midfield"", ""28"", """", ""Brentford Premier League"", ""€7.00m""]",2026-27,2026-10-07T03:05:01.631111+00:00,current_snapshot
+Coventry City,442248,Ethan Pinnock,0,"["""", ""Ethan Pinnock Centre-Back"", ""33"", """", ""Brentford Premier League"", ""€5.85m""]",2026-27,2026-10-07T03:05:01.631111+00:00,current_snapshot
+Coventry City,136401,Daniel Bentley,0,"["""", ""Daniel Bentley Goalkeeper"", ""33"", """", ""Wolves Championship"", ""free transfer""]",2026-27,2026-10-07T03:05:01.631615+00:00,current_snapshot
+Coventry City,1049020,Stephen Mfuni,0,"["""", ""Stephen Mfuni Centre-Back"", ""18"", """", ""Man City U21 Premier League 2"", ""loan transfer""]",2026-27,2026-10-07T03:05:01.631615+00:00,current_snapshot
+Coventry City,534701,Liam Kitching,0,"["""", ""Liam Kitching Centre-Back"", ""27"", """", ""Sheff Utd Championship"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:05:01.631615+00:00,current_snapshot
+Coventry City,527329,Oliver Dovin,0,"["""", ""Oliver Dovin Goalkeeper"", ""24"", """", ""Leyton Orient League One"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:05:01.631615+00:00,current_snapshot
+Coventry City,802997,Norman Bassette,0,"["""", ""Norman Bassette Centre-Forward"", ""21"", """", ""1.FC K'lautern 2. Bundesliga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:01.631615+00:00,current_snapshot
+Coventry City,965924,Kai Andrews,0,"["""", ""Kai Andrews Central Midfield"", ""20"", """", ""Oxford United League One"", ""End of loan 02/01/2027""]",2026-27,2026-10-07T03:05:01.631615+00:00,current_snapshot
+Coventry City,704398,Raphael Borges Rodrigues,0,"["""", ""Raphael Borges Rodrigues Left Winger"", ""23"", """", ""Burton Albion League One"", ""End of loan 31/05/2027""]",2026-27,2026-10-07T03:05:01.631615+00:00,current_snapshot
+Coventry City,677382,Jahnoah Markelo,1,"["""", ""Jahnoah Markelo Right Winger"", ""23"", """", ""Shabab Al-Ahli UAE Pro League"", ""€5.15m""]",2026-27,2026-10-07T03:05:01.633622+00:00,current_snapshot
+Coventry City,258914,Brad Collins,1,"["""", ""Brad Collins Goalkeeper"", ""29"", """", ""Bristol City Championship"", ""free transfer""]",2026-27,2026-10-07T03:05:01.633622+00:00,current_snapshot
+Coventry City,534701,Liam Kitching,1,"["""", ""Liam Kitching Centre-Back"", ""26"", """", ""Sheff Utd Championship"", ""loan transfer""]",2026-27,2026-10-07T03:05:01.633622+00:00,current_snapshot
+Coventry City,527329,Oliver Dovin,1,"["""", ""Oliver Dovin Goalkeeper"", ""24"", """", ""Leyton Orient League One"", ""loan transfer""]",2026-27,2026-10-07T03:05:01.633622+00:00,current_snapshot
+Coventry City,802997,Norman Bassette,1,"["""", ""Norman Bassette Centre-Forward"", ""21"", """", ""KVC Westerlo Jupiler Pro League"", ""loan transfer""]",2026-27,2026-10-07T03:05:01.633622+00:00,current_snapshot
+Coventry City,713649,Miguel Ángel Brau,1,"["""", ""Miguel Ángel Brau Left-Back"", ""24"", """", ""Académico Viseu Liga Portugal"", ""loan transfer""]",2026-27,2026-10-07T03:05:01.633622+00:00,current_snapshot
+Coventry City,965924,Kai Andrews,1,"["""", ""Kai Andrews Central Midfield"", ""20"", """", ""Oxford United League One"", ""loan transfer""]",2026-27,2026-10-07T03:05:01.633622+00:00,current_snapshot
+Coventry City,704398,Raphael Borges Rodrigues,1,"["""", ""Raphael Borges Rodrigues Left Winger"", ""22"", """", ""Burton Albion League One"", ""loan transfer""]",2026-27,2026-10-07T03:05:01.633622+00:00,current_snapshot
+Coventry City,257727,Jamie Allen,1,"["""", ""Jamie Allen Central Midfield"", ""31"", """", ""Without Club"", ""-""]",2026-27,2026-10-07T03:05:01.633622+00:00,current_snapshot
+Coventry City,1004327,Min-hyeok Yang,1,"["""", ""Min-hyeok Yang Right Winger"", ""20"", """", ""Tottenham Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:01.633622+00:00,current_snapshot
+Hull City,1034853,Nobel Mendy,0,"["""", ""Nobel Mendy Centre-Back"", ""21"", """", ""Rayo Vallecano LaLiga"", ""€23.40m""]",2026-27,2026-10-07T03:05:03.253154+00:00,current_snapshot
+Hull City,554389,Konstantinos Tzolakis,0,"["""", ""Konstantinos Tzolakis Goalkeeper"", ""23"", """", ""Olympiacos Super League 1"", ""€23.30m""]",2026-27,2026-10-07T03:05:03.253154+00:00,current_snapshot
+Hull City,1035765,Ilyas Ansah,0,"["""", ""Ilyas Ansah Centre-Forward"", ""21"", """", ""Union Berlin Bundesliga"", ""€17.00m""]",2026-27,2026-10-07T03:05:03.254154+00:00,current_snapshot
+Hull City,696589,Tim Iroegbunam,0,"["""", ""Tim Iroegbunam Central Midfield"", ""23"", """", ""Everton Premier League"", ""€15.15m""]",2026-27,2026-10-07T03:05:03.254154+00:00,current_snapshot
+Hull City,670847,Mohamed-Ali Cho,0,"["""", ""Mohamed-Ali Cho Right Winger"", ""22"", """", ""Nice Ligue 1"", ""€15.15m""]",2026-27,2026-10-07T03:05:03.254154+00:00,current_snapshot
+Hull City,964426,Christos Mouzakitis,0,"["""", ""Christos Mouzakitis Central Midfield"", ""19"", """", ""Olympiacos Super League 1"", ""€15.00m""]",2026-27,2026-10-07T03:05:03.254154+00:00,current_snapshot
+Hull City,1279984,Lucas Herrington,0,"["""", ""Lucas Herrington Centre-Back"", ""18"", """", ""Colorado MLS"", ""€14.80m""]",2026-27,2026-10-07T03:05:03.254154+00:00,current_snapshot
+Hull City,728733,Brooke Norton-Cuffy,0,"["""", ""Brooke Norton-Cuffy Right-Back"", ""22"", """", ""Genoa Serie A"", ""€14.00m""]",2026-27,2026-10-07T03:05:03.254154+00:00,current_snapshot
+Hull City,923535,Jens Hjertø-Dahl,0,"["""", ""Jens Hjertø-Dahl Central Midfield"", ""20"", """", ""Tromsø IL Eliteserien"", ""€9.50m""]",2026-27,2026-10-07T03:05:03.254154+00:00,current_snapshot
+Hull City,475416,Sorba Thomas,0,"["""", ""Sorba Thomas Left Winger"", ""27"", """", ""Stoke City Championship"", ""€8.75m""]",2026-27,2026-10-07T03:05:03.254154+00:00,current_snapshot
+Hull City,503980,Joe Gelhardt,0,"["""", ""Joe Gelhardt Centre-Forward"", ""24"", """", ""Leeds Premier League"", ""€7.60m""]",2026-27,2026-10-07T03:05:03.254154+00:00,current_snapshot
+Hull City,620313,Lucas Gourna-Douath,0,"["""", ""Lucas Gourna-Douath Defensive Midfield"", ""23"", """", ""Salzburg Bundesliga"", ""€4.00m""]",2026-27,2026-10-07T03:05:03.255154+00:00,current_snapshot
+Hull City,128899,Jack Butland,0,"["""", ""Jack Butland Goalkeeper"", ""33"", """", ""Rangers Premiership"", ""€3.50m""]",2026-27,2026-10-07T03:05:03.255154+00:00,current_snapshot
+Hull City,687622,Elliot Stroud,0,"["""", ""Elliot Stroud Left Winger"", ""24"", """", ""Mjällby AIF Allsvenskan"", ""€2.50m""]",2026-27,2026-10-07T03:05:03.255154+00:00,current_snapshot
+Hull City,1131161,Robinio Vaz,0,"["""", ""Robinio Vaz Centre-Forward"", ""19"", """", ""Roma Serie A"", ""Loan fee: €2.00m""]",2026-27,2026-10-07T03:05:03.255154+00:00,current_snapshot
+Hull City,524315,Hidemasa Morita,0,"["""", ""Hidemasa Morita Central Midfield"", ""31"", """", ""Sporting Liga Portugal"", ""free transfer""]",2026-27,2026-10-07T03:05:03.255154+00:00,current_snapshot
+Hull City,250478,Matt Targett,0,"["""", ""Matt Targett Left-Back"", ""30"", """", ""Newcastle Premier League"", ""free transfer""]",2026-27,2026-10-07T03:05:03.255154+00:00,current_snapshot
+Hull City,893658,Óscar Zambrano,0,"["""", ""Óscar Zambrano Defensive Midfield"", ""22"", """", ""NK Maribor Prva Liga"", ""?""]",2026-27,2026-10-07T03:05:03.255154+00:00,current_snapshot
+Hull City,874080,Mason Burstow,0,"["""", ""Mason Burstow Centre-Forward"", ""22"", """", ""Bolton League One"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.255154+00:00,current_snapshot
+Hull City,696764,Abu Kamara,0,"["""", ""Abu Kamara Right Winger"", ""22"", """", ""Getafe LaLiga"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.255154+00:00,current_snapshot
+Hull City,699980,Enis Destan,0,"["""", ""Enis Destan Centre-Forward"", ""24"", """", ""KVC Westerlo Jupiler Pro League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.255154+00:00,current_snapshot
+Hull City,271495,Abdülkadir Ömür,0,"["""", ""Abdülkadir Ömür Right Winger"", ""27"", """", ""Antalyaspor Süper Lig"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.256154+00:00,current_snapshot
+Hull City,258216,Kasey Palmer,0,"["""", ""Kasey Palmer Attacking Midfield"", ""29"", """", ""Luton League One"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.256154+00:00,current_snapshot
+Hull City,729940,Matty Jacob,0,"["""", ""Matty Jacob Left-Back"", ""25"", """", ""Newport County League Two"", ""End of loan 02/01/2027""]",2026-27,2026-10-07T03:05:03.261157+00:00,current_snapshot
+Hull City,655877,Thimothée Lo-Tutala,0,"["""", ""Thimothée Lo-Tutala Goalkeeper"", ""23"", """", ""Doncaster League One"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.261157+00:00,current_snapshot
+Hull City,867909,Harry Vaughan,0,"["""", ""Harry Vaughan Attacking Midfield"", ""22"", """", ""Bohemians Premier Division"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.262158+00:00,current_snapshot
+Hull City,712592,Harvey Cartwright,0,"["""", ""Harvey Cartwright Goalkeeper"", ""24"", """", ""Hartlepool National League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.262158+00:00,current_snapshot
+Hull City,371013,Ivor Pandur,1,"["""", ""Ivor Pandur Goalkeeper"", ""26"", """", ""Rangers Premiership"", ""€7.00m""]",2026-27,2026-10-07T03:05:03.265156+00:00,current_snapshot
+Hull City,647395,Kyle Joseph,1,"["""", ""Kyle Joseph Centre-Forward"", ""24"", """", ""Middlesbrough Championship"", ""€4.70m""]",2026-27,2026-10-07T03:05:03.265156+00:00,current_snapshot
+Hull City,531957,Cody Drameh,1,"["""", ""Cody Drameh Right-Back"", ""24"", """", ""Genoa Serie A"", ""€4.50m""]",2026-27,2026-10-07T03:05:03.265156+00:00,current_snapshot
+Hull City,696764,Abu Kamara,1,"["""", ""Abu Kamara Right Winger"", ""23"", """", ""Portsmouth Championship"", ""€2.90m""]",2026-27,2026-10-07T03:05:03.265156+00:00,current_snapshot
+Hull City,425713,Akin Famewo,1,"["""", ""Akin Famewo Centre-Back"", ""27"", """", ""Bolton Championship"", ""€585k""]",2026-27,2026-10-07T03:05:03.265156+00:00,current_snapshot
+Hull City,258216,Kasey Palmer,1,"["""", ""Kasey Palmer Attacking Midfield"", ""29"", """", ""Luton League One"", ""€580k""]",2026-27,2026-10-07T03:05:03.265156+00:00,current_snapshot
+Hull City,699980,Enis Destan,1,"["""", ""Enis Destan Centre-Forward"", ""24"", """", ""Konyaspor Süper Lig"", ""free transfer""]",2026-27,2026-10-07T03:05:03.265156+00:00,current_snapshot
+Hull City,353775,David Akintola,1,"["""", ""David Akintola Right Winger"", ""30"", """", ""Omonia Cyprus League"", ""free transfer""]",2026-27,2026-10-07T03:05:03.265156+00:00,current_snapshot
+Hull City,867909,Harry Vaughan,1,"["""", ""Harry Vaughan Attacking Midfield"", ""22"", """", ""Bohemians Premier Division"", ""free transfer""]",2026-27,2026-10-07T03:05:03.265156+00:00,current_snapshot
+Hull City,487417,Liam Millar,1,"["""", ""Liam Millar Left Winger"", ""26"", """", ""Birmingham Championship"", ""loan transfer""]",2026-27,2026-10-07T03:05:03.265156+00:00,current_snapshot
+Hull City,874080,Mason Burstow,1,"["""", ""Mason Burstow Centre-Forward"", ""22"", """", ""Sheff Wed League One"", ""loan transfer""]",2026-27,2026-10-07T03:05:03.266155+00:00,current_snapshot
+Hull City,729940,Matty Jacob,1,"["""", ""Matty Jacob Left-Back"", ""25"", """", ""Newport County League Two"", ""loan transfer""]",2026-27,2026-10-07T03:05:03.266155+00:00,current_snapshot
+Hull City,655877,Thimothée Lo-Tutala,1,"["""", ""Thimothée Lo-Tutala Goalkeeper"", ""23"", """", ""Colchester Utd. League Two"", ""loan transfer""]",2026-27,2026-10-07T03:05:03.266155+00:00,current_snapshot
+Hull City,712592,Harvey Cartwright,1,"["""", ""Harvey Cartwright Goalkeeper"", ""24"", """", ""Grimsby Town League Two"", ""loan transfer""]",2026-27,2026-10-07T03:05:03.266155+00:00,current_snapshot
+Hull City,503980,Joe Gelhardt,1,"["""", ""Joe Gelhardt Centre-Forward"", ""24"", """", ""Leeds Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.266155+00:00,current_snapshot
+Hull City,654253,Toby Collyer,1,"["""", ""Toby Collyer Defensive Midfield"", ""22"", """", ""Man Utd Premier League"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.266155+00:00,current_snapshot
+Hull City,293213,Amir Hadziahmetovic,1,"["""", ""Amir Hadziahmetovic Defensive Midfield"", ""29"", """", ""Beşiktaş Süper Lig"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.266155+00:00,current_snapshot
+Hull City,922462,Lewis Koumas,1,"["""", ""Lewis Koumas Centre-Forward"", ""20"", """", ""Liverpool U21 Premier League 2"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.266155+00:00,current_snapshot
+Hull City,156941,John Lundstram,1,"["""", ""John Lundstram Defensive Midfield"", ""32"", """", ""Trabzonspor Süper Lig"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.266155+00:00,current_snapshot
+Hull City,936237,Yu Hirakawa,1,"["""", ""Yu Hirakawa Right Winger"", ""25"", """", ""Bristol City Championship"", ""End of loan 30/06/2026""]",2026-27,2026-10-07T03:05:03.266155+00:00,current_snapshot

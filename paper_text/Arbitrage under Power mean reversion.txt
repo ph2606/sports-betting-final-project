@@ -1,0 +1,680 @@
+[PAGE 1]
+                     Arbitrage under Power ∗
+
+                      Michael Boguslavsky, Elena Boguslavskaya
+
+                                  February 2004
+
+
+
+
+                                      Abstract
+
+     When one knows the correct value of a tradable asset and the asset price diverges from that value,
+   future convergence may present a good trading opportunity. However, the trader still has to decide
+   when and how aggressively to open the position and when to close it. Michael Boguslavsky and Elena
+   Boguslavskaya extend Andrew Morton’s model and give an elegant explicit solution. Although the
+   model is very simple, some of the qualitative eﬀects are non-trivial and quite realistic.
+
+  1  Introduction
+
+   1.1  Motivation
+
+  Many academic papers about optimal trading rules and portfolio selection assume that the assets
+    follow geometric Brownian motions, or, more generally, random walks. These papers are typically
+   concerned with portfolio selection problems faced by long-term investors. In this paper, we consider
+   a problem where the asset price is driven by a mean-reverting process. Portfolio selection problems
+    of this kind arise naturally in many “relative value” strategies assuming some kind of mean reversion
+    in a tradable asset.
+       Consider, for example, a limited capital speculator trading the spread (i.e. the diﬀerence) between
+   two cointegrated assets or, more generally, an arbitrageur with a limited capital trading a mean-
+   reverting asset. The trader knows the “correct” (long-term average) price of the asset, and he knows
+   that the price will sooner or later revert to the correct level, but the risk is that the position losses
+  may become unbearable for the trader before the reversion happens. The ﬁnite horizon assumption
+    is quite realistic because the bonuses to traders and fees to hedge fund managers are usually paid
+    yearly. Just to give an example, in the late 90s, many relative value traders have been playing the
+  BASF AG - Bayer AG stocks pair. The prices of these two stocks have been rather close, so most
+   people have been taking one short position for each long. Fig. 1 shows the spread for this stock pair.
+      Faced with a mean-reverting process, a trader would typically take a long (i.e. positive) position
+    in the asset when the asset is below its long-term mean and a short (i.e. negative) position when the
+    asset is above the long-term mean. He would then either liquidate the position when the price reverts
+    closer to the mean and take the proﬁt or he might have to close the position before the reversion
+   happens and face the losses. The question is in the size of the position and how the position should
+   be optimally managed as the price and the trader’s wealth change and time passes by. An often
+   used rule of thumb is that one opens the short position as soon as the spread is above one standard
+   deviation from its mean and a long position as soon as the spread is below one standard deviation.
+
+∗A shorter version of this paper appeared in RISK magazine, June 2004, pp. 69–73
+
+
+                                          1
+
+[PAGE 2]
+Figure 1: Diﬀerence of ordinary share close price for BASF AG and Bayer AG, 1997-2001.
+
+
+1.2  Previous research
+
+We solve the optimization problem assuming an Ornstein-Uhlenbeck process for the price and power
+utility over the ﬁnal wealth for a ﬁnite horizon agent. This model was ﬁrst formulated by A.Morton
+[Mo] for the power utility case and solved for the log-utility case by Mendez-Vivez, Morton, and Naik
+[M-VMN].
+  A similar problem was solved by Liu and Longstaﬀin [LiLo]. There are three main diﬀerences
+between their assumptions and ours. They use a Brownian bridge to model the price process, impose
+margin constraints on maximal position size, and assume a log-utility agent.
+  A Brownian bridge may be better than the Ornstein-Uhlenbeck process when modelling arbi-
+trages that have a known convergence date, like put-call parity deviations for short maturity options.
+However, in many situations the convergence date can not be known beforehand (for example, in
+statistical equity trading), or this date is much further in the future than the agent’s horizon is (for
+example, in yield curve long-end arbitrage.) In these situations, a stationary mean-reverting process,
+such as the Ornstein-Uhlenbeck process, is more suitable.
+   Replacing our non-negative wealth constraint with position size limits may be better to model
+behaviour of a small hedge fund. But, for example, proprietary trading desks of large banks are often
+more bound by ”maximum loss”-type constraints than by margining capital requirements.
+   The log-utility assumption is quite restrictive. In plain words, it means that the agent derives
+the same amount of positive emotion from each of several subsequent 10% increases in his wealth.
+Although determining the actual utility can be quite tricky (see e.g. Gonzalez and Wu [GoWu]), it
+is clear that the log-utility is rather aggressive. We obtain our results for power utility (3) – a family
+
+
+                                       2
+
+[PAGE 3]
+of utility functions which includes the log-utility as a special case.
+  A somewhat similar position-management problem is studied by Brennan and Schwartz in [BrSc1],
+[BrSc2]. Papers studying the eﬀect of arbitrage constraints on equilibrium prices include Shleifer [Sh],
+Basak and Croitoru [BaCr], and Loewenstein and Willard [LoWi1],[LoWi2],[LoWi3].
+
+1.3  The main questions
+
+Besides the quantitative result, there are number of interesting qualitative questions to answer about
+the optimal strategy.
+
+   • When and how aggressively should one open the position?
+
+   • When should one cut a losing position?
+
+   • Can a trader ever be happy when the spread widens?
+
+   • What is the eﬀect of process parameters on the optimal strategy?
+
+   • How do the trading strategy and the value function change as the time horizon approaches?
+
+   • How does the process parameters uncertainty aﬀect the optimal strategy?
+
+We study these questions in section 4 and the answers to them are listed in section 5.
+   Undoubtedly, our model lacks a number of realistic features, such as regime changes or transaction
+costs. However, we think that some of the qualitative eﬀects we describe are interesting enough and
+will persist in a more complicated model.
+   The rest of the paper is organized as follows.  In Section 2 we describe the price and wealth
+processes model. In Section 3 we give the solution to the position-management problem, in section
+4, we analyze this solution. We are looking at how J and α change as the spread X changes and how
+the risk aversion aﬀects trader’s strategy.
+  We will see that although our model is very simple, it reproduces some of the typical trader
+behavior patterns. For example, if a trader is more risk-averse than a log-utility one, then he will
+cut his position as the time horizon approaches. This behavior is similar to the anecdotical evidence
+on real position management practice.
+   Section 5 concludes with suggestions for possible generalizations.
+
+2  The model
+
+2.1  Price process
+
+Without loss of generality we will assume that the long-term mean of the price process is zero. We
+stick to the simplest example of a mean-reverting process, namely, the Ornstein-Uhlenbeck process
+given by
+                              dXt = −kXtdt + σdBt,                                    (1)
+
+where Bt is a Brownian motion, k and σ are positive constants. This process will revert to its long-
+term mean zero. More exactly, given Xt, the distribution of Xt+s, s > 0, is normal with parameters
+
+                                                          1 −e−2ks
+                E(Xt+s|Xt) = Xte−ks;    V ar(Xt+s|Xt) =              σ2.                 (2)
+                                                            2k
+
+   Informally, the constant k measures the speed of the mean-reversion and σ measures the strength
+of the noise component.
+
+
+                                       3
+
+[PAGE 4]
+2.2  Utility function
+
+For −∞< γ < 1 we consider the power utility
+
+                                                1   γ
+                         U = U(WT ) = W T                                      (3)                                              γ
+
+over the terminal wealth WT . This is a simple but rich enough family of utility functions. Utility
+functions are deﬁned up to an additive constant. To include the log-utility as a special case, it is
+sometimes more convenient to consider the family of utility functions U(WT ) = γ1 (W Tγ −1). Taking
+the limit γ →0 one obtains the log-utility function U(WT ) = log(WT ). The log-utility version of our
+problem was solved by Mendez-Vivez, Morton, and Naik [M-VMN].
+   The relative risk aversion is measured by 1−γ, so the bigger γ is, the less risk averse is the agent.
+In the limit γ →1 we have a linear utility function. In section 4 we study the inﬂuence of γ on the
+optimal strategy.
+
+2.3  Position and wealth
+
+The problem can be treated in the general Merton portfolio optimization framework (see [Me].)
+Suppose a traded asset follows an Ornstein-Uhlenbeck process (1).  It is convenient to think about
+Xt as a “spread” between the price of an asset and its “fair value”. Let αt be a trader’s position at
+time t, i.e. the number of units of the asset held. This parameter is the control in our optimization
+problem. Assuming zero interest rates and no market frictions, the wealth dynamics for a given
+control process α is given by
+
+                       dWt = αtdXt = −kαtXtdt + αtσdBt.                             (4)
+
+We assume that there are no restrictions on α, so short selling is allowed and there are no marginal
+requirements on wealth W.
+  We solve the expected terminal utility maximization problem for an agent with a prespeciﬁed
+time horizon T and initial wealth W0. The utility function (3) is deﬁned over the terminal wealth
+WT . The value function J(Wt, Xt, t) is the expectation of the terminal utility conditional on the
+information available at time t:
+                                                   1   γ
+                              J(Wt, Xt, t) = sup Et W T .                                  (5)                                            α    γ
+
+2.4  Normalization
+
+It is more convenient to work with dimensionless time and money. Let $ be the dimension of X;
+we denote it by [X] = $. By T we denote the dimension of time. From Eq.  (1) it is clear that
+[σ] = $T −1/2 and [k] = T −1. Renormalizing price Xt, position size αt, and time t
+
+                           X √
+                      X →       k,                                         (6)
+                                        σ
+                                    α
+                             α → √  σ,                                         (7)
+                                             k
+                                                     t →   kt,
+
+we can assume that k = 1 and σ = 1. The wealth W does not change under this normalization. Note
+that this normalization is slightly diﬀerent from the one used in [M-VMN].
+
+
+
+                                       4
+
+[PAGE 5]
+   2.5  Log-utility case
+
+   In [M-VMN] it is proved that for γ = 0 (log-utility case) the optimal control is given simply by
+
+                                           αt = −WtXt.
+
+   The case γ = 0 is simpler than the general case because a log-utility agent does not hedge intertem-
+   porally (see [Me]) and the equations are much simpler. The same paper also derives an approximate
+   solution for the case γ < 0. The approximation does not behave particularly well.
+    We obtained an exact solution to the problem deﬁned by Eqs. (1) – (5) for the general case γ < 1.
+   The answer is given by Eqs. (16) and (17).
+
+  3  Main result
+
+   3.1  The Hamilton-Jacobi-Bellman equation
+
+  We need to ﬁnd the optimal control α∗(Wt, Xt, t) and the value function J(Wt, Xt, t) as explicit
+   functions of wealth Wt, price Xt, and time t.
+     The Hamilton-Jacobi-Bellman equation1 is
+
+                                             1      1
+                      sup                                Jt −xJx −αxJw + 2Jxx + 2α2Jww + αJxw = 0                    (8)                       α
+
+   The ﬁrst order optimality condition on control α∗is
+                                           Jw −Jxw .                                  (9)                                   α∗(w, x, t) = x
+                                         Jww   Jww
+
+      Note that the ﬁrst summand in the right-hand side of Eq.(9) is the myopic demand term cor-
+   responding to a static optimization problem while the second term hedges from changes in the
+   investment opportunity set. For a log-utility investor (γ = 0) the second term vanishes (see [Me].)
+       Substituting this condition into the Hamilton-Jacobi-Bellman equation for the value function, we
+   obtain the non-linear PDE
+
+                              1
+                              Jt +                           −xJx −1      Jxw −x Jw   2 = 0.                     (10)                             2Jxx       2Jww  Jww    Jww
+
+   3.2  The optimal strategy
+
+   Let
+                                                 τ = T −t                                        (11)
+   be the time left for trading and deﬁne the constant ν and time functions C(τ), C′(τ), and D(τ) by
+
+                                         1
+                                ν =  √1 −γ                                               (12)
+                           C(τ) =  cosh ντ + ν sinh ντ                                    (13)
+                                     dC(τ)
+                             C′(τ) =     = ν sinh ντ + ν2 cosh ντ                        (14)
+                                          dτ
+                                        C′(τ)
+                          D(τ) =             .                                                (15)
+                                     C(τ)
+
+1see e.g. [Fle].
+
+
+                                          5
+
+[PAGE 6]
+As we shall see, the function D(τ) plays a crucial role in determining the optimal strategy.
+  We proved that for γ < 0 or 0 < γ < 1 the optimal strategy is
+
+                                   α∗t = −wxD(τ)                                      (16)
+
+and value function is given by
+
+                             1                    x2
+                 J(w, x, t) = wγpeτC(τ)γ−1 exp     (1 + (γ −1)D(τ))   ,                (17)
+                            γ                    2
+
+where τ, C(τ), and D(τ) are deﬁned by Eqs. (11) – (15) and Xt = x, Wt = w.
+   Note that the optimal position is linear in both wealth Wt and spread Xt. The term under the
+last exponent in (17) measures the expected utility of the immediate trading opportunity. If Xt = 0
+i.e. there are no immediate trading opportunities, the value function (17) simpliﬁes to
+
+                                         1
+                              J(w, 0, t) = wγpeτC(τ)γ−1.
+                                        γ
+
+The γ1 wγ term is just the expected utility generated by the present wealth. The square root term
+can be thought of as the value of the time. We will analyze Eqs. (16) and (17) in more detail in
+section 4.
+
+4  Analysis
+
+In this section, we analyze the behavior of solution (16) - (17).  Unless speciﬁed otherwise, the
+parameters used for illustrations were k = 2, σ = 1, and γ = −2. From Eq. (2), it follows that the                               √
+long-term standard deviation of the price process value is   2/2, so, roughly, an absolute value of X
+greater than 0.7 presents a reasonable trading opportunity.
+
+4.1  Position management
+
+Let us look at how the value function and trading position change as Xt changes. Using Ito’s lemma,
+we see from (16) that the diﬀusion term of dαt is
+
+                             −D(τ) (Wt + αtXt) .
+
+Thus, the covariance of dα and dX is
+
+              Cov (dα, dX) = −D(τ)(Wt + αtXt) = WtD(τ) −1 + X2t D(τ)  .              (18)
+
+This is negative whenever
+                                     |X| ≤ p1/D(τ).
+
+Consequently, as Xt diverges from 0 either way, we start slowly building up the position αt of the
+opposite sign than Xt.  If Xt diverges further from 0, our position is making a loss, but we are still
+increasing the position until the squared spread X2t reaches 1/D(τ).  If the spread widens beyond
+that value, we start cutting a loss-making position. Another interpretation of Eq. (18) is that we
+start cutting a loss-making position as soon as the position spread −αXt exceeds total wealth Wt.
+Fig. 2 shows how D(τ) depends on remaining time τ for diﬀerent values of γ.
+   Not surprisingly, for the log-utility case γ = 0, the threshold 1/D(τ) equals identically one and
+we are getting the same result as in [Mo] and [M-VMN].
+
+
+                                       6
+
+[PAGE 7]
+    Figure 2: D(τ) as a function of the remaining time τ for ﬁve diﬀerent values of γ.
+
+
+4.2  Value function dynamics
+
+Let us check now how the value function J(Wt, Xt, t) evolves with Xt.  In [M-VMN], it is shown
+that a log-utility agent’s value function always decreases as the spread moves against his position. It
+might be the case that a more aggressive agent’s value function sometimes increases as the spread Xt
+moves against his position because the investment opportunity set improves. Let us check whether
+this ever happens to a power utility agent.
+   Using Ito’s lemma, we see from (17) that the diﬀusion term of dJt is
+
+                                    JtXt (1 −D(τ)) .
+
+Thus,
+                          Cov (dJ, dX) = JtXt (1 −D(τ)) .                             (19)
+
+For γ < 0, the utility function is always negative, so the value function is also always negative.
+Similarly, for γ > 0 the value function J  is always positive.  It is easy to check that the sign of
+1 −D(τ) is opposite to the sign of γ for all τ. Thus, Cov (dJ, dX) is positive for Xt < 0 and negative
+
+
+                                       7
+
+[PAGE 8]
+       for Xt > 0. This means that any power utility agent suﬀers decrease in his value function J as the
+      spread moves against his position. This is true even for an agent with an almost linear utility γ →1.
+         For 0 < γ < 1 there is a non-zero bankruptcy probability.
+
+     4.3  Time value
+
+      Let us look once more at how the value function depends on the time left for trading. Recall that
+
+                                  1                      x2
+                      J(w, x, t) =  wγ peτC(τ)γ−1 exp     (1 + (γ −1)D(τ))   ,               (20)
+                                γ                      2
+                                           |    {zB     }
+                                |{z}A                |            {zC            }
+
+     where τ, C(τ), and D(τ) are deﬁned by Eqs. (11) – (15) and Xt = x, Wt = w. Thus, the value
+      function J can be split into three multiplicative terms. Term A is the value derived from the present
+      wealth, term B is the time value, and term C is the value of the immediate investment opportunity.
+      Fig. 3 shows2 dependence of the value function J on time τ assuming that there is no immediate
+      opportunity, i.e. X = 0.
+
+
+
+
+
+  2The ﬁgure shows the graphs of the function J(w, x, τ) −1γ for w = 1, x = 0, 0 ≤τ ≤1 and several diﬀerent values of
+γ. Substraction of γ1 from the value function makes the comparison with the log-utility case γ = 0 easier.
+
+
+                                            8
+
+[PAGE 9]
+                     Figure 3: Adjusted time value, X = 0, W = 1.
+
+   Since log-utility agent’s strategy does not depend on time, his value function J grows linearly
+with time (the green line on Fig.  3.)  Extension of the trading period beyond a certain minimal
+length does not signiﬁcantly increase the value function of a suﬃciently risk-averse agent (the pink
+and the red lines on Fig. 3.)
+   The value of time grows roughly exponentially in X2t  if there is an immediate investment oppor-
+tunity.
+
+4.4  Eﬀect of risk-aversion on time inhomogeneity
+
+The ratio D(τ) deﬁned by Eq. (15) plays a crucial role in most of our formulas:  it determines the
+position size in Eq. (16), the threshold at which we start unwinding a losing position (Eq. (18)), and
+it also enters equations (17) for the value function and (19) for the covariance of J and X. Fig. 2
+shows the graphs of D(τ) for diﬀerent values of γ. Recall that Eq. (16) implies that for given wealth
+Wt and spread Xt, position size is proportional to D(τ).
+  We see that for γ = 0 (log-utility) optimal position does not depend on time. For γ > 0 the agent
+is less risk-averse than a log-utility agent. For given price Xt and wealth Wt, his position increases as
+the ﬁnal time approaches. In practice, the horizon for many traders is the year end, because bonuses
+are paid based on the calendar year performance. The traders often tend to become less aggressive
+as the bonus time approaches. This is consistent with the optimal behavior of a power utility agent
+with γ < 0.  For example, assume that k = 8 and γ = −2 an let us measure the time in years.
+Then for the same wealth W and spread X, the position just a week before the year end is a third
+lower than it is at the beginning of the year. A negative-power utility agent behaves similarly to a
+
+
+                                       9
+
+[PAGE 10]
+log-utility agent whose capital sinks towards the end of the year.
+    Is is well-known that arbitrage and relative value trading activities are important for market
+liquidity. Decreased risk-bearing capacity of relative value traders may be one of the causes behind
+the ﬂight to quality and the drop in liquidity that happens in many markets during the last two
+weeks of December (see [GrWi]), as well as January and turn-of-the-year eﬀects in equity markets
+(see [ChSi] and references therein.)
+
+
+
+
+
+     Figure 4: A simulated price sample together with position and wealth dynamics.
+
+
+4.5  Simulation results
+
+To study the eﬀect of parameter misspeciﬁcation, we performed a Monte-Carlo simulation. Fig. 4
+shows a sample price trajectory with the corresponding optimal position and the wealth trajectories.
+A simulation without variance reduction also gives a good proxy to the discretisation and sampling
+errors, i.e. to the deviations of accumulated wealth from the predicted wealth due to the sampling
+error and non-continuous rehedging.
+   In reality, it is very hard to predict the mean-reversion parameter k. Even if we assume that
+the price series is stationary, k has to be estimated from the past data. Figure 5 shows the eﬀect of
+trading with a wrong k.
+   In a Monte carlo simulation, we generated a set of Ornstein-Uhlenbeck process trajectories with
+k = 2, σ = 1 and then simulated trading with a wrong value of k. To look at the dependence of
+optimal position α∗on mean reversion coeﬃcient K, it is convenient to invert transforms (7) and to
+
+
+
+
+                                       10
+
+[PAGE 11]
+                Figure 5: Expected utility when hedging with a wrong k.
+
+
+rewrite Eq. (16) as
+                                       k
+                            α =   wxD(τ/k).                                    (21)
+                                        σ2
+Thus, we took K in the interval (1, . . . , 3.2) and simulated trading with position determined by (21),
+but with K substituted for k. On the horizontal axis of the graph we have log(K/k). Blue and
+red dashed lines show the two standard deviations conﬁdence interval bounds for the mean terminal
+utility when trading with a given value of K. The black cross shows the value function from Eq. (17)
+for K = k.
+  We can see that the inﬂuence of mean reversion coeﬃcient misspeciﬁcation is asymmetric. Trading
+with a conservatively estimated k reduces greatly the utility uncertainty. Not surprisingly, overesti-
+mation of the mean reversion leads to excessively aggressive positions and big discretisation errors.
+It is much safer to underestimate k than to overestimate it. Similarly, it is safer to overestimate noise
+magnitude σ than to underestimate it.
+
+5  Conclusions and possible generalizations
+
+We see that the answers to the questions posed in Section 1 are the following.
+
+   • When and how aggressively should one open the position? The position should is opened con-
+      tinuously as the spread deviates from 0.
+
+
+
+                                       11
+
+[PAGE 12]
+   • When should one cut a losing position? One starts cutting a losing position as soon as position
+     spread exceeds current wealth.
+
+   • Can a trader ever be happy when the spread widens? No, a power utility trader is never happy
+     with the spread widening.
+
+   • What is the eﬀect of process parameters on optimal strategy? Higher mean reversion speed and
+     lower noise make traders more aggressive
+
+   • How does the trading strategy and the value function change as the time horizon approaches? As
+      the time horizon approaches, a trader more averse than a log-utility one, becomes less aggressive,
+     a less risk averse trader becomes more aggressive.
+
+   • How does the process parameters uncertainty aﬀect the optimal strategy? It is much safer to
+     underestimate the mean-reversion speed than to overestimate it; it is safer to overestimate the
+     noise than to underestimate it.
+
+  We solved the optimal portfolio selection problem assuming that there is a single risky asset fol-
+lowing an Ornstein-Uhlenbeck process with known parameters and there is a representative agent
+with given wealth, investment horizon and power utility function. The other assumptions used were
+the absence of market frictions and perfect liquidity of the asset traded. Most of these assumptions
+are similar to ones made in the Black-Scholes model. Each of these assumptions is not quite realis-
+tic. Even when one manages to ﬁnd a mean-reverting trading asset, one will need to estimate the
+parameters of the process. The prices usually seem to follow non-stationary processes, with periodic
+regime switches and jumps. Market frictions make continuous trading unviable, while the presence
+of other traders competing for the same trading opportunity and the feedback between trades and
+prices aﬀect the optimal strategy. A trader usually does not commit all of his capital to trade a single
+asset, so the real-world problems involve multiple risky asset portfolio selection.
+   The model considered can be extended to include many of these more realistic features. The
+resulting PDE is not very likely to have an explicit solution, but singular perturbation theory may
+be used to obtain approximations by expansions around our solution. A similar problem in discrete
+setting is considered in [Vi]. The discrete framework allows to introduce easily transaction costs but,
+in most cases, lacks explicit solutions. The attraction level of the mean reverting process Xt may be
+assumed not known a priori and to be inferred from observations of Xt. This problem can be treated
+in the Bayesian framework similarly to [La].
+  On the other hand, our simple model can serve as a benchmark in practical situations. Quite often,
+practitioners prefer to introduce ad hoc corrections to a simple model than using a more involved
+model with a large number of parameters.
+
+6  Appendix A.
+
+6.1 A technical lemma
+
+To prove the theorem we need the following lemma.
+
+Lemma 1 The functions α∗= α∗(w, x, t) and J = J(w, x, t) deﬁned by Eqs. (16) and (17) have the
+following properties
+
+   1. J = J(w, x, t) is a solution to Eq. (10);
+
+   2. boundary condition at T:
+                                               1
+                                   J(w, x, T) =  (wγ −1);
+                                              γ
+
+
+                                       12
+
+[PAGE 13]
+   3. concavity in current wealth:
+
+                        Jww ≤0, for all w ≥0, x ∈R, 0 ≤t ≤T;
+
+   4. α∗satisﬁes the ﬁrst order optimality condition (9).
+
+Proof of the lemma. All properties can be checked by direct calculations. △
+
+
+6.2  Proof of the theorem
+
+Let J(w, x, t, α) be the expected terminal utility if the trader follows a particular strategy α.  It is
+enough to show that J(Wt, Xt, t) and α∗(Wt, Xt, t) given by Eqs.  (16), (17) satisfy two standard
+stochastic optimal control conditions:
+
+
+(A) For any control α = α(w, x, t)
+
+                      J(w, x, t, α) ≤J(w, x, t) for all x ∈R, w ≥0, 0 ≤t ≤T
+
+(B) The control α∗= α∗(w, x, t) satisﬁes
+
+                                  J(w, x, t, α∗) = J(w, x, t).
+
+
+Condition (A). Applying Ito’s formula to J (Ws, Xs, s)t≤s≤T , we obtain
+
+                                       Z s
+             J(Ws, Xs, s) =  J(Wt, Xt, t) +   L(α)J(Wu, Xu, u)du +
+                                                                         t
+                           Z s                 Z s
+                 +     Jx(Wu, Xu, u)dBu +   αuJw(Wu, Xu, u)dBu,           (22)
+                                                    t                                  t
+
+where
+                                              1      1
+                   L(α)J = Jt −xJx −αxJw + 2Jxx + 2α2Jww + αJxw.                   (23)
+Using the Lemma, we see that
+
+             1           Jw             2        1                  Jxw    Jw   2  L(α)J =       α −  x   −Jxw   + (Jt +    −xJx −1      −x        ) =           2Jww       Jww   Jww           2Jxx       2Jww  Jww    Jww
+             1           Jw             2      =       α −  x   −Jxw    ≤0.                                            (24)           2Jww       Jww   Jww
+
+   Taking the mathematical expectation Et of J(Ws, Xs, s), from (22) we obtain
+
+                                        Z s
+          EtJ(Ws, Xs, s) =  J(Wt, Xt, t) + Et   L(α)J(Xu, Wu, u)du +
+                                                                            t
+                             Z s                   Z s
+                 +  Et   Jx(Wu, Xu, u)dBu + Et   αJw(Wu, Xu, u)dBu        (25)
+                                                       t                                       t
+
+
+
+
+                                       13
+
+[PAGE 14]
+   The stochastic integrals in (25) are martingales, so the mathematical expectation of these integrals
+is zero. Thus, the last two summands in (25) vanish. Now let t →T. Using (24), we can rewrite (25)
+as
+
+                                            Z T
+             J(Wt, Xt, t) =  EtJ(WT , XT , T) −Et    L(α)J(Xu, Wu, u)du ≥
+                                                                                   t
+                                 1   γ
+                 ≥  Et( W T ) = Jα(Wt, Xt, t, α),                                γ
+
+i.e. condition (A) is satisﬁed.
+
+Condition (B). It is clear from the Lemma that
+
+                                     L(α∗)J = 0.
+
+So for α = α∗we have
+
+                                            Z T
+             J(Wt, Xt, t) =  EtJ(WT , XT , T) −Et    L(α∗)J(Xu, Wu, u)du =
+                                                                                   t
+                                 1   γ
+                 =  Et( W T ) = Jα(Wt, Xt, t, α∗),                                γ
+
+i.e. condition (B) is satisﬁed. This concludes the proof of the Theorem.
+
+   Michael Boguslavsky  is an equity derivatives trader at ABN-AMRO in London,
+Elena Boguslavskaya expects her PhD degree from University of Amsterdam. We
+thank Chris Klaasen, Guus Balkema, and the referees for useful comments.  E-mail:
+michael@boguslavsky.net, elena@boguslavsky.net.
+
+References
+
+[AtMe]   M. Attari and A. Mello, “Financially Constrained Arbitrage in Illiquid Markets,” Uni-
+            versity of Wisconsin-Madison working paper, (2001).
+
+[BrSc1]   M. Brennan and E. Schwartz, “Optimal Arbitrage Strategies under Basis Variability,” in
+          M.Sarnat (ed.), Essays in Financial Economics, New York: North Holland, (1988).
+
+[BrSc2]   M. Brennan and E. Schwartz, “Arbitrage in Stock Index Futures,” Journal of Business,
+           63, pp. 7–31, (1990).
+
+[BaCr]     S. Basak and B. Croituru, “Equilibrum mispricing in a Capital Market with Portfolio
+           Constraints,” The Review of Financial Studies, 13, pp. 715–748, (2000).
+
+[ChSi]     H. Chen and V. Singal, “The January Eﬀect: A Re-Examination”, Virginia Tech working
+           paper, (2002).
+
+[GoWu]   R. Gonzalez and G. Wu, “On the Shape of the Probability Weighting Function,” Cognitive
+           Psychoogy, 38, issue 1, pp. 129–166, (1999).
+
+[GrWi]   M. Griﬃts and D. Winters, “On a Preferred Habitat for Liquidity at the Turn-of-the-
+           Year: Evidence from the Term-Repo Market,” Journal of Financial Services Research,
+            12:1, pp 21–38, (1997).
+
+
+
+                                       14
+
+[PAGE 15]
+[Fle]     W. Fleming and H.M. Soner, Controlled Markov Processes and Viscosity Solutions,
+            Springer-Verlag, (1993).
+
+[La]       Lakner, P., “Optimal trading strategy for an investor: the case of partial information,”
+            Stochastic Processes and their Applications, 76, (1998), pp. 77–97.
+
+[Lo]         J. Campbell, A. Lo, and A. MacKinley. The Econometrics of Financial Markets. Princeton
+           University Press, (1997).
+
+[LiLo]      J. Liu, F. Longstaﬀ, “Losing money on arbitrages. Optimal Dynamic Portfolio choice in
+          Markets with Arbitrage Opportunities”, to appear in Review of Financial Studies, (2000).
+
+[LoWi1]   M. Loewenstein and G. Willard, “Local Martingales, Arbitrage, and Viability:  Free
+          Snacks and Cheap Thrills,” Economic Theory, 16, pp. 135–161, (2000).
+
+[LoWi2]   M. Loewenstein and G. Willard, “Rational Equilibrum Asset-Pricing Bubbles in continous
+          Trading Models,” Journal of Economic Theory, 91, pp. 17-58, (2000).
+
+[LoWi3]   M. Loewenstein and G. Willard, “Convergence Trades and Liquidity, a Rational theory
+             of Hedge Funds”, working paper, (2000).
+
+[Me]      R.C. Merton, Continuous-Time Finance, Blackwell Publishers, (1990).
+
+[Mo]      A. Morton, “When in trouble – double”, presentation at Global Derivatives 2001 confer-
+            ence, St.Juan - les Pins, May 2001.
+
+[M-VMN]  D.Mendez-Vivez, A.Morton, V.Naik, “Trading Mean Reverting Process,” unpublished
+           manuscript, August 2000.
+
+[Sh]       A. Schleifer, Ineﬃcient Markets: An Introduction to Behavioural Finance, Oxford Univ.
+            Press, Oxford, (2000).
+
+[Vi]       Vigodner, A., “Dynamic Programming and Optimal Lookahead Strategies in High Fre-
+          quency Trading with Transaction Costs,” preprint, January 2000.
+
+
+
+
+
+                                       15

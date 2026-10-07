@@ -1,0 +1,89 @@
+{
+  "source": "advanced_access",
+  "requested_as_of_date": "2026-10-06",
+  "created_at_utc": "2026-10-07T03:08:20.712312+00:00",
+  "notes": {
+    "scope": "Public-source accessibility probes; no authentication, paid sources or bypasses attempted.",
+    "fbref": "HTTP403 challenge",
+    "sofascore": "HTTP403 Forbidden",
+    "fotmob": "old /api/leagues path HTTP404; no player data collected",
+    "understat": "Official frontend scripts establish getLeagueData/getMatchData JSON URL patterns."
+  },
+  "requests": [
+    {
+      "source": "advanced_access",
+      "url": "https://fbref.com/en/comps/9/Premier-League-Stats",
+      "parameters": null,
+      "retrieved_at_utc": "2026-10-07T03:08:14.630324+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/advanced_access/fbref_premier_league.html",
+      "http_status": 403,
+      "final_url": "https://fbref.com/en/comps/9/Premier-League-Stats",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 5582,
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://fbref.com/en/comps/9/Premier-League-Stats"
+    },
+    {
+      "source": "advanced_access",
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/17/seasons",
+      "parameters": null,
+      "retrieved_at_utc": "2026-10-07T03:08:15.360492+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/advanced_access/sofascore_epl_seasons.json",
+      "http_status": 403,
+      "final_url": "https://www.sofascore.com/api/v1/unique-tournament/17/seasons",
+      "content_type": "application/json",
+      "bytes": 48,
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.sofascore.com/api/v1/unique-tournament/17/seasons"
+    },
+    {
+      "source": "advanced_access",
+      "url": "https://www.fotmob.com/api/leagues?id=47",
+      "parameters": null,
+      "retrieved_at_utc": "2026-10-07T03:08:15.997397+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/advanced_access/fotmob_league_endpoint.html",
+      "http_status": 404,
+      "final_url": "https://www.fotmob.com/api/leagues?id=47",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 206351,
+      "status": "failed",
+      "error": "404 Client Error: Not Found for url: https://www.fotmob.com/api/leagues?id=47"
+    },
+    {
+      "source": "advanced_access",
+      "url": "https://understat.com/js/league.min.js",
+      "parameters": null,
+      "retrieved_at_utc": "2026-10-07T03:08:17.030463+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/advanced_access/understat_league_frontend.js",
+      "http_status": 200,
+      "final_url": "https://understat.com/js/league.min.js",
+      "content_type": "application/javascript",
+      "bytes": 23961,
+      "status": "downloaded",
+      "sha256": "6ef9fabcf1b219958fa9dd29bc8bd38778c9f72c1be28557d1908b3521192d24"
+    },
+    {
+      "source": "advanced_access",
+      "url": "https://understat.com/js/match.min.js",
+      "parameters": null,
+      "retrieved_at_utc": "2026-10-07T03:08:18.799351+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/advanced_access/understat_match_frontend.js",
+      "http_status": 200,
+      "final_url": "https://understat.com/js/match.min.js",
+      "content_type": "application/javascript",
+      "bytes": 25557,
+      "status": "downloaded",
+      "sha256": "8fb51acc7233b81f1201b8154a3f7e5ff77d762df95467b0f2fb041d8f0b1c3b"
+    }
+  ]
+}

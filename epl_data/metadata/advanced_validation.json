@@ -1,0 +1,84 @@
+{
+  "checked_at_utc": "2026-10-07T03:22:10.375776+00:00",
+  "independent_provider_scores": {
+    "espn_completed_matches": 424,
+    "matched_to_understat": 424,
+    "unmatched_espn": 0,
+    "score_mismatches": 0
+  },
+  "current_player_profile_coverage": {
+    "espn_clubs": 20,
+    "espn_players": 585,
+    "focal_clubs_outside_whitelist": []
+  },
+  "understat_team_history": {
+    "completed_matches_with_focal_club": 4108,
+    "expected_focal_team_match_rows": 6180,
+    "observed_focal_team_match_rows": 6180,
+    "duplicate_team_match_keys": 0,
+    "focal_clubs_outside_whitelist": []
+  },
+  "observed_current_season_actual_match_coverage": {
+    "understat_latest_source_datetime": "2026-09-20 15:30:00",
+    "espn_latest_source_datetime": "2026-09-20T15:30Z",
+    "current_completed_matches_understat": 50
+  },
+  "understat_match_detail_consistency": {
+    "shots": 83455,
+    "player_match_rows": 88533,
+    "expected_focal_team_match_rows": 6180,
+    "nonzero_xg_team_sides_missing_shots": 0,
+    "team_sides_missing_rosters": 0,
+    "max_additive_shot_vs_player_xg_error": 1.0050833225250244e-05,
+    "additive_shot_vs_player_xg_errors_over_0_0001": 0,
+    "duplicate_shot_ids": 0,
+    "duplicate_player_match_keys": 0,
+    "shot_coordinates_outside_unit_square": 0,
+    "shot_xg_outside_unit_interval": 0,
+    "focal_clubs_outside_whitelist": []
+  },
+  "understat_distinct_xg_bases": {
+    "max_additive_shot_minus_displayed_team_xG": 1.001493769485354,
+    "max_additive_player_minus_displayed_team_xG": 1.0014938570296765,
+    "team_sides_differing_from_additive_shots_over_0_0001": 2701,
+    "team_sides_differing_from_additive_players_over_0_0001": 2701,
+    "additive_shot_below_displayed_team_xG_by_over_0_0001": 0,
+    "interpretation": "Possession/rebound adjustment is inferred from exact primary-source arithmetic for the largest-gap sample. Without official full methodology/possession IDs, all other gaps remain explicit differences between provider outputs. Never force raw shot sums to equal displayed team xG."
+  },
+  "understat_largest_gap_raw_example": {
+    "source_match_url": "https://understat.com/match/28828",
+    "source_match_json": "https://understat.com/getMatchData/28828",
+    "fixture": "Brentford vs Manchester United",
+    "date": "2025-09-27",
+    "player": "Benjamin Sesko",
+    "minute": 25,
+    "shot_probabilities": [
+      0.6919364333152771,
+      0.6124233603477478,
+      0.6560744643211365
+    ],
+    "shot_probability_sum": 1.9604342579841614,
+    "probability_of_at_least_one_goal_if_sequence_attempt_probabilities_combined": 0.9589358956696499,
+    "inferred_rebound_correction": 1.0014983623145115,
+    "observed_additive_minus_displayed_team_xG": 1.001493769485354,
+    "correction_matches_observed_gap_within_source_rounding": true,
+    "scope_of_inference": "One exact arithmetic example only; not a claim all2701differences were individually reconciled or an official provider methodology statement."
+  },
+  "understat_context_coverage": {
+    "rows": 6552,
+    "club_season_pairs": 180,
+    "current_season_clubs": 20,
+    "categories": [
+      "attackSpeed",
+      "formation",
+      "gameState",
+      "result",
+      "shotZone",
+      "situation",
+      "timing"
+    ],
+    "duplicate_context_keys": 0,
+    "focal_clubs_outside_whitelist": [],
+    "availability_caution": "Historical final-season aggregates require lagging and are not contemporaneous pre-match features."
+  }
+}

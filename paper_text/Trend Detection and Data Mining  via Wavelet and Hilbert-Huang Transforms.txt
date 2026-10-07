@@ -1,0 +1,426 @@
+[PAGE 1]
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/224323106
+Trend detection and data mining via wavelet and
+Hilbert-Huang transforms
+
+
+Conference Paper in Proceedings of the American Control Conference · July 2008
+DOI: 10.1109/ACC.2008.4587168 · Source: IEEE Xplore
+
+
+
+
+CITATION                                                READS
+1                                        89
+
+
+2 authors:
+
+        Murat Yasar                                       Asok Ray
+         United Technologies Research Center                   Pennsylvania State University
+         44 PUBLICATIONS 274 CITATIONS                           573 PUBLICATIONS 6,818 CITATIONS
+
+            SEE PROFILE                                                SEE PROFILE
+
+
+
+Some of the authors of this publication are also working on these related projects:
+
+
+       CO Sensor for PEM Fuel Cell View project
+
+
+          Health monitoring of aircraft structures View project
+
+
+
+
+
+ All content following this page was uploaded by Murat Yasar on 06 October 2017.
+
+ The user has requested enhancement of the downloaded file.
+
+[PAGE 2]
+2008 American Control Conference                                                                   FrBI01.7
+Westin Seattle Hotel, Seattle, Washington, USA
+June 11-13, 2008
+
+          Trend Detection and Data Mining
+       via Wavelet and Hilbert-Huang Transforms‡
+
+                       Murat Yasar                                   Asok Ray
+                     Techno-Sciences, Inc.                             Pennsylvania State University
+                      Beltsville, MD 20705 USA                          University Park, PA 16802 USA
+                Email:  yasarm@technosci.com                           Email:  axr2@psu.edu
+
+
+  Abstract—  This  paper  presents  the  formulation  and   such analysis methods can be applicable to many areas from
+evaluation of effective algorithms of reliable data analysis for   simple time-frequency decomposition of signals to advanced
+real-time monitoring of incipient faults and anomalies, data    health monitoring and threat identification.
+fusion and event classification. The objective is to alleviate the     Data analysis has a long history starting from Fourier
+shortcomings of the existing techniques for data mining by                                                            transform in  late 1700s and early 1800s  [1]. However,
+taking advantage of nonlinear filtering to handle non-Gaussian
+                                                                     traditional data analysis methods are largely based on linearand non-stationary multiplicative noise and uncertainties. New
+concepts have been developed toward characterization of the   and stationary assumptions. For example, Fourier spectral
+data features and behavior interpretation of the underlying    analysis provides a general solution for examining the global
+processes to evaluate their performance. In particular, the   energy-frequency  distributions.  Mainly  because  of   its
+techniques of wavelet transform, Hilbert-Huang transform,    simplicity, Fourier  analysis dominated  the data  analysis
+and  symbolic  encoding  are  investigated  to  explore  their                                                                     efforts and has been applied  to various kinds of  data.
+effectiveness and relative simplicity to interpret and implement
+                                                       Although  the Fourier  analysis  is  valid under extremelydata mining tasks.
+                                                             general conditions [1], the data sets still must be periodic or
+                                                                          statistically  stationary. The stationary requirement  is not  Index Terms—Wavelet transform, Hilbert transform, Data
+compression, Signal analysis, Fault detection                       particular to the Fourier spectral analysis and is required for
+                                                     most of the available data analysis techniques.
+                             I. INTRODUCTION                          In  recent  years, new  methods  and  algorithms  have
+                                                     emerged for analysis of non-stationary and nonlinear data.   ATA analysis is undeniably the most pertinent part of
+                                                        For example, the Wigner-Ville distribution [2] was designedDscience and technology related to health monitoring,                                                                  for  linear but  non-stationary  data. Furthermore, varioussince data is generated and processed in all systems one way
+                                                              nonlinear time-series-analysis methods [3][4] were designedor another. Regardless of whether the source of data  is
+                                                                  for  nonlinear  but  stationary and  deterministic  systems.physical measurements from a sensor signal or numerical
+                                                            Nonetheless, most natural and human engineered complexmodeling,  the  goal  of  data  analysis  is  to  reveal  the
+                                                         systems produce data, which are most likely to be bothunderlying processes. However, a vast majority of the raw
+                                                              nonlinear and non-stationary.data sets are not well suited for analysis and may encounter
+                                     A necessary condition to represent nonlinear and non-several inherent difficulties such as (i) short data span, (ii)
+                                                                  stationary  data  is  to have an adaptive  basis. For non-non-stationary behavior of data,  (iii) underlying nonlinear
+                                                                  stationary and nonlinear data, where adaptation is absolutelyprocess dynamics. Some of these problems can be simplified
+                                                              necessary, no  available methods  could be  found  untilto a certain extent or approximated by simpler solutions. For
+                                                                recently  [5]. In  this paper, we address the problem ofexample,  the  linearization around an  equilibrium  point
+                                                            analyzing nonlinear and non-stationary data to provide theusually works well for mildly nonlinear data sets.
+                                                            information about incipient faults, anomalies, trends, and  For a general solution to be tractable over a wide range,
+                                                              data classifications in complex systems.data  analysis may  require  innovative  techniques  and
+                                                    The primary goal of the work reported in this paper is tocomputationally   efficient   algorithms.  Moreover,   data
+                                                         develop  effective  and  robust  algorithms  for  real-timeanalysis should address the problems of detection of trends,
+                                                          monitoring of incipient faults and anomalies, fusion of dataanomalies  and   faults   to   infer  mathematically  and
+                                                      and classification of events. To achieve these goals,  it iscomputationally  tractable models from the data  sets  for
+                                                            necessary to characterize the data features and interpret theinformation fusion from multiple sources and simultaneous
+                                                                    characteristic of underlying processes to evaluate the systemclassification of instances and  features. This makes the
+                                                           performance. Thus,  it  is possible to meet the increasingalgorithms challenging and significant since the outcome of
+                                                   demands for data mining of sensor signals and analytical
+                                                            observables for health monitoring applications.  Outputs
+   ‡This work was supported in part by NASA Glenn Research Center                                                     from these analytical tools will be useful for scheduling both
+under Contract No. NNC07QA08P and by U.S. Army Research Laboratory
+and U.S. Army Research Office under Grant No. W911NF-07-1-0376.        routine  and  preventive  maintenance,  threat  and  risk
+
+978-1-4244-2079-7/08/$25.00 ©2008 AACC.       4292
+
+[PAGE 3]
+assessment and reconfiguring the resilient and fault tolerant   where ψ1  is called the ‘Mother wavelet’ and p is usually
+control.
+                                                        chosen as 1/2, the wavelet transform (WT) can be defined as
+  This paper  is organized in five sections including the
+present one. Section 2 introduces the key data analysis                                            − p ∞            * ⎛ τ − t ⎞                                      W ( s , t ) = s                                                                                         dτ .                                                                                                                                          f (τ)ψ ⎜                                                                                                ⎟                                                                                     ∫methods for algorithm development, and the trend detection                                                                                          ⎝  s                                                                                                ⎠                                                                                                                        −∞
+problem for incipient faults and anomalies is formulated in
+                                                                Therefore,  wavelets  provide  scale-independence  for
+Section 3. Section 4 presents an example application of the
+                                                                analysis and synthesis of signals, which means continuous
+developed  techniques.  The  paper   is  summarized  and
+                                                          wavelet transform (WT) provides resolutions for  all the
+concluded in Section 5.
+                                                                     scales. This very appealing feature of wavelets and other
+                                                                relevant reasons such as WT analysis being  linear and
+                   II. DATA ANALYSIS METHODS
+                                                         having an analytic form for the result make wavelets widely
+ A key element in data analysis for anomaly and fault   accepted among researchers and engineers. Indeed, WT is
+detection is to transform the sensor data sets into formats   very  useful  in  analyzing  data  with  gradual  frequency
+that enable efficient, effective detection and classification of   changes. Most  of  its  applications have been  in  signal
+anomaly events and trends of interest. The sensor data are   denoising  and  image  compression,  as  well  as  heath
+characterized by  signals  that have  features  that can be   monitoring [11].
+intermittent  in both  time and  space. To maximize  the    Among   other   signal   processing   choices,  wavelet
+information content derived from the data, the raw signals   transforms offer an attractive means for developing multi-
+can be described in multiple resolutions in time, frequency,    resolution representations of signals suitable for hierarchical
+and space.                                                          classification algorithms. They have been used in this way in
+  The proposed method aims to alleviate the shortcomings   speech and image processing and in radar data processing,
+of the existing techniques for data mining. Emphasis is laid   among many other applications. The success of wavelet
+on nonlinear filtering to deal with (possibly) non-Gaussian   transforms in these and other areas can be attributed to the
+and non-stationary multiplicative noise and uncertainties. To   inherent  ability of wavelet representations  to reveal the
+this  end,  several  advanced  methods  that  have  been   superposition  of  different  structures  occurring  in  these
+developed in recent years are utilized to form the basic    signals on different time scales at different times (or on
+functional components of  the  analysis. Among  the few    different spatial scales at different locations).
+possibilities  of  nonlinear  non-stationary  data  analysis,     Wavelet representations efficiently separate and sort the
+wavelet transform (WT)  [6][7], Hilbert-Huang transform    constituent structures of a complex signal. Software tools for
+(HHT)   [5][8]  and  symbolic  encoding  (SE)  [9][10]   construction of wavelet transforms have recently become
+techniques  are chosen due  to  their  effectiveness,  their    available, offering the user a collection of standard libraries
+relative simplicity for interpretation and implementation.       of waveforms that can be chosen to fit specific classes of
+                                                                    signals. The  rapid development  of wavelet  theory and  A.  Wavelet Analysis of Time Series Data for Time-
+  Frequency Localization                                   computational methods provides a versatile and powerful set
+                                                              of  tools  for  the  analysis and  manipulation  of  signals.  Time series data of signals are often preprocessed to
+                                                     However, the leakage due to the compact support of thecharacterize  the  signal  properties and  extract  pertinent
+                                                       mother wavelet function makes the quantitative definition ofinformation. It is well known that for the stationary signals
+                                                               the energy-frequency-time distribution difficult. In spite ofwith known time periods, Fourier analysis is sufficient to
+                                                               these problems, wavelet analysis  is  still among the bestrepresent the frequency domain characteristics of the signal.
+                                                                 available non-stationary data analysis method.However, Fourier analysis may not be appropriate  if the
+signal  has  non-stationary  characteristics  such  as  drifts,     B.  Hilbert-Huang Transform of Time Series Data for
+abrupt  asynchronous  changes,  and  frequency  trends.     Time-Frequency-Energy Analysis
+Wavelet analysis, on the other hand, uses adaptive windows     While many other techniques may fail in analyzing non-
+to overcome these difficulties. Long windows retrieve low-    stationary and nonlinear systems, Hilbert-Huang transform
+frequency information, whereas short windows are used for   (HHT)  meet  the  challenges  of  time-frequency-energy
+high-frequency  information  [7]. The  ability  to perform    representation of the data. Consisting of empirical mode
+flexible localized analysis is one of the striking features of   decomposition and Hilbert spectral analysis, HHT is suitable
+wavelet transform.                                               for computing instantaneous frequency and energy of the
+  The  wavelet  approach   is  essentially  an  adjustable    signal in time domain. Therefore, the ability to perform
+windowed Fourier spectral analysis. Defining the wavelet    flexible localized analysis in the three independent variables,
+function as:                                               namely, time, frequency and energy, is a striking feature of
+                                   − p ⎛⎞τ                   HHT [5]. HHT has good computation efficiency and does     ψs (τ) = s ψ1 ⎜⎟ ∀∈p   [ 0, ∞ )            ⎝⎠s                               not involve the concepts of time and frequency resolution.
+                                                      These features alleviate noise and signal distortion problems
+
+
+                                           4293
+
+[PAGE 4]
+and make HHT as an excellent candidate for data mining in               dx ( t )
+health management applications [12].                                   =  f ( x ( t ),θ( t s ) )   x (0) = x 0
+                                                                                   dt
+  The Hilbert transform is performed on real-valued time-
+series data and produces an analytical signal for which the   where   t ∈ [ 0, ∞ )  denotes the time;  x ∈\ n   is the  state
+instantaneous  frequency  can  be  defined.  The  Hilbert                                                   m                                                              vector in the phase space; and θ ∈\  is the parameter
+transform of a signal x ( t )  is defined as its convolution with
+                                                              vector varying in time scale ts. Sole usage of the model may
+1/ t as                                                      not always be feasible due to unknown parametric and non-
+                   P ∞ x (τ)                        parametric uncertainties and noise. A convenient way of
+            H ( t ) =                               dτ                      learning the dynamical behavior is to rely on the additional                             ∫             π −∞ t − τ                                                            information provided by sensory data  [13]. A  tool  for
+where P is the Cauchy principal value. Combining x ( t ) and   behavior  description  of  nonlinear dynamical systems  is
+                                                                                                            iφ( t )                      based on the concept of symbolic encoding for transitionsH ( t ) as Z ( t ) = x ( t ) + iH ( t ) = A( t ) e    yields the analytical
+                                                     from smooth dynamics to a discrete symbolic description
+signal Z ( t ) . One important property of the Hilbert transform                                                                         [9].
+is that if the signal x ( t ) is monocomponent, then the time     The  stationary  motion  of  the  process dynamics  are
+derivative of instantaneous phase φ( )t will be the physical   confined  in compact  (i.e.,  closed and bounded)  region
+meaning of instantaneous frequency               Ω ∈\ n  if the stability conditions are satisfied. The phase
+                         dφ( t )                         space of the dynamical system is partitioned into a finite
+         ω( t ) =            .                                                   number of cells, so as to obtain a coordinate grid of the
+                                  dt
+                                                          space [14]. Encoding of Ω is accomplished by introducing a
+  The aim  of HHT  is  to decompose  the  signal  into
+                                                          mutually    exclusive   and    exhaustive    partitioning
+monocomponent  pieces  by  using  an  empirical  mode
+                                           B = {b1, … , bm } consisting of m cells. The process dynamicsdecomposition algorithm. An intrinsic mode function (IMF)
+is  a  function   that   satisfies  almost  monocomponent   describes an orbit in Ω as { x 0, … , x k }  x i ( t i ) ∈Ω , which
+requirements and it represents one and only one oscillation
+                                                             passes through or touches the cells of the partition B. Let us
+mode embedded in the data. Therefore, by applying the
+                                                          denote the cell visited by the trajectory { x 0, … , x k } at a timeHilbert transform to each IMF component, which is obtained
+from mode  decomposition,   it  is  possible  to  estimate    instant  ti as a random variable S that takes a symbol value
+instantaneous frequencies in the data. HHT also enables us  σ ∈Σ . The  set Σ  of symbols  that  label  the  partition
+to represent the amplitude and the instantaneous frequency                                                          elements is called the symbol alphabet. Each state  ix ∈Ω
+as functions of time in a three-dimensional plot, in which the
+                                                              generates a symbol defined by a mapping from the phaseenergy  density  of  the  signal can be contoured on  the
+frequency-time  plane  to  produce  the  Hilbert  energy   space into the symbol space as x i → σj . This mapping is
+spectrum [8].                                                    called Symbolic Encoding (SE) as it attributes a legal (i.e.,
+  Among other signal processing choices, HHT offers an                                                               physically admissible) symbol sequence {σ0, … , σk } to theattractive  means  for  developing  time-frequency-energy
+representations of signals suitable for anomaly, fault and   system dynamics starting { x 0, … , x k } from an initial state
+trend detection algorithms. They have been used in this way
+                                                                          0x . (Note: A symbol alphabet Σ  is called a generatingin signal processing and fault identification, among other
+                                                                     partition  of  the phase space Ω   if every  legal symbolapplications. The success of HHT in these and other areas
+can  be  attributed  to  the  inherent  ability  of  localized   sequence uniquely determines a specific initial condition 0x ,
+representations  to  reveal  the  superposition  of  different                                                                                        i.e., every symbolic orbit uniquely identifies one continuous
+structures occurring in these signals on different frequencies                                                          space orbit [10].)
+at different time instances (or on different energy levels at                                                            This creates a spatial and temporal discretization of the
+different locations).                                                        system dynamics  defined by  the  trajectories. Symbolic
+  C.  Symbolic Dynamics and Encoding                     encoding can be viewed as coarse graining of the phase
+                                                               space, which is subjected to (possible) loss of information  The concept of symbolic dynamics and  its merits for
+                                                                  resulting from granular imprecision of partitioning boxes.encoding nonlinear system dynamics from observed data
+                                                     However, the essential robust features (e.g., periodicity andsequence has utmost importance from data mining point of
+                                                               chaotic behavior of an orbit) are preserved in the symbolview. It not only helps us to describe the process dynamics
+                                                         sequences through an appropriate partitioning of the phasein  a  lower  dimensional  space  but  also overcome  the
+                                                          space [9] and usual difficulties that arise from measurementdifficulties  due   to   uncertainties  and   noise.  Let  a
+                                                             noise and  errors, and  sensitivity to  initial conditions tocontinuously varying physical process be modeled as
+                                                           analyze the process data is mostly evaded due to granular
+                                                                    partitioning.
+
+                                           4294
+
+[PAGE 5]
+     III. PROBLEM FORMULATION FOR TREND DETECTION          sequences at different slow time epochs.
+                                                                     4.  Construction  of   finite  state  automaton  from  the  Physical faults that gradually evolve over a prolonged
+                                                                generated symbol sequence and computation of theperiod   of   operation   influence   the  performance   of
+                                                                  instantaneous statistical pattern vectors, whose elementscomponents in electrical and mechanical system. Therefore
+                                                                    are obtained online from frequency counting of thefrom health monitoring point of view,  it is imperative to
+                                                           automaton states.detect the trends of incipient faults and anomalies at an early
+                                                                     5.   Identification of changes in statistical behavior based onstage and predict the future effects and consequences. This
+                                                                    the   derived   information   as   the   evolution   ofprovides a prognostic capability as well as diagnostics in
+                                                                  instantaneous probability vectors relative to the nominaladvanced health management systems. Similarly, component
+                                                                     condition.degradation occurs on a slow time scale with respect to the
+                                                            This procedure specifically accommodates localization ofsystem dynamics, which constitutes the fast time scale, and
+                                                                the time-frequency characteristics of the data in a loweris observed in very small magnitude changes in system
+                                                        dimension  than  the  process  space,  leading  to  databehavior before failure. The precursors to this type of slowly
+                                                        compression without losing pertinent information.approaching failure have to be monitored in order to predict
+                                                          For  trend  detection and  classification,  Hilbert-Huangthe remaining life of a component with the best accuracy.
+                                                            transform (HHT) of the data can also be utilized since HHT  Often a small part of the energy of the signals to be
+                                                                              is best suited to get a broad picture of the data in time-processed can be attributed to fault conditions and there is a
+                                                           frequency-energy space. This improves the solution to thesubstantial  level  of  noise  and  unmodeled  dynamics
+                                                                     classification problem and detection of the trends in the dataassociated with the observed process variables [15]. Our
+                                                              as the information relevant to the data is enhanced by HHT.technique for trend detection of anomalies has two features
+                                    A natural extension of trend detection will be to infer the(i) isolation of signal features that have a high degree of
+                                                    model and determine the model parameters from the data.correlation  with  anomalies;  and   (ii)  application  of  a
+                                                       Based on above discussion, the second algorithm makesdecision-algorithm to classify the set of signal features to
+                                                          use of the Hilbert-Huang transform of the signal whichidentify  nominal  and  anomalous  behavior.  The  basic
+                                                                represents nonlinear, non-stationary process dynamics. Thetechnique include preprocessing of time series data using the
+                                                        changes in the instantaneous frequency and the localizedwavelet analysis [7], which is well suited for time-frequency
+                                                         energy of the data may be associated with parametric andanalysis of non-stationary signals, for attenuation of noise
+                                                           non-parametric  anomalies  in  the  system.  The HHTand spurious disturbances in the raw time series data without
+                                                          procedure differs from the previous one as follows:any significant loss of pertinent information. The wavelet-
+                                                                     1.  Time  series data acquisition on the  fast scale fromtransformed data is partitioned using the maximum entropy
+                                                                  sensors and/or analytical measurements (i.e., outputs ofprinciple [6] to generate the symbol sequences. Then, the
+                                                                physics-based  or  empirical  model).  Data  sets  aretechnique builds probabilistic automata [16] from temporal
+                                                                     collected either  at different slow time epochs or asand  spatial data  series generated by a simple nonlinear
+                                                                      single set over the whole span of the data.spatial system [10]. The goal is to let the process describe
+                                                                     2.  Transformation of the data from time domain to theitself, without appealing to “a priori” assumptions about the
+                                                                    Hilbert  domain  for  information  enhancement  andprocess’s structure. Computational mechanics shows, from
+                                                                       localization of the raw time series.either empirical data or from a probabilistic description of
+                                                                     3.   Identification of changes in signal behavior based onbehavior, how to infer a model of the hidden process that
+                                                                    the   derived   information   as   the   evolution   ofgenerated  the  observed  behavior.  This  representation
+                                                                  instantaneous frequency and amplitude relative to thecaptures the patterns and regularities in the observations in a
+                                                           nominal condition.way that reflects the causal structure of the process [15].
+                                                    The major advantages of the developed techniques for  The procedure for trend detection of incipient faults and
+                                                            small anomaly detection and trend identification for faultsanomalies using the concept of wavelet transform-based
+                                                                are listed below:symbolic encoding (WT-SE) requires the following steps:
+1.  Time  series data acquisition on the  fast scale from   •  Robustness to measurement noise and spurious signals
+    sensors and/or analytical measurements (i.e., outputs of   •  Adaptability to low-resolution sensing due to the coarse
+    physics-based  or  empirical  model).  Data  sets  are       graining in space partitions
+    collected either  at different slow time epochs or as   •  Capability for early detection of anomalies because of
+     single set over the whole span of the data.                       sensitivity to signal distortion and real-time execution on
+2.  Transformation of the data from time domain to the      commercially available inexpensive platforms.
+    wavelet domain for attenuation of noise and spurious
+    disturbances in the raw time series.                                     IV. ALGORITHM VALIDATION
+3.  Transformation of wavelet data from the continuous    As an example, we illustrate an application of WT-SE
+    domain to the symbolic domain by partitioning into   based anomaly discovery and HHT based trend detection
+     finitely many  discrete  blocks  to  generate  symbol   algorithms for validation purposes. The example system
+
+
+                                           4295
+
+[PAGE 6]
+implements a second-order non-autonomous, forced Duffing   usually larger when this pseudo-frequency corresponds to
+equation with a cubic  nonlinearity  in one  of  the  state    the locally dominant frequencies in the underlying signal.
+variables [10][5], given by                                       In the context of this paper, Symbolic Encoding helps
+                      2                                                 estimating  instantaneous  probability  vectors  based  on          d x    dx                   2
+            + α  + x (1 + εx ) = A cos(ωt )              wavelet  transformed.  In  a  recent  study  [17],  Hilbert                       2
+             dt       dt                                                           transformed data is also used for symbolic encoding, albeit a
+where ε is not necessarily small. The numeric values for the                                                    two dimensional symbolization is performed in angular and
+system parameter and input excitation are chosen as follows:    radial directions. For this example, the number of states for
+ε = 1 , A = 22 and ω = 5 . The challenge is detection of the    finite state machine is chosen as 8 and the initial probability
+slowly varying dissipation parameter α, which is associated    vector,  P0,  is computed from  first ten seconds of  data.
+with  parametric  anomaly  during  a  fixed  time  frame.   Subsequently, a sliding window of length 10 seconds is used
+Furthermore,  the  non-stationary  data  of  the  system  is    for computation of instantaneous probabilities in 0.5 seconds
+corrupted with Gaussian noise to examine the robustness of    intervals. Figure 2 presents the time evolution of angle
+the algorithms. The phase plot of the data is shown in Figure   between  instantaneous  probability  vectors and  the  unit
+1, where the dissipation parameter α is increased gradually   vector in the direction of the  first component, which  is
+from 0.10 to 0.35 in a span of 400 seconds. The sampling   chosen as a reference.
+frequency of the data is 100 Hz. As seen in the figure, the                                                                        24
+signal content practically overlaps in the domain of α.
+                                                                        22
+    8
+                                                         α=0.10-0.15          20
+    6                                                   α=0.15-0.20
+                                                         α=0.20-0.25          18
+                                                         α=0.25-0.30
+    4
+                                                         α=0.30-0.35          16                                                                                                                                                  (deg)
+
+    2                                                                   14                                                                                                                                                  Angle
+                                                                        12
+    0 dx/dt
+                                                                        10
+    -2
+                                                                          8
+
+    -4
+                                                                          6
+                                                                           0     50     100    150    200    250    300    350    400
+    -6                                                                               Time (sec)
+                                                              Figure 2. Time evolution of instantaneous probability vector
+    -8                                                                                  using WT-SE
+      -2      -1.5      -1      -0.5     0      0.5     1      1.5     2
+                                           x(t)                          The time-frequency-energy localizations of the data using
+Figure 1. Phase plot of Duffing system with variable dissipation  HHT are presented in Figure 3. The frequency spectrum of
+                      parameter α                            the data is unaffected as the parameter changes. This makes
+   It should be noted that both the wavelet-based and HHT-    the frequency based analysis such as FFT ineffective for this
+based  algorithms  utilize  only  time  series  data  of  the   kind of anomalies and detection of trend in the data becomes
+available measurements. Also,  the noise content of  the   conspicuously difficult. Yet, in Figure 3 we can see the
+signal is not filtered so that we are able to evaluate the   decrease in the energy of the lower fundamental frequency
+robustness of the algorithms. Undoubtedly, full observability   of  the  signal  as parameter α increases  (i.e. more  the
+and noise filtering would enhance the analysis results.           dissipation, less the energy remaining in the system). Just
+   First, the WT-SE algorithm is employed for detection of   observing the energy content of this frequency makes a
+the trend of anomaly in the time series data of the Duffing    straightforward trend detection of the parametric anomaly.
+system. As described earlier, WT is used for attenuation of   Another important feature of the analysis  is rejection of
+noise and spurious disturbances in the raw time series as   noise and  distortions  in  the  data. This  is achieved by
+well as time localized analysis of the data. For this example,   checking the cross-correlations between the signal and each
+we used 1st order Daubechies (Haar) wavelet in the analysis.  IMF  component  during  the HTT  process.  Only  the
+Although the usual practice is to select a wavelet basis that   instantaneous  frequencies  and  amplitudes  of  highly
+has similar characteristics with the signal, our approach for    correlated IMF components are evaluated since the  rest
+symbolization of  the wavelet  coefficients  via maximum    constitutes the noise and residuals in the signal. In this
+entropy principle relaxes this criteria. The more important   example, only two IMF components are analyzed since
+factor in the analysis is selection of the pseudo-frequency of   mean of their correlation sequences are at least three times
+the wavelet, since the wavelet coefficients of the signal are    that of remaining three components.
+
+                                           4296
+
+[PAGE 7]
+                                                               noise-corrupted nonlinear and non-stationary data set. WT-
+                                             SE and HHT algorithms have been executed in real time
+                                                           with low memory requirements and both of them effectively
+                                                               detected the trend of a parametric anomaly in the time series.
+                                                      Both algorithms are able to capture the non-linear nature of
+                                                                the Duffing system as the dissipation parameter changes.
+                                                   The future work includes incorporating symbolic encoding
+                                                                   for the HHT data and performing the signal analysis under
+                                                                    distortions  and  non-Gaussian  noise  to  investigate  the
+                                                              robustness and adaptability of the algorithms.  It  is also
+                                                      aimed to optimize the algorithms to obtain better memory
+                                                            requirement and execution times.
+
+                                                                      REFERENCES
+                                                                           [1]  D.  C.  Champeney, A Handbook  of  Fourier  Theorems,
+                                                               Cambridge University Press, 1987.
+                                                                           [2]  P. Flandrin, Time-frequency/Time-scale analysis, Academic
+                                                                               Press, 1999.
+                                                                           [3]  H. Kantz and T. Schreiber, Nonlinear Time Series Analysis,
+                                                               Cambridge University Press, 2004.
+                                                                           [4]   J. Franke, W. Härdle and D. Martin, Robust and Nonlinear
+                                                              Time Series Analysis, Springer-Verlag, 1984.
+                                                                           [5]  N. E. Huang and S. S. P. Shen, The Hilbert-Huang Transform
+                                                              and Its Applications, World Scientific, 2005.
+                                                                           [6]  V. Rajagopalan and A. Ray, “Symbolic time series analysis
+  Figure 3. Time/Frequency/Energy evolutions of the data using          via wavelet-based partitioning,” Signal Processing, vol. 86,
+                  Hilbert-Huang transform                            no.11, pp. 3309-3320, 2006.
+                                                                           [7]  G. Kaiser, A Friendly Guide to Wavelets, Birkhauser, 1994.   The computational complexity is obviously a big concern
+                                                                           [8]  N. E. Huang, Z. Shen, S. R. Long, M. C. Wu, H. H. Shih, Q.
+ for data mining applications when real time analysis or
+                                                                   Zheng, N.-C. Yen, C. C. Tung and H. H. Liu, “The empirical
+ online implementation  of  the  algorithms  is  required.  It                                                        mode decomposition and the Hilbert spectrum for nonlinear
+ should be noted that we don’t claim the algorithms to be       and non-stationary time series analysis”, Proc. Royal Society,
+ optimal  with  respect  to  execution  time  or  memory        A: Math. Phys. Eng. Sci., vol. 454, pp. 903-995, 1998.
+ requirement. Yet,  it is observed that both algorithms meet    [9]  R. Badii and A. Politi, Complexity: Hierarchical Structures
+ real time execution requirement as they finish analysis of       and Scaling in Physics, Cambridge University Press, 1999.
+ 400 seconds of data (i.e. 40000 data points) on the average    [10] A. Ray, “Symbolic dynamic analysis of complex systems for
+ of 4.756 seconds and 3.492 seconds for WT-SE and HHT       anomaly detection,” Signal Processing, vol. 84, no. 7, pp.
+                                                                    1115-1130, 2004. algorithms, respectively, on a 3.40 GHz Pentium 4 processor
+                                                                      [11] M. M. Reda Taha, A. Noureldin, J. L. Lucero and T. J. Baca,
+ in MATLAB 7.1 environment. From memory point of view,
+                                                                  “Wavelet  transform  for  structural  health  monitoring: A
+ the requirement of (random access) memory is in WT-SE                                                            compendium  of  uses  and  features,”  Structural  Health
+ case ~30 MB whereas in HHT case ~50 MB; both are        Monitoring, vol. 5, no. 3, pp. 267-295, 2006.
+ reasonable for a commercially available laptop computer.        [12] Z. K. Peng, P. W. Tse and F. L. Chub, “A comparison study
+                                                                           of improved Hilbert–Huang transform and wavelet transform:             V. SUMMARY AND CONCLUSIONS
+                                                                             application to fault diagnosis for rolling bearing,” Mechanical
+   This paper presents two novel data mining methods and                                                                     Systems and Signal Processing, no. 19, pp. 974-988, 2005.
+ their comparison based on  real-time implementation  for                                                                      [13] H. D.  I. Abarbanel, Analysis  of Observed Chaotic Data,
+ trend detection of anomalies and faults. The first method         Springer, 1996.
+ uses  the  concept  of  wavelet  transform-based  symbolic    [14] D.  Lind  and M.  Marcus, An  Introduction  to  Symbolic
+ encoding (WT-SE), since adaptive window characteristic of       Dynamics and Coding, Cambridge University Press, 1995.
+ wavelet is suitable for analysis of non-stationary data and    [15] R. Samsi, A Probabilistic Framework for Fault Detection in
+ symbolic encoding allows the process to describe  itself,        Induction Motors, PhD. Thesis  in  Electrical Engineering,
+ without resorting to assumptions about  its structure. The        Pennsylvania State University, 2005.
+                                                                      [16] J. E. Hopcroft, R. Motwani and J. D. Ullman, Introduction to second approach utilized Hilbert-Huang Transform (HHT)
+                                                                Automata Theory, Languages, and Computation, Addison-
+ to analyze non-stationary and nonlinear data. HHT offers the                                                                   Wesley, 2003.
+ ability  to  perform  flexible  localized  analysis  in  three                                                                      [17] A. Subbu  and A.  Ray,  “Space  partitioning  via  Hilbert
+ independent variables (i.e. time-frequency-energy).                  transform for symbolic time series analysis,” Applied Physics
+   The Duffing system is used to validate the algorithms on a         Letters, vol. 92, no. 8, pp. 084107-1 to 084107-3, 2008.
+
+
+                                            4297
+
+
+
+
+ViewView publicationpublication statsstats

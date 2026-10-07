@@ -1,0 +1,47 @@
+[
+  {
+    "table": "clubs",
+    "rows": 19,
+    "columns": 21
+  },
+  {
+    "table": "games",
+    "rows": 6421,
+    "columns": 29
+  },
+  {
+    "table": "appearances",
+    "rows": 123483,
+    "columns": 18
+  },
+  {
+    "table": "club_games",
+    "rows": 8911,
+    "columns": 15
+  },
+  {
+    "table": "game_events",
+    "rows": 60033,
+    "columns": 16
+  },
+  {
+    "table": "game_lineups",
+    "rows": 158876,
+    "columns": 15
+  },
+  {
+    "table": "transfers",
+    "rows": 5943,
+    "columns": 17
+  },
+  {
+    "table": "player_valuations",
+    "rows": 59298,
+    "columns": 10
+  },
+  {
+    "table": "player_profiles",
+    "rows": 3024,
+    "columns": 30
+  }
+]

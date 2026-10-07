@@ -1,0 +1,363 @@
+match_id,season,match_date,home_team_source,away_team_source,event_download_success,lineup_download_success,source_events,cohort_events,unresolved_source_team_events,cohort_players_with_events
+3754217,2015-16,2015-09-19,Chelsea,Arsenal,True,True,3732,3732,0,28
+3754117,2015-16,2015-12-13,Aston Villa,Arsenal,True,True,3451,3451,0,28
+3754296,2015-16,2015-12-21,Arsenal,Manchester City,True,True,3858,3858,0,28
+3753983,2015-16,2015-10-31,Swansea City,Arsenal,True,True,3715,1722,0,14
+3754160,2015-16,2015-12-05,Arsenal,Sunderland,True,True,3489,3489,0,28
+3754129,2015-16,2015-08-24,Arsenal,Liverpool,True,True,4090,4090,0,27
+3754309,2015-16,2015-12-26,Southampton,Arsenal,True,True,3326,1976,0,14
+3754047,2015-16,2015-11-29,Liverpool,Swansea City,True,True,3780,2031,0,14
+3754058,2015-16,2016-01-02,Leicester City,AFC Bournemouth,True,True,3576,1710,0,13
+3754245,2015-16,2015-10-17,West Bromwich Albion,Sunderland,True,True,3078,1446,0,14
+3754136,2015-16,2015-12-19,Newcastle United,Aston Villa,True,True,3284,3284,0,26
+3754037,2015-16,2016-04-30,Everton,AFC Bournemouth,True,True,3913,3913,0,28
+3754039,2015-16,2016-02-13,Crystal Palace,Watford,True,True,3169,1651,0,13
+3754041,2015-16,2016-05-15,Arsenal,Aston Villa,True,True,3772,3772,0,27
+3754042,2015-16,2016-05-15,West Bromwich Albion,Liverpool,True,True,3617,2263,0,14
+3754043,2015-16,2016-03-20,Tottenham Hotspur,AFC Bournemouth,True,True,3752,3752,0,28
+3754045,2015-16,2015-12-29,Leicester City,Manchester City,True,True,3370,1905,0,14
+3754048,2015-16,2016-04-13,Crystal Palace,Everton,True,True,3643,3643,0,28
+3754050,2015-16,2016-03-01,Sunderland,Crystal Palace,True,True,3047,3047,0,28
+3754053,2015-16,2016-03-13,Aston Villa,Tottenham Hotspur,True,True,3641,3641,0,27
+3754055,2015-16,2016-05-11,Liverpool,Chelsea,True,True,3953,3953,0,28
+3754226,2015-16,2015-12-30,Sunderland,Liverpool,True,True,3165,3165,0,28
+3754014,2015-16,2015-12-26,Stoke City,Manchester United,True,True,3074,1714,0,13
+3754135,2015-16,2015-12-05,Stoke City,Manchester City,True,True,3487,1859,0,14
+3754293,2015-16,2015-11-07,Stoke City,Chelsea,True,True,3088,1779,0,14
+3754339,2015-16,2015-09-26,Stoke City,AFC Bournemouth,True,True,3285,1768,0,14
+3754347,2015-16,2015-12-05,Manchester United,West Ham United,True,True,3300,1948,0,14
+3754255,2015-16,2015-12-13,Liverpool,West Bromwich Albion,True,True,3436,2279,0,14
+3754278,2015-16,2015-10-03,AFC Bournemouth,Watford,True,True,3519,1871,0,13
+3753979,2015-16,2015-11-23,Crystal Palace,Sunderland,True,True,3068,3068,0,28
+3753972,2015-16,2015-11-21,Swansea City,AFC Bournemouth,True,True,3683,1985,0,14
+3753974,2015-16,2015-12-26,Newcastle United,Everton,True,True,3562,3562,0,26
+3753993,2015-16,2015-08-15,Sunderland,Norwich City,True,True,3573,1637,0,13
+3754015,2015-16,2015-10-25,Manchester United,Manchester City,True,True,3645,3645,0,28
+3754038,2015-16,2015-11-29,Norwich City,Arsenal,True,True,3776,2288,0,14
+3754001,2015-16,2015-09-26,Newcastle United,Chelsea,True,True,3392,3392,0,28
+3754008,2015-16,2015-09-26,Manchester United,Sunderland,True,True,3433,3433,0,27
+3754029,2015-16,2015-11-02,Tottenham Hotspur,Aston Villa,True,True,3438,3438,0,28
+3753995,2015-16,2015-10-03,Chelsea,Southampton,True,True,3606,2057,0,14
+3753999,2015-16,2015-10-17,Watford,Arsenal,True,True,3671,2277,0,14
+3754017,2015-16,2015-10-24,Aston Villa,Swansea City,True,True,3169,1518,0,13
+3754023,2015-16,2015-08-29,AFC Bournemouth,Leicester City,True,True,3153,1689,0,14
+3753984,2015-16,2015-08-29,Liverpool,West Ham United,True,True,3420,2108,0,14
+3754011,2015-16,2015-09-20,Southampton,Manchester United,True,True,3531,2023,0,14
+3754010,2015-16,2015-09-19,Newcastle United,Watford,True,True,3381,1920,0,14
+3754028,2015-16,2015-11-28,Manchester City,Southampton,True,True,3364,1562,0,14
+3753996,2015-16,2015-11-21,Chelsea,Norwich City,True,True,3605,2224,0,14
+3754025,2015-16,2015-12-19,Chelsea,Sunderland,True,True,3346,3346,0,28
+3754068,2015-16,2015-09-19,Aston Villa,West Bromwich Albion,True,True,2925,1713,0,14
+3754056,2015-16,2015-12-28,Everton,Stoke City,True,True,3547,1851,0,13
+3754040,2015-16,2015-09-20,Liverpool,Norwich City,True,True,3690,2117,0,14
+3754074,2015-16,2015-10-04,Swansea City,Tottenham Hotspur,True,True,3301,1820,0,14
+3754076,2015-16,2015-10-03,Sunderland,West Ham United,True,True,3210,1473,0,13
+3754067,2015-16,2015-10-17,Crystal Palace,West Ham United,True,True,3368,1382,0,14
+3754079,2015-16,2015-10-03,Manchester City,Newcastle United,True,True,3448,3448,0,28
+3754090,2015-16,2015-10-31,Newcastle United,Stoke City,True,True,3072,1569,0,13
+3754083,2015-16,2015-08-29,Chelsea,Crystal Palace,True,True,3497,3497,0,28
+3754077,2015-16,2015-09-19,Manchester City,West Ham United,True,True,3799,2502,0,14
+3754060,2015-16,2015-10-04,Everton,Liverpool,True,True,3165,3165,0,26
+3754073,2015-16,2015-12-05,Chelsea,AFC Bournemouth,True,True,3483,3483,0,26
+3754051,2015-16,2015-12-20,Watford,Liverpool,True,True,2937,1791,0,14
+3754093,2015-16,2015-11-29,Tottenham Hotspur,Chelsea,True,True,3398,3398,0,26
+3754046,2015-16,2015-12-07,Everton,Crystal Palace,True,True,3615,3615,0,25
+3754072,2015-16,2015-12-12,Sunderland,Watford,True,True,3480,1694,0,14
+3754082,2015-16,2015-11-01,Everton,Sunderland,True,True,3651,3651,0,28
+3754106,2015-16,2015-09-13,Leicester City,Aston Villa,True,True,3347,1698,0,14
+3754099,2015-16,2015-10-03,Crystal Palace,West Bromwich Albion,True,True,3070,1791,0,13
+3754098,2015-16,2015-10-31,Chelsea,Liverpool,True,True,3783,3783,0,28
+3754057,2015-16,2015-12-26,Tottenham Hotspur,Norwich City,True,True,3347,1897,0,14
+3754112,2015-16,2015-08-09,Newcastle United,Southampton,True,True,3368,1834,0,14
+3754054,2015-16,2015-12-26,Manchester City,Sunderland,True,True,3488,3488,0,28
+3754113,2015-16,2015-12-05,Southampton,Aston Villa,True,True,3398,1383,0,14
+3754107,2015-16,2015-08-14,Aston Villa,Manchester United,True,True,3677,3677,0,27
+3754105,2015-16,2015-09-28,West Bromwich Albion,Everton,True,True,3346,1808,0,14
+3754097,2015-16,2015-08-08,Manchester United,Tottenham Hotspur,True,True,3780,3780,0,28
+3754102,2015-16,2015-10-18,Newcastle United,Norwich City,True,True,3307,1559,0,14
+3754115,2015-16,2015-10-17,Chelsea,Aston Villa,True,True,3332,3332,0,27
+3754148,2015-16,2015-09-13,Sunderland,Tottenham Hotspur,True,True,2992,2992,0,28
+3754169,2015-16,2015-09-19,AFC Bournemouth,Sunderland,True,True,3405,3405,0,28
+3754174,2015-16,2015-09-26,Leicester City,Arsenal,True,True,3523,1993,0,14
+3754185,2015-16,2015-11-21,Watford,Manchester United,True,True,3361,1842,0,14
+3754162,2015-16,2015-12-12,AFC Bournemouth,Manchester United,True,True,3303,3303,0,27
+3754171,2015-16,2015-10-04,Arsenal,Manchester United,True,True,3762,3762,0,28
+3754119,2015-16,2015-10-25,Sunderland,Newcastle United,True,True,2978,2978,0,28
+3754126,2015-16,2015-10-24,Arsenal,Everton,True,True,3771,3771,0,27
+3754167,2015-16,2015-10-31,Manchester City,Norwich City,True,True,3731,2517,0,14
+3754145,2015-16,2015-08-10,West Bromwich Albion,Manchester City,True,True,4018,2604,0,14
+3754153,2015-16,2015-12-19,Stoke City,Crystal Palace,True,True,2973,1316,0,14
+3754143,2015-16,2015-12-06,Newcastle United,Liverpool,True,True,3574,3574,0,28
+3754186,2015-16,2015-11-28,Leicester City,Manchester United,True,True,3264,2075,0,12
+3754130,2015-16,2015-12-28,Norwich City,Aston Villa,True,True,2990,1605,0,14
+3754188,2015-16,2015-12-19,Southampton,Tottenham Hotspur,True,True,3249,1598,0,14
+3754178,2015-16,2015-11-28,Aston Villa,Watford,True,True,3023,1927,0,13
+3754157,2015-16,2015-11-28,AFC Bournemouth,Everton,True,True,3695,3695,0,27
+3754166,2015-16,2015-12-19,Everton,Leicester City,True,True,3208,1994,0,13
+3754211,2015-16,2015-11-21,Newcastle United,Leicester City,True,True,3321,1741,0,14
+3754150,2015-16,2015-11-28,Sunderland,Stoke City,True,True,3358,1616,0,14
+3754218,2015-16,2015-12-12,Crystal Palace,Southampton,True,True,3072,1403,0,13
+3754205,2015-16,2015-08-29,Newcastle United,Arsenal,True,True,3967,3967,0,27
+3754221,2015-16,2015-08-30,Swansea City,Manchester United,True,True,3707,2258,0,14
+3754198,2015-16,2015-10-17,Tottenham Hotspur,Liverpool,True,True,3601,3601,0,26
+3754193,2015-16,2015-10-17,Manchester City,AFC Bournemouth,True,True,3616,3616,0,28
+3754222,2015-16,2015-09-20,Tottenham Hotspur,Crystal Palace,True,True,3367,3367,0,28
+3754212,2015-16,2015-09-26,Liverpool,Aston Villa,True,True,3455,3455,0,25
+3754223,2015-16,2015-10-31,Crystal Palace,Manchester United,True,True,3193,3193,0,26
+3754197,2015-16,2015-09-26,Tottenham Hotspur,Manchester City,True,True,3662,3662,0,28
+3754208,2015-16,2015-11-21,Manchester City,Liverpool,True,True,3720,3720,0,28
+3754204,2015-16,2015-08-29,Aston Villa,Sunderland,True,True,3326,3326,0,26
+3754194,2015-16,2015-11-07,West Ham United,Everton,True,True,3392,1722,0,13
+3754219,2015-16,2015-12-19,West Bromwich Albion,AFC Bournemouth,True,True,3058,1933,0,14
+3754254,2015-16,2015-08-22,Manchester United,Newcastle United,True,True,3700,3700,0,28
+3754230,2015-16,2015-10-25,Liverpool,Southampton,True,True,3621,2160,0,14
+3754285,2015-16,2015-12-26,Aston Villa,West Ham United,True,True,3129,1761,0,13
+3754233,2015-16,2015-08-23,Everton,Manchester City,True,True,3506,3506,0,28
+3754270,2015-16,2015-08-15,Tottenham Hotspur,Stoke City,True,True,3630,1916,0,13
+3754237,2015-16,2015-08-08,Leicester City,Sunderland,True,True,3036,1653,0,13
+3754257,2015-16,2015-09-12,Crystal Palace,Manchester City,True,True,3251,3251,0,28
+3754266,2015-16,2015-09-27,Watford,Crystal Palace,True,True,2912,1348,0,14
+3754256,2015-16,2015-10-17,Everton,Manchester United,True,True,3727,3727,0,27
+3754288,2015-16,2015-10-24,West Ham United,Chelsea,True,True,3175,1686,0,14
+3754238,2015-16,2015-11-07,AFC Bournemouth,Newcastle United,True,True,3454,3454,0,28
+3754234,2015-16,2015-10-25,AFC Bournemouth,Tottenham Hotspur,True,True,3526,3526,0,28
+3754246,2015-16,2015-08-29,Manchester City,Watford,True,True,4025,2293,0,14
+3754263,2015-16,2015-10-24,Leicester City,Crystal Palace,True,True,3334,1743,0,14
+3754268,2015-16,2015-08-29,Tottenham Hotspur,Everton,True,True,3381,3381,0,27
+3754291,2015-16,2015-12-28,Watford,Tottenham Hotspur,True,True,3287,1944,0,14
+3754283,2015-16,2015-11-21,Everton,Aston Villa,True,True,3695,3695,0,28
+3754276,2015-16,2015-12-13,Tottenham Hotspur,Newcastle United,True,True,3132,3132,0,27
+3754287,2015-16,2015-12-26,Chelsea,Watford,True,True,3268,1920,0,13
+3754298,2015-16,2015-09-19,Swansea City,Everton,True,True,3514,1808,0,13
+3754315,2015-16,2015-09-12,Norwich City,AFC Bournemouth,True,True,3361,1718,0,14
+3754330,2015-16,2015-10-03,Aston Villa,Stoke City,True,True,3604,1942,0,14
+3754297,2015-16,2015-11-07,Manchester United,West Bromwich Albion,True,True,3585,2318,0,14
+3754301,2015-16,2015-11-21,West Bromwich Albion,Arsenal,True,True,3503,2290,0,14
+3754304,2015-16,2015-11-28,Crystal Palace,Newcastle United,True,True,3293,3293,0,28
+3754328,2015-16,2015-12-12,Manchester City,Swansea City,True,True,3897,2021,0,14
+3754329,2015-16,2015-09-14,West Ham United,Newcastle United,True,True,3326,1949,0,14
+3754013,2015-16,2015-12-14,Leicester City,Chelsea,True,True,3225,2001,0,14
+3754044,2015-16,2015-12-19,Manchester United,Norwich City,True,True,3497,2198,0,12
+3754351,2015-16,2015-11-08,Liverpool,Crystal Palace,True,True,3143,3143,0,28
+3754343,2015-16,2015-12-26,Liverpool,Leicester City,True,True,3205,1982,0,14
+3754109,2015-16,2015-11-22,Tottenham Hotspur,West Ham United,True,True,3489,1898,0,14
+3754182,2015-16,2015-12-12,Norwich City,Everton,True,True,3670,2071,0,13
+3754240,2015-16,2015-09-12,Arsenal,Stoke City,True,True,3499,2195,0,14
+3754336,2015-16,2015-09-12,Everton,Chelsea,True,True,3538,3538,0,28
+3754265,2015-16,2015-11-08,Arsenal,Tottenham Hotspur,True,True,3461,3461,0,28
+3754000,2015-16,2015-11-07,Sunderland,Southampton,True,True,3229,1305,0,14
+3754003,2015-16,2015-09-12,Manchester United,Liverpool,True,True,3688,3688,0,28
+3754344,2015-16,2015-08-15,Swansea City,Newcastle United,True,True,3698,1350,0,14
+3754131,2015-16,2015-08-22,West Ham United,AFC Bournemouth,True,True,3222,1731,0,14
+3754300,2015-16,2015-08-08,Everton,Watford,True,True,3564,2125,0,14
+3754312,2015-16,2015-08-16,Crystal Palace,Arsenal,True,True,3777,3777,0,28
+3754138,2015-16,2015-08-08,Norwich City,Crystal Palace,True,True,3049,1226,0,14
+3754190,2015-16,2015-08-22,Crystal Palace,Aston Villa,True,True,2959,2959,0,26
+3754066,2015-16,2015-08-16,Manchester City,Chelsea,True,True,3412,3412,0,28
+3754034,2015-16,2015-08-15,Southampton,Everton,True,True,3292,1532,0,14
+3753985,2015-16,2015-08-09,Stoke City,Liverpool,True,True,3387,1803,0,13
+3753987,2015-16,2015-08-22,Leicester City,Tottenham Hotspur,True,True,3141,1907,0,14
+3754180,2015-16,2015-08-22,Sunderland,Swansea City,True,True,3375,1403,0,14
+3754059,2015-16,2015-08-23,West Bromwich Albion,Chelsea,True,True,3218,1726,0,14
+3754064,2015-16,2016-03-20,Southampton,Liverpool,True,True,3841,1989,0,14
+3754065,2015-16,2016-01-13,Tottenham Hotspur,Leicester City,True,True,3106,1840,0,14
+3754173,2015-16,2015-12-28,Arsenal,AFC Bournemouth,True,True,4041,4041,0,27
+3754175,2015-16,2016-04-02,Sunderland,West Bromwich Albion,True,True,3045,1671,0,12
+3753973,2015-16,2016-03-19,Chelsea,West Ham United,True,True,3478,1976,0,14
+3753975,2015-16,2016-01-23,Sunderland,AFC Bournemouth,True,True,3769,3769,0,27
+3753976,2015-16,2016-03-02,Arsenal,Swansea City,True,True,3939,2314,0,13
+3753980,2015-16,2016-03-19,Everton,Arsenal,True,True,3886,3886,0,27
+3753981,2015-16,2016-01-12,Aston Villa,Crystal Palace,True,True,3502,3502,0,25
+3753986,2015-16,2016-04-10,Liverpool,Stoke City,True,True,3509,1873,0,14
+3753988,2015-16,2016-03-12,AFC Bournemouth,Swansea City,True,True,3575,1679,0,14
+3753989,2015-16,2016-05-11,Sunderland,Everton,True,True,3553,3553,0,27
+3753990,2015-16,2016-04-24,Sunderland,Arsenal,True,True,3559,3559,0,27
+3753991,2015-16,2016-03-02,Liverpool,Manchester City,True,True,3887,3887,0,28
+3753992,2015-16,2016-05-08,Tottenham Hotspur,Southampton,True,True,3414,2157,0,13
+3753994,2015-16,2016-05-15,Southampton,Crystal Palace,True,True,3263,1615,0,14
+3753997,2015-16,2016-02-02,West Ham United,Aston Villa,True,True,3694,1335,0,13
+3754002,2015-16,2016-03-14,Leicester City,Newcastle United,True,True,3599,1762,0,14
+3754004,2015-16,2016-01-16,AFC Bournemouth,Norwich City,True,True,3320,1575,0,14
+3754005,2015-16,2016-03-02,Stoke City,Newcastle United,True,True,3372,1531,0,14
+3754009,2015-16,2016-04-17,Arsenal,Crystal Palace,True,True,4013,4013,0,28
+3754012,2015-16,2016-02-27,Southampton,Chelsea,True,True,3604,2215,0,14
+3754016,2015-16,2016-04-09,Southampton,Newcastle United,True,True,3408,1750,0,14
+3754018,2015-16,2016-05-01,Swansea City,Liverpool,True,True,4079,2225,0,14
+3754019,2015-16,2015-12-28,Manchester United,Chelsea,True,True,3590,3590,0,27
+3754021,2015-16,2016-01-12,AFC Bournemouth,West Ham United,True,True,3622,1879,0,14
+3754022,2015-16,2016-04-09,Crystal Palace,Norwich City,True,True,2682,1369,0,14
+3754024,2015-16,2016-04-16,Newcastle United,Swansea City,True,True,3335,1316,0,14
+3754026,2015-16,2016-05-07,Crystal Palace,Stoke City,True,True,2816,1577,0,13
+3754027,2015-16,2016-01-16,Tottenham Hotspur,Sunderland,True,True,3496,3496,0,28
+3754030,2015-16,2016-04-09,Watford,Everton,True,True,3391,1901,0,14
+3754031,2015-16,2016-02-13,Sunderland,Manchester United,True,True,3160,3160,0,28
+3754033,2015-16,2016-05-07,Leicester City,Everton,True,True,3269,1839,0,14
+3754035,2015-16,2016-04-09,Manchester City,West Bromwich Albion,True,True,3227,1970,0,14
+3754036,2015-16,2016-01-02,Sunderland,Aston Villa,True,True,3436,3436,0,28
+3754061,2015-16,2016-03-05,Chelsea,Stoke City,True,True,3566,1756,0,14
+3754062,2015-16,2016-01-13,Chelsea,West Bromwich Albion,True,True,3369,1980,0,13
+3754063,2015-16,2016-04-30,Watford,Aston Villa,True,True,3555,1402,0,13
+3754069,2015-16,2016-01-02,Arsenal,Newcastle United,True,True,3589,3589,0,27
+3754070,2015-16,2016-05-07,Aston Villa,Newcastle United,True,True,3587,3587,0,26
+3754071,2015-16,2016-01-13,Swansea City,Sunderland,True,True,3345,1675,0,14
+3754075,2015-16,2016-04-02,Aston Villa,Chelsea,True,True,3900,3900,0,28
+3754080,2015-16,2016-02-06,Tottenham Hotspur,Watford,True,True,3555,2193,0,14
+3754081,2015-16,2016-03-06,West Bromwich Albion,Manchester United,True,True,3644,1904,0,14
+3754084,2015-16,2016-01-23,West Bromwich Albion,Aston Villa,True,True,3059,1745,0,13
+3754087,2015-16,2016-04-02,Liverpool,Tottenham Hotspur,True,True,3601,3601,0,27
+3754088,2015-16,2016-01-12,Newcastle United,Manchester United,True,True,3697,3697,0,27
+3754089,2015-16,2016-02-02,Crystal Palace,AFC Bournemouth,True,True,3147,3147,0,28
+3754092,2015-16,2016-05-02,Chelsea,Tottenham Hotspur,True,True,3299,3299,0,26
+3754094,2015-16,2016-02-02,Manchester United,Stoke City,True,True,3655,1771,0,14
+3754095,2015-16,2016-02-02,Sunderland,Manchester City,True,True,3507,3507,0,28
+3754100,2015-16,2016-03-20,Newcastle United,Sunderland,True,True,3138,3138,0,28
+3754103,2015-16,2016-02-03,Watford,Chelsea,True,True,4012,2194,0,12
+3754108,2015-16,2016-05-07,Sunderland,Chelsea,True,True,3537,3537,0,28
+3754110,2015-16,2016-01-23,West Ham United,Manchester City,True,True,3478,1817,0,14
+3754111,2015-16,2016-01-24,Arsenal,Chelsea,True,True,3741,3741,0,27
+3754114,2015-16,2016-01-03,Crystal Palace,Chelsea,True,True,3783,3783,0,27
+3754116,2015-16,2016-04-09,Swansea City,Chelsea,True,True,3995,2315,0,14
+3754118,2015-16,2016-04-02,Arsenal,Watford,True,True,3845,2477,0,14
+3754121,2015-16,2016-02-27,Watford,AFC Bournemouth,True,True,3008,1626,0,14
+3754123,2015-16,2016-05-15,Everton,Norwich City,True,True,3333,1601,0,14
+3754124,2015-16,2016-03-20,Manchester City,Manchester United,True,True,3615,3615,0,28
+3754125,2015-16,2016-01-16,Chelsea,Everton,True,True,4049,4049,0,28
+3754127,2015-16,2016-02-06,Stoke City,Everton,True,True,3780,1472,0,14
+3754132,2015-16,2016-04-30,Stoke City,Sunderland,True,True,2781,1321,0,14
+3754134,2015-16,2016-05-10,West Ham United,Manchester United,True,True,3199,1770,0,14
+3754137,2015-16,2016-04-16,Everton,Southampton,True,True,3186,1610,0,14
+3754140,2015-16,2016-01-03,Everton,Tottenham Hotspur,True,True,3896,3896,0,27
+3754142,2015-16,2016-01-13,Manchester City,Everton,True,True,4015,4015,0,25
+3754144,2015-16,2016-04-02,AFC Bournemouth,Manchester City,True,True,3896,3896,0,28
+3754147,2015-16,2016-02-14,Manchester City,Tottenham Hotspur,True,True,4174,4174,0,27
+3754149,2015-16,2016-05-15,Swansea City,Manchester City,True,True,4031,2118,0,13
+3754152,2015-16,2016-04-10,Sunderland,Leicester City,True,True,3390,1607,0,14
+3754154,2015-16,2016-04-23,Liverpool,Newcastle United,True,True,3800,3800,0,28
+3754159,2015-16,2016-05-17,Manchester United,AFC Bournemouth,True,True,3824,3824,0,28
+3754163,2015-16,2016-01-24,Everton,Swansea City,True,True,3909,2270,0,14
+3754164,2015-16,2016-03-05,Southampton,Sunderland,True,True,3117,1254,0,14
+3754165,2015-16,2016-05-01,Manchester United,Leicester City,True,True,3600,2283,0,14
+3754170,2015-16,2016-04-30,Newcastle United,Crystal Palace,True,True,3297,3297,0,28
+3754172,2015-16,2016-04-16,Norwich City,Sunderland,True,True,2670,1136,0,14
+3754176,2015-16,2016-04-02,West Ham United,Crystal Palace,True,True,2957,1150,0,13
+3754177,2015-16,2016-03-05,Newcastle United,AFC Bournemouth,True,True,3938,3938,0,27
+3754179,2015-16,2016-01-23,Crystal Palace,Tottenham Hotspur,True,True,3319,3319,0,27
+3754181,2015-16,2016-03-19,Crystal Palace,Leicester City,True,True,3090,1714,0,14
+3754184,2015-16,2016-04-30,Arsenal,Norwich City,True,True,3732,2439,0,14
+3754187,2015-16,2016-04-18,Stoke City,Tottenham Hotspur,True,True,3341,1712,0,14
+3754191,2015-16,2015-11-01,Southampton,AFC Bournemouth,True,True,3763,1937,0,14
+3754195,2015-16,2015-12-28,West Bromwich Albion,Newcastle United,True,True,2877,1426,0,14
+3754200,2015-16,2016-01-23,Manchester United,Southampton,True,True,3359,1795,0,14
+3754201,2015-16,2016-02-02,Arsenal,Southampton,True,True,3521,2037,0,13
+3754202,2015-16,2016-01-17,Stoke City,Arsenal,True,True,3531,1824,0,13
+3754206,2015-16,2016-04-19,Newcastle United,Manchester City,True,True,3682,3682,0,28
+3754209,2015-16,2016-04-10,Tottenham Hotspur,Manchester United,True,True,3444,3444,0,28
+3754210,2015-16,2016-05-07,Norwich City,Manchester United,True,True,3478,2146,0,14
+3754214,2015-16,2016-02-14,Aston Villa,Liverpool,True,True,3988,3988,0,28
+3754215,2015-16,2015-12-05,West Bromwich Albion,Tottenham Hotspur,True,True,3363,2050,0,13
+3754216,2015-16,2016-04-17,AFC Bournemouth,Liverpool,True,True,3866,3866,0,28
+3754220,2015-16,2016-03-06,Crystal Palace,Liverpool,True,True,3580,3580,0,28
+3754224,2015-16,2016-03-19,Swansea City,Aston Villa,True,True,3629,1659,0,13
+3754225,2015-16,2016-05-07,AFC Bournemouth,West Bromwich Albion,True,True,3421,2126,0,14
+3754229,2015-16,2016-05-15,Chelsea,Leicester City,True,True,3956,2060,0,14
+3754232,2015-16,2016-03-02,Manchester United,Watford,True,True,3317,1946,0,14
+3754236,2015-16,2016-02-27,West Bromwich Albion,Crystal Palace,True,True,3141,1646,0,14
+3754239,2015-16,2016-02-28,Manchester United,Arsenal,True,True,3509,3509,0,27
+3754241,2015-16,2016-04-09,West Ham United,Arsenal,True,True,3512,2024,0,14
+3754242,2015-16,2016-04-23,AFC Bournemouth,Chelsea,True,True,3829,3829,0,26
+3754243,2015-16,2016-04-02,Norwich City,Newcastle United,True,True,3272,1847,0,13
+3754249,2015-16,2016-03-05,Manchester City,Aston Villa,True,True,4264,4264,0,28
+3754250,2015-16,2016-01-16,Aston Villa,Leicester City,True,True,3419,1880,0,12
+3754251,2015-16,2016-01-02,West Ham United,Liverpool,True,True,3345,2006,0,14
+3754252,2015-16,2016-02-03,Everton,Newcastle United,True,True,3448,3448,0,26
+3754253,2015-16,2016-02-07,AFC Bournemouth,Arsenal,True,True,4093,4093,0,28
+3754260,2015-16,2016-01-16,Manchester City,Crystal Palace,True,True,3605,3605,0,28
+3754261,2015-16,2016-02-14,Arsenal,Leicester City,True,True,3787,2456,0,14
+3754262,2015-16,2016-04-09,Aston Villa,AFC Bournemouth,True,True,3681,3681,0,28
+3754264,2015-16,2016-02-13,Chelsea,Newcastle United,True,True,4084,4084,0,28
+3754295,2015-16,2016-04-16,Manchester United,Aston Villa,True,True,3454,3454,0,26
+3754271,2015-16,2016-01-23,Watford,Newcastle United,True,True,3567,1725,0,14
+3754274,2015-16,2016-02-13,AFC Bournemouth,Stoke City,True,True,3278,1965,0,14
+3754275,2015-16,2016-02-02,Leicester City,Liverpool,True,True,3596,2080,0,14
+3754277,2015-16,2016-03-05,Everton,West Ham United,True,True,3305,1463,0,14
+3754280,2015-16,2016-03-01,Norwich City,Chelsea,True,True,3552,1809,0,14
+3754281,2015-16,2016-02-07,Chelsea,Manchester United,True,True,3451,3451,0,28
+3754282,2015-16,2016-04-23,Aston Villa,Southampton,True,True,3627,1680,0,14
+3754284,2015-16,2016-04-21,Arsenal,West Bromwich Albion,True,True,3821,2571,0,14
+3754290,2015-16,2016-02-06,Manchester City,Leicester City,True,True,3483,2117,0,14
+3754292,2015-16,2016-02-06,Newcastle United,West Bromwich Albion,True,True,3000,1857,0,13
+3754294,2015-16,2016-04-20,Liverpool,Everton,True,True,3554,3554,0,28
+3754248,2015-16,2015-12-26,AFC Bournemouth,Crystal Palace,True,True,3304,3304,0,28
+3754299,2015-16,2016-04-03,Manchester United,Everton,True,True,3795,3795,0,27
+3754303,2015-16,2016-02-06,Swansea City,Crystal Palace,True,True,3443,1527,0,14
+3754305,2015-16,2016-01-13,Liverpool,Arsenal,True,True,3528,3528,0,28
+3754306,2015-16,2016-02-06,Aston Villa,Norwich City,True,True,3156,1589,0,12
+3754307,2015-16,2016-04-23,Manchester City,Stoke City,True,True,3528,1890,0,14
+3754308,2015-16,2016-05-15,Watford,Sunderland,True,True,3107,1492,0,14
+3754310,2015-16,2016-04-20,Manchester United,Crystal Palace,True,True,3723,3723,0,28
+3754313,2015-16,2016-03-12,Norwich City,Manchester City,True,True,3796,2327,0,14
+3754314,2015-16,2016-05-08,Manchester City,Arsenal,True,True,3552,3552,0,28
+3754316,2015-16,2016-02-06,Liverpool,Sunderland,True,True,3704,3704,0,28
+3754317,2015-16,2016-02-02,Norwich City,Tottenham Hotspur,True,True,3213,1729,0,14
+3754318,2015-16,2016-03-05,Tottenham Hotspur,Arsenal,True,True,3422,3422,0,28
+3754319,2015-16,2016-01-02,Manchester United,Swansea City,True,True,3636,1943,0,13
+3754320,2015-16,2016-05-01,Southampton,Manchester City,True,True,3900,2224,0,13
+3754321,2015-16,2016-02-27,Stoke City,Aston Villa,True,True,3783,1798,0,13
+3754322,2015-16,2016-04-16,Chelsea,Manchester City,True,True,4009,4009,0,28
+3754324,2015-16,2016-02-28,Tottenham Hotspur,Swansea City,True,True,3178,1803,0,14
+3754326,2015-16,2015-12-28,Crystal Palace,Swansea City,True,True,3167,1646,0,14
+3754327,2015-16,2016-03-01,Aston Villa,Everton,True,True,3825,3825,0,27
+3754331,2015-16,2016-02-27,West Ham United,Sunderland,True,True,3145,1494,0,12
+3754332,2015-16,2016-04-25,Tottenham Hotspur,West Bromwich Albion,True,True,3300,2076,0,14
+3754333,2015-16,2016-05-15,Newcastle United,Tottenham Hotspur,True,True,3550,3550,0,28
+3754334,2015-16,2016-03-01,AFC Bournemouth,Southampton,True,True,3161,1478,0,14
+3754338,2015-16,2016-01-16,Newcastle United,West Ham United,True,True,3588,1844,0,14
+3754342,2015-16,2016-05-08,Liverpool,Watford,True,True,3356,2028,0,14
+3754345,2015-16,2016-01-17,Liverpool,Manchester United,True,True,3676,3676,0,28
+3754346,2015-16,2016-01-02,Watford,Manchester City,True,True,3394,1730,0,14
+3754348,2015-16,2016-01-23,Norwich City,Liverpool,True,True,3499,1830,0,14
+3754349,2015-16,2016-03-02,West Ham United,Tottenham Hotspur,True,True,3476,2047,0,14
+3754350,2015-16,2016-02-13,Everton,West Bromwich Albion,True,True,3490,2375,0,14
+3754258,2015-16,2015-11-08,Aston Villa,Manchester City,True,True,3672,3672,0,28
+3754020,2015-16,2015-08-17,Liverpool,AFC Bournemouth,True,True,3490,3490,0,28
+3754141,2015-16,2015-08-09,Arsenal,West Ham United,True,True,3564,2102,0,13
+3754128,2015-16,2015-08-08,AFC Bournemouth,Aston Villa,True,True,3711,3711,0,28
+3754078,2015-16,2015-08-08,Chelsea,Swansea City,True,True,3352,1701,0,14
+3749493,2003-04,2003-08-16,Arsenal,Everton,True,True,3057,3057,0,27
+3749448,2003-04,2004-04-09,Arsenal,Liverpool,True,True,3032,3032,0,26
+3749196,2003-04,2003-11-08,Arsenal,Tottenham Hotspur,True,True,2744,2744,0,28
+3749454,2003-04,2003-08-31,Manchester City,Arsenal,True,True,3338,3338,0,28
+3749603,2003-04,2004-05-09,Fulham,Arsenal,True,True,3616,3616,0,27
+3749052,2003-04,2004-02-07,Wolverhampton Wanderers,Arsenal,True,True,3518,2101,0,12
+3749296,2003-04,2003-09-13,Arsenal,Portsmouth,True,True,3221,1857,0,13
+3749522,2003-04,2003-12-26,Arsenal,Wolverhampton Wanderers,True,True,3542,2192,0,13
+3749246,2003-04,2004-03-28,Arsenal,Manchester United,True,True,3099,3099,0,27
+3749257,2003-04,2004-05-15,Arsenal,Leicester City,True,True,3456,2199,0,14
+3749642,2003-04,2004-02-28,Arsenal,Charlton Athletic,True,True,3625,2073,0,14
+3749358,2003-04,2003-08-24,Middlesbrough,Arsenal,True,True,3900,2114,0,14
+3749346,2003-04,2003-11-01,Leeds United,Arsenal,True,True,3476,3476,0,26
+3749253,2003-04,2003-10-04,Liverpool,Arsenal,True,True,3337,3337,0,26
+3749079,2003-04,2003-10-18,Arsenal,Chelsea,True,True,3612,3612,0,28
+3749465,2003-04,2004-03-13,Blackburn Rovers,Arsenal,True,True,3735,2098,0,13
+3749133,2003-04,2004-01-18,Aston Villa,Arsenal,True,True,3384,3384,0,28
+3749528,2003-04,2003-09-26,Arsenal,Newcastle United,True,True,3237,3237,0,28
+3749233,2003-04,2004-02-01,Arsenal,Manchester City,True,True,3404,3404,0,27
+3749462,2003-04,2004-05-01,Arsenal,Birmingham City,True,True,3802,2314,0,14
+3749552,2003-04,2003-09-21,Manchester United,Arsenal,True,True,3572,3572,0,24
+3749276,2003-04,2004-02-21,Chelsea,Arsenal,True,True,3350,3350,0,26
+3749068,2003-04,2004-04-25,Tottenham Hotspur,Arsenal,True,True,3156,3156,0,26
+3749310,2003-04,2003-12-29,Southampton,Arsenal,True,True,3426,1934,0,14
+3749434,2003-04,2003-11-22,Birmingham City,Arsenal,True,True,3479,1700,0,13
+3749192,2003-04,2003-11-30,Arsenal,Fulham,True,True,3624,3624,0,25
+3749360,2003-04,2003-12-14,Arsenal,Blackburn Rovers,True,True,3706,1851,0,13
+3749453,2003-04,2004-04-16,Arsenal,Leeds United,True,True,3541,3541,0,27
+3749278,2003-04,2003-12-20,Bolton Wanderers,Arsenal,True,True,3154,1689,0,12
+3749274,2003-04,2004-05-04,Portsmouth,Arsenal,True,True,3727,2412,0,14
+3749590,2003-04,2003-12-06,Leicester City,Arsenal,True,True,3237,1902,0,14
+3749631,2003-04,2004-02-10,Arsenal,Southampton,True,True,3304,1937,0,12
+3749117,2003-04,2004-01-07,Everton,Arsenal,True,True,3125,3125,0,28
+3749108,2003-04,2003-08-27,Arsenal,Aston Villa,True,True,3235,3235,0,25
+3749153,2003-04,2004-01-10,Arsenal,Middlesbrough,True,True,3514,2028,0,14
+3749403,2003-04,2004-03-20,Arsenal,Bolton Wanderers,True,True,3424,2003,0,13
+3749526,2003-04,2003-10-26,Charlton Athletic,Arsenal,True,True,3444,1868,0,13
+3749431,2003-04,2004-04-11,Newcastle United,Arsenal,True,True,3248,3248,0,27

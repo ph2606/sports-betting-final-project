@@ -1,0 +1,499 @@
+[PAGE 1]
+Chapter
+
+
+Tutorial: The Kalman Filter
+
+
+
+
+
+Tony Lacey.
+
+
+    .   Intro duction
+
+
+The Kalman  lter [  ] has long b een regarded as the optimal solution to many tracking and data prediction
+tasks, [  ]. Its use in the analysis of visual motion has b een do cumented frequently. The standard Kalman
+ lter derivation is given here as a tutorial exercise in the practical use of some of the statistical techniques
+outlied in previous sections. The  lter is constructed as a mean squared error minimiser, but an alternative
+derivation of the  lter is also provided showing how the  lter relates to maximum likeliho o d statistics.
+Do cumenting this derivation furnishes the reader with further insight into the statistical constructs within
+the  lter.
+
+The purp ose of  ltering is to extract the required information from a signal, ignoring everything else.
+How well a  lter p erforms this task can b e measured using a cost or loss function. Indeed we may de ne
+the goal of the  lter to b e the minimisation of this loss function.
+
+
+    .  Mean squared error
+
+
+Many signals can b e describ ed in the following way;
+
+
+                                      yk = ak xk + nk                                          (    . )
+
+where; yk is the time dep endent observed signal, ak is a gain term, xk is the information b earing signal
+and nk is the additive noise.
+
+The overall ob jective is to estimate xk . The di erence b etween the estimate of x^k and xk itself is termed
+the error;
+
+
+                                    f (ek ) = f (xk   x^k )                                       (    . )
+
+The particular shap e of f ( ek ) is dep endent up on the application, however it is clear that the function
+should b e b oth p ositive and increase monotonically [  ]. An error function which exhibits these charac-
+teristics is the squared error function;
+
+
+                                    f (ek ) =  (xk   x^k )                                         (    . )
+
+[PAGE 2]
+Since it is necessary to consider the ability of the  lter to predict many data over a p erio d of time a more
+meaningful metric is the exp ected value of the error function;
+
+
+                                                        l ossf unction = E (f ( ek ))                                     (    . )
+
+This results in the mean squared error (MSE) function;
+
+
+                                                     (t) = E ek                                             (    . )
+
+
+    .  Maximum likeliho o d
+
+
+The ab ove derivation of mean squared error, although intuitive is somewhat heuristic. A more rigorous
+derivation can b e develop ed using maximum likelihood statistics. This is achieved by rede ning the goal
+of the  lter to  nding the x^ which maximises the probability or likeliho o d of y . That is;
+
+
+                              max [P (y jx)]^                                               (    . )
+
+Assuming that the additive random noise is Gaussian distributed with a standard deviation of  k gives;
+
+
+                                                        (yk    ak x^k )
+                     P (yk jx^k ) = Kk exp                                                     (    . )
+
+                                                                   k
+
+where Kk is a normalisation constant. The maximum likeliho o d function of this is;
+
+
+                                                         (yk    ak x^k )
+
+
+                                                                    k                     P (y jx^ ) = Yk Kk exp                                                    (    . )
+
+Which leads to;
+
+
+                                                  (yk    ak x^k )
+
+
+                                                           k                                    l og P (y jx^) =  Xk            + constant                      (    . )
+
+The driving function of equation     .   is the MSE, which may b e maximised by the variation of x^ k .
+Therefore the mean squared error function is applicable when the exp ected variation of yk is b est mo delled
+as a Gaussian distribution. In such a case the MSE serves to provide the value of x^k which maximises
+the likeliho o d of the signal yk .
+
+In the following derivation the optimal   lter is de ned as b eing that   lter, from the set of all p ossible
+ lters which minimises the mean squared error.
+
+
+    .   Kalman Filter Derivation
+
+
+Before going on to discuss the Kalman  lter the work of Norb ert Wiener [  ], should  rst b e acknowledged
+. Wiener describ ed an optimal  nite impulse response (FIR)  lter in the mean squared error sense. His
+solution will not b e discussed here even though it has much in common with the Kalman  lter. Su  ce to
+say that his solution uses b oth the auto correlation and the cross correlation of the received signal with
+the original data, in order to derive an impulse resp onse for the  lter.
+
+Kalman also presented a prescription of the optimal MSE   lter. However Kalman's prescription has
+some advantages over Weiner's; it sidesteps the need to determine the impulse resp onse of the   lter,
+something which is p o orly suited to numerical computation. Kalman describ ed his   lter using state
+
+[PAGE 3]
+space techniques, which unlike Wiener's p erscription, enables the  lter to b e used as either a smo other, a
+ lter or a predictor. The latter of these three, the ability of the Kalman  lter to b e used to predict data
+has proven to b e a very useful function. It has lead to the Kalman  lter b eing applied to a wide range of
+tracking and navigation problems. De ning the  lter in terms of state space metho ds also simpli es the
+implementation of the  lter in the discrete domain, another reason for its widespread app eal.
+
+
+    .   State space derivation
+
+
+Assume that we want to know the value of a variable within a pro cess of the form;
+
+
+                                xk + =  xk + wk                                        (    . 0)
+
+where; xk is the state vector of the pro cess at time k , (nx  );    is the state transition matrix of the pro cess
+from the state at k to the state at k +  , and is assumed stationary over time, (nxm); wk is the asso ciated
+white noise pro cess with known covariance, (nx  ).
+
+Observations on this variable can b e mo delled in the form;
+
+
+                                        zk = H xk + vk                                         (    .   )
+
+where; zk is the actual measurement of x at time k, (mx  ); H is the noiseless connection b etween the
+state vector and the measurement vector, and is assumed stationary over time (mxn); vk is the asso ciated
+measurement error. This is again assumed to b e a white noise pro cess with known covariance and has
+zero cross-correlation with the pro cess noise, (mx  ).
+
+As was shown in section ?? for the minimisation of the MSE to yield the optimal   lter it must b e
+p ossible to correctly mo del the system errors using Gaussian distributions. The covariances of the two
+noise mo dels are assumed stationary over time and are given by;
+
+                        Q = E wk w kT                                           (    .   )
+
+
+                          R = E vk v kT                                            (    .   )
+
+The mean squared error is given by     .  . This is equivalent to;
+
+                          E ek eTk  = Pk                                          (    .   )
+
+where; Pk is the error covariance matrix at time k , (nxn).
+
+Equation     .  may b e expanded to give;
+
+                   Pk = E ek eTk  = E h( xk   x^k ) ( xk   x^k )T i                       (    .   )
+
+Assuming the prior estimate of x^k is called x^0k , and was gained by knowledge of the system. It p osible to
+write an up date equation for the new estimate, combing the old estimate with measurement data thus;
+
+
+                             x^k = x^0k + Kk (zk  H x^0k )                                  (    .   )
+
+where; Kk is the Kalman gain, which will b e derived shortly. The term zk  H x^0k in eqn.     .    is known
+as the innovation or measurement residual;
+
+
+                                                      ik = zk  H x^k                                         (    .   )
+
+[PAGE 4]
+Substitution of     .   into     .   gives;
+
+
+                         x^k = x^0k + Kk ( H xk + vk  H x^0k )                             (    .   )
+
+Substituting     .   into     .   gives;
+
+
+                   Pk = E  [[(I  Kk H ) ( xk   x^0k )  Kk vk ]                           (    .   )
+                                             [(I  Kk H ) ( xk   x^0k )  Kk vk ]T i
+
+
+At this p oint it is noted that xk   x^0k is the error of the prior estimate. It is clear that this is uncorrelated
+with the measurement noise and therefore the exp ectation may b e re-written as;
+
+
+
+
+                                                                                                           0                     0 T
+             Pk  =    ( I  Kk H ) E (xk   x^k ) (xk   x^k )   (I  Kk H )                                      T    Th                      i
+              +  Kk E vk vk Kk                                                          (    . 0)
+
+
+Substituting equations     .  and     .   into     .   gives;
+
+                  Pk =  (I  Kk H ) Pk0 ( I  Kk H )T + Kk R K kT                       (    .   )
+
+where Pk0 is the prior estimate of Pk .
+
+Equation     .    is the error covariance up date equation. The diagonal of the covariance matrix contains
+the mean squared errors as shown;
+
+                     E ek  eTk   E ek eTk   E ek + eTk
+                 Pk k =   E ek  eTk   E ek eTk   E ek + eTk                         (    .   )
+                     E ek  eTk +   E ek eTk +   E ek + eTk +
+
+The sum of the diagonal elements of a matrix is the trace of a matrix. In the case of the error covariance
+matrix the trace is the sum of the mean squared errors.  Therefore the mean squared error may b e
+minimised by minimising the trace of Pk which in turn will minimise the trace of Pk k .
+
+The trace of Pk is  rst di erentiated with resp ect to Kk and the result set to zero in order to  nd the
+conditions of this minimum.
+
+Expansion of     .   gives;
+
+
+              Pk = Pk0  Kk H Pk0   Pk0 H T KkT + Kk H P k0 H T + R KkT               (    .   )
+
+Note that the trace of a matrix is equal to the trace of its transp ose, therefore it may written as;
+
+
+              T [Pk ] = T [Pk0 ]    T [Kk H P k0 ] + T Kk H P k0 H T + R KkT               (    .   )
+
+where; T [Pk ] is the trace of the matrix Pk .
+
+Di erentiating with resp ect to Kk gives;
+
+
+                      dT [Pk ]                          0 T                           0  T
+                    =    (H P k )  + Kk H P k H  + R                        (    .   )
+                   dKk
+
+Setting to zero and re-arranging gives;
+
+[PAGE 5]
+                                                                             0 T                          0  T
+                          (H Pk )  = Kk H P k H  + R                                  (    .   )
+
+Now solving for Kk gives;
+
+
+                  Kk = Pk0 H T H P k0 H T + R                                    (    .   )
+
+Equation     .    is the Kalman gain equation. The innovation, ik de ned in eqn.     .   has an asso ciated
+measurement prediction covariance. This is de ned as;
+
+                             Sk = H P k0 H T + R                                       (    .   )
+
+Finally, substitution of equation     .   into     .   gives;
+
+
+                   Pk  =   Pk0   Pk0 H T H P k0 H T + R  H P k0
+
+                   =   Pk0  Kk H P k0
+
+                   =    (I  Kk H ) Pk0                                                (    .   )
+
+
+Equation     .    is the up date equation for the error covariance matrix with optimal gain. The three
+equations     .    ,     .    , and     .   develop an estimate of the variable xk . State pro jection is achieved
+using;
+
+
+                                   x^0k + =  x^ k                                            (    . 0)
+
+To complete the recursion it is necessary to  nd an equation which pro jects the error covariance matrix
+into the next time interval, k +   . This is achieved by  rst forming an expressions for the prior error;
+
+
+
+                                e0k +   =   xk +    x^0k +
+                        =    ( xk + wk )     x^ k
+
+                        =     ek + wk                                            (    .   )
+
+
+Extending equation     .   to time k +   ;
+
+               Pk0 + = E e0k + eTk +0  = E h (  ek + wk ) (  ek + wk )T i                  (    .   )
+
+Note that ek and wk have zero cross-correlation b ecause the noise wk actually accumulates b etween k
+and k +  whereas the error ek is the error up until time k . Therefore;
+
+
+                    Pk0 +   =  E e0k + eTk +0
+                     =  E h  eTk (  ek )T i + E wk w kT
+                     =    Pk   + Q                                             (    .   )
+
+
+This completes the recursive  lter. The algorithmic lo op is summarised in the diagram of  gure     .  .
+
+[PAGE 6]
+                                                           Initial Estimates
+
+
+
+                                                                      Measurements
+                                      Kalman Gain
+
+
+
+
+                      Project into k+1                               Update Estimate
+
+
+
+
+                                       Update Covariance
+
+           Projected Estimates                                       Updated State Estimates
+                       Description                Equation
+
+                  Kalman Gain   Kk = Pk0 H T H P k0 H T + R
+              Up date Estimate    x^ k = x^ 0k + Kk (zk  H x^ 0k )
+              Up date Covariance     Pk =  ( I  Kk H ) Pk0
+                 Pro ject into k +           x^ 0k + =  x^ k
+                                Pk + =  Pk  T + Q
+
+
+                      Figure     .  : Kalman Filter Recursive Algorithm
+
+
+    .   The Kalman  lter as a chi-square merit function
+
+
+The ob jective of the Kalman  lter is to minimise the mean squared error b etween the actual and estimated
+data. Thus it provides the b est estimate of the data in the mean squared error sense. This b eing the
+case it should b e p ossible to show that the Kalman   lter has much in common with the chi-square.
+The chi-square merit function is a maximum likeliho o d function, and was derived earlier, equation     .  .
+It is typically used as a criteria to  t a set of mo del parameters to a mo del a pro cess known as least
+squares  tting. The Kalman  lter is commonly known as a recursive least squares (RLS)  tter. Drawing
+similarities to the chi-square merit function will give a di erent p ersp ective on what the Kalman  lter is
+doing.
+
+The chi-square merit function is;
+
+
+
+                                                k
+                                               zi   h (ai ; x)
+                       =                                                             (    .   )
+                                                                                           i              Xi=
+
+where; zi is the measured value; hi is the data mo del with parameters x, assumed linear in a;   i is the
+variance asso ciated with the measured value.
+
+The optimal set of parameters can then b e de ned as that which minimises the ab ove function. Expanding
+out the variance gives;
+
+[PAGE 7]
+                                              k
+
+                      =            [zi   h (ai ; x) ]                                  (    .   )
+                                                                             i  i             Xi=
+
+Representing the chi-square in vector form and using notation from the earlier Kalman derivation;
+
+
+
+                                                                    T
+                                k =  [zk   h (a; xk ) ] R   [zk   h (a; xk )]                           (    .   )
+
+where; R    is the matrix of inverse squared variances, i.e.  =  i  i .
+
+The ab ove merit function is the merit function asso ciated with the latest, k th, measurement and provides
+a measure of how accurately the mo del predicted this measurement.  Given that the inverse mo del
+covariance matrix is known up to time k , the merit function up to time k may b e re-written as;
+
+
+
+                                                                                                          0                 T
+                              k  =  (xk     x^k   ) Pk   (xk     x^k   )                         (    .   )
+
+To combine the new data with the previous,  tting the mo del parameters so as to minimise the overall
+chi-square function, the merit function b ecomes the summation of the two;
+
+
+    =  (xk     x^k   ) Pk0   ( xk     x^k   )T +  [zk   h (a; xk ) ] R   [zk   h (a; xk )]T     (    .   )
+
+
+Where the  rst derivative of this is given by;
+
+
+               d                    0                                 T
+             =  Pk   (xk     x^k   )   rx h (a; xk ) R   [zk   h (a; xk ) ]           (    .   )
+              dx
+
+The mo del function h(a; x k ) with parameters  tted from information to date, may b e considered as;
+
+
+                                    h(a; xk ) = h (a; (x^k +  xk ))                                  (    . 0)
+
+where  xk = xk   x^k . The Taylor series expansion of the mo del function to  rst order is;
+
+
+                        h (x^k +   x) = h (x^k ) +  xrx h (x^k )                            (    .   )
+
+Substituting this result into the derivative equation     .   gives;
+
+
+
+            d                            0
+            =   Pk   (xk   x^k )
+            dx
+               rx h (a; x^k )T R   [zk   h (a; x^k )     (xk   x^k ) rx h (a; x^k k )]        (    .   )
+
+
+It is assumed that the estimated mo del parameters are a close approximation to the actual mo del param-
+eters. Therefore it may b e assumed that the derivatives of the actual mo del and the estimated mo del are
+the same. Further, for a system which is linear in a the mo del derivative is constant and may b e written
+as;
+
+
+                  rx h (a; xk ) = rx h (a; x^k ) = H                                (    .   )
+
+Substituting this into equation     .   gives;
+
+
+               d                    0             T                 T
+             =  Pk   xk + H R H  xk   H R   [zk   h (a; x^k ) ]            (    .   )
+               dx
+
+[PAGE 8]
+Re-arranging gives;
+
+
+                 d                      0        T                   T
+              =   Pk  + H R H   xk   H R   [zk   h (a; x^k )]              (    .   )
+                dx
+
+For a minimum the derivative is zero, rearrange in terms of  xk gives;
+
+                    xk =  Pk0  + H T R H  H T R   [zk   h (a; x^k )]                   (    .   )
+
+
+                 x = x^k +  Pk0  + H T R H  H T R   [zk   h (a; x)]^                   (    .   )
+
+Comparison of equation     .   to     .   allows the gain, Kk to b e identi ed as;
+
+                 Kk =  Pk0  + H T R H  H T R                                (    .   )
+
+Giving a parameter up date equation of the form;
+
+
+                           xk = x^k + Kk [zk   h (a; x^k )]                                (    .   )
+
+Equation     .    is identical to     .  and describ es the improvement of the parameter estimate using the
+error b etween measured and mo del pro jected values.
+
+
+    .  Mo del covariance up date
+
+
+The mo del parameter covariance has b een considered in its inverted form where it is known as the
+information matrix  . It is p ossible to formulate an alternative up date equation for the covariance matrix
+using standard error prop ogation;
+
+                          P k  = Pk0  + H R H T                                    (    . 0)
+
+It is p ossible to show that the covariance up dates of equation     . 0 and equation     .   are equivalent.
+This may b e achieved using the identity Pk  Pk  = I . The original, eqn     .  and alternative, eqn     . 0
+forms of the covariance up date equations are;
+Pk =  (I  Kk H ) Pk0 and P k  = Pk0  + H R H T
+
+Therefore;
+
+                                   ( I  Kk H ) Pk0  Pk0  + H R H T = I                           (    .   )
+
+Substituting for Kk gives;
+
+
+                                            Pk0  + H T R H                     h                Pk0   Pk0 H T H Pk0 H T + R  H P k0 i
+                   H Pk0 H T + R          =  I   Pk0 H T h
+                                  H             R  + H Pk0 H T + R  H P k0 H T R  i
+                                             H                                                          0 H          =  I   Pk                   H Pk0 H T + R     I + H P k0 H T R     R  i                               T h
+
+                                                          0                               T
+          =  I   Pk H  R    R  H
+
+          =  I                                                                                   (    .   )
+
+   when the Kalman  lter is built around the information matrix it is known as the information  lter
+
+
+                                          0

@@ -1,0 +1,1003 @@
+[PAGE 1]
+      Identifying Small Mean Reverting Portfolios∗
+
+                  By Alexandre d’Aspremont†
+                            February 26, 2008
+
+
+
+                                          Abstract
+         Given multivariate time series, we study the problem of forming portfolios with maximum
+     mean reversion while constraining the number of assets in these portfolios. We show that it
+      can be formulated as a sparse canonical correlation analysis and study various algorithms to
+      solve the corresponding sparse generalized eigenvalue problems. After discussing penalized
+      parameter estimation procedures, we study the sparsity versus predictability tradeoff and the
+      impact of predictability in various markets.
+
+Keywords: Mean reversion, sparse estimation, convergence trading, momentum trading, covari-
+ance selection.
+
+1  Introduction
+
+Mean reversion has received a signiﬁcant amount of attention as a classic indicator of predictability
+in ﬁnancial markets and is sometimes apparent, for example, in equity excess returns over long
+horizons. While mean reversion is easy to identify in univariate time series, isolating portfolios of
+assets exhibiting signiﬁcant mean reversion is a much more complex problem. Classic solutions
+include cointegration or canonical correlation analysis, which will be discussed in what follows.
+   One of the key shortcomings of these methods though is that the mean reverting portfolios they
+identify are dense, i.e. they include every asset in the time series analyzed. For arbitrageurs, this
+means that exploiting the corresponding statistical arbitrage opportunities involves considerable
+transaction costs. From an econometric point of view, this also impacts the interpretability of
+the resulting portfolio and the signiﬁcance of the structural relationships it highlights.  Finally,
+optimally mean reverting portfolios often behave like noise and sometimes vary well inside bid-
+ask spreads, hence do not form meaningful statistical arbitrage opportunities.
+   Here, we would like to argue that seeking sparse portfolios instead, i.e. optimally mean re-
+verting portfolios with a few assets, solves many of these issues at once: fewer assets means less
+
+   ∗JEL classiﬁcation: C61, C82.
+   †ORFE, Princeton University, Princeton, NJ 08544, USA. Email: aspremon@princeton.edu
+
+                                       1
+
+[PAGE 2]
+transaction costs and more interpretable results. In practice, the tradeoff between mean reversion
+and sparsity is often very favorable. Furthermore, penalizing for sparsity also makes sparse port-
+folios vary in a wider price range, so the market inefﬁciencies they highlight are more signiﬁcant.
+   Remark that all statements we will make here on mean reversion apply symmetrically to mo-
+mentum. Finding mean reverting portfolios using canonical correlation analysis means minimizing
+predictability, while searching for portfolios with strong momentum can also be done using canon-
+ical correlation analysis, by maximizing predictability. The numerical procedures involved are
+identical.
+   Mean reversion has of course received a considerable amount of attention in the literature, most
+authors, such as Fama & French (1988), Poterba & Summers (1988) among many others, using
+it to model and test for predictability in excess returns. Cointegration techniques (see Engle &
+Granger (1987), and Alexander (1999) for a survey of applications in ﬁnance) are often used to
+extract mean reverting portfolios from multivariate time series. Early methods relied on a mix
+of regression and Dickey & Fuller (1979) stationarity tests or Johansen (1988) type tests but it
+was subsequently discovered that an earlier canonical decomposition technique due to Box & Tiao
+(1977) could be used to extract cointegrated vectors by solving a generalized eigenvalue problem
+(see Bewley, Orden, Yang & Fisher (1994) for a more complete discussion).
+   Several authors then focused on the optimal investment problem when excess returns are mean
+reverting, with Kim & Omberg (1996) and Campbell & Viceira (1999) or Wachter (2002) for ex-
+ample obtaining closed-form solutions in some particular cases. Liu & Longstaff (2004) also study
+the optimal investment problem in the presence of a “textbook” ﬁnite horizon arbitrage opportunity,
+modeled as a Brownian bridge, while Jurek & Yang (2006) study this same problem when the arbi-
+trage horizon is indeterminate. Gatev, Goetzmann & Rouwenhorst (2006) studied the performance
+of pairs trading, using pairs of assets as classic examples of structurally mean-reverting portfolios.
+Finally, the LTCM meltdown in 1998 focused a lot of attention on the impact of leverage limits
+and liquidity, see Grossman & Vila (1992) or Xiong (2001) for a discussion.
+   Sparse estimation techniques in general and the ℓ1 penalization approach we use here in partic-
+ular have also received a lot of attention in various forms: variable selection using the LASSO (see
+Tibshirani (1996)), sparse signal representation using basis pursuit by Chen, Donoho & Saunders
+(2001), compressed sensing (see Donoho & Tanner (2005) and Cand`es & Tao (2005)) or covari-
+ance selection (see Banerjee, Ghaoui & d’Aspremont (2007)), to cite only a few examples. A recent
+stream of works on the asymptotic consistency of these procedures can be found in Meinshausen &
+Yu (2007), Candes & Tao (2007), Banerjee et al. (2007), Yuan & Lin (2007) or Rothman, Bickel,
+Levina & Zhu (2007) among others.
+    In this paper, we seek to adapt these results to the problem of estimating sparse (i.e. small)
+mean reverting portfolios. Suppose that Sti is the value at time t of an asset Si with i = 1, . . . , n
+and t = 1, . . ., m, we form portfolios Pt of these assets with coefﬁcients xi, and assume they
+follow an Ornstein-Uhlenbeck process given by:
+
+                  Xn
+                     dPt = λ( ¯P     + σdZt  with Pt =     xiSti                      (1)                           −Pt)dt
+                                                                    i=1
+where Zt is a standard Brownian motion. Our objective here is to maximize the mean reversion
+
+                                       2
+
+[PAGE 3]
+coefﬁcient λ of Pt by adjusting the portfolio weights xi, under the constraints that       1 and                                                  ∥x∥=that the cardinality of x, i.e. the number of nonzero coefﬁcients in x, remains below a given k > 0.
+   Our contribution here is twofold. First, we describe two algorithms for extracting sparse mean
+reverting portfolios from multivariate time series. One is based on a simple greedy search on
+the list of assets to include. The other uses semideﬁnite relaxation techniques to directly get good
+solutions. Both algorithms use predictability in the sense of Box & Tiao (1977) as a proxy for mean
+reversion in (1). Second, we show that penalized regression and covariance selection techniques
+can be used as preprocessing steps to simultaneously stabilize parameter estimation and highlight
+key dependence relationships in the data. We then study the sparsity versus mean reversion tradeoff
+in several markets, and examine the impact of portfolio predictability on market efﬁciency using
+classic convergence trading strategies.
+   The paper is organized as follows. In Section 2, we brieﬂy recall the canonical decomposition
+technique derived in Box & Tiao (1977). In Section 3, we adapt these results and produce two
+algorithms to extract small mean reverting portfolios from multivariate data sets. In Section 4,
+we then show how penalized regression and covariance selection techniques can be used as pre-
+processing tools to both stabilize estimation and isolate key dependence relationships in the time
+series.  Finally, we present some empirical results in Section 5 on U.S. swap rates and foreign
+exchange markets.
+
+2  Canonical decompositions
+
+We brieﬂy recall below the canonical decomposition technique derived in Box & Tiao (1977).
+Here, we work in a discrete setting and assume that the asset prices follow a stationary vector
+autoregressive process with:
+                                     St = St−1A + Zt,                                      (2)
+                                                    Zt is a vector of i.i.d. Gaussian noisewhere St−1 is the lagged portfolio process, A ∈Rn×n and
+with zero mean and covariance Σ ∈Sn, independent of St−1. Without loss of generality, we canassume that the assets St have zero mean. The canonical analysis in Box & Tiao (1977) starts as
+follows. For simplicity, let us ﬁrst suppose that n = 1 in equation (2), to get:
+
+                          E[S2t ] = E[(St−1A)2] + E [Z2t ],
+
+which can be rewritten as σ2t = σ2t−1 + Σ. Box & Tiao (1977) measure the predictability of
+stationary series by:
+                                         σ2t−1                                    ν =        .                                          (3)
+                                          σ2t
+The intuition behind this variance ratio is very simple: when it is small the variance of the noise
+dominates that of St−1 and St is almost pure noise, when it is large however, St−1 dominates the
+noise and St is almost perfectly predictable. Throughout the paper, we will use this measure of
+predictability as a proxy for the mean reversion parameter λ in (1).  Consider now a portfolio
+                                              Stx = St−1Ax + Ztx, and we can measurePt = Stx with weights x ∈Rn, using (2) we know that
+
+                                       3
+
+[PAGE 4]
+its predicability as:
+                               xTATΓAx
+                                  ν(x) =                  ,
+                                   xTΓx
+where Γ is the covariance matrix of St. Minimizing predictability is then equivalent to ﬁnding the
+minimum generalized eigenvalue λ solving:
+                               det(λΓ −ATΓA) = 0.                                   (4)
+Assuming that Γ is positive deﬁnite, the portfolio with minimum predictability will be given by
+x = Γ−1/2z, where z is the eigenvector corresponding to the smallest eigenvalue of the matrix:
+
+                                Γ−1/2ATΓAΓ−1/2.                                      (5)
+
+We must now estimate the matrix A. Following Bewley et al. (1994), equation (2) can be written:
+
+                                       St = ˆSt + ˆZt,
+
+where ˆSt is the least squares estimate of St with ˆSt = St−1 ˆA and we get:
+
+                                      ˆA = STt−1St−1 −1 STt−1St.                                  (6)
+
+The Box & Tiao (1977) procedure then solves for the optimal portfolio by inserting this estimate
+in the generalized eigenvalue problem above.
+
+Box & Tiao procedure.  Using the estimate (6) in (5) and the stationarity of St, the Box &
+Tiao (1977) procedure ﬁnds linear combinations of the assets ranked in order of predictability by
+computing the eigenvectors of the matrix:
+
+                         STt St −1/2  ˆSTt ˆSt  STt St −1/2                               (7)
+
+where ˆSt is the least squares estimate computed above. Figure 1 gives an example of a Box & Tiao
+(1977) decomposition on U.S. swap rates and shows eight portfolios of swap rates with maturities
+ranging from one to thirty years, ranked according to predictability. Table 1 shows mean reversion
+coefﬁcient, volatility and the p-value associated with the mean reversion coefﬁcient. We see that
+all mean reversion coefﬁcients are signiﬁcant at the 99% level except for the last portfolio. For this
+highly mean reverting portfolio, a mean reversion coefﬁcient of 238 implies a half-life of about
+one day, which explains the lack of signiﬁcance on daily data.
+   Bewley et al. (1994) show that the canonical decomposition above and the maximum likelihood
+decomposition in Johansen (1988) can both be formulated in this manner. We very brieﬂy recall
+their result below.
+
+
+
+
+                                       4
+
+[PAGE 5]
+        Number of swaps:   1     2     3      4      5      6       7       8
+         Mean reversion   0.58   8.61  16.48  38.59  84.55  174.82  184.83  238.11
+                    P-value   0.00   0.00   0.00    0.00    0.00    0.00     0.00     0.51
+                     Volatility   0.21   0.28   0.34    0.14    0.10    0.09     0.07     0.07
+Table 1: Summary statistics for canonical U.S. swap portfolios: mean reversion coefﬁcient, volatil-
+ity and the p-value associated with the mean reversion coefﬁcient for portfolio sizes ranging from
+one to eight.
+
+
+Johansen procedure.  Following Bewley et al. (1994), the maximum likelihood procedure for
+estimating cointegrating vectors derived in Johansen (1988) and Johansen (1991) can also be writ-
+ten as a canonical decomposition `a la Box & Tiao (1977). Here however, the canonical analysis
+is performed on the ﬁrst order differences of the series St and their lagged values St−1. We can
+rewrite equation (2) as:
+                            ∆St = QSt−1 + Zt
+where Q = A −I. The basis of (potentially) cointegrating portfolios is then found by solving thefollowing generalized eigenvalue problem:
+
+                                                                                    t ∆St)−1∆STt St−1)                      (8)                   λ(STt−1St−1) −(STt−1∆St(∆ST
+in the variable λ ∈R.
+3  Sparse decomposition algorithms
+
+In the previous section, we have seen that canonical decompositions can be written as generalized
+eigenvalue problems of the form:
+                               det(λB    = 0                                      (9)                           −A)
+                       A, Bin the variable λ ∈R, where                     ∈Sn are symmetric matrices of dimension n. Full generalizedeigenvalue decomposition problems are usually solved using a QZ decomposition. Here however,
+we are only interested in extremal generalized eigenvalues, which can be written in variational
+form as:
+                                     xTAx
+                              λmax(A, B) = max                                              x∈Rn xTBx.
+In this section, we will seek to maximize this ratio while constraining the cardinality of the (port-
+folio) coefﬁcient vector x and solve instead:
+
+                             maximize xTAx/xTBx
+                                   subject to  Card(x)                                   (10)                              ≤k
+                             ∥x∥= 1,
+where k > 0 is a given constant and Card(x) is the number of nonzero coefﬁcients in x. This will
+compute a sparse portfolio with maximum predictability (or momentum), a similar problem can
+
+                                       5
+
+[PAGE 6]
+                                k=1                                              k=2
+
+          −0.95                                                   1.25
+           −1                                                       1.2
+          −1.05                                                                   1.15
+           −1.1
+                                                                       1.1
+          −1.15
+                                                                   1.05           −1.2
+                    20     40     60     80     100                20     40     60     80     100
+                              λ=−1                                            λ=16
+                                k=3                                              k=4
+          −0.54                                                                   1.03
+          −0.55
+                                                                   1.02
+          −0.56
+                                                                   1.01
+          −0.57
+                                                             1
+          −0.58
+                                                                   0.99
+                    20     40     60     80     100                20     40     60     80     100
+                              λ=62                                            λ=82
+                                k=5                                              k=6
+
+          −0.95                                                                0.215
+          −0.96                                                                   0.21
+          −0.97                                                                0.205
+          −0.98                                                                       0.2
+
+                    20     40     60     80     100                20     40     60     80     100
+                              λ=117                                           λ=225
+                                k=7                                              k=8
+
+          −0.01                                              −0.045
+         −0.015                                                               −0.05
+          −0.02                                                             −0.055
+         −0.025
+                                                               −0.06
+          −0.03
+                    20     40     60     80     100                20     40     60     80     100
+                              λ=197                                           λ=252
+
+
+
+Figure 1: Box-Tiao decomposition on 100 days of U.S. swap rate data (in percent). The eight
+canonical portfolios of swap rates with maturities ranging from one to thirty years are ranked in
+decreasing order of predictability. The mean reversion coefﬁcient λ is listed below each plot.
+
+
+                                       6
+
+[PAGE 7]
+be formed to minimize it (and obtain a sparse portfolio with maximum mean reversion). This is
+a hard combinatorial problem, in fact, Natarajan (1995) shows that sparse generalized eigenvalue
+problems are equivalent to subset selection, which is NP-hard. We can’t expect to get optimal
+solutions and we discuss below two efﬁcient techniques to get good approximate solutions.
+
+3.1  Greedy search
+Let us call Ik the support of the solution vector x given k > 0 in problem (10):
+
+                                   Ik = {i ∈[1, n] : xi ̸= 0},
+by construction       We can build approximate solutions to (10) recursively in k. When                   |Ik| ≤k.k = 1, we simply ﬁnd I1 as:
+                                       I1 = argmax Aii/Bii.
+                                                            i∈[1,n]
+Suppose now that we have a good approximate solution with support set Ik given by:
+
+                                     xTAx
+                                 argmax                               xk =                                                 =0} xTBx,                                                          xIc                                           {x∈Rn:                                                            k
+
+where Ick is the complement of the set Ik. This can be solved as a generalized eigenvalue problem
+of size k. We seek to add one variable with index ik+1 to the set Ik to produce the largest increase
+in predictability by scanning each of the remaining indices in Ick. The index ik+1 is then given by:
+
+                                 xTAx
+                  ik+1 = argmax   max            where Ji = Ick                                 i∈Ick    {x∈Rn: xJi=0} xTBx,              \ {i},
+
+which amounts to solving (n      generalized eigenvalue problems of size k + 1. We then deﬁne:                  −k)
+                                    Ik+1 = Ik ∪{ik+1},
+and repeat the procedure until k = n. Naturally, the optimal solutions of problem (10) might not
+have increasing support sets Ik ⊂Ik+1, hence the solutions found by this recursive algorithm arepotentially far from optimal. However, the cost of this method is relatively low: with each iteration
+                                                                    k is O(n4).costing O(k2(n−k)), the complexity of computing solutions for all target cardinalitiesThis recursive procedure can also be repeated forward and backward to improve the quality of the
+solution.
+
+3.2  Semideﬁnite relaxation
+An alternative to greedy search which has proved very efﬁcient on sparse maximum eigenvalue
+problems is to derive a convex relaxation of problem (10). In this section, we extend the techniques
+
+
+
+                                       7
+
+[PAGE 8]
+of d’Aspremont, El Ghaoui, Jordan & Lanckriet (2007) to formulate a semideﬁnite relaxation for
+sparse generalized eigenvalue problems in (10):
+
+                             maximize xTAx/xTBx
+                                   subject to  Card(x)                              ≤k
+                             ∥x∥= 1,
+with variable x ∈Rn. As in d’Aspremont et al. (2007), we can form an equivalent program in
+terms of the matrix X = xxT ∈Sn:
+                         maximize Tr(AX)/Tr(BX)
+                              subject to  Card(X) ≤k2                              Tr(X) = 1
+                     X ⪰0, Rank(X) = 1,
+                                       X is a solution toin the variable X ∈Sn. This program is equivalent to the ﬁrst one: indeed, ifthe above problem, then X     and Rank(X) = 1 mean that we must have X = xxT, while              ⪰0Tr(X) = 1 implies that          1.  Finally, if X = xxT then Card(X)         is equivalent to               ∥x∥=                        ≤k2
+Card(x) ≤k.                                                         we can replace                           = q implies   Now, because for any vector u ∈Rn, Card(u)                                                      ∥u∥1 ≤√q∥u∥2,
+the nonconvex constraint Card(X) ≤k2 by a weaker but convex constraint 1T|X|1 ≤k, usingthe fact that    = √ xTx = 1 when X = xxT and Tr(X) = 1. We then drop the rank         ∥X∥Fconstraint to get the following relaxation of (10):
+
+                           maximize Tr(AX)/Tr(BX)
+                                 subject to  1T|X|1 ≤k                                  (11)                                Tr(X) = 1
+                      X ⪰0,
+which is a quasi-convex program in the variable X ∈Sn. After the following change of variables:
+                    X             1
+                       Y = Tr(BX),   z = Tr(BX),
+and rewrite (11) as:
+                            maximize Tr(AY )
+                                  subject to  1T|Y |1 −kz ≤0                                   Tr(Y )   = 0                               (12)                             −z                                Tr(BY ) = 1
+                                Y ⪰0,
+                                                          zwhich is a semideﬁnite program (SDP) in the variables Y ∈Sn and                                     ∈R+ and can be solved usingstandard SDP solvers such as SEDUMI by Sturm (1999) and SDPT3 by Toh, Todd & Tutuncu
+(1999). The optimal value of problem (12) will be an upper bound on the optimal value of the
+original problem (10). If the solution matrix Y has rank one, then the relaxation is tight and both
+optimal values are equal. When Rank(Y ) > 1 at the optimum in (12), we get an approximate
+
+                                       8
+
+[PAGE 9]
+solution to (10) using the rescaled leading eigenvector of the optimal solution matrix Y in (12).
+The computational complexity of this relaxation is signiﬁcantly higher than that of the greedy
+search algorithm in §3.1. On the other hand, because it is not restricted to increasing sequences ofsparse portfolios, the performance of the solutions produced is often higher too. Furthermore, the
+dual objective value produces an upper bound on suboptimality. Numerical comparisons of both
+techniques are detailed in Section 5.
+
+4  Parameter estimation
+
+The canonical decomposition procedures detailed in Section 2 all rely on simple estimates of both
+the covariance matrix Γ in (5) and the parameter matrix A in the vector autoregressive model (6).
+Of course, both estimates suffer from well-known stability issues and a classic remedy is to pe-
+nalize the covariance estimation using, for example, a multiple of the norm of Γ. In this section,
+we would like to argue that using an ℓ1 penalty term to stabilize the estimation, in a procedure
+known as covariance selection, simultaneously stabilizes the estimate and helps isolate key id-
+iosyncratic dependencies in the data. In particular, covariance selection clusters the input data in
+several smaller groups of highly dependent variables among which we can then search for mean
+reverting (or momentum) portfolios. Covariance selection can then be viewed as a preprocessing
+step for the sparse canonical decomposition techniques detailed in Section 3. Similarly, penalized
+regression techniques such as the LASSO by Tibshirani (1996) can be used to produce stable,
+structured estimates of the matrix parameter A in the VAR model (2).
+
+4.1  Covariance selection
+Here, we ﬁrst seek to estimate the covariance matrix Γ by maximum likelihood. Following Demp-
+ster (1972), we penalize the maximum-likelihood estimation to set a certain number of coefﬁcients
+in the inverse covariance matrix to zero, in a procedure known as covariance selection. Zeroes
+in the inverse covariance matrix correspond to conditionally independent variables in the model
+and this approach can be used to simultaneously obtain a robust estimate of the covariance matrix
+while, perhaps more importantly, discovering structure in the underlying graphical model (see Lau-
+ritzen (1996) for a complete treatment). This tradeoff between log-likelihood of the solution and
+number of zeroes in its inverse (i.e. model structure) can be formalized in the following problem:
+
+                  max log det X           Card(X)                       (13)                    X        −Tr(ΣX) −ρ
+
+                 Σin the variable X ∈Sn, where                    ∈Sn is the sample covariance matrix, Card(X) is the cardinalityof X, i.e. the number of nonzero coefﬁcients in X and ρ > 0 is a parameter controlling the trade-
+off between likelihood and structure.
+   Solving the penalized maximum likelihood estimation problem in (13) both improves the sta-
+bility of this estimation procedure by implicitly reducing the number of parameters and directly
+highlights structure in the underlying model.  Unfortunately, the cardinality penalty makes this
+problem very hard to solve numerically. One solution developed in d’Aspremont, Banerjee &
+
+                                       9
+
+[PAGE 10]
+Figure 2: Left: conditional dependence network inferred from the pattern of zeros in the inverse
+swap covariance matrix. Right: same plot, using this time the penalized covariance estimate with
+penalty ρ = .1 in the maximum likelihood estimation (14).
+
+
+El Ghaoui (2006), Banerjee et al. (2007) or Friedman, Hastie & Tibshirani (2007) is to relax the
+Card(X) penalty and replace it by the (convex) ℓ1 norm of the coefﬁcients of X to solve:
+
+                 Xn
+                  max log det X                                                (14)                    X        −Tr(ΣX) −ρ     |Xij|
+                                                                        i,j=1
+in the variable X ∈Sn. The penalty term involvingPnthe sum of absolute values of the entries ofX acts as a proxy for the cardinality: the function    i,j=1     can be seen as the largest convex                                                            |Xij|lower bound on Card(X) on the hypercube, an argument used by Fazel, Hindi & Boyd (2001)
+for rank minimization. It is also often used in regression and variable selection procedures, such
+as the LASSO by Tibshirani (1996). Other permutation invariant estimators have been detailed in
+Rothman et al. (2007) for example.
+    In a Gaussian model, zeroes in the inverse covariance matrix point to variables that are condi-
+tionally independent, conditioned on all the remaining variables. This has a clear ﬁnancial interpre-
+tation: the inverse covariance matrix reﬂects independence relationships between the idiosyncratic
+components of asset price dynamics. In Figure 2, we plot the resulting network of dependence, or
+graphical model for U.S. swap rates. In this graph, variables (nodes) are joined by a link if and
+only if they are conditionally dependent. We plot the graphical model inferred from the pattern of
+zeros in the inverse sample swap covariance matrix (left) and the same graph, using this time the
+penalized covariance estimate in (14) with penalty parameter ρ = .1 (right). The graph layout was
+done using Cytoscape. Notice that in the penalized estimate, rates are clustered by maturity and
+the graph clearly reveals that swap rates are moving as a curve.
+
+                                      10
+
+[PAGE 11]
+4.2  Estimating structured VAR models
+In this section, using similar techniques, we show how to recover a sparse vector autoregressive
+model from multivariate data.
+
+Endogenous dependence models.  Here, we assume that the conditional dependence structure of
+the assets St is purely endogenous, i.e. that the noise terms in the vector autoregressive model (2)
+are i.i.d. with:
+                                     St = St−1A + Zt,
+where Zt      (0, σI) for some σ > 0. In this case, we must have:    ∼N
+                          Γ = ATΓA + σI
+
+since AT     has no unit eigenvalue (by stationarity), this means that:    ⊗A
+                          Γ/σ = (I −AT ⊗AT)−1I
+where A       is the Kronecker product of A and B, which implies:    ⊗B
+                        ATA = I −σΓ−1.
+                                                    AWe can always choose σ small enough so that I−σΓ−1 ⪰0. This means that we can directly get                                  A to be the Cholesky decompositionas a matrix square root of (I−σΓ−1). Furthermore, if we pick                      Γ is chordal (i.e. has no cycles of length greater than three) thenof (I −σΓ−1), and if the graph ofthere is a permutation of the variables P such that the Cholesky decomposition of PΓP T, and the
+upper triangle of PΓP T have the same pattern of zeroes (see Wermuth (1980) for example). In
+Figure 4, we plot two dependence networks, one chordal (on the left), one not (on the right). In
+this case, the structure (pattern of zeroes) of A in the VAR model (6) can be directly inferred from
+that of the penalized covariance estimate.
+    Gilbert (1994, §2.4) also shows that if                        A satisﬁes ATA = I −σΓ−1 then, barring numericalcancellations in ATA, the graph of Γ−1 is the intersection graph of A so:
+
+                       (Γ−1)ij = 0        = 0, for all k = 1, . . . , n.                       =⇒AkiAkj
+This means in particular that when the graph of Γ is disconnected, then the graph of A must also
+be disconnected along the same clusters of variables, i.e. A and Γ have identical block-diagonal
+                                              Γ is disconnected, optimallystructure. In §4.3, we will use this fact to show that when the graph ofmean reverting portfolios must be formed exclusively of assets within a single cluster of this graph.
+
+Exogenous dependence models.  In the general case where the noise terms are correlated, with
+Zt      (0, Σ) for a certain noise covariance Σ, and the dependence structure is partly exogenous, ∼Nwe need to estimate the parameter matrix A directly from the data. In Section 2, we estimated the
+matrix A in the vector autoregressive model (2) by regressing St on St−1:
+
+                                      ˆA = STt−1St−1 −1 STt−1St.
+
+                                      11
+
+[PAGE 12]
+Figure 3: Left: a chordal graphical model: no cycles of length greater than three. Right: a non-
+chordal graphical model.
+
+
+Here too, we can modify this estimation procedure in order to get a sparse model matrix A. Our
+aim is again to both stabilize the estimation and highlight key dependence relationships between
+St and St−1. We replace the simple least-squares estimate above by a penalized one. We get the
+columns of A by solving:
+
+                                ai = argmin         +                               (15)                                       x    ∥Sit −St−1x∥2   γ∥x∥1
+                               λ > 0 controls sparsity. This is known as the LASSOin the variable x ∈Rn, where the parameter(see Tibshirani (1996)) and produces sparse least squares estimates.
+
+4.3  Canonical decomposition with penalized estimation
+We showed that covariance selection highlights networks of dependence among assets, and that pe-
+nalized regression could be used to estimate sparse model matrices A. We now show under which
+conditions these results can be combined to extract information on the support of the canonical
+portfolios produced by the decompositions in Section 2 from the graph structure of the covariance
+matrix Γ and of the model matrix A. Because both covariance selection and the lasso are substan-
+tially cheaper numerically than the sparse decomposition techniques in Section 3, our goal here is
+to use these penalized estimation techniques as preprocessing tools to narrow down the range of
+assets over which we look for mean reversion.
+    In Section 2, we saw that the Box & Tiao (1977) decomposition for example, could be formed
+by solving the following generalized eigenvalue problem:
+
+                               det(λΓ −ATΓA) = 0,
+
+                                      12
+
+[PAGE 13]
+           Figure 4: Left: a connected graphical model. Right: disconnected models.
+
+
+where Γ is the covariance matrix of the assets St and A is the model matrix in (2). Suppose now
+that our penalized estimates of the matrices Γ and ATΓA have disconnected graphs with identical
+clusters, i.e. have the same block diagonal structure, Gilbert (1994, Th. 6.1) shows that the support
+of the generalized eigenvectors of the pair          must be fully included in one of the clusters                                    {Γ, ATΓA}of the graph of the inverse covariance Γ−1. In other words, if the graph of the penalized estimate of
+Γ−1 and A are disconnected along the same clusters, then optimally unpredictable (or predictable)
+portfolios must be formed exclusively of assets in a single cluster.
+   This suggests a simple procedure for ﬁnding small mean reverting portfolios in very large
+data sets. We ﬁrst estimate a sparse inverse covariance matrix by solving the covariance selection
+problem in (14), setting ρ large enough so that the graph of Γ−1 is split into sufﬁciently small
+clusters. We then check if either the graph is chordal or if penalized estimates of A share some
+clusters with the graph of Γ−1. After this preprocessing step, we use the algorithms of Section 3
+to search these (much smaller) clusters of variables for optimal mean reverting (or momentum)
+portfolios.
+
+5  Empirical results
+
+In this section, we ﬁrst compare the performance of the algorithms described in Section 3. We then
+study the mean reversion versus sparsity tradeoff on various ﬁnancial instruments. Finally, we test
+the performance of convergence trading strategies on sparse mean reverting portfolios.
+
+
+
+
+
+                                      13
+
+[PAGE 14]
+5.1  Numerical performance
+In Figure 1 we plotted the result of the Box-Tiao decomposition on U.S. swap rate data (see details
+below). Each portfolio is a dense linear combination of swap rates, ranked in decreasing order of
+predictability. In Figure 6, we apply the greedy search algorithm detailed in Section 3 to the same
+data set and plot the sparse portfolio processes for each target number of assets. Each subplot of
+Figure 6 lists the number k of nonzero coefﬁcients of the corresponding portfolio and its mean
+reversion coefﬁcient λ. Figure 5 then compares the performance of the greedy search algorithm
+versus the semideﬁnite relaxation derived in Section 3. On the left, for each algorithm, we plot
+the mean reversion coefﬁcient λ versus portfolio cardinality (number of nonzero coefﬁcients). We
+observe on this example that while the semideﬁnite relaxation does produce better results in some
+instances, the greedy search is more reliable. Of course, both algorithms recover the same solutions
+when the target cardinality is set to k = 1 or k = n. On the right, we plot CPU time (in seconds)
+as a function of the total number of assets to search. As a quick benchmark, producing 100 sparse
+mean reverting portfolios for each target cardinality between 1 and 100 took one minute and forty
+seconds.
+
+
+      300                                                            102
+
+      250
+                                                                     101
+      200                                                                                                                       seconds)
+      150                                      (in 100   Reversion
+      100                                                   time
+                                                                                                         −1 Mean                                                                10
+       50                                             CPU
+
+        0                                                            10−2
+         1      2      3      4      5      6      7      8                0        20       40       60       80       100
+                   Cardinality                                Total number of assets
+Figure 5: Left: Mean reversion coefﬁcient λ versus portfolio cardinality (number of nonzero co-
+efﬁcients) using the greedy search (circles, solid line) and the semideﬁnite relaxation (squares)
+algorithms on U.S. swap rate data. Right: CPU time (in seconds) versus total number of assets n
+to compute a full set of sparse portfolios (with cardinality ranging from 1 to n) using the greedy
+search algorithm.
+
+
+5.2  Mean reversion versus sparsity
+In this section, we study the mean reversion versus sparsity tradeoff on several data sets. We also
+test the persistence of this mean reversion out of sample.
+
+
+
+                                      14
+
+[PAGE 15]
+                                k=1                                              k=2
+
+                                                                   1.45              6.8
+
+              6.6
+                                                                       1.4              6.4
+
+              6.2
+                                                                   1.35             6
+                    20     40     60     80     100                20     40     60     80     100
+                              λ=−0                                            λ=35
+                                k=3                                              k=4
+                                                                   0.08
+
+                                                                0.075            0.37
+                                                                   0.07
+            0.36                                                 0.065
+
+                                                                   0.06
+            0.35
+                                                                0.055
+                    20     40     60     80     100                20     40     60     80     100
+                              λ=128                                           λ=178
+                                k=5                                              k=6
+
+         −0.145                                              −0.025
+          −0.15                                                               −0.03
+         −0.155
+                                                             −0.035
+          −0.16
+                                                               −0.04
+         −0.165
+                    20     40     60     80     100                20     40     60     80     100
+                              λ=213                                           λ=247
+                                k=7                                              k=8
+
+         −0.175                                                             −0.045
+          −0.18                                                               −0.05
+
+         −0.185                                                             −0.055
+          −0.19                                                −0.06
+
+                    20     40     60     80     100                20     40     60     80     100
+                              λ=252                                           λ=252
+
+
+
+Figure 6: Sparse canonical decomposition on 100 days of U.S. swap rate data (in percent). The
+number of nonzero coefﬁcients in each portfolio vector is listed as k on top of each subplot, while
+the mean reversion coefﬁcient λ is listed below each one.
+
+
+                                      15
+
+[PAGE 16]
+Swap rates.  In Figure 7 we compare in and out of sample estimates of the mean reversion versus
+cardinality tradeoff. We study U.S. swap rate data for maturities 1Y, 2Y, 3Y, 4Y, 5Y, 7Y, 10Y and
+30Y from 1998 until 2005. We ﬁrst use the greedy algorithm of Section 3 to compute optimally
+mean reverting portfolios of increasing cardinality for time windows of 200 days and repeat the
+procedure every 50 days. We plot average mean reversion versus cardinality in Figure 7 on the
+left. We then repeat the procedure, this time computing the (out of sample) mean reversion in the
+200 days time window immediately following our sample and also plot average mean reversion
+versus cardinality. In Figure 7 on the right, we plot the out of sample portfolio price range (spread
+between min. and max. in basis points) versus cardinality (number of nonzero coefﬁcients) on the
+same U.S. swap rate data. Table 2 shows the portfolio composition for each target cardinality.
+
+                   1      2      3      4      5      6      7      8
+           1Y    0      0      0     -0.041   -0.037   0.036   -0.013   0.001
+           2Y    0      0      0      0      0      0     -0.102   0.117
+           3Y    0      0     -0.288   0.433   0.419   -0.437   0.547   -0.495
+           4Y    0     -0.714   0.806   -0.803   -0.802   0.809   -0.767   0.702
+           5Y  1.000   0.700   -0.517   0.408   0.424   -0.389   0.317   -0.427
+           7Y    0      0      0      0      0      0      0     0.219
+           10Y    0      0      0      0      0     -0.031   0.025   -0.130
+           30Y    0      0      0      0     -0.007   0.016   -0.008   0.014
+        Table 2: Composition of optimal swap portfolios for various target cardinalities.
+
+
+
+Foreign exchange rates.  We study the following U.S. dollar exchange rates: Argentina, Aus-
+tralia, Brazil, Canada, Chile, China, Colombia, Czech Republic, Egypt, Eurozone, Finland, Hong
+Kong, Hungary, India, Indonesia, Israel, Japan, Jordan, Kuwait, Latvia, Lithuania, Malaysia, Mex-
+ico, Morocco, New Zealand, Norway, Pakistan, Papua NG, Peru, Philippines, Poland, Romania,
+Russia, Saudi Arabia, Singapore, South Africa, South Korea, Sri Lanka, Switzerland, Taiwan,
+Thailand, Turkey, United Kingdom, Venezuela, from April 2002 until April 2007. Note that ex-
+change rates are quoted with four digits of accuracy (pip size), with bid-ask spreads around 0.0005
+for key rates.
+   After forming the sample covariance matrix Σ of these rates, we solve the covariance selection
+problem in (14). This penalized maximum likelihood estimation problem isolates a cluster of 14
+rates and we plot the corresponding graph of conditional covariances in Figure 8. For these 14
+rates, we then study the impact of penalized estimation of the matrices Γ and A on out of sample
+mean reversion. In Figure 9, we plot out of sample mean reversion coefﬁcient λ versus portfolio
+cardinality, on 14 rates selected by covariance selection. The sparse canonical decomposition
+was performed on both unpenalized estimates and penalized ones. The covariance matrix was
+estimated by solving the covariance selection problem (14) with ρ = 0.01 and the matrix A in (2)
+was estimated by solving problem (15) with the penalty γ set to zero out 20% of the regression
+coefﬁcients.
+
+
+                                      16
+
+[PAGE 17]
+  We notice in Figure 9 that penalization has a double impact. First, the fact that sparse portfolios
+have a higher out of sample mean reversion than dense ones means that penalizing for sparsity
+helps prediction. Second, penalized estimates of Γ and A also produce higher out of sample mean
+reversion than unpenalized ones. In Figure 9 on the right, we plot portfolio price range versus
+cardinality and notice that here too sparse portfolios have a signiﬁcantly broader range of variation
+than dense ones.
+
+5.3  Convergence trading
+Here, we measure the performance of the convergence trading strategies detailed in the appendix.
+In Figure 10 we plot average out of sample sharpe ratio versus portfolio cardinality on a 50 days
+(out of sample) time window immediately following the 100 days over which we estimate the
+process parameters. Somewhat predictably in the very liquid U.S. swap markets, we notice that
+while out of sample Sharpe ratios look very promising in frictionless markets, even minuscule
+transaction costs (a bid-ask spread of 1bp) are sufﬁcient to completely neutralize these market
+inefﬁciencies.
+
+6  Conclusion
+
+We have derived two simple algorithms for extracting sparse (i.e. small) mean reverting portfo-
+lios from multivariate time series by solving a penalized version of the canonical decomposition
+technique in Box & Tiao (1977). Empirical results suggest that these small portfolios present a
+double advantage over their original dense counterparts: sparsity means lower transaction costs
+and better interpretability, it also improved out-of-sample predictability in the markets studied in
+Section 5. Several important issues remain open at this point. First, it would be important to show
+consistency of the variable selection procedure: assuming we know a priori that only a few vari-
+ables have economic signiﬁcance (i.e. should appear in the optimal portfolio), can we prove that
+the sparse canonical decomposition will recover them? Very recent consistency results by Amini
+& Wainwright (2008) on the sparse principal component analysis relaxation in d’Aspremont et al.
+(2007) seem to suggest that this is likely, at least for simple models. Second, while the dual of the
+semideﬁnite relaxation in (11) provides a bound on suboptimality, we currently have no procedure
+for deriving simple bounds of this type for the greedy algorithm in Section 3.1.
+
+Acknowledgements
+
+The author would like to thank Marco Cuturi, Guillaume Boulanger and conference participants
+at the third Cambridge-Princeton conference and the INFORMS 2007 conference in Seattle for
+helpful comments and discussions. The author would also like to acknowledge support from NSF
+grant DMS-0625352, ONR grant number N00014-07-1-0150, a Peek junior faculty fellowship and
+a gift from Google, Inc.
+
+
+                                      17
+
+[PAGE 18]
+Appendix
+
+In the previous sections, we showed how to extract small mean reverting (or momentum) portfolios
+from multivariate asset time series. In this section we assume that we have identiﬁed such a mean
+reverting portfolio and model its dynamics given by:
+
+                              dPt = λ( ¯P     + σdZt,                             (16)                                   −Pt)dt
+In this section, we detail how to optimally trade these portfolios under various assumptions re-
+garding market friction and risk-management constraints. We begin by quickly recalling results on
+estimating the Ornstein-Uhlenbeck dynamics in (16).
+
+Estimating Ornstein-Uhlenbeck processes
+By explicitly integrating the process Pt in (16) over a time increment ∆t we get:
+                                         Z  t
+                     Pt = ¯P + e−λ∆t(Pt−∆t −¯P) + σ  t−∆t eλ(s−t)dZs,                   (17)
+which means that we can estimate λ and σ by simply regressing Pt on Pt−1 and a constant. With
+                   r                    Z  t
+                                         1                                 eλ(s−t)dZs      −e−2λ∆t    (0, 1),                            t−∆t      ∼      2λ  N
+we get the following estimators for the parameters of Pt:
+
+       XN                    1
+                      ˆµ =        Pt
+            N
+                            i=0                !                 PN
+                                     i=1(Pt                       ˆλ =        log           −1∆t    PN    −ˆµ)(Pt−1 −ˆµ)                                      i=1(Pt −ˆµ)(Pt −ˆµ)         v
+         u
+         u      XN                           2λ         t                       ˆσ =                              ((Pt                        (1                       −ˆµ) −e−λ∆t(Pt −ˆµ))2
+                                                   i=1                       −e−2λ∆t)(N −2)
+
+where ∆t is the time interval between times t and t −1. The expression in (17) also allows us tocompute the half-life of a market shock on Pt as:
+
+                                              log 2
+                                         τ =         ,                                      (18)
+                                   λ
+which is a more intuitive measure of the magnitude of the portfolio’s mean reversion.
+
+
+
+                                      18
+
+[PAGE 19]
+Utility maximization in frictionless markets
+Suppose now that an agent invests in an asset Pt and in a riskless bond Bt following:
+
+                                 dBt = rBtdt,
+
+the wealth Wt of this agent will follow:
+
+                       dWt = NtdPt + (Wt −NtPt)rdt.
+If Pt follows a mean reverting process given by (16), this is also:
+                dWt = (r(Wt −NtPt) + λ( ¯P −Pt)Nt)dt + NtσdZt.
+If we write the value function:
+
+                    V (Wt, Pt, t) = max Et e−β(T−t)U(Wt)  ,
+                                             Nt
+
+the H.J.B. equation for this problem can be written:
+
+                  ∂V           ∂V                          ∂V
+       βV = max    λ( ¯Pt    +    (r(Wt     + λ( ¯P      +                     Nt ∂P    −Pt)  ∂W     −NtPt)      −Pt)Nt)   ∂t
+            +1 ∂2V     1  ∂2V         1 ∂2V                               2                        σ2 +        Ntσ2 +     2N2t σ2                  2 ∂P      2 ∂P∂W       2 ∂W
+Maximizing in Nt yields the following expression for the number of shares in the optimal portfolio:
+
+                     ∂V /∂W                  /∂P∂W
+                Nt =                    ¯P                                2                  (19)                      ∂2V /∂W 2σ2(λ(  −Pt) −rPt) −∂2V∂2V /∂W
+
+Jurek & Yang (2006) solve this equation explicitly for U(x) = log x and U(x) = x1−γ/(1                                                        −γ)and we recover in particular the classic expression:
+
+                                   λ( ¯P                          Nt =     −Pt) −rPt  Wt,
+                                         σ2
+
+in the log-utility case.
+
+Leverage constraints
+Suppose now that the portfolio is subject to fund withdrawals so that the total wealth evolves
+according to:
+                       dW = dΠ + dF
+where dΠ = NtdPt + (Wt           and dF represents fund ﬂows, with:                     −NtPt)rdt
+                          dF = fdΠ + σfdZ(2)t
+
+                                      19
+
+[PAGE 20]
+where Z(2)t   is a Brownian motion (independent of Zt). Jurek & Yang (2006) show that the optimal
+portfolio allocation can also be computed explicitly in the presence of fund ﬂows, with:
+
+                            λ( ¯P               1                   Nt =     −Pt) −rPt        = LtWt,                                  σ2         (1 + f)Wt
+
+in the log-utility case. Note that the constant f can also be interpreted in terms of leverage limits.
+In steady state, we have:
+                                             σ2
+                                    Pt ∼N   ¯P, 2λ
+which means that the leverage Lt itself is normally distributed. If we assume for simplicity that
+¯P = 0, given the fund ﬂow parameter f, the leverage will remain below the level M given by:
+
+                                    α(λ + r)
+                M =                                         (1 + f)σ √ 2λ                                 (20)
+
+with conﬁdence level N(α), where N(x) is the Gaussian CDF. The bound on leverage M can thus
+be seen as an alternate way of identifying or specifying the fund ﬂow constant f in order to manage
+capital outﬂow risks.
+
+References
+
+Alexander, C. (1999), ‘Optimal hedging using cointegration’, Philosophical Transactions: Mathematical,
+     Physical and Engineering Sciences 357(1758), 2039–2058.
+
+Amini, A. & Wainwright, M. (2008), ‘High dimensional analysis of semideﬁnite relaxations for sparse
+      principal component analysis’, Tech report, Statistics Dept., U.C. Berkeley .
+
+Banerjee, O., Ghaoui, L. E. & d’Aspremont, A. (2007), ‘Model selection through sparse maximum likeli-
+    hood estimation’, ICML06. To appear in Journal of Machine Learning Research.
+
+Bewley, R., Orden, D., Yang, M. & Fisher, L. (1994), ‘Comparison of Box-Tiao and Johansen Canonical
+     Estimators of Cointegrating Vectors in VEC (1) Models’, Journal of Econometrics 64, 3–27.
+Box, G. E. & Tiao, G. C. (1977), ‘A canonical analysis of multiple time series’, Biometrika 64(2), 355.
+
+Campbell, J. & Viceira, L. (1999), ‘Consumption and Portfolio Decisions When Expected Returns Are Time
+     Varying’, The Quarterly Journal of Economics 114(2), 433–495.
+
+Cand`es, E. J. & Tao, T. (2005), ‘Decoding by linear programming’, Information Theory, IEEE Transactions
+    on 51(12), 4203–4215.
+
+Candes, E. & Tao, T. (2007), ‘The Dantzig selector: statistical estimation when$ p$ is much larger than$
+      n$’, To appear in Annals of Statistics .
+
+Chen, S., Donoho, D. & Saunders, M. (2001), ‘Atomic decomposition by basis pursuit.’, SIAM Review
+      43(1), 129–159.
+
+                                      20
+
+[PAGE 21]
+d’Aspremont, A., Banerjee, O. & El Ghaoui, L. (2006), ‘First-order methods for sparse covariance selec-
+      tion’, To appear in SIAM Journal on Matrix Analysis and Applications .
+
+d’Aspremont, A., El Ghaoui, L., Jordan, M. & Lanckriet, G. R. G. (2007), ‘A direct formulation for sparse
+   PCA using semideﬁnite programming’, SIAM Review 49(3), 434–448.
+Dempster, A. (1972), ‘Covariance selection’, Biometrics 28, 157–175.
+Dickey, D. & Fuller, W. (1979), ‘Distribution of the Estimators for Autoregressive Time Series With a Unit
+     Root’, Journal of the American Statistical Association 74(366), 427–431.
+
+Donoho, D. L. & Tanner, J. (2005), ‘Sparse nonnegative solutions of underdetermined linear equations by
+      linear programming’, Proc. of the National Academy of Sciences 102(27), 9446–9451.
+Engle, R. & Granger, C. (1987), ‘Cointegration and error correction: representation, estimation and testing’,
+     Econometrica 55(2), 251–276.
+
+Fama, E. & French, K. (1988), ‘Permanent and Temporary Components of Stock Prices’, The Journal of
+      Political Economy 96(2), 246–273.
+Fazel, M., Hindi, H. & Boyd, S. (2001), ‘A rank minimization heuristic with application to minimum order
+     system approximation’, Proceedings American Control Conference 6, 4734–4739.
+
+Friedman, J., Hastie, T. & Tibshirani, R. (2007), ‘Sparse inverse covariance estimation with the lasso’,
+     Working paper .
+
+Gatev, E., Goetzmann, W. & Rouwenhorst, K. (2006), ‘Pairs Trading: Performance of a Relative-Value
+     Arbitrage Rule’, Review of Financial Studies 19(3), 797.
+
+Gilbert, J. (1994), ‘Predicting Structure in Sparse Matrix Computations’, SIAM Journal on Matrix Analysis
+    and Applications 15(1), 62–79.
+
+Grossman, S. & Vila, J. (1992), ‘Optimal Dynamic Trading with Leverage Constraints’, The Journal of
+     Financial and Quantitative Analysis 27(2), 151–168.
+Johansen, S. (1988), ‘Statistical analysis of cointegration vectors’, Journal of Economic Dynamics and
+     Control 12(2/3), 231–254.
+
+Johansen, S. (1991), ‘Estimation and Hypothesis Testing of Cointegration Vectors in Gaussian Vector Au-
+      toregressive Models’, Econometrica 59(6), 1551–1580.
+Jurek, J. & Yang, H. (2006), Dynamic portfolio selection in arbitrage, Technical report, Working Paper,
+     Harvard Business School.
+
+Kim, T. & Omberg, E. (1996), ‘Dynamic Nonmyopic Portfolio Behavior’, The Review of Financial Studies
+      9(1), 141–161.
+Lauritzen, S. (1996), ‘Graphical Models’.
+
+Liu, J. & Longstaff, F. (2004), ‘Losing Money on Arbitrage: Optimal Dynamic Portfolio Choice in Markets
+     with Arbitrage Opportunities’, Review of Financial Studies 17(3).
+
+                                      21
+
+[PAGE 22]
+Meinshausen, N. & Yu, B. (2007), Lasso-type recovery of sparse representations for highdimensional data,
+     Technical report, To appear in Annals of Statistics.
+
+Natarajan, B. K. (1995), ‘Sparse approximate solutions to linear systems’, SIAM J. Comput. 24(2), 227–234.
+
+Poterba, J. M. & Summers, L. H. (1988), ‘Mean reversion in stock prices: Evidence and implications’,
+     Journal of Financial Economics 22(1), 27–59.
+Rothman, A., Bickel, P., Levina, E. & Zhu, J. (2007), ‘Sparse permutation invariant covariance estimation’,
+     Technical report 467, Dept. of Statistics, Univ. of Michigan .
+
+Sturm, J. (1999), ‘Using SEDUMI 1.0x, a MATLAB toolbox for optimization over symmetric cones’, Op-
+      timization Methods and Software 11, 625–653.
+Tibshirani, R. (1996), ‘Regression shrinkage and selection via the LASSO’, Journal of the Royal statistical
+      society, series B 58(1), 267–288.
+
+Toh, K. C., Todd, M. J. & Tutuncu, R. H. (1999), ‘SDPT3 – a MATLAB software package for semideﬁnite
+     programming’, Optimization Methods and Software 11, 545–581.
+Wachter, J. (2002), ‘Portfolio and Consumption Decisions under Mean-Reverting Returns: An Exact Solu-
+      tion for Complete Markets’, The Journal of Financial and Quantitative Analysis 37(1), 63–91.
+
+Wermuth, N. (1980), ‘Linear Recursive Equations, Covariance Selection, and Path Analysis’, Journal of the
+     American Statistical Association 75(372), 963–972.
+
+Xiong, W. (2001), ‘Convergence trading with wealth effects: an ampliﬁcation mechanism in ﬁnancial mar-
+      kets’, Journal of Financial Economics 62(2), 247–292.
+
+Yuan, M. & Lin, Y. (2007), ‘Model selection and estimation in the Gaussian graphical model’, Biometrika
+      94(1), 19.
+
+
+
+
+
+                                      22
+
+[PAGE 23]
+     300                                                             50
+
+                                                                     45
+     250
+                                                                     40
+     200                                                             35
+                                              bp)
+                                                                     30
+     150                                        (in
+                                                                     25Reversion
+     100
+                                                                             Range 15Mean  50                                                             20
+                                                                     10
+       0
+                                                                      5
+
+     −50                                                              0
+        1     2     3     4     5     6     7     8                 1     2     3     4     5     6     7     8
+                   Cardinality                                       Cardinality
+Figure 7: Left: mean reversion coefﬁcient λ versus portfolio cardinality (number of nonzero coef-
+ﬁcients), in sample (blue circles) and out of sample (black squares) on U.S. swaps. Right: out of
+sample portfolio price range (in basis points) versus cardinality (number of nonzero coefﬁcients)
+on U.S. swap rate data. The dashed lines are at plus and minus one standard deviation.
+
+
+
+
+
+Figure 8: Graph of conditional covariance among a cluster of U.S. dollar exchange rates. Posi-
+tive dependencies are plotted as green links, negative ones in red, while the thickness reﬂects the
+magnitude of the covariance.
+
+
+                                      23
+
+[PAGE 24]
+                                                                                  3.5
+     140
+                                                                      3
+     120
+                                                                                  2.5
+     100
+                                                                      2
+      80
+                                                                                  1.5 Reversion  60                                                                           Range    1
+      40                                                                         0.5Mean
+      20                                                              0
+
+       0                                                                   −0.5
+
+     −20                                                            −1
+        0     2     4     6     8     10    12    14                0              5              10             15
+                   Cardinality                                       Cardinality
+ Figure 9: Left: out of sample mean reversion coefﬁcient versus portfolio cardinality (number of
+nonzero coefﬁcients), on 14 U.S. dollar exchange rates clustered by covariance selection. The
+ sparse canonical decomposition was performed on both unpenalized estimates (black squares) and
+ penalized ones (blue circles). Right: out of sample portfolio price range (in percent) versus cardi-
+ nality. The dashed lines are at plus and minus one standard deviation.
+
+
+
+
+
+      10                                                              3
+
+       8                                                              2
+Ratio   6                                                                  Ratio  1
+       4                                                              0
+
+       2                                                           −1Sharpe                                                                                     Sharpe
+
+       0                                                           −2
+
+      −2                                                           −3
+        1      2      3      4      5      6      7      8               1      2      3      4      5      6      7      8
+                   Cardinality                                      Cardinality
+ Figure 10: Left: average out of sample sharpe ratio versus portfolio cardinality on U.S. swaps.
+ Right: idem, with a bid-ask spread of 1bp. The dashed lines are at plus and minus one standard
+ deviation.
+
+
+
+                                       24

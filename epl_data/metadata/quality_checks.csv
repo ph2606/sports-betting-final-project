@@ -1,0 +1,244 @@
+check,passed,detail
+clubelo/rated_match_history: CSV readable,True,320 rows; 18 fields
+clubelo/rated_match_history: typed Parquet available,True,data/processed/clubelo/rated_match_history.csv
+clubelo/rated_match_history: focal clubs within cohort,True,team
+clubelo/rating_history: CSV readable,True,"3,896 rows; 8 fields"
+clubelo/rating_history: typed Parquet available,True,data/processed/clubelo/rating_history.csv
+clubelo/rating_history: focal clubs within cohort,True,team
+clubelo/ratings_snapshot: CSV readable,True,20 rows; 4 fields
+clubelo/ratings_snapshot: typed Parquet available,True,data/processed/clubelo/ratings_snapshot.csv
+clubelo/ratings_snapshot: focal clubs within cohort,True,team
+espn/match_info: CSV readable,True,424 rows; 25 fields
+espn/match_info: typed Parquet available,True,data/processed/espn/match_info.csv
+espn/match_key_events: CSV readable,True,"5,989 rows; 29 fields"
+espn/match_key_events: typed Parquet available,True,data/processed/espn/match_key_events.csv
+espn/match_key_events: focal clubs within cohort,True,team
+espn/match_odds_snapshots: CSV readable,True,"1,294 rows; 249 fields"
+espn/match_odds_snapshots: typed Parquet available,True,data/processed/espn/match_odds_snapshots.csv
+espn/player_injury_reports: CSV readable,True,0 rows; 5 fields
+espn/player_injury_reports: typed Parquet available,True,data/processed/espn/player_injury_reports.csv
+espn/player_injury_reports: focal clubs within cohort,True,team
+espn/player_match_lineups: CSV readable,True,"14,909 rows; 55 fields"
+espn/player_match_lineups: typed Parquet available,True,data/processed/espn/player_match_lineups.csv
+espn/player_match_lineups: focal clubs within cohort,True,team
+espn/player_profiles: CSV readable,True,585 rows; 63 fields
+espn/player_profiles: typed Parquet available,True,data/processed/espn/player_profiles.csv
+espn/player_profiles: focal clubs within cohort,True,team
+espn/player_season_stats: CSV readable,True,585 rows; 22 fields
+espn/player_season_stats: typed Parquet available,True,data/processed/espn/player_season_stats.csv
+espn/player_season_stats: focal clubs within cohort,True,team
+espn/standings: CSV readable,True,37 rows; 20 fields
+espn/standings: typed Parquet available,True,data/processed/espn/standings.csv
+espn/standings: focal clubs within cohort,True,team
+espn/team_match_stats: CSV readable,True,746 rows; 40 fields
+espn/team_match_stats: typed Parquet available,True,data/processed/espn/team_match_stats.csv
+espn/team_match_stats: focal clubs within cohort,True,team
+espn/team_profiles: CSV readable,True,20 rows; 33 fields
+espn/team_profiles: typed Parquet available,True,data/processed/espn/team_profiles.csv
+espn/team_profiles: focal clubs within cohort,True,team
+espn/team_schedules: CSV readable,True,746 rows; 27 fields
+espn/team_schedules: typed Parquet available,True,data/processed/espn/team_schedules.csv
+espn/team_schedules: focal clubs within cohort,True,team
+football_data/field_dictionary: CSV readable,True,248 rows; 6 fields
+football_data/field_dictionary: typed Parquet available,True,data/processed/football_data/field_dictionary.csv
+football_data/match_odds_1x2_long: CSV readable,True,"193,622 rows; 24 fields"
+football_data/match_odds_1x2_long: typed Parquet available,True,data/processed/football_data/match_odds_1x2_long.csv
+football_data/matches_current_cohort: CSV readable,True,"21,782 rows; 248 fields"
+football_data/matches_current_cohort: typed Parquet available,True,data/processed/football_data/matches_current_cohort.csv
+football_data/season_source_coverage: CSV readable,True,136 rows; 10 fields
+football_data/season_source_coverage: typed Parquet available,True,data/processed/football_data/season_source_coverage.csv
+football_data/team_match_history: CSV readable,True,"27,304 rows; 86 fields"
+football_data/team_match_history: typed Parquet available,True,data/processed/football_data/team_match_history.csv
+football_data/team_match_history: focal clubs within cohort,True,team
+football_data/team_match_lagged_features: CSV readable,True,"27,304 rows; 150 fields"
+football_data/team_match_lagged_features: typed Parquet available,True,data/processed/football_data/team_match_lagged_features.csv
+football_data/team_match_lagged_features: focal clubs within cohort,True,team
+football_data/team_season_coverage: CSV readable,True,680 rows; 8 fields
+football_data/team_season_coverage: typed Parquet available,True,data/processed/football_data/team_season_coverage.csv
+football_data/team_season_coverage: focal clubs within cohort,True,team
+football_data/team_season_summary: CSV readable,True,680 rows; 71 fields
+football_data/team_season_summary: typed Parquet available,True,data/processed/football_data/team_season_summary.csv
+football_data/team_season_summary: focal clubs within cohort,True,team
+fpl_archive/duplicate_or_superseded_rows: CSV readable,True,69 rows; 64 fields
+fpl_archive/duplicate_or_superseded_rows: typed Parquet available,True,data/processed/fpl_archive/duplicate_or_superseded_rows.csv
+fpl_archive/duplicate_or_superseded_rows: focal clubs within cohort,True,canonical_team
+fpl_archive/player_gameweeks: CSV readable,True,"176,282 rows; 90 fields"
+fpl_archive/player_gameweeks: typed Parquet available,True,data/processed/fpl_archive/player_gameweeks.csv
+fpl_archive/player_gameweeks: focal clubs within cohort,True,canonical_team
+fpl_archive/player_identity_by_season: CSV readable,True,"5,725 rows; 9 fields"
+fpl_archive/player_identity_by_season: typed Parquet available,True,data/processed/fpl_archive/player_identity_by_season.csv
+fpl_archive/player_team_season_totals: CSV readable,True,"5,836 rows; 24 fields"
+fpl_archive/player_team_season_totals: typed Parquet available,True,data/processed/fpl_archive/player_team_season_totals.csv
+fpl_archive/player_team_season_totals: focal clubs within cohort,True,canonical_team
+fpl_archive/players_season_snapshots: CSV readable,True,"5,682 rows; 129 fields"
+fpl_archive/players_season_snapshots: typed Parquet available,True,data/processed/fpl_archive/players_season_snapshots.csv
+fpl_archive/players_season_snapshots: focal clubs within cohort,True,canonical_team
+fpl_archive/season_coverage: CSV readable,True,11 rows; 18 fields
+fpl_archive/season_coverage: typed Parquet available,True,data/processed/fpl_archive/season_coverage.csv
+fpl_archive/team_fixture_history: CSV readable,True,"5,092 rows; 31 fields"
+fpl_archive/team_fixture_history: typed Parquet available,True,data/processed/fpl_archive/team_fixture_history.csv
+fpl_archive/team_fixture_history: focal clubs within cohort,True,canonical_team
+fpl_archive/team_gameweek_player_totals: CSV readable,True,"5,004 rows; 23 fields"
+fpl_archive/team_gameweek_player_totals: typed Parquet available,True,data/processed/fpl_archive/team_gameweek_player_totals.csv
+fpl_archive/team_gameweek_player_totals: focal clubs within cohort,True,canonical_team
+fpl_archive/teams_season_snapshots: CSV readable,True,156 rows; 30 fields
+fpl_archive/teams_season_snapshots: typed Parquet available,True,data/processed/fpl_archive/teams_season_snapshots.csv
+fpl_archive/teams_season_snapshots: focal clubs within cohort,True,canonical_team
+fpl_archive/unresolved_membership_rows: CSV readable,True,0 rows; 7 fields
+fpl_archive/unresolved_membership_rows: typed Parquet available,True,data/processed/fpl_archive/unresolved_membership_rows.csv
+fpl_current/chips: CSV readable,True,8 rows; 12 fields
+fpl_current/chips: typed Parquet available,True,data/processed/fpl_current/chips.csv
+fpl_current/current_roster_history_past: CSV readable,True,"2,109 rows; 42 fields"
+fpl_current/current_roster_history_past: typed Parquet available,True,data/processed/fpl_current/current_roster_history_past.csv
+fpl_current/element_stats: CSV readable,True,26 rows; 7 fields
+fpl_current/element_stats: typed Parquet available,True,data/processed/fpl_current/element_stats.csv
+fpl_current/element_types: CSV readable,True,4 rows; 18 fields
+fpl_current/element_types: typed Parquet available,True,data/processed/fpl_current/element_types.csv
+fpl_current/events: CSV readable,True,38 rows; 34 fields
+fpl_current/events: typed Parquet available,True,data/processed/fpl_current/events.csv
+fpl_current/fixture_player_stats: CSV readable,True,"3,502 rows; 13 fields"
+fpl_current/fixture_player_stats: typed Parquet available,True,data/processed/fpl_current/fixture_player_stats.csv
+fpl_current/fixture_player_stats: focal clubs within cohort,True,team
+fpl_current/fixtures: CSV readable,True,380 rows; 24 fields
+fpl_current/fixtures: typed Parquet available,True,data/processed/fpl_current/fixtures.csv
+fpl_current/gameweek_dream_teams: CSV readable,True,55 rows; 13 fields
+fpl_current/gameweek_dream_teams: typed Parquet available,True,data/processed/fpl_current/gameweek_dream_teams.csv
+fpl_current/gameweek_fantasy_points_explanations: CSV readable,True,"4,576 rows; 14 fields"
+fpl_current/gameweek_fantasy_points_explanations: typed Parquet available,True,data/processed/fpl_current/gameweek_fantasy_points_explanations.csv
+fpl_current/gameweek_fantasy_points_explanations: focal clubs within cohort,True,canonical_team
+fpl_current/gameweek_live_player_stats: CSV readable,True,"3,216 rows; 46 fields"
+fpl_current/gameweek_live_player_stats: typed Parquet available,True,data/processed/fpl_current/gameweek_live_player_stats.csv
+fpl_current/gameweek_live_player_stats: focal clubs within cohort,True,canonical_team
+fpl_current/phases: CSV readable,True,11 rows; 10 fields
+fpl_current/phases: typed Parquet available,True,data/processed/fpl_current/phases.csv
+fpl_current/player_match_history: CSV readable,True,"3,216 rows; 54 fields"
+fpl_current/player_match_history: typed Parquet available,True,data/processed/fpl_current/player_match_history.csv
+fpl_current/player_match_history: focal clubs within cohort,True,canonical_team
+fpl_current/player_upcoming_fixtures: CSV readable,True,"22,011 rows; 26 fields"
+fpl_current/player_upcoming_fixtures: typed Parquet available,True,data/processed/fpl_current/player_upcoming_fixtures.csv
+fpl_current/players: CSV readable,True,667 rows; 118 fields
+fpl_current/players: typed Parquet available,True,data/processed/fpl_current/players.csv
+fpl_current/players: focal clubs within cohort,True,canonical_team
+fpl_current/summary_download_status: CSV readable,True,667 rows; 6 fields
+fpl_current/summary_download_status: typed Parquet available,True,data/processed/fpl_current/summary_download_status.csv
+fpl_current/summary_download_status: focal clubs within cohort,True,canonical_team
+fpl_current/team_match_player_totals: CSV readable,True,100 rows; 24 fields
+fpl_current/team_match_player_totals: typed Parquet available,True,data/processed/fpl_current/team_match_player_totals.csv
+fpl_current/team_match_player_totals: focal clubs within cohort,True,canonical_team
+fpl_current/team_set_piece_notes: CSV readable,True,20 rows; 9 fields
+fpl_current/team_set_piece_notes: typed Parquet available,True,data/processed/fpl_current/team_set_piece_notes.csv
+fpl_current/team_set_piece_notes: focal clubs within cohort,True,canonical_team
+fpl_current/teams: CSV readable,True,20 rows; 28 fields
+fpl_current/teams: typed Parquet available,True,data/processed/fpl_current/teams.csv
+fpl_current/teams: focal clubs within cohort,True,canonical_team
+integrated/current_player_master: CSV readable,True,667 rows; 137 fields
+integrated/current_player_master: typed Parquet available,True,data/processed/integrated/current_player_master.csv
+integrated/current_player_master: focal clubs within cohort,True,team
+integrated/match_source_links: CSV readable,True,"11,240 rows; 85 fields"
+integrated/match_source_links: typed Parquet available,True,data/processed/integrated/match_source_links.csv
+integrated/player_identity_links: CSV readable,True,667 rows; 6 fields
+integrated/player_identity_links: typed Parquet available,True,data/processed/integrated/player_identity_links.csv
+integrated/player_identity_links: focal clubs within cohort,True,team
+sportsdb/club_profiles: CSV readable,True,20 rows; 66 fields
+sportsdb/club_profiles: typed Parquet available,True,data/processed/sportsdb/club_profiles.csv
+sportsdb/club_profiles: focal clubs within cohort,True,team
+statsbomb/competitions: CSV readable,True,2 rows; 16 fields
+statsbomb/competitions: typed Parquet available,True,data/processed/statsbomb/competitions.csv
+statsbomb/events_2003_04: CSV readable,True,"102,459 rows; 74 fields"
+statsbomb/events_2003_04: typed Parquet available,True,data/processed/statsbomb/events_2003_04.csv
+statsbomb/events_2003_04: focal clubs within cohort,True,canonical_team
+statsbomb/events_2015_16: CSV readable,True,"828,389 rows; 75 fields"
+statsbomb/events_2015_16: typed Parquet available,True,data/processed/statsbomb/events_2015_16.csv
+statsbomb/events_2015_16: focal clubs within cohort,True,canonical_team
+statsbomb/match_coverage: CSV readable,True,362 rows; 11 fields
+statsbomb/match_coverage: typed Parquet available,True,data/processed/statsbomb/match_coverage.csv
+statsbomb/matches: CSV readable,True,362 rows; 25 fields
+statsbomb/matches: typed Parquet available,True,data/processed/statsbomb/matches.csv
+statsbomb/player_match_cards: CSV readable,True,854 rows; 19 fields
+statsbomb/player_match_cards: typed Parquet available,True,data/processed/statsbomb/player_match_cards.csv
+statsbomb/player_match_cards: focal clubs within cohort,True,canonical_team
+statsbomb/player_match_event_metrics: CSV readable,True,"7,032 rows; 39 fields"
+statsbomb/player_match_event_metrics: typed Parquet available,True,data/processed/statsbomb/player_match_event_metrics.csv
+statsbomb/player_match_event_metrics: focal clubs within cohort,True,canonical_team
+statsbomb/player_match_event_type_counts: CSV readable,True,"80,399 rows; 17 fields"
+statsbomb/player_match_event_type_counts: typed Parquet available,True,data/processed/statsbomb/player_match_event_type_counts.csv
+statsbomb/player_match_event_type_counts: focal clubs within cohort,True,canonical_team
+statsbomb/player_match_lineups: CSV readable,True,"9,054 rows; 23 fields"
+statsbomb/player_match_lineups: typed Parquet available,True,data/processed/statsbomb/player_match_lineups.csv
+statsbomb/player_match_lineups: focal clubs within cohort,True,canonical_team
+statsbomb/player_match_positions: CSV readable,True,"8,575 rows; 23 fields"
+statsbomb/player_match_positions: typed Parquet available,True,data/processed/statsbomb/player_match_positions.csv
+statsbomb/player_match_positions: focal clubs within cohort,True,canonical_team
+statsbomb/season_coverage: CSV readable,True,2 rows; 8 fields
+statsbomb/season_coverage: typed Parquet available,True,data/processed/statsbomb/season_coverage.csv
+statsbomb/team_match_event_metrics: CSV readable,True,514 rows; 37 fields
+statsbomb/team_match_event_metrics: typed Parquet available,True,data/processed/statsbomb/team_match_event_metrics.csv
+statsbomb/team_match_event_metrics: focal clubs within cohort,True,canonical_team
+statsbomb/team_match_event_type_counts: CSV readable,True,"12,526 rows; 15 fields"
+statsbomb/team_match_event_type_counts: typed Parquet available,True,data/processed/statsbomb/team_match_event_type_counts.csv
+statsbomb/team_match_event_type_counts: focal clubs within cohort,True,canonical_team
+statsbomb/team_matches: CSV readable,True,514 rows; 33 fields
+statsbomb/team_matches: typed Parquet available,True,data/processed/statsbomb/team_matches.csv
+statsbomb/team_matches: focal clubs within cohort,True,canonical_team
+transfermarkt_archive/appearances: CSV readable,True,"123,483 rows; 18 fields"
+transfermarkt_archive/appearances: typed Parquet available,True,data/processed/transfermarkt_archive/appearances.csv
+transfermarkt_archive/appearances: focal clubs within cohort,True,team
+transfermarkt_archive/club_games: CSV readable,True,"8,911 rows; 15 fields"
+transfermarkt_archive/club_games: typed Parquet available,True,data/processed/transfermarkt_archive/club_games.csv
+transfermarkt_archive/club_games: focal clubs within cohort,True,team
+transfermarkt_archive/clubs: CSV readable,True,19 rows; 21 fields
+transfermarkt_archive/clubs: typed Parquet available,True,data/processed/transfermarkt_archive/clubs.csv
+transfermarkt_archive/clubs: focal clubs within cohort,True,team
+transfermarkt_archive/competition_dictionary: CSV readable,True,65 rows; 11 fields
+transfermarkt_archive/competition_dictionary: typed Parquet available,True,data/processed/transfermarkt_archive/competition_dictionary.csv
+transfermarkt_archive/game_events: CSV readable,True,"60,033 rows; 16 fields"
+transfermarkt_archive/game_events: typed Parquet available,True,data/processed/transfermarkt_archive/game_events.csv
+transfermarkt_archive/game_events: focal clubs within cohort,True,team
+transfermarkt_archive/game_lineups: CSV readable,True,"158,876 rows; 15 fields"
+transfermarkt_archive/game_lineups: typed Parquet available,True,data/processed/transfermarkt_archive/game_lineups.csv
+transfermarkt_archive/game_lineups: focal clubs within cohort,True,team
+transfermarkt_archive/games: CSV readable,True,"6,421 rows; 29 fields"
+transfermarkt_archive/games: typed Parquet available,True,data/processed/transfermarkt_archive/games.csv
+transfermarkt_archive/player_profiles: CSV readable,True,"3,024 rows; 30 fields"
+transfermarkt_archive/player_profiles: typed Parquet available,True,data/processed/transfermarkt_archive/player_profiles.csv
+transfermarkt_archive/player_valuations: CSV readable,True,"59,298 rows; 10 fields"
+transfermarkt_archive/player_valuations: typed Parquet available,True,data/processed/transfermarkt_archive/player_valuations.csv
+transfermarkt_archive/transfers: CSV readable,True,"5,943 rows; 17 fields"
+transfermarkt_archive/transfers: typed Parquet available,True,data/processed/transfermarkt_archive/transfers.csv
+transfermarkt_current/club_market_values: CSV readable,True,20 rows; 12 fields
+transfermarkt_current/club_market_values: typed Parquet available,True,data/processed/transfermarkt_current/club_market_values.csv
+transfermarkt_current/club_market_values: focal clubs within cohort,True,team
+transfermarkt_current/injury_snapshot: CSV readable,True,77 rows; 17 fields
+transfermarkt_current/injury_snapshot: typed Parquet available,True,data/processed/transfermarkt_current/injury_snapshot.csv
+transfermarkt_current/injury_snapshot: focal clubs within cohort,True,team
+transfermarkt_current/player_squads: CSV readable,True,543 rows; 29 fields
+transfermarkt_current/player_squads: typed Parquet available,True,data/processed/transfermarkt_current/player_squads.csv
+transfermarkt_current/player_squads: focal clubs within cohort,True,team
+transfermarkt_current/season_transfers: CSV readable,True,607 rows; 8 fields
+transfermarkt_current/season_transfers: typed Parquet available,True,data/processed/transfermarkt_current/season_transfers.csv
+transfermarkt_current/season_transfers: focal clubs within cohort,True,team
+understat/matches: CSV readable,True,"4,438 rows; 24 fields"
+understat/matches: typed Parquet available,True,data/processed/understat/matches.csv
+understat/player_match_metrics: CSV readable,True,"88,533 rows; 31 fields"
+understat/player_match_metrics: typed Parquet available,True,data/processed/understat/player_match_metrics.csv
+understat/player_match_metrics: focal clubs within cohort,True,team
+understat/player_season_metrics: CSV readable,True,"4,736 rows; 26 fields"
+understat/player_season_metrics: typed Parquet available,True,data/processed/understat/player_season_metrics.csv
+understat/player_season_metrics: focal clubs within cohort,True,team
+understat/shots: CSV readable,True,"83,455 rows; 28 fields"
+understat/shots: typed Parquet available,True,data/processed/understat/shots.csv
+understat/shots: focal clubs within cohort,True,team
+understat/team_match_metrics: CSV readable,True,"6,180 rows; 32 fields"
+understat/team_match_metrics: typed Parquet available,True,data/processed/understat/team_match_metrics.csv
+understat/team_match_metrics: focal clubs within cohort,True,team
+understat/team_season_metrics: CSV readable,True,180 rows; 28 fields
+understat/team_season_metrics: typed Parquet available,True,data/processed/understat/team_season_metrics.csv
+understat/team_season_metrics: focal clubs within cohort,True,team
+understat/xg_basis_comparison: CSV readable,True,"6,180 rows; 13 fields"
+understat/xg_basis_comparison: typed Parquet available,True,data/processed/understat/xg_basis_comparison.csv
+understat/xg_basis_comparison: focal clubs within cohort,True,team
+understat_context/team_context_metrics: CSV readable,True,"6,552 rows; 17 fields"
+understat_context/team_context_metrics: typed Parquet available,True,data/processed/understat_context/team_context_metrics.csv
+understat_context/team_context_metrics: focal clubs within cohort,True,team
+Saved source SHA256 hashes,True,6522 verified; mismatches=[]
+Exactly 20 current Premier League members,True,"West Ham, Burnley and Wolves are not focal clubs."

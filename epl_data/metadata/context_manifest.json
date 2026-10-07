@@ -1,0 +1,68 @@
+{
+  "source": "context",
+  "requested_as_of_date": "2026-10-06",
+  "created_at_utc": "2026-10-07T02:59:10.901855+00:00",
+  "notes": "Initial saved context sources for parser development; Collector refresh records final script.",
+  "requests": [
+    {
+      "source": "context",
+      "url": "https://clubelo.com/Arsenal",
+      "parameters": null,
+      "retrieved_at_utc": "2026-10-07T02:59:09.915224+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/context/clubelo.html",
+      "http_status": 200,
+      "final_url": "https://clubelo.com/Arsenal",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 728057,
+      "status": "downloaded",
+      "sha256": "557ef4312c34523a67210cced0c163186110a6e5cbd6643c842c369009ef3ea2"
+    },
+    {
+      "source": "context",
+      "url": "https://www.thesportsdb.com/api/v1/json/123/search_all_teams.php?l=English%20Premier%20League",
+      "parameters": null,
+      "retrieved_at_utc": "2026-10-07T02:59:09.919298+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/context/sportsdb_teams.json",
+      "http_status": 200,
+      "final_url": "https://www.thesportsdb.com/api/v1/json/123/search_all_teams.php?l=English%20Premier%20League",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 63379,
+      "status": "downloaded",
+      "sha256": "e3e95b3b38d9284404472fcce493f54a0a61841ca0ed5febbe231026adf5fbd1"
+    },
+    {
+      "source": "context",
+      "url": "https://www.transfermarkt.com/premier-league/startseite/wettbewerb/GB1/saison_id/2026",
+      "parameters": null,
+      "retrieved_at_utc": "2026-10-07T02:59:09.917245+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/context/transfermarkt_league.html",
+      "http_status": 200,
+      "final_url": "https://www.transfermarkt.com/premier-league/startseite/wettbewerb/GB1/saison_id/2026",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 245287,
+      "status": "downloaded",
+      "sha256": "03c6201e0d51594b6805bc16774376e1da9fddfaaa502e4a1348ba27ee103d5d"
+    },
+    {
+      "source": "context",
+      "url": "https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts",
+      "parameters": null,
+      "retrieved_at_utc": "2026-10-07T02:59:09.920272+00:00",
+      "requested_as_of_date": "2026-10-06",
+      "source_published_at_utc": null,
+      "path": "data/raw/context/membership.html",
+      "http_status": 200,
+      "final_url": "https://www.premierleague.com/en/news/4673099/the-202627-premier-league-season-officially-starts",
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 89083,
+      "status": "downloaded",
+      "sha256": "20409446a920bb08de9417877312e0b652df6e527a8f0e8a2f55b90c8dd6f203"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+label,name,season,source_url,retrieved_at_utc,requested_as_of_date,data_role
+Minutes played,minutes,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Goals scored,goals_scored,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Assists,assists,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Clean sheets,clean_sheets,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Goals conceded,goals_conceded,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Own goals,own_goals,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Penalties saved,penalties_saved,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Penalties missed,penalties_missed,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Yellow cards,yellow_cards,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Red cards,red_cards,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Saves,saves,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Bonus,bonus,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Bonus Points System,bps,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Influence,influence,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Creativity,creativity,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Threat,threat,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+ICT Index,ict_index,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+"Clearances, blocks and interceptions",clearances_blocks_interceptions,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Recoveries,recoveries,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Tackles,tackles,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Defensive Contribution,defensive_contribution,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Game(s) Started,starts,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Expected Goals,expected_goals,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Expected Assists,expected_assists,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Expected Goal Involvements,expected_goal_involvements,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
+Expected Goals Conceded,expected_goals_conceded,2026-27,https://fantasy.premierleague.com/api/bootstrap-static/,2026-10-07T03:00:55.831677+00:00,2026-10-06,current_snapshot
