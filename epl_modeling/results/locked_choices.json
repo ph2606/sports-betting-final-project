@@ -1,0 +1,20 @@
+{
+  "families": {
+    "accuracy": "svm",
+    "calibration": "mlp"
+  },
+  "thresholds": {
+    "accuracy": {
+      "threshold": 1000000.0,
+      "reason": "no_admissible_positive_validation_strategy",
+      "selection_season": "2024-25",
+      "minimum_validation_bets": 30
+    },
+    "calibration": {
+      "threshold": 1000000.0,
+      "reason": "no_admissible_positive_validation_strategy",
+      "selection_season": "2024-25",
+      "minimum_validation_bets": 30
+    }
+  }
+}

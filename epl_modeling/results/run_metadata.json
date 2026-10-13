@@ -1,0 +1,153 @@
+{
+  "study": "Initial EPL accuracy versus calibration experiment",
+  "data_snapshot_as_of": "2026-10-06",
+  "run_date": "2026-10-13",
+  "seed": 42,
+  "trials_per_family_per_branch": 12,
+  "families": [
+    "logistic_regression",
+    "random_forest",
+    "svm",
+    "mlp"
+  ],
+  "splits": {
+    "train": [
+      "2014-15",
+      "2015-16",
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21"
+    ],
+    "tune": [
+      "2021-22"
+    ],
+    "calibration": [
+      "2022-23"
+    ],
+    "model_selection": [
+      "2023-24"
+    ],
+    "strategy_validation": [
+      "2024-25"
+    ],
+    "test": [
+      "2025-26"
+    ],
+    "monitoring": [
+      "2026-27"
+    ]
+  },
+  "selected_features": {
+    "accuracy": [
+      "feat_diff_std_corners_diff",
+      "feat_diff_roll10_shots_on_target_diff"
+    ],
+    "calibration": [
+      "feat_diff_std_corners_against"
+    ]
+  },
+  "frozen_choices": {
+    "families": {
+      "accuracy": "svm",
+      "calibration": "mlp"
+    },
+    "thresholds": {
+      "accuracy": {
+        "threshold": 1000000.0,
+        "reason": "no_admissible_positive_validation_strategy",
+        "selection_season": "2024-25",
+        "minimum_validation_bets": 30
+      },
+      "calibration": {
+        "threshold": 1000000.0,
+        "reason": "no_admissible_positive_validation_strategy",
+        "selection_season": "2024-25",
+        "minimum_validation_bets": 30
+      }
+    }
+  },
+  "fit_warnings": [
+    {
+      "branch": "accuracy",
+      "family": "logistic_regression",
+      "convergence_warnings": []
+    },
+    {
+      "branch": "accuracy",
+      "family": "random_forest",
+      "convergence_warnings": []
+    },
+    {
+      "branch": "accuracy",
+      "family": "svm",
+      "convergence_warnings": []
+    },
+    {
+      "branch": "accuracy",
+      "family": "mlp",
+      "convergence_warnings": []
+    },
+    {
+      "branch": "calibration",
+      "family": "logistic_regression",
+      "convergence_warnings": []
+    },
+    {
+      "branch": "calibration",
+      "family": "random_forest",
+      "convergence_warnings": []
+    },
+    {
+      "branch": "calibration",
+      "family": "svm",
+      "convergence_warnings": []
+    },
+    {
+      "branch": "calibration",
+      "family": "mlp",
+      "convergence_warnings": []
+    }
+  ],
+  "python": "3.12.5",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.11.4",
+    "scikit-learn": "1.5.0",
+    "optuna": "3.6.1",
+    "matplotlib": "3.9.0",
+    "pyarrow": "23.0.0",
+    "joblib": "1.4.2"
+  },
+  "source_sha256": {
+    "epl_modeling\\__init__.py": "bc63cb2239fad11e7fe9649aa5a09737fb66f21278ec8891bb5582e890d834df",
+    "epl_modeling\\backtest.py": "6ef50aaca32704ce87f813f25e2477af1022c208102139accf9ce3cd7b035227",
+    "epl_modeling\\experiment.py": "f3097cdcf423ac27d1b4ba98b56c48cefc14060f6068a0de219a4a3d3d4312e5",
+    "epl_modeling\\features.py": "20df32e72d1457547d3f85b68aa798e313cebdefb80f50dda669125abba20392",
+    "epl_modeling\\metrics.py": "a706233ce663e96fe2fae7b00a9e54731804d4b0d1ca78f7473183eff4f8a6d3",
+    "epl_modeling\\reporting.py": "4353644e0cfddbce02f8b93b2dd3b0e6e1bbc6cc553b557be5fcbebdeb2f7f41",
+    "epl_modeling\\selection.py": "378220d31afcb7020c5822d32a68dd843cf6d06dc35d19cd67be2c22385cd8c4"
+  },
+  "input_sha256": {
+    "metadata\\acquisition_summary.json": "f0660756a8dd381cf9af38bd2b5fe725ae9830fa47966f08104c3ad839ac6a88",
+    "data\\processed\\football_data\\matches_current_cohort.parquet": "7810fef71cd5d926dcf7bbd646277012a12b422b5a02805782af619095c2d99c",
+    "data\\processed\\football_data\\match_odds_1x2_long.parquet": "5e197e4129778c7584cca4bf73ba1af9e9a05178d973f6bfe53e02239c8ae684"
+  },
+  "duration_seconds": 194.05945309996605,
+  "limitations": [
+    "Archived price replay; quote clocks and feature publication times are unverified",
+    "Current-club historical cohort has survivor bias; not the full historical Premier League",
+    "2026-27 monitoring is only the 50 completed matches in the October 6 snapshot",
+    "Small TPE/SFS search budget; one untouched test season; no executable arbitrage claims"
+  ],
+  "validation": {
+    "unit_tests_passed": 23,
+    "feature_latest_date_violations": 0,
+    "hyperparameter_trials_completed": 96,
+    "test_matches": 374,
+    "notebook_code_cells_executed": 5,
+    "notebook_errors": 0
+  }
+}

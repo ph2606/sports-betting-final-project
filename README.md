@@ -24,6 +24,24 @@ python -m pip install -r epl_data/requirements.txt
 Start in `epl_data/01_data_inventory.ipynb`. The acquisition snapshot and quality
 reports describe the downloaded coverage and known limitations.
 
+## First modeling experiment
+
+The EPL section now includes a reproducible four-family comparison of accuracy
+and calibration selection, chronological feature/tuning/calibration stages,
+bookmaker baselines and a held-out 2025/26 archived-price replay.
+
+- [Findings and results](epl_modeling/results/RESULTS.md)
+- [Executed modeling notebook](epl_modeling/02_epl_modeling_results.ipynb)
+- [Modeling results workbook](epl_modeling/results/EPL_modeling_results.xlsx)
+- [Protocol and corrected reference paper](epl_modeling/METHODOLOGY.md)
+- [Code and reproduction instructions](epl_modeling/README.md)
+
+The first run finds no validated positive betting edge. Both primary policies
+hold cash; secondary fixed-threshold returns are statistically inconclusive.
+The bookmaker baseline has stronger proper probability scores than either ML
+branch. The research report distinguishes these findings from executable
+profitability or arbitrage claims.
+
 ## Earlier reference proposal
 
 **Recommended topic:** Cost-Aware Statistical Arbitrage in Premier League Betting Markets.

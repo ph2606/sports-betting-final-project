@@ -1,0 +1,9 @@
+{
+  "accuracy": [
+    "feat_diff_std_corners_diff",
+    "feat_diff_roll10_shots_on_target_diff"
+  ],
+  "calibration": [
+    "feat_diff_std_corners_against"
+  ]
+}
