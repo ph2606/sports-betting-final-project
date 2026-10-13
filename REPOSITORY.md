@@ -1,6 +1,6 @@
 # Repository access and setup
 
-Repository: https://github.com/ph2606/epl-sports-betting-final-project
+Repository: https://github.com/ph2606/sports-betting-final-project
 
 This is a private academic working repository for the Statistical Arbitrage
 final project. It contains the complete final-project folder, including earlier
@@ -13,8 +13,8 @@ Install Git and Git LFS, then run:
 
 ```powershell
 git lfs install
-git clone https://github.com/ph2606/epl-sports-betting-final-project.git
-cd epl-sports-betting-final-project
+git clone https://github.com/ph2606/sports-betting-final-project.git
+cd sports-betting-final-project
 git lfs pull
 python -m pip install -r epl_data/requirements.txt
 ```

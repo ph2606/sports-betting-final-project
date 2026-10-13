@@ -15,8 +15,8 @@ Clone with Git LFS to retrieve the complete datasets:
 
 ```powershell
 git lfs install
-git clone https://github.com/ph2606/epl-sports-betting-final-project.git
-cd epl-sports-betting-final-project
+git clone https://github.com/ph2606/sports-betting-final-project.git
+cd sports-betting-final-project
 git lfs pull
 python -m pip install -r epl_data/requirements.txt
 ```
