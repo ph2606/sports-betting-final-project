@@ -48,6 +48,25 @@ prospective accuracy or profit is available before these fixtures settle. The
 draft reports the historical findings below and clearly identifies the new
 forecasts as pending.
 
+## Metrics for every trading strategy
+
+The [strategy analytics extension](epl_strategy/README.md) adds hit ratio,
+expected gain, expected loss and trading frequency to every saved trading
+policy. Its 172 strategy/scope rows include all original validation, test,
+monitoring and ablation results, four-season pooled summaries and the existing
+threshold-tuning diagnostics. All no-trade policies remain visible.
+
+The tables separately report model-implied expectations and observed winning/
+losing payoffs, plus realized expectancy, ROI, turnover, profit factor, capital
+return, drawdown and confidence intervals. Prospective trades and executable
+arbitrage performance remain unavailable where no position ledger exists.
+Original models, historical results and the seven-page draft are preserved.
+
+- [Strategy comparison workbook](epl_strategy/results/20261014T095929.849994Z_4c6add9911/report/EPL_strategy_metrics.xlsx)
+- [Trading metrics supplement — PDF](epl_strategy/results/20261014T095929.849994Z_4c6add9911/report/EPL_strategy_metrics_supplement.pdf)
+- [Trading metrics supplement — Word](epl_strategy/results/20261014T095929.849994Z_4c6add9911/report/EPL_strategy_metrics_supplement.docx)
+- [Metric definitions and reproduction](epl_strategy/METHODOLOGY.md)
+
 ## First modeling experiment
 
 The EPL section now includes a reproducible four-family comparison of accuracy

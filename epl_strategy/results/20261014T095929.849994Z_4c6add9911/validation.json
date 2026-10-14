@@ -1,0 +1,22 @@
+{
+  "validated_at_utc": "2026-10-14T10:11:24.788287+00:00",
+  "analytics_rows": 172,
+  "active_strategy_scope_rows": 148,
+  "original_cash_policy_rows": 24,
+  "pooled_strategy_rows": 22,
+  "model_expected_and_realized_payoffs_separately_reconciled": true,
+  "all_metric_rate_ranges_valid": true,
+  "all_active_rows_have_conditional_hit_and_roi_intervals": true,
+  "prospective_metrics_unavailable_not_fabricated": true,
+  "inputs_and_sources_unchanged": true,
+  "all_table_and_report_hashes_verified": true,
+  "original_seven_page_draft_preserved": true,
+  "original_draft_hash": "035fbcad71adc87f94e563a661848bd35bed7a1ee0eaa12122353cd06fc8e2d3",
+  "supplement_pdf_pages": 6,
+  "new_metrics_tests": {
+    "command": "python -m pytest epl_strategy/tests -q",
+    "passed": 42
+  },
+  "independent_audit": "Parallel reviewer independently recomputed cashflow, expectation, participation, calendar frequency and reset-risk metrics without discrepancies; five representative bootstrap rows reproduced exactly.",
+  "user_workbook_preserved": true
+}

@@ -1,0 +1,49 @@
+Strategy,Trades,"Hit %
+[95% CI]","Trade
+freq. %","Avg. win
+gain","Avg. loss
+size","Expected
+gain/trade","Expected
+loss/trade","Expected
+net/trade","Realised
+net/trade"
+"Accuracy / Fixed 5%
+Best book / Fixed",371,"26.68
+[22.86, 30.77]",99.20,26.63,10.00,11.74,6.31,5.42,−0.22
+"Accuracy / Fixed 5%
+Best book / Quarter Kelly",371,"26.68
+[22.86, 30.77]",99.20,36.53,14.68,17.48,9.05,8.43,−1.02
+"Accuracy / Fixed 5%
+Bet365 / Fixed",365,"26.85
+[23.14, 30.94]",97.59,25.34,10.00,10.87,6.25,4.62,−0.51
+"Accuracy / Fixed 5%
+Bet365 / Quarter Kelly",365,"26.85
+[23.14, 30.94]",97.59,33.69,13.99,15.45,8.55,6.90,−1.19
+"Calibration / Fixed 5%
+Best book / Fixed",333,"27.03
+[22.32, 32.12]",89.04,27.15,10.00,12.40,6.32,6.09,0.04
+"Calibration / Fixed 5%
+Best book / Quarter Kelly",333,"27.03
+[22.32, 32.12]",89.04,46.73,17.94,22.95,11.08,11.88,−0.46
+"Calibration / Fixed 5%
+Bet365 / Fixed",314,"27.71
+[22.71, 32.92]",83.96,25.82,10.00,11.61,6.29,5.32,−0.07
+"Calibration / Fixed 5%
+Bet365 / Quarter Kelly",314,"27.71
+[22.71, 32.92]",83.96,44.11,17.66,21.02,10.84,10.18,−0.54
+"Accuracy / Primary
+Best book / Fixed",0,—,0.00,—,—,—,—,—,—
+"Accuracy / Primary
+Best book / Quarter Kelly",0,—,0.00,—,—,—,—,—,—
+"Accuracy / Primary
+Bet365 / Fixed",0,—,0.00,—,—,—,—,—,—
+"Accuracy / Primary
+Bet365 / Quarter Kelly",0,—,0.00,—,—,—,—,—,—
+"Calibration / Primary
+Best book / Fixed",0,—,0.00,—,—,—,—,—,—
+"Calibration / Primary
+Best book / Quarter Kelly",0,—,0.00,—,—,—,—,—,—
+"Calibration / Primary
+Bet365 / Fixed",0,—,0.00,—,—,—,—,—,—
+"Calibration / Primary
+Bet365 / Quarter Kelly",0,—,0.00,—,—,—,—,—,—

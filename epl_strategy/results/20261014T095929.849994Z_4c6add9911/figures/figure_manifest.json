@@ -1,0 +1,90 @@
+{
+  "created_at_utc": "2026-10-14T10:10:44.261634+00:00",
+  "results_directory": "C:\\Users\\melin\\OneDrive\\Desktop\\nyu\\fall 2026\\Stat Arb\\final_project\\epl_strategy\\results\\20261014T095929.849994Z_4c6add9911",
+  "figures_directory": "C:\\Users\\melin\\OneDrive\\Desktop\\nyu\\fall 2026\\Stat Arb\\final_project\\epl_strategy\\results\\20261014T095929.849994Z_4c6add9911\\figures",
+  "source_sha256": "05383906fc79487d442be4dc38bfe0ed12f17f10b7d5b1a6bb4ed7a3362db6b6",
+  "existing_analytics_files_unchanged": true,
+  "overview_strategy_ids": [
+    "ablation__logistic__team__predeclared_5pct__best_individual_book__fixed",
+    "ablation__logistic__team__predeclared_5pct__best_individual_book__kelly",
+    "ablation__logistic__team_xg__predeclared_5pct__best_individual_book__fixed",
+    "ablation__logistic__team_xg__predeclared_5pct__best_individual_book__kelly",
+    "ablation__logistic__team_player__predeclared_5pct__best_individual_book__fixed",
+    "ablation__logistic__team_player__predeclared_5pct__best_individual_book__kelly",
+    "ablation__logistic__combined__predeclared_5pct__best_individual_book__fixed",
+    "ablation__logistic__combined__predeclared_5pct__best_individual_book__kelly",
+    "ablation__market_residual__team__predeclared_5pct__best_individual_book__fixed",
+    "ablation__market_residual__team__predeclared_5pct__best_individual_book__kelly",
+    "ablation__market_residual__team_xg__predeclared_5pct__best_individual_book__fixed",
+    "ablation__market_residual__team_xg__predeclared_5pct__best_individual_book__kelly",
+    "ablation__market_residual__team_player__predeclared_5pct__best_individual_book__fixed",
+    "ablation__market_residual__team_player__predeclared_5pct__best_individual_book__kelly",
+    "ablation__market_residual__combined__predeclared_5pct__best_individual_book__fixed",
+    "ablation__market_residual__combined__predeclared_5pct__best_individual_book__kelly",
+    "ablation__baseline__market_only__predeclared_5pct__best_individual_book__fixed",
+    "ablation__baseline__market_only__predeclared_5pct__best_individual_book__kelly",
+    "ablation__market_temperature__market_only__predeclared_5pct__best_individual_book__fixed",
+    "ablation__market_temperature__market_only__predeclared_5pct__best_individual_book__kelly",
+    "ablation__baseline__class_frequency__predeclared_5pct__best_individual_book__fixed",
+    "ablation__baseline__class_frequency__predeclared_5pct__best_individual_book__kelly"
+  ],
+  "roi_comparison_strategy_ids": [
+    "first__accuracy__svm__predeclared_5pct__best_individual_book__fixed",
+    "first__accuracy__svm__predeclared_5pct__best_individual_book__kelly",
+    "first__accuracy__svm__predeclared_5pct__bet365_reference__fixed",
+    "first__accuracy__svm__predeclared_5pct__bet365_reference__kelly",
+    "first__calibration__mlp__predeclared_5pct__best_individual_book__fixed",
+    "first__calibration__mlp__predeclared_5pct__best_individual_book__kelly",
+    "first__calibration__mlp__predeclared_5pct__bet365_reference__fixed",
+    "first__calibration__mlp__predeclared_5pct__bet365_reference__kelly",
+    "ablation__logistic__team__predeclared_5pct__best_individual_book__fixed",
+    "ablation__logistic__team__predeclared_5pct__best_individual_book__kelly",
+    "ablation__logistic__team_xg__predeclared_5pct__best_individual_book__fixed",
+    "ablation__logistic__team_xg__predeclared_5pct__best_individual_book__kelly",
+    "ablation__logistic__team_player__predeclared_5pct__best_individual_book__fixed",
+    "ablation__logistic__team_player__predeclared_5pct__best_individual_book__kelly",
+    "ablation__logistic__combined__predeclared_5pct__best_individual_book__fixed",
+    "ablation__logistic__combined__predeclared_5pct__best_individual_book__kelly",
+    "ablation__market_residual__team__predeclared_5pct__best_individual_book__fixed",
+    "ablation__market_residual__team__predeclared_5pct__best_individual_book__kelly",
+    "ablation__market_residual__team_xg__predeclared_5pct__best_individual_book__fixed",
+    "ablation__market_residual__team_xg__predeclared_5pct__best_individual_book__kelly",
+    "ablation__market_residual__team_player__predeclared_5pct__best_individual_book__fixed",
+    "ablation__market_residual__team_player__predeclared_5pct__best_individual_book__kelly",
+    "ablation__market_residual__combined__predeclared_5pct__best_individual_book__fixed",
+    "ablation__market_residual__combined__predeclared_5pct__best_individual_book__kelly",
+    "ablation__baseline__market_only__predeclared_5pct__best_individual_book__fixed",
+    "ablation__baseline__market_only__predeclared_5pct__best_individual_book__kelly",
+    "ablation__market_temperature__market_only__predeclared_5pct__best_individual_book__fixed",
+    "ablation__market_temperature__market_only__predeclared_5pct__best_individual_book__kelly",
+    "ablation__baseline__class_frequency__predeclared_5pct__best_individual_book__fixed",
+    "ablation__baseline__class_frequency__predeclared_5pct__best_individual_book__kelly"
+  ],
+  "overview_rows": 22,
+  "roi_comparison_rows": 30,
+  "files": {
+    "ablation_strategy_overview.png": {
+      "sha256": "322ebf7b050cd7b665b4413e5c24e879d6c321b2d714bcf5e34ba6bed73a895b",
+      "bytes": 706080
+    },
+    "ablation_strategy_overview.svg": {
+      "sha256": "4371551d03f6323ad3a753d21d9ce021a1c2904ed2280ddf8b85e98e589584e0",
+      "bytes": 58022
+    },
+    "expected_vs_realized_roi.png": {
+      "sha256": "81051eabc70a63ffe12c8c1d1028eb3fe3573f99b0402fff3bf9f7c83e7ef380",
+      "bytes": 719135
+    },
+    "expected_vs_realized_roi.svg": {
+      "sha256": "74f6b6b5e0aa04a0a385630943ed2c28f9ddd1340f6fe975aca2b6121269e29c",
+      "bytes": 61605
+    }
+  },
+  "notes": [
+    "Every declared strategy is retained; ordering is by model/source group, not measured performance.",
+    "Pooled capital resets to 1000 each season. ROI is total net profit divided by total stake.",
+    "ROI intervals condition on recorded models and stakes and resample dates within season.",
+    "Expected ROI is conditional on allocated stakes and is not an estimate of expected terminal wealth.",
+    "Ablation is exploratory, multiple comparisons are descriptive, and executable prices are unverified."
+  ]
+}

@@ -1,0 +1,38 @@
+Strategy,Net profit,Turnover,ROI,95% ROI CI,"Expected
+ROI","Profit
+factor","Payoff
+ratio","Max.
+drawdown","Capital
+return"
+"Accuracy / Fixed 5%
+Best book / Fixed",−83.30,"3,710.00",−2.25%,"[−18.84%, 15.46%]",54.22%,0.97,2.66,27.74%,−8.33%
+"Accuracy / Fixed 5%
+Best book / Quarter Kelly",−377.05,"5,376.77",−7.01%,"[−23.18%, 11.93%]",58.16%,0.91,2.49,49.95%,−37.70%
+"Accuracy / Fixed 5%
+Bet365 / Fixed",−186.70,"3,650.00",−5.12%,"[−20.25%, 11.16%]",46.20%,0.93,2.53,28.60%,−18.67%
+"Accuracy / Fixed 5%
+Bet365 / Quarter Kelly",−433.14,"5,055.80",−8.57%,"[−23.64%, 8.81%]",49.84%,0.88,2.41,51.21%,−43.31%
+"Calibration / Fixed 5%
+Best book / Fixed",13.70,"3,330.00",0.41%,"[−20.09%, 22.07%]",60.86%,1.01,2.72,28.11%,1.37%
+"Calibration / Fixed 5%
+Best book / Quarter Kelly",−153.91,"5,950.63",−2.59%,"[−20.94%, 17.72%]",66.46%,0.96,2.60,54.44%,−15.39%
+"Calibration / Fixed 5%
+Bet365 / Fixed",−23.50,"3,140.00",−0.75%,"[−19.47%, 19.71%]",53.19%,0.99,2.58,29.38%,−2.35%
+"Calibration / Fixed 5%
+Bet365 / Quarter Kelly",−170.61,"5,526.38",−3.09%,"[−20.97%, 16.47%]",57.81%,0.96,2.50,51.98%,−17.06%
+"Accuracy / Primary
+Best book / Fixed",0.00,0.00,—,—,—,—,—,0.00%,0.00%
+"Accuracy / Primary
+Best book / Quarter Kelly",0.00,0.00,—,—,—,—,—,0.00%,0.00%
+"Accuracy / Primary
+Bet365 / Fixed",0.00,0.00,—,—,—,—,—,0.00%,0.00%
+"Accuracy / Primary
+Bet365 / Quarter Kelly",0.00,0.00,—,—,—,—,—,0.00%,0.00%
+"Calibration / Primary
+Best book / Fixed",0.00,0.00,—,—,—,—,—,0.00%,0.00%
+"Calibration / Primary
+Best book / Quarter Kelly",0.00,0.00,—,—,—,—,—,0.00%,0.00%
+"Calibration / Primary
+Bet365 / Fixed",0.00,0.00,—,—,—,—,—,0.00%,0.00%
+"Calibration / Primary
+Bet365 / Quarter Kelly",0.00,0.00,—,—,—,—,—,0.00%,0.00%

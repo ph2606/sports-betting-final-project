@@ -1,0 +1,31 @@
+Metric,Definition,Unit
+hit_ratio,"Winning settled bets / settled bets; conditional hit ratio, not H/D/A classification accuracy.",Fraction
+avg_winning_gain_units,"Mean positive realised net P&L, conditional on a winning trade.",Units / winning trade
+avg_losing_loss_units,"Mean magnitude of realised negative net P&L, conditional on a losing trade; reported positively.",Units / losing trade
+expected_gain_total_units,Σ s p (O−1): model-implied expected positive net-P&L component.,Units
+expected_loss_total_units,"Σ s (1−p): model-implied expected loss component, positive magnitude.",Units
+expected_net_profit_total_units,"Expected gain minus expected loss = Σ s (pO−1). Conditional on actual allocated stakes, including the realised bankroll-dependent Kelly path; not unconditional terminal wealth.",Units
+expected_gain_per_trade_units / expected_loss_per_trade_units,Respective expected component totals / number of recorded trades.,Units / trade
+expected_net_profit_per_trade_units,Model-implied expected net P&L total / trades; not observed average winning payoff.,Units / trade
+realized_expectancy_per_trade_units,Realised net profit / trades.,Units / trade
+expected_roi,Model-implied expected net P&L / actual turnover.,Fraction
+trading_frequency,Trades / matched-valid-price fixtures; report price coverage alongside this conditional rate.,Fraction
+trade_rate_all_predictions,"Trades / all predicted fixtures, including missing-price opportunities.",Fraction
+active_date_fraction,Dates with trades / eligible match dates; no intraday timing is inferred.,Fraction
+bets_per_calendar_week,Trades / (sum of inclusive first-to-last priced-match calendar spans within each reset episode / 7). Off-season gaps between pooled episodes are excluded.,Trades / week
+profit / turnover / roi,"Realised net P&L / total stakes / net P&L divided by total stakes, respectively.",Units / units / fraction
+profit_factor,Total positive realised P&L / magnitude of total negative realised P&L. +∞ requires gains and no losses.,Ratio
+payoff_ratio,Mean winning gain / mean losing loss magnitude; undefined if the required conditional mean is unavailable.,Ratio
+max_drawdown,"Largest decline from the date-close bankroll running peak, including initial capital. Pooled value is worst episode, not a stitched path.",Fraction
+initial_capital_sum_units / final_capital_sum_units,Sum of separate episode opening/closing capital; pooled resets remain separate.,Units
+return_on_initial_capital,Net P&L / sum of initial episode capital; differs from ROI on turnover.,Fraction
+avg_stake_units,Mean actual stake after commitment/capital constraints.,Units / trade
+avg_selected_probability / avg_decimal_odds,Unweighted means over selected trades; probabilities are model forecasts and odds are archived decimal prices.,Fraction / decimal odds
+price_coverage / predictions_without_valid_prices,Matched valid price fixtures / all predictions; missing-price opportunities are not economic abstentions.,Fraction / count
+date_return_mean / date_return_sample_std,"Mean and sample standard deviation of returns on matched dates, including dates with no trades.",Fraction
+date_return_mean_to_std_unannualized,Unannualized mean / sample standard deviation on irregular match dates; no risk-free adjustment. This is not an annualized Sharpe ratio.,Ratio
+max_date_capital_exposure / mean_date_capital_exposure,Date turnover / date-start bankroll; summarised across matched match dates.,Fraction
+empirical_break_even_hit_ratio,"Mean losing-loss magnitude / (mean winning gain + mean losing-loss magnitude). Descriptive for this observed payoff mixture, not a universal changing-odds threshold.",Fraction
+roi_ci_low/high; hit_ratio_ci_low/high,"Conditional 95% whole-date bootstrap bounds: 1,000 draws; pooled ablation resamples dates within each season. No model refitting.",Fraction
+is_tuning_diagnostic,"Strategy-validation threshold comparisons are tuning diagnostics, not additional held-out evidence.",Boolean
+Missing and infinity policy,"— means undefined/unavailable, never zero. Empty-trade cash totals and rates can be zero when their denominators exist.",Display rule

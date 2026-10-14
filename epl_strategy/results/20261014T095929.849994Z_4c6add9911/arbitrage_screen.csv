@@ -1,0 +1,8 @@
+study,scope,episode_id,split,outer_season,eligible_matches,mathematical_candidate_count,mathematical_candidate_fraction,quote_clock_unverified_count,executable_arbitrage_verified,executed_arbitrage_trade_count,realized_arbitrage_profit,status
+first,strategy_validation,2024-25,strategy_validation,,368,1,0.002717391304347826,368,False,,,screen_only_no_execution_ledger
+first,test,2025-26,test,,374,0,0.0,374,False,,,screen_only_no_execution_ledger
+first,monitoring,2026-27,monitoring,,50,0,0.0,50,False,,,screen_only_no_execution_ledger
+ablation,outer_test,2022-23,,2022-23,368,2,0.005434782608695652,368,False,,,screen_only_no_execution_ledger
+ablation,outer_test,2023-24,,2023-24,360,1,0.002777777777777778,360,False,,,screen_only_no_execution_ledger
+ablation,outer_test,2024-25,,2024-25,368,1,0.002717391304347826,368,False,,,screen_only_no_execution_ledger
+ablation,outer_test,2025-26,,2025-26,374,0,0.0,374,False,,,screen_only_no_execution_ledger
