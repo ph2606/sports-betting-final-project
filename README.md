@@ -42,6 +42,25 @@ The bookmaker baseline has stronger proper probability scores than either ML
 branch. The research report distinguishes these findings from executable
 profitability or arbitrage claims.
 
+## Team, xG and player comparisons
+
+The separate rolling study repairs all 17,465 early FPL opponent identities
+through an audited overlay, adding 588 usable player-data fixtures. It compares
+four fixed feature groups with logistic and market-informed models across
+2022/23–2025/26: 32 fitted model variants and 1,470 common evaluation fixtures.
+
+- [Feature-comparison findings](epl_modeling/ablation_results/ABLATION_RESULTS.md)
+- [Executed comparison notebook](epl_modeling/03_epl_feature_ablation.ipynb)
+- [Comparison workbook](epl_modeling/ablation_results/EPL_feature_ablation.xlsx)
+- [Locked historical study protocol](epl_modeling/ABLATION_PROTOCOL.md)
+- [Plan for a new prospective test](epl_modeling/PROSPECTIVE_PROTOCOL.md)
+
+xG modestly improves the team-statistic model's observed probability quality;
+player inputs have no consistent incremental gain, and raw bookmaker
+probabilities remain best on pooled proper scores. The comparison is explicitly
+exploratory because some historical outcomes were already inspected. The first
+experiment's code and results remain unchanged and are checked by SHA256.
+
 ## Earlier reference proposal
 
 **Recommended topic:** Cost-Aware Statistical Arbitrage in Premier League Betting Markets.

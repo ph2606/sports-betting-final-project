@@ -1,0 +1,266 @@
+{
+  "study_status": "exploratory_retrospective_not_a_fresh_holdout",
+  "run_date": "2026-10-13",
+  "data_snapshot_as_of": "2026-10-06",
+  "seed": 42,
+  "cohort": "20 current 2026/27 clubs; target fixtures have at least one eligible club",
+  "seasons": [
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "C_grid": [
+    0.03,
+    0.3,
+    3.0
+  ],
+  "feature_groups": {
+    "team": [
+      "feat_diff_std_goals_diff",
+      "feat_diff_roll10_goals_diff",
+      "feat_diff_std_shots_on_target_diff",
+      "feat_diff_roll10_shots_on_target_diff",
+      "feat_diff_std_corners_diff",
+      "feat_diff_roll10_points",
+      "feat_home_prior_season_win_pct",
+      "feat_away_prior_season_win_pct",
+      "feat_diff_rest_days",
+      "feat_home_prior_season_missing",
+      "feat_home_promoted_from_outside_epl",
+      "feat_away_prior_season_missing",
+      "feat_away_promoted_from_outside_epl",
+      "feat_home_us_roll10_observed_matches",
+      "feat_home_fpl_roll10_observed_matches",
+      "feat_home_us_history_missing",
+      "feat_home_fpl_history_missing",
+      "feat_away_us_roll10_observed_matches",
+      "feat_away_fpl_roll10_observed_matches",
+      "feat_away_us_history_missing",
+      "feat_away_fpl_history_missing"
+    ],
+    "team_xg": [
+      "feat_diff_std_goals_diff",
+      "feat_diff_roll10_goals_diff",
+      "feat_diff_std_shots_on_target_diff",
+      "feat_diff_roll10_shots_on_target_diff",
+      "feat_diff_std_corners_diff",
+      "feat_diff_roll10_points",
+      "feat_home_prior_season_win_pct",
+      "feat_away_prior_season_win_pct",
+      "feat_diff_rest_days",
+      "feat_home_prior_season_missing",
+      "feat_home_promoted_from_outside_epl",
+      "feat_away_prior_season_missing",
+      "feat_away_promoted_from_outside_epl",
+      "feat_home_us_roll10_observed_matches",
+      "feat_home_fpl_roll10_observed_matches",
+      "feat_home_us_history_missing",
+      "feat_home_fpl_history_missing",
+      "feat_away_us_roll10_observed_matches",
+      "feat_away_fpl_roll10_observed_matches",
+      "feat_away_us_history_missing",
+      "feat_away_fpl_history_missing",
+      "feat_diff_std_us_xg_for",
+      "feat_diff_std_us_xg_against",
+      "feat_diff_roll10_us_xg_for",
+      "feat_diff_roll10_us_xg_against"
+    ],
+    "team_player": [
+      "feat_diff_std_goals_diff",
+      "feat_diff_roll10_goals_diff",
+      "feat_diff_std_shots_on_target_diff",
+      "feat_diff_roll10_shots_on_target_diff",
+      "feat_diff_std_corners_diff",
+      "feat_diff_roll10_points",
+      "feat_home_prior_season_win_pct",
+      "feat_away_prior_season_win_pct",
+      "feat_diff_rest_days",
+      "feat_home_prior_season_missing",
+      "feat_home_promoted_from_outside_epl",
+      "feat_away_prior_season_missing",
+      "feat_away_promoted_from_outside_epl",
+      "feat_home_us_roll10_observed_matches",
+      "feat_home_fpl_roll10_observed_matches",
+      "feat_home_us_history_missing",
+      "feat_home_fpl_history_missing",
+      "feat_away_us_roll10_observed_matches",
+      "feat_away_fpl_roll10_observed_matches",
+      "feat_away_us_history_missing",
+      "feat_away_fpl_history_missing",
+      "feat_diff_roll10_fpl_total_points",
+      "feat_diff_roll10_fpl_bps",
+      "feat_diff_roll10_fpl_assists",
+      "feat_diff_roll10_fpl_saves",
+      "feat_diff_roll10_fpl_influence",
+      "feat_diff_roll10_fpl_creativity",
+      "feat_diff_roll10_fpl_threat"
+    ],
+    "combined": [
+      "feat_diff_std_goals_diff",
+      "feat_diff_roll10_goals_diff",
+      "feat_diff_std_shots_on_target_diff",
+      "feat_diff_roll10_shots_on_target_diff",
+      "feat_diff_std_corners_diff",
+      "feat_diff_roll10_points",
+      "feat_home_prior_season_win_pct",
+      "feat_away_prior_season_win_pct",
+      "feat_diff_rest_days",
+      "feat_home_prior_season_missing",
+      "feat_home_promoted_from_outside_epl",
+      "feat_away_prior_season_missing",
+      "feat_away_promoted_from_outside_epl",
+      "feat_home_us_roll10_observed_matches",
+      "feat_home_fpl_roll10_observed_matches",
+      "feat_home_us_history_missing",
+      "feat_home_fpl_history_missing",
+      "feat_away_us_roll10_observed_matches",
+      "feat_away_fpl_roll10_observed_matches",
+      "feat_away_us_history_missing",
+      "feat_away_fpl_history_missing",
+      "feat_diff_std_us_xg_for",
+      "feat_diff_std_us_xg_against",
+      "feat_diff_roll10_us_xg_for",
+      "feat_diff_roll10_us_xg_against",
+      "feat_diff_roll10_fpl_total_points",
+      "feat_diff_roll10_fpl_bps",
+      "feat_diff_roll10_fpl_assists",
+      "feat_diff_roll10_fpl_saves",
+      "feat_diff_roll10_fpl_influence",
+      "feat_diff_roll10_fpl_creativity",
+      "feat_diff_roll10_fpl_threat"
+    ]
+  },
+  "feature_group_counts": {
+    "team": 21,
+    "team_xg": 25,
+    "team_player": 28,
+    "combined": 32
+  },
+  "folds": {
+    "2022-23": {
+      "train": [
+        "2016-17",
+        "2017-18",
+        "2018-19",
+        "2019-20"
+      ],
+      "tune": [
+        "2020-21"
+      ],
+      "calibration": [
+        "2021-22"
+      ],
+      "evaluation": [
+        "2022-23"
+      ]
+    },
+    "2023-24": {
+      "train": [
+        "2016-17",
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21"
+      ],
+      "tune": [
+        "2021-22"
+      ],
+      "calibration": [
+        "2022-23"
+      ],
+      "evaluation": [
+        "2023-24"
+      ]
+    },
+    "2024-25": {
+      "train": [
+        "2016-17",
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22"
+      ],
+      "tune": [
+        "2022-23"
+      ],
+      "calibration": [
+        "2023-24"
+      ],
+      "evaluation": [
+        "2024-25"
+      ]
+    },
+    "2025-26": {
+      "train": [
+        "2016-17",
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23"
+      ],
+      "tune": [
+        "2023-24"
+      ],
+      "calibration": [
+        "2024-25"
+      ],
+      "evaluation": [
+        "2025-26"
+      ]
+    }
+  },
+  "n_models": 32,
+  "n_tuning_trials": 96,
+  "first_experiment_preserved": true,
+  "common_sample_matches": 1470,
+  "complete_source_history_definition": "Evaluation subset only: both clubs have >=8 observed xG and FPL slots in prior10 E0 matches; all fixed performance inputs nonmissing",
+  "bootstrap": "1000 whole-calendar-date draws per season; pooled comparisons stratified by season; descriptive conditional intervals, no multiplicity adjustment",
+  "publication_and_price_clocks_verified": false,
+  "executable_arbitrage_claimed": false,
+  "excluded_metric_blocks": 0,
+  "frozen_protocol_sha256": "1cef39b17ce9ec2719432e5f0651fa027eb070b735aebc8090a271c700c567f2",
+  "source_sha256": {
+    "epl_modeling\\__init__.py": "bc63cb2239fad11e7fe9649aa5a09737fb66f21278ec8891bb5582e890d834df",
+    "epl_modeling\\ablation.py": "1a10ebc7706308b27b6b18de2ad97dd254ff726cc6bb838d3f7da403b2c4c90f",
+    "epl_modeling\\ablation_reporting.py": "b136c6662063a1bebb8952cedd5b9efce4db4393b07d91c541d1d7e471c4671c",
+    "epl_modeling\\backtest.py": "6ef50aaca32704ce87f813f25e2477af1022c208102139accf9ce3cd7b035227",
+    "epl_modeling\\experiment.py": "f3097cdcf423ac27d1b4ba98b56c48cefc14060f6068a0de219a4a3d3d4312e5",
+    "epl_modeling\\features.py": "20df32e72d1457547d3f85b68aa798e313cebdefb80f50dda669125abba20392",
+    "epl_modeling\\fpl_reconciliation.py": "36f4548ea476dee792e47ead4d4c0e418ca00f97fe56b8d29fa54face6456d9e",
+    "epl_modeling\\market_residual.py": "1f671d2312b0bc040d7216615ce777681a73afdc6d54b879e36a9fcd8d0de8d5",
+    "epl_modeling\\metrics.py": "a706233ce663e96fe2fae7b00a9e54731804d4b0d1ca78f7473183eff4f8a6d3",
+    "epl_modeling\\reporting.py": "4353644e0cfddbce02f8b93b2dd3b0e6e1bbc6cc553b557be5fcbebdeb2f7f41",
+    "epl_modeling\\selection.py": "378220d31afcb7020c5822d32a68dd843cf6d06dc35d19cd67be2c22385cd8c4"
+  },
+  "duration_seconds": 88.21188479987904,
+  "limitations": [
+    "2025/26 outcomes were inspected in the earlier study; this is exploratory historical research",
+    "All feature groups share source-coverage flags; team group is not independent of source availability metadata",
+    "FPL aggregates summarize earlier contributions, not prospectively known player availability",
+    "Current-club survivor bias, incomplete noncohort player histories, archival revisions and unverified quote clocks remain",
+    "Betting rules are fixed exploratory summaries, not freshly validated production policies"
+  ],
+  "validation": {
+    "unit_tests_passed": 40,
+    "executed_notebook_code_cells": 6,
+    "notebook_errors": 0,
+    "figure_pairs": 5,
+    "workbook_sheets": 8,
+    "first_experiment_hashes_verified": true
+  },
+  "python": "3.12.5",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.11.4",
+    "scikit-learn": "1.5.0",
+    "optuna": "3.6.1",
+    "matplotlib": "3.9.0",
+    "pyarrow": "23.0.0",
+    "joblib": "1.4.2"
+  }
+}

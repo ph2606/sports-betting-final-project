@@ -39,3 +39,27 @@ Performance is a hypothetical archived-price replay. Mathematical arbitrage
 candidates are not verified executable opportunities. This initial study uses a
 small search budget and one held-out season, so its report states the practical
 limits of its conclusions.
+
+## Separate rolling feature study
+
+[Read the second study](ablation_results/ABLATION_RESULTS.md),
+[open its workbook](ablation_results/EPL_feature_ablation.xlsx), or inspect
+[executed notebook 03](03_epl_feature_ablation.ipynb).
+
+```powershell
+python -m epl_modeling.ablation
+```
+
+This runner preserves the first experiment and writes to `ablation_results/`.
+An audited in-memory overlay reconciles early FPL opponents, keeping original
+acquisition files unchanged. Four fixed source-performance groups (team,
+team+xG, team+player, combined) share the same coverage controls and match
+populations. Logistic and regularized market-residual models are evaluated
+across four rolling seasons, with raw and temperature-only market benchmarks.
+
+The [locked ablation protocol](ABLATION_PROTOCOL.md) records exact features,
+chronological roles, preprocessing, search grid and uncertainty definitions.
+The new historical study is exploratory; 2025/26 is not a fresh holdout.
+The [prospective evaluation plan](PROSPECTIVE_PROTOCOL.md) defines a separate
+future test requiring timestamped source availability, prices and forecasts.
+No prospective forecasts or live-feed deployment are included in these results.
