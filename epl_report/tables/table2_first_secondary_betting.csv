@@ -1,0 +1,9 @@
+Branch,Prices,Stake,Bets,Profit (units),ROI,Conditional 95% ROI CI
+Accuracy,Best book,Fixed,371,-83.3,−2.25%,"[−18.83%, 15.45%]"
+Accuracy,Best book,¼ Kelly,371,-377.0,−7.01%,"[−23.18%, 11.92%]"
+Accuracy,Bet365,Fixed,365,-186.7,−5.12%,"[−20.25%, 11.15%]"
+Accuracy,Bet365,¼ Kelly,365,-433.1,−8.57%,"[−23.64%, 8.79%]"
+Calibration,Best book,Fixed,333,13.7,0.41%,"[−20.08%, 22.07%]"
+Calibration,Best book,¼ Kelly,333,-153.9,−2.59%,"[−20.93%, 17.72%]"
+Calibration,Bet365,Fixed,314,-23.5,−0.75%,"[−19.46%, 19.70%]"
+Calibration,Bet365,¼ Kelly,314,-170.6,−3.09%,"[−20.97%, 16.47%]"

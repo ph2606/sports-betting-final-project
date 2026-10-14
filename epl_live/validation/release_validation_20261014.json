@@ -1,0 +1,48 @@
+{
+  "validated_at_utc": "2026-10-14T09:36:28.831909+00:00",
+  "snapshot_id": "20261014T091234.352344Z_4ee7a3a730",
+  "new_raw_response_hashes_verified": 672,
+  "historical_raw_response_hashes_verified": 6522,
+  "first_study_artifacts_preserved": 56,
+  "frozen_model_hashes_verified": 8,
+  "market_calibrator_hash_verified": true,
+  "forecast_code_and_source_hashes_verified": true,
+  "user_workbook_preserved": true,
+  "forecast_ledger": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 40,
+    "head_hash": "dc43c7af5464c1ce6b12213ce33e987533d6afaabac6d3d43cfcf3973f66d191",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  },
+  "tests": [
+    {
+      "command": "python -m unittest discover -s epl_modeling/tests -v",
+      "passed": 40
+    },
+    {
+      "command": "python -m unittest discover -s epl_live/tests -v",
+      "passed": 14
+    },
+    {
+      "command": "python -m pytest epl_live/tests/test_ledger.py -q",
+      "passed": 57
+    }
+  ],
+  "test_scope": "Commands run by root on October 14; counts are disjoint. The ledger pytest tests are not discovered by unittest.",
+  "read_only_independent_model_audit": {
+    "reviewer": "parallel project agent",
+    "probability_records_recomputed": 40,
+    "maximum_probability_difference": 2.22e-16,
+    "live_feature_values_and_dates_recomputed_without_differences": true,
+    "fixture_identities_and_kickoffs_match_snapshot": true,
+    "class_order": [
+      "H",
+      "D",
+      "A"
+    ]
+  },
+  "no_prospective_performance_available": true
+}

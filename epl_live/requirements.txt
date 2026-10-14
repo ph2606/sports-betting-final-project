@@ -1,0 +1,2 @@
+-r ../epl_modeling/requirements.txt
+pytest>=8,<9

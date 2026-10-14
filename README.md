@@ -24,6 +24,30 @@ python -m pip install -r epl_data/requirements.txt
 Start in `epl_data/01_data_inventory.ipynb`. The acquisition snapshot and quality
 reports describe the downloaded coverage and known limitations.
 
+## EPL draft report and new forecasts
+
+The October 14 continuation adds a seven-page EPL research draft and a manual
+forecasting workflow. The fresh Football-Data, Understat and FPL capture covers
+completed games through October 12 and includes all 667 current player summaries.
+Eight model candidates are fitted and frozen using earlier seasons. Four logistic
+alternatives have released 40 timestamped probability records for 10 fixtures on
+October 17–19; all are still awaiting outcomes.
+
+- [Draft report — PDF](epl_report/EPL_project_draft.pdf)
+- [Draft report — editable Word](epl_report/EPL_project_draft.docx)
+- [Draft report — Markdown and reproduction](epl_report/README.md)
+- [Forecast probabilities and comparison workbook](epl_live/runs/20261014T092230.366245Z/overview/FORECASTS.md)
+- [Live workflow, coverage and manual commands](epl_live/README.md)
+- [Append-only forecast ledger](epl_live/forecasts.jsonl)
+- [Initial pending-outcome evaluation](epl_live/evaluations/20261014T092819.822459Z/STATUS.md)
+
+The observed price file contains no upcoming EPL quotes. The 40 market-residual
+forecasts and 20 market benchmarks are therefore withheld. Capture clocks and
+source hashes are saved; provider publication times remain unverified. No
+prospective accuracy or profit is available before these fixtures settle. The
+draft reports the historical findings below and clearly identifies the new
+forecasts as pending.
+
 ## First modeling experiment
 
 The EPL section now includes a reproducible four-family comparison of accuracy
@@ -74,7 +98,11 @@ Study whether discrepancies between bookmaker consensus probabilities and predic
 - [Technical plan: models, payoff formulas, risk, execution and tests](technical_plan.md)
 - [Data-source audit and feasible alternatives](data_sources_and_feasibility.md)
 
-All supplied PDFs were read before the proposal was chosen. Individual review notes remain in the four `reading_*.md` group files; extracted text, scanned-page images and the source inventory preserve the review trail. No strategy has yet been backtested. Market availability has been checked against official documentation and public pages, but the full historical data overlap still needs a pilot acquisition. No subscription or live trade was made.
+All supplied PDFs were read before the earlier proposal was chosen. Individual
+review notes remain in the four `reading_*.md` group files; extracted text,
+scanned-page images and the source inventory preserve the review trail. That
+proposal predates the completed EPL acquisition and historical experiments
+linked above. No subscription or live trade was made.
 
 The schedule assumes eight weeks and a group of one to three. The professor's exact submission format and deadline were not included in the supplied instructions. A solo project should keep one execution venue, one selection per match and the smallest model set.
 

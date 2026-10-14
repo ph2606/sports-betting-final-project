@@ -1,0 +1,23 @@
+{
+  "evaluated_at_utc": "2026-10-14T09:28:19.822459+00:00",
+  "forecast_records": 40,
+  "settled_fixtures": 0,
+  "resolved_prediction_count": 0,
+  "pending_forecast_count": 40,
+  "outcomes_append": {
+    "appended": 0,
+    "total_records": 0
+  },
+  "prospective_performance_available": false,
+  "scope": "Model-specific available forecasts; no common-population superiority claim",
+  "no_observed_outcomes_is_not_zero_error_or_zero_profit": true,
+  "forecast_ledger": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 40,
+    "head_hash": "dc43c7af5464c1ce6b12213ce33e987533d6afaabac6d3d43cfcf3973f66d191",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "protocol_sha256": "e82cad876a650c665cf483e5be3f5ab1ea9be965863978047a81fa64501f6e5a",
+  "trained_at_utc": "2026-10-14T09:12:52.338355+00:00",
+  "input_feature_table_sha256": "ba93eb6937958f7f3bcea053d5e150ecc8500235158c4fdf69f8cea63bb0636b",
+  "input_feature_table": "epl_modeling\\ablation_results\\modeling_matches.parquet",
+  "train_seasons": [
+    "2016-17",
+    "2017-18",
+    "2018-19",
+    "2019-20",
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24"
+  ],
+  "tuning_season": "2024-25",
+  "calibration_season": "2025-26",
+  "refit_seasons": [
+    "2016-17",
+    "2017-18",
+    "2018-19",
+    "2019-20",
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25"
+  ],
+  "target_season": "2026-27",
+  "training_matches": 2668,
+  "tuning_matches": 368,
+  "calibration_matches": 374,
+  "models": [
+    {
+      "model_id": "prospective_v1_logistic_team",
+      "model_type": "logistic",
+      "feature_group": "team",
+      "file": "prospective_v1_logistic_team.joblib",
+      "sha256": "f63d5e451e028e4d8283ee5a6ee5502a4c1becd05b29532171e6615a024a6f3e",
+      "n_features": 21,
+      "C": 0.03,
+      "temperature": 1.206084770232244
+    },
+    {
+      "model_id": "prospective_v1_market_residual_team",
+      "model_type": "market_residual",
+      "feature_group": "team",
+      "file": "prospective_v1_market_residual_team.joblib",
+      "sha256": "ba6c26d2225a694e00c43dead86b8b8e57c3187d52b734974bcab4ba497cb23a",
+      "n_features": 21,
+      "C": 0.03,
+      "temperature": 1.233598809961302
+    },
+    {
+      "model_id": "prospective_v1_logistic_team_xg",
+      "model_type": "logistic",
+      "feature_group": "team_xg",
+      "file": "prospective_v1_logistic_team_xg.joblib",
+      "sha256": "9c723c9626288b7aeb9c338c2d2b7372c0984a22826d312c221381cfcb44a10c",
+      "n_features": 25,
+      "C": 0.03,
+      "temperature": 1.2409552591995243
+    },
+    {
+      "model_id": "prospective_v1_market_residual_team_xg",
+      "model_type": "market_residual",
+      "feature_group": "team_xg",
+      "file": "prospective_v1_market_residual_team_xg.joblib",
+      "sha256": "9f8de787b99b59e1c0a09e933b57091a09ad425ea9ad160c773100763cdb7ea2",
+      "n_features": 25,
+      "C": 0.03,
+      "temperature": 1.2479131652014281
+    },
+    {
+      "model_id": "prospective_v1_logistic_team_player",
+      "model_type": "logistic",
+      "feature_group": "team_player",
+      "file": "prospective_v1_logistic_team_player.joblib",
+      "sha256": "309688e6ddc5ba9bcad1779654ab57a9a7cb5ea9380cb85c0bbedf7adab45d41",
+      "n_features": 28,
+      "C": 0.03,
+      "temperature": 1.2483632509532923
+    },
+    {
+      "model_id": "prospective_v1_market_residual_team_player",
+      "model_type": "market_residual",
+      "feature_group": "team_player",
+      "file": "prospective_v1_market_residual_team_player.joblib",
+      "sha256": "d36cddfbe8931225b43a49b8a58c29535a3ee4d5fcb268279349e2e666554427",
+      "n_features": 28,
+      "C": 0.03,
+      "temperature": 1.2626889567276283
+    },
+    {
+      "model_id": "prospective_v1_logistic_combined",
+      "model_type": "logistic",
+      "feature_group": "combined",
+      "file": "prospective_v1_logistic_combined.joblib",
+      "sha256": "0c55437be16bf178219c89b3801b7e078598a49298ca7408dafd9466136db3a8",
+      "n_features": 32,
+      "C": 0.03,
+      "temperature": 1.2816258200814248
+    },
+    {
+      "model_id": "prospective_v1_market_residual_combined",
+      "model_type": "market_residual",
+      "feature_group": "combined",
+      "file": "prospective_v1_market_residual_combined.joblib",
+      "sha256": "600a6029dbb21024dc03712d7c4929210a04f626a215a54922559d6174d0579e",
+      "n_features": 32,
+      "C": 0.03,
+      "temperature": 1.27757971144893
+    }
+  ],
+  "market_temperature": 1.1423454604764802,
+  "market_temperature_sha256": "246ea1183ecfa471b8bba25b5fed0c61e8c9c8bc2e763e83ec3cb547b13effac",
+  "class_prior": [
+    0.4492753623188406,
+    0.2246376811594203,
+    0.32608695652173914
+  ],
+  "code_sha256": {
+    "epl_live\\train.py": "c957f6b6395fa604b0f0acd64bbaea8a2c8528fb4aed552a46d663bac3bb6348",
+    "epl_modeling\\ablation.py": "1a10ebc7706308b27b6b18de2ad97dd254ff726cc6bb838d3f7da403b2c4c90f",
+    "epl_modeling\\market_residual.py": "1f671d2312b0bc040d7216615ce777681a73afdc6d54b879e36a9fcd8d0de8d5",
+    "epl_modeling\\metrics.py": "a706233ce663e96fe2fae7b00a9e54731804d4b0d1ca78f7473183eff4f8a6d3"
+  },
+  "prospective_forecasts_created": 0,
+  "notes": [
+    "No 2026/27 outcome enters fitting, tuning or probability calibration.",
+    "All eight alternatives remain declared; no winner is selected from new outcomes.",
+    "The previously examined 2025/26 season is now calibration data, not a fresh test."
+  ]
+}

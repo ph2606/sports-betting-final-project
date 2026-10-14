@@ -1,0 +1,57 @@
+{
+  "run_id": "20261014T092230.366245Z",
+  "run_date": "2026-10-14",
+  "snapshot_id": "20261014T091234.352344Z_4ee7a3a730",
+  "snapshot_path": "epl_live\\snapshots\\20261014T091234.352344Z_4ee7a3a730",
+  "models_path": "epl_live\\models\\e82cad876a650c66",
+  "created_at_utc": "2026-10-14T09:22:52.752008+00:00",
+  "lookahead_days": 7,
+  "target_fixture_count": 10,
+  "source_gates": [],
+  "feature_metadata": {
+    "latest_completed_e0_match_date": "2026-10-12",
+    "current_completed_e0_matches": 60,
+    "current_xg_team_observations": 120,
+    "current_fpl_team_observations": 120,
+    "past_due_unfinished_fpl_fixtures": 0,
+    "source_publication_times_verified": false,
+    "fpl_player_summaries_complete": true,
+    "feature_latest_date_violations": 0,
+    "targets": 10,
+    "historical_understat_audit": {
+      "available": true,
+      "exact_linked_matches": 4089,
+      "rejected_identity_or_date_rows": 0
+    }
+  },
+  "ledger_append": {
+    "appended": 40,
+    "skipped_duplicates": 0,
+    "total_records": 40,
+    "head_hash": "dc43c7af5464c1ce6b12213ce33e987533d6afaabac6d3d43cfcf3973f66d191",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  },
+  "source_capture_usable": true,
+  "source_errors": [],
+  "freshness": {
+    "football_data_last_completed_match_date": "2026-10-12",
+    "understat_last_completed_match_date": "2026-10-12",
+    "fpl_last_completed_match_date": "2026-10-12",
+    "fpl_past_unfinished_fixture_count": 0
+  },
+  "observed_reference_quote_matches": 0,
+  "provider_price_publication_times_verified": false,
+  "prospective_outcomes_observed": 0,
+  "forecasts_not_live_execution_claims": true,
+  "ledger_integrity": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 40,
+    "head_hash": "dc43c7af5464c1ce6b12213ce33e987533d6afaabac6d3d43cfcf3973f66d191",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "validated_at_utc": "2026-10-14T09:42:57.406678+00:00",
+  "active_implementation": "v1.1",
+  "initial_forecast_ledger_unchanged": true,
+  "v1_archived_file_hashes_verified": 12,
+  "v1_code_aggregate_matches_released_forecasts": true,
+  "report_input_hashes_verified": 89,
+  "report_output_hashes_verified": 8,
+  "pdf_pages": 7,
+  "narrative_word_count": 1950,
+  "overview_input_and_output_hashes_verified": true,
+  "local_document_links_verified": 47,
+  "user_workbook_preserved": true,
+  "tests": [
+    {
+      "command": "python -m pytest epl_live/tests -q",
+      "passed": 90
+    },
+    {
+      "command": "python -m unittest discover -s epl_modeling/tests -v",
+      "passed": 40
+    }
+  ],
+  "total_tests_passed": 130,
+  "test_scope": "Live suite rerun after runtime and settlement fixes; unchanged modeling suite passed earlier in this same continuation. Two subtests are not counted again.",
+  "forecast_ledger": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 40,
+    "head_hash": "dc43c7af5464c1ce6b12213ce33e987533d6afaabac6d3d43cfcf3973f66d191",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  },
+  "new_v1_1_forecasts_released": 0,
+  "prospective_outcomes_observed": 0
+}

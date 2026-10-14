@@ -1,0 +1,33 @@
+{
+  "exported_at_utc": "2026-10-14T09:30:26.746210+00:00",
+  "view_cutoff_utc": "2026-10-14T09:22:52.752008+00:00",
+  "run_id": "20261014T092230.366245Z",
+  "forecast_records": 40,
+  "fixtures": 10,
+  "ledger_integrity": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 40,
+    "head_hash": "dc43c7af5464c1ce6b12213ce33e987533d6afaabac6d3d43cfcf3973f66d191",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  },
+  "input_sha256": {
+    "epl_live\\forecasts.jsonl": "f828b68d2a3deb44457c0b92629d3e7c6655cfa8d8eb8f69ff30607b73680214",
+    "epl_live\\runs\\20261014T092230.366245Z\\run_summary.json": "021bcbd90a3bd335ebc83a1de83e4eccc8151275444884789a8603da15701b90",
+    "epl_live\\runs\\20261014T092230.366245Z\\target_fixtures.parquet": "b1aff5392c77a5b5520efe62078928a63ff1b16463e100373ca12ea01b036495",
+    "epl_live\\runs\\20261014T092230.366245Z\\forecast_coverage.parquet": "b5ce83abeb320cc1263f7dfc9ee57659ed7424629169b6c65e994e11cfb7a2eb",
+    "epl_live\\snapshots\\20261014T091234.352344Z_4ee7a3a730\\manifest.json": "c87697eff4281042157daf0c3495578e2d83098f1b9f234f5ea66963f5cbdb06",
+    "epl_live\\models\\e82cad876a650c66\\manifest.json": "e710a1dc0f61c7cf0cc1ce90bae474df8abe3a3ccd5d1a670fbfda7fb45f61f6"
+  },
+  "output_sha256": {
+    "EPL_live_forecasts.xlsx": "3719b573e42e42b6400408fbc52b6a42394be80e277cb9fdbaf40c19809a9a81",
+    "fixture_probability_comparison.csv": "58407a5598244b243b2c02f36ae240fc8543cb27c11e206d0f3868ebf92433f8",
+    "fixture_probability_comparison.parquet": "ee3748c3bbd04374b1bdffbf7eef99e97ea0731a946850e6eb79fbfb8f4f38d3",
+    "FORECASTS.md": "4a31b9cc203fa73743fb871b333a436c13580c9fc0f662aa7f5cf98bca223d35",
+    "released_forecasts.csv": "00155b08733130845f79db64f8060ff4b9cabf3731f304d8997ae1cfeed967f3",
+    "released_forecasts.parquet": "fa030e789b3259e9e654aa9221c9bd6f17fd69fee15863054e27303aad45160c"
+  },
+  "code_sha256": "158b9c3018b8243e5868f82f2ca34949fad07193d1579d59d62f8496c57ff268"
+}

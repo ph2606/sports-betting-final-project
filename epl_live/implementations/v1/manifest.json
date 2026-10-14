@@ -1,0 +1,21 @@
+{
+  "archived_at_utc": "2026-10-14T09:38:09.313843+00:00",
+  "implementation": "v1",
+  "release": "20261014T092230.366245Z",
+  "forecast_code_sha256": "f323e6b335f319b2d12ddb0ba74b7b19fbbd4455438828d37b925fb8bcc2bcb5",
+  "files": {
+    "epl_live/run.py": "03768d01b3cc0c82142e777508ff932e7bbdf6368ea6c42bd766b906655c3880",
+    "epl_live/features.py": "4ba3363e644ecc2ff13040f471d3ce206634804cf940f89d2d26b3c8d4376f45",
+    "epl_live/ledger.py": "64b2713af1a9bdd96f4c2cd722b7f4d2baa76e40fc3e657ad71ffb66ce51279a",
+    "epl_live/collect.py": "22204118c5e9e9af50f4e0e101f2b4e2fe85dcdd88cad6cb157f51a54f437a38",
+    "epl_live/train.py": "c957f6b6395fa604b0f0acd64bbaea8a2c8528fb4aed552a46d663bac3bb6348",
+    "epl_modeling/features.py": "20df32e72d1457547d3f85b68aa798e313cebdefb80f50dda669125abba20392",
+    "epl_modeling/fpl_reconciliation.py": "36f4548ea476dee792e47ead4d4c0e418ca00f97fe56b8d29fa54face6456d9e",
+    "epl_modeling/ablation.py": "1a10ebc7706308b27b6b18de2ad97dd254ff726cc6bb838d3f7da403b2c4c90f",
+    "epl_modeling/market_residual.py": "1f671d2312b0bc040d7216615ce777681a73afdc6d54b879e36a9fcd8d0de8d5",
+    "epl_modeling/metrics.py": "a706233ce663e96fe2fae7b00a9e54731804d4b0d1ca78f7473183eff4f8a6d3",
+    "epl_live/OPERATIONAL_PROTOCOL.md": "6cab2df12a93cd51a9ee492615321359943f79a283aa50feaafd6048b84414e8",
+    "epl_modeling/PROSPECTIVE_PROTOCOL.md": "e82cad876a650c665cf483e5be3f5ab1ea9be965863978047a81fa64501f6e5a"
+  },
+  "scope": "Byte-identical sources and protocols used to create the initial 40 records; provenance archive, not an alternate runnable package."
+}

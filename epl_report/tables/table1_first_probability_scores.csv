@@ -1,0 +1,5 @@
+Predictor,Accuracy (%),CW-ECE,Log loss,Brier
+Accuracy-selected SVM,48.13,0.0620,1.0763,0.6446
+ECE-selected MLP,44.39,0.0416,1.0564,0.6356
+Normalized Bet365,48.66,0.0436,1.0191,0.6120
+Training frequency,42.51,0.0290,1.0851,0.6566
