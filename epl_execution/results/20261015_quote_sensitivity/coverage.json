@@ -1,0 +1,24 @@
+{
+  "catalog_strategies": 84,
+  "compatible_four_season_strategies": 56,
+  "account_scopes": 364,
+  "metric_rows": 1092,
+  "modes": [
+    "original",
+    "reference_replay",
+    "fixed_exposure_reference"
+  ],
+  "matches": 1470,
+  "match_dates": 453,
+  "scope_accounts": {
+    "single": 84,
+    "continuous": 56,
+    "seasonal": 224
+  },
+  "native_season_counts": {
+    "2022-23": 368,
+    "2023-24": 360,
+    "2024-25": 368,
+    "2025-26": 374
+  }
+}

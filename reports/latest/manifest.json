@@ -1,14 +1,14 @@
 {
-  "canonical_run": "epl_strategy_validation/results/20261015_temporal_selection",
-  "published_at_utc": "2026-10-15T11:39:17.922600+00:00",
+  "canonical_run": "epl_execution/results/20261015_quote_sensitivity",
+  "published_at_utc": "2026-10-15T22:31:07.834461+00:00",
   "copies": {
     "EPL_Project_Report.pdf": {
-      "source": "epl_strategy_validation/results/20261015_temporal_selection/report/validation_report.pdf",
-      "sha256": "d7ade878c3c99eda6c8ed1891131857d70107f6d5298b2df8b060259a3403084"
+      "source": "epl_execution/results/20261015_quote_sensitivity/report/validation_report.pdf",
+      "sha256": "74cc9403fde97dc8914d8db9b0541076612840a41daab6b6af30dc297b8c9d80"
     },
     "EPL_Project_Report.docx": {
-      "source": "epl_strategy_validation/results/20261015_temporal_selection/report/validation_report.docx",
-      "sha256": "d967e35f68ac34d35d7470b4719833d731c4ca67341281b8f569cd188ed4e2d9"
+      "source": "epl_execution/results/20261015_quote_sensitivity/report/validation_report.docx",
+      "sha256": "ec97b95c5cb0876f8e3b7a2cb3c0d808a5348541094504af8d3ab72f340262b6"
     }
   }
 }

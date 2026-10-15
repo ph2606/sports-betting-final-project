@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "metric_rows": 1092,
+  "independent_account_scopes": 364,
+  "checked_cashflow_accounts": 1092,
+  "frozen_original_ledgers_checked": true,
+  "unfunded_fixed_exposure_accounts": {
+    "single": 0,
+    "continuous": 15,
+    "seasonal": 0
+  },
+  "quote_outcome_rows": 4410,
+  "closing_outcome_rows": 4410,
+  "reference_graph_rows": 25424,
+  "already_reference_identity_strategies": 8,
+  "interpretation": "Independent exported-cashflow and identity checks; does not establish executable prices or predictive edge"
+}

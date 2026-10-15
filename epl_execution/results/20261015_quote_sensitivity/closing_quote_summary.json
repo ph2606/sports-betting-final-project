@@ -1,0 +1,13 @@
+{
+  "scope": "four_season_same_book",
+  "match_count": 1470,
+  "outcome_quote_count": 4410,
+  "bookmaker": "Bet365",
+  "entry_timestamp_missing_count": 1470,
+  "closing_timestamp_missing_count": 1470,
+  "mean_entry_to_closing_decimal_ratio": 1.0043390027165873,
+  "median_entry_to_closing_decimal_ratio": 1.0,
+  "verified_closing_line_value": false,
+  "used_to_select_or_size_bets": false,
+  "interpretation": "Same-book archived closing-price benchmark; individual quote clocks and executable price availability are unverified"
+}

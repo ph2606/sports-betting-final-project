@@ -3,9 +3,10 @@
 **Newest report:** [PDF](reports/latest/EPL_Project_Report.pdf) and
 [editable Word](reports/latest/EPL_Project_Report.docx), in **`reports/latest/`**.
 See [LATEST_REPORT.md](LATEST_REPORT.md) for the newest workbook, graphs and
-canonical run. The continuation adds four-season historical stability for
-56 compatible strategies and a conditional comparison accounting for the
-displayed 84-strategy family. All strategy definitions remain in the final appendix.
+canonical run. The newest continuation adds complete reference-price replays,
+quote attribution and funding checks across 364 historical account scopes.
+It retains the four-season study, original 84-strategy comparison and final
+appendix explaining every strategy.
 
 **Current project:** [ML Sports Betting proposal — NBA and EPL](ML_Sports_Betting_Project_Proposal.pdf),
 September 30, 2026, Aman Dhillon and Panagiotis Housos. Panagiotis's EPL data
