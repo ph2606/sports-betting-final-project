@@ -1,0 +1,30 @@
+Strategy,Trades,Hit %,"Trade
+freq. %","Avg. +
+gain","Avg. −
+loss size","Expected
+gain/trade","Expected
+loss/trade","Realised
+net/trade","Fundable /
+max. DD"
+Class frequency / Fixed,"1,447",23.01%,98.44%,30.46,10.10,16.92,6.18,−0.77,Yes / 54.03%
+Class frequency / Quarter Kelly,"1,447",23.01%,98.44%,43.73,15.17,25.58,9.16,−1.61,Yes / 82.28%
+Raw market / Fixed,263,9.51%,17.89%,60.32,10.10,9.65,8.73,−3.41,Yes / 40.77%
+Raw market / Quarter Kelly,263,9.51%,17.89%,22.46,3.54,3.46,3.09,−1.07,Yes / 14.23%
+Logistic: Combined / Fixed,"1,285",29.49%,87.41%,23.25,10.10,9.25,6.53,−0.26,Yes / 70.63%
+Logistic: Combined / Quarter Kelly,"1,285",29.49%,87.41%,30.24,13.86,12.91,8.68,−0.85,Yes / 70.65%
+Logistic: Team / Fixed,"1,241",29.57%,84.42%,23.65,10.10,9.35,6.55,−0.12,Yes / 30.68%
+Logistic: Team / Quarter Kelly,"1,241",29.57%,84.42%,30.47,13.95,13.21,8.73,−0.81,Yes / 54.34%
+Logistic: Team+players / Fixed,"1,274",28.81%,86.67%,23.41,10.10,9.37,6.54,−0.45,Yes / 42.64%
+Logistic: Team+players / Quarter Kelly,"1,274",28.81%,86.67%,29.31,13.49,12.75,8.43,−1.16,Yes / 63.92%
+Logistic: Team+xG / Fixed,"1,236",30.42%,84.08%,24.45,10.10,9.23,6.53,0.41,Yes / 26.38%
+Logistic: Team+xG / Quarter Kelly,"1,236",30.42%,84.08%,32.77,15.04,13.90,9.33,−0.50,Yes / 56.44%
+Market residual: Combined / Fixed,"1,186",30.69%,80.68%,22.16,10.10,8.33,6.70,−0.20,Yes / 49.78%
+Market residual: Combined / Quarter Kelly,"1,186",30.69%,80.68%,33.87,14.04,12.05,9.33,0.67,Yes / 39.97%
+Market residual: Team / Fixed,"1,048",30.34%,71.29%,22.57,10.10,8.24,6.77,−0.19,Yes / 39.87%
+Market residual: Team / Quarter Kelly,"1,048",30.34%,71.29%,27.50,12.13,10.20,8.06,−0.11,Yes / 29.06%
+Market residual: Team+players / Fixed,"1,147",31.04%,78.03%,22.20,10.10,8.28,6.70,−0.07,Yes / 41.04%
+Market residual: Team+players / Quarter Kelly,"1,147",31.04%,78.03%,31.99,13.76,11.64,9.09,0.44,Yes / 39.54%
+Market residual: Team+xG / Fixed,"1,098",30.33%,74.69%,22.44,10.10,8.26,6.73,−0.23,Yes / 25.17%
+Market residual: Team+xG / Quarter Kelly,"1,098",30.33%,74.69%,28.90,12.82,10.73,8.39,−0.16,Yes / 27.67%
+Temperature market / Fixed,216,25.46%,14.69%,17.48,10.10,7.58,6.88,−3.08,Yes / 58.61%
+Temperature market / Quarter Kelly,216,25.46%,14.69%,12.71,6.42,4.59,4.12,−1.55,Yes / 21.78%

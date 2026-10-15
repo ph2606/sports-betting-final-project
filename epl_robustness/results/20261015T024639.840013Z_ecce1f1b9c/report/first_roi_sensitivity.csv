@@ -1,0 +1,41 @@
+Strategy,Base,"Fee
+0.25%","Fee
+0.5%","Fee
+1%","Fee
+2%","Payout
+−1%","Payout
+−2.5%","Payout
+−5%","Fee 1% +
+payout −2.5%"
+"Accuracy / Fixed 5%
+Best book / Fixed",−2.25%,−2.50%,−2.75%,−3.25%,−4.25%,−2.96%,−4.02%,−5.80%,−5.02%
+"Accuracy / Fixed 5%
+Best book / Quarter Kelly",−7.01%,−7.26%,−7.51%,−8.01%,−9.01%,−7.69%,−8.69%,−10.38%,−9.69%
+"Accuracy / Fixed 5%
+Bet365 / Fixed",−5.12%,−5.37%,−5.62%,−6.12%,−7.12%,−5.80%,−6.82%,−8.52%,−7.82%
+"Accuracy / Fixed 5%
+Bet365 / Quarter Kelly",−8.57%,−8.82%,−9.07%,−9.57%,−10.57%,−9.22%,−10.20%,−11.83%,−11.20%
+"Calibration / Fixed 5%
+Best book / Fixed",0.41%,0.16%,−0.09%,−0.59%,−1.59%,−0.32%,−1.42%,−3.26%,−2.42%
+"Calibration / Fixed 5%
+Best book / Quarter Kelly",−2.59%,−2.84%,−3.09%,−3.59%,−4.59%,−3.29%,−4.35%,−6.12%,−5.35%
+"Calibration / Fixed 5%
+Bet365 / Fixed",−0.75%,−1.00%,−1.25%,−1.75%,−2.75%,−1.46%,−2.54%,−4.33%,−3.54%
+"Calibration / Fixed 5%
+Bet365 / Quarter Kelly",−3.09%,−3.34%,−3.59%,−4.09%,−5.09%,−3.78%,−4.82%,−6.56%,−5.82%
+"Accuracy / Primary
+Best book / Fixed",—,—,—,—,—,—,—,—,—
+"Accuracy / Primary
+Best book / Quarter Kelly",—,—,—,—,—,—,—,—,—
+"Accuracy / Primary
+Bet365 / Fixed",—,—,—,—,—,—,—,—,—
+"Accuracy / Primary
+Bet365 / Quarter Kelly",—,—,—,—,—,—,—,—,—
+"Calibration / Primary
+Best book / Fixed",—,—,—,—,—,—,—,—,—
+"Calibration / Primary
+Best book / Quarter Kelly",—,—,—,—,—,—,—,—,—
+"Calibration / Primary
+Bet365 / Fixed",—,—,—,—,—,—,—,—,—
+"Calibration / Primary
+Bet365 / Quarter Kelly",—,—,—,—,—,—,—,—,—

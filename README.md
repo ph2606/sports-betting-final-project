@@ -67,6 +67,24 @@ Original models, historical results and the seven-page draft are preserved.
 - [Trading metrics supplement — Word](epl_strategy/results/20261014T095929.849994Z_4c6add9911/report/EPL_strategy_metrics_supplement.docx)
 - [Metric definitions and reproduction](epl_strategy/METHODOLOGY.md)
 
+## Costs, calibration tails and robustness
+
+The [robustness extension](epl_robustness/README.md) adds nine explicitly
+hypothetical fee/payout scenarios for all 158 original and pooled strategy
+scopes, plus selected-bet probability diagnostics, odds tails and date/season
+contributions. All 1,422 scenario rows retain the requested trading metrics.
+Recorded selections and stakes stay fixed, with a separate funding audit.
+
+The calibration branch's 0.41% archived test ROI becomes negative under a
+hypothetical 0.5% fee on every stake. Its high-odds tail also shows substantial
+model-implied versus observed payoff differences. These are exploratory
+diagnostics of inspected history; no new filter, winner or executable edge is
+selected from them. Previous results and reports remain unchanged.
+
+- [Cost and robustness workbook](epl_robustness/results/20261015T024639.840013Z_ecce1f1b9c/report/EPL_robustness_metrics.xlsx)
+- [Robustness companion — PDF](epl_robustness/results/20261015T024639.840013Z_ecce1f1b9c/report/EPL_robustness_companion.pdf)
+- [Robustness companion — Word](epl_robustness/results/20261015T024639.840013Z_ecce1f1b9c/report/EPL_robustness_companion.docx)
+
 ## First modeling experiment
 
 The EPL section now includes a reproducible four-family comparison of accuracy

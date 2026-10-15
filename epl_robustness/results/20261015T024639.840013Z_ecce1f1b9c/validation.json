@@ -1,0 +1,27 @@
+{
+  "validated_at_utc": "2026-10-15T02:58:31.413527+00:00",
+  "scenario_rows_verified": 1422,
+  "strategy_scopes": 158,
+  "stress_assumptions": 9,
+  "funding_episode_rows_verified": 2016,
+  "no_trade_scenario_rows_preserved": 216,
+  "all_nine_assumptions_fundable_on_saved_paths": true,
+  "cash_and_model_expectation_identities_reconciled": true,
+  "source_code_and_prior_artifacts_preserved": true,
+  "prior_172_metrics_and_seven_page_main_draft_preserved": true,
+  "report_pages": 8,
+  "report_input_hashes_verified": 210,
+  "report_output_hashes_verified": 12,
+  "local_links_verified": 46,
+  "new_tests": {
+    "command": "python -m pytest epl_robustness/tests -q",
+    "passed": 17
+  },
+  "independent_data_audit": {
+    "scalar_comparisons": 281348,
+    "discrepancies": 0,
+    "maximum_cash_identity_error": 7.28e-12,
+    "scope": "All scenario/funding/break-even/bin/date-deletion/season-deletion outputs independently recomputed from frozen source columns."
+  },
+  "user_workbook_preserved": true
+}

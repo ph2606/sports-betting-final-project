@@ -1,0 +1,28 @@
+Strategy,Base ROI,"Top 1 date
+positive share","Top 5 dates
+positive share","Delete-one-date
+ROI range","Profitable
+seasons","Delete-one-season
+ROI range"
+Class frequency / Fixed,−4.85%,3.83%,17.26%,"[−6.39%, −4.26%]",1/4,"[−7.71%, −2.73%]"
+Class frequency / Quarter Kelly,−8.13%,4.16%,16.86%,"[−9.78%, −7.35%]",0/4,"[−11.46%, −6.15%]"
+Raw market / Fixed,−31.59%,13.65%,43.49%,"[−39.05%, −30.53%]",0/4,"[−39.83%, −22.67%]"
+Raw market / Quarter Kelly,−27.27%,9.29%,36.40%,"[−32.69%, −26.23%]",0/4,"[−36.31%, −20.41%]"
+Logistic: Combined / Fixed,0.14%,2.89%,12.05%,"[−1.03%, 0.61%]",3/4,"[−4.55%, 6.77%]"
+Logistic: Combined / Quarter Kelly,−3.47%,2.29%,9.76%,"[−4.32%, −2.94%]",1/4,"[−7.36%, −0.12%]"
+Logistic: Team / Fixed,1.59%,4.87%,13.53%,"[−0.39%, 2.24%]",3/4,"[0.10%, 4.33%]"
+Logistic: Team / Quarter Kelly,−3.13%,3.12%,12.29%,"[−4.26%, −2.58%]",0/4,"[−4.09%, −1.00%]"
+Logistic: Team+players / Fixed,−1.73%,2.69%,11.35%,"[−2.75%, −1.13%]",2/4,"[−4.09%, 1.02%]"
+Logistic: Team+players / Quarter Kelly,−5.97%,2.37%,10.85%,"[−6.82%, −5.31%]",1/4,"[−9.44%, −4.22%]"
+Logistic: Team+xG / Fixed,7.01%,4.37%,13.05%,"[5.03%, 7.53%]",4/4,"[4.76%, 9.05%]"
+Logistic: Team+xG / Quarter Kelly,−0.59%,3.25%,12.22%,"[−1.86%, 0.04%]",2/4,"[−4.12%, 1.85%]"
+Market residual: Combined / Fixed,0.76%,2.86%,11.96%,"[−0.39%, 1.36%]",2/4,"[−5.36%, 4.56%]"
+Market residual: Combined / Quarter Kelly,7.19%,2.89%,11.71%,"[6.02%, 7.91%]",2/4,"[−0.60%, 11.06%]"
+Market residual: Team / Fixed,0.91%,4.90%,14.89%,"[−1.18%, 1.49%]",2/4,"[−2.07%, 4.24%]"
+Market residual: Team / Quarter Kelly,1.84%,2.43%,10.67%,"[0.88%, 2.50%]",2/4,"[−0.37%, 3.70%]"
+Market residual: Team+players / Fixed,2.03%,3.56%,12.49%,"[0.55%, 2.66%]",2/4,"[−3.64%, 5.38%]"
+Market residual: Team+players / Quarter Kelly,5.74%,2.80%,11.78%,"[4.61%, 6.34%]",2/4,"[−1.71%, 8.71%]"
+Market residual: Team+xG / Fixed,0.42%,3.42%,12.48%,"[−0.95%, 0.92%]",2/4,"[−0.73%, 1.55%]"
+Market residual: Team+xG / Quarter Kelly,1.46%,2.41%,9.90%,"[0.54%, 2.11%]",4/4,"[1.10%, 1.80%]"
+Temperature market / Fixed,−28.62%,16.13%,48.99%,"[−34.87%, −27.61%]",1/4,"[−41.94%, −3.85%]"
+Temperature market / Quarter Kelly,−16.22%,6.42%,25.51%,"[−18.22%, −14.52%]",0/4,"[−38.39%, −7.18%]"
