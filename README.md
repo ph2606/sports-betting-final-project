@@ -1,5 +1,12 @@
 # Statistical Arbitrage final project
 
+**Newest report:** [PDF](reports/latest/EPL_Project_Report.pdf) and
+[editable Word](reports/latest/EPL_Project_Report.docx), in **`reports/latest/`**.
+See [LATEST_REPORT.md](LATEST_REPORT.md) for the newest workbook, graphs and
+canonical run. The continuation adds four-season historical stability for
+56 compatible strategies and a conditional comparison accounting for the
+displayed 84-strategy family. All strategy definitions remain in the final appendix.
+
 **Current project:** [ML Sports Betting proposal — NBA and EPL](ML_Sports_Betting_Project_Proposal.pdf),
 September 30, 2026, Aman Dhillon and Panagiotis Housos. Panagiotis's EPL data
 collection has started in [epl_data](epl_data/README.md), using the 20 current

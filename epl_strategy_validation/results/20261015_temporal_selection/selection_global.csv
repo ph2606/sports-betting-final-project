@@ -1,0 +1,9 @@
+benchmark_id,benchmark_name,block_length,bootstrap_samples,seed,family_size,distinct_recorded_paths,matched_match_dates,matched_fixtures,best_observed_strategy_id,max_observed_mean_date_excess_profit_units,global_one_sided_p,simultaneous_95_critical_mean_date_units,reject_global_at_05,inference_status
+cash,Cash (zero profit),1,19999,20261016,84,75,113,374,S072,541.9469026548672,0.4154,1286.727658911344,False,exploratory_conditional_recorded_cashflow_sensitivity
+S042,"Market favorite | best quotes | flat 1,000",1,19999,20261016,84,75,113,374,S072,879.646017699115,0.19515,1434.5989139263324,False,exploratory_conditional_recorded_cashflow_sensitivity
+cash,Cash (zero profit),3,19999,20261018,84,75,113,374,S072,541.9469026548672,0.4136,1216.9352631529064,False,exploratory_conditional_recorded_cashflow_sensitivity
+S042,"Market favorite | best quotes | flat 1,000",3,19999,20261018,84,75,113,374,S072,879.646017699115,0.1746,1321.9203934005511,False,exploratory_conditional_recorded_cashflow_sensitivity
+cash,Cash (zero profit),5,19999,20261020,84,75,113,374,S072,541.9469026548672,0.4187,1241.6690372999594,False,exploratory_conditional_recorded_cashflow_sensitivity
+S042,"Market favorite | best quotes | flat 1,000",5,19999,20261020,84,75,113,374,S072,879.646017699115,0.1813,1349.7345132743353,False,exploratory_conditional_recorded_cashflow_sensitivity
+cash,Cash (zero profit),10,19999,20261025,84,75,113,374,S072,541.9469026548672,0.3887,1138.731380091219,False,exploratory_conditional_recorded_cashflow_sensitivity
+S042,"Market favorite | best quotes | flat 1,000",10,19999,20261025,84,75,113,374,S072,879.646017699115,0.1457,1259.6473953497562,False,exploratory_conditional_recorded_cashflow_sensitivity

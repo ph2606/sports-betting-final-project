@@ -1,0 +1,52 @@
+{
+  "four_season_strategies": 56,
+  "catalog_strategies": 84,
+  "excluded_earlier_ids": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015",
+    "S016",
+    "S073",
+    "S074",
+    "S075",
+    "S076",
+    "S077",
+    "S078",
+    "S079",
+    "S080",
+    "S081",
+    "S082",
+    "S083",
+    "S084"
+  ],
+  "matches": 1470,
+  "match_dates": 453,
+  "season_matches": {
+    "2022-23": 368,
+    "2023-24": 360,
+    "2024-25": 368,
+    "2025-26": 374
+  },
+  "season_match_dates": {
+    "2022-23": 117,
+    "2023-24": 116,
+    "2024-25": 107,
+    "2025-26": 113
+  },
+  "original_2025_graph": "epl_strategy_lab/results/20261015T040052Z_100k84/figures/all_strategies_100k.png",
+  "initial_bankroll": 100000,
+  "model_count_including_ensembles": 14,
+  "study_status": "retrospective_previously_inspected_history_not_new_holdout"
+}

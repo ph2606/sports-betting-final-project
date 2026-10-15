@@ -1,0 +1,336 @@
+{
+  "status": "retrospective_exploratory_companion",
+  "draft_date_new_york": "2026-10-15",
+  "built_at_utc": "2026-10-15T11:39:13.568857+00:00",
+  "continuous_strategy_count": 56,
+  "full_catalog_count": 84,
+  "annual_strategy_rows": 224,
+  "continuous_matches": 1470,
+  "continuous_dates": 453,
+  "initial_capital_per_account": 100000.0,
+  "initial_anchor_date": "2022-08-04",
+  "graph": {
+    "trace_ids": [
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029",
+      "S030",
+      "S031",
+      "S032",
+      "S033",
+      "S034",
+      "S035",
+      "S036",
+      "S037",
+      "S038",
+      "S039",
+      "S040",
+      "S041",
+      "S042",
+      "S043",
+      "S044",
+      "S045",
+      "S046",
+      "S047",
+      "S048",
+      "S049",
+      "S050",
+      "S051",
+      "S052",
+      "S053",
+      "S054",
+      "S055",
+      "S056",
+      "S057",
+      "S058",
+      "S059",
+      "S060",
+      "S061",
+      "S062",
+      "S063",
+      "S064",
+      "S065",
+      "S066",
+      "S067",
+      "S068",
+      "S069",
+      "S070",
+      "S071",
+      "S072"
+    ],
+    "initially_visible_traces": 56,
+    "plotly_js_bundled": true,
+    "legacy_84_chart_embedded": true,
+    "linear_money_y_axis": true
+  },
+  "selection_rows": 672,
+  "selection_global_rows": 8,
+  "appendix_ids": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015",
+    "S016",
+    "S017",
+    "S018",
+    "S019",
+    "S020",
+    "S021",
+    "S022",
+    "S023",
+    "S024",
+    "S025",
+    "S026",
+    "S027",
+    "S028",
+    "S029",
+    "S030",
+    "S031",
+    "S032",
+    "S033",
+    "S034",
+    "S035",
+    "S036",
+    "S037",
+    "S038",
+    "S039",
+    "S040",
+    "S041",
+    "S042",
+    "S043",
+    "S044",
+    "S045",
+    "S046",
+    "S047",
+    "S048",
+    "S049",
+    "S050",
+    "S051",
+    "S052",
+    "S053",
+    "S054",
+    "S055",
+    "S056",
+    "S057",
+    "S058",
+    "S059",
+    "S060",
+    "S061",
+    "S062",
+    "S063",
+    "S064",
+    "S065",
+    "S066",
+    "S067",
+    "S068",
+    "S069",
+    "S070",
+    "S071",
+    "S072",
+    "S073",
+    "S074",
+    "S075",
+    "S076",
+    "S077",
+    "S078",
+    "S079",
+    "S080",
+    "S081",
+    "S082",
+    "S083",
+    "S084"
+  ],
+  "appendix_is_last": true,
+  "pdf_pages": 36,
+  "body_sections": 16,
+  "workbook_sheet_rows": {
+    "Read me": 8,
+    "Continuous all metrics": 56,
+    "Annual all metrics": 224,
+    "Season stability": 56,
+    "Selection all comparisons": 672,
+    "Selection global": 8,
+    "Original84 2025 metrics": 84,
+    "Complete84 catalog": 84,
+    "Final84 appendix": 84,
+    "Graph equity incl initial": 25424,
+    "Continuous date equity": 25368,
+    "Continuous every bet": 60509,
+    "Annual date equity": 25368,
+    "Annual every bet": 61416,
+    "Input provenance": 23
+  },
+  "models_refitted": false,
+  "consumed_source_files_unchanged": true,
+  "inputs": {
+    "epl_modeling/ABLATION_PROTOCOL.md": {
+      "sha256": "1cef39b17ce9ec2719432e5f0651fa027eb070b735aebc8090a271c700c567f2",
+      "bytes": 17197
+    },
+    "epl_strategy/METHODOLOGY.md": {
+      "sha256": "daba299ec9954975c2546dff386b776e0fb4437df6f564955658df299de5419c",
+      "bytes": 7906
+    },
+    "epl_strategy/report.py": {
+      "sha256": "e39475122ee5ae997cff1ee44fcbfc7bf727c655e6a79189cb704917ebd960e6",
+      "bytes": 37558
+    },
+    "epl_strategy_lab/PROTOCOL.md": {
+      "sha256": "64cd2816123ef89a34a2ae9c54d0c2ef668cae284d9c0f96cb3cb36d9f514318",
+      "bytes": 8502
+    },
+    "epl_strategy_lab/report.py": {
+      "sha256": "39f968bed656127a43c698deafcf75fe71a67adcaf1f3db651154c72d59d1e32",
+      "bytes": 41105
+    },
+    "epl_strategy_lab/results/20261015T040052Z_100k84/figures/all_strategies_100k.png": {
+      "sha256": "cd73676402065c92a2b3e3de73bc5df82803c200f4e28664b7a0cbc88bb34285",
+      "bytes": 977367
+    },
+    "epl_strategy_lab/results/20261015T040052Z_100k84/metrics.parquet": {
+      "sha256": "b90126af20ae6733b4005e92a7489e52439fec1bfaf02ce3abab4bf6f16e28aa",
+      "bytes": 122627
+    },
+    "epl_strategy_validation/PROTOCOL.md": {
+      "sha256": "df2baa2d6fc9eeed4bd8d16bebf5c1a2d3087767bac6d6f686d8ab3e049ea741",
+      "bytes": 8429
+    },
+    "epl_strategy_validation/report.py": {
+      "sha256": "39cf3b8bc87db21b92a2abc65199ca8ffbde73d7f1e1ca42dfd9aaa2f8e65d36",
+      "bytes": 52904
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/bets_continuous.parquet": {
+      "sha256": "be7a274d6a22cf1f38824ccffa5de6b4d7306b0bd35688c64711fb5a589f6402",
+      "bytes": 2766207
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/bets_seasonal.parquet": {
+      "sha256": "289b42dd976aab45c64958e23fd985e9965fb8ca9923f7c21bf6e1ae012adc56",
+      "bytes": 2697248
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/catalog.json": {
+      "sha256": "997eb7797ae80e2de557a02adedb911b46f474cafc99b1cb97ff82ecaa8ea88a",
+      "bytes": 109258
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/compatible_catalog.json": {
+      "sha256": "fd6e42bf37ed5b8bd5c544397ecbe983d9a48de40dcba05de43c8f22ec9bce64",
+      "bytes": 71956
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/coverage.json": {
+      "sha256": "24aff257db3147486588c5c29d56c5432594ee099161a04f702b678227989030",
+      "bytes": 1000
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/equity_continuous.parquet": {
+      "sha256": "a16cb1c81c343053d0583ef7c1473e23dee27c88c0c968fa3e130f1aee1ff18a",
+      "bytes": 1805122
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/equity_seasonal.parquet": {
+      "sha256": "1294defa4546df687fce4c57bb2c477f19097428094189860b992f5ed998632a",
+      "bytes": 1712441
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/graph_equity_continuous.csv": {
+      "sha256": "bdd76650e72f45ac32ebbc4c726046181ce3628daf0df82f540f34c4113c116e",
+      "bytes": 910762
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/metrics_continuous.parquet": {
+      "sha256": "50e2e22db3f67727f8f08b8e0f4ac81bbe3ba035fa482d150773738fcaca0017",
+      "bytes": 99852
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/metrics_seasonal.parquet": {
+      "sha256": "0f697e5bba510cb09432ecb3de447002205ad896a45adf1226d5966d399a0e89",
+      "bytes": 166237
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/season_stability.parquet": {
+      "sha256": "ac98eeb3a6667b994369a3fad42a37f9d4c89dca8275892c18e64d2a8ac3966a",
+      "bytes": 34742
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/selection_comparison.parquet": {
+      "sha256": "6eced41fb0231cb3d809a4117b0155b966d3302b08a52e0006ea8726576281fa",
+      "bytes": 75324
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/selection_global.parquet": {
+      "sha256": "d161f68a488939d52484b842dda9b9e2de3b64581f0f10aa3fa56ed09e48e326",
+      "bytes": 10738
+    },
+    "epl_strategy_validation/results/20261015_temporal_selection/source_provenance.json": {
+      "sha256": "0522f88fd712dac4e325a294efd3174e45ded2171f9c4b4187d18aac5859c461",
+      "bytes": 4658
+    }
+  },
+  "outputs": {
+    "figures/all_84_strategies_2025_100k.png": {
+      "sha256": "cd73676402065c92a2b3e3de73bc5df82803c200f4e28664b7a0cbc88bb34285",
+      "bytes": 977367
+    },
+    "figures/all_strategies_4seasons_100k.html": {
+      "sha256": "fd1a5695e901477d998c9d53efa8ae8d196babe1ec92e015aaddef9ada9bfa61",
+      "bytes": 9699804
+    },
+    "figures/all_strategies_4seasons_100k.png": {
+      "sha256": "b27007a30ba9d50fba752da00fe794acfda90ecf8e9ba3bb13cdd917fcedcd89",
+      "bytes": 794975
+    },
+    "figures/all_strategies_4seasons_100k.svg": {
+      "sha256": "defb17a676b89a605ac244847cd1880b627b6b90bc5f237e05946e81eb6697bc",
+      "bytes": 1178118
+    },
+    "report/annual_stability.csv": {
+      "sha256": "75f5aacbcbc689e966d850786d5d656b3d2532d91fb823e6997d246de8c1da41",
+      "bytes": 4819
+    },
+    "report/complete84_strategy_appendix.csv": {
+      "sha256": "6891d852398118713ebb0ccc6f7355785cf4da69ce815ccb01565381aa9fa7ba",
+      "bytes": 169036
+    },
+    "report/continuous_metrics.csv": {
+      "sha256": "94dd4804b85942a0ce6d4585b517910ae5eb210b96c8a83402036eb1bb3c73eb",
+      "bytes": 5046
+    },
+    "report/original_84_metrics.csv": {
+      "sha256": "0b5b7f59b0a9ff88191229d8d88d2e2cc6046c9452a05e7e377fe4aaa8b8be7d",
+      "bytes": 7097
+    },
+    "report/selection_globals.csv": {
+      "sha256": "e63449512fdd33ff6fecde4f05c20331f3f19e0efc8a8976735bc4a7a956c660",
+      "bytes": 666
+    },
+    "report/validation_overview.xlsx": {
+      "sha256": "07a0afd72b124534125442766e51616ea81596b2886f68a8323e8ecb00a930d1",
+      "bytes": 26412534
+    },
+    "report/validation_report.docx": {
+      "sha256": "d967e35f68ac34d35d7470b4719833d731c4ca67341281b8f569cd188ed4e2d9",
+      "bytes": 1780013
+    },
+    "report/validation_report.md": {
+      "sha256": "2c27e4c032e9a12f820afa2132dea42893343a8d360da5dde279e50d1ebf5a75",
+      "bytes": 196000
+    },
+    "report/validation_report.pdf": {
+      "sha256": "d7ade878c3c99eda6c8ed1891131857d70107f6d5298b2df8b060259a3403084",
+      "bytes": 1949098
+    }
+  },
+  "manifest_order": "Final builder envelope and independent audit are intentionally not consumed report inputs.",
+  "limits": "Historical current-club cohort, retrospective catalog, archived execution unverified, conditional fixed-path inference; no fresh holdout or guaranteed selection control."
+}

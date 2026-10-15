@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "accounts_checked": 280,
+  "four_season_strategies": 56,
+  "frozen_2025_strategies_reproduced": 56,
+  "numeric_values_compared": 288548,
+  "largest_absolute_rounding_error": 3.4924596548080444e-10,
+  "selection_rows": 672,
+  "selection_families": 8,
+  "interpretation": "Historical identities and conditional recorded-cashflow checks; not a new untouched test."
+}
