@@ -48,6 +48,27 @@ prospective accuracy or profit is available before these fixtures settle. The
 draft reports the historical findings below and clearly identifies the new
 forecasts as pending.
 
+## More strategies and one 100,000-unit account graph
+
+The [strategy laboratory](epl_strategy_lab/README.md) compares **84 strategies**
+over the same 374 quoted 2025/26 matches: 50 previously recorded configurations
+(including threshold diagnostics) and 34 new exploratory rules. Each strategy
+starts with its own 100,000 monetary units and carries its balance through the
+season. All curves, including the eight cash policies, appear on one graph.
+
+- [Every strategy on one money-versus-time graph](epl_strategy_lab/results/20261015T040052Z_100k84/figures/all_strategies_100k.png)
+- [Interactive version - download and open locally](epl_strategy_lab/results/20261015T040052Z_100k84/figures/all_strategies_100k.html)
+- [Report with a final appendix explaining every strategy - PDF](epl_strategy_lab/results/20261015T040052Z_100k84/report/strategy_lab_report.pdf)
+- [Report - editable Word](epl_strategy_lab/results/20261015T040052Z_100k84/report/strategy_lab_report.docx)
+- [All trading metrics - workbook](epl_strategy_lab/results/20261015T040052Z_100k84/report/strategy_lab_overview.xlsx)
+
+The new rules cover probability ensembles, simple outcome benchmarks,
+consensus, alternative stake sizing, date commitment limits and fixed
+eligibility filters. Every strategy retains hit ratio, expected gain/loss,
+realized payoffs, trading frequency and risk measures. This is an exploratory
+archived-price replay of an already inspected season, with no independently
+validated winner or new prospective performance claim.
+
 ## Metrics for every trading strategy
 
 The [strategy analytics extension](epl_strategy/README.md) adds hit ratio,

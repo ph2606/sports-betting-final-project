@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "strategies": 84,
+  "common_matches": 374,
+  "matched_dates_per_strategy": 113,
+  "graph_points_per_strategy": 114,
+  "numeric_values_compared": 161744,
+  "original_policies_checked": 38,
+  "legacy_scale_factor": 100,
+  "largest_legacy_cashflow_absolute_error": 3.637978807091713e-11,
+  "method": "Saved-ledger cash identities and source checks without engine calls; original 38 rules compared with frozen earlier trade ledgers at 100x funding."
+}

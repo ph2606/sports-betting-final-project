@@ -1,0 +1,111 @@
+{
+  "season": "2025-26",
+  "n_matches": 374,
+  "n_match_dates": 113,
+  "first_match_date": "2025-08-15",
+  "last_match_date": "2026-05-24",
+  "calendar_days_inclusive": 283,
+  "n_original_prediction_series": 13,
+  "n_ensemble_series": 3,
+  "n_strategies": 84,
+  "model_keys": [
+    "first_accuracy",
+    "first_calibration",
+    "logit_team_only",
+    "logit_team_xg",
+    "logit_team_players",
+    "logit_combined",
+    "residual_team_only",
+    "residual_team_xg",
+    "residual_team_players",
+    "residual_combined",
+    "baseline_class_frequency",
+    "baseline_market_only",
+    "market_temperature",
+    "ensemble_logit4",
+    "ensemble_learned8",
+    "ensemble_market_blend"
+  ],
+  "model_source_descriptions": {
+    "first_accuracy": "Frozen initial-study accuracy-selected SVM, saved 2025-26 test probabilities.",
+    "first_calibration": "Frozen initial-study calibration-selected MLP, saved 2025-26 test probabilities.",
+    "logit_team_only": "Frozen rolling-source ablation team/logistic, saved outer-season 2025-26 probabilities.",
+    "logit_team_xg": "Frozen rolling-source ablation team_xg/logistic, saved outer-season 2025-26 probabilities.",
+    "logit_team_players": "Frozen rolling-source ablation team_player/logistic, saved outer-season 2025-26 probabilities.",
+    "logit_combined": "Frozen rolling-source ablation combined/logistic, saved outer-season 2025-26 probabilities.",
+    "residual_team_only": "Frozen rolling-source ablation team/market_residual, saved outer-season 2025-26 probabilities.",
+    "residual_team_xg": "Frozen rolling-source ablation team_xg/market_residual, saved outer-season 2025-26 probabilities.",
+    "residual_team_players": "Frozen rolling-source ablation team_player/market_residual, saved outer-season 2025-26 probabilities.",
+    "residual_combined": "Frozen rolling-source ablation combined/market_residual, saved outer-season 2025-26 probabilities.",
+    "baseline_class_frequency": "Frozen rolling-source ablation class_frequency/baseline, saved outer-season 2025-26 probabilities.",
+    "baseline_market_only": "Frozen rolling-source ablation market_only/baseline, saved outer-season 2025-26 probabilities.",
+    "market_temperature": "Frozen rolling-source ablation market_only/market_temperature, saved outer-season 2025-26 probabilities.",
+    "ensemble_logit4": "Equal-weight mean of the four saved logistic feature-group probability vectors.",
+    "ensemble_learned8": "Equal-weight mean of the four logistic and four market-residual saved probability vectors.",
+    "ensemble_market_blend": "Equal-weight mean of saved combined-feature logistic and raw reference-market probability vectors."
+  },
+  "ensemble_weights": {
+    "ensemble_logit4": {
+      "logit_team_only": 0.25,
+      "logit_team_xg": 0.25,
+      "logit_team_players": 0.25,
+      "logit_combined": 0.25
+    },
+    "ensemble_learned8": {
+      "logit_team_only": 0.125,
+      "logit_team_xg": 0.125,
+      "logit_team_players": 0.125,
+      "logit_combined": 0.125,
+      "residual_team_only": 0.125,
+      "residual_team_xg": 0.125,
+      "residual_team_players": 0.125,
+      "residual_combined": 0.125
+    },
+    "ensemble_market_blend": {
+      "logit_combined": 0.5,
+      "baseline_market_only": 0.5
+    }
+  },
+  "common_population_dropped_matches": 0,
+  "identity_conflicts": 0,
+  "probability_normalization_max_error": 2.220446049250313e-16,
+  "quote_timestamp_missing_counts": {
+    "reference_quote_timestamp_utc": 374,
+    "quote_timestamp_H_utc": 374,
+    "quote_timestamp_D_utc": 374,
+    "quote_timestamp_A_utc": 374,
+    "selected_quote_timestamps_missing": 0,
+    "selected_quote_timestamps_differ": 0
+  },
+  "archived_snapshot_type": "preclosing",
+  "provider_quote_times_verified": false,
+  "execution_verified": false,
+  "initial_bankroll_per_strategy": 100000.0,
+  "continuous_season_accounts": true,
+  "resets_per_strategy": 0,
+  "graph_rows": 9576,
+  "graph_anchor_date": "2025-08-14",
+  "primary_cash_strategies": 8,
+  "legacy_diagnostic_strategies": 12,
+  "source_paths": [
+    "epl_modeling/results/predictions.parquet",
+    "epl_modeling/ablation_results/predictions.parquet",
+    "epl_modeling/results/bookmaker_odds_panel.parquet",
+    "epl_modeling/results/run_metadata.json",
+    "epl_modeling/results/locked_choices.json",
+    "epl_modeling/results/threshold_validation.csv",
+    "epl_modeling/results/bets.parquet",
+    "epl_modeling/ablation_results/bets.parquet"
+  ],
+  "audit_reference_sources": [
+    "epl_modeling/results/bets.parquet",
+    "epl_modeling/ablation_results/bets.parquet"
+  ],
+  "limitations": [
+    "All 2025-26 outcomes were previously inspected; new strategy comparisons are retrospective exploratory.",
+    "The cohort is defined by current 2026-27 league membership, introducing survivor/cohort selection bias.",
+    "Archived bookmaker prices and historical feature publication times are unverified; this is a hypothetical replay.",
+    "Independent strategies each receive 100000; their curves cannot be added as one jointly funded portfolio.",
+    "Bootstrap intervals condition on recorded predictions, selections and stakes; no refit or multiplicity correction."
+  ]
+}
