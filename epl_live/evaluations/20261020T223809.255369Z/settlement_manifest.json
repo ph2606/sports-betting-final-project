@@ -1,0 +1,24 @@
+{
+  "completed_at_utc": "2026-10-20T22:38:09.342372+00:00",
+  "settlement_wrapper_sha256": "d3245b885a0445b7f57a1c99d952f0c69c36d8be2e55c2f70744f368275ad8c7",
+  "frozen_evaluator_sha256": "a97525a620e746d7ce7196e0330d339efd656bd2a181a1f69f057840597a6beb",
+  "forecast_ledger_sha256_unchanged": "f828b68d2a3deb44457c0b92629d3e7c6655cfa8d8eb8f69ff30607b73680214",
+  "outcome_ledger": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 10,
+    "head_hash": "fed053fc5461a3b0dc3ab7f8dd7b3a781a9dd639e7ffb332627b5d780dc172e6",
+    "ledger_type": "outcome",
+    "max_quote_age_seconds": null,
+    "valid": true
+  },
+  "output_sha256": {
+    "evaluation_summary.json": "8e82f066d568077c7b6abb7daf64c66e9eaf4cb863e1e91ad783fd0e57631863",
+    "prospective_scores.csv": "1b66b7bbd5e226ca821835e7ce09252f06e6444fcc9656f5f370f806b23310b2",
+    "prospective_scores.parquet": "5dd3145afc61a47b5bc5ea67b2562429a7edf248c063d95d535f02c715c77d41",
+    "resolved_predictions.csv": "7ce32ab8d1e55c108289e0e562b7d644723b9da4acb413b859deab23e4f74f67",
+    "resolved_predictions.parquet": "f158cf7ae1f9a92e54042c41fc5d253fdf00d06c638f256359346b85719fb077",
+    "settlement_validation.json": "22649b98c1b3beb8eb081ae41c08cc8d4eda2470d3694154425afa9b1992b8d7",
+    "STATUS.md": "41215babd9134eb24ad94b3304742fdc0134431d22edf8122dbdde3bc896423d"
+  }
+}

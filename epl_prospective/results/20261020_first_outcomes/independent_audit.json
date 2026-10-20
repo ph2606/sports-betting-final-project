@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "original_forecasts_checked": 40,
+  "independent_original_fixtures": 10,
+  "resolved_original_records": 40,
+  "model_score_rows": 4,
+  "paired_comparisons": 6,
+  "new_pending_forecasts_checked": 40,
+  "original_prefix_preserved": true,
+  "forecast_outcome_chains_valid": true,
+  "prospective_trades_inferred": false
+}

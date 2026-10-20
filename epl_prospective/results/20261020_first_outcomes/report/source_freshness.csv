@@ -1,0 +1,7 @@
+source,snapshot role,observed at UTC,latest completed match date,source capture valid,core source status
+FPL,results,2026-10-20T22:30:28.822854+00:00,2026-10-19,True,downloaded
+Football-Data,results,2026-10-20T22:30:30.391521+00:00,2026-10-19,True,downloaded
+Understat,results,2026-10-20T22:30:29.435417+00:00,2026-10-19,True,downloaded
+FPL,player_refresh,2026-10-20T22:30:54.851544+00:00,2026-10-19,True,downloaded
+Football-Data,player_refresh,2026-10-20T22:30:56.145000+00:00,2026-10-19,True,downloaded
+Understat,player_refresh,2026-10-20T22:30:55.286893+00:00,2026-10-19,True,downloaded

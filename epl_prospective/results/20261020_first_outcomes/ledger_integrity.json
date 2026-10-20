@@ -1,0 +1,32 @@
+{
+  "original": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 40,
+    "head_hash": "dc43c7af5464c1ce6b12213ce33e987533d6afaabac6d3d43cfcf3973f66d191",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  },
+  "forecast_as_of": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 80,
+    "head_hash": "4d68e98d042742bb2e28423147c8ac28716108e45133ff0653504b1c371ed822",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  },
+  "outcome_as_of": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 10,
+    "head_hash": "fed053fc5461a3b0dc3ab7f8dd7b3a781a9dd639e7ffb332627b5d780dc172e6",
+    "ledger_type": "outcome",
+    "max_quote_age_seconds": null,
+    "valid": true
+  },
+  "original_bytes_unchanged_prefix": true,
+  "anchor_commit": "8d1dc519b7fceb52247a240435424e12ca1b9708",
+  "original_sha256": "f828b68d2a3deb44457c0b92629d3e7c6655cfa8d8eb8f69ff30607b73680214"
+}

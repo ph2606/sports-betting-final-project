@@ -1,0 +1,7 @@
+source,observed_at_utc,latest_completed_match_date,source_capture_valid,snapshot_id,snapshot_role,core_source_status,source_url,provider_publication_time_verified
+FPL,2026-10-20T22:30:28.822854+00:00,2026-10-19,True,20261020T223027.384077Z_34ff62be24,results,downloaded,https://fantasy.premierleague.com/api/fixtures/,False
+Football-Data,2026-10-20T22:30:30.391521+00:00,2026-10-19,True,20261020T223027.384077Z_34ff62be24,results,downloaded,https://www.football-data.co.uk/mmz4281/2627/E0.csv,False
+Understat,2026-10-20T22:30:29.435417+00:00,2026-10-19,True,20261020T223027.384077Z_34ff62be24,results,downloaded,https://understat.com/getLeagueData/EPL/2026,False
+FPL,2026-10-20T22:30:54.851544+00:00,2026-10-19,True,20261020T223053.930369Z_299021e7c7,player_refresh,downloaded,https://fantasy.premierleague.com/api/fixtures/,False
+Football-Data,2026-10-20T22:30:56.145000+00:00,2026-10-19,True,20261020T223053.930369Z_299021e7c7,player_refresh,downloaded,https://www.football-data.co.uk/mmz4281/2627/E0.csv,False
+Understat,2026-10-20T22:30:55.286893+00:00,2026-10-19,True,20261020T223053.930369Z_299021e7c7,player_refresh,downloaded,https://understat.com/getLeagueData/EPL/2026,False

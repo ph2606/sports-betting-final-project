@@ -1,0 +1,14 @@
+Model,"Resolved
+fixtures",Accuracy,"95% Wilson
+accuracy interval","Log
+loss","95% log-loss
+interval","Brier
+score","95% Brier
+interval","Classwise
+ECE 5","Classwise
+ECE 10","Classwise
+ECE 15"
+Combined,10,60.00%,31.27% to 83.18%,0.8872,0.6805 to 1.0905,0.5147,0.3691 to 0.6561,0.2472,0.2472,0.2827
+Team,10,60.00%,31.27% to 83.18%,0.8659,0.6774 to 1.0542,0.5012,0.3671 to 0.6346,0.2059,0.2059,0.2643
+Team + player,10,60.00%,31.27% to 83.18%,0.8593,0.6583 to 1.0577,0.4958,0.3533 to 0.6346,0.2272,0.2272,0.2555
+Team + xG,10,60.00%,31.27% to 83.18%,0.8922,0.6963 to 1.0885,0.5188,0.3795 to 0.6564,0.2238,0.2238,0.2424

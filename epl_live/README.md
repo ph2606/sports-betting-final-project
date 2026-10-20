@@ -2,6 +2,26 @@
 
 This directory preserves manually captured public data, frozen models and forecasts recorded before kickoff. It extends the retrospective studies without replacing their data or results. The operational rules are in [OPERATIONAL_PROTOCOL.md](OPERATIONAL_PROTOCOL.md), with the model specification in [PROSPECTIVE_PROTOCOL.md](../epl_modeling/PROSPECTIVE_PROTOCOL.md).
 
+## October 20 continuation
+
+The first release is now evaluated in a new
+[settlement export](evaluations/20261020T223809.255369Z/): all 40 forecasts
+resolve on the same ten fixtures, with results corroborated between official
+FPL and Football-Data. All four models predicted 6 of 10 outcomes correctly.
+These are ten shared games; the models are not ranked or retuned on this batch.
+No forecast-time quotes or allocated trades existed, so no prospective betting
+profit is inferred. The original pending evaluation remains unchanged.
+
+The [new data snapshot](snapshots/20261020T223053.930369Z_299021e7c7/manifest.json)
+updates all 668 current FPL player summaries and completed matches through
+October 19. A separate [new forecast run](runs/20261020T223825.164001Z/overview/FORECASTS.md)
+releases 40 probabilities for ten October 23–25 fixtures using the same frozen
+model bundles; 60 quote-dependent variants remain withheld.
+The [combined latest report](../LATEST_REPORT.md) includes the observed cohort,
+uncertainty intervals, new future probabilities and the full historical study.
+The validated result wrapper is documented in
+[epl_prospective](../epl_prospective/README.md).
+
 ## First release: October 14, 2026
 
 The successful [snapshot manifest](snapshots/20261014T091234.352344Z_4ee7a3a730/manifest.json) records capture from **09:12:34 to 09:14:16 UTC** on October 14. Official FPL membership matched the saved 20 current clubs; all **667 requested player summaries** were downloaded. FPL, Football-Data and Understat each reported their latest completed league match on **October 12**. The live feature audit used 60 completed current-season matches and found no feature-date violations.
@@ -48,7 +68,8 @@ are dated views. For a new run directory, export another immutable view with
 
 The active runner includes the [v1.1 safeguards](IMPLEMENTATION_REVISIONS.md).
 The executed v1 sources are archived, and the original 40 forecast records
-remain unchanged. No later forecasts have been released as part of this update.
+remain unchanged. The October 14 safeguards update released no additional
+forecasts; the separate October 20 batch is documented above.
 
 ## Settlement and integrity
 

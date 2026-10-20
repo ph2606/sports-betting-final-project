@@ -1,0 +1,9 @@
+Scope,ID,"Actual
+profit","Model expected
+profit","Market-implied
+component","Model probability
+premium","Realised quote
+uplift"
+single,S013,"1,370.00","202,659.43","1,921.49","200,737.95","12,660.00"
+continuous,S019,"86,630.00","375,860.61","−5,619.27","381,479.88","49,380.00"
+continuous,S065,"38,360.00","83,625.94","−3,857.22","87,483.16","20,270.00"
