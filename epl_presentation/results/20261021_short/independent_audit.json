@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "read_only": true,
+  "main_slides": 6,
+  "appendix_slides": 10,
+  "implemented_only_intro": true,
+  "sources_and_rankings": {
+    "probability_series": 19,
+    "learned_predictors": 16,
+    "matches_per_series": 1470,
+    "best_learned_by_log_loss": "residual_team_players",
+    "strongest_probability_benchmark": "baseline_market_only",
+    "single_season_capital_leader": "P028",
+    "continuous_capital_leader": "S060"
+  },
+  "featured_models_and_rules": {
+    "profiles": [
+      "S029",
+      "S033",
+      "S017",
+      "P009"
+    ],
+    "forecast_statistic_pairs": 4,
+    "capital_statistic_pairs": 4,
+    "trading_statistic_rows": 24,
+    "all_fixed_stakes": 1000,
+    "stake_basis": "one_percent_of_initial_100000",
+    "common_profile_population": 1470,
+    "joint_cash_reductions_explained": true
+  },
+  "all_strategy_graph": {
+    "accounts": 116,
+    "starting_capital": 100000,
+    "graph_points": 13224,
+    "svg_strategy_paths_verified": 116,
+    "account_endpoints_reconciled": 116,
+    "same_audited_graph_as_previous_presentation": true
+  },
+  "strategy_appendix": {
+    "individual_strategies_covered_once": 116,
+    "full_note_configurations": 116,
+    "compact_groups_checked": 73,
+    "capital_guide_pages": 1,
+    "catalog_pages": 9,
+    "plain_language_rule_rows_reconciled": 116,
+    "thresholds_outcomes_odds_consensus_stakes_and_date_caps_reconciled": true
+  },
+  "rendering": {
+    "editable_slides": 16,
+    "native_pdf_pages": 16,
+    "native_text_shapes_checked": 621,
+    "native_text_overflows": 0,
+    "off_page_pdf_text_spans": 0,
+    "pptx_visible_content_and_notes_reconciled": true
+  },
+  "no_fitting_forecasting_settlement_or_trading_performed": true
+}

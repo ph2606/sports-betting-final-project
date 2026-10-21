@@ -1,32 +1,35 @@
-# Latest EPL presentation
+﻿# Latest EPL presentation
 
-**October 21, 2026.** Open **`presentations/latest/`**:
+**Short version — October 21, 2026.** Open **`presentations/latest/`**:
 
-- [Editable PowerPoint](presentations/latest/EPL_Project_Presentation.pptx)
-- [Matching PDF](presentations/latest/EPL_Project_Presentation.pdf)
-- [Complete numerical data and strategy metrics — Excel](presentations/latest/EPL_Presentation_Data.xlsx)
-- [Speaker notes and exact strategy definitions](presentations/latest/EPL_Presentation_Speaker_Notes.md)
-- [All 116 single-season accounts — interactive graph](presentations/latest/all_strategies_2025_100k.html)
-- [All 88 continuous four-season accounts — interactive graph](presentations/latest/all_strategies_continuous_100k.html)
+- [Short presentation — editable PowerPoint](presentations/latest/EPL_Project_Presentation_Short.pptx)
+- [Short presentation — PDF](presentations/latest/EPL_Project_Presentation_Short.pdf)
+- [Short presentation — speaker notes](presentations/latest/EPL_Presentation_Short_Notes.md)
+- [All 116 strategies explained in plain language — CSV](presentations/latest/EPL_Presentation_Short_Rules.csv)
 
-The 18 main slides cover only the implemented system: data, chronological
-probability models, archived-price account replays and prospective forecasting.
-They include both complete money-progression graphs, the best learned predictor,
-the simplest model, one team-data model, one player-only model, trading metrics,
-historical capital leaders and the main limitations. Seventeen backup slides
-include metric definitions, provenance and explanations of all 116 strategies.
+The presentation has **six main slides**:
 
-“Best learned predictor” means lowest pooled log loss among 16 learned
-predictors on the same 1,470 fixtures. “Highest capital” is reported separately
-for the 116-account 2025/26 comparison and 88-account continuous four-year
-comparison. The raw market benchmark still has lower probability loss than
-every learned model. All historical rankings are exploratory.
+1. What has been implemented.
+2. Money progression of all 116 strategies, starting with 100,000 each.
+3. Best learned prediction model: description, trading rules and results.
+4. Simplest model: description, trading rules and results.
+5. One team-data model: description, trading rules and results.
+6. One player-data model: description, trading rules and results.
 
-The presentation uses the completed October 20 evidence snapshot. It refits
-no models, reissues no forecasts and settles no new results. The saved
-prospective evidence has ten resolved fixtures; the 120 pending forecasts
-concern the same ten upcoming October 23–25 fixtures. No prospective trading
-performance is available.
+Everything after slide 6 is the requested appendix. It explains the capital
+rules, then every strategy's model, entry condition, stake per trade, limits
+and price source. Paired strategies share the same entry rule but their
+individual stake settings are listed separately.
 
-For reproduction, see [epl_presentation/README.md](epl_presentation/README.md).
-The full research report remains in [reports/latest/](reports/latest/).
+The model pages state that a fixed 1,000 stake is **1% of the initial 100,000**.
+The appendix also explains percentage-of-current-cash staking, Kelly sizing,
+per-bet caps, total date caps and scaling requests to available cash.
+
+The graph uses the common 2025/26 season for all 116 strategies. Model pages
+label their four-year statistics explicitly. "Best model" means the lowest
+prediction loss among the learned models; it does not mean the largest
+trading account.
+
+The original full PowerPoint was open and locally modified, so it remains
+untouched. The new files use the **`_Short`** filename. For reproduction, see
+[epl_presentation/CONCISE.md](epl_presentation/CONCISE.md).

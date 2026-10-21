@@ -1,0 +1,95 @@
+{
+  "built_at_utc": "2026-10-21T23:54:19.389107+00:00",
+  "main_slides": 6,
+  "appendix_slides": 10,
+  "source_sha256": {
+    "epl_presentation/build.py": "0a5abf510ffafdc4685cb0965ca649f93d390361d5f8656d78ff2b91c690f71a",
+    "epl_presentation/render.py": "abaeeac813e78bdfe5b6777046ba326a47eb18ff67401e5decb024e63babc52d",
+    "epl_presentation/concise.py": "3a472233c5b2fa671d5f4c1b2ecf40989cbc436517e4f09008dd0385176f09e4",
+    "epl_presentation/concise_audit.py": "00082273da238af99063d540cc86f92a9a11a06675f9804a1807d792eb0de8d7",
+    "epl_presentation/simple_rules.py": "37eb32315b6fb0cde4650b4763976be7961c64219ae7f1add2ef1bddbc344922",
+    "epl_presentation/research_models.json": "b9a076f5e0141ad2376a1487a33a8aca3618418831e095a2c745c0056eada88c",
+    "epl_presentation/research_trading.json": "71334b4565f3771d2284579300fa21894d7da1b0764b23cd82744c27dffb0498",
+    "epl_presentation/research_audit.json": "f0782b8898392edc3ff7095bdb4188c24b064c0d075a0f28f55d49bf6f56969b",
+    "epl_presentation/results/20261021_implemented/figures/all_accounts_2025.png": "cbde7b32d54e032bbb8ce40adf3696eabcb2a405a57ebdf3509ae1ad37c6c8a8",
+    "epl_presentation/results/20261021_implemented/figures/all_accounts_2025.svg": "8f77c0845d4dd38ebafc142752e588ea3aad2e78d29f75b2851946f49b2c2725",
+    "epl_player_models/results/20261020_player_models_review/all_strategy_catalog.json": "b0c53431eb4d5cb1b873d4eb9e8044a73604772512c10e763ea83781b5a3b931",
+    "epl_player_models/results/20261020_player_models_review/metrics_continuous.parquet": "348ff76019ad58a501a9216fa5e7fd49040d4dcc4813429498661e5a86d6343d",
+    "epl_strategy_validation/results/20261015_temporal_selection/metrics_continuous.parquet": "50e2e22db3f67727f8f08b8e0f4ac81bbe3ba035fa482d150773738fcaca0017",
+    "epl_modeling/ablation_results/predictions.parquet": "e0b79612631080191e94b5e59d5a2f40926086eba4a16e788139a48eeef71762",
+    "epl_player_models/results/20261020_player_models_review/model_metrics_pooled.parquet": "90f703f6c433ff68c2dd60f37de5035e9f0438d86815837cde9e2f44215dd163",
+    "epl_player_models/results/20261020_player_models_review/graph_equity_2025_all.csv": "b94cff934a5106c54b3246fee6dc99edbdb909f0f48777abb68c7ae1f4f8aca8",
+    "epl_data/EPL_data_overview.xlsx": "07f097a7db9e08f23a8029971a77dffb3981972d74bcde6eb1d638f4e6e14c7b"
+  },
+  "user_open_full_presentation_untouched": true,
+  "audit": {
+    "status": "passed",
+    "read_only": true,
+    "main_slides": 6,
+    "appendix_slides": 10,
+    "implemented_only_intro": true,
+    "sources_and_rankings": {
+      "probability_series": 19,
+      "learned_predictors": 16,
+      "matches_per_series": 1470,
+      "best_learned_by_log_loss": "residual_team_players",
+      "strongest_probability_benchmark": "baseline_market_only",
+      "single_season_capital_leader": "P028",
+      "continuous_capital_leader": "S060"
+    },
+    "featured_models_and_rules": {
+      "profiles": [
+        "S029",
+        "S033",
+        "S017",
+        "P009"
+      ],
+      "forecast_statistic_pairs": 4,
+      "capital_statistic_pairs": 4,
+      "trading_statistic_rows": 24,
+      "all_fixed_stakes": 1000,
+      "stake_basis": "one_percent_of_initial_100000",
+      "common_profile_population": 1470,
+      "joint_cash_reductions_explained": true
+    },
+    "all_strategy_graph": {
+      "accounts": 116,
+      "starting_capital": 100000,
+      "graph_points": 13224,
+      "svg_strategy_paths_verified": 116,
+      "account_endpoints_reconciled": 116,
+      "same_audited_graph_as_previous_presentation": true
+    },
+    "strategy_appendix": {
+      "individual_strategies_covered_once": 116,
+      "full_note_configurations": 116,
+      "compact_groups_checked": 73,
+      "capital_guide_pages": 1,
+      "catalog_pages": 9,
+      "plain_language_rule_rows_reconciled": 116,
+      "thresholds_outcomes_odds_consensus_stakes_and_date_caps_reconciled": true
+    },
+    "rendering": {
+      "editable_slides": 16,
+      "native_pdf_pages": 16,
+      "native_text_shapes_checked": 621,
+      "native_text_overflows": 0,
+      "off_page_pdf_text_spans": 0,
+      "pptx_visible_content_and_notes_reconciled": true
+    },
+    "no_fitting_forecasting_settlement_or_trading_performed": true
+  },
+  "native_text_overflows": 0,
+  "output_sha256": {
+    "complete_strategy_catalog.json": "f0e4f0156591016e3f58d02091f683b0c72c625bfe5faba60d3455dfcdc5c664",
+    "EPL_Presentation_Short_Notes.md": "79a55202f1d32084158cda63ce054fe84b9482c2a8ad6c6f8b13e4f6b1cef915",
+    "EPL_Presentation_Short_Rules.csv": "dc75666d6a77fbb7dc80c8a494915ffc6365d4b390f5b63497d2e8efd0e4bc90",
+    "EPL_Project_Presentation.pdf": "71ee6e00e62a6f0ad16e076e26d031541543e0b682353fae87056bf2038e719c",
+    "EPL_Project_Presentation.pptx": "eb538940e603eee33d5d3c5fb6c4a996379dface39aa30742e06ea8b91e109c9",
+    "independent_audit.json": "e18f0bbfd6ab13d2ee3607cc9908eaa58e01bb541313729ba9ac7c082f3a16e4",
+    "presentation_content.json": "fe156a7ac05f163957b1f559f9b7fc5255159b2520864948ccdcc8c5df9dd64e",
+    "render_audit.json": "c2f01e25d4dd023b9ac7b83245b660a38f65daa1b0f637120c0b56809d9d6365",
+    "figures/all_accounts_2025.png": "cbde7b32d54e032bbb8ce40adf3696eabcb2a405a57ebdf3509ae1ad37c6c8a8",
+    "figures/all_accounts_2025.svg": "8f77c0845d4dd38ebafc142752e588ea3aad2e78d29f75b2851946f49b2c2725"
+  }
+}
