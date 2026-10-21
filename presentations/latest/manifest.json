@@ -1,0 +1,29 @@
+{
+  "canonical_run": "epl_presentation/results/20261021_implemented",
+  "copies": {
+    "EPL_Project_Presentation.pptx": {
+      "source": "epl_presentation/results/20261021_implemented/EPL_Project_Presentation.pptx",
+      "sha256": "d5de279f83279f9e17068ffb64b4e7c58d28cd09f186abe96b74376edd8eab27"
+    },
+    "EPL_Project_Presentation.pdf": {
+      "source": "epl_presentation/results/20261021_implemented/EPL_Project_Presentation.pdf",
+      "sha256": "dbee4dfc91450da2a67d3cbad9f260db23a36baa1b26dd2185812cee1a0be891"
+    },
+    "EPL_Presentation_Data.xlsx": {
+      "source": "epl_presentation/results/20261021_implemented/EPL_Presentation_Data.xlsx",
+      "sha256": "a86d3fa240d18d370fd43adcd946a741d599709aed035ad1b9cba329d591d756"
+    },
+    "EPL_Presentation_Speaker_Notes.md": {
+      "source": "epl_presentation/results/20261021_implemented/EPL_Presentation_Speaker_Notes.md",
+      "sha256": "557294cc9d0f0cfcde4b2bd8a03b373fb1bfdda102e40e72913d273b1c1619f9"
+    },
+    "all_strategies_2025_100k.html": {
+      "source": "epl_presentation/results/20261021_implemented/all_strategies_2025_100k.html",
+      "sha256": "9dccd78733a82cdeb9c187672093674cd234ed9be96963b1448777e7e74ba8e8"
+    },
+    "all_strategies_continuous_100k.html": {
+      "source": "epl_presentation/results/20261021_implemented/all_strategies_continuous_100k.html",
+      "sha256": "62b35b413c73dda5a1fbb12736d94b47e8d70b74365fbd99043dc33c282f8f42"
+    }
+  }
+}

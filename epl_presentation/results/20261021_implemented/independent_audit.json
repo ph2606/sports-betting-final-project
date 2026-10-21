@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "read_only": true,
+  "implemented_only_introduction": true,
+  "sources_and_rankings": {
+    "probability_series": 19,
+    "learned_predictors": 16,
+    "matches_per_series": 1470,
+    "best_learned_by_log_loss": "residual_team_players",
+    "strongest_probability_benchmark": "baseline_market_only",
+    "single_season_capital_leader": "P028",
+    "continuous_capital_leader": "S060"
+  },
+  "graphs": {
+    "single": {
+      "strategies": 116,
+      "points": 13224,
+      "points_per_curve": 114,
+      "all_initial_balances": 100000,
+      "endpoints_reconciled": 116,
+      "svg_strategy_groups_verified": 116
+    },
+    "continuous": {
+      "strategies": 88,
+      "points": 39952,
+      "points_per_curve": 454,
+      "all_initial_balances": 100000,
+      "endpoints_reconciled": 88,
+      "svg_strategy_groups_verified": 88
+    }
+  },
+  "featured_profiles": {
+    "profiles_checked": 4,
+    "featured_continuous_account_rows_checked": 6,
+    "expected_components_kept_distinct_from_realized_payoffs": true
+  },
+  "strategy_catalog": {
+    "catalog_ids_visible_once": 116,
+    "exact_note_configurations": 116,
+    "catalog_appendix_slides": 15,
+    "final_appendix_preserved": true
+  },
+  "forecasts": {
+    "older_forecasts": 80,
+    "saved_outcomes": 10,
+    "player_study_forecasts": 80,
+    "resolved_forecasts": 40,
+    "unique_pending_forecasts": 120,
+    "independent_resolved_fixtures": 10,
+    "independent_pending_fixtures": 10,
+    "review_copy_counted_once": true,
+    "no_forecast_or_outcome_written": true,
+    "source_ledger_sha256": {
+      "epl_live\\forecasts.jsonl": "bf71bc4eb51e7260adbe3bef85176ebc084806637bcbc08e18684465df96bd26",
+      "epl_live\\outcomes.jsonl": "29054f0be40375e8ce9c3d1e11d904e184dde4df840ccf18bc5226b76476f3f7",
+      "epl_player_models\\results\\20261020_player_models_review\\forecasts.jsonl": "44b022137e5004f1cf7ed858d1088bd506bb0b01fc2497fddbd1edadf8b20d9b"
+    }
+  },
+  "rendering": {
+    "editable_slides": 35,
+    "native_pdf_pages": 35,
+    "native_text_shapes_checked": 1272,
+    "native_text_overflows": 0,
+    "off_page_pdf_text_spans": 0,
+    "pptx_visible_content_and_notes_reconciled": true
+  },
+  "saved_metric_rows_reconciled": {
+    "single": 116,
+    "continuous": 88,
+    "probability_scores": 19
+  },
+  "companion_workbook_required_sheets": true
+}

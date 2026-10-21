@@ -1,5 +1,13 @@
 # Statistical Arbitrage final project
 
+**Presentation:** [Editable PowerPoint](presentations/latest/EPL_Project_Presentation.pptx)
+and [PDF](presentations/latest/EPL_Project_Presentation.pdf), in
+**`presentations/latest/`**. The October 21 deck has 18 main slides and 17
+backup slides: implemented system, all-account money graphs, best/simple/team/
+player models, complete trading metrics and all 116 strategy explanations.
+See [LATEST_PRESENTATION.md](LATEST_PRESENTATION.md) for data, speaker notes
+and interactive graphs.
+
 **Newest report:** [PDF](reports/latest/EPL_Project_Report.pdf) and
 [editable Word](reports/latest/EPL_Project_Report.docx), in **`reports/latest/`**.
 See [LATEST_REPORT.md](LATEST_REPORT.md) for the newest workbook, graphs and

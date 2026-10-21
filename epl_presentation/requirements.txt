@@ -1,0 +1,3 @@
+-r ../epl_player_models/requirements.txt
+python-pptx==1.0.2
+pywin32==306; sys_platform == "win32"

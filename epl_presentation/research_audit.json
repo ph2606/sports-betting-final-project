@@ -1,0 +1,110 @@
+{
+  "as_of_date_new_york": "2026-10-21",
+  "canonical_study": "epl_player_models/results/20261020_player_models_review",
+  "implemented_intro": [
+    "Acquired current 2026/27 Premier League team and player data, with historical opponents retained as context.",
+    "Built chronological home/draw/away match-probability models from team statistics, xG and FPL player histories.",
+    "Replayed 116 distinct trading strategies from separate 100,000-unit accounts on common 2025/26 fixtures, with full trading and risk metrics.",
+    "Exported reproducible models, predictions, money curves, source-date audits, reports and timestamped prospective forecast ledgers."
+  ],
+  "scope": {
+    "current_clubs": 20,
+    "historical_player_rows": 253509,
+    "current_player_match_rows": 4551,
+    "new_model_variants": 8,
+    "new_player_variants": 6,
+    "new_matched_team_controls": 2,
+    "new_rolling_bundles": 32,
+    "new_future_bundles": 8,
+    "common_historical_matches": 1470,
+    "evaluation_seasons": [
+      "2022/23",
+      "2023/24",
+      "2024/25",
+      "2025/26"
+    ],
+    "matches_by_evaluation_season": [
+      368,
+      360,
+      368,
+      374
+    ]
+  },
+  "graph_definitions": {
+    "common_season": {
+      "strategy_accounts": 116,
+      "matches": 374,
+      "matched_dates": 113,
+      "points_per_curve_with_anchor": 114,
+      "initial_capital": 100000,
+      "annual_resets": false
+    },
+    "continuous": {
+      "strategy_accounts": 88,
+      "matches": 1470,
+      "matched_dates": 453,
+      "points_per_curve_with_anchor": 454,
+      "initial_capital": 100000,
+      "annual_resets": false
+    },
+    "warning": "Accounts combine probability model, outcome/edge rules, price source and staking. Do not call all 116 distinct fitted algorithms."
+  },
+  "model_selection_warning": "Use explicit observed criterion and common sample. Historical best return is not prospective validated best. Raw Bet365 has best pooled proper probability scores in the completed rolling study; this is a market benchmark, not a learned model.",
+  "new_study_result": {
+    "all_player_models_worse_pooled_log_loss_than_matched_team_control": true,
+    "positive_new_continuous_accounts": 0,
+    "bankrupt_new_continuous_accounts": 11,
+    "positive_new_common_season_accounts": 8
+  },
+  "prospective": {
+    "independent_resolved_fixtures": 10,
+    "older_model_resolved_predictions": 40,
+    "older_model_count": 4,
+    "all_older_model_accuracy": 0.6,
+    "accuracy_wilson_95pct_interval": [
+      0.3126737697336583,
+      0.8318196702937637
+    ],
+    "older_model_pending_predictions": 40,
+    "new_study_pending_predictions": 80,
+    "independent_pending_fixtures": 10,
+    "pending_fixture_dates": "October 23-25, 2026",
+    "unique_pending_predictions_total": 120,
+    "unique_forecasts_total_resolved_plus_pending": 160,
+    "recorded_prospective_trades": 0,
+    "prospective_trading_performance_available": false,
+    "duplicate_review_ledger_warning": "Reviewed and initial player-model export ledgers are the exact same 80 records; do not count them twice."
+  },
+  "limitations": [
+    "Repeatedly examined 2022/23-2025/26 results are exploratory; chronological fitting does not create a fresh historical holdout.",
+    "Best individual-book archived quotes have unverified capture clocks and availability; no executable fills or arbitrage is established.",
+    "Model-implied expected gain/loss depend on estimated probabilities and are different from realized average wins/losses.",
+    "Projected XI uses earlier positive-minute appearances and fixed role slots; it is not a confirmed lineup or injury/availability feed.",
+    "Some season-fixed position proxies have unverified original publication times.",
+    "Missing or early-season player histories remain with coverage controls and training-fitted missing-value handling; no population dropping in primary comparison.",
+    "Most cashflow uncertainty estimates condition on recorded bets/stakes and do not capture full refitting, selection or multiple-comparison uncertainty.",
+    "Ten resolved prospective fixtures are insufficient to choose a winning model."
+  ],
+  "source_files": [
+    "reports/latest/manifest.json",
+    "epl_player_models/PROTOCOL.md",
+    "epl_player_models/results/20261020_player_models_review/study_status.json",
+    "epl_player_models/results/20261020_player_models_review/model_catalog.json",
+    "epl_player_models/results/20261020_player_models_review/model_metrics_pooled.csv",
+    "epl_player_models/results/20261020_player_models_review/metrics_continuous.csv",
+    "epl_player_models/results/20261020_player_models_review/metrics_single.csv",
+    "epl_prospective/results/20261020_first_outcomes/prospective_status.json",
+    "epl_prospective/results/20261020_first_outcomes/model_scores.csv"
+  ],
+  "source_sha256": {
+    "reports/latest/manifest.json": "dd627f98e72019b28c59bfc56c9c170ef48d2b71c5c054e54580c105b9fe50c8",
+    "epl_player_models/PROTOCOL.md": "444c44f0e9f8eb8fc1703b957385b8dba9fcec149f25993abe39fd9927b62de3",
+    "epl_player_models/results/20261020_player_models_review/study_status.json": "e8a1fccd29e91886ecd1f79b87c6ef52ad44f2451b37ea93cec3440a0a5b4458",
+    "epl_player_models/results/20261020_player_models_review/model_catalog.json": "1dbdb575760a44bba3148a91903d44ce99828823c3d523c986a4e9b25cf1d6c6",
+    "epl_player_models/results/20261020_player_models_review/model_metrics_pooled.csv": "3d64215187fc8850db1e22b3d9dea4c72d412b2c72f13f6ca1123db23fa9cb73",
+    "epl_player_models/results/20261020_player_models_review/metrics_continuous.csv": "8bf4c123ef4d73915baf1af71c3cddfd23c2f745f76e8f254d11731ca5ca45b4",
+    "epl_player_models/results/20261020_player_models_review/metrics_single.csv": "a174c350ba7b2b3e3f0c60448a8fb973298768b7f32fd5d93324442988474622",
+    "epl_prospective/results/20261020_first_outcomes/prospective_status.json": "0aabcbcd0d4e6d856aa58f2e495c736405a91bb015c9ea3ae2c2126ef75e3fd7",
+    "epl_prospective/results/20261020_first_outcomes/model_scores.csv": "2257c82fd68b782edaeb2fb19fed54c322fae740dd9fcc875c867ef5e0a95838"
+  }
+}
