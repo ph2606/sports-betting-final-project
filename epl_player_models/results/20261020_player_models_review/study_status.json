@@ -1,0 +1,30 @@
+{
+  "as_of_utc": "2026-10-20T23:28:55.289947+00:00",
+  "protocol": {
+    "commit": "5a4fa559405eaabf520d1beac30a8766e0f73a48",
+    "committed_at_utc": "2026-10-20T23:10:06+00:00",
+    "sha256": "444c44f0e9f8eb8fc1703b957385b8dba9fcec149f25993abe39fd9927b62de3"
+  },
+  "new_model_variants": 8,
+  "player_based_variants": 6,
+  "matched_team_controls": 2,
+  "rolling_model_bundles": 32,
+  "future_model_bundles": 8,
+  "tuning_trials": 96,
+  "historical_player_rows": 253509,
+  "player_history_rows": 258060,
+  "historical_feature_rows": 3410,
+  "evaluation_matches": 1470,
+  "new_strategies": 32,
+  "all_single_season_strategies": 116,
+  "all_continuous_strategies": 88,
+  "new_metric_rows": 192,
+  "new_future_predictions": 80,
+  "new_future_fixtures": 10,
+  "future_outcomes_scored": 0,
+  "existing_live_ledgers_unchanged": true,
+  "historical_results_are_exploratory": true,
+  "new_betting_rule_selected": false,
+  "prospective_trading_performance_available": false,
+  "position_publication_times_verified": false
+}

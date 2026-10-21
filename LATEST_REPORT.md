@@ -1,45 +1,52 @@
-# Latest EPL project report
+﻿# Latest EPL project report
 
-**Updated October 20, 2026.** Open the stable folder **`reports/latest/`**:
+**Updated October 20, 2026.** The newest report is in **`reports/latest/`**:
 
-- [Latest report - PDF](reports/latest/EPL_Project_Report.pdf)
-- [Latest report - editable Word](reports/latest/EPL_Project_Report.docx)
+- [Latest report — PDF](reports/latest/EPL_Project_Report.pdf)
+- [Latest report — editable Word](reports/latest/EPL_Project_Report.docx)
+- [Player-model results, predictions and trading metrics — Excel](epl_player_models/results/20261020_player_models_review/report/player_models_overview.xlsx)
 
-The newest report evaluates the 40 predictions released before the October
-17–19 matches: four frozen models on the same ten fixtures. All ten results
-are corroborated between FPL and Football-Data. It also refreshes all 668
-current player summaries and records 40 new forecasts for October 23–25.
+The report adds six player-based models and two matched team controls, using
+recent player form, positional profiles, projected squads and depth. It evaluates
+all eight on the same 1,470 historical fixtures across four seasons. Every
+player-based variant has worse pooled log loss than its matched team control;
+the bookmaker benchmark also remains stronger. These redesigned historical
+experiments do not constitute a fresh holdout.
 
-The complete historical price/strategy study remains included: 364 account
-scopes in three price modes, all-84 and continuous four-season comparisons,
-hit ratio, expected and observed gain/loss, trading frequency and risk measures.
-Each money-versus-time graph starts every account at 100,000. The final
-appendix explains all 84 strategies. Original forecasts had no pre-match
-quotes or trade ledger; their predictive scores are not betting returns.
+The 32 new strategies include hit ratio, model expected gain/loss, actual
+winning/losing payoffs, frequency, turnover, ROI and drawdown. All 32 lose money
+over their uninterrupted four-season accounts. Every strategy starts at 100,000.
+The final appendix explains all 116 old and new strategies.
 
-- [New prospective scores, intervals and future predictions workbook](epl_prospective/results/20261020_first_outcomes/report/prospective_overview.xlsx)
-- [Next fixtures and released probabilities](epl_live/runs/20261020T223825.164001Z/overview/FORECASTS.md)
-- [Full historical trading metrics and diagnostics workbook](epl_execution/results/20261015_quote_sensitivity/report/execution_overview.xlsx)
-- [All 56 reference-price continuous accounts - graph](epl_execution/results/20261015_quote_sensitivity/figures/all_reference_strategies_4seasons_100k.png)
-- [Interactive reference-price graph - download and open locally](epl_execution/results/20261015_quote_sensitivity/figures/all_reference_strategies_4seasons_100k.html)
-- [Preserved original 56-account four-season graph](epl_strategy_validation/results/20261015_temporal_selection/figures/all_strategies_4seasons_100k.png)
-- [Original all-84 single-season graph](epl_strategy_lab/results/20261015T040052Z_100k84/figures/all_strategies_100k.png)
-- [Immutable newest report and audit files](epl_prospective/results/20261020_first_outcomes/)
-- [Prospective cohort and settlement protocol](epl_prospective/PROTOCOL.md)
-- [Updated team table](epl_live/snapshots/20261020T223053.930369Z_299021e7c7/normalized/teams.csv)
-- [Updated player table](epl_live/snapshots/20261020T223053.930369Z_299021e7c7/normalized/players.csv)
-- [Quote replay, funding and attribution protocol](epl_execution/PROTOCOL.md)
-- [Previous temporal/selection report and workbook](epl_strategy_validation/results/20261015_temporal_selection/)
+- [All 116 common-season accounts on one graph — PNG](epl_player_models/results/20261020_player_models_review/figures/all_strategies_2025_100k.png)
+- [All 116 accounts — offline interactive HTML](epl_player_models/results/20261020_player_models_review/figures/all_strategies_2025_100k.html)
+- [All 88 compatible continuous four-season accounts — PNG](epl_player_models/results/20261020_player_models_review/figures/all_strategies_continuous_100k.png)
+- [All 88 accounts — offline interactive HTML](epl_player_models/results/20261020_player_models_review/figures/all_strategies_continuous_100k.html)
+- [Player feature, fitting and forecast protocol](epl_player_models/PROTOCOL.md)
+- [Canonical reviewed report and full analytical export](epl_player_models/results/20261020_player_models_review/)
+- [Separate player-model forecast ledger — 80 pending predictions](epl_player_models/results/20261020_player_models_review/forecasts.jsonl)
+- [Per-target player coverage](epl_player_models/results/20261020_player_models_review/target_coverage.csv)
+- [Projected player identities and source-date audit](epl_player_models/results/20261020_player_models_review/projected_xi.parquet)
 
-The first prospective batch contains ten distinct fixtures, not forty
-independent games; its model comparisons and calibration estimates remain
-uncertain. The historical selection audit conditions on recorded cashflows
-and does not turn previously inspected outcomes into an independent test.
-The reference-price replay paths do not inherit the original-path selection
-adjustment. Unfunded fixed-exposure shadows have ordinary capital/risk measures
-withheld and are excluded from wealth graphs. Quote timestamps do not verify
-execution or closing-line value. Prospective predictive scores are reported;
-prospective trading performance remains unavailable.
+The reviewed export fixes the coverage display and Markdown table formatting.
+All analytical files and the 80-record forecast ledger are byte-identical to
+the [initial fitted export](epl_player_models/results/20261020_player_models/).
+This presentation revision neither refits models nor reissues forecasts.
+The separate player forecasts cover ten October 23–25 fixtures and remain
+unscored. Unavailable pre-match prices mean no prospective stakes or trading
+returns. Projected lineups use earlier minutes, with historical position proxies
+and availability limitations explained in the report.
 
-For the earlier concise EPL model/data research draft, see
-[the original seven-page paper](epl_report/EPL_project_draft.pdf).
+The report also retains the earlier prospective evaluation, all historical
+price/strategy studies, original graphs and exact original strategy definitions:
+
+- [Original prospective evaluation and next-cycle workbook](epl_prospective/results/20261020_first_outcomes/report/prospective_overview.xlsx)
+- [Earlier frozen-model future fixtures and probabilities](epl_live/runs/20261020T223825.164001Z/overview/FORECASTS.md)
+- [Full historical price and trading diagnostics workbook](epl_execution/results/20261015_quote_sensitivity/report/execution_overview.xlsx)
+- [Updated current team data](epl_live/snapshots/20261020T223053.930369Z_299021e7c7/normalized/teams.csv)
+- [Updated current player data](epl_live/snapshots/20261020T223053.930369Z_299021e7c7/normalized/players.csv)
+
+Download the HTML graphs and open them locally for hover and legend controls;
+all strategies are initially visible. Archived quote clocks and availability
+remain unverified, so historical account paths do not demonstrate executable
+fills or future profit.

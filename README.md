@@ -3,10 +3,39 @@
 **Newest report:** [PDF](reports/latest/EPL_Project_Report.pdf) and
 [editable Word](reports/latest/EPL_Project_Report.docx), in **`reports/latest/`**.
 See [LATEST_REPORT.md](LATEST_REPORT.md) for the newest workbook, graphs and
-canonical run. The October 20 continuation settles the original 40 predictions
-on ten shared fixtures, refreshes all 668 current player summaries and records
-the next forecast cycle using unchanged models. It retains the complete
-historical price/strategy study and final appendix explaining all 84 strategies.
+canonical run. The newest October 20 continuation adds six player-based model
+variants and two matched team controls, 32 new trading strategies, and 80 separate
+future forecasts. It retains the earlier prospective evaluation and historical
+studies, with a final appendix explaining all 116 strategies.
+
+## Models built from player data
+
+The [player-model study](epl_player_models/README.md) reconstructs player form,
+positional profiles, a projected XI and squad depth from **253,509 historical
+player-match rows**, plus 4,551 current-season rows for future lagged inputs.
+The four fixed feature blocks contain 19, 96, 222 and 235 inputs, each fitted
+with logistic regression and histogram gradient boosting. The six player-based
+variants are compared with two matched team controls on the same **1,470 fixtures**
+in four chronological evaluation seasons. No target lineup or target player
+minutes enter the inputs; position proxies have unverified publication clocks.
+
+Every player-based variant has worse pooled log loss than its matched team
+control. All 32 new uninterrupted four-season accounts lose money. Results
+remain exploratory; no winning policy is selected. All 80 newly recorded
+player-study forecasts for October 23–25 remain pending in a separate ledger.
+
+- [Newest report — PDF](reports/latest/EPL_Project_Report.pdf)
+- [Player models, predictions and full strategy metrics — workbook](epl_player_models/results/20261020_player_models_review/report/player_models_overview.xlsx)
+- [All 116 common-season 100K accounts — interactive graph](epl_player_models/results/20261020_player_models_review/figures/all_strategies_2025_100k.html)
+- [All 88 continuous four-season 100K accounts — interactive graph](epl_player_models/results/20261020_player_models_review/figures/all_strategies_continuous_100k.html)
+- [Player-model feature, fitting and forecast protocol](epl_player_models/PROTOCOL.md)
+- [Canonical reviewed export](epl_player_models/results/20261020_player_models_review/)
+
+The reviewed export corrects coverage-table presentation and Markdown escaping.
+Its models, features, predictions, accounts and forecast ledger are byte-identical
+to the preserved [initial fitted export](epl_player_models/results/20261020_player_models/).
+It refits no model and releases no additional forecast. Every new strategy has
+hit ratio, expected gain/loss, frequency, realized payoffs and risk metrics.
 
 **Current project:** [ML Sports Betting proposal — NBA and EPL](ML_Sports_Betting_Project_Proposal.pdf),
 September 30, 2026, Aman Dhillon and Panagiotis Housos. Panagiotis's EPL data
@@ -38,8 +67,9 @@ The October 14 continuation adds a seven-page EPL research draft and a manual
 forecasting workflow. The fresh Football-Data, Understat and FPL capture covers
 completed games through October 12 and includes all 667 current player summaries.
 Eight model candidates are fitted and frozen using earlier seasons. Four logistic
-alternatives have released 40 timestamped probability records for 10 fixtures on
-October 17–19; all are still awaiting outcomes.
+alternatives released 40 timestamped probability records for 10 fixtures on
+October 17–19. The October 20 continuation has since scored these ten fixtures;
+the linked artifacts below preserve the original capture.
 
 - [Draft report — PDF](epl_report/EPL_project_draft.pdf)
 - [Draft report — editable Word](epl_report/EPL_project_draft.docx)

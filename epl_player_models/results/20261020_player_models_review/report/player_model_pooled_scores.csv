@@ -1,0 +1,14 @@
+Model,Matches,Accuracy,Log loss,Brier,ECE 5,ECE 10,ECE 15
+Matched team control | Logistic regression,"1,470",53.40%,0.9925,0.5922,0.0117,0.0238,0.0343
+Matched team control | Histogram gradient boosting,"1,470",52.45%,0.9987,0.5950,0.0195,0.0232,0.0316
+Player form only | Logistic regression,"1,470",50.07%,1.0218,0.6114,0.0336,0.0345,0.0355
+Player form only | Histogram gradient boosting,"1,470",49.18%,1.0287,0.6151,0.0230,0.0318,0.0386
+Player form + projected XI + depth | Logistic regression,"1,470",49.52%,1.0254,0.6136,0.0312,0.0339,0.0351
+Player form + projected XI + depth | Histogram gradient boosting,"1,470",49.93%,1.0234,0.6119,0.0249,0.0256,0.0366
+Team + full player block | Logistic regression,"1,470",50.95%,1.0161,0.6071,0.0377,0.0385,0.0422
+Team + full player block | Histogram gradient boosting,"1,470",49.80%,1.0158,0.6061,0.0241,0.0300,0.0382
+Raw de-vigged Bet365 market,"1,470",54.42%,0.9662,0.5743,0.0149,0.0177,0.0199
+Temperature-calibrated market,"1,470",54.42%,0.9671,0.5750,0.0148,0.0197,0.0195
+Historical fitting-class frequency,"1,470",44.29%,1.0700,0.6471,0.0153,0.0153,0.0153
+Legacy team logistic with original source controls,"1,470",52.93%,0.9876,0.5889,0.0113,0.0217,0.0287
+Legacy team + seven FPL aggregates logistic,"1,470",52.52%,0.9876,0.5885,0.0139,0.0275,0.0252

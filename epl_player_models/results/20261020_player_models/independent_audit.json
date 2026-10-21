@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "checked_cashflow_accounts": 192,
+  "checked_qualified_and_sized_bets": 88098,
+  "new_strategy_count": 32,
+  "new_model_series": 8,
+  "prediction_rows": 19110,
+  "native_opportunities": 1470,
+  "checked_model_bundles_and_probabilities": 40,
+  "new_pending_forecasts": 80,
+  "independently_recomputed_model_metric_rows": 40,
+  "complete_graph_rows": {
+    "single": 13224,
+    "continuous": 39952
+  },
+  "preserved_source_and_code_files": 952,
+  "forecast_chain": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 80,
+    "head_hash": "8ac12d40389159219e7676a62099ec403036a4918273661aed5f4f5d71a5ae10",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  },
+  "interpretation": "Independent identities, chronology, selected probabilities/prices/stakes, cashflows and all curve points; no executable-fill or new predictive-edge claim"
+}

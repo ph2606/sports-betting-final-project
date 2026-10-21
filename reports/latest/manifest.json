@@ -1,14 +1,14 @@
 {
-  "canonical_run": "epl_prospective/results/20261020_first_outcomes",
-  "published_at_utc": "2026-10-20T22:41:47.223504+00:00",
+  "canonical_run": "epl_player_models/results/20261020_player_models_review",
+  "published_at_utc": "2026-10-21T01:28:19.840033+00:00",
   "copies": {
     "EPL_Project_Report.pdf": {
-      "source": "epl_prospective/results/20261020_first_outcomes/report/validation_report.pdf",
-      "sha256": "b4bb62bd90f9192e2ae39677bd0057a7ca4fbb64b620c4f737f77881e60e11ca"
+      "source": "epl_player_models/results/20261020_player_models_review/report/validation_report.pdf",
+      "sha256": "c7a0fdccb84459ea387ed86dd605a3346d732211aafb8c51bcf129f7a91dc641"
     },
     "EPL_Project_Report.docx": {
-      "source": "epl_prospective/results/20261020_first_outcomes/report/validation_report.docx",
-      "sha256": "6261bc1aa02ac7f8786e02949279d07161d8d47a4041684fa9122036f895c86f"
+      "source": "epl_player_models/results/20261020_player_models_review/report/validation_report.docx",
+      "sha256": "a8893a31de2ce166ef10c73313ea6f2929856c17a90a40997be171c520e4a766"
     }
   }
 }

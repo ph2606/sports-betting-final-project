@@ -1,0 +1,26 @@
+{
+  "ledger": {
+    "appended": 0,
+    "skipped_duplicates": 0,
+    "total_records": 80,
+    "head_hash": "8ac12d40389159219e7676a62099ec403036a4918273661aed5f4f5d71a5ae10",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  },
+  "append_result": {
+    "appended": 80,
+    "skipped_duplicates": 0,
+    "total_records": 80,
+    "head_hash": "8ac12d40389159219e7676a62099ec403036a4918273661aed5f4f5d71a5ae10",
+    "ledger_type": "forecast",
+    "max_quote_age_seconds": 3600.0,
+    "valid": true
+  },
+  "source_snapshot": "epl_live/snapshots/20261020T223053.930369Z_299021e7c7",
+  "new_model_count": 8,
+  "new_target_fixtures": 10,
+  "new_pending_predictions": 80,
+  "no_existing_ledger_modified": true,
+  "prospective_trading_performance_available": false
+}
