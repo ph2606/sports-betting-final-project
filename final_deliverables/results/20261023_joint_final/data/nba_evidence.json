@@ -1,0 +1,576 @@
+{
+  "authors": [
+    "Aman Dhillon",
+    "Panagiotis Housos"
+  ],
+  "supervisor": "Daniel Totouom-Tangho",
+  "source_notebook_index_convention": "Zero-based notebook cell index; execution_count also recorded where used.",
+  "proposal": {
+    "title": "ML Sports Betting: Project Proposal",
+    "date": "2026-09-30",
+    "source": "ML_Sports_Betting_Project_Proposal.pdf",
+    "implemented_question": "Compare calibration-based and accuracy-based model selection for NBA and EPL probabilistic betting."
+  },
+  "data": {
+    "raw_team_game_logs": 33316,
+    "raw_unique_games": 16658,
+    "raw_seasons": [
+      "2010-11",
+      "2023-24"
+    ],
+    "season_count": 14,
+    "clean_games": 14471,
+    "total_core_five_season_games": 5368,
+    "core_betting_games": 1074,
+    "core_betting_missing_odds": 0,
+    "rolling_total_betting_games": 9344,
+    "training_home_win_rate_saved_rounded": 0.585,
+    "odds_seasons_used": 13,
+    "odds_season_range": [
+      "2010-11",
+      "2022-23"
+    ],
+    "odds_collection_description_reported": "Provided NBA presentation describes public SQLite odds scraped from Sportsbook Review with FanDuel as default; exact provider collection/publication clocks unverified.",
+    "odds_join_keys": [
+      "GAME_DATE",
+      "HOME_ABBR",
+      "AWAY_ABBR"
+    ]
+  },
+  "features": {
+    "initial_box_score_features": 25,
+    "plus_prior_season_win_difference": 1,
+    "candidate_total": 26,
+    "method": "Opponent differentials, shift(1) then expanding average within team/season; home minus away. Both teams first ten games excluded as modeling rows but kept in prior averages.",
+    "ks_p_cutoff": 0.01,
+    "ks_drop": [
+      "OREB"
+    ],
+    "post_ks_features": 25,
+    "spearman_abs_cutoff": 0.7,
+    "subset_A": [
+      "FG3M",
+      "FT_PCT",
+      "DREB",
+      "AST",
+      "BLK",
+      "TOV",
+      "PF",
+      "ORTG",
+      "PREV_SEASON_WP"
+    ],
+    "subset_B": [
+      "ORTG",
+      "FG3M"
+    ],
+    "subset_C": [
+      "ORTG",
+      "PREV_SEASON_WP",
+      "FG3M",
+      "TOV"
+    ],
+    "source_cells": [
+      1,
+      4,
+      6,
+      7
+    ]
+  },
+  "chronological_splits": [
+    {
+      "role": "initial_training",
+      "seasons": [
+        "2014-15",
+        "2015-16"
+      ],
+      "n_games": 2145
+    },
+    {
+      "role": "feature_and_hyperparameter_validation",
+      "seasons": [
+        "2016-17"
+      ],
+      "n_games": 1074
+    },
+    {
+      "role": "model_family_selection_called_test_in_notebook",
+      "seasons": [
+        "2017-18"
+      ],
+      "n_games": 1075
+    },
+    {
+      "role": "heldout_betting",
+      "seasons": [
+        "2018-19"
+      ],
+      "n_games": 1074
+    }
+  ],
+  "training": {
+    "families": [
+      "LR",
+      "RF",
+      "MLP",
+      "SVM"
+    ],
+    "optuna_trials_per_family_per_branch": 30,
+    "seed_averaging": 10,
+    "calibration_branch_features": 2,
+    "accuracy_branch_features": 4,
+    "initial_scaler_fit": "2014-15 and 2015-16",
+    "selector_scaler_fit": "2014-15 through 2016-17",
+    "betting_scaler_fit": "2014-15 through 2017-18",
+    "independent_temperature_calibration": false,
+    "model_selection_2017": [
+      {
+        "family": "LR",
+        "branch_B_ece": 0.0431,
+        "branch_C_accuracy": 0.653
+      },
+      {
+        "family": "RF",
+        "branch_B_ece": 0.0568,
+        "branch_C_accuracy": 0.654
+      },
+      {
+        "family": "MLP",
+        "branch_B_ece": 0.0465,
+        "branch_C_accuracy": 0.6549
+      },
+      {
+        "family": "SVM",
+        "branch_B_ece": 0.044,
+        "branch_C_accuracy": 0.6633
+      }
+    ],
+    "selected_calibration_family": "LR",
+    "selected_accuracy_family": "SVM",
+    "warning": "B ECE and C accuracy are different feature-subset variants, not joint statistics of the same fitted model."
+  },
+  "betting_2018": {
+    "season": "2018-19",
+    "n_games": 1074,
+    "initial_capital": 10000,
+    "records": [
+      {
+        "branch": "Calibration",
+        "model": "LR",
+        "staking": "fixed",
+        "initial_capital": 10000,
+        "final_capital_saved_rounded": 10097.74,
+        "capital_return_saved_rounded": 0.0098,
+        "trading_frequency_saved_rounded": 0.853,
+        "hit_ratio_saved_rounded": 0.38,
+        "fixed_stake": 100,
+        "kelly_fraction": null
+      },
+      {
+        "branch": "Calibration",
+        "model": "LR",
+        "staking": "kelly",
+        "initial_capital": 10000,
+        "final_capital_saved_rounded": 6500.4,
+        "capital_return_saved_rounded": -0.35,
+        "trading_frequency_saved_rounded": 0.853,
+        "hit_ratio_saved_rounded": 0.38,
+        "fixed_stake": null,
+        "kelly_fraction": 0.125
+      },
+      {
+        "branch": "Accuracy",
+        "model": "SVM",
+        "staking": "fixed",
+        "initial_capital": 10000,
+        "final_capital_saved_rounded": 12502.98,
+        "capital_return_saved_rounded": 0.2503,
+        "trading_frequency_saved_rounded": 0.8859999999999999,
+        "hit_ratio_saved_rounded": 0.349,
+        "fixed_stake": 100,
+        "kelly_fraction": null
+      },
+      {
+        "branch": "Accuracy",
+        "model": "SVM",
+        "staking": "kelly",
+        "initial_capital": 10000,
+        "final_capital_saved_rounded": 4488.59,
+        "capital_return_saved_rounded": -0.5511,
+        "trading_frequency_saved_rounded": 0.8859999999999999,
+        "hit_ratio_saved_rounded": 0.349,
+        "fixed_stake": null,
+        "kelly_fraction": 0.125
+      }
+    ],
+    "selected_prediction_metrics_saved": [
+      {
+        "branch": "Calibration",
+        "model": "LR",
+        "accuracy": 0.6527,
+        "ece_guarded": 0.0427,
+        "mean_p_home": 0.586,
+        "sd_p_home": 0.174
+      },
+      {
+        "branch": "Accuracy",
+        "model": "SVM",
+        "accuracy": 0.648,
+        "ece_guarded": 1.0,
+        "mean_p_home": 0.564,
+        "sd_p_home": 0.142
+      }
+    ],
+    "rule": "Test home p>1/O first; otherwise test away (1-p)>1/O. No draw. Margin defaults to zero; p exactly .5 is excluded.",
+    "stake_rule": "Fixed100, or eighth-Kelly(0.125)*(p*O-1)/(O-1)*current cash. Only cap is min(request,cash).",
+    "settlement_rule": "Sequential game order; same-date games may use earlier game settlement. Different from EPL date-start joint allocation.",
+    "roi_definition_in_source": "profit / initial capital; source labels this ROI. It is capital return, not profit/turnover.",
+    "source_cells": [
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "rolling_annual": {
+    "records": [
+      {
+        "season": "2014-15",
+        "n_games": 1072,
+        "n_features_calibration": 2,
+        "n_features_accuracy": 7,
+        "calibration_return_on_initial_capital": -0.653,
+        "accuracy_return_on_initial_capital": -0.1678
+      },
+      {
+        "season": "2015-16",
+        "n_games": 1073,
+        "n_features_calibration": 5,
+        "n_features_accuracy": 4,
+        "calibration_return_on_initial_capital": -0.1773,
+        "accuracy_return_on_initial_capital": -0.1231
+      },
+      {
+        "season": "2016-17",
+        "n_games": 1074,
+        "n_features_calibration": 4,
+        "n_features_accuracy": 4,
+        "calibration_return_on_initial_capital": 0.5742,
+        "accuracy_return_on_initial_capital": 0.4675
+      },
+      {
+        "season": "2017-18",
+        "n_games": 1075,
+        "n_features_calibration": 4,
+        "n_features_accuracy": 6,
+        "calibration_return_on_initial_capital": -1.0,
+        "accuracy_return_on_initial_capital": -1.0
+      },
+      {
+        "season": "2018-19",
+        "n_games": 1074,
+        "n_features_calibration": 2,
+        "n_features_accuracy": 4,
+        "calibration_return_on_initial_capital": 0.0208,
+        "accuracy_return_on_initial_capital": 0.1225
+      },
+      {
+        "season": "2019-20",
+        "n_games": 906,
+        "n_features_calibration": 5,
+        "n_features_accuracy": 4,
+        "calibration_return_on_initial_capital": 0.8558,
+        "accuracy_return_on_initial_capital": 1.0086
+      },
+      {
+        "season": "2020-21",
+        "n_games": 924,
+        "n_features_calibration": 6,
+        "n_features_accuracy": 6,
+        "calibration_return_on_initial_capital": -0.3159,
+        "accuracy_return_on_initial_capital": -0.3385
+      },
+      {
+        "season": "2021-22",
+        "n_games": 1073,
+        "n_features_calibration": 3,
+        "n_features_accuracy": 7,
+        "calibration_return_on_initial_capital": -0.8367,
+        "accuracy_return_on_initial_capital": -0.8928
+      },
+      {
+        "season": "2022-23",
+        "n_games": 1073,
+        "n_features_calibration": 3,
+        "n_features_accuracy": 3,
+        "calibration_return_on_initial_capital": -0.028900000000000002,
+        "accuracy_return_on_initial_capital": 0.0693
+      }
+    ],
+    "n_seasons": 9,
+    "total_games": 9344,
+    "first_season": "2014-15",
+    "last_season": "2022-23",
+    "initial_capital_each_season": 10000,
+    "fixed_stake": 100,
+    "model_families": "Both branches use logistic regression; no four-family hyperparameter search in this extension.",
+    "training_rule": "Two initial training seasons, one feature-selection validation season, one additional pre-betting season; refit logistic through all four pre-betting seasons, then next betting season.",
+    "calibration_wins_seasons": 3,
+    "calibration_mean_return_saved": -0.1734,
+    "accuracy_mean_return_saved": -0.0949,
+    "calibration_sd_saved": 0.617,
+    "accuracy_sd_saved": 0.625,
+    "source_cells": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "printed_precision": "Annual percentages saved to two decimals; do not invent further precision."
+  },
+  "ece_definition": {
+    "bins": 20,
+    "binning": "Equal-width binary home-win probability bins.",
+    "guard_minimum_nonempty_fraction": 0.8,
+    "penalty_value": 1.0,
+    "warning": "A displayed100% for SVM means fewer than16of20bins occupied, not measured100%calibrationerror.",
+    "source_cell": 5
+  },
+  "source_graph_limits": {
+    "annual_paths": "Nine separate10000accounts, one per season; not continuous capital.",
+    "cumulative_cell25": "Adds independently reset annual P&L to a running base; can go negative after earlier ruin, so not a self-financing continuous bankroll.",
+    "cumulative_calibration_legend": -5610,
+    "cumulative_accuracy_legend": 1457,
+    "source_cells": [
+      24,
+      25
+    ]
+  },
+  "supplied_report_additional_claims": {
+    "source": "ML Sports/Stat_Arb.pdf",
+    "pages": [
+      4,
+      5
+    ],
+    "market_vs_model_table4": {
+      "model_log_loss": 0.623,
+      "model_accuracy": 0.649,
+      "model_ece": 0.1554,
+      "market_log_loss": 0.5962,
+      "market_accuracy": 0.6791,
+      "market_ece": 0.0384
+    },
+    "raw_market_log_loss_table5": 0.5958,
+    "replay_status": "Additional analyses are reported in the supplied PDF and presentation but corresponding code/predictions are absent from the provided26-cell notebook. Do not label independently verified.",
+    "interpretation_limits": "Table4and5 rawmarket losses differ without clear cohort explanation. Reported longshot standard-error/z/power statements are not reproducible from the displayed counts/rates and should be omitted from a verified synthesis."
+  },
+  "critical_limits": [
+    "2017-18 is a model-selection season despite its test label; only2018-19is the later betting cohort.",
+    "Original NBA notebook capital returns are not stake ROI.",
+    "NBA20-bin binary calibration scores differ from EPL10-bin multiclass scores.",
+    "Annual robustness uses two logistic branches, not repeated LR-vs-SVM comparisons.",
+    "Nine-season reset-account sums are not a funded wealth curve.",
+    "Quote times/opening-vs-closing status and executable capacity are not established.",
+    "Guarded ECE=1 is a penalty sentinel.",
+    "Positive single-season capital returns do not establish a reliable edge.",
+    "Saved-parameter SVM refit failed to reproduce notebook outputs under recordedlocalversions; original SVMweights/libraryversions are unavailable. Keep supplied saved scores as reported results, and label missingauditmetrics unavailable."
+  ],
+  "source_cells": {
+    "1": {
+      "execution_count": 44,
+      "source_sha256": "d5db7e02c4d7bdd1f038266dbc254977df703dfc883d2d74c4b27d9f1cae8505"
+    },
+    "4": {
+      "execution_count": 47,
+      "source_sha256": "6c5ad393c48dd3bad54b9231fada77829f23a60b0ce3fbca560214b23f7b2b66"
+    },
+    "5": {
+      "execution_count": 48,
+      "source_sha256": "29e1ee79ecf0e16bce5651450111fdc130496ce5c02d98045fc53cfa8579a105"
+    },
+    "6": {
+      "execution_count": 49,
+      "source_sha256": "632a3cfeea2c7ecd24836870cf6b915faca9fee31d613d95e0479e4c665544a1"
+    },
+    "7": {
+      "execution_count": 50,
+      "source_sha256": "9015d801c9cbdeef80714d6de628d0c27f16da9c55d6f446de872567fc347cf4"
+    },
+    "8": {
+      "execution_count": 51,
+      "source_sha256": "4b98ad2cf4701bfeb7c82ec41cd32d4c9ebaac28f440903aab678b0cbe07ee52"
+    },
+    "13": {
+      "execution_count": 56,
+      "source_sha256": "5b45ac542d6a5d8fc77d51fa2fdb58b2114e02b93b4214daf91f3291e2e8ab52"
+    },
+    "16": {
+      "execution_count": 59,
+      "source_sha256": "578c025533737e4dfd0acd66c8003b31f091a0bcbe813fb553ab84df75380b61"
+    },
+    "17": {
+      "execution_count": 60,
+      "source_sha256": "3e8a20e4d32ed423b397b783b887a7c63f29f020cd6079830f317d544d223022"
+    },
+    "18": {
+      "execution_count": 61,
+      "source_sha256": "10bf02d40ab3c87fbf2386c79be5d30cbc7c03fa8704073602b51d35d0116341"
+    },
+    "19": {
+      "execution_count": 62,
+      "source_sha256": "c071f5eccca41321ea314b4c3c158987616bcde9d1b8bd8d1e275d1da9a9e9ed"
+    },
+    "20": {
+      "execution_count": 63,
+      "source_sha256": "6c6732d2dadc7dd0119dfcda8c5a667443fefc0930c27e38d0f6a3fac6952362"
+    },
+    "21": {
+      "execution_count": 67,
+      "source_sha256": "eb97b4bb69a2ccd200b2392f3f08e717820fa701d3c124112a69a94616226cee"
+    },
+    "22": {
+      "execution_count": 68,
+      "source_sha256": "d9ed2965a87e4939647e1f3038afdb359bc7fef69c3b492180fad68a57375a62"
+    },
+    "23": {
+      "execution_count": 69,
+      "source_sha256": "034d5bccbd588cc1b364e38adc04592e7b8c275bd4cf38554257b676aaeabcc7"
+    },
+    "24": {
+      "execution_count": 70,
+      "source_sha256": "c1dc6ddafb97843e5ca0fe414568cac0df09211c7d27178088ea7bfd0f6df93d"
+    },
+    "25": {
+      "execution_count": 71,
+      "source_sha256": "9b6017a653fc74d6d66fd80dabaf0f4108528c431b4222aad8d3be71ac1e1951"
+    }
+  },
+  "source_sha256": {
+    "ML_Sports_Betting_Project_Proposal.pdf": "63b1f86b2d969434f101fc7acbda3cd317517758a2db9694c82c5ea8b44c8ce9",
+    "ML Sports/best_params.json": "16b6f7fb0a74a5150f14ac84ade5addeea701aef4c1928c14cb83e95d698b3a8",
+    "ML Sports/Data.ipynb": "8441fe8364b4750a7a08e8de7001028433028a35ab2f66ebc9d2b104412e18ce",
+    "ML Sports/EPL_Project_Presentation.pdf": "dbee4dfc91450da2a67d3cbad9f260db23a36baa1b26dd2185812cee1a0be891",
+    "ML Sports/NBA_analysis_Presentation.pptx": "6db1e55edfbe6c26aa45ec076256ffbae677f57029d9575bb663ebe78adfc6e5",
+    "ML Sports/OddsData.sqlite": "4a803d41cd4597c1d898c0b131a58763dee8b64140be8f40c29b73c852e162d9",
+    "ML Sports/Paper3 - ML for sports.pdf": "d55775ceea6e95791ce33eba9fdf29bfec8a79651f044d2a3294214039224fb9",
+    "ML Sports/regular_season_totals_2010_2024.csv": "b63367be8c58155f978c841bb966f5b19e334cec833a37ddae2915a29cd352d9",
+    "ML Sports/Stat_Arb.pdf": "757b68706683c52143ae4db8ca6838e2344bd2724a4ba25d29f86532d8849a77",
+    "ML Sports/suplimentary for sport.pdf": "be6dd7fc6be221d18e66a1857dee296f5b656e1c8be53b2ebfab0a2f7a279628"
+  },
+  "replay": {
+    "status": "mismatch_do_not_replace_saved_results",
+    "directory": "final_deliverables/nba_core_replay",
+    "all_four_saved_finals_match_to_cent": false,
+    "cent_matched_branches": [
+      "Calibration LR"
+    ],
+    "mismatched_branches": [
+      "Accuracy SVM"
+    ],
+    "usage_rule": "Preserve supplied saved results; do not substitute the SVM audit outputs or plot the reconstructed all-four curves as original results. Calibration-LR audit metrics may be separately labeled because both source finals and prediction summary match.",
+    "classification_metrics": [
+      {
+        "series": "Calibration",
+        "n_games": 1074,
+        "accuracy": 0.6527001862197392,
+        "log_loss": 0.6172138397082546,
+        "brier_binary": 0.21413672264370215,
+        "ece_binary_20": 0.04272120700204693,
+        "occupied_bins": 16,
+        "guarded_ece": 0.04272120700204693,
+        "provenance": "fixed_parameter_refit",
+        "matches_original_saved_outputs": true
+      },
+      {
+        "series": "Accuracy",
+        "n_games": 1074,
+        "accuracy": 0.590316573556797,
+        "log_loss": 0.7190517743192226,
+        "brier_binary": 0.2601103961077445,
+        "ece_binary_20": 0.1352265373470296,
+        "occupied_bins": 1,
+        "guarded_ece": 1.0,
+        "provenance": "fixed_parameter_refit",
+        "matches_original_saved_outputs": false
+      },
+      {
+        "series": "Normalized bookmaker odds",
+        "n_games": 1074,
+        "accuracy": 0.6694599627560521,
+        "log_loss": 0.5953850681782065,
+        "brier_binary": 0.20447053503124274,
+        "ece_binary_20": 0.04726220103807115,
+        "occupied_bins": 18,
+        "guarded_ece": 0.04726220103807115,
+        "provenance": "direct_read_only_derivation_from_native_2018_odds",
+        "matches_original_saved_outputs": true
+      }
+    ],
+    "summary_source": "final_deliverables/nba_core_replay/summary.json",
+    "no_retuning": true,
+    "verified_calibration_lr_metrics": [
+      {
+        "branch": "Calibration",
+        "model": "LR",
+        "staking": "fixed",
+        "n_predictions": 1074,
+        "n_bets": 916,
+        "wins": 348,
+        "hit_ratio": 0.3799126637554585,
+        "trading_frequency": 0.8528864059590316,
+        "initial_capital": 10000,
+        "final_capital": 10097.737958950212,
+        "profit": 97.73795895021247,
+        "turnover": 91600.0,
+        "roi_on_stakes": 0.0010670082854826,
+        "return_on_initial_capital": 0.0097737958950212,
+        "expected_gain_per_trade": 83.70484213655406,
+        "expected_loss_per_trade": 54.21787776011677,
+        "expected_net_per_trade": 29.48696437643729,
+        "avg_winning_gain": 163.49924700847762,
+        "avg_losing_loss": 100.0,
+        "max_drawdown": 0.2909158529239877,
+        "min_stake": 100.0,
+        "max_stake": 100.0,
+        "prediction_accuracy": 0.6527001862197392,
+        "ordinary_binary_ece_20": 0.0427212070020469,
+        "occupied_bins_out_of_20": 16,
+        "saved_ece_penalized_definition": 0.0427212070020469,
+        "source_saved_final_capital": 10097.74,
+        "final_capital_matches_saved_to_cent": true
+      },
+      {
+        "branch": "Calibration",
+        "model": "LR",
+        "staking": "kelly",
+        "n_predictions": 1074,
+        "n_bets": 916,
+        "wins": 348,
+        "hit_ratio": 0.3799126637554585,
+        "trading_frequency": 0.8528864059590316,
+        "initial_capital": 10000,
+        "final_capital": 6500.403061210613,
+        "profit": -3499.5969387893874,
+        "turnover": 107471.15314721547,
+        "roi_on_stakes": -0.0325631282098145,
+        "return_on_initial_capital": -0.3499596938789387,
+        "expected_gain_per_trade": 103.42806737928184,
+        "expected_loss_per_trade": 54.36740452779016,
+        "expected_net_per_trade": 49.06066285149167,
+        "avg_winning_gain": 177.06775731274988,
+        "avg_losing_loss": 114.64643747117314,
+        "max_drawdown": 0.5945063890869722,
+        "min_stake": 0.2606677612640098,
+        "max_stake": 648.8693393113385,
+        "prediction_accuracy": 0.6527001862197392,
+        "ordinary_binary_ece_20": 0.0427212070020469,
+        "occupied_bins_out_of_20": 16,
+        "saved_ece_penalized_definition": 0.0427212070020469,
+        "source_saved_final_capital": 6500.4,
+        "final_capital_matches_saved_to_cent": true
+      }
+    ],
+    "reconstruction_script_sha256": "815884ea63c75f194d4ca46551e0ee71db2ca40bc5227b21cc1a383e1a29d1d4",
+    "summary_sha256": "46852e11ac718648be414150efbfe1e55b6eea5fd5fe5f905d15b10bae145c7e",
+    "unreconciled_outputs_prefix": "unreconciled_"
+  }
+}

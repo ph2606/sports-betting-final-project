@@ -1,0 +1,409 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.78in]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Cambria}{\setmainfont[Ligatures=NoCommon]{Cambria}}{\setmainfont{Latin Modern Roman}}
+\IfFontExistsTF{Calibri}{\setsansfont{Calibri}}{\setsansfont{Latin Modern Sans}}
+\usepackage{amsmath,amssymb,booktabs,graphicx,xcolor,tabularx,longtable,array,fancyhdr}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=teal,citecolor=teal,urlcolor=teal]{hyperref}
+\definecolor{navy}{HTML}{11243A}
+\definecolor{teal}{HTML}{0D897D}
+\definecolor{muted}{HTML}{536578}
+\definecolor{pale}{HTML}{EDF4F5}
+\hypersetup{pdftitle={Machine Learning for Sports Betting: NBA and Premier League},pdfauthor={Aman Dhillon; Panagiotis Housos}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\headheight}{15pt}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{muted}Machine Learning for Sports Betting}
+\fancyhead[R]{\small\sffamily NBA \& Premier League}
+\fancyfoot[L]{\small\sffamily\color{muted}Dhillon \& Housos \quad Statistical Arbitrage}
+\fancyfoot[R]{\small\sffamily\thepage}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\exhibit}[3][0.98]{\begin{figure}[htbp]\centering\includegraphics[width=#1\linewidth]{figures/#2}\caption{#3}\end{figure}}
+\newcommand{\resulttable}[3]{\begin{table}[htbp]\centering\small\caption{#1}\label{#2}\input{tables/#3}\end{table}}
+\newcommand{\sourcefile}[1]{{\small\color{muted}\textit{Evidence:} \nolinkurl{#1}\par}}
+\input{numbers.tex}
+
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+{\sffamily\color{teal}\large STATISTICAL ARBITRAGE\par}
+\vspace{24pt}
+{\sffamily\color{navy}\fontsize{31}{35}\selectfont\bfseries Machine Learning\\for Sports Betting\par}
+\vspace{10pt}
+{\sffamily\color{navy}\Large Accuracy, calibration and trading performance\\in the NBA and English Premier League\par}
+\vspace{24pt}
+{\Large Aman Dhillon \quad and \quad Panagiotis Housos\par}
+\vspace{10pt}
+{\large\textbf{Supervisor:} Daniel Totouom-Tangho\par}
+\vspace{8pt}
+{\large October 23, 2026\par}
+\vspace{18pt}{\color{teal}\hrule height 1.5pt}\vspace{18pt}
+{\sffamily\large\bfseries Final project report\par}
+\vspace{8pt}
+\textbf{Research question.} Does selecting a prediction model for calibration,
+rather than accuracy, improve the performance of an explicit sports-betting rule?
+We implement the same research framework in a binary NBA market and a
+three-outcome Premier League market, while preserving their different data,
+selection dates and capital-allocation conventions.
+
+\textbf{Main findings.} In the supplied NBA 2018/19 simulation, the
+accuracy-selected SVM returns $25.03\%$ on starting capital with flat stakes
+but loses $55.11\%$ with one-eighth Kelly. The calibration-selected logistic
+model returns $0.98\%$ with flat stakes and loses $35.00\%$ with Kelly.
+Nine separately initialised logistic-only seasons have negative average
+capital returns for both selection objectives. In the locked EPL experiment,
+neither branch selects an admissible validation trading rule, so both primary
+test policies hold cash. The secondary fixed-stake calibration branch's
+$0.41\%$ stake ROI has an interval crossing zero. Subsequent EPL player
+models do not improve on their matched team controls.
+
+\textbf{Evidence standard.} Original saved outputs are distinguished from
+independent calculations. The NBA logistic replay reconciles to the supplied
+bankrolls; the SVM refit does not, and its original numbers remain explicitly
+source-reported. Historical profits are not presented as executable or
+prospectively validated investment returns.
+\vfill
+\textbf{Contributions:} Aman Dhillon --- NBA; Panagiotis Housos --- Premier League.\\
+\textbf{Order:} common methodology; NBA results; Premier League results.\\
+\textbf{Companions:} editable presentation, complete LaTeX source, numerical
+tables, strategy definitions and source/output hash manifest.
+\end{titlepage}
+
+\input{methodology.tex}
+
+\clearpage
+\section{NBA results}
+\label{sec:nba}
+\subsection{Data, features and selection roles}
+The NBA component uses the supplied team-game CSV and season tables in
+\texttt{OddsData.sqlite}. The CSV contains 33,316 team records and 16,658
+distinct raw games across 2010/11--2023/24. After pairing teams and excluding
+each club's first ten season appearances, 14,471 games remain; both teams
+have at least ten earlier observations in each retained fixture.
+The core betting season, 2018/19, contains 1,074 eligible games
+with a complete matched moneyline pair. The saved 58.5\% home-win rate refers
+to the training subset, not to all 14,471 games.
+
+The initial feature set consists of 25 opponent-relative box-score statistics
+and a previous-season win-rate difference. Shifted expanding means exclude the
+target game. The training--validation KS screen removes offensive rebounds;
+25 candidates remain. The Spearman screen retains nine variables. Forward
+selection uses offensive rating and three-pointers made for the calibration
+branch, and adds prior-season win percentage and turnovers for the accuracy
+branch. These are different predictor subsets, not a single model scored two ways.
+
+\resulttable{NBA chronology and sample sizes in the supplied core experiment.}
+{tab:nba_splits}{nba_splits.tex}
+There are 30 Optuna trials per family and branch. The source averages
+predictions over ten random seeds for model-family assessment and the final
+betting prediction. The season called \emph{test} in the notebook is used to
+select the family: it is therefore a model-selection season in this report.
+Only the subsequent 2018/19 betting season follows all these choices.
+
+\resulttable{NBA model-family selection, 2017/18. The two columns describe
+different branch-specific fitted variants; they are not joint scores of one model.}
+{tab:nba_selection}{nba_selection.tex}
+Calibration selection chooses logistic regression; accuracy selection chooses
+the SVM. The calibration branch's selection ECE is $4.31\%$, while the
+accuracy branch's selection accuracy is $66.33\%$. They must not be described
+as the accuracy and ECE of a single predictor.
+\sourcefile{ML Sports/Data.ipynb: cells 1--16 (zero-based)}
+
+\subsection{The 2018/19 betting simulation}
+Each native account starts with 10,000 monetary units. Flat staking requests
+100 per qualifying game, equal to 1\% of \emph{initial} capital. One-eighth
+Kelly varies the request with the predicted edge and available cash; unlike
+the EPL rules, no additional 2\% per-bet ceiling is imposed. The simulator
+checks home value before away value and settles games sequentially. Its
+output labelled ``ROI'' is profit divided by starting capital. Table~\ref{tab:nba_capital}
+uses the unambiguous term \emph{capital return}.
+
+\resulttable{Original saved NBA betting results, 2018/19; initial capital 10,000.}
+{tab:nba_capital}{nba_capital.tex}
+\exhibit{nba_core_capital.pdf}{Ending capital of the four original saved NBA
+2018/19 strategies. These are endpoint comparisons, not a reconstructed SVM
+wealth path. LR = logistic regression. The SVM numbers are source-reported;
+their supplied-parameter refit does not reconcile.}
+
+The accuracy-selected SVM's positive flat-stake result and negative Kelly
+result come from different exposure sizes, not different prediction models.
+For the calibration-selected logistic model, flat stakes finish only slightly
+above the starting account, while Kelly finishes substantially below it.
+Thus the source evidence does not support treating calibration selection as
+a guarantee of profitable stake sizing.
+
+The saved betting-season prediction accuracy is $65.27\%$ for logistic
+regression and $64.80\%$ for the SVM, distinct from their earlier selection
+scores. The notebook's SVM calibration score is replaced by a bin-coverage
+penalty; it is not an observation of literal 100\% calibration error.
+
+\subsection{What the independent replay verifies}
+A fixed-parameter audit uses the supplied feature subsets and stored
+hyperparameters with ten-seed averaging. It performs no new feature search,
+hyperparameter search or strategy optimisation. Both logistic account endings
+match the notebook to the printed cent, and its saved accuracy and ordinary
+20-bin ECE also reconcile. In contrast, the SVM refits reach the supplied
+iteration limit and produce different predictions and bankrolls. Original
+library versions and serialized fitted weights were not supplied. We retain
+the original SVM results as \emph{reported} and do not silently replace them
+with the mismatching refit.
+
+\resulttable{Independently computed metrics on the same 1,074 NBA betting
+fixtures. The logistic reconstruction reconciles; the bookmaker benchmark
+is calculated directly from the provided odds.}
+{tab:nba_verified_scores}{nba_verified_scores.tex}
+The market probabilities have lower log loss and binary Brier loss and higher
+accuracy than the reconciled logistic predictor. The logistic model, however,
+has lower ordinary ECE in this season. We therefore do not claim that the
+market dominates every metric in every season. In particular, a small global
+calibration statistic does not establish a profitable advantage on the bets
+selected against bookmaker prices.
+
+\resulttable{Additional metrics supported by the cent-matched NBA logistic
+replay; native 10,000-unit account. Expected components use the model's
+probabilities, not observed win/loss averages.}
+{tab:nba_verified_trades}{nba_verified_trades.tex}
+Only the reconciled logistic subset supports these extra trade-ledger
+statistics. Corresponding SVM turnover, expected payoff components and
+drawdown are not imputed from the original rounded headline outputs.
+\sourcefile{final_deliverables/nba_core_replay/summary.json}
+
+\subsection{Nine independently restarted seasons}
+The rolling extension contains nine betting seasons, 2014/15--2022/23, and
+9,344 priced games. It reselects features in each window, but uses logistic
+regression for \emph{both} branches. It does not repeat the core four-family
+hyperparameter tournament. Each seasonal diagnostic restarts at 10,000 and
+requests flat stakes of 100.
+
+\resulttable{Saved NBA annual capital returns, flat 100 from a fresh 10,000
+each season. Values are preserved at the source's two-decimal precision.}
+{tab:nba_annual}{nba_annual.tex}
+\exhibit{nba_annual_returns.pdf}{NBA annual capital returns for the rolling
+logistic-only extension. Every bar represents a separate initial 10,000
+account; the bars are not contributions to a continuously funded portfolio.}
+
+The calibration branch has the higher return in only three of nine seasons.
+Its reported mean return is $-17.34\%$ with sample standard deviation
+61.7 percentage points, versus $-9.49\%$ and 62.5 points for the accuracy
+branch. Both 2017/18 accounts exhaust their cash. These nine dependent
+historical windows are descriptive robustness evidence, not nine independent
+replications establishing a precise long-run expected return.
+
+The source's cumulative display adds cashflows from separately restarted
+seasons to a previous base. That can create unfunded or negative shadow
+balances and is not a continuous self-financing bankroll. It is excluded
+from this report's money-progression evidence. The supplied NBA write-up also
+describes additional pooled market/fusion analyses whose underlying forecasts
+are not preserved in the notebook. Those figures are not substituted for
+the directly reconciled common-fixture comparison above.
+
+\clearpage
+\section{Premier League results}
+\label{sec:epl}
+\subsection{Data and adaptation to three outcomes}
+The EPL component predicts home wins, draws and away wins. The focal universe
+is the 20 saved 2026/27 Premier League clubs; historical opponents remain
+context rather than being relabelled as current clubs. This present-day
+cohort creates selection/survivor limitations. Its 2025/26 matched evaluation
+contains 374 fixtures, rather than all 380 league fixtures.
+
+Football-Data supplies results, team performance and individual-book odds;
+Understat supplies team expected-goals histories; Fantasy Premier League
+(FPL) supplies player records. The expanded player loader reconciles 253,509
+historical player-match records in 2016/17--2025/26. The saved October 20
+snapshot adds 4,551 current-season rows from 70 completed fixtures and 668
+current player summaries. Historical inputs use strictly earlier dates;
+target participants, target minutes and present-day rosters do not backfill
+earlier forecasts. Role-based extensions disclose season-fixed position
+proxies with unverified publication clocks.
+
+\subsection{Proposal-aligned accuracy versus calibration experiment}
+The first locked experiment considers the same four candidate families as the
+NBA component, with 12 seeded tuning trials per family per branch. Earlier
+training and tuning are followed by separate calibration, model-selection
+and trading-validation seasons (Table~\ref{tab:league_method_differences}).
+Both branches receive temperature scaling; the experiment compares selection
+objectives rather than calibrated versus deliberately uncalibrated predictions.
+
+Accuracy selection chooses an SVM using season-to-date corners difference
+and recent shots-on-target difference. Calibration selection chooses an MLP
+using earlier corners conceded. The original xG/player candidates do not
+survive this small-budget selection path, so this experiment alone cannot
+establish their incremental value.
+
+\resulttable{Locked EPL 2025/26 probability scores on 374 identical fixtures.
+ECE is mean classwise error with ten bins.}
+{tab:epl_primary_scores}{epl_primary_scores.tex}
+The calibration-selected MLP has lower ECE, log loss and Brier loss, but
+lower classification accuracy, than the selected SVM. Normalised bookmaker
+probabilities have stronger proper losses than either learned model. The
+frequency baseline's low ECE despite poor log loss also illustrates the
+limitations of using calibration error alone. Conditional paired intervals
+for the MLP-minus-SVM ECE and log-loss differences both contain zero; they
+omit model-selection uncertainty and do not establish a causal calibration effect.
+
+Neither primary policy achieves positive validation profit with at least
+30 validation bets. Both therefore select cash: zero test bets, zero
+turnover and undefined stake ROI. This is the primary locked-policy finding.
+The secondary 5\% edge rule is evaluated separately, with an original
+1,000-unit account, flat 10 or capped quarter Kelly.
+
+\resulttable{Secondary EPL 5\% edge replay on the test season; native initial
+capital 1,000. Stake ROI is profit divided by turnover.}
+{tab:epl_secondary}{epl_secondary.tex}
+The MLP's best-price flat-stake ROI of $0.41\%$ is not robust evidence of an
+edge: its interval crosses zero, its reference-price flat result is negative,
+and its quarter-Kelly result is negative. Both primary rules remain in cash.
+Later presentation accounts scale initial capital and fixed stakes by 100;
+percentage ratios remain unchanged, while monetary amounts must be labelled
+with their account basis.
+
+\subsection{Exploratory team and player comparisons}
+The rolling extension uses 1,470 common quoted fixtures in four seasons:
+368 in 2022/23, 360 in 2023/24, 368 in 2024/25 and 374 in 2025/26. Each fit
+uses earlier seasons for training, tuning and calibration. These are new
+redesigns on already examined outcomes; chronology does not make them a fresh
+confirmatory test.
+
+The earlier source study crosses logistic and market-residual estimators
+with team, team+xG, team+FPL and combined inputs. Market-residual models start
+from normalised bookmaker probabilities and learn regularised feature
+adjustments. The newer study compares logistic and histogram boosting on
+matched team controls (19 inputs), player form (96), player form plus
+projected XI/depth (222), and team plus the full player block (235).
+
+\resulttable{Selected pooled EPL comparisons on the same 1,470 fixtures.
+Best learned means lowest observed pooled log loss, not greatest trading capital.}
+{tab:epl_extensions}{epl_rolling.tex}
+The raw market has the best pooled proper scores among all 19 comparable
+series. The strongest learned model uses bookmaker probabilities, so it is
+not an odds-free team/player forecast. All six new player-based variants
+have worse pooled log loss than their matched same-algorithm team controls.
+This is a finding about these particular representations, not a general
+claim that player information has no value.
+
+\subsection{Money progression and the complete strategy comparison}
+The expanded laboratory specifies 116 distinct combinations of forecast,
+outcome rule, prices and stakes. They are not 116 independent learning
+algorithms. Every account begins at 100,000. The common 2025/26 chart contains
+all 116; the uninterrupted four-season chart contains the 88 configurations
+with comparable earlier predictions. The 28 unavailable first-study
+configurations are not backfilled with models that saw those outcomes.
+
+\exhibit{epl_all_116.pdf}{All 116 saved EPL accounts in the common 2025/26
+season, each starting at 100,000. A line is one forecast/rule/price/stake
+combination; overlapping cash paths remain included.}
+\exhibit{epl_all_88.pdf}{All 88 comparable EPL accounts across four seasons,
+without annual resets or deposits. Every endpoint reconciles with its
+saved account metrics.}
+
+\resulttable{Representative EPL strategy accounts, uninterrupted
+2022/23--2025/26 from 100,000. Expected gain/loss are per-trade model claims.}
+{tab:epl_strategy_profiles}{epl_representative.tex}
+S029 is the best learned probability model with a flat-stake trading wrapper.
+S033 is the simplest historical-frequency model, S017 uses team performance,
+and P009 uses pure player form. Their common 5\% value filter and flat 1,000
+request make the performance descriptions concrete: 1,000 is 1\% of initial
+capital, not a changing 1\% fraction. Requests remain subject to date-start
+cash allocation.
+
+Among all 116 single-season accounts, 33 profit, 75 lose and eight remain flat.
+P028 has the highest final 2025/26 capital, 167,925, but loses 83.33\% in
+its uninterrupted four-season account. Among the 88 continuous accounts,
+24 profit and 64 lose; 13 exhaust their cash. S060 has the highest ending
+capital, 195,190, but its conditional ROI interval crosses zero.
+All 32 new player-study continuous accounts lose money, with 11 reaching zero.
+Historical ranks are descriptive and do not promote a live betting policy.
+
+\subsection{Prices, operational evidence and joint interpretation}
+S060's profit is approximately 95,190 at the saved best quotes and 55,952
+under a full Bet365 policy replay. Repricing its fixed original exposures
+instead gives approximately $-30,549$. The latter is a payout attribution;
+the former recomputes selections and cash sizes. These are different questions,
+not a pure causal price effect. Quote capture clocks, accepted stake limits
+and simultaneous fills remain unverified. Mathematical arbitrage flags do
+not establish executed arbitrage or closing-line value.
+
+The saved operational evidence has a separate October 20 cutoff: four earlier
+models each classify six of ten resolved fixtures correctly. Forty earlier-model
+and 80 new-model forecasts concern the same next ten October 23--25 fixtures.
+This assembly performs no later result settlement, so these figures describe
+the saved snapshot rather than live October 23 statuses. Missing pre-match
+quotes and a trade ledger preclude prospective trading ROI.
+
+Taken together, the two league studies support a cautious conclusion.
+Calibration and accuracy objectives select different models, and stake sizing
+can reverse a single season's profit. Neither a high classification rate, a
+low aggregate ECE nor a retrospectively profitable account is sufficient to
+demonstrate a durable priced-market edge. The completed contribution is the
+implemented comparison, explicit cash accounting and reproducible evidence,
+including negative results and the NBA SVM reproduction limit.
+
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{walsh2024} C. Walsh and A. Joshi (2024).
+Machine learning for sports betting: should model selection be based on accuracy or calibration?
+\emph{Machine Learning with Applications}, 16, 100539.
+\href{https://doi.org/10.1016/j.mlwa.2024.100539}{doi:10.1016/j.mlwa.2024.100539}.
+\bibitem{walsh2025corrigendum} C. Walsh and A. Joshi (2025).
+Corrigendum to ``Machine learning for sports betting: should model selection be based on accuracy or calibration?''
+\emph{Machine Learning with Applications}, 19, 100627.
+\href{https://doi.org/10.1016/j.mlwa.2025.100627}{doi:10.1016/j.mlwa.2025.100627}.
+\bibitem{guo2017calibration} C. Guo, G. Pleiss, Y. Sun and K. Q. Weinberger (2017).
+On calibration of modern neural networks.
+\emph{Proceedings of Machine Learning Research}, 70, 1321--1330.
+\url{https://proceedings.mlr.press/v70/guo17a.html}.
+\bibitem{projectproposal} A. Dhillon and P. Housos (2026).
+\emph{ML Sports Betting: Project Proposal}. Statistical Arbitrage, September 30.
+\bibitem{projectartifacts} A. Dhillon and P. Housos (2026).
+\emph{Project data, notebook, frozen models and account ledgers}.
+Supplied NBA material in \texttt{ML Sports}; EPL analysis modules and
+source-hashed exports in the project repository. Detailed input hashes,
+evidence classifications and replay reconciliation accompany this report.
+\end{thebibliography}
+
+\clearpage
+\appendix
+\section{Evidence and capital conventions}
+The authoritative NBA inputs are the supplied notebook's saved outputs,
+raw box-score CSV, odds database and stored parameter file. The fixed-parameter
+audit is labelled separately: logistic results reconcile, SVM results do not.
+The separate NBA report/presentation is not an additional independent sample.
+Likewise, the supplied EPL PDF is identical to an earlier generated EPL deck;
+the reviewed player-model export copies an existing forecast ledger rather
+than issuing another 80 predictions. Source and output hashes identify every
+consumed artifact. Current locally edited source documents are preserved.
+
+No joint NBA--EPL account or common profitability average is manufactured.
+NBA native accounts begin at 10,000; the first EPL experiment begins at 1,000;
+the expanded EPL account comparison begins at 100,000. Capital return and
+stake ROI have different denominators. Independent annual NBA restarts are
+not deposits into a continuous account. Model expected gains and losses are
+probability-weighted components at the recorded stakes, not average
+realised payoffs conditional on winning or losing.
+
+\section{Premier League strategy rules and metrics}
+The following tables preserve every S001--S084 and P001--P032 definition.
+Fixed amounts stay fixed as capital changes. Cash fractions and Kelly requests
+use date-start cash. Same-date requests are scaled together to available cash
+and any declared date cap, without borrowing or using same-date winnings.
+``Best'' denotes the saved best individual-book quote, not verified executable
+availability. H/D/A means home/draw/away. Exact machine-readable configurations
+and complete gain/loss, frequency and risk metrics accompany the report.
+
+\subsection{Plain-language capital and entry rules}
+{\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.08}
+\input{tables/epl_all_rules.tex}}
+
+\subsection{Complete common-season strategy statistics}
+Every row below starts at 100,000 and uses the same 374 priced 2025/26 fixtures.
+Expected gain/loss are per placed trade. No-trade conditional quantities are
+shown as unavailable, rather than fabricated as zero.
+{\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.08}
+\input{tables/epl_all_metrics.tex}}
+\end{document}

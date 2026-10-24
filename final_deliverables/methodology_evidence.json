@@ -1,0 +1,261 @@
+{
+  "proposal": {
+    "title": "ML Sports Betting: Project Proposal",
+    "date": "2026-09-30",
+    "authors": [
+      "Aman Dhillon",
+      "Panagiotis Housos"
+    ],
+    "supervisor_user_provided": "Daniel Totouom-Tangho",
+    "course": "Statistical Arbitrage",
+    "correct_files": [
+      "ML_Sports_Betting_Project_Proposal.pdf",
+      "ML_Sports_Betting_Project_Proposal (1).pdf"
+    ],
+    "exclude_as_current_proposal": "project_proposal.pdf is a separate September25 EPL prediction-market proposal",
+    "question": "Does calibration-based versus accuracy-based selection improve value-betting performance, and do archived best prices improve the replay?",
+    "planned_pipeline": [
+      "season-to-date opponent-relative statistics and prior-season strength",
+      "KS drift screen, Spearman redundancy, forward selection, BO-TPE",
+      "LR, RF, SVM, MLP in accuracy/ECE branches",
+      "chronological seasons",
+      "multi-book value/arbitrage screening",
+      "fixed and fractional Kelly stakes"
+    ]
+  },
+  "shared_implemented_framework": [
+    "Lag earlier completed game statistics; do not use the target game as its own predictor.",
+    "Predict NBA home/away and EPL home/draw/away probabilities.",
+    "Compare initial accuracy and calibration selection branches across the four common model families.",
+    "Use prior seasons for fitting/selection and later seasons for betting evaluation.",
+    "Compare model probabilities to decimal-odds implied probabilities and normalised market probabilities.",
+    "Translate declared choices and stakes into archived-price hypothetical accounts.",
+    "Separate forecast accuracy/calibration from selected-bet hit ratio and financial returns."
+  ],
+  "nba_methods": {
+    "source_cell_indexing": "zero-based notebook cells",
+    "features": {
+      "candidate_count": 26,
+      "box_score_measures": 25,
+      "prior_season_win_pct": 1,
+      "lag": "team/season shift(1).expanding().mean()",
+      "exclude_target_rows": "First10 appearances of each team are excluded as prediction targets: both GAME_NUM values>10 means at least10 prior appearances.",
+      "retained_game_rows": 14471,
+      "ks": "train-vs-validation p<0.01; OREB dropped",
+      "post_ks_count": 25,
+      "spearman": "absolute correlation>0.7; retain stronger absolute association with binary target",
+      "post_spearman_count": 9,
+      "calibration_forward_features": [
+        "ORTG",
+        "FG3M"
+      ],
+      "accuracy_forward_features": [
+        "ORTG",
+        "PREV_SEASON_WP",
+        "FG3M",
+        "TOV"
+      ]
+    },
+    "chronology": {
+      "train": [
+        "2014-15",
+        "2015-16"
+      ],
+      "validation": "2016-17",
+      "family_selection": "2017-18",
+      "betting": "2018-19",
+      "counts_train_val_select_bet": [
+        2145,
+        1074,
+        1075,
+        1074
+      ]
+    },
+    "tuning": {
+      "families": [
+        "LR",
+        "RF",
+        "MLP",
+        "SVM"
+      ],
+      "TPE_trials_per_family_branch": 30,
+      "seeds_refit_and_mean_predictions": 10,
+      "posthoc_temperature_calibration": false,
+      "selected_ECE_family": "LR",
+      "selected_accuracy_family": "SVM"
+    },
+    "ece": {
+      "binary_home_probability": true,
+      "bins": 20,
+      "min_occupied_fraction": 0.8,
+      "penalty_if_below_min": 1.0,
+      "warning": "Penalty sentinel must not be called literal100% empirical miscalibration."
+    },
+    "betting": {
+      "initial_capital": 10000,
+      "fixed_stake": 100,
+      "fixed_fraction_of_INITIAL_capital": 0.01,
+      "Kelly_fraction": 0.125,
+      "Kelly_per_bet_cap": "available cash only; no2%cap",
+      "selection": "home-first if p_home>1/O_home; else away if1-p_home>1/O_away; no max-edge comparison",
+      "confidence_margin": 0,
+      "allocation": "Sequential per-game cash settlement, not joint same-date requests",
+      "ROI_in_supplied_material": "profit / initialcapital, relabelcapitalreturn"
+    },
+    "rolling_extension": {
+      "seasons": 9,
+      "feature_selection_repeated": true,
+      "fitted_family": "logistic regression in both branches",
+      "window": "two training seasons, one validation, one following season included in final refit, then next betting season",
+      "annual_accounts_reset": true,
+      "source_stitched_cumulative_path": "additively joins annual-reset profits; not a continuously funded portfolio after ruin"
+    }
+  },
+  "epl_methods": {
+    "first_experiment": {
+      "outcomes": [
+        "H",
+        "D",
+        "A"
+      ],
+      "initial_train": "2014-15 through2020-21",
+      "tune": "2021-22",
+      "calibrate": "2022-23",
+      "family_select": "2023-24",
+      "threshold_select": "2024-25",
+      "finaltest": "2025-26",
+      "post_tuning_refit": "through2021-22, then freeze before calibration",
+      "temperature_fit_both_branches": true,
+      "classwise_ECE": "mean of3 one-vs-rest class errors;10bins; emptybins0; nooccupancy penalty",
+      "Brier": "unscaled3class squared errors summed acrossclass then averaged; range0to2",
+      "initial_stakes": "10fixed or quarterKelly cap2%, initial1000",
+      "TPE": {
+        "package": "optuna",
+        "sampler": "TPESampler",
+        "trials_per_family_per_branch": 12,
+        "startup_trials": 4,
+        "seed": 42,
+        "source": "epl_modeling/experiment.py and results/run_metadata.json"
+      },
+      "training_screens": {
+        "KS": "early/later halves of training seasons only; BH q<0.01 AND KSdistance>0.15",
+        "missingness": "reject>40%missing orconstanttrainingfeatures",
+        "Spearman": "rank by max absolute association with one-versus-rest targets; drop redundancy>=0.9",
+        "SFS": "logistic wrapper using two expanding chronological training folds; candidate_limit18,max_selected8,stoppingrule"
+      }
+    },
+    "expanded_experiments": {
+      "same_quoted_evaluation_fixtures": 1470,
+      "evaluation_seasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25",
+        "2025-26"
+      ],
+      "all_single_season_accounts": 116,
+      "compatible_continuous_accounts": 88,
+      "initial_expanded_account_capital": 100000,
+      "interpretation": "newretrospectiveredesigns onalreadyexaminedoutcomes; nofreshhistoricalholdout"
+    },
+    "allocation": "All same-date requests use openingcash and are reduced proportionally to availablecash and anydatebudget before settlement.",
+    "ROI_definition": "netprofit / totalstakedturnover; differentfromNBAlegacyROI",
+    "multi_book": "EPLonly amongprovidedcompletedcode; comparebestindividualbook andBet365reference, clocks/fillsunverified"
+  },
+  "common_financial_notation": {
+    "net_payoff": "stake * (odds * winindicator -1)",
+    "expected_gain": "p * stake * (odds-1)",
+    "expected_loss_positive_magnitude": "(1-p)*stake",
+    "expected_net_profit": "stake*(p*odds-1)",
+    "capital_return": "profit / initialcapital",
+    "stake_ROI_yield": "profit / sumstakes",
+    "hit_ratio": "winning settledpositive-stakebets / allsettledpositive-stakebets",
+    "trade_frequency": "actualbets / pricedmatchopportunities",
+    "Kelly_full_fraction": "max(0,(p*odds-1)/(odds-1))",
+    "Kelly_request_with_cap": "openingcash*min(cap,lambda*Kellyfull)",
+    "market_benchmark": "(1/O_k)/sum_j(1/O_j)",
+    "ideal_arb_condition": "sum_k1/O_best_k<1; mathematicalscreenonly",
+    "arb_equal_payout_weights": "(1/O_k)/sum_j(1/O_j)"
+  },
+  "comparability_warnings": [
+    "Do not pool binaryNBA Brier with unscaled3classEPL Brier; comparemodelagainstmarketwithinleague.",
+    "Do not equate NBA20-bin occupancy-penalisedECE with EPL10-bin averageclassECE.",
+    "Do not equate NBAcapitalreturn-labelledROI with EPLturnoverROI.",
+    "Do not assign EPLtemperaturecalibration, max-edge rule, per-bet2%cap or jointdatecashfunding toNBA.",
+    "Do not claim theNBArollingextension reruns4familyTPE; itusesLRonly.",
+    "Do not splice separately resetNBAannualaccounts into a legitimate fundedcontinuous100Kcurve.",
+    "Do not claimcalibrationguaranteesprofit or that lackofimprovement proves nofeaturecouldeverwork.",
+    "Do not calla3.87%overrounda directtransactionfee or realisedbookmakerprofit.",
+    "Do not state2025corrigendumwaspublishedduringOctober2026work.",
+    "IfNBAevent-levelpredictions/stakesareabsent, expectedgain/loss are unavailable ratherthan invented.",
+    "Do not presentEPLforecastsasexecutedtrades; pendingquote-freeforecasts have no prospectivePnL."
+  ],
+  "references": [
+    {
+      "bibkey": "walsh2024",
+      "authors": "Conor Walsh and Alok Joshi",
+      "title": "Machine learning for sports betting: should model selection be based on accuracy or calibration?",
+      "journal": "Machine Learning with Applications",
+      "volume": "16",
+      "article": "100539",
+      "year": 2024,
+      "doi": "10.1016/j.mlwa.2024.100539",
+      "local_manuscript": "ML Sports/Paper3 - ML for sports.pdf",
+      "arxiv": "2303.06021v4"
+    },
+    {
+      "bibkey": "walsh2025corrigendum",
+      "authors": "Conor Walsh and Alok Joshi",
+      "title": "Corrigendum to Machine learning for sports betting: should model selection be based on accuracy or calibration?",
+      "journal": "Machine Learning with Applications",
+      "volume": "19",
+      "article": "100627",
+      "year": 2025,
+      "doi": "10.1016/j.mlwa.2025.100627",
+      "early_online": "2025-02-08",
+      "publication": "2025-03-31",
+      "primary_verified_url": "https://researchportal.bath.ac.uk/en/publications/corrigendum-to-machine-learning-for-sports-betting-should-model-s/",
+      "corrected_mean_capital_returns_cal_acc": [
+        -0.0977,
+        -0.2678
+      ],
+      "corrected_fixed_capital_returns_cal_acc": [
+        0.2313,
+        0.109
+      ],
+      "corrected_eighthKelly_capital_returns_cal_acc": [
+        -0.4267,
+        -0.6445
+      ],
+      "selected_calibration_family": "MLP",
+      "selected_accuracy_family": "SVM",
+      "warning": "2025correction already predates the2026project; it supersedes original numerical results."
+    },
+    {
+      "bibkey": "guo2017calibration",
+      "authors": "Chuan Guo and Geoff Pleiss and Yu Sun and Kilian Q. Weinberger",
+      "title": "On Calibration of Modern Neural Networks",
+      "booktitle": "Proceedings of the34thInternationalConferenceonMachineLearning",
+      "series": "Proceedings of Machine Learning Research",
+      "volume": "70",
+      "pages": "1321-1330",
+      "year": 2017,
+      "primary_verified_url": "https://proceedings.mlr.press/v70/guo17a.html",
+      "relevance": "standalone scalar temperaturecalibration; implemented forEPL, notprovidedNBAnotebook"
+    }
+  ],
+  "source_sha256": {
+    "ML_Sports_Betting_Project_Proposal.pdf": "63b1f86b2d969434f101fc7acbda3cd317517758a2db9694c82c5ea8b44c8ce9",
+    "ML_Sports_Betting_Project_Proposal (1).pdf": "63b1f86b2d969434f101fc7acbda3cd317517758a2db9694c82c5ea8b44c8ce9",
+    "ML Sports/Stat_Arb.pdf": "757b68706683c52143ae4db8ca6838e2344bd2724a4ba25d29f86532d8849a77",
+    "ML Sports/Data.ipynb": "8441fe8364b4750a7a08e8de7001028433028a35ab2f66ebc9d2b104412e18ce",
+    "ML Sports/Paper3 - ML for sports.pdf": "d55775ceea6e95791ce33eba9fdf29bfec8a79651f044d2a3294214039224fb9",
+    "ML Sports/suplimentary for sport.pdf": "be6dd7fc6be221d18e66a1857dee296f5b656e1c8be53b2ebfab0a2f7a279628",
+    "epl_modeling/METHODOLOGY.md": "0552a867164c484687c31a342d5f8c074445afc2fd9becac4a62394568db18c2",
+    "epl_modeling/metrics.py": "a706233ce663e96fe2fae7b00a9e54731804d4b0d1ca78f7473183eff4f8a6d3",
+    "epl_strategy/METHODOLOGY.md": "daba299ec9954975c2546dff386b776e0fb4437df6f564955658df299de5419c",
+    "epl_player_models/PROTOCOL.md": "444c44f0e9f8eb8fc1703b957385b8dba9fcec149f25993abe39fd9927b62de3",
+    "epl_modeling/experiment.py": "f3097cdcf423ac27d1b4ba98b56c48cefc14060f6068a0de219a4a3d3d4312e5",
+    "epl_modeling/selection.py": "378220d31afcb7020c5822d32a68dd843cf6d06dc35d19cd67be2c22385cd8c4",
+    "epl_modeling/results/run_metadata.json": "66c418f1dd6abd4de78bee1f497671459ef8beb84d3ceca56bce14989def7df8"
+  }
+}

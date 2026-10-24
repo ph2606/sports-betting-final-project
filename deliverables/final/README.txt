@@ -1,0 +1,1 @@
+Final report and presentation: Aman Dhillon and Panagiotis Housos. Supervisor Daniel Totouom-Tangho. Order: common methodology, NBA results, Premier League results. Compile the complete LaTeX source with XeLaTeX three times; alternatively open Final_Report.pdf. The source ZIP is self-contained for report compilation.

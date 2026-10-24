@@ -1,0 +1,188 @@
+\section{Common methodology}
+\label{sec:common_methodology}
+
+\subsection{Research question and experimental scope}
+The September 30 proposal asks whether selecting a sports-outcome model for
+calibration, rather than classification accuracy, improves betting returns.
+Aman Dhillon implements the NBA component and Panagiotis Housos the English
+Premier League (EPL) component. Both studies connect pre-game statistical
+features to outcome probabilities and then to explicit betting rules. A good
+classifier, a well-calibrated probability forecast and a profitable betting
+strategy are different objects: a profitable bet also requires a sufficiently
+favourable price and a viable stake.
+
+The motivating reference is Walsh and Joshi's study of NBA model
+selection~\cite{walsh2024}. Its 2025 corrigendum supersedes the original
+numerical claims: corrected mean capital returns are $-9.77\%$ for
+calibration-based selection and $-26.78\%$ for accuracy-based selection, and
+Kelly betting can lose despite calibration~\cite{walsh2025corrigendum}.
+Consequently, improved profitability is tested rather than assumed. The NBA
+experiment is a replication and rolling extension; the EPL experiment adapts
+the pipeline to three outcomes and subsequently adds exploratory team, xG and
+player-feature comparisons. Multi-book line shopping and mathematical
+arbitrage screening are implemented in the EPL component, not the supplied
+NBA notebook's single-book replay.
+
+\subsection{Pre-game information and chronological model selection}
+For fixture $i$, let $Y_i$ denote the realised result and $X_i$ the feature
+vector constructed from earlier completed games. NBA results are binary,
+$Y_i\in\{H,A\}$; EPL results include draws,
+$Y_i\in\{H,D,A\}$. Team features describe earlier opponent-relative performance
+and prior-season strength. The NBA code applies shifted expanding averages
+within each team-season. EPL features include season-to-date and recent form,
+with source-coverage controls and, in the extensions, lagged xG and FPL player
+aggregates. Target-game scores, appearances and minutes cannot be predictors
+of that same game.
+
+The initial experiments use separate accuracy- and calibration-driven
+branches, each considering logistic regression, random forests, support vector
+machines and multilayer perceptrons. Distribution screening, Spearman
+redundancy filtering, sequential forward selection and TPE hyperparameter
+search precede the later betting evaluation. These are shared methodological
+ideas, not identical settings. All normalisation statistics are estimated in
+the appropriate earlier fitting block. Table~\ref{tab:league_method_differences}
+records differences that matter for interpreting the results.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Shared framework and league-specific implementation.}
+\label{tab:league_method_differences}
+\begin{tabular}{p{0.20\textwidth}p{0.35\textwidth}p{0.35\textwidth}}
+\toprule
+Aspect & NBA & Premier League \\
+\midrule
+Outcome and feature eligibility & Home/away; both teams must have at least
+ten earlier season games. & Home/draw/away; missing histories retained with
+coverage and fitting-only missing-value handling. \\
+First selection chronology & Train 2014/15--2015/16; tune 2016/17; choose
+model family on 2017/18; bet 2018/19. & Train 2014/15--2020/21; tune 2021/22;
+calibrate 2022/23; select family 2023/24; choose threshold 2024/25; evaluate
+2025/26. \\
+Calibration treatment & Selection by a 20-bin binary ECE with an occupancy
+penalty; no separate held-out temperature fit. & Selection by mean three-class
+ECE with ten bins; both branches receive held-out temperature scaling. \\
+Extensions & Nine rolling windows reselect features but fit logistic
+regression in both branches. & Four rolling evaluation seasons compare fixed
+feature groups; the later player-model study adds logistic and boosted trees. \\
+Prices and outcome choice & One saved home/away moneyline pair; test home
+value first, otherwise away value. & Saved individual-book quotes and a
+Bet365 reference; select the allowed outcome with maximum estimated return. \\
+Capital allocation & Sequential per-game settlement; fixed 100 or one-eighth
+Kelly from 10,000 initial capital. & Same-date opening-cash allocation;
+fixed, cash-fraction and capped fractional-Kelly configurations; 100,000
+initial capital in the expanded account comparison. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Selecting a model for small calibration error is not the same as fitting a
+post-processing calibrator. In the first EPL study, a scalar temperature is
+fitted on a disjoint season for every candidate in both branches,
+$p_{ik}(T)=\exp(z_{ik}/T)/\sum_j\exp(z_{ij}/T)$, where $z_i$ are the saved
+model scores~\cite{guo2017calibration}. The NBA notebook instead selects using
+its calibration criterion. Neither implementation implies that probability
+calibration guarantees value against bookmaker prices.
+
+\subsection{Forecast scores and market benchmarks}
+Let $p_{ik}$ be the predicted probability of outcome $k$ and
+$y_{ik}=\mathbb{1}\{Y_i=k\}$. Classification accuracy uses the highest-probability
+outcome. Probability quality is assessed using log loss and Brier loss:
+\begin{equation}
+ \operatorname{LL}=-\frac{1}{n}\sum_i\log p_{i,Y_i},\qquad
+ \operatorname{Brier}_{\mathrm{EPL}}=\frac{1}{n}\sum_i\sum_{k\in\{H,D,A\}}
+ (p_{ik}-y_{ik})^2.
+\end{equation}
+The NBA binary Brier convention is $n^{-1}\sum_i(p_{iH}-y_{iH})^2$.
+Its values therefore should not be ranked directly against the unscaled
+three-class EPL Brier score. Log-loss levels also depend on the outcome space
+and base rates; model--market differences are interpreted within each league.
+
+For probability bin $b$ of class $k$, calibration error compares observed
+frequency $\bar y_{kb}$ with mean forecast $\bar p_{kb}$:
+\begin{equation}
+ \operatorname{ECE}_k=\sum_b\frac{n_{kb}}{n}
+       |\bar y_{kb}-\bar p_{kb}|.
+\end{equation}
+The EPL implementation averages this quantity over all three classes and
+reports ten-bin ECE, with five- and fifteen-bin sensitivity summaries. The NBA
+implementation uses the home-win probability and twenty equal-width bins;
+it replaces the score by $1$ if fewer than 80\% of bins are occupied. This is
+an optimisation penalty, not an observation of literal 100\% miscalibration.
+The two ECE scales are not interchangeable. Constant forecasts may have small
+unpenalised ECE while offering little match-specific information.
+
+For decimal odds $O_{ik}$, the implied probability is $1/O_{ik}$. A reference
+book's overround and proportional margin-normalised benchmark are
+\begin{equation}
+ A_i=\sum_k O_{ik}^{-1},\qquad
+ q_{ik}=\frac{O_{ik}^{-1}}{A_i}.
+\end{equation}
+The benchmark $q_i$ is a market estimate, not known truth. NBA American
+moneylines $m$ are converted to decimal odds as $1+m/100$ for $m>0$, and
+$1+100/|m|$ for $m<0$. EPL line shopping uses the largest eligible archived
+individual-book quote for each outcome; a separate reference-price replay
+recomputes selections and stake sizes. An archived combination with
+$\sum_k1/O^*_{ik}<1$ is a mathematical arbitrage candidate only. Without
+simultaneous accepted fills, aligned settlement and known costs, it is not an
+executed risk-free profit.
+
+\subsection{Bet selection, stake sizing and accounting}
+For selected outcome probability $p_i$ and decimal odds $O_i$, estimated
+return per unit staked is $e_i=p_iO_i-1$. The NBA rule takes a home bet when
+$p_{iH}>1/O_{iH}$, otherwise an away bet when
+$1-p_{iH}>1/O_{iA}$; it does not maximise across both qualifying sides.
+The principal EPL value rules instead choose the largest admissible $e_i$
+and require a declared threshold. Thresholds and filters are reported with
+their respective strategies; the first EPL validation-selected rules can
+remain entirely in cash.
+
+With stake $s_i$, the realised net payoff and the model-implied positive and
+negative cash components are
+\begin{align}
+ \pi_i&=s_i\{O_i\mathbb{1}(\text{win})-1\},\\
+ G_i&=p_i s_i(O_i-1),\qquad L_i=(1-p_i)s_i,
+ \qquad G_i-L_i=s_i e_i.
+\end{align}
+Expected gains and losses use model probabilities at the recorded stakes;
+they are distinct from average realised winning gains and losing stakes.
+They are reported only where the supplied prediction-and-trade evidence
+supports their calculation.
+
+Full Kelly requests fraction $f_i^*=(p_iO_i-1)/(O_i-1)$ of available capital.
+Fractional Kelly multiplies this by $\lambda$, with any declared per-bet cap
+$c$: $s_i=B\min\{c,\lambda\max(0,f_i^*)\}$.
+The NBA notebook uses $\lambda=1/8$ and caps only at available cash. EPL
+configurations specify their Kelly fraction, per-bet cap and any total
+date-level budget. A fixed stake of 1,000 in a 100,000 account equals 1\%
+of \emph{initial} capital, not 1\% of a changing bankroll. EPL same-date
+requests are reduced together to fit opening cash before any same-date
+winnings settle. The NBA source simulator processes games sequentially, so
+its funding convention is retained and disclosed rather than silently
+replaced by the EPL convention.
+
+For total profit $P=\sum_i\pi_i$ and turnover $V=\sum_i s_i$, the final report
+uses two explicitly different denominators:
+\begin{equation}
+ \text{stake ROI (yield)}=P/V,\qquad
+ \text{capital return}=P/B_0.
+\end{equation}
+The supplied NBA material calls the second quantity ``ROI''; it is relabelled
+as capital return for consistency. Hit ratio is wins divided by settled bets;
+trade frequency is bets divided by priced match opportunities. Drawdown is
+the largest proportional fall from a prior account peak. Undefined no-trade
+ratios remain unavailable. Where a display rebases an account to 100,000,
+all cash amounts and stakes are multiplied by the same constant; reported
+percentage returns do not change. Separately reset NBA seasons are not
+presented as one funded continuous investment account.
+
+\subsection{Interpretation and evidence limits}
+The completed historical experiments are comparisons of recorded designs,
+not new live trading records. Repeatedly examined EPL extensions are explicitly
+exploratory. NBA annual variation and EPL whole-date conditional bootstrap
+intervals do not remove feature, model or strategy selection uncertainty.
+Bookmaker probabilities are competitive benchmarks, and favourable model
+expected value is not independent evidence of a realised edge. Neither a
+positive season nor a historical rank establishes a reliable betting policy.
+The NBA results below preserve the supplied notebook and report evidence;
+the EPL section retains the frozen prediction, trade and cash-flow artifacts.

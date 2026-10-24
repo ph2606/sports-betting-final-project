@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "read_only": true,
+  "source_evidence": {
+    "nba_saved_capital_results": 4,
+    "nba_separate_family_selection_rows": 4,
+    "nba_annual_saved_rows": 9,
+    "nba_lr_cent_matched": true,
+    "nba_svm_reproduction_limit_retained": true,
+    "epl_locked_score_rows": 4,
+    "epl_primary_test_cash_variants": 8
+  },
+  "display_tables": {
+    "nba_original_capital_rows": 4,
+    "nba_branch_specific_selection_rows": 4,
+    "nba_verified_predictive_rows": 2,
+    "nba_verified_trading_rows": 2,
+    "nba_independent_annual_rows": 9,
+    "epl_first_probability_rows": 4,
+    "epl_secondary_betting_rows": 8,
+    "epl_rolling_model_rows": 5,
+    "epl_four_year_representative_accounts": 6,
+    "epl_complete_common_season_metric_rows": 116,
+    "epl_complete_strategy_rule_rows": 116
+  },
+  "epl_graphs": {
+    "2025": {
+      "accounts": 116,
+      "points": 13224,
+      "initial_capital": 100000,
+      "endpoints_checked": 116
+    },
+    "continuous": {
+      "accounts": 88,
+      "points": 39952,
+      "initial_capital": 100000,
+      "endpoints_checked": 88
+    }
+  },
+  "report": {
+    "pages": 22,
+    "cover_authors_and_supervisor": true,
+    "main_section_order": [
+      "Common methodology",
+      "NBA results",
+      "Premier League results"
+    ],
+    "all116_strategy_ids_present": true,
+    "latex_undefined_references": 0,
+    "material_overfull_boxes": 0,
+    "off_page_text_spans": 0
+  },
+  "presentation": {
+    "main_slides": 12,
+    "backup_slides": 11,
+    "total_slides": 23,
+    "cover_authors_and_supervisor": true,
+    "main_order": [
+      "Common methodology",
+      "NBA results",
+      "Premier League results"
+    ],
+    "exact_epl_appendix_configurations": 116,
+    "native_text_overflows": 0,
+    "off_page_text_spans": 0,
+    "editable_text_and_speaker_notes_match": true
+  },
+  "no_new_SVM_metrics_imputed": true,
+  "annual_NBA_restarts_not_a_continuous_portfolio": true
+}

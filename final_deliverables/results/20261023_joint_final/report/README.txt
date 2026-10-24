@@ -1,0 +1,1 @@
+Compile Final_Report.tex with XeLaTeX three times. Included figures/tables are generated from the archived project evidence. Authors: Aman Dhillon and Panagiotis Housos. Supervisor: Daniel Totouom-Tangho.

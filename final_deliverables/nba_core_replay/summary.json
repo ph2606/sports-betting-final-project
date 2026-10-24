@@ -1,0 +1,96 @@
+{
+  "method": "fixed supplied parameters and supplied feature subsets, refitted with ten seed averaging; no retuning",
+  "source_notebook_cells": [
+    1,
+    5,
+    8,
+    10,
+    11,
+    14,
+    17,
+    18,
+    19,
+    20
+  ],
+  "status": "mismatch_do_not_replace_saved_results",
+  "all_four_saved_finals_match_to_cent": false,
+  "source_sha256_before_and_after": {
+    "Data.ipynb": "8441fe8364b4750a7a08e8de7001028433028a35ab2f66ebc9d2b104412e18ce",
+    "best_params.json": "16b6f7fb0a74a5150f14ac84ade5addeea701aef4c1928c14cb83e95d698b3a8",
+    "regular_season_totals_2010_2024.csv": "b63367be8c58155f978c841bb966f5b19e334cec833a37ddae2915a29cd352d9",
+    "OddsData.sqlite": "4a803d41cd4597c1d898c0b131a58763dee8b64140be8f40c29b73c852e162d9"
+  },
+  "environment": {
+    "pandas": "2.2.2",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "scikit-learn": "1.5.0",
+    "threadpoolctl": "3.5.0"
+  },
+  "caveats": [
+    "These are newly audited fixed-parameter refits, not supplied serialized model weights.",
+    "Source simulator is sequential game-level, including same-date cash reuse; it differs from EPL date-start joint allocation.",
+    "Source field called roi is return on starting capital, not profit divided by stake turnover.",
+    "Source ECE can return 1.0 as a bin-occupancy penalty; ordinary binary ECE is separately reported.",
+    "All monetary values remain in original 10,000-unit initial-capital scale."
+  ],
+  "output_sha256": {
+    "bets_calibration_fixed.csv": "40da45bd19b303e388aad23febcf40c23f57ada72d8096abb8f6db8cf068cfd8",
+    "bets_calibration_kelly.csv": "a2bff1c7fe9614de4c0f5944aa3ebdd352b59286ceb68bc6a0a72eea6af0496c",
+    "classification_metrics_2018.csv": "e85d2fb421ee710233c265c73f75da4c89fb1e7eeb3d8a5650b4fefaa0bc884d",
+    "equity_calibration_fixed.csv": "e06e3a5b23039d4d6c35f87dc508f3d90d3b4711a002a15db27f72694a0cebe6",
+    "equity_calibration_kelly.csv": "b1bafe07f3ea30723389070a49ddd025e00c18aa3d8f82c9cb8bbe3acd8c784f",
+    "metrics_all4.csv": "b2469839a130615d732e27eac417880979ec124868958e8b27b309600dd3c1b5",
+    "predictions_native.csv": "3bcec69d6296456015abb14f9ae39c4b53a05cbb338f64eddc7ad28496e31754",
+    "unreconciled_bets_accuracy_fixed.csv": "ecc8a95d8d76fa2b2112e412691879a6cf33d743d18ae418bd7331f247b66345",
+    "unreconciled_bets_accuracy_kelly.csv": "8c8c31c240fdba999cb0b291f2c68ff1209aec3b422814ec7e0ef5ab5db5c649",
+    "unreconciled_equity_accuracy_fixed.csv": "f6be3b7bdac52f402512f9c56718fc4c561b1d36269a9c59ba4e0be5ce3dac2b",
+    "unreconciled_equity_accuracy_kelly.csv": "271749ca4ebb3aa57763f65ac4c0fb760bbc20a06af8a9e9b22995430bd17a42"
+  },
+  "individually_reconciled_branches": [
+    "Calibration LR"
+  ],
+  "unreconciled_branches": [
+    "Accuracy SVM"
+  ],
+  "classification_metrics_2018": [
+    {
+      "series": "Calibration",
+      "n_games": 1074,
+      "accuracy": 0.6527001862197392,
+      "log_loss": 0.6172138397082546,
+      "brier_binary": 0.21413672264370215,
+      "ece_binary_20": 0.04272120700204693,
+      "occupied_bins": 16,
+      "guarded_ece": 0.04272120700204693,
+      "provenance": "fixed_parameter_refit",
+      "matches_original_saved_outputs": true
+    },
+    {
+      "series": "Accuracy",
+      "n_games": 1074,
+      "accuracy": 0.590316573556797,
+      "log_loss": 0.7190517743192226,
+      "brier_binary": 0.2601103961077445,
+      "ece_binary_20": 0.1352265373470296,
+      "occupied_bins": 1,
+      "guarded_ece": 1.0,
+      "provenance": "fixed_parameter_refit",
+      "matches_original_saved_outputs": false
+    },
+    {
+      "series": "Normalized bookmaker odds",
+      "n_games": 1074,
+      "accuracy": 0.6694599627560521,
+      "log_loss": 0.5953850681782065,
+      "brier_binary": 0.20447053503124274,
+      "ece_binary_20": 0.04726220103807115,
+      "occupied_bins": 18,
+      "guarded_ece": 0.04726220103807115,
+      "provenance": "direct_read_only_derivation_from_native_2018_odds",
+      "matches_original_saved_outputs": true
+    }
+  ],
+  "observed_fit_warning": "Every reconstructed SVM seed reached its supplied maximum of200000iterations; the notebook suppressed these warnings. Original library versions and serialized weights are not supplied.",
+  "reconstruction_script_sha256": "815884ea63c75f194d4ca46551e0ee71db2ca40bc5227b21cc1a383e1a29d1d4"
+}

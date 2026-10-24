@@ -1,13 +1,25 @@
 # Statistical Arbitrage final project
 
-**Short presentation:** [Editable PowerPoint](presentations/latest/EPL_Project_Presentation_Short.pptx)
-and [PDF](presentations/latest/EPL_Project_Presentation_Short.pdf), in
-**`presentations/latest/`**. Six main slides cover the implemented system,
+**Final combined submission — NBA and Premier League:**
+[Report PDF](deliverables/final/Final_Report.pdf),
+[complete LaTeX source](deliverables/final/Final_Report_LaTeX.zip),
+[PowerPoint](deliverables/final/Final_Project_Presentation.pptx) and
+[presentation PDF](deliverables/final/Final_Project_Presentation.pdf), all in
+**`deliverables/final/`**. Authors: **Aman Dhillon and Panagiotis Housos**;
+supervisor: **Daniel Totouom-Tangho**. The order is common methodology,
+NBA results, then Premier League results. See [LATEST_REPORT.md](LATEST_REPORT.md)
+and [LATEST_PRESENTATION.md](LATEST_PRESENTATION.md) for the current submission.
+
+The sections below preserve the earlier EPL-only development history.
+
+**Earlier EPL-only short presentation:** [Editable PowerPoint](epl_presentation/results/20261021_short/EPL_Project_Presentation.pptx)
+and [PDF](epl_presentation/results/20261021_short/EPL_Project_Presentation.pdf).
+Six main slides cover the implemented system,
 the all-strategy money graph and the best/simple/team/player models.
 The appendix explains all 116 strategies, including entry rules, money per
 trade and capital limits. See [LATEST_PRESENTATION.md](LATEST_PRESENTATION.md).
 
-**Newest report:** [PDF](reports/latest/EPL_Project_Report.pdf) and
+**Earlier EPL research report:** [PDF](reports/latest/EPL_Project_Report.pdf) and
 [editable Word](reports/latest/EPL_Project_Report.docx), in **`reports/latest/`**.
 See [LATEST_REPORT.md](LATEST_REPORT.md) for the newest workbook, graphs and
 canonical run. The newest October 20 continuation adds six player-based model
