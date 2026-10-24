@@ -1,0 +1,703 @@
+{
+  "review_date": "2026-10-23",
+  "generated_at_utc": "2026-10-24T02:12:51.028134+00:00",
+  "scope": "Completed qualitative/quantitative review of proposal, frozen results, funded inverse exports and report/deck updates; original baseline assessment preserved. No claimed professor rubric or predicted grade.",
+  "proposal_authority": {
+    "path": "ML_Sports_Betting_Project_Proposal.pdf",
+    "date": "2026-09-30",
+    "exclude_as_authority": "older September 25 proposal"
+  },
+  "review_baseline": {
+    "report_pages": 22,
+    "presentation_slides": 23,
+    "main_slides": 12,
+    "backup_slides": 11,
+    "core_order": [
+      "Common methodology",
+      "NBA",
+      "Premier League"
+    ],
+    "authors": [
+      "Aman Dhillon",
+      "Panagiotis Housos"
+    ],
+    "supervisor": "Daniel Totouom-Tangho"
+  },
+  "epl_continuous_inventory": {
+    "accounts": 88,
+    "profitable": 24,
+    "losing": 64,
+    "bankrupt": 13,
+    "new_player_accounts": 32,
+    "new_player_losing": 32,
+    "new_player_bankrupt": 11,
+    "bankrupt_rows": [
+      {
+        "strategy_id": "S041",
+        "model_key": "baseline_market_only",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 670,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "S043",
+        "model_key": "baseline_market_only",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 1363,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P009",
+        "model_key": "pm_logistic_player_form",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 944,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P011",
+        "model_key": "pm_logistic_player_form",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 681,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P013",
+        "model_key": "pm_hist_boost_player_form",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 1037,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P015",
+        "model_key": "pm_hist_boost_player_form",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 787,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P019",
+        "model_key": "pm_logistic_player_squad",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 724,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P021",
+        "model_key": "pm_hist_boost_player_squad",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 859,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P023",
+        "model_key": "pm_hist_boost_player_squad",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 543,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P025",
+        "model_key": "pm_logistic_team_player_squad",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 977,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P027",
+        "model_key": "pm_logistic_team_player_squad",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 780,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P029",
+        "model_key": "pm_hist_boost_team_player_squad",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 888,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      },
+      {
+        "strategy_id": "P031",
+        "model_key": "pm_hist_boost_team_player_squad",
+        "staking": "fixed",
+        "fixed_stake": 1000.0,
+        "bet_count": 842,
+        "prediction_count": 1470,
+        "final_capital_sum_units": 0.0
+      }
+    ]
+  },
+  "epl_single_season_inventory": {
+    "accounts": 116,
+    "profitable": 33,
+    "losing": 75,
+    "cash": 8,
+    "bankrupt": 0,
+    "matched_fixtures": 374,
+    "caveat": "Overlapping strategies are not independent tests; no new holdout is created."
+  },
+  "arbitrage": {
+    "four_year_2022_23_through_2025_26": {
+      "fixture_count": 1470,
+      "mathematical_candidates": 4,
+      "candidate_fraction": 0.0027210884353741495,
+      "verified_executable": 0,
+      "missing_selected_quote_clocks": 1470,
+      "maximum_theoretical_margin": 0.006271969952328149
+    },
+    "single_season_2025_26": {
+      "fixture_count": 374,
+      "mathematical_candidates": 0,
+      "candidate_fraction": 0.0,
+      "verified_executable": 0,
+      "missing_selected_quote_clocks": 374,
+      "maximum_theoretical_margin": -0.0037412533837274387
+    },
+    "interpretation": "Mathematical candidate flags are not executable opportunities or earned profits."
+  },
+  "nba_reproduced_lr_flat": {
+    "bet_count": 916,
+    "hit_ratio": 0.3799126637554585,
+    "selected_mean_model_probability": 0.4578212223988323,
+    "selected_calibration_gap_probability_minus_hit_ratio": 0.07790855864337376,
+    "ordinary_binary_ece_20": 0.0427212070020469,
+    "expected_net_units_per_trade": 29.48696437643729,
+    "realized_net_units_per_trade": 0.10670082854826689,
+    "initial_capital": 10000.0,
+    "final_capital": 10097.737958950212,
+    "capital_return": 0.0097737958950212,
+    "stake_yield": 0.0010670082854826,
+    "basis": "Fixed-parameter LR replay matches saved endpoint to cent. Selected mean p derives from expected_loss / 100 fixed stake. Not a refit/selection uncertainty interval."
+  },
+  "nba_reproducibility": {
+    "lr_seed_refits": 10,
+    "lr_saved_accounts_reproduce_to_cent": true,
+    "svm_seed_refits": 10,
+    "svm_saved_accounts_reproduce": false,
+    "svm_all_iteration_limits": true,
+    "required_wording": "Original SVM values are source-reported, not independently reproduced."
+  },
+  "nba_bankrupt_cases_to_cover": [
+    {
+      "season": "2017-18",
+      "branch": "Calibration",
+      "staking": "flat 100",
+      "initial_capital": 10000,
+      "final_capital": 0
+    },
+    {
+      "season": "2017-18",
+      "branch": "Accuracy",
+      "staking": "flat 100",
+      "initial_capital": 10000,
+      "final_capital": 0
+    }
+  ],
+  "research_question_comparisons": [
+    {
+      "comparison": "NBA core flat",
+      "unit": "return_on_starting_capital",
+      "calibration": 0.0098,
+      "accuracy": 0.2503,
+      "difference_percentage_points": -24.05,
+      "limit": "Accuracy SVM source-reported; not reproduced."
+    },
+    {
+      "comparison": "NBA core eighth Kelly",
+      "unit": "return_on_starting_capital",
+      "calibration": -0.35,
+      "accuracy": -0.5511,
+      "difference_percentage_points": 20.11,
+      "limit": "Both negative; accuracy SVM source-reported."
+    },
+    {
+      "comparison": "NBA 9 annual LR windows",
+      "unit": "mean_annual_return_on_starting_capital",
+      "calibration": -0.1734,
+      "accuracy": -0.0949,
+      "difference_percentage_points": -7.85,
+      "calibration_wins": 3,
+      "season_count": 9,
+      "limit": "Independent annual resets; not continuous capital."
+    },
+    {
+      "comparison": "EPL locked primary",
+      "unit": "return_on_starting_capital",
+      "calibration": 0,
+      "accuracy": 0,
+      "reason": "No admissible positive-validation strategy meeting minimum 30 bets."
+    },
+    {
+      "comparison": "EPL secondary 5 percent best fixed",
+      "unit": "profit_over_turnover",
+      "calibration": 0.004114,
+      "accuracy": -0.022453,
+      "difference_percentage_points": 2.6567,
+      "limit": "Both individual conditional 95 percent intervals include zero."
+    }
+  ],
+  "epl_multiple_comparison_audit": {
+    "family_size": 84,
+    "distinct_recorded_paths": 75,
+    "matched_fixtures": 374,
+    "dates": 113,
+    "bootstrap_samples": 19999,
+    "block_lengths": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "global_p_ranges": {
+      "S042": [
+        0.1457,
+        0.19515
+      ],
+      "cash": [
+        0.3887,
+        0.4187
+      ]
+    },
+    "any_global_reject_05": false,
+    "does_not_cover": [
+      "32 newer player strategies",
+      "13 bankruptcy-selected inverses"
+    ],
+    "uncertainty_scope": "Recorded cash flows only; no full model refitting or selection."
+  },
+  "prioritized_changes": [
+    {
+      "priority": "P0",
+      "change": "All-bankrupt coverage; binary versus three-way opposite definition; full frozen signal horizon; funding and liability constraints; post-hoc labels.",
+      "status": "Implemented in report/deck extension; numerical evidence checked in completed inverse exports. Final rendered-build checks owned by final builder."
+    },
+    {
+      "priority": "P1",
+      "change": "Add matched cross-league research-question answer and 4 flagged / 0 verified arbitrage table.",
+      "status": "Implemented in report/deck extension; numerical evidence checked in completed inverse exports. Final rendered-build checks owned by final builder."
+    },
+    {
+      "priority": "P1",
+      "change": "Use LR selected-probability versus observed-hit diagnostic to explain global ECE limitations.",
+      "status": "Implemented in report/deck extension; numerical evidence checked in completed inverse exports. Final rendered-build checks owned by final builder."
+    },
+    {
+      "priority": "P2",
+      "change": "Put verified findings before unmatched SVM headline; add concise shared final synthesis after EPL.",
+      "status": "Implemented in report/deck extension; numerical evidence checked in completed inverse exports. Final rendered-build checks owned by final builder."
+    }
+  ],
+  "inverse_acceptance_checks": [
+    "All 13 zero EPL accounts and both NBA 2017/18 zero annual accounts included.",
+    "EPL complement covers both alternatives including draw; total risk is not doubled per leg.",
+    "Recorded cashflow negation giving 200000 is labelled identity, not executable alpha.",
+    "Lay stake and liability are distinguished; funds reserved before results settle.",
+    "Full horizon uses frozen signals after original bankruptcy; recorded-prefix diagnostics labelled separately.",
+    "Qualifying signals and actually funded trades reported separately.",
+    "All outcomes shown and inverse cases labelled post hoc; original primary policy unchanged.",
+    "No claim of current executable quotes; timestamps missing for entire frozen four-year EPL panel.",
+    "Trade ledger reconciles terminal cash and fits date-start cash/risk budget.",
+    "Updated report PDF, PPTX, presentation PDF and LaTeX bundle reviewed for clipping and consistency."
+  ],
+  "source_hashes": [
+    {
+      "path": "ML_Sports_Betting_Project_Proposal.pdf",
+      "exists": true,
+      "size_bytes": 4175,
+      "sha256": "63b1f86b2d969434f101fc7acbda3cd317517758a2db9694c82c5ea8b44c8ce9"
+    },
+    {
+      "path": "final_deliverables/results/20261023_joint_final/report/Final_Report.pdf",
+      "exists": true,
+      "size_bytes": 682624,
+      "sha256": "932ca3df4f5ab7a4a04ec1f9251deab0d6b14c643e747acd4f27ed609be9271c"
+    },
+    {
+      "path": "final_deliverables/results/20261023_joint_final/report/Final_Report.tex",
+      "exists": true,
+      "size_bytes": 23830,
+      "sha256": "dfad319825d9f63374d8395f92c2f545cb24e0937edb265366aca75fc4b7f7e4"
+    },
+    {
+      "path": "final_deliverables/results/20261023_joint_final/presentation/Final_Project_Presentation.pptx",
+      "exists": true,
+      "size_bytes": 497930,
+      "sha256": "3e9255819cb2dcd08b6bb34a8d9b2f6fa56377509b98f55d98daf0fe31b8b151"
+    },
+    {
+      "path": "final_deliverables/report_template.tex",
+      "exists": true,
+      "size_bytes": 23830,
+      "sha256": "dfad319825d9f63374d8395f92c2f545cb24e0937edb265366aca75fc4b7f7e4"
+    },
+    {
+      "path": "final_deliverables/methodology_draft.tex",
+      "exists": true,
+      "size_bytes": 10552,
+      "sha256": "b547b27a00adc68b4b245e7d9845a6f3a9f430f61f49258825f8d597abeb85fd"
+    },
+    {
+      "path": "final_deliverables/nba_evidence.json",
+      "exists": true,
+      "size_bytes": 20821,
+      "sha256": "22b9377db78c6bdb12c7592a81d585fb87f543b333b27ca26c1aeb9796f86b89"
+    },
+    {
+      "path": "final_deliverables/epl_evidence.json",
+      "exists": true,
+      "size_bytes": 175490,
+      "sha256": "c22d3f719069f1e7117c650c0a21b09e35501007644bc505165439d9261c94ea"
+    },
+    {
+      "path": "final_deliverables/methodology_evidence.json",
+      "exists": true,
+      "size_bytes": 12276,
+      "sha256": "d7861db45b6ca15f4945198e2688e3fb3f6c349bcc9727da96ef5b65c6e81b60"
+    },
+    {
+      "path": "final_deliverables/nba_core_replay/metrics_all4.csv",
+      "exists": true,
+      "size_bytes": 1925,
+      "sha256": "b2469839a130615d732e27eac417880979ec124868958e8b27b309600dd3c1b5"
+    },
+    {
+      "path": "epl_strategy_validation/results/20261015_temporal_selection/metrics_continuous.parquet",
+      "exists": true,
+      "size_bytes": 99852,
+      "sha256": "50e2e22db3f67727f8f08b8e0f4ac81bbe3ba035fa482d150773738fcaca0017"
+    },
+    {
+      "path": "epl_player_models/results/20261020_player_models_review/metrics_continuous.parquet",
+      "exists": true,
+      "size_bytes": 91626,
+      "sha256": "348ff76019ad58a501a9216fa5e7fd49040d4dcc4813429498661e5a86d6343d"
+    },
+    {
+      "path": "epl_modeling/results/bookmaker_odds_panel.parquet",
+      "exists": true,
+      "size_bytes": 777758,
+      "sha256": "0ac0ffc3a8e27d8ea72dcede4909b16014b3daa6dea602363aa24b2dd76635ec"
+    },
+    {
+      "path": "epl_strategy_validation/results/20261015_temporal_selection/selection_global.csv",
+      "exists": true,
+      "size_bytes": 1725,
+      "sha256": "5dd93b7723141e2e70a0e3919fb31401941588625e9d3f73a9bf28c0278d7653"
+    }
+  ],
+  "grade_claim": "No numerical grade, invented grading rubric, fabricated positive result or guarantee.",
+  "final_review_completed_at_utc": "2026-10-24T02:22:46.182121+00:00",
+  "final_extension": {
+    "zero_cases_total": 19,
+    "epl_zero_price_contexts": 17,
+    "epl_distinct_zero_strategy_ids": 15,
+    "epl_main_zero_accounts": 13,
+    "epl_additional_reference_zero_contexts": 4,
+    "nba_zero_annual_accounts": 2,
+    "main_epl_fixed_accounts": 47,
+    "main_epl_nonbankrupt_controls": 34,
+    "presentation_slides": 28,
+    "presentation_main_slides": 15,
+    "presentation_appendix_slides": 13,
+    "original_slides_preserved": 23,
+    "epl_quoted_complement_zero_contexts": {
+      "0.0": {
+        "accounts": 17,
+        "profitable_accounts": 2,
+        "bankrupt_accounts": 1,
+        "median_final_capital": 62009.53633087672,
+        "min_final_capital": 0.0,
+        "max_final_capital": 116968.37494643942
+      },
+      "0.02": {
+        "accounts": 17,
+        "profitable_accounts": 2,
+        "bankrupt_accounts": 1,
+        "median_final_capital": 56767.00765228198,
+        "min_final_capital": 0.0,
+        "max_final_capital": 110248.9997286958
+      },
+      "0.05": {
+        "accounts": 17,
+        "profitable_accounts": 1,
+        "bankrupt_accounts": 2,
+        "median_final_capital": 48903.21463439004,
+        "min_final_capital": 0.0,
+        "max_final_capital": 100169.93690208094
+      }
+    },
+    "epl_quoted_complement_main_zero_contexts": {
+      "accounts": 13,
+      "profitable_accounts": 2,
+      "bankrupt_accounts": 0,
+      "median_final_capital": 66059.4531166984,
+      "min_final_capital": 6420.723474837168,
+      "max_final_capital": 116968.37494643942
+    },
+    "epl_quoted_complement_nonbankrupt_controls": {
+      "accounts": 34,
+      "profitable_accounts": 2,
+      "bankrupt_accounts": 0,
+      "median_final_capital": 45269.17355862528,
+      "min_final_capital": 14325.700727063824,
+      "max_final_capital": 107369.71604060836
+    },
+    "epl_synthetic_lay_zero_contexts": {
+      "accounts": 17,
+      "profitable_accounts": 16,
+      "bankrupt_accounts": 0,
+      "median_final_capital": 140579.9459567052,
+      "min_final_capital": 93064.63866926145,
+      "max_final_capital": 176439.95248527723
+    },
+    "zero_context_conditional_intervals": {
+      "strictly_positive": 0,
+      "strictly_negative": 8,
+      "include_zero": 9,
+      "profitable_rows_intervals_include_zero": true
+    },
+    "all_51_contexts_strictly_positive_complement_interval_count": 0,
+    "p009_quoted_complement": {
+      "final": 92926.75404630994,
+      "bets": 1384.0,
+      "signals": 1384.0,
+      "hit": 0.7543352601156069,
+      "frequency": 0.9414965986394558,
+      "roi": -0.0051107268451517,
+      "drawdown": 0.2963226566175935,
+      "expected_gain": 199.23175388064777,
+      "expected_loss": 354.8259624361926,
+      "ci_low": -0.0359667960871959,
+      "ci_high": 0.0260014282881813
+    },
+    "identity_diagnostic": {
+      "cases": 17,
+      "arithmetic_final_unique": [
+        200000.0
+      ],
+      "collateral_feasible_count": 17,
+      "maximum_additional_opening_cash": 0.0,
+      "interpretation": "All 17 recorded mirrors pass hypothetical collateral test, but opposing contract/price availability is unobserved. 200000 is a truncated recorded-cashflow identity, not a funded quoted-complement return."
+    },
+    "nba_full_horizon_metrics": [
+      {
+        "season": "2017-18",
+        "branch": "cal",
+        "mode": "opposite_full_horizon",
+        "staking": "fixed",
+        "n_predictions": 1075,
+        "full_horizon_original_signals": 915,
+        "n_bets": 915,
+        "wins": 601,
+        "hit_ratio": 0.6568306011,
+        "trading_frequency": 0.8511627907,
+        "initial_capital": 10000.0,
+        "final_capital": 11148.0749121312,
+        "profit": 1148.0749121312,
+        "turnover": 91500.0,
+        "roi_on_stakes": 0.0125472668,
+        "return_on_initial_capital": 0.1148074912,
+        "expected_gain_per_trade": 27.0564203698,
+        "expected_loss_per_trade": 46.67012495,
+        "avg_winning_gain": 54.1565306358,
+        "avg_losing_loss": 100.0,
+        "max_drawdown": 0.2916776977,
+        "first_zero_game_order": null,
+        "funding_convention": "Original NBA game-sequential settlement; cash clamping, no borrowing",
+        "price_basis": "Original single-source home/away moneyline pair; no verified execution timestamps",
+        "expectation_basis": "Same original forecast; opposite outcome probability equals one minus original selected probability"
+      },
+      {
+        "season": "2017-18",
+        "branch": "acc",
+        "mode": "opposite_full_horizon",
+        "staking": "fixed",
+        "n_predictions": 1075,
+        "full_horizon_original_signals": 884,
+        "n_bets": 884,
+        "wins": 560,
+        "hit_ratio": 0.6334841629,
+        "trading_frequency": 0.8223255814,
+        "initial_capital": 10000.0,
+        "final_capital": 8785.3043226566,
+        "profit": -1214.6956773434,
+        "turnover": 88400.0,
+        "roi_on_stakes": -0.0137409013,
+        "return_on_initial_capital": -0.1214695677,
+        "expected_gain_per_trade": 27.9874668197,
+        "expected_loss_per_trade": 47.9138036453,
+        "avg_winning_gain": 55.6880434333,
+        "avg_losing_loss": 100.0,
+        "max_drawdown": 0.5075976271,
+        "first_zero_game_order": null,
+        "funding_convention": "Original NBA game-sequential settlement; cash clamping, no borrowing",
+        "price_basis": "Original single-source home/away moneyline pair; no verified execution timestamps",
+        "expectation_basis": "Same original forecast; opposite outcome probability equals one minus original selected probability"
+      }
+    ],
+    "nba_conditional_intervals": [
+      {
+        "season": "2017-18",
+        "branch": "cal",
+        "mode": "opposite_full_horizon",
+        "metric": "roi_on_stakes",
+        "value": 0.0125472668,
+        "ci_lower": -0.0481761757,
+        "ci_upper": 0.0732701183,
+        "n_bootstrap": 9999,
+        "method": "Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+      },
+      {
+        "season": "2017-18",
+        "branch": "cal",
+        "mode": "opposite_full_horizon",
+        "metric": "hit_ratio",
+        "value": 0.6568306011,
+        "ci_lower": 0.624728488,
+        "ci_upper": 0.6876380931,
+        "n_bootstrap": 9999,
+        "method": "Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+      },
+      {
+        "season": "2017-18",
+        "branch": "cal",
+        "mode": "opposite_full_horizon",
+        "metric": "trading_frequency",
+        "value": 0.8511627907,
+        "ci_lower": 0.828908799,
+        "ci_upper": 0.8731060606,
+        "n_bootstrap": 9999,
+        "method": "Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+      },
+      {
+        "season": "2017-18",
+        "branch": "acc",
+        "mode": "opposite_full_horizon",
+        "metric": "roi_on_stakes",
+        "value": -0.0137409013,
+        "ci_lower": -0.0736098055,
+        "ci_upper": 0.045328117,
+        "n_bootstrap": 9999,
+        "method": "Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+      },
+      {
+        "season": "2017-18",
+        "branch": "acc",
+        "mode": "opposite_full_horizon",
+        "metric": "hit_ratio",
+        "value": 0.6334841629,
+        "ci_lower": 0.5997794317,
+        "ci_upper": 0.6670204341,
+        "n_bootstrap": 9999,
+        "method": "Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+      },
+      {
+        "season": "2017-18",
+        "branch": "acc",
+        "mode": "opposite_full_horizon",
+        "metric": "trading_frequency",
+        "value": 0.8223255814,
+        "ci_lower": 0.7988713741,
+        "ci_upper": 0.8460746765,
+        "n_bootstrap": 9999,
+        "method": "Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+      }
+    ],
+    "methodology_acceptance": {
+      "complete_zero_account_coverage": true,
+      "epl_three_way_complement_includes_draw": true,
+      "inverse_full_horizon_continues_after_original_ruin": true,
+      "same_date_risk_budget_enforced_by_engine": true,
+      "all_47_main_fixed_accounts_as_cases_or_controls": true,
+      "cost_cases_replay_funding": true,
+      "hypothetical_lay_not_called_executable": true,
+      "mirror_collateral_result_disclosed_without_false_failure_claim": true,
+      "post_hoc_selection_disclosed": true,
+      "original_locked_primary_policy_preserved": true,
+      "nba_unmatched_svm_kept_source_reported": true,
+      "all_original116_strategy_appendix_retained_by_updater": true
+    },
+    "artifact_verification_handoff": "Final builder independently rebuilds and checks report/PPTX/PDF clipping, invariants, source/output hashes and protected-source preservation after review source freezes. Rendering not certified solely by this numerical review."
+  },
+  "final_extension_source_hashes": [
+    {
+      "path": "final_review/epl_results/metrics.csv",
+      "sha256": "317a8d930a77d1832715531fae78be6e24417c5db572543f4f7ea6530e48607f",
+      "size_bytes": 120986
+    },
+    {
+      "path": "final_review/epl_results/inventory.csv",
+      "sha256": "37b8ade9aeef8c437547fa0dd2b68d6e4c5b63184a336e78e6e32d04ef6e5c2a",
+      "size_bytes": 3240
+    },
+    {
+      "path": "final_review/epl_results/identity_diagnostics.csv",
+      "sha256": "76a7135dfe973cb99c6eaa6aef7c34fc629bf8c9ac605ffbc0b892712da8cb15",
+      "size_bytes": 1388
+    },
+    {
+      "path": "final_review/epl_results/cohort_summary.json",
+      "sha256": "1b2202273127ced7ebee761ec383373798ccbef5002b2ced4e332c26f6332c14",
+      "size_bytes": 2786
+    },
+    {
+      "path": "final_review/epl_results/summary.json",
+      "sha256": "5b9c68b140d572d94a053ba7336e5422d9de288d89971c472604bba4f119143d",
+      "size_bytes": 7301
+    },
+    {
+      "path": "final_review/nba_results/inverse_metrics.csv",
+      "sha256": "276338a10eaff3ac2ae3198a1f879a1b9fe19d9a6ad7b252319686d28544d0a8",
+      "size_bytes": 3458
+    },
+    {
+      "path": "final_review/nba_results/conditional_uncertainty.csv",
+      "sha256": "3317fde74d4cc82a3193dd84ad84be2bd88753b682ec7c16b0fb442893081102",
+      "size_bytes": 1424
+    },
+    {
+      "path": "final_review/nba_results/summary.json",
+      "sha256": "08ad8eeeca0fab9e779a4b8b6dafb0cde4bddc72be0e9b99beb63f9f3522fa88",
+      "size_bytes": 4449
+    },
+    {
+      "path": "final_review/nba_results/audit_summary.json",
+      "sha256": "d8625d91dded3b373438234db33f2fe3a17ad07beb05df58886612447018d52a",
+      "size_bytes": 5701
+    },
+    {
+      "path": "final_review/report_update.py",
+      "sha256": "d69ced945413fa5f0eff39fda40ebe8d42386255d3d390f86f9c30d6d45f746e",
+      "size_bytes": 32447
+    },
+    {
+      "path": "final_review/project_review.md",
+      "sha256": "adb0660029a7f59239d792d51437cc55b5bc52dededd615effafe76bc9f369c5",
+      "size_bytes": 16443
+    }
+  ]
+}

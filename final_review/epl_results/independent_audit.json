@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "audit_implementation": "final_review\\audit_epl_inverse.py",
+  "audit_sha256": "1f85aa9c5c37f01f3bbf73056f1b2dbd16a343a2bbe09500dc7de72f1cb8a97f",
+  "source_contexts": 51,
+  "original_accounts_reproduced": 51,
+  "bankrupt_source_contexts": 17,
+  "funded_full_horizon_inverse_accounts": 204,
+  "additional_recorded_prefix_dutch_diagnostics": 17,
+  "recorded_sign_identity_diagnostics": 17,
+  "funded_bundle_rows_checked": 303003,
+  "physical_complement_leg_rows_checked": 383872,
+  "wealth_points_checked": 123216,
+  "match_dates_per_account": 453,
+  "qualified_signals_after_original_ruin": 8641,
+  "nonpositive_effective_odds_primary_bundles": 172,
+  "conditional_bootstrap_intervals_recomputed": 51,
+  "manifest_hashes_checked": 29,
+  "independent_input_sha256": {
+    "epl_modeling\\ablation_results\\predictions.parquet": "e0b79612631080191e94b5e59d5a2f40926086eba4a16e788139a48eeef71762",
+    "epl_modeling\\results\\bookmaker_odds_panel.parquet": "0ac0ffc3a8e27d8ea72dcede4909b16014b3daa6dea602363aa24b2dd76635ec"
+  },
+  "checks": [
+    "Complete frozen source cohort, full-horizon qualification, filters and deterministic tie order",
+    "Actual archived best/reference prices and bookmaker identities for both complementary legs",
+    "H/D/A payoff vectors, per-portfolio positive-profit cost and nonnegative expected gain/loss",
+    "Joint match-date liability/stake reservation, no same-date proceeds, absorbing bankruptcy",
+    "All original trade/wealth points, all funded bundles/legs, endpoints and reported metrics",
+    "Recorded sign identity plus opening-cash liability feasibility, independent of endpoint",
+    "All declared cost variants, controls and complete within-season fixed-cashflow bootstrap"
+  ],
+  "interpretation": "Accounting and reproducibility checks only; retrospective reversals and conditional intervals do not establish prospective profitability or remove selection bias."
+}

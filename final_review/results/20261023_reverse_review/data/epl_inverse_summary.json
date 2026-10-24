@@ -1,0 +1,152 @@
+{
+  "contexts": 51,
+  "original_zero_contexts": 17,
+  "nonzero_controls": 34,
+  "main_fixed_cohort": 47,
+  "additional_reference_zero_contexts": 4,
+  "funded_complement_accounts": 153,
+  "hypothetical_lay_accounts": 51,
+  "prefix_complement_diagnostics": 17,
+  "recorded_identity_diagnostics": 17,
+  "fixtures": 1470,
+  "dates": 453,
+  "bootstrap_samples": 9999,
+  "bootstrap_basis": "Conditional fixed cashflows, whole match dates resampled within each outer season; no model, policy, sizing or family selection uncertainty",
+  "cohorts": [
+    {
+      "variant": "dutch_cost_0",
+      "original_zero": false,
+      "accounts": 34,
+      "profitable_accounts": 2,
+      "bankrupt_accounts": 0,
+      "median_final_capital": 45269.17355862528,
+      "min_final_capital": 14325.700727063824,
+      "max_final_capital": 107369.71604060837
+    },
+    {
+      "variant": "dutch_cost_0",
+      "original_zero": true,
+      "accounts": 17,
+      "profitable_accounts": 2,
+      "bankrupt_accounts": 1,
+      "median_final_capital": 62009.53633087672,
+      "min_final_capital": 0.0,
+      "max_final_capital": 116968.37494643942
+    },
+    {
+      "variant": "dutch_cost_2",
+      "original_zero": false,
+      "accounts": 34,
+      "profitable_accounts": 2,
+      "bankrupt_accounts": 0,
+      "median_final_capital": 39888.109959563284,
+      "min_final_capital": 8919.186712522573,
+      "max_final_capital": 106122.3217197962
+    },
+    {
+      "variant": "dutch_cost_2",
+      "original_zero": true,
+      "accounts": 17,
+      "profitable_accounts": 2,
+      "bankrupt_accounts": 1,
+      "median_final_capital": 56767.00765228198,
+      "min_final_capital": 0.0,
+      "max_final_capital": 110248.99972869581
+    },
+    {
+      "variant": "dutch_cost_5",
+      "original_zero": false,
+      "accounts": 34,
+      "profitable_accounts": 2,
+      "bankrupt_accounts": 2,
+      "median_final_capital": 28548.846506433154,
+      "min_final_capital": 0.0,
+      "max_final_capital": 104251.23023857795
+    },
+    {
+      "variant": "dutch_cost_5",
+      "original_zero": true,
+      "accounts": 17,
+      "profitable_accounts": 1,
+      "bankrupt_accounts": 2,
+      "median_final_capital": 48903.21463439004,
+      "min_final_capital": 0.0,
+      "max_final_capital": 100169.93690208094
+    },
+    {
+      "variant": "lay_hypothetical",
+      "original_zero": false,
+      "accounts": 34,
+      "profitable_accounts": 10,
+      "bankrupt_accounts": 0,
+      "median_final_capital": 85532.36036530914,
+      "min_final_capital": 49081.54521224548,
+      "max_final_capital": 148875.6339505154
+    },
+    {
+      "variant": "lay_hypothetical",
+      "original_zero": true,
+      "accounts": 17,
+      "profitable_accounts": 16,
+      "bankrupt_accounts": 0,
+      "median_final_capital": 140579.9459567052,
+      "min_final_capital": 93064.63866926143,
+      "max_final_capital": 176439.95248527723
+    },
+    {
+      "variant": "original",
+      "original_zero": false,
+      "accounts": 34,
+      "profitable_accounts": 17,
+      "bankrupt_accounts": 0,
+      "median_final_capital": 99995.0,
+      "min_final_capital": 16930.0,
+      "max_final_capital": 186630.0
+    },
+    {
+      "variant": "original",
+      "original_zero": true,
+      "accounts": 17,
+      "profitable_accounts": 0,
+      "bankrupt_accounts": 17,
+      "median_final_capital": 0.0,
+      "min_final_capital": 0.0,
+      "max_final_capital": 0.0
+    }
+  ],
+  "source_sha256": {
+    "final_review\\inverse_protocol.md": "5c7baf86ecdbf71950b9d30ff0322bb8511cf96579c3d5053ac6166d9a78e5d4",
+    "final_review\\design_notes.json": "c8991328c3046df15d6c0af40dd7cb064539c192bb405d5cf2ec83de87cc64e6",
+    "final_review\\epl_inverse.py": "cadeaa329cb6bb1dd3e0e18f24218dfec8b59642637dc85177c28656877dd735",
+    "epl_player_models\\results\\20261020_player_models_review\\all_strategy_catalog.json": "b0c53431eb4d5cb1b873d4eb9e8044a73604772512c10e763ea83781b5a3b931",
+    "epl_player_models\\results\\20261020_player_models_review\\predictions.parquet": "44e06a754fa5f28658290323e45dac4658ecfcf59728065d1d546ce5800437e8",
+    "epl_strategy_validation\\results\\20261015_temporal_selection\\metrics_continuous.parquet": "50e2e22db3f67727f8f08b8e0f4ac81bbe3ba035fa482d150773738fcaca0017",
+    "epl_player_models\\results\\20261020_player_models_review\\metrics_continuous.parquet": "348ff76019ad58a501a9216fa5e7fd49040d4dcc4813429498661e5a86d6343d",
+    "epl_execution\\results\\20261015_quote_sensitivity\\metrics_continuous.parquet": "1e542fd27ff53583588b22616cbae77ce5fb7b50d906fe76c191b34bf268a227",
+    "epl_strategy_validation\\results\\20261015_temporal_selection\\bets_continuous.parquet": "be7a274d6a22cf1f38824ccffa5de6b4d7306b0bd35688c64711fb5a589f6402",
+    "epl_player_models\\results\\20261020_player_models_review\\bets_continuous.parquet": "b4697a5c1d789ebc9c4738005b27a41748a18591e26de9f1100e5998b12b8990",
+    "epl_execution\\results\\20261015_quote_sensitivity\\bets_reference_continuous.parquet": "18c30007efc44a52498459f7789ecb7c9f4da000de1cc4d2ce1874fb359eb64d",
+    "epl_strategy_validation\\results\\20261015_temporal_selection\\equity_continuous.parquet": "a16cb1c81c343053d0583ef7c1473e23dee27c88c0c968fa3e130f1aee1ff18a",
+    "epl_player_models\\results\\20261020_player_models_review\\equity_continuous.parquet": "78a29b6e62627b59f9cd9a69b6e7d8b0ac99d3090cdefe3fa2dd381f1b97cf0e",
+    "epl_execution\\results\\20261015_quote_sensitivity\\equity_reference_continuous.parquet": "a5fa710902b4036c3db4ca2d9819df7a423aad8341a5cdf96a5ed5af983f1b7d",
+    "epl_strategy_lab\\engine.py": "1fbb26da595141ac558ac4b367b8abef387d70e78bc8f7f3293dd4b6fc738b35",
+    "epl_strategy_validation\\replay.py": "9d203a7d25afbf47fb10d86f55c34b8b8063440909e06755480e47851a1b313e",
+    "epl_strategy_validation\\inputs.py": "be77f1cb05ef33f2b334c5e7e4c7aeec7134deaf27df439776494cccd76cb94d",
+    "epl_modeling\\ablation_results\\predictions.parquet": "e0b79612631080191e94b5e59d5a2f40926086eba4a16e788139a48eeef71762",
+    "epl_modeling\\results\\bookmaker_odds_panel.parquet": "0ac0ffc3a8e27d8ea72dcede4909b16014b3daa6dea602363aa24b2dd76635ec"
+  },
+  "outputs_sha256": {
+    "bets.parquet": "cbefb958256f71a44dcb47d20d0d771109664b28f2b2050f37ff3c514fab5e67",
+    "cohort_summary.json": "1b2202273127ced7ebee761ec383373798ccbef5002b2ced4e332c26f6332c14",
+    "equity.parquet": "e3be4d68d3176a96e36cab21b765ad1ba54796498be752a5448ddb21e490f165",
+    "identity_diagnostics.csv": "76a7135dfe973cb99c6eaa6aef7c34fc629bf8c9ac605ffbc0b892712da8cb15",
+    "inventory.csv": "37b8ade9aeef8c437547fa0dd2b68d6e4c5b63184a336e78e6e32d04ef6e5c2a",
+    "legs.parquet": "d8f751ec41e5e187391aa5478d2e730df190fa854685d0112f939bf29afd32aa",
+    "metrics.csv": "317a8d930a77d1832715531fae78be6e24417c5db572543f4f7ea6530e48607f",
+    "opportunities.parquet": "ebc09adcaba878061ec17d1df1436e8205b0cb4b3c61bbfe2a1642f5fec8c800",
+    "original_reconciliation.csv": "29cb9b72be7e80d8032529ab1e305e3c8a1bde0aa663367414b7feb8f0069f78",
+    "signals.parquet": "6d237fbe53ace9d71ca1fdfb29107923776d75ecf2bc16b828f1ce260cccfd0a"
+  },
+  "status": "exploratory_not_independent_holdout",
+  "protocol_commit": "23d83be"
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "variant": "dutch_cost_0",
+    "original_zero": false,
+    "accounts": 34,
+    "profitable_accounts": 2,
+    "bankrupt_accounts": 0,
+    "median_final_capital": 45269.17355862528,
+    "min_final_capital": 14325.700727063824,
+    "max_final_capital": 107369.71604060837
+  },
+  {
+    "variant": "dutch_cost_0",
+    "original_zero": true,
+    "accounts": 17,
+    "profitable_accounts": 2,
+    "bankrupt_accounts": 1,
+    "median_final_capital": 62009.53633087672,
+    "min_final_capital": 0.0,
+    "max_final_capital": 116968.37494643942
+  },
+  {
+    "variant": "dutch_cost_2",
+    "original_zero": false,
+    "accounts": 34,
+    "profitable_accounts": 2,
+    "bankrupt_accounts": 0,
+    "median_final_capital": 39888.109959563284,
+    "min_final_capital": 8919.186712522573,
+    "max_final_capital": 106122.3217197962
+  },
+  {
+    "variant": "dutch_cost_2",
+    "original_zero": true,
+    "accounts": 17,
+    "profitable_accounts": 2,
+    "bankrupt_accounts": 1,
+    "median_final_capital": 56767.00765228198,
+    "min_final_capital": 0.0,
+    "max_final_capital": 110248.99972869581
+  },
+  {
+    "variant": "dutch_cost_5",
+    "original_zero": false,
+    "accounts": 34,
+    "profitable_accounts": 2,
+    "bankrupt_accounts": 2,
+    "median_final_capital": 28548.846506433154,
+    "min_final_capital": 0.0,
+    "max_final_capital": 104251.23023857795
+  },
+  {
+    "variant": "dutch_cost_5",
+    "original_zero": true,
+    "accounts": 17,
+    "profitable_accounts": 1,
+    "bankrupt_accounts": 2,
+    "median_final_capital": 48903.21463439004,
+    "min_final_capital": 0.0,
+    "max_final_capital": 100169.93690208094
+  },
+  {
+    "variant": "lay_hypothetical",
+    "original_zero": false,
+    "accounts": 34,
+    "profitable_accounts": 10,
+    "bankrupt_accounts": 0,
+    "median_final_capital": 85532.36036530914,
+    "min_final_capital": 49081.54521224548,
+    "max_final_capital": 148875.6339505154
+  },
+  {
+    "variant": "lay_hypothetical",
+    "original_zero": true,
+    "accounts": 17,
+    "profitable_accounts": 16,
+    "bankrupt_accounts": 0,
+    "median_final_capital": 140579.9459567052,
+    "min_final_capital": 93064.63866926143,
+    "max_final_capital": 176439.95248527723
+  },
+  {
+    "variant": "original",
+    "original_zero": false,
+    "accounts": 34,
+    "profitable_accounts": 17,
+    "bankrupt_accounts": 0,
+    "median_final_capital": 99995.0,
+    "min_final_capital": 16930.0,
+    "max_final_capital": 186630.0
+  },
+  {
+    "variant": "original",
+    "original_zero": true,
+    "accounts": 17,
+    "profitable_accounts": 0,
+    "bankrupt_accounts": 17,
+    "median_final_capital": 0.0,
+    "min_final_capital": 0.0,
+    "max_final_capital": 0.0
+  }
+]

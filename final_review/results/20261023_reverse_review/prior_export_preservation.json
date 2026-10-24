@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "protected_hash_checks": 1463,
+  "old_player_export_files": 163,
+  "earlier_studies_unchanged": true,
+  "original_forecast_and_outcome_ledgers_unchanged": true,
+  "user_workbook_sha256": "07f097a7db9e08f23a8029971a77dffb3981972d74bcde6eb1d638f4e6e14c7b",
+  "baseline_workbook_sha256": "07f097a7db9e08f23a8029971a77dffb3981972d74bcde6eb1d638f4e6e14c7b",
+  "verification_script": "workspace .cache/verify_player_models_export.py (read-only)",
+  "scope": "Historical EPL models, temporal validation, execution sensitivity, prospective study and player exports; earlier EPL reports unchanged."
+}

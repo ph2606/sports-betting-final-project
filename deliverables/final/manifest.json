@@ -1,125 +1,153 @@
 {
-  "canonical_run": "final_deliverables/results/20261023_joint_final",
+  "canonical_run": "final_review/results/20261023_reverse_review",
   "copies": {
     "Final_Report.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/Final_Report.tex",
-      "sha256": "dfad319825d9f63374d8395f92c2f545cb24e0937edb265366aca75fc4b7f7e4"
+      "source": "final_review/results/20261023_reverse_review/report/Final_Report.tex",
+      "sha256": "5a6e462749af9f4881cecdc9c53ece513b56b49af7c260a0b6ad76ba2e744508"
     },
     "methodology.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/methodology.tex",
+      "source": "final_review/results/20261023_reverse_review/report/methodology.tex",
       "sha256": "5a9f0b2f2cf70da586e9e48e90320c140551d55dc67789a63ee2eddffd296d17"
     },
     "numbers.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/numbers.tex",
+      "source": "final_review/results/20261023_reverse_review/report/numbers.tex",
       "sha256": "a45ca69f4bc6ef1f8518bc16ac94fcbdfee855db1920d5fa46a84bbd76bad2ed"
     },
     "Final_Report.pdf": {
-      "source": "final_deliverables/results/20261023_joint_final/report/Final_Report.pdf",
-      "sha256": "932ca3df4f5ab7a4a04ec1f9251deab0d6b14c643e747acd4f27ed609be9271c"
-    },
-    "tables/epl_all_metrics.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/epl_all_metrics.tex",
-      "sha256": "fa069366268687bf4f979374f03075ea978e1278a19013df26484be01b9f0b7e"
-    },
-    "tables/epl_all_rules.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/epl_all_rules.tex",
-      "sha256": "87854107fa5e2a857bffff2c26354e6a9fa4a10ed4842827f85202133db27bab"
-    },
-    "tables/epl_primary_scores.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/epl_primary_scores.tex",
-      "sha256": "77fd562e4e3d291bd4b47a99b904959d454b720b14aaa4781e1581346890dc3d"
-    },
-    "tables/epl_representative.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/epl_representative.tex",
-      "sha256": "7b4b26525a0efdb9891e3dd23f4d9e33a784dc211d34da71c096a1c06d57fe88"
-    },
-    "tables/epl_rolling.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/epl_rolling.tex",
-      "sha256": "ae145a7661ee055de00280550845a8f7b655149179ecd02486be493294394e9c"
-    },
-    "tables/epl_secondary.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/epl_secondary.tex",
-      "sha256": "541441a6d3902717dfea95ad0d0531192ae85c800e5b3e2db0eb48353a250d84"
-    },
-    "tables/nba_annual.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/nba_annual.tex",
-      "sha256": "4f9b649ab7173ee92f65eb9ee192c0c3585586bf04d6ab608d041f430d3a9a8b"
-    },
-    "tables/nba_capital.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/nba_capital.tex",
-      "sha256": "f7673b024049ed130c00b80d192d13eed7b3d57f200916260695b0e367fc9906"
-    },
-    "tables/nba_selection.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/nba_selection.tex",
-      "sha256": "1bf7068588e074a093ba03e20a1a0709909be89d7302175058ed120f1c261391"
-    },
-    "tables/nba_splits.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/nba_splits.tex",
-      "sha256": "a9db2c65bb0485bb565b657994a464f5baceeeb2491b3c9f70fad3ecd80613e3"
-    },
-    "tables/nba_verified_scores.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/nba_verified_scores.tex",
-      "sha256": "461fd24591be8e606a8a3c2fe1087c4327970cebaaf7acb73e804b31fae1100d"
-    },
-    "tables/nba_verified_trades.tex": {
-      "source": "final_deliverables/results/20261023_joint_final/report/tables/nba_verified_trades.tex",
-      "sha256": "69c3f337d928e7113615ec8c304c0155ef6d86088b27ba8873578c6cb63d1e2e"
+      "source": "final_review/results/20261023_reverse_review/report/Final_Report.pdf",
+      "sha256": "50860bb6463b48a89c2420d4dd61ee7f23509d63b9dec7af909d7bd9e4dcb21a"
     },
     "figures/epl_all_116.pdf": {
-      "source": "final_deliverables/results/20261023_joint_final/report/figures/epl_all_116.pdf",
+      "source": "final_review/results/20261023_reverse_review/report/figures/epl_all_116.pdf",
       "sha256": "808cd0bd8d9d9b1886cc20ed737feed6f9b2d39356af5d10c4ba820671389df8"
     },
     "figures/epl_all_116.png": {
-      "source": "final_deliverables/results/20261023_joint_final/report/figures/epl_all_116.png",
+      "source": "final_review/results/20261023_reverse_review/report/figures/epl_all_116.png",
       "sha256": "ba50b48d5e0d1480e826cb8a0e15f855790cf21d50804f2649ddf4d6265df471"
     },
     "figures/epl_all_116.svg": {
-      "source": "final_deliverables/results/20261023_joint_final/report/figures/epl_all_116.svg",
+      "source": "final_review/results/20261023_reverse_review/report/figures/epl_all_116.svg",
       "sha256": "7cd2d7fbee3cb739a7371e79d0dab1b648156225fa3344c6f10f9ee2ca8b2c6d"
     },
     "figures/epl_all_88.pdf": {
-      "source": "final_deliverables/results/20261023_joint_final/report/figures/epl_all_88.pdf",
+      "source": "final_review/results/20261023_reverse_review/report/figures/epl_all_88.pdf",
       "sha256": "7ac51ee8f371d58110c6591d82736fae20f89018db1292e34dd64acb9e745f4f"
     },
     "figures/epl_all_88.png": {
-      "source": "final_deliverables/results/20261023_joint_final/report/figures/epl_all_88.png",
+      "source": "final_review/results/20261023_reverse_review/report/figures/epl_all_88.png",
       "sha256": "f409298320d09af2c0d07e1cad21086e0f351d2c9e845bd16e68a19cb24e4df0"
     },
     "figures/epl_all_88.svg": {
-      "source": "final_deliverables/results/20261023_joint_final/report/figures/epl_all_88.svg",
+      "source": "final_review/results/20261023_reverse_review/report/figures/epl_all_88.svg",
       "sha256": "c007274aa84662acddeac795748c6aa348983360e617c14e26dd1c6063cb87d6"
     },
+    "figures/epl_inverse_capital.pdf": {
+      "source": "final_review/results/20261023_reverse_review/report/figures/epl_inverse_capital.pdf",
+      "sha256": "a71111d2b5435bf88ec62470dede830ebe1508daaa56089d3c4b34d927ed5142"
+    },
+    "figures/epl_inverse_capital.png": {
+      "source": "final_review/results/20261023_reverse_review/report/figures/epl_inverse_capital.png",
+      "sha256": "0ba089d069c74a108b0dba1d5a30591efa93b2c7f13fb1433ed942f476646820"
+    },
+    "figures/epl_inverse_capital.svg": {
+      "source": "final_review/results/20261023_reverse_review/report/figures/epl_inverse_capital.svg",
+      "sha256": "326a9952b60f7b34a58fe2c86340c758adb4e072b44b307e705ce9926ed6063d"
+    },
     "figures/nba_annual_returns.pdf": {
-      "source": "final_deliverables/results/20261023_joint_final/report/figures/nba_annual_returns.pdf",
+      "source": "final_review/results/20261023_reverse_review/report/figures/nba_annual_returns.pdf",
       "sha256": "3caea1c666d51f3ca13a61573ff767d6bea529dce9d2bd01e3ae2333e2b6f556"
     },
     "figures/nba_annual_returns.png": {
-      "source": "final_deliverables/results/20261023_joint_final/report/figures/nba_annual_returns.png",
+      "source": "final_review/results/20261023_reverse_review/report/figures/nba_annual_returns.png",
       "sha256": "e451ec6250a08884d63d3c1454ce2c1ae6f106e66b4531dac18d9cfa862739d0"
     },
     "figures/nba_core_capital.pdf": {
-      "source": "final_deliverables/results/20261023_joint_final/report/figures/nba_core_capital.pdf",
+      "source": "final_review/results/20261023_reverse_review/report/figures/nba_core_capital.pdf",
       "sha256": "9f35de3c30fe6ae66738f6d5fad5a2ffa50afce13a7ce01b5a3406b7e5672d8c"
     },
     "figures/nba_core_capital.png": {
-      "source": "final_deliverables/results/20261023_joint_final/report/figures/nba_core_capital.png",
+      "source": "final_review/results/20261023_reverse_review/report/figures/nba_core_capital.png",
       "sha256": "b13ce242b009b8e4cf1ba65dbe4a2bb2f9b7fe319a1973cb639b3141453f885d"
     },
+    "tables/epl_all_metrics.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/epl_all_metrics.tex",
+      "sha256": "fa069366268687bf4f979374f03075ea978e1278a19013df26484be01b9f0b7e"
+    },
+    "tables/epl_all_rules.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/epl_all_rules.tex",
+      "sha256": "87854107fa5e2a857bffff2c26354e6a9fa4a10ed4842827f85202133db27bab"
+    },
+    "tables/epl_inverse_controls.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/epl_inverse_controls.tex",
+      "sha256": "bd5a2d51dbe71c8fdee4d6f5f0bc95dc219848d84477164ce18fe04de01ec60c"
+    },
+    "tables/epl_inverse_details.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/epl_inverse_details.tex",
+      "sha256": "0506d3f0df972b543a0be5eab2ed7a8552448223f75822fb921bb2b54e46c944"
+    },
+    "tables/epl_primary_scores.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/epl_primary_scores.tex",
+      "sha256": "77fd562e4e3d291bd4b47a99b904959d454b720b14aaa4781e1581346890dc3d"
+    },
+    "tables/epl_representative.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/epl_representative.tex",
+      "sha256": "7b4b26525a0efdb9891e3dd23f4d9e33a784dc211d34da71c096a1c06d57fe88"
+    },
+    "tables/epl_rolling.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/epl_rolling.tex",
+      "sha256": "ae145a7661ee055de00280550845a8f7b655149179ecd02486be493294394e9c"
+    },
+    "tables/epl_secondary.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/epl_secondary.tex",
+      "sha256": "541441a6d3902717dfea95ad0d0531192ae85c800e5b3e2db0eb48353a250d84"
+    },
+    "tables/epl_zero_contexts.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/epl_zero_contexts.tex",
+      "sha256": "b561d72eac35b088f75c9a097d322457148387b8ef9d857be1e8c2f2bf870d5f"
+    },
+    "tables/nba_annual.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/nba_annual.tex",
+      "sha256": "4f9b649ab7173ee92f65eb9ee192c0c3585586bf04d6ab608d041f430d3a9a8b"
+    },
+    "tables/nba_capital.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/nba_capital.tex",
+      "sha256": "f7673b024049ed130c00b80d192d13eed7b3d57f200916260695b0e367fc9906"
+    },
+    "tables/nba_inverse_main.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/nba_inverse_main.tex",
+      "sha256": "df2c4dcaf3edf36830c08ffc2ef5c4dae0a3632cf8f21ed68a66926353238d6a"
+    },
+    "tables/nba_selection.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/nba_selection.tex",
+      "sha256": "1bf7068588e074a093ba03e20a1a0709909be89d7302175058ed120f1c261391"
+    },
+    "tables/nba_splits.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/nba_splits.tex",
+      "sha256": "a9db2c65bb0485bb565b657994a464f5baceeeb2491b3c9f70fad3ecd80613e3"
+    },
+    "tables/nba_verified_scores.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/nba_verified_scores.tex",
+      "sha256": "461fd24591be8e606a8a3c2fe1087c4327970cebaaf7acb73e804b31fae1100d"
+    },
+    "tables/nba_verified_trades.tex": {
+      "source": "final_review/results/20261023_reverse_review/report/tables/nba_verified_trades.tex",
+      "sha256": "69c3f337d928e7113615ec8c304c0155ef6d86088b27ba8873578c6cb63d1e2e"
+    },
     "Final_Project_Presentation.pptx": {
-      "source": "final_deliverables/results/20261023_joint_final/presentation/Final_Project_Presentation.pptx",
-      "sha256": "3e9255819cb2dcd08b6bb34a8d9b2f6fa56377509b98f55d98daf0fe31b8b151"
+      "source": "final_review/results/20261023_reverse_review/presentation/Final_Project_Presentation.pptx",
+      "sha256": "1a9e56d5ca62b415c5810c10920a4d350088fc354664f79758164689a013bdac"
     },
     "Final_Project_Presentation.pdf": {
-      "source": "final_deliverables/results/20261023_joint_final/presentation/Final_Project_Presentation.pdf",
-      "sha256": "eda0f42bf6c7547db7fd7665bd5c5f1afc0f851c974c58d5d4ca9045e8417021"
+      "source": "final_review/results/20261023_reverse_review/presentation/Final_Project_Presentation.pdf",
+      "sha256": "61004b0159cbf3fe4a9391f54b30da1cb4eb75f143a959a5407d960000e0d686"
     },
     "Final_Presentation_Notes.md": {
-      "source": "final_deliverables/results/20261023_joint_final/presentation/Final_Presentation_Notes.md",
-      "sha256": "d42f707cb388a36f67434ce2190cf57b24cf74ffd178f737fe45e65b296cbb59"
+      "source": "final_review/results/20261023_reverse_review/presentation/Final_Presentation_Notes.md",
+      "sha256": "e1aa49ff3af5f8da3d2c460b23fd61f2abd696520e65d24d65b4753c13c5b64d"
     },
     "Final_Report_LaTeX.zip": {
-      "source": "final_deliverables/results/20261023_joint_final/Final_Report_LaTeX.zip",
-      "sha256": "9022a98fe125275d67f7a6854b2998f427464255d6888a7fbe3bede1fd3f7cd8"
+      "source": "final_review/results/20261023_reverse_review/Final_Report_LaTeX.zip",
+      "sha256": "825760006dcb26f482fdb4e5f986602e8d63b0557cafaad499b6edee89f64689"
     }
   },
   "author_names": [

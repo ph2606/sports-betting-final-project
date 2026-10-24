@@ -1,0 +1,52 @@
+{
+  "completed_at_utc": "2026-10-24T02:09:10.880161+00:00",
+  "scope": "All nine source rolling NBA seasons, both LR feature-selection branches, fixed and eighth-Kelly stakes",
+  "algorithm": {
+    "original_cell21_sha256": "eb97b4bb69a2ccd200b2392f3f08e717820fa701d3c124112a69a94616226cee",
+    "audit_augmented_cell21_sha256": "44355929391d2b37866c1101d2fa3b225cdc07b46c48e73eb404332c8130378f",
+    "algorithm_changes": "None; added probability, feature-name and native-identity return values only"
+  },
+  "all_fixed_branches_match_source_printed_precision": true,
+  "original_annual_accounts_audited": 36,
+  "exact_zero_accounts": 2,
+  "rounded_zero_accounts": 2,
+  "inverse_metric_rows": 6,
+  "source_sha256": {
+    "ML Sports/Data.ipynb": "8441fe8364b4750a7a08e8de7001028433028a35ab2f66ebc9d2b104412e18ce",
+    "ML Sports/OddsData.sqlite": "4a803d41cd4597c1d898c0b131a58763dee8b64140be8f40c29b73c852e162d9",
+    "ML Sports/regular_season_totals_2010_2024.csv": "b63367be8c58155f978c841bb966f5b19e334cec833a37ddae2915a29cd352d9",
+    "final_deliverables/nba_evidence.json": "22b9377db78c6bdb12c7592a81d585fb87f543b333b27ca26c1aeb9796f86b89"
+  },
+  "definition": "Back the opposite team at its recorded opposing moneyline, retaining the original qualifying signal. Not a negative copy of original PnL.",
+  "modes": {
+    "opposite_recorded_prefix": "Only original positive-stake bets; request their recorded stakes at opposite odds, subject to opposite account cash.",
+    "opposite_full_horizon": "Continue the frozen original signal through the whole season, including fixtures after original bankruptcy; request fixed 100 and clamp to own available cash."
+  },
+  "expectations": "Inverse p is one minus original selected p. The original model generally does not endorse taking this contrarian position.",
+  "limits": [
+    "Post-hoc selection of bankrupt histories; no new independent holdout or selected live policy.",
+    "Single-source archived odds and sequential source funding, not verified executable fills or observed game-time settlement.",
+    "Kelly is bounded away from an all-in request and may become economically tiny without literally reaching zero.",
+    "No unreconciled SVM prediction is used; these are the source rolling logistic-only extensions."
+  ],
+  "output_sha256": {
+    "2017-18_acc_fixed_all_signals.csv": "56accce42951d0fb1fc5818f121ebfcf70ee64dea5960bdd95ef82f693631f4c",
+    "2017-18_acc_fixed_opposite_full_horizon_bets.csv": "d8babb38995e51df6a7705fa40309881e3657555ef8eace7a42ecb424e6e1ce8",
+    "2017-18_acc_fixed_opposite_full_horizon_equity.csv": "12c2578d0d113869bad594892d41086cd468d8295d1bc6c16c7dfb14cba991b0",
+    "2017-18_acc_fixed_opposite_recorded_prefix_bets.csv": "edf3eefb6e86ecfd708e51790490e5e1718e8b62ce744cbb133f617db78e2340",
+    "2017-18_acc_fixed_opposite_recorded_prefix_equity.csv": "81a7062ce5e0c159162c948e0695640bbef8b70953bc936ee4028bc8abf36df1",
+    "2017-18_acc_fixed_original_bets.csv": "2aae6c68b5979c8089b1546a000aa91be2023712bf895e373c356fc651026f98",
+    "2017-18_acc_fixed_original_equity.csv": "697f5b47f2c300fb2f866c3c6a0876df4c739017fafb5972fda172f65a35e466",
+    "2017-18_cal_fixed_all_signals.csv": "239919bbfda5554f28fb1e16a66e8ce16c29ba4e422116dbd67883228c661b16",
+    "2017-18_cal_fixed_opposite_full_horizon_bets.csv": "3a47aa8cd234e256a18be5eae9bd88c4ade26e520407d7064d01cf47254b4f4d",
+    "2017-18_cal_fixed_opposite_full_horizon_equity.csv": "47fb19a55e63c2451fd9c48e151e6f09c92db6bf4c494b40a9a9ef8df23d00d3",
+    "2017-18_cal_fixed_opposite_recorded_prefix_bets.csv": "25c7165fe711ca0b57e2a96c6c273c3603fac14742748d4c7dcef84be0ec4666",
+    "2017-18_cal_fixed_opposite_recorded_prefix_equity.csv": "3ac1db6f91afe85e3eed1f923216d28da1255dda58d80b689a2cc38ca521ad2f",
+    "2017-18_cal_fixed_original_bets.csv": "eaff3e1f6bd44df2514560f53b1c258bc2088fb3f4b6320ea042e8b71c8e0b1f",
+    "2017-18_cal_fixed_original_equity.csv": "503ed515dc60f9ef22a4b0be0237aa41e8ce288f8da4ef1f76854708167cd1c6",
+    "all_rolling_account_inventory.csv": "a9041091ff033ef78d301ad7521a797672a9912b524970ba97e2dfd5d8cc4036",
+    "all_rolling_predictions.csv": "e7369bdc8b2247079078e4b9c2f5c7e8fc1ca95542e21e4b8f12eab0af9fd98a",
+    "all_source_reconciliations.csv": "0a5d06edf687cbb132c42af594e95b329a83cacc2c3cd40068ad8a9cf984de16",
+    "inverse_metrics.csv": "276338a10eaff3ac2ae3198a1f879a1b9fe19d9a6ad7b252319686d28544d0a8"
+  }
+}

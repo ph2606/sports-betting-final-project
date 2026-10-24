@@ -10,6 +10,12 @@ supervisor: **Daniel Totouom-Tangho**. The order is common methodology,
 NBA results, then Premier League results. See [LATEST_REPORT.md](LATEST_REPORT.md)
 and [LATEST_PRESENTATION.md](LATEST_PRESENTATION.md) for the current submission.
 
+The reviewed submission adds funded opposite-policy tests for all 19 original
+zero-ending NBA/EPL account contexts, cost sensitivities, full inverse metrics
+and a final cross-league assessment. It contains 15 main slides plus 13 appendix
+slides. See [the final review guide](final_review/README.md) and
+[metrics workbook](final_review/results/20261023_reverse_review/data/Review_Metrics.xlsx).
+
 The sections below preserve the earlier EPL-only development history.
 
 **Earlier EPL-only short presentation:** [Editable PowerPoint](epl_presentation/results/20261021_short/EPL_Project_Presentation.pptx)

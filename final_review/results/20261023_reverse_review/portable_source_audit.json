@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "self_contained_zip": true,
+  "compile_engine": "XeLaTeX",
+  "passes": 3,
+  "pages": 28,
+  "all_page_text_matches": true,
+  "zip_sha256": "825760006dcb26f482fdb4e5f986602e8d63b0557cafaad499b6edee89f64689"
+}

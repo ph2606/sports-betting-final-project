@@ -1,0 +1,525 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex.fmt)
+entering extended mode
+(Final_Report.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xet
+ex.def)))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex
+.sty (C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))
+) (C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty))
+ (C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty)
+ (C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def)
+)) (C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+) (C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro
+.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+)))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty))
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty)
+
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty))) (numbers.tex) (Final_Report.aux)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmr.fd)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+(Final_Report.out) (Final_Report.out)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
+(C:\Users\melin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
+[1] (methodology.tex [1] [2]) [3] (tables/nba_splits.tex)
+(tables/nba_selection.tex)
+Underfull \hbox (badness 3815) in paragraph at lines 111--115
+[]\TU/Cambria(0)/m/n/10.95 Calibration selection chooses logistic regression; a
+ccuracy selection chooses the SVM. The calibra-
+[4] (tables/nba_capital.tex) (tables/nba_verified_scores.tex) [5]
+(tables/nba_verified_trades.tex) (tables/nba_annual.tex) [6]
+(tables/nba_inverse_main.tex) [7] [8]
+Underfull \hbox (badness 1406) in paragraph at lines 246--255
+[]\TU/Cambria(0)/m/n/10.95 Football-Data supplies results, team performance and
+ individual-book odds; Understat supplies team
+(tables/epl_primary_scores.tex) (tables/epl_secondary.tex) [9]
+(tables/epl_rolling.tex) [10] (tables/epl_representative.tex) [11]
+(tables/epl_inverse_controls.tex) [12] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 457--461
+[]\TU/Cambria(0)/m/n/10.95 C. Walsh and A. Joshi (2024). Machine learning for s
+ports betting: should model selec-
+
+Underfull \hbox (badness 4940) in paragraph at lines 457--461
+\TU/Cambria(0)/m/n/10.95 tion be based on accuracy or calibration? \TU/Cambria(
+0)/m/it/10.95 Machine Learning with Applications\TU/Cambria(0)/m/n/10.95 , 16, 
+100539.
+[15] (tables/epl_all_rules.tex
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[]|\TU/Cambria(0)/m/n/9 Past home/draw/away fre-
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\TU/Cambria(0)/m/n/9 Past home/draw/away fre-
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 1442) in paragraph at lines 57--57
+[]|\TU/Cambria(0)/m/n/9 Average of four team/player
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 1442) in paragraph at lines 58--58
+[]|\TU/Cambria(0)/m/n/9 Average of four team/player
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 1803) in paragraph at lines 61--61
+[]|\TU/Cambria(0)/m/n/9 Half combined forecast, half
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 1803) in paragraph at lines 62--62
+[]|\TU/Cambria(0)/m/n/9 Half combined forecast, half
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+\TU/Cambria(0)/m/n/9 Date cap
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+\TU/Cambria(0)/m/n/9 Date cap
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+\TU/Cambria(0)/m/n/9 Date cap
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--79
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
+[]|\TU/Cambria(0)/m/n/9 Bookmaker odds +
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--112
+[]|\TU/Cambria(0)/m/n/9 Player form + estimated
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--113
+[]|\TU/Cambria(0)/m/n/9 Player form + estimated
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
+[]|\TU/Cambria(0)/m/n/9 Player form + estimated
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
+[]|\TU/Cambria(0)/m/n/9 Player form + estimated
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
+[]|\TU/Cambria(0)/m/n/9 Player form + estimated
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--117
+[]|\TU/Cambria(0)/m/n/9 Player form + estimated
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+[]|\TU/Cambria(0)/m/n/9 Player form + estimated
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--119
+[]|\TU/Cambria(0)/m/n/9 Player form + estimated
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+\TU/Cambria(0)/m/n/9 Cash avail-
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+\TU/Cambria(0)/m/n/9 Cash avail-
+[16] [17] [18] [19] [20] [21]) (tables/epl_all_metrics.tex [22] [23]) [24]
+(tables/epl_zero_contexts.tex) [25] (tables/epl_inverse_details.tex [26])
+[27] (Final_Report.aux) )
+(see the transcript file for additional information)
+Output written on Final_Report.pdf (28 pages).
+Transcript written on Final_Report.log.
+

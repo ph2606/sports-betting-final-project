@@ -1,0 +1,7 @@
+season,branch,mode,metric,value,ci_lower,ci_upper,n_bootstrap,method
+2017-18,cal,opposite_full_horizon,roi_on_stakes,0.0125472667992484,-0.04817617572840203,0.07327011827305764,9999,"Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+2017-18,cal,opposite_full_horizon,hit_ratio,0.6568306010928961,0.6247284879872843,0.6876380931120867,9999,"Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+2017-18,cal,opposite_full_horizon,trading_frequency,0.8511627906976744,0.8289087989924954,0.8731060606060606,9999,"Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+2017-18,acc,opposite_full_horizon,roi_on_stakes,-0.013740901327414,-0.07360980550075934,0.04532811700811176,9999,"Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+2017-18,acc,opposite_full_horizon,hit_ratio,0.6334841628959276,0.59977943171734,0.6670204341426847,9999,"Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
+2017-18,acc,opposite_full_horizon,trading_frequency,0.8223255813953488,0.7988713740977802,0.8460746764533918,9999,"Whole-match-date percentile bootstrap, selected models/signals/stakes fixed; no selection or fitting adjustment"
