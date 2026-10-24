@@ -1,0 +1,100 @@
+{
+  "design_status": "EPL_design_fixed_before_new_EPL_inverse_returns_inspected;NBA_reconstruction_already_computed_separately",
+  "main_EPL_zero_accounts": [
+    "S041",
+    "S043",
+    "P009",
+    "P011",
+    "P013",
+    "P015",
+    "P019",
+    "P021",
+    "P023",
+    "P025",
+    "P027",
+    "P029",
+    "P031"
+  ],
+  "additional_reference_replay_zero_contexts": [
+    "S033",
+    "S039",
+    "S041",
+    "S043"
+  ],
+  "EPL_unique_strategy_odds_contexts": 17,
+  "EPL_distinct_strategy_IDs": 15,
+  "EPL_main_2025_zero_accounts": 0,
+  "EPL_old_annual_zero_accounts": 0,
+  "EPL_new_annual_zero_accounts": 0,
+  "EPL_population": {
+    "fixtures": 1470,
+    "dates": 453,
+    "initial_capital": 100000,
+    "original_fixed_request": 1000
+  },
+  "NBA_zero_contexts": [
+    "2017-18_calibration_feature_LR_fixed",
+    "2017-18_accuracy_feature_LR_fixed"
+  ],
+  "NBA_population": {
+    "fixtures": 1075,
+    "initial_capital": 10000,
+    "fixed_request": 100,
+    "initial_training": [
+      "2013-14",
+      "2014-15"
+    ],
+    "validation": "2015-16",
+    "selection_included_before_final_fit": "2016-17",
+    "betting": "2017-18"
+  },
+  "definitions": {
+    "recorded_sign_reverse": "profit_opposite=-recorded_original_profit; same original bankruptcy-truncated trades/stakes; mathematical diagnostic only",
+    "synthetic_lay": "Risk-matched liabilityR=1000 at original back quote; counterstakeR/(O-1),profit-RiforiginalwinsandR/(O-1)otherwise;hypotheticalmissinglayquotes",
+    "priced_complement_primary": "back other two H/D/A outcomes with equal gross payout; total risk1000 per fixture; observed selected quote triplet"
+  },
+  "complement_formula": {
+    "S": "sum(1/O_j, j!=original_pick)",
+    "leg_stake": "R*(1/O_j)/S",
+    "effective_odds": "1/S",
+    "payoff_original_wins": "-R",
+    "payoff_complement_occurs": "R*(1/S-1)"
+  },
+  "nonpositive_complement_edge_cases": {
+    "all_possible_combinations": 4410,
+    "best_triplet_S_ge_1": 1,
+    "reference_triplet_S_ge_1": 24,
+    "warning": "These counts cover all possible original picks, not necessarily qualified strategy trades. Handle effective_odds<=1 without deleting fixtures or mislabeling expected losses as gains."
+  },
+  "expected_components": {
+    "gain": "sum(p_k*max(payoff_k,0))",
+    "loss": "sum(p_k*max(-payoff_k,0))"
+  },
+  "hit_definitions": [
+    "selected complement event occurred",
+    "bundle net profit>0"
+  ],
+  "funding": "EPL uniformly scale all same-date total risks/liabilities to available opening cash and any original date cap; no borrowing, no same-date winnings reuse; absorbing zero capital",
+  "scope_rule": "Reconstruct original pre-result qualification on all opportunities, including after original ruin; do not stop the opposite policy at original bankruptcy",
+  "inverse_edge_rule": "Do not reapply a positive-value test to the opposite position under the original model",
+  "post_selection_warning": "Group selected by observed bankruptcy; descriptive retrospective sensitivity, no new untouched holdout, no inherited search-adjusted significance",
+  "NBA_provenance_warning": "Annual event-level probabilities not saved; source-method reconstruction and zero endpoint/feature-count match are weaker than saved-weight or byte-identical prediction verification",
+  "EPL_main_fixed_cohort_accounts": 47,
+  "EPL_main_fixed_cohort_bankrupt": 13,
+  "EPL_main_fixed_cohort_nonbankrupt_controls": 34,
+  "EPL_total_contexts": 51,
+  "EPL_total_bankrupt_contexts": 17,
+  "EPL_total_nonbankrupt_controls": 34,
+  "cost_grid": [
+    0.0,
+    0.02,
+    0.05
+  ],
+  "cost_basis": "Haircut positive NET profit of each fixture complementary two-leg portfolio; no rebate for negative profit; not gross payout or per-winning-leg profit; hypothetical not venue rates",
+  "declared_outputs": {
+    "priced_complement_funded_accounts": 153,
+    "synthetic_riskmatched_lay_funded_accounts": 51,
+    "recorded_exposure_sign_reverse_diagnostics": 17
+  },
+  "eligibility_extraction": "Frozen original fixed-stake replay with diagnostic1e12initialcapital and1000stake; reproduceoriginal100Kfirst; full1470qualificationcalendar; reportinverseaccountsstart100K"
+}
