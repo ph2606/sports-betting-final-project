@@ -148,11 +148,29 @@
     "Final_Report_LaTeX.zip": {
       "source": "final_review/results/20261023_reverse_review/Final_Report_LaTeX.zip",
       "sha256": "825760006dcb26f482fdb4e5f986602e8d63b0557cafaad499b6edee89f64689"
+    },
+    "Final_Project_Presentation_Updated.pptx": {
+      "source": "presentation_updates/results/20261023_sources_methods/Final_Project_Presentation.pptx",
+      "sha256": "5c8a8f7acde8a4c3e0e08adbbfc2efa31adde61351f13eb912ee18f2d335b337"
+    },
+    "Final_Project_Presentation_Updated.pdf": {
+      "source": "presentation_updates/results/20261023_sources_methods/Final_Project_Presentation.pdf",
+      "sha256": "b05559c8c1b0a03d451c52e05a0ce418f3d75fbefcc5dad5c9eb67ca4405c8b0"
+    },
+    "Final_Presentation_Notes_Updated.md": {
+      "source": "presentation_updates/results/20261023_sources_methods/Final_Presentation_Notes.md",
+      "sha256": "2ecf128b3f6586ee0845ef7e01ac99c77d92ec7c56770bcba93afb7db8481369"
     }
   },
   "author_names": [
     "Aman Dhillon",
     "Panagiotis Housos"
   ],
-  "supervisor": "Daniel Totouom-Tangho"
+  "supervisor": "Daniel Totouom-Tangho",
+  "presentation_run": "presentation_updates/results/20261023_sources_methods",
+  "current_presentation_files": {
+    "pptx": "Final_Project_Presentation_Updated.pptx",
+    "pdf": "Final_Project_Presentation_Updated.pdf",
+    "notes": "Final_Presentation_Notes_Updated.md"
+  }
 }

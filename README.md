@@ -3,8 +3,8 @@
 **Final combined submission — NBA and Premier League:**
 [Report PDF](deliverables/final/Final_Report.pdf),
 [complete LaTeX source](deliverables/final/Final_Report_LaTeX.zip),
-[PowerPoint](deliverables/final/Final_Project_Presentation.pptx) and
-[presentation PDF](deliverables/final/Final_Project_Presentation.pdf), all in
+[PowerPoint](deliverables/final/Final_Project_Presentation_Updated.pptx) and
+[presentation PDF](deliverables/final/Final_Project_Presentation_Updated.pdf), all in
 **`deliverables/final/`**. Authors: **Aman Dhillon and Panagiotis Housos**;
 supervisor: **Daniel Totouom-Tangho**. The order is common methodology,
 NBA results, then Premier League results. See [LATEST_REPORT.md](LATEST_REPORT.md)

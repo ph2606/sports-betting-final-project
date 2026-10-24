@@ -2,9 +2,15 @@
 
 The newest combined presentation is in **deliverables/final/**:
 
-- [Editable PowerPoint](deliverables/final/Final_Project_Presentation.pptx)
-- [Matching slide PDF](deliverables/final/Final_Project_Presentation.pdf)
-- [Speaker notes and source paths](deliverables/final/Final_Presentation_Notes.md)
+Use the **Updated** files below. Slide **2** now documents the actual NBA and
+Premier League data sources. Slide **3** explains forward feature selection,
+classwise ECE and classification accuracy, with both formulas and symbol
+definitions. Feature selection cites the supplied Walsh–Joshi supplement;
+the ECE formula cites section 3, equation (3), of the main paper.
+
+- [Editable PowerPoint](deliverables/final/Final_Project_Presentation_Updated.pptx)
+- [Matching slide PDF](deliverables/final/Final_Project_Presentation_Updated.pdf)
+- [Speaker notes and source paths](deliverables/final/Final_Presentation_Notes_Updated.md)
 
 **15 main slides + 13 appendix slides.** The first page names Aman Dhillon,
 Panagiotis Housos and supervisor Daniel Totouom-Tangho. The order remains

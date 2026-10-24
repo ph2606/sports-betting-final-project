@@ -11,8 +11,8 @@ The current combined submission is in **deliverables/final/**:
 - [Final report PDF](deliverables/final/Final_Report.pdf)
 - [LaTeX main file](deliverables/final/Final_Report.tex)
 - [Complete portable LaTeX source](deliverables/final/Final_Report_LaTeX.zip)
-- [Editable presentation](deliverables/final/Final_Project_Presentation.pptx)
-- [Presentation PDF](deliverables/final/Final_Project_Presentation.pdf)
+- [Editable presentation](deliverables/final/Final_Project_Presentation_Updated.pptx)
+- [Presentation PDF](deliverables/final/Final_Project_Presentation_Updated.pdf)
 
 The report has **28 pages** and keeps common methodology first, NBA results
 second and Premier League results last. It now includes funded opposite-policy

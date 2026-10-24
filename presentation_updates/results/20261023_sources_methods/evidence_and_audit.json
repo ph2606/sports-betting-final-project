@@ -1,0 +1,41 @@
+{
+  "supplied_supplement": {
+    "filename": "suplimentary for sport.pdf",
+    "sha256": "be6dd7fc6be221d18e66a1857dee296f5b656e1c8be53b2ebfab0a2f7a279628",
+    "pages": 7,
+    "feature_engineering_pages": [
+      2,
+      3
+    ],
+    "feature_selection_table": "Table 4, page 4",
+    "contains_formulas": false,
+    "contains_data_provider_section": false
+  },
+  "formula_source": {
+    "path": "ML Sports/Paper3 - ML for sports.pdf",
+    "section": "3",
+    "ece_equation": "3",
+    "pdf_page": 6
+  },
+  "equation_latex": {
+    "classwise_ece": "$\\mathrm{cwECE}=\\frac{1}{K}\\sum_{k=1}^{K}\\sum_{b=1}^{M}\\frac{n_{kb}}{N}\\left|\\bar{y}_{kb}-\\bar{p}_{kb}\\right|$",
+    "accuracy": "$\\mathrm{Accuracy}=\\frac{1}{N}\\sum_{i=1}^{N}\\mathbf{1}\\!\\left[\\arg\\max_k p_{ik}=y_i\\right]$"
+  },
+  "only_slides_changed": [
+    2,
+    3
+  ],
+  "slide_count": 28,
+  "native_text_overflows": 0,
+  "report_unchanged": true,
+  "nba_sources": "Supplied project files; original collection only partially documented. Paper Basketball-Reference/Westgate data are separate.",
+  "source_sha256": {
+    "presentation_updates/update_sources_methods.py": "4a4b0e40e547051a88ef300b540e9356ba2e6f53ee52b257c881671b64bf20c3",
+    "final_review/results/20261023_reverse_review/presentation/presentation_content.json": "9bc0ce1e285b9e8f2aa7d2a22c3647c2544d1b723109e2a26243f0b0e10ccf9e",
+    "ML Sports/Paper3 - ML for sports.pdf": "d55775ceea6e95791ce33eba9fdf29bfec8a79651f044d2a3294214039224fb9",
+    "ML Sports/NBA_analysis_Presentation.pptx": "6db1e55edfbe6c26aa45ec076256ffbae677f57029d9575bb663ebe78adfc6e5",
+    "ML Sports/Data.ipynb": "8441fe8364b4750a7a08e8de7001028433028a35ab2f66ebc9d2b104412e18ce",
+    "epl_data/SOURCE_GUIDE.md": "ffcaa7d76069762b124d06803e40b95d409b32beca244546bf3ee9a1bc12b0ad",
+    "epl_modeling/metrics.py": "a706233ce663e96fe2fae7b00a9e54731804d4b0d1ca78f7473183eff4f8a6d3"
+  }
+}

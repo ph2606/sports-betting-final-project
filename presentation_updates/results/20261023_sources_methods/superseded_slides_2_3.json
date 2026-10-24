@@ -1,0 +1,244 @@
+[
+  {
+    "title": "Common methodology: from past games to bets",
+    "kicker": "COMMON METHODOLOGY | NBA AND PREMIER LEAGUE",
+    "subtitle": "The proposal compares calibration-based and accuracy-based model selection. Implementation differs where the sports require it.",
+    "elements": [
+      {
+        "type": "rect",
+        "x": 0.65,
+        "y": 2.15,
+        "w": 3.45,
+        "h": 3.25,
+        "fill": "FFFFFF",
+        "line": "D8E0E7"
+      },
+      {
+        "type": "text",
+        "x": 0.8300000000000001,
+        "y": 2.48,
+        "w": 3.08,
+        "h": 0.47,
+        "text": "1  Earlier games",
+        "size": 20,
+        "color": "0D897D",
+        "bold": true
+      },
+      {
+        "type": "text",
+        "x": 0.8300000000000001,
+        "y": 3.28,
+        "w": 3.08,
+        "h": 1.72,
+        "text": "Earlier team stats\nPrior-season strength\nPlayer/xG extensions",
+        "size": 19,
+        "color": "11243A",
+        "bold": false
+      },
+      {
+        "type": "rect",
+        "x": 4.43,
+        "y": 2.15,
+        "w": 3.45,
+        "h": 3.25,
+        "fill": "FFFFFF",
+        "line": "D8E0E7"
+      },
+      {
+        "type": "text",
+        "x": 4.609999999999999,
+        "y": 2.48,
+        "w": 3.08,
+        "h": 0.47,
+        "text": "2  Probabilities",
+        "size": 20,
+        "color": "0D897D",
+        "bold": true
+      },
+      {
+        "type": "text",
+        "x": 4.609999999999999,
+        "y": 3.28,
+        "w": 3.08,
+        "h": 1.72,
+        "text": "NBA: home / away\nEPL: home / draw / away\nExclude target inputs",
+        "size": 19,
+        "color": "11243A",
+        "bold": false
+      },
+      {
+        "type": "rect",
+        "x": 8.209999999999999,
+        "y": 2.15,
+        "w": 3.45,
+        "h": 3.25,
+        "fill": "FFFFFF",
+        "line": "D8E0E7"
+      },
+      {
+        "type": "text",
+        "x": 8.389999999999999,
+        "y": 2.48,
+        "w": 3.08,
+        "h": 0.47,
+        "text": "3  Model selection",
+        "size": 20,
+        "color": "0D897D",
+        "bold": true
+      },
+      {
+        "type": "text",
+        "x": 8.389999999999999,
+        "y": 3.28,
+        "w": 3.08,
+        "h": 1.72,
+        "text": "Accuracy branch\nCalibration-error branch\nLater-season evaluation",
+        "size": 19,
+        "color": "11243A",
+        "bold": false
+      },
+      {
+        "type": "rect",
+        "x": 11.99,
+        "y": 2.15,
+        "w": 3.45,
+        "h": 3.25,
+        "fill": "FFFFFF",
+        "line": "D8E0E7"
+      },
+      {
+        "type": "text",
+        "x": 12.17,
+        "y": 2.48,
+        "w": 3.08,
+        "h": 0.47,
+        "text": "4  Betting rule",
+        "size": 20,
+        "color": "0D897D",
+        "bold": true
+      },
+      {
+        "type": "text",
+        "x": 12.17,
+        "y": 3.28,
+        "w": 3.08,
+        "h": 1.72,
+        "text": "Compare probabilities\nwith archived odds\nApply explicit stake rules",
+        "size": 19,
+        "color": "11243A",
+        "bold": false
+      },
+      {
+        "type": "text",
+        "x": 0.65,
+        "y": 6.0,
+        "w": 14.6,
+        "h": 0.6,
+        "text": "Estimated return per unit staked = model probability × decimal odds − 1",
+        "size": 24,
+        "color": "0D897D",
+        "bold": true
+      },
+      {
+        "type": "text",
+        "x": 0.65,
+        "y": 7.03,
+        "w": 14.6,
+        "h": 0.9,
+        "text": "We test whether better probability estimates improve betting outcomes.\nA higher classification accuracy or smaller calibration error does not guarantee a profitable price.",
+        "size": 21,
+        "color": "11243A",
+        "bold": false
+      }
+    ],
+    "notes": "Both initial studies consider logistic regression, random forests, SVM and MLP, with feature screening and forward selection before TPE hyperparameter search. NBA uses 30 trials per family/branch; the first EPL experiment uses 12. NBA season-to-date performance is lagged using shift(1).expanding() within team-season, and both teams' first ten games are excluded as target rows. EPL adds explicit missing-history controls and later player/xG comparisons. Walsh and Joshi's original numerical claims are superseded by their 2025 corrigendum; calibration-driven profitability remains a question, not a guarantee.",
+    "sources": [
+      "ML Sports/Data.ipynb",
+      "epl_modeling/METHODOLOGY.md",
+      "ML_Sports_Betting_Project_Proposal.pdf"
+    ],
+    "appendix": false
+  },
+  {
+    "title": "Common metrics; explicit league differences",
+    "kicker": "COMMON METHODOLOGY | NBA AND PREMIER LEAGUE",
+    "subtitle": "Compare outcomes within each league. Keep the financial denominators and funding conventions separate.",
+    "elements": [
+      {
+        "type": "table",
+        "x": 0.65,
+        "y": 2.06,
+        "w": 14.67,
+        "h": 4.4,
+        "headers": [
+          "Setting",
+          "NBA implementation",
+          "Premier League implementation"
+        ],
+        "rows": [
+          [
+            "Outcome space",
+            "Home / away",
+            "Home / draw / away"
+          ],
+          [
+            "Calibration criterion",
+            "20 bins; score set to 1 if fewer than 16 bins are occupied",
+            "Mean classwise ECE over 3 classes; 10 bins; no occupancy penalty"
+          ],
+          [
+            "Post-fit calibration",
+            "No separate held-out temperature fit",
+            "Both initial branches receive held-out temperature scaling"
+          ],
+          [
+            "Stake and starting cash",
+            "100 fixed or 1/8 Kelly; start 10,000",
+            "1,000 fixed or capped Kelly;\nstart 100,000 in expanded accounts"
+          ],
+          [
+            "Funding",
+            "Game-by-game settlement",
+            "Joint date-start cash allocation before settlement"
+          ]
+        ],
+        "widths": [
+          0.22,
+          0.39,
+          0.39
+        ],
+        "font_size": 17,
+        "header_size": 14
+      },
+      {
+        "type": "text",
+        "x": 0.65,
+        "y": 6.83,
+        "w": 14.6,
+        "h": 0.48,
+        "text": "Capital return = profit / initial cash.     Stake ROI (yield) = profit / total money staked.",
+        "size": 22,
+        "color": "0D897D",
+        "bold": true
+      },
+      {
+        "type": "text",
+        "x": 0.65,
+        "y": 7.58,
+        "w": 14.6,
+        "h": 0.52,
+        "text": "The NBA source calls capital return “ROI”. We relabel it here. Forecast accuracy is also different from the hit ratio of selected bets.",
+        "size": 17,
+        "color": "536578",
+        "bold": false
+      }
+    ],
+    "notes": "The NBA occupancy rule produces an optimisation penalty sentinel; a value of 1 is not literal 100 percent empirical calibration error. EPL ECE is the mean of three one-versus-rest calibration errors. NBA binary Brier and EPL unscaled three-class Brier have different scales and should not be directly ranked. NBA value selection tests the home side first and otherwise the away side; most EPL value rules maximize p*odds-1 over allowed H/D/A outcomes. NBA eighth Kelly has no extra 2 percent cap, only available-cash clamping. EPL date-start allocation cannot use one same-date result to fund another. Quote availability and execution are unverified in these historical simulations.",
+    "sources": [
+      "ML Sports/Data.ipynb",
+      "epl_modeling/metrics.py",
+      "epl_strategy/METHODOLOGY.md"
+    ],
+    "appendix": false
+  }
+]
